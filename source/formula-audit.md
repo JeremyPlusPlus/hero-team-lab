@@ -46,7 +46,7 @@ The user's one shared spillover modifier is an intentional extension, not a sour
 
 ### Hero ascensions
 
-The November 19 ascension screen and installed Windows build 26703178 distinguish personal ranks from global upgrades emitted by a deployed hero. `cq.bmy` multiplies a global factor for every active copy. At rank `n`, progressive Damage and Kill Gold each use `1 + n(n+1)/2`. Global Rank EXP and Energy Income use `1 + n/100`. Personal Damage and Kill Gold use `5^n`. The personal attack cap is `10 + n` attacks/s (`cl.bki`) and the cooldown floor is `1 − 0.25n` seconds (`cl.blh`). The timed Immortal calculation applies those limits to its configured inputs. Its model omits the game's excess-speed-to-hit-damage conversion. Free Hero Level Chance applies to buying run levels, outside the fixed-level reward calculation.
+The November 19 ascension screen and installed Windows build 26703178 distinguish personal ranks from global upgrades emitted by a deployed hero. `cq.bmy` multiplies a global factor for every active copy. At rank `n`, progressive Damage and Kill Gold each use `1 + n(n+1)/2`. Global Rank EXP and Energy Income use `1 + n/100`. Personal Damage and Kill Gold use `5^n`. The personal attack cap is `10 + n` attacks/s (`cl.bki`) and the cooldown floor is `1 − 0.25n` seconds (`cl.blh`). The timed Immortal calculation applies those limits to its configured inputs. Speed above the owner’s cap adds 10% per excess attack/s to real-hit damage in `cl.bkg`. Free Hero Level Chance applies to buying run levels, outside the fixed-level reward calculation.
 
 ### Mimic farming and hourly Gold
 

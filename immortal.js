@@ -4,22 +4,46 @@
   const byId = new Map(heroes.map(hero => [hero.id,hero]));
   const modes = ['skill','melee','mage','ranged'];
   const deployedBuffHeroes=Object.freeze(['warlock','wizard','titan','apprentice']);
-  const defaults = {mode:'skill',buffTeam:'deploy',priority:'damage',baseDamageExponent:0,
-    baseCritChance:100,baseSuperChance:100,baseUltraChance:100,
+  const [baseCritChance,baseSuperChance,baseUltraChance]=E.defaultChanceReferences().damage.totals;
+  const defaults = {mode:'skill',buffTeam:'deploy',priority:'damage',baseDamageExponent:0,accountAttackSpeedBonus:0,heroSpeedRanks:{},heroCritRanks:{},
+    baseCritChance,baseSuperChance,baseUltraChance,
     championStrikes:88.5,championDamagePercent:1710,championCooldown:1,championMasteryPercent:499,
     otherBasePower:0,otherMasteryLevel:10,fightSeconds:60};
-  const numericLimits = {baseDamageExponent:[0,1000000],baseCritChance:[0,1e9],baseSuperChance:[0,1e9],
+  const numericLimits = {baseDamageExponent:[0,1000000],accountAttackSpeedBonus:[0,1e9],baseCritChance:[0,1e9],baseSuperChance:[0,1e9],
     baseUltraChance:[0,1e9],championStrikes:[1,1e9],championDamagePercent:[0,1e12],
     championCooldown:[0.25,1e6],championMasteryPercent:[0,1e12],otherBasePower:[0,1e9],otherMasteryLevel:[0,1e6],fightSeconds:[1,86400]};
   function normalize(input = {}) {
-    const c = {...defaults};
+    const c = {...defaults,heroSpeedRanks:{},heroCritRanks:{}};
     if (modes.includes(input?.mode)) c.mode = input.mode;
     c.buffTeam=['deploy','swap','warlock'].includes(input?.buffTeam)?input.buffTeam:
       c.mode==='skill'?'deploy':c.mode==='melee'?'swap':'warlock';
-    c.priority=c.mode==='melee' && input?.priority!=='damage'?'strikes':'damage';
+    if (input?.priority!=='damage') {
+      if (c.mode==='melee') c.priority='strikes';
+      if (c.mode==='mage' || c.mode==='ranged') c.priority=input?.priority==='attacks'?'attacks':'hits';
+    }
+    const ranks=input?.heroSpeedRanks;
+    if (ranks && typeof ranks==='object' && !Array.isArray(ranks)) {
+      for (const [id,raw] of Object.entries(ranks)) {
+        if (!byId.has(id) || (typeof raw!=='number' && typeof raw!=='string')) continue;
+        const rank=Math.floor(Number(raw));
+        if (Number.isFinite(rank) && rank>0) c.heroSpeedRanks[id]=Math.min(rank,10);
+      }
+    }
+    if (input?.heroCritRanks && typeof input.heroCritRanks==='object' && !Array.isArray(input.heroCritRanks)) {
+      for (const [id,profile] of Object.entries(input.heroCritRanks)) {
+        if (!byId.has(id) || !profile || typeof profile!=='object' || Array.isArray(profile)) continue;
+        for (const tier of ['normal','super','ultra']) {
+          const raw=profile[tier];
+          if (typeof raw!=='number' && typeof raw!=='string') continue;
+          const rank=Math.floor(Number(raw));
+          if (Number.isFinite(rank) && rank>0) (c.heroCritRanks[id]??={})[tier]=Math.min(rank,10);
+        }
+      }
+    }
     for (const [key,[low,high]] of Object.entries(numericLimits)) {
-      if (input?.[key] == null || input[key] === '') continue;
-      const value = Number(input[key]);
+      const raw=input?.[key];
+      if (typeof raw!=='number' && !(typeof raw==='string' && raw.trim())) continue;
+      const value = Number(raw);
       if (Number.isFinite(value)) c[key] = Math.min(high,Math.max(low,value));
     }
     return c;
@@ -64,17 +88,41 @@
   // Each attack rolls through the normal, super and ultra crit tiers. Only
   // its final tier supplies the Immortal multiplier. The underlying crit
   // damage factors apply to the real hit before the logarithm.
-  function critProfile(b,c,s,id) {
-    const chances=[c.baseCritChance+(root.IMMORTAL_BASE_CRIT_CHANCE?.[id]??0)+b[crit],c.baseSuperChance+b[superCrit],c.baseUltraChance+b[ultraCrit]];
-    const normal=probability(Math.floor(chances[0])+1);
-    const strong=probability(Math.ceil(chances[1])),ultra=probability(Math.ceil(chances[2]));
-    const weights=[1-normal,normal*(1-strong),normal*strong*(1-ultra),normal*strong*ultra];
+  function tierWeights(normal,strong,ultra) {
+    return [1-normal,normal*(1-strong),normal*strong*(1-ultra),normal*strong*ultra];
+  }
+  function critProfile(b,c,s,id,diceRolls) {
+    const ranks=c.heroCritRanks[id];
+    const chances=[Math.round(c.baseCritChance)+(root.IMMORTAL_BASE_CRIT_CHANCE?.[id]??0)+b[crit]+(ranks?.normal??0),
+      Math.round(c.baseSuperChance)+b[superCrit]+(ranks?.super??0),Math.round(c.baseUltraChance)+b[ultraCrit]+(ranks?.ultra??0)];
+    let weights,excess;
+    if (!diceRolls) {
+      weights=tierWeights(...chances.map(probability));
+      excess=chances.reduce((sum,value)=>sum+Math.max(0,value-100),0);
+    } else {
+      // Feeling Lucky uses three independent integer draws unless one common
+      // mastery roll forces all three to the exclusive upper endpoints.
+      const ordinary=[],forced=[];
+      const mastery=probability(Math.round(diceRolls['Crit Chance'].maxRollProbability*100));
+      excess=0;
+      for (const [i,type] of ['Crit Chance','Super Crit Chance','Ultra Crit Chance'].entries()) {
+        const roll=diceRolls[type],low=chances[i]+Math.round(roll.min),high=chances[i]+Math.round(roll.max);
+        const count=high-low+1,first=Math.max(low,1),last=Math.min(high,99);
+        const partialSum=Math.max(0,last-first+1)*(first+last)/2;
+        const cappedCount=Math.max(0,high-Math.max(low,100)+1);
+        ordinary.push((partialSum/100+cappedCount)/count);
+        forced.push(probability(high+1));
+        const firstExcess=Math.max(101,low),excessCount=Math.max(0,high-firstExcess+1);
+        excess+=(1-mastery)*excessCount*(firstExcess+high-200)/(2*count)+mastery*Math.max(0,high+1-100);
+      }
+      const drawn=tierWeights(...ordinary),maximum=tierWeights(...forced);
+      weights=drawn.map((p,i)=>(1-mastery)*p+mastery*maximum[i]);
+    }
     const damageLogs=[0,safeLog(2*b[critDamage]),0,0];
     damageLogs[2]=damageLogs[1]+safeLog(3*b[superDamage]);
     damageLogs[3]=damageLogs[2]+safeLog(3*b[ultraDamage]);
     const eventFactors=[1,tierBonus.normal,tierBonus.super,tierBonus.ultra];
     const weighted=weights.map((p,i)=>p*eventFactors[i]);
-    const excess=chances.reduce((sum,value)=>sum+Math.max(0,value-100),0);
     return {weights,weighted,damageLogs,overflow:1+(s.baseOverflow+s.overflowRate*excess)/100};
   }
   function expectedHit(baseLog,profile) {
@@ -148,6 +196,7 @@
   }
   function makeDamageModel(s,c,size) {
     const skillTile = s.snowFort ? 1+s.damageSkillTileBoost/100 : 1;
+    const accountSpeedFactor=1+c.accountAttackSpeedBonus/100;
     const stylePower = s.grandMaster ? 1.05**size : 1;
     const masteryPercent=c.championMasteryPercent*stylePower*(s.snowFort?(1+s.mapMastery/100):1)/1.33;
     const otherMastery=masteryPercent/250*c.otherMasteryLevel;
@@ -160,13 +209,11 @@
       const floor=1-0.25*(s.heroAscensions?.[id]?.minSkillCooldownLevel??0);
       return Math.max(c.championCooldown,floor);
     }
-    function scoreSlot(slot,b,index,detailed,teamEffects) {
+    function scoreSlot(slot,b,index,detailed,teamEffects,diceRolls) {
       const uniqueTicks=teamEffects.ticks;
       const data=byId.get(slot.id), type=typeOf(slot.id),eligible=canDamage(slot.id,c);
       if (!detailed && !eligible) return 0;
-      const profile=critProfile(b,c,s,slot.id);
-      const rawHitLog = c.baseDamageExponent+runLevelLog(slot.level)+teamEffects.statusLog+safeLog(data.observedBaseStats?.damage??1)+safeLog(b[damage])
-        +safeLog(b[taken])+safeLog(b[bossDamage])+safeLog(profile.overflow);
+      const profile=critProfile(b,c,s,slot.id,diceRolls);
       const cast=eligible?castSkills[slot.id]:null,champion=slot.id==='champion';
       const activeSeconds=Math.max(1,10+b[duration]);
       const cooldown=cooldownFor(slot.id,champion?24:(root.IMMORTAL_BASE_COOLDOWN?.[slot.id]??24),teamEffects.reducedCooldown);
@@ -180,7 +227,12 @@
       const effectiveSkillPower=Math.max(0,Math.round((baseline+additional)*powerFactor));
       const frenzy=slot.id==='viking'?2+0.10*effectiveSkillPower:1;
       const speedCap=10+(s.heroAscensions?.[slot.id]?.maxAttackSpeedLevel??0);
-      const aps=Math.min(speedCap,(data.observedBaseStats?.attackSpeed??data.attackSpeed??1)*b[speed]*frenzy);
+      const rankSpeedFactor=1+0.03*(c.heroSpeedRanks[slot.id]??0);
+      const uncappedAttackSpeed=(data.observedBaseStats?.attackSpeed??data.attackSpeed??1)*accountSpeedFactor*rankSpeedFactor*b[speed]*frenzy;
+      const aps=Math.min(speedCap,uncappedAttackSpeed);
+      const speedOverflowDamage=1+0.1*Math.max(0,uncappedAttackSpeed-speedCap);
+      const rawHitLog = c.baseDamageExponent+runLevelLog(slot.level)+teamEffects.statusLog+safeLog(data.observedBaseStats?.damage??1)+safeLog(b[damage])
+        +safeLog(b[taken])+safeLog(b[bossDamage])+safeLog(profile.overflow)+safeLog(speedOverflowDamage);
       // The user's maintained Warlock setup is calibrated at one Champion
       // cast per second per copy. Without that setup a cast also needs an
       // available attack action.
@@ -188,6 +240,10 @@
         : Math.min(aps,slot.id==='forester'?window.casts/c.fightSeconds:1/cooldown)) : 0;
       const volleyCost=cast?.replacesVolley ? b[shots] : 1;
       const teleportRate=slot.id==='skymage' ? Math.min(aps,1/cooldown) : 0;
+      // Count one attack cycle even when it fires three projectiles or
+      // substitutes a damaging skill. Teleport uses a cycle without attacking.
+      const attacksPerSecond=eligible ? aps-teleportRate : 0;
+      teamEffects.attacksPerSecond+=attacksPerSecond;
       const normalRate=Math.max(0,(aps-teleportRate)*b[shots]-castRate*volleyCost);
       // Splash replaces the real hit if its summed fraction exceeds 100%;
       // it never adds a second primary-target packet.
@@ -243,7 +299,7 @@
         const factor=(0.35+0.03*effectiveSkillPower)*(1+0.2*otherMastery);
         tickDps=tickRate*expectedHit(rawHitLog+safeLog(factor),profile);
       }
-      if(eligible && slot.id==='forester') {
+      if(eligible && slot.id==='forester' && castRate>0) {
         const factor=1.5+0.15*effectiveSkillPower;
         const ticks=Math.floor(activeSeconds),lastTicks=Math.floor(window.last);
         const full=window.complete;
@@ -252,7 +308,7 @@
         const tickLog=rawHitLog+safeLog(factor);
         const damage=(full?full*foresterStacks(ticks,tickLog,profile):0)+foresterStacks(lastTicks,tickLog,profile);
         const dps=damage/c.fightSeconds,rate=(full*ticks+lastTicks)/c.fightSeconds;
-        if (!uniqueTicks.forester || dps>uniqueTicks.forester.dps) uniqueTicks.forester={index,dps,rate};
+        if (!uniqueTicks.forester || dps>uniqueTicks.forester.dps) uniqueTicks.forester={index,dps,rate,ultraProbability:profile.weights[3]};
       }
       if(eligible && slot.id==='militia' && otherMastery>0) {
         // The strongest Spin Attack wounds the boss for three ticks. The
@@ -264,8 +320,17 @@
       }
       const skillDps=damagePerCast*castRate+skillAttackDps+tickDps,score=attackDps+skillDps;
       const totalHitRate=hitRate+skillHits*castRate+tickRate;
+      teamEffects.totalHitRate+=totalHitRate;
+      // Direct hits, Champion strikes and Samurai ticks each get a crit roll.
+      // Shared bleed/wound effects are assigned after picking their owner.
+      const ultraProbability=totalHitRate>0 ? profile.weights[3] : 0;
+      const ultraHitsPerSecond=totalHitRate*ultraProbability;
+      teamEffects.critEligibleHitsPerSecond+=totalHitRate;
+      teamEffects.ultraHitsPerSecond+=ultraHitsPerSecond;
+      if (totalHitRate>0) countCritAttacker(teamEffects,ultraProbability);
       if (!detailed) return score;
-      return {index,id:slot.id,type,eligible,score,attackDps,skillDps,hitRate,aps,totalHitRate,tickRate,tickDps,
+      return {index,id:slot.id,type,eligible,score,attackDps,skillDps,hitRate,aps,speedCap,uncappedAttackSpeed,speedOverflowDamage,attacksPerSecond,totalHitRate,tickRate,tickDps,
+        ultraProbability,ultraHitsPerSecond,critEligibleHitsPerSecond:totalHitRate,
         rawHitLog:Number.isFinite(rawHitLog)?rawHitLog:null,perHit,skill:cast?.name??null,skillTaggedAttacks:skillAttackRate>0,
         skillPower:additional,effectiveSkillPower,masteryPercent,skillHits,skillPercent,castRate,
         skillCooldown:cast?cooldown:0,damagePerCast,critProbabilities:profile.weights};
@@ -301,39 +366,42 @@
     });
   }
   function teamContext(ids,c) {
-    return {ticks:{},championHitsPerSecond:0,statusLog:0,reducedCooldown:c.buffTeam!=='deploy'||ids.has('warlock')};
+    return {ticks:{},championHitsPerSecond:0,attacksPerSecond:0,totalHitRate:0,critEligibleHitsPerSecond:0,ultraHitsPerSecond:0,
+      lowestUltraProbability:0,attackingHeroes:0,guaranteedUltraHeroes:0,statusLog:0,reducedCooldown:c.buffTeam!=='deploy'||ids.has('warlock')};
   }
-  function scoreEvaluation(evaluation,s,c) {
-    const model=makeDamageModel(s,c,evaluation.heroes.length);
-    const ids=new Set(evaluation.heroes.map(hero=>hero.id)),context=teamContext(ids,c);
-    const external=swappedBuffs(s,c).filter(buff=>!ids.has(buff.id));
-    const supportAdjustment=neutral.slice();
-    for(const skill of evaluation.damageSupportSkills.skills) for(const effect of [...skill.activeEffects,...skill.masteryEffects]) {
-      if(effect.type==='Splash Damage') supportAdjustment[splash]+=effect.value;
-      if(!buffApplies(skill.id,c) && effect.type==='Damage Taken') supportAdjustment[taken]/=1+effect.value/100;
-    }
-    const buckets=evaluation.heroes.map(hero=>{
-      const bucket=stats.map((stat,i)=>hero.bonuses[stat]??neutral[i]);
-      mergeBucket(bucket,supportAdjustment);
-      for(const effect of [...hero.damageSkill.activeEffects,...hero.damageSkill.masteryEffects]) if(effect.type==='Splash Damage') bucket[splash]+=effect.value;
-      for (const buff of external) mergeBucket(bucket,buff.bucket);
-      return bucket;
-    });
-    model.applyStatuses(evaluation.heroes,buckets,context);
-    const rows=evaluation.heroes.map(hero=>model(hero,buckets[hero.index],hero.index,true,context));
-    for (const {index,dps,rate} of Object.values(context.ticks)) {
+  function countCritAttacker(context,probability) {
+    context.lowestUltraProbability=context.attackingHeroes ? Math.min(context.lowestUltraProbability,probability) : probability;
+    context.attackingHeroes++;
+    if (probability===1) context.guaranteedUltraHeroes++;
+  }
+  function applySharedTicks(context,rows) {
+    let damage=0;
+    for (const tick of Object.values(context.ticks)) {
+      const {index,dps,rate,ultraProbability}=tick;
+      damage+=dps;
+      context.totalHitRate+=rate;
+      if (ultraProbability!==undefined) {
+        context.critEligibleHitsPerSecond+=rate;
+        context.ultraHitsPerSecond+=rate*ultraProbability;
+      }
+      if (!rows) continue;
       const row=rows[index];
       row.tickDps+=dps;row.skillDps+=dps;row.score+=dps;row.tickRate+=rate;row.totalHitRate+=rate;
+      if (ultraProbability!==undefined) {
+        row.critEligibleHitsPerSecond+=rate;
+        row.ultraHitsPerSecond+=rate*ultraProbability;
+      }
     }
-    const sum=key=>rows.reduce((n,row)=>n+row[key],0);
-    return {mode:c.mode,score:sum('score'),attackDps:sum('attackDps'),skillDps:sum('skillDps'),hitRate:sum('hitRate'),totalHitRate:sum('totalHitRate'),
-      championHitsPerSecond:context.championHitsPerSecond,heroes:rows};
+    return damage;
+  }
+  function teamRates(context) {
+    const {championHitsPerSecond,attacksPerSecond,totalHitRate,critEligibleHitsPerSecond,ultraHitsPerSecond,
+      lowestUltraProbability,attackingHeroes,guaranteedUltraHeroes}=context;
+    return {championHitsPerSecond,attacksPerSecond,totalHitRate,critEligibleHitsPerSecond,ultraHitsPerSecond,
+      lowestUltraProbability,attackingHeroes,guaranteedUltraHeroes};
   }
   function evaluate(team,settings={},config={}) {
-    // Immortal lineups use their own GM and support context, independent of
-    // any Experience leveling target and attacker settings on a saved team.
-    const s=E.settingsFor({...settings,experienceLeveler:null,damageSupportMode:'all'});
-    return scoreEvaluation(E.evaluate(team,s,true),s,normalize(config));
+    return makeScorer(settings,config).evaluate(E.cleanTeam(team));
   }
   function mergeBucket(out,bucket) {
     for (let i=0;i<stats.length;i++) {
@@ -342,10 +410,10 @@
   }
   function addEffect(bucket,index,value) {
     if (multiplicative[index]) bucket[index]*=1+value/100;
-    else bucket[index]+=value;
+    else bucket[index]+=(index===crit || index===superCrit || index===ultraCrit) ? Math.round(value) : value;
   }
   function makeScorer(settings={},config={}) {
-    const s=E.settingsFor({...settings,damageSupportMode:'all'}),c=normalize(config);
+    const s=E.settingsFor({...settings,experienceLeveler:null,damageSupportMode:'all'}),c=normalize(config);
     const map=E.mapFor(s),swap=swappedBuffs(s,c);
     const records=new Map(heroes.map(hero=>{
       const prepare=effects=>effects.map(effect=>({...effect,stat:indexByStat.get(E.canonicalType(effect.type,s))}))
@@ -372,12 +440,14 @@
           if (stat!==undefined) addEffect(bucket,stat,effect.value);
         }
       }
-      applySkill(local,E.damageSkillFor(slot,s));
+      const skill=E.damageSkillFor(slot,s);
+      const diceRolls=slot.id==='dicemaster' && skill.enabled ? skill.chanceRolls : null;
+      if (!diceRolls) applySkill(local,skill);
       if(buffApplies(slot.id,c)) applySkill(support,E.damageSupportFor(slot,s));
       const values=record.synergies.map(effect=>Math.round(effect.value*E.tierScale(effect.tier,scales)));
-      return byTile[slot.tile]={level:slot.level,global,local,support,values};
+      return byTile[slot.tile]={level:slot.level,global,local,support,values,diceRolls};
     }
-    function measure(team) {
+    function measure(team,detailed=false) {
       if (size!==team.length) {
         size=team.length;style=E.styleFor(s,size);model=makeDamageModel(s,c,size);previousIds=null;
         cache=Array.from({length:size},()=>new Map());
@@ -394,7 +464,7 @@
           return active;
         });
       }
-      const global=neutral.slice(),locals=[],seen=new Set();
+      const global=neutral.slice(),locals=[],rolls=[],seen=new Set();
       global[speed]=map.attackSpeed;
       for (let i=0;i<size;i++) {
         const slot=team[i],p=slotProfile(slot,i),local=p.local.slice();
@@ -402,18 +472,26 @@
         if (!seen.has(slot.id)) {seen.add(slot.id);mergeBucket(global,p.support);}
         for(const link of links[i]) addEffect(link.global?global:local,link.stat,p.values[link.ordinal]);
         locals.push(local);
+        rolls.push(p.diceRolls);
       }
       for(const buff of swap) if(!seen.has(buff.id)) mergeBucket(global,buff.bucket);
       let score=0;
       const context=teamContext(seen,c);
       for (const local of locals) mergeBucket(local,global);
       model.applyStatuses(team,locals,context);
-      for(let i=0;i<size;i++) score+=model(team[i],locals[i],i,false,context);
-      for(const tick of Object.values(context.ticks)) score+=tick.dps;
-      return {score,championHitsPerSecond:context.championHitsPerSecond};
+      if (detailed) {
+        const rows=team.map((slot,i)=>model(slot,locals[i],i,true,context,rolls[i]));
+        applySharedTicks(context,rows);
+        const sum=key=>rows.reduce((n,row)=>n+row[key],0);
+        return {mode:c.mode,score:sum('score'),attackDps:sum('attackDps'),skillDps:sum('skillDps'),hitRate:sum('hitRate'),...teamRates(context),heroes:rows};
+      }
+      for(let i=0;i<size;i++) score+=model(team[i],locals[i],i,false,context,rolls[i]);
+      score+=applySharedTicks(context);
+      return {score,...teamRates(context)};
     }
     const score=team=>measure(team).score;
     score.details=measure;
+    score.evaluate=team=>measure(team,true);
     return score;
   }
   E.immortal={defaults,normalize,typeOf,canDamage,bossHit,evaluate,makeScorer,deployedBuffHeroes};

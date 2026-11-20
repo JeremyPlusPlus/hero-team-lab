@@ -10,6 +10,16 @@ The native crit damage multipliers start at 2, 3 and 3. The event opponent uses 
 
 For run-level growth, an upgrade adds 10 to the common level damage, multiplies by the game’s single-precision 1.05, then rounds to even. At level 1, common damage 10 reproduces both Militia’s displayed 10 and Champion’s 26 when their native attack speed, damage ratio and rarity are applied. Permanent account damage, individual rank upgrades and ascension can further increase real hit size.
 
+## Attack rate and Ultra Crit on class bosses
+
+The Windows game installed on November 20, 2026 (Steam build 26703178) applies the personal Attack Speed attribute as a factor of `1 + 0.03 × rank` in `cl.bki`. Ten attribute ranks give ×1.30. The same routine caps the final attack rate at `10 + Max Attack Speed ascension rank`, from 10/s to 15/s. The global speed calculation in `cl.bkj` includes account sources such as research, tech and runes. Enter their combined additional percentage in Team Lab. Map, style, milestones, synergies and the configured skill values already enter separately. In `cl.bkg` each 1/s above the personal cap adds 10% real damage before the Immortal logarithm. At 20/s before the cap, a cap of 15 gives ×1.5 real damage per hit.
+
+`cl.bkc` schedules attacks from the reciprocal of the capped rate. `cl.blt` enforces class eligibility and `by.zp` counts each scored damage packet. A Wizard-boosted triple shot can land three independently scored hits on the same boss. Team Lab therefore tracks both boss-directed attack cycles and scoring hits. The rate assumes the hero targets an in-range boss during the modeled window. Movement, missed buff refreshes, support-only targeting and the game update loop can affect observed rates. Extra same-target projectiles from the Attack Speed spell or map double-shot perk are outside the model.
+
+The three checks in `by.zp` each draw an integer from 0 through 99 and compare it strictly to the corresponding chance. Super requires a successful normal crit and Ultra requires a Super. Effective Ultra probability for a fixed set of stats is the product of the three capped probabilities. Each hero’s active Crit, Super and Ultra attribute ranks add one percentage point per rank, through rank ten. The latter two unlock at hero ranks 100 and 250. Wizard triple shots, Champion strikes, Forester bleed and Samurai ticks can roll Ultra. Militia’s wound inherits its source damage and contributes hits without rolling a fresh crit. Coverage counts the slots whose hits can roll. The guarantee is conditional on the modeled buffs, including whether the recipients have Wizard or Titan buffs after a swap.
+
+Mage and Ranged recommendations compare scoring hits/s, then the lowest effective Ultra probability among attackers, then expected Ultra hits/s, then modeled boss DPS. The attack-cycle priority uses the same tie order. The [recorded pre-team account chances](../chance-review/observations.json) provide the starting 135% normal, 109% Super and 48% Ultra values for new setups.
+
 ## Lightning Storm
 
 The Champion screenshots supply two calibration points. With no heroes deployed, Lightning Storm shows 88.5 strikes rounded to 89, 1,710% damage per strike and +499% damage per prior strike on the same enemy. With the captured team deployed, the corresponding values are 261 strikes, 5,160% and +813%.

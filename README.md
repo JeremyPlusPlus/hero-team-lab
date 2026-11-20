@@ -16,13 +16,15 @@ If you already use the downloaded calculator, choose **Export setup** in that co
 
 ## Compare your first build
 
-1. **Choose a focus.** Pick the reward you want to improve. Each focus remembers its own Team A and Team B.
+1. **Choose a focus in the top bar.** The support rankings and Team A/B comparison both follow that choice. Each focus remembers its own lineups.
 2. **Set up your account.** Check **Calculation settings**, the synergy event, Snow Fort and the skill values for your focus. The starting values come from one recorded account. Under **My ascensions → My ascensions · account baseline**, enter the ranks where your heroes differ from the defaults. Enter each hero once, even if you deploy several copies.
 3. **Put your current lineup in Team A.** Match the heroes, levels, tiles and attacker you use in game. In Experience, choose the **Hero to level** and the **Boss attacker** separately. Use **Copy A → B** to start with equal teams.
 4. **Change one thing in Team B.** Try a tile, a hero or an ascension. For an ascension trial, select **Team B build** in **My ascensions**. Blank fields inherit your account ranks. An explicit zero tests an unpurchased upgrade.
 5. **Search the alternatives.** Use **Suggest tiles** for the current roster or **Suggest team B** to search across the enabled heroes in **Suggestion roster**. Lock heroes whose slots and levels you want to keep. Tiles can still move. Gold and Damage keep your chosen attacker by default. Turn on **Choose the best attacker too** to let the search replace it.
 
 **Example — Hunter Gold build.** In Gold, select Hunter as Team A’s attacker and copy A to B. Under **My ascensions → Team B build**, select Hunter and choose **Use Gold 14 · zero both bonuses**. Compare Gold per Mimic on the identical lineup first. Then run **Suggest team B** to see if the new build favors different supports. Global ascension ranks and any other fields you left blank still come from your baseline.
+
+On desktop, progression and account settings are on the left, **Global support rankings** are in the middle, and **Team A/B** is on the right. The rankings start with all candidates for your focus. Select Team A or B and enable the lineup filter to see only heroes deployed on that team. Selecting a ranked hero shows its contribution.
 
 ## Pick a focus and read its score
 
@@ -32,7 +34,7 @@ If you already use the downloaded calculator, choose **Export setup** in that co
 | Experience | XP received by the selected leveling slot per boss. Set **Boss attacker** to **Best on team** to compare direct kills with Veteran-shared kills. Use **Plan levels 1–4,500** to search level ranges and **Use in B** to load a recommended lineup. |
 | Energy / Energy + Power Mages | Use Energy for wave income. Choose Energy + Power Mages to include the extra energy factors that apply to a Power Mage kill. |
 | Damage / Damage · Buff swap | Compare attackers and supports on the same target. Use Buff swap for the replacement lineup that takes the field after a separate team supplies buffs. |
-| Immortal Boss Damage | Select Skill damage, Melee, Mage or Ranged and choose a buff preset. **Damage by hero** shows which heroes and attacks contribute to that boss. |
+| Immortal Boss Damage | Mage and Ranged prioritize scoring hits/s. Tied teams compare the Ultra Crit chance of their weakest attacker. **Attacks and damage by hero** shows each hero’s attack rate, speed cap and effective Ultra chance. |
 
 With Snow Fort active, **the XP tile belongs on the hero making the kill** to earn its +20% bonus. Veteran’s Exp Share passes that boosted kill reward to eligible heroes. A Skill Power tile on Archer, Ballista or Veteran strengthens its active ability. Its mastery uses account Mastery Power. For example, while leveling Ballista, you can compare a Skill Power Ballista receiving Viking’s XP-tile kills against an XP-tile Ballista doing the killing.
 

@@ -56,7 +56,7 @@ test('Champion starts from the off-team capture, rounds strike count, and adds e
   const fort={...neutral,snowFort:true};
   for(let hit=0;hit<261;hit++) {
     const raw=100*51.6*(1+8.13*Math.min(100,hit));
-    expected+=0.96*Math.log10(Math.round(raw))+0.04*Math.log10(Math.round(raw*2))*1.1;
+    expected+=0.97*Math.log10(Math.round(raw))+0.03*Math.log10(Math.round(raw*2))*1.1;
   }
   const both=I.evaluate(allies,fort,captured);
   near(both.score,2*expected,'two independent casts per second');
@@ -71,11 +71,11 @@ test('off-type heroes buff the attacking class; attack frequency multiplies afte
   const result=I.evaluate(team,neutral,cfg);
   assert.equal(result.heroes[1].score,0);
   assert.equal(result.heroes[0].hitRate,2);
-  const perHit=0.94*Math.log10(1000)+0.06*Math.log10(2000)*1.1;
+  const perHit=0.95*Math.log10(1000)+0.05*Math.log10(2000)*1.1;
   near(result.attackDps,perHit*2,'melee damage with ranged support');
   for (const mode of ['mage','skill']) assert.equal(I.evaluate(team,neutral,{...cfg,mode}).score,0);
   near(I.makeScorer(neutral,cfg,team)(team),result.score,'search');
-  near(I.evaluate(team,neutral,{...cfg,baseDamageExponent:500}).score,(perHit+500*(.94+.06*1.1))*2,'account damage over 1e308');
+  near(I.evaluate(team,neutral,{...cfg,baseDamageExponent:500}).score,(perHit+500*(.95+.05*1.1))*2,'account damage over 1e308');
 });
 
 test('compiled Immortal score matches detailed team bonuses across levels, modes and changing placements',()=>{
@@ -89,9 +89,86 @@ test('compiled Immortal score matches detailed team bonuses across levels, modes
       if(n===1) [variant[0].tile,variant[5].tile]=[variant[5].tile,variant[0].tile];
       if(n===2) variant[2].id='battlemage';
       if(n===3) variant[8].id='necromancer';
-      near(scorer(variant),I.evaluate(variant,{},cfg).score,'parity '+mode+' '+n);
+      const report=I.evaluate(variant,{},cfg);
+      near(scorer(variant),report.score,'DPS parity '+mode+' '+n);
+      near(scorer.details(variant).attacksPerSecond,report.attacksPerSecond,'attack rate parity '+mode+' '+n);
+      near(scorer.details(variant).totalHitRate,report.totalHitRate,'hit rate parity '+mode+' '+n);
+      near(scorer.details(variant).ultraHitsPerSecond,report.heroes.reduce((sum,h)=>sum+h.ultraHitsPerSecond,0),'Ultra hits parity '+mode+' '+n);
     }
   }
+});
+
+test('effective Ultra uses three independent integer thresholds with per-hero ranks and excludes support slots',()=>{
+  const I=load([{id:'hunter'},{id:'archer'},{id:'wizard'}]);
+  const team=['hunter','archer','wizard'].map(id=>slot(id));
+  const c={mode:'ranged',buffTeam:'warlock',baseCritChance:90,baseSuperChance:92,baseUltraChance:93,
+    heroCritRanks:{hunter:{normal:10,super:8,ultra:7}}};
+  const result=I.evaluate(team,neutral,c);
+  assert.equal(result.heroes[0].ultraProbability,1);
+  near(result.heroes[1].ultraProbability,.91*.92*.93,'Archer native 1% and three checks');
+  assert.equal(result.heroes[2].ultraHitsPerSecond,0);
+  assert.equal(result.guaranteedUltraHeroes,1);
+  assert.equal(result.attackingHeroes,2);
+  near(result.lowestUltraProbability,result.heroes[1].ultraProbability,'off-class Wizard excluded');
+  near(result.ultraHitsPerSecond,1+.91*.92*.93,'expected Ultra packets');
+  const empty=I.evaluate([slot('wizard')],neutral,c);
+  assert.deepEqual([empty.guaranteedUltraHeroes,empty.attackingHeroes,empty.lowestUltraProbability,empty.ultraHitsPerSecond],[0,0,0,0]);
+  const nearCap=I.evaluate([slot('hunter')],neutral,{...c,baseCritChance:96,baseSuperChance:100,baseUltraChance:100,heroCritRanks:{}});
+  near(nearCap.lowestUltraProbability,.99,'99 normal cannot guarantee Ultra');
+  const below=I.evaluate([slot('hunter')],neutral,{...c,baseSuperChance:0,heroCritRanks:{}});
+  assert.equal(below.ultraHitsPerSecond,0,'zero Super chance prevents Ultra');
+});
+
+test('Dicemaster’s varying rolls can leave its effective Ultra below 100% even when its average bonus exceeds 100',()=>{
+  const I=load([{id:'dicemaster'}]),s={...neutral,damageSkills:true},c={...noCrit,mode:'mage',buffTeam:'warlock'};
+  const team=[slot('dicemaster')];
+  const result=I.evaluate(team,s,c);
+  assert.ok(result.lowestUltraProbability>0 && result.lowestUltraProbability<1);
+  assert.equal(result.guaranteedUltraHeroes,0);
+  near(result.ultraHitsPerSecond,result.totalHitRate*result.lowestUltraProbability,'expected hits');
+  assert.equal(I.evaluate(team,{...s,damageDicemasterMaxRollChance:100},c).guaranteedUltraHeroes,1);
+});
+
+test('Ranged and Mage sum boss-directed attacks, with separate personal speed ranks and ascension caps',()=>{
+  const I=load([
+    {id:'hunter',observedBaseStats:{damage:100,attackSpeed:10}},
+    {id:'archer',observedBaseStats:{damage:100,attackSpeed:12}},
+    {id:'wizard',observedBaseStats:{damage:100,attackSpeed:3}},
+    {id:'skymage',observedBaseStats:{damage:100,attackSpeed:2}}
+  ]);
+  const team=['hunter','hunter','archer','wizard','skymage'].map(id=>slot(id));
+  const s={...neutral,heroAscensions:{hunter:{maxAttackSpeedLevel:5},archer:{maxAttackSpeedLevel:5}}};
+  const c={mode:'ranged',buffTeam:'warlock',heroSpeedRanks:{hunter:10},accountAttackSpeedBonus:10};
+  const ranged=I.evaluate(team,s,c);
+  near(ranged.heroes[0].uncappedAttackSpeed,14.3,'base 10 × rank 1.30 × account 1.10');
+  near(ranged.heroes[0].attacksPerSecond,14.3,'raising cap alone does not grant 15/s');
+  assert.equal(ranged.heroes[0].speedCap,15);
+  near(ranged.heroes[2].attacksPerSecond,13.2,'Archer has a separate rank');
+  assert.equal(ranged.heroes[3].attacksPerSecond,0,'off-class support');
+  near(ranged.attacksPerSecond,41.8,'two Hunters and one Archer');
+  const lowerCap=I.evaluate(team,neutral,c);
+  near(lowerCap.attacksPerSecond,30,'all three individually capped at ten');
+  near(I.evaluate(team,s,{...c,accountAttackSpeedBonus:20}).attacksPerSecond,44.4,'both Hunters reach fifteen');
+  const imported=I.normalize({mode:'ranged',heroSpeedRanks:{hunter:20,archer:-1,apprentice:'invalid',unknown:8}});
+  assert.deepEqual({...imported.heroSpeedRanks},{hunter:10});
+  const mage=I.evaluate(team,s,{...c,mode:'mage'});
+  near(mage.heroes[4].attacksPerSecond,1.2,'Skymage consumes one action per second on teleport');
+  near(mage.attacksPerSecond,4.5,'only the two Mages can attack');
+  for(const mode of ['ranged','mage']) {
+    assert.equal(I.normalize({mode}).priority,'hits');
+    assert.equal(I.normalize({mode,priority:'damage'}).priority,'damage');
+    near(I.makeScorer(s,{...c,mode}).details(team).attacksPerSecond,mode==='ranged'?41.8:4.5,'compiled');
+  }
+});
+
+test('speed above the owner’s cap adds real-hit damage before the Immortal logarithm',()=>{
+  const I=load([{id:'hunter',observedBaseStats:{attackSpeed:20,damage:100}}]),team=[slot('hunter')];
+  const c={mode:'ranged',...noCrit};
+  const basic=I.evaluate(team,neutral,c).heroes[0];
+  const raised=I.evaluate(team,{...neutral,heroAscensions:{hunter:{maxAttackSpeedLevel:5}}},c).heroes[0];
+  assert.deepEqual([basic.aps,raised.aps],[10,15]);
+  near(basic.rawHitLog,Math.log10(200),'ten attacks over the cap double real damage');
+  near(raised.rawHitLog,Math.log10(150),'five attacks over the cap add 50% real damage');
 });
 
 test('the 10-Grand-Master team scales both forms of power once; the placement only boosts skill power',()=>{
@@ -110,8 +187,8 @@ test('the 10-Grand-Master team scales both forms of power once; the placement on
 
 test('regular Boss Damage is bypassed; the Immortal uses Ultra Boss Damage and hierarchical real crit factors',()=>{
   const I=load([{id:'titan',milestones:[bonus('Boss Damage',900),bonus('Ultra Boss Damage',100)]}]);
-  const cfg={mode:'melee',baseCritChance:44,baseSuperChance:50,baseUltraChance:40};
-  // Native Titan crit = 5, so the <= integer roll lands on 0..49.
+  const cfg={mode:'melee',baseCritChance:45,baseSuperChance:50,baseUltraChance:40};
+  // Native Titan crit = 5, so 50 of the 100 integer rolls pass.
   const row=I.evaluate([slot('titan')],neutral,cfg).heroes[0];
   const chances=[.5,.25,.15,.1];
   chances.forEach((p,i)=>near(row.critProbabilities[i],p,'exclusive tier '+i));
@@ -171,9 +248,12 @@ test('Champion replaces an entire triple shot, Scout replaces only its first pro
   assert.equal(melee.heroes[0].hitRate,27);
   assert.equal(melee.heroes[0].totalHitRate,27+89);
   assert.equal(melee.heroes[1].tickRate+melee.heroes[2].tickRate,1,'both Militias share one wound');
+  const guaranteed=I.evaluate([slot('militia')],s,{mode:'melee',buffTeam:'warlock',baseCritChance:100,baseSuperChance:100,baseUltraChance:100});
+  near(guaranteed.totalHitRate-guaranteed.ultraHitsPerSecond,guaranteed.heroes[0].tickRate,'wound adds scoring hits and cannot roll a fresh Ultra');
   const ranged=I.evaluate([slot('scout')],s,{...c,mode:'ranged'});
   assert.equal(ranged.heroes[0].hitRate,29);
   assert.equal(ranged.totalHitRate,30);
+  assert.equal(ranged.attacksPerSecond,10,'a Scout action can send three scoring projectiles');
 });
 
 test('Immortal hit logarithms include personal Damage and each deployed global ascension',()=>{

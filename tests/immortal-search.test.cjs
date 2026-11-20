@@ -243,3 +243,83 @@ test('melee strike priority maximizes aggregate Champion hit frequency and uses 
   assert.equal(placement.score,101*5);
   assert.equal(placement.championHitsPerSecond,3);
 });
+
+test('Ranged and Mage team and tile searches prefer attack frequency and use DPS to settle equal rates',()=>{
+  const hero=(id,attackSpeed,damage,milestones=[])=>({id,name:id,synergies:[],milestones,observedBaseStats:{attackSpeed,damage}});
+  const speedMilestone={type:'Attack Speed',value:100,global:false,level:1};
+  const window={HERO_DATA:{meta:{statAliases:{}},heroes:[
+    hero('hunter',1,1e12),hero('ballista',4,100,[speedMilestone]),hero('archer',4,200,[speedMilestone]),
+    hero('witch',1,1e12),hero('apprentice',4,100,[speedMilestone]),hero('battlemage',4,200,[speedMilestone])
+  ]}};
+  const ctx=vm.createContext({window});
+  for(const file of ['engine.js','immortal-data.js','immortal.js','immortal-search.js']) {
+    vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx);
+  }
+  const E=window.HeroEngine, s={grandMaster:false,synergyEvent:false,mapAttackSpeed:0,snowFort:true,
+    milestoneScale:1,damageTile:1e7,damageSkills:false,damageSupportSkills:false};
+  for(const [mode,slow,fast,betterFast] of [['ranged','hunter','ballista','archer'],['mage','witch','apprentice','battlemage']]) {
+    const cfg={mode,buffTeam:'warlock',priority:'attacks'},team=[slot(slow,1)],allowed=[slow,fast,betterFast];
+    const attacks=E.optimizeImmortalTeam(team,s,cfg,allowed);
+    const dps=E.optimizeImmortalTeam(team,s,{...cfg,priority:'damage'},allowed);
+    assert.equal(attacks.priority,'attacks');
+    assert.equal(attacks.team[0].id,betterFast,'equal-speed choice uses DPS');
+    assert.equal(attacks.team[0].tile,'milestone');
+    const raw=E.immortal.evaluate(attacks.team,s,cfg);
+    assert.equal(attacks.attacksPerSecond,raw.attacksPerSecond);
+    assert.equal(attacks.score,raw.score);
+    assert.ok(dps.score>attacks.score);
+    assert.ok(attacks.attacksPerSecond>dps.attacksPerSecond);
+    const fixed=[slot(betterFast,1,true,'damage')];
+    const tiles=E.optimizeImmortalPlacements(fixed,s,cfg);
+    assert.equal(tiles.team[0].tile,'milestone');
+    assert.equal(E.optimizeImmortalPlacements(fixed,s,{...cfg,priority:'damage'}).team[0].tile,'damage');
+  }
+});
+
+test('a Wizard can win the Ranged hit-rate search even when its slot costs attacks per second',()=>{
+  const window={HERO_DATA:{meta:{statAliases:{}},heroes:['hunter','wizard'].map(id=>({
+    id,name:id,synergies:[],milestones:[],observedBaseStats:{damage:100,attackSpeed:20}
+  }))}};
+  const ctx=vm.createContext({window});
+  for(const file of ['engine.js','immortal-data.js','immortal.js','immortal-search.js']) {
+    vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx);
+  }
+  const E=window.HeroEngine, team=[slot('hunter',1,true),slot('hunter',1)];
+  const s={grandMaster:false,snowFort:false,damageSupportSkills:true,heroAscensions:{hunter:{maxAttackSpeedLevel:5}}};
+  const cfg={mode:'ranged',buffTeam:'warlock'};
+  const attack=E.optimizeImmortalTeam(team,s,{...cfg,priority:'attacks'});
+  const hits=E.optimizeImmortalTeam(team,s,cfg);
+  assert.equal(attack.attacksPerSecond,30);
+  assert.equal(attack.totalHitRate,30);
+  assert.equal(hits.priority,'hits');
+  assert.equal(hits.team[1].id,'wizard');
+  assert.equal(hits.attacksPerSecond,15);
+  assert.equal(hits.totalHitRate,45);
+  assert.equal(E.immortal.evaluate(hits.team,s,cfg).totalHitRate,hits.totalHitRate);
+});
+
+test('the search prefers hits first, then the weakest attacker’s Ultra chance, then Ultra hits and DPS',()=>{
+  const window={HERO_DATA:{meta:{statAliases:{}},heroes:[
+    ['hunter',2,1,100],['archer',2,1e10,80],['ballista',3,100,0]
+  ].map(([id,attackSpeed,damage,ultra])=>({id,name:id,synergies:[],
+    milestones:[{level:1,type:'Ultra Crit Chance',value:ultra,global:false}],observedBaseStats:{attackSpeed,damage}}))}};
+  const ctx=vm.createContext({window});
+  for(const file of ['engine.js','immortal-data.js','immortal.js','immortal-search.js']) {
+    vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx);
+  }
+  const E=window.HeroEngine, team=[slot('archer',1)], s={grandMaster:false,snowFort:false,
+    synergyEvent:false,milestoneScale:1,damageSkills:false,damageSupportSkills:false};
+  const cfg={mode:'ranged',buffTeam:'warlock',baseCritChance:100,baseSuperChance:100,baseUltraChance:0};
+  const all=E.optimizeImmortalTeam(team,s,cfg);
+  assert.equal(all.team[0].id,'ballista','extra hit wins despite zero Ultra chance');
+  const tied=E.optimizeImmortalTeam(team,s,cfg,['hunter','archer']);
+  assert.equal(tied.team[0].id,'hunter','guaranteed Ultra beats larger damage at equal hit rates');
+  assert.equal(tied.lowestUltraProbability,1);
+  assert.equal(tied.ultraHitsPerSecond,2);
+  assert.equal(E.optimizeImmortalTeam(team,s,{...cfg,priority:'damage'},['hunter','archer']).team[0].id,'archer');
+  const a={totalHitRate:20,lowestUltraProbability:.75,ultraHitsPerSecond:17,score:100};
+  const compare=(b)=>E.immortal.compareResults(a,{...a,...b},'hits');
+  assert.ok(compare({lowestUltraProbability:.5,ultraHitsPerSecond:19})>0);
+  assert.ok(compare({ultraHitsPerSecond:18,score:1})<0);
+  assert.ok(compare({score:101})<0);
+});

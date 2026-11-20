@@ -1,13 +1,17 @@
 HERO TEAM LAB - QUICK START
-Updated November 19, 2026
+Updated November 20, 2026
 
 1. Extract this ZIP to a folder.
 2. Open hero-team-lab.html in your desktop web browser.
-3. Choose a focus, review the account settings, and set up Team A and Team B.
+3. Choose a focus in the top bar. On desktop, progression is on the left,
+   global support rankings are in the middle, and Team A/B is on the right.
 4. Use Suggest team B or Suggest tiles to compare alternatives.
 
 The calculator runs offline. No installation, account or server is needed.
 All required code, styling and hero data are inside the HTML file.
+
+The middle column ranks all candidates for the selected focus. Choose
+Team A or B and turn on the lineup filter to see only that team's heroes.
 
 INCLUDED MODES
 Energy, Energy + Power Mages, Gold, Experience, Damage, Damage - Buff swap,
@@ -36,8 +40,17 @@ power. Suggest tiles and the leveling plan also compare other placements.
 Changing the leveling target keeps the tile on its current occupant.
 
 For Immortal Boss Damage, choose Skill damage, Melee, Mage, or Ranged.
-Suggest all four B teams searches each boss with its own buff preset.
-Open Damage by hero to inspect scoring hits, Lightning Storm and boss DPS.
+Mage and Ranged searches default to the most scoring hits per second.
+Equal hit rates favor the team whose weakest attacker has the higher chance
+to Ultra Crit, followed by expected Ultra hits per second and boss DPS.
+Choose team attacks per second to compare each hero's firing rate.
+Suggest all four B teams uses each boss's saved priority and buff preset.
+Open Attacks and damage by hero to inspect speed, caps, hits and Ultra chance.
+Under My ascensions, Max Attack Speed raises a hero's 10/s cap to at most
+15/s. Under Boss and skill settings, enter its separate Attack Speed rank
+(+3% per rank) and any additional account speed to model reaching the cap.
+For Ultra, check your pre-team Crit, Super and Ultra values and each hero's
+active crit attribute ranks. All three rolls must pass for a hit to be Ultra.
 
 Required heroes depend on the focus:
 - Experience: at least one Archer, Ballista and Veteran.

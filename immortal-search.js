@@ -6,26 +6,41 @@
   const tileLimits = {normal:10, milestone:3, synergy:3, skill:3, damage:1};
   const tiles = Object.keys(tileLimits);
   const copy = team => team.map(slot => ({...slot}));
-  const improves = (candidate, best) => candidate.strikes !== best.strikes
-    ? candidate.strikes > best.strikes : candidate.score > best.score + Math.abs(best.score)*1e-12;
-  const bestSeedFirst = (a,b) => b.score.strikes-a.score.strikes || b.score.score-a.score.score;
+  function compareRates(a,b) {
+    const difference=a-b;
+    return Math.abs(difference)>Math.max(Math.abs(a),Math.abs(b))*1e-12 ? difference : 0;
+  }
+  const priorityFields={
+    attacks:['attacksPerSecond','lowestUltraProbability','ultraHitsPerSecond','score'],
+    hits:['totalHitRate','lowestUltraProbability','ultraHitsPerSecond','score'],
+    strikes:['championHitsPerSecond','score'],damage:['score']
+  };
+  function comparisonCriterion(a,b,priority) {
+    for (const field of priorityFields[priority]??priorityFields.damage) {
+      if (field==='lowestUltraProbability' && (a[field]===1)!==(b[field]===1)) return field;
+      if (field==='championHitsPerSecond' ? a[field]!==b[field] : compareRates(a[field],b[field])) return field;
+    }
+    return null;
+  }
+  function compareResults(a,b,priority) {
+    const field=comparisonCriterion(a,b,priority);
+    return field ? a[field]-b[field] : 0;
+  }
 
   function objective(team, settings, config) {
     const score = engine.immortal.makeScorer(settings, config, team);
-    const strikesFirst = config.mode==='melee' && config.priority==='strikes';
+    const priority=config.priority || 'damage';
     let evaluated = 0;
     return {
+      compare:(a,b)=>compareResults(a,b,priority),
       score(candidate) {
         evaluated++;
-        if (!strikesFirst) return {score:score(candidate),strikes:0};
-        const result=score.details(candidate);
-        return {score:result.score,strikes:result.championHitsPerSecond};
+        return score.details(candidate);
       },
       result(candidate, exact) {
         const result=score.details(candidate);
         evaluated++;
-        return {team:copy(candidate),score:result.score,championHitsPerSecond:result.championHitsPerSecond,
-          priority:strikesFirst?'strikes':'damage',evaluated,exact};
+        return {team:copy(candidate),...result,priority,evaluated,exact};
       }
     };
   }
@@ -58,7 +73,7 @@
           if (tile === old || counts[tile] >= tileLimits[tile]) continue;
           trial[i].tile = tile;
           const value = objective.score(trial);
-          if (improves(value, nextScore)) { nextScore = value; move = {i,tile}; }
+          if (objective.compare(value,nextScore)>0) { nextScore = value; move = {i,tile}; }
         }
         trial[i].tile = old;
         for (let j = i + 1; j < trial.length; j++) {
@@ -66,7 +81,7 @@
           if (tile === old) continue;
           trial[i].tile = tile; trial[j].tile = old;
           const value = objective.score(trial);
-          if (improves(value, nextScore)) { nextScore = value; move = {i,j,tile}; }
+          if (objective.compare(value,nextScore)>0) { nextScore = value; move = {i,j,tile}; }
           trial[i].tile = old; trial[j].tile = tile;
         }
       }
@@ -84,7 +99,7 @@
     let best = copy(team), high = objective.score(best);
     if (!settings.snowFort) return objective.result(best,true);
     function accept(candidate, value) {
-      if (improves(value,high)) { best = copy(candidate); high = value; }
+      if (objective.compare(value,high)>0) { best = copy(candidate); high = value; }
     }
     if (team.length <= 5) {
       searchAllTiles(team,objective,accept);
@@ -151,7 +166,7 @@
     }
     // Give each seed its requested copies before filling remaining unlocked
     // slots. Locked heroes outside the optional roster can satisfy a synergy.
-    function seedTeam(required) {
+    function seedTeam(required,fillOrder=allowed) {
       const candidate = copy(team), counts = {...fixedCounts};
       const free = [...open].sort((a,b)=>candidate[b].level-candidate[a].level || a-b);
       const needed = countsFor(required.map(id=>({id})));
@@ -168,7 +183,8 @@
       }
       for (const i of free) {
         const old = candidate[i].id;
-        const id = allowed.includes(old) && (counts[old] || 0)<3 ? old : allowed.find(id=>(counts[id] || 0)<3);
+        const keepSlot=fillOrder===allowed && allowed.includes(old) && (counts[old] || 0)<3;
+        const id = keepSlot ? old : fillOrder.find(id=>(counts[id] || 0)<3);
         candidate[i].id = id;
         counts[id] = (counts[id] || 0) + 1;
       }
@@ -177,7 +193,7 @@
     const start = seedTeam([]);
     let best = copy(start), high = search.score(start);
     function accept(candidate, value) {
-      if (improves(value,high)) { best = copy(candidate); high = value; }
+      if (search.compare(value,high)>0) { best = copy(candidate); high = value; }
     }
     // Small rosters can be solved jointly instead of alternating tile and
     // hero moves. The upper bound includes every placement on every lineup.
@@ -228,6 +244,7 @@
         } else addSeed([id,...effect.requires]);
       }
     }
+    const bestSeedFirst=(a,b)=>search.compare(b.score,a.score);
     seeds.sort(bestSeedFirst);
     // Start some searches far from the current roster. A group of global
     // supports can be stronger together even before a known synergy activates.
@@ -263,7 +280,7 @@
             if (id===old || counts[id]>=3) continue;
             trial[i].id = id;
             const value = search.score(trial);
-            if (improves(value,current)) { winner = id; current = value; }
+            if (search.compare(value,current)>0) { winner = id; current = value; }
           }
           trial[i].id = winner;
           counts[winner] = (counts[winner] || 0) + 1;
@@ -275,24 +292,46 @@
           if (a.id===b.id) continue;
           [a.id,b.id] = [b.id,a.id];
           const value = search.score(trial);
-          if (improves(value,current)) current=value;
+          if (search.compare(value,current)>0) current=value;
           else [a.id,b.id] = [b.id,a.id];
         }
         if (settings.snowFort) trial=improveTiles(trial,search);
         current = search.score(trial);
         accept(trial,current);
-        if (!improves(current,before)) break;
+        if (search.compare(current,before)<=0) break;
       }
     }
     const finalists=[...seeds.slice(0,4),...diverse.slice(0,3)].map(seed=>seed.team);
+    if (config.priority==='attacks' || config.priority==='hits') {
+      // A full group of high-cap dealers can need a speed support before
+      // any single substitution in the starting lineup looks worthwhile.
+      const capRanks=settings.heroAscensions;
+      const baseSpeed=id=>(heroById.get(id).observedBaseStats?.attackSpeed??1)*(1+0.03*(config.heroSpeedRanks?.[id]??0));
+      const dealers=allowed.filter(id=>engine.immortal.canDamage(id,config)).sort((a,b)=>
+        (capRanks[b]?.maxAttackSpeedLevel??0)-(capRanks[a]?.maxAttackSpeedLevel??0) || baseSpeed(b)-baseSpeed(a));
+      const fillOrder=[...dealers,...allowed.filter(id=>!dealers.includes(id))];
+      finalists.push(seedTeam([],fillOrder));
+      for (const id of ['wizard','necromancer']) if (allowed.includes(id)) {
+        const candidate=seedTeam([id],fillOrder);
+        if (candidate) finalists.push(candidate);
+      }
+    }
     if (allowed.includes('champion') && (config.mode==='skill' || config.mode==='melee')) {
       const copies=Math.min(3,(fixedCounts.champion||0)+open.length-missing.length);
       if (copies>0) finalists.push(seedTeam(Array(copies).fill('champion')));
     }
-    for (const candidate of finalists) climb(candidate);
+    const tried=new Set();
+    for (const candidate of finalists) {
+      const key=candidate.map(slot=>slot.id).join('|');
+      if (tried.has(key)) continue;
+      tried.add(key);
+      climb(candidate);
+    }
     const placement = bestPlacements(best,settings,search);
     return {...placement,exact:false};
   }
 
+  engine.immortal.compareResults=compareResults;
+  engine.immortal.comparisonCriterion=comparisonCriterion;
   Object.assign(engine,{optimizeImmortalTeam,optimizeImmortalPlacements});
 })(typeof window !== 'undefined' ? window : globalThis);

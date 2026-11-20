@@ -291,7 +291,8 @@ test('Immortal mode totals sum eligible damage and keep off-type global support 
       if (!eligible) assert.equal(hero.score,0);
     }
     const shown = Number(app.elements.get('immortal-totals').innerHTML.match(/Team B[^<]*<\/span><strong>([^<]+) <small>/)[1].replace(/,/g,''));
-    assert.ok(Math.abs(shown-report.score)<=0.0051,`${mode} total should match the sum of eligible slots`);
+    const primary=config.priority==='hits'?report.totalHitRate:config.priority==='attacks'?report.attacksPerSecond:report.score;
+    assert.ok(Math.abs(shown-primary)<=0.0051,`${mode} total should match the sum of eligible slots`);
     if (mode==='skill') {
       const withoutWitch = model.evaluate(team.filter(s=>s.id!=='witch'),state.settings,config);
       assert.ok(report.score>withoutWitch.score,'a mage support can increase Champion’s skill payout');
@@ -373,7 +374,7 @@ test('version 12 setups migrate to eight independent Immortal lineups on load an
   }
 });
 
-test('each boss mode remembers its external or deployed buffs and melee optimization priority', async () => {
+test('each boss mode remembers its buffs and search priority through export, reload and import', async () => {
   const app=load(); await app.focus('immortal');
   const config=()=>app.state().immortal.config;
   assert.equal(config().buffTeam,'deploy');
@@ -388,10 +389,61 @@ test('each boss mode remembers its external or deployed buffs and melee optimiza
   for (const mode of ['mage','ranged','skill']) {
     await app.click('immortal-modes',{immortalMode:mode});
     assert.equal(config().buffTeam,'warlock');
-    assert.equal(app.elements.get('immortal-priority-field').hidden,true);
+    assert.equal(app.elements.get('immortal-priority-field').hidden,mode==='skill');
+    assert.equal(config().priority,mode==='skill'?'damage':'hits');
+    if(mode==='mage') await app.change('immortal-priority',null,'attacks');
   }
-  const restored=load(await app.export()); await restored.click('immortal-modes',{immortalMode:'melee'});
+  const exported=await app.export(),restored=load(exported);
+  await restored.click('immortal-modes',{immortalMode:'melee'});
   assert.deepEqual([restored.state().immortal.config.buffTeam,restored.state().immortal.config.priority],['deploy','damage']);
+  const imported=load();
+  await imported.import(exported);
+  for (const mode of ['mage','ranged']) {
+    await restored.click('immortal-modes',{immortalMode:mode});
+    await imported.click('immortal-modes',{immortalMode:mode});
+    assert.equal(restored.state().immortal.config.priority,mode==='mage'?'attacks':'hits');
+    assert.equal(imported.state().immortal.config.priority,restored.state().immortal.config.priority);
+  }
+});
+
+test('legacy damage-only Mage saves gain hit priority, and speed calibration follows the hero across modes', async () => {
+  const legacy=immortalFixture();
+  delete legacy.immortal.priorities;
+  legacy.immortal.config={...legacy.immortal.config,mode:'mage',priority:'damage'};
+  const app=load(legacy), config=()=>app.state().immortal.config;
+  assert.equal(config().priority,'hits');
+  await app.change('immortal-speed-hero',null,'hunter');
+  await app.change('immortal-speed-rank',null,9);
+  await app.change('immortal-super-rank',null,4);
+  await app.change('immortal-ultra-rank',null,7);
+  await app.change('immortal-account-speed',null,25);
+  await app.click('immortal-modes',{immortalMode:'ranged'});
+  assert.equal(config().heroSpeedRanks.hunter,9);
+  assert.equal(config().heroCritRanks.hunter.super,4);
+  assert.equal(config().heroCritRanks.hunter.ultra,7);
+  assert.equal(config().accountAttackSpeedBonus,25);
+  const other=load();
+  await other.import(await app.export());
+  assert.equal(other.state().immortal.config.heroSpeedRanks.hunter,9);
+  assert.deepEqual(other.state().immortal.config.heroCritRanks,config().heroCritRanks);
+  assert.equal(other.state().immortal.config.accountAttackSpeedBonus,25);
+});
+
+test('Mage and Ranged keep custom crit inputs and import an undeployed Damage reference on request',async()=>{
+  const saved=immortalFixture();
+  saved.immortal.config={...saved.immortal.config,mode:'mage',baseCritChance:100,baseSuperChance:100,baseUltraChance:100};
+  saved.settings.chanceReferences.damage={mode:'preTeam',totals:[135,109,48],contributions:[0,0,0],extraOverflow:0,label:'My chances'};
+  const app=load(saved);
+  assert.equal(app.state().immortal.config.baseUltraChance,100);
+  assert.equal(app.elements.get('immortal-use-damage-chances').hidden,false);
+  await app.click('immortal-use-damage-chances');
+  const config=app.state().immortal.config;
+  assert.deepEqual([config.baseCritChance,config.baseSuperChance,config.baseUltraChance],[135,109,48]);
+  assert.match(app.elements.get('immortal-totals').innerHTML,/Ultra/i);
+  const empty=immortalFixture();
+  empty.immortal.config.mode='ranged';
+  const noReference=load(empty);
+  assert.equal(noReference.elements.get('immortal-use-damage-chances').hidden,true);
 });
 
 test('a locked Champion can be joined by only the required buff heroes with an empty optional roster', async () => {
@@ -419,7 +471,7 @@ test('Suggest all four searches each mode with its own locked slots and levels a
   const app=load(saved), before=app.state(), expected=clone(before);
   for (const mode of immortalModes) {
     const panel=expected.immortal.teams[mode], config={...expected.immortal.config,mode,
-      buffTeam:expected.immortal.buffTeams[mode],priority:mode==='melee'?'strikes':'damage'};
+      buffTeam:expected.immortal.buffTeams[mode],priority:mode==='melee'?'strikes':mode==='skill'?'damage':'hits'};
     const result=app.engine.optimizeImmortalTeam(panel.teams.b,{...expected.settings,requiredHeroes:[]},config,expected.allowed);
     assert.ok(result.score>0,mode);
     panel.teams.b=clone(result.team);
@@ -2121,246 +2173,309 @@ test('Power Mage focus shows global factors and routes team and tile suggestions
   assert.equal(table.hidden, true);
 });
 
-test('Power Mage support ranking persists separately and exposes its scored global milestones', async () => {
+test('one top-level focus drives the support results and comparison without modifying any lineup', async () => {
   const app = load();
-  await app.click('support-rankings', {supportSort: 'powerMageEnergy'});
-  assert.equal(app.state().supportRanking.sort, 'powerMageEnergy');
-  assert.match(app.elements.get('support-roster-count').textContent, /Energy \+ Power Mages/);
-  assert.match(app.elements.get('support-table').innerHTML, /aria-sort="descending">Energy \+ Power Mages/);
-  await app.click('support-rankings', {supportHero: 'captain'});
-  const detail = app.elements.get('support-hero-details').innerHTML;
-  assert.match(detail, /Power Mage Energy/);
-  assert.match(detail, /Global · Energy \+ Power Mages/);
-  assert.equal(load(await app.export()).state().supportRanking.sort, 'powerMageEnergy');
+  await app.focus('experience'); // Let the XP planner choose its initial attacker.
+  const original = app.state();
+  for (const focus of [...focuses, 'immortal']) {
+    await app.focus(focus);
+    const saved = app.state(), buttons = app.elements.get('focus-controls').innerHTML;
+    assert.equal(saved.focus, focus);
+    const active = [...buttons.matchAll(/<button\b[^>]*aria-pressed="true"[^>]*>/g)].map(match => match[0]);
+    assert.equal(active.length, 1);
+    assert.ok(active[0].includes(`data-focus="${focus}"`));
+    assert.doesNotMatch(app.elements.get('support-sort')?.innerHTML || '', /data-support-sort=/);
+    assert.deepEqual(saved.focusTeams, original.focusTeams);
+    assert.deepEqual(saved.immortal.teams, original.immortal.teams);
+  }
 });
 
 function supportRankingRows(app) {
-  const keys = [...app.elements.get('support-sort').innerHTML.matchAll(/data-support-sort="([^"]+)"/g)].map(match => match[1]);
-  return [...app.elements.get('support-table').innerHTML.matchAll(/<tr class="[^"]*">([^]*?)<\/tr>/g)].map(([, row]) => ({
-    id: row.match(/data-support-hero="([^"]+)"/)[1],
-    rank: Number(row.match(/class="numeric support-rank">([^<]+)/)[1].replaceAll(',', '')),
-    multipliers: Object.fromEntries([...row.matchAll(/<td class="numeric [^"]*" title="([^"]+)"/g)]
-      .map((match, index) => [keys[index], Number(match[1].replaceAll(',', ''))]))
-  }));
+  const table = app.elements.get('support-table').innerHTML;
+  return [...table.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)].flatMap(([, row]) => {
+    const hero = row.match(/data-support-hero="([^"]+)"/);
+    if (!hero) return [];
+    const rank = row.match(/class="numeric support-rank">([^<]+)/);
+    const score = row.match(/class="numeric support-sorted-value"[^>]*title="([^"]+)"/);
+    const numericRank = Number(rank?.[1].replaceAll(',', ''));
+    const numericScore = Number(score?.[1].replaceAll(',', ''));
+    return [{id: hero[1], rank: Number.isFinite(numericRank) ? numericRank : null,
+      score: Number.isFinite(numericScore) ? numericScore : null}];
+  });
 }
 
-function assertSupportRankingValues(app, keys = ['damage', 'damageWithSupport']) {
-  const state = app.state(), report = app.engine.rankMilestoneSupport(state.settings, state.supportRanking);
-  for (const row of supportRankingRows(app)) {
-    const expected = report.heroes.find(hero => hero.id === row.id);
-    assert.equal(row.rank, expected.ranks[state.supportRanking.sort], `${row.id} rank should use the selected score`);
-    for (const key of keys) assert.ok(
-      Math.abs(row.multipliers[key] / expected.multipliers[key] - 1) < 1e-6,
-      `${row.id} ${key} should display the current engine result`);
+function assertSupportRankingValues(app) {
+  const state = app.state(), panel = state.focusTeams[state.focus];
+  const key = app.elements.get('support-team').value;
+  const heroAscensions = {...state.settings.heroAscensions};
+  for (const [id, values] of Object.entries(panel.ascensionOverrides?.[key] || {}))
+    heroAscensions[id] = {...heroAscensions[id], ...values};
+  const damage = ['damage','damageBuffSwap'].includes(state.focus);
+  const metric = damage ? 'damageWithSupport' : state.focus;
+  const report = app.engine.rankMilestoneSupport({...state.settings, heroAscensions,
+    damageSupportMode: state.focus === 'damageBuffSwap' ? 'debuffs' : 'all'}, state.supportRanking);
+  const rows = supportRankingRows(app);
+  assert.ok(rows.length > 0);
+  const all = Array.from(report.heroes).sort((a,b) => b.multipliers[metric] - a.multipliers[metric] || a.name.localeCompare(b.name));
+  assert.deepEqual(rows.map(row => row.id), all.filter(hero => rows.some(row => row.id === hero.id)).map(hero => hero.id));
+  for (const row of rows) {
+    const hero = all.find(item => item.id === row.id);
+    assert.equal(row.rank, hero.ranks[metric]);
+    assert.ok(Math.abs(row.score / hero.multipliers[metric] - 1) < 1e-6, `${row.id} should display ${metric} for Team ${key}`);
   }
   return report;
 }
 
-test('Experience ranks Apprentice above Necromancer at the captured account XP totals', async () => {
-  const reference = {rankXp: 6.98e12, superChance: 359, ultraChance: 536};
+test('the focus filters all support candidates down to one score and exposes Power Mage milestone contributions', async () => {
   const app = load();
-  assert.deepEqual(app.state().supportRanking.xpReference, reference);
+  await app.focus('experience');
+  const teams = app.state().focusTeams;
+  for (const focus of focuses) {
+    await app.focus(focus);
+    const rows = supportRankingRows(app);
+    assert.equal(rows.length, 42);
+    assert.equal(new Set(rows.map(row => row.id)).size, 42);
+    const header = app.elements.get('support-table').innerHTML.match(/<thead>([\s\S]*?)<\/thead>/)[1];
+    assert.equal((header.match(/<th\b/g) || []).length, 3, 'only rank, hero and the active score belong in the table');
+    assertSupportRankingValues(app);
+  }
+  await app.focus('powerMageEnergy');
+  await app.click('support-rankings', {supportHero: 'captain'});
+  assert.match(app.elements.get('support-hero-details').innerHTML, /Power Mage Energy/);
+  assert.deepEqual(app.state().focusTeams, teams);
+});
+
+test('the lineup filter includes each deployed hero once, keeps full-pool ranks and follows Team A or B', async () => {
+  const saved = fixture(), panel = saved.focusTeams.energy;
+  panel.teams = {a:[slot('hunter'),slot('hunter'),slot('druid')], b:[slot('hunter'),slot('wizard')]};
+  panel.ascensionOverrides = {b:{hunter:{globalEnergyIncomeLevel:5}}};
+  saved.supportRanking.sort = 'damage';
+  const app = load(saved);
+  const pool = supportRankingRows(app);
+  const lookup = (rows,id) => rows.find(row => row.id===id);
+  assert.equal(pool.length,42);
+  assert.equal(app.elements.get('support-team').value,'a');
+  await app.check('support-lineup-only',true);
+  const a = supportRankingRows(app);
+  assert.deepEqual(a.map(r=>r.id).sort(),['druid','hunter']);
+  assert.deepEqual(lookup(a,'hunter'),lookup(pool,'hunter'));
+  await app.change('support-team',null,'b');
+  const b = supportRankingRows(app);
+  assert.deepEqual(b.map(r=>r.id).sort(),['hunter','wizard']);
+  assert.ok(lookup(b,'hunter').score>lookup(a,'hunter').score);
+  assertSupportRankingValues(app);
+  await app.check('support-global-ascensions', false);
+  assert.equal(lookup(supportRankingRows(app), 'hunter').score, lookup(a, 'hunter').score);
+  await app.check('support-global-ascensions', true);
+  await app.click('support-rankings',{supportHero:'hunter'});
+  app.elements.get('support-search').value='Wiz';
+  await app.elements.get('support-search').dispatch('input');
+  assert.deepEqual(supportRankingRows(app).map(r=>r.id),['wizard']);
+  app.elements.get('support-search').value='absent';
+  await app.elements.get('support-search').dispatch('input');
+  assert.equal(supportRankingRows(app).length,0);
+  assert.match(app.elements.get('support-table').innerHTML,/no|empty/i);
+  assert.deepEqual(app.state().focusTeams.energy.teams,panel.teams);
+  assert.deepEqual(app.state().focusTeams.energy.ascensionOverrides,panel.ascensionOverrides);
+  app.elements.get('support-search').value='';
+  await app.elements.get('support-search').dispatch('input');
+  const exported=await app.export(), imported=load(); await imported.import(exported);
+  for (const restored of [load(exported),imported]) {
+    assert.equal(restored.elements.get('support-team').value,'b');
+    assert.equal(restored.elements.get('support-lineup-only').checked,true);
+    assert.deepEqual(supportRankingRows(restored),b);
+  }
+});
+
+test('Experience alone shows its saved ranking calibration and the selected hero’s XP factors', async () => {
+  const app = load(), reference = {rankXp: 6.98e12, superChance: 359, ultraChance: 536};
   const legacy = app.state();
   delete legacy.supportRanking.xpReference;
-  assert.deepEqual(load(legacy).state().supportRanking.xpReference, reference, 'Existing saves also get the captured totals');
+  assert.deepEqual(load(legacy).state().supportRanking.xpReference, reference);
+
+  await app.focus('experience');
+  await app.click('support-rankings', {supportHero: 'apprentice'});
+  assert.equal(app.elements.get('support-xp-settings').hidden, false);
+  assert.equal(app.elements.get('support-damage-settings').hidden, true);
   assert.equal(app.elements.get('support-rank-xp').value, '6.98T');
   assert.equal(Number(app.elements.get('support-super-xp-chance').value), 359);
   assert.equal(Number(app.elements.get('support-ultra-xp-chance').value), 536);
-  await app.click('support-rankings', {supportSort: 'experience', supportHero: 'apprentice'});
-  const report = assertSupportRankingValues(app, ['experience']);
-  const rows = supportRankingRows(app);
-  const apprentice = rows.find(hero => hero.id === 'apprentice'), necromancer = rows.find(hero => hero.id === 'necromancer');
-  assert.ok(rows.indexOf(apprentice) < rows.indexOf(necromancer));
-  assert.ok(apprentice.rank < necromancer.rank && apprentice.multipliers.experience > necromancer.multipliers.experience);
-  assert.equal(app.elements.get('support-xp-settings').hidden, false);
-  assert.match(app.elements.get('support-xp-context').textContent, /695/);
-  const factors = report.heroes.find(hero => hero.id === 'apprentice').xpFactors;
-  const detail = app.elements.get('support-hero-details').innerHTML;
+
+  const report = assertSupportRankingValues(app), rows = supportRankingRows(app);
+  assert.ok(rows.find(r => r.id === 'apprentice').rank < rows.find(r => r.id === 'necromancer').rank);
+  const factors = report.heroes.find(h => h.id === 'apprentice').xpFactors;
+  const details = app.elements.get('support-hero-details').innerHTML;
   for (const [key, label] of Object.entries({rankXp: 'Rank XP', superAmount: 'Super XP Amount', ultraAmount: 'Ultra XP Amount', spillover: 'Chance spillover'})) {
-    const cell = detail.match(new RegExp(`<tr><td>${label}</td><td>[^<]*</td><td class="numeric">×([\\d,.]+)</td></tr>`));
-    assert.ok(cell, `Selected hero should explain ${label}`);
-    assert.ok(Math.abs(Number(cell[1].replaceAll(',', '')) / factors[key] - 1) < 1e-6);
+    const shown = details.match(new RegExp(`<tr><td>${label}</td><td>[^<]*</td><td class="numeric">×([\\d,.]+)</td></tr>`));
+    assert.ok(shown && Math.abs(Number(shown[1].replaceAll(',', '')) / factors[key] - 1) < 1e-6, label);
   }
-  await app.click('support-rankings', {supportSort: 'gold'});
+  await app.focus('gold');
   assert.equal(app.elements.get('support-xp-settings').hidden, true);
 });
 
-test('XP reference edits refresh support scores and round-trip without changing another ranking or team', async () => {
-  const app = load(), initial = app.state();
-  await app.click('support-rankings', {supportSort: 'experience', supportHero: 'necromancer'});
-  const otherColumns = () => Object.fromEntries(supportRankingRows(app).map(({id, multipliers: {experience, ...other}}) => [id, other]));
-  const before = otherColumns();
-  const necroScore = () => supportRankingRows(app).find(row => row.id === 'necromancer').multipliers.experience;
-  const initialNecroScore = necroScore();
+test('editing the XP reference updates ranking scores and round-trips without altering team settings', async () => {
+  const app = load();
+  await app.focus('experience');
+  const initial = app.state();
+  const necro = () => supportRankingRows(app).find(r => r.id === 'necromancer').score;
+  const before = necro();
   await app.change('support-rank-xp', null, '1.25e2');
-  assert.equal(app.state().supportRanking.xpReference.rankXp, 125);
-  assertSupportRankingValues(app, ['experience']);
-  assert.ok(necroScore() > initialNecroScore, 'A flat Rank XP milestone contributes more at a smaller account total');
+  assert.ok(necro() > before);
   await app.change('support-rank-xp', null, '2.5T');
   await app.change('support-super-xp-chance', null, 100);
-  assertSupportRankingValues(app, ['experience']);
   await app.change('support-ultra-xp-chance', null, 200);
-  assertSupportRankingValues(app, ['experience']);
-  const editedReference = {rankXp: 2.5e12, superChance: 100, ultraChance: 200};
-  assert.deepEqual(app.state().supportRanking.xpReference, editedReference);
-  assert.deepEqual(otherColumns(), before);
-  assert.deepEqual(app.state().focusTeams, initial.focusTeams);
+  assertSupportRankingValues(app);
+  assert.deepEqual(app.state().supportRanking.xpReference, {rankXp: 2.5e12, superChance: 100, ultraChance: 200});
+  assert.deepEqual(app.state().supportRanking.damageReference, initial.supportRanking.damageReference);
   assert.deepEqual(app.state().settings, initial.settings);
-  const exported = await app.export(), imported = load(); await imported.import(exported);
+  assert.deepEqual(app.state().focusTeams, initial.focusTeams);
+
+  const exported = await app.export(), imported = load();
+  await imported.import(exported);
   for (const restored of [load(exported), imported]) {
-    assert.deepEqual(restored.state().supportRanking, app.state().supportRanking);
-    assert.deepEqual(supportRankingRows(restored), supportRankingRows(app));
     assert.equal(restored.elements.get('support-rank-xp').value, '2.5T');
-    assert.equal(Number(restored.elements.get('support-super-xp-chance').value), 100);
-    assert.equal(Number(restored.elements.get('support-ultra-xp-chance').value), 200);
-  }
-});
-
-test('Damage plus support skills has its own ranking column, order, leader and selected skill breakdown', async () => {
-  const app = load(), teams = clone(app.state().focusTeams);
-  await app.click('support-rankings', {supportSort: 'damageWithSupport'});
-  assert.equal(app.state().supportRanking.sort, 'damageWithSupport');
-  const table = app.elements.get('support-table').innerHTML;
-  assert.match(table, /aria-sort="none">Damage<\/th>/);
-  assert.match(table, /aria-sort="descending">Damage \+ support skills<\/th>/);
-  const report = assertSupportRankingValues(app), ordered = Array.from(report.heroes)
-    .sort((a, b) => b.multipliers.damageWithSupport - a.multipliers.damageWithSupport || a.name.localeCompare(b.name));
-  assert.deepEqual(supportRankingRows(app).map(hero => hero.id), ordered.map(hero => hero.id));
-  const leader = app.elements.get('support-leaders').innerHTML.match(/<button[^>]*data-support-leader="damageWithSupport"[^>]*>/)?.[0];
-  assert.ok(leader?.includes(`data-support-hero="${ordered[0].id}"`), 'Combined leader should use the combined ranking');
-  await app.click('support-rankings', {supportLeader: 'damageWithSupport', supportHero: ordered[0].id});
-  assert.equal(app.state().supportRanking.selectedHero, ordered[0].id);
-  await app.click('support-rankings', {supportHero: 'druid'});
-  const detail = app.elements.get('support-hero-details').innerHTML;
-  for (const value of ['Druid', 'Damage Boost', '7,180', '1,648']) assert.ok(detail.includes(value), `Selected Druid should show ${value}`);
-  app.elements.get('support-search').value = 'druid';
-  await app.elements.get('support-search').dispatch('input');
-  assert.deepEqual(supportRankingRows(app).map(hero => hero.id), ['druid']);
-  assertSupportRankingValues(app);
-  assert.deepEqual(app.state().focusTeams, teams, 'Inspecting support rankings must not change a lineup');
-});
-
-test('Both Damage ranking sorts use the account crit reference and show the selected hero’s spillover', async () => {
-  const app = load(), reference = {critChance: 241, superChance: 258, ultraChance: 120};
-  const legacy = app.state();
-  assert.deepEqual(legacy.supportRanking.damageReference, reference);
-  delete legacy.supportRanking.damageReference;
-  assert.deepEqual(load(legacy).state().supportRanking.damageReference, reference);
-  assert.equal(Number(app.elements.get('support-crit-chance').value), reference.critChance);
-  assert.equal(Number(app.elements.get('support-super-crit-chance').value), reference.superChance);
-  assert.equal(Number(app.elements.get('support-ultra-crit-chance').value), reference.ultraChance);
-  for (const sort of ['damage', 'damageWithSupport']) {
-    await app.click('support-rankings', {supportSort: sort, supportHero: 'battlemage'});
-    const report = assertSupportRankingValues(app);
-    const ordered = Array.from(report.heroes).sort((a, b) => b.multipliers[sort] - a.multipliers[sort] || a.name.localeCompare(b.name));
-    assert.deepEqual(supportRankingRows(app).map(row => row.id), ordered.map(hero => hero.id));
-    assert.equal(app.elements.get('support-damage-settings').hidden, false);
-    assert.match(app.elements.get('support-damage-context').textContent, /319 .*×16\.95/);
-    const detail = app.elements.get('support-hero-details').innerHTML;
-    const hero = report.heroes.find(candidate => candidate.id === 'battlemage');
-    const withSkill = sort === 'damageWithSupport';
-    const gain = withSkill ? hero.damageWithSupportSpilloverGain : hero.damageSpilloverGain;
-    const bonuses = withSkill ? hero.damageWithSupportBonuses : hero.bonuses;
-    const shownGain = detail.match(/Critical chance contribution · ×([\d,.]+) Damage/);
-    assert.ok(shownGain && Math.abs(Number(shownGain[1].replaceAll(',', '')) / gain - 1) < 1e-6, `${sort} spillover factor`);
-    for (const [type, chance] of [['Crit Chance', reference.critChance], ['Super Crit Chance', reference.superChance], ['Ultra Crit Chance', reference.ultraChance]]) {
-      const cell = detail.match(new RegExp(`<tr><td>${type}</td><td class="numeric">${chance}%</td><td class="numeric">\\+([\\d,.]+) pp</td></tr>`));
-      assert.ok(cell, `${sort} should show ${type} at ${chance}%`);
-      assert.ok(Math.abs(Number(cell[1].replaceAll(',', '')) - (bonuses[type] || 0)) < 0.01, `${sort} added ${type}`);
-    }
-  }
-  await app.click('support-rankings', {supportSort: 'experience'});
-  assert.equal(app.elements.get('support-damage-settings').hidden, true);
-});
-
-test('Damage crit edits refresh both ranking columns, survive import and preserve independent XP and team scores', async () => {
-  const saved = fixture(); saved.focus = 'damage';
-  const app = load(saved), teamScores = () => app.evaluationCalls.slice(-2).map(call => clone(call.result.metrics));
-  const beforeScores = teamScores(), initial = app.state();
-  await app.click('support-rankings', {supportSort: 'damageWithSupport', supportHero: 'battlemage'});
-  const otherColumns = () => Object.fromEntries(supportRankingRows(app).map(({id, multipliers: {damage, damageWithSupport, ...other}}) => [id, other]));
-  const before = otherColumns();
-  const selected = () => supportRankingRows(app).find(row => row.id === 'battlemage').multipliers;
-  for (const [id, value] of [['support-crit-chance', 400], ['support-super-crit-chance', 500], ['support-ultra-crit-chance', 600]]) {
-    const previous = selected();
-    await app.change(id, null, value);
-    assertSupportRankingValues(app);
-    const current = selected();
-    for (const key of ['damage', 'damageWithSupport']) assert.notEqual(current[key], previous[key], `${key} should refresh when ${id} changes`);
-  }
-  const edited = app.state();
-  assert.match(app.elements.get('support-damage-context').textContent, /1,200 .*×61/);
-  assert.match(app.elements.get('support-hero-details').innerHTML, /Ultra Crit Chance<\/td><td class="numeric">600%<\/td>/);
-  assert.deepEqual(edited.supportRanking.damageReference, {critChance: 400, superChance: 500, ultraChance: 600});
-  assert.deepEqual(edited.supportRanking.xpReference, initial.supportRanking.xpReference);
-  assert.deepEqual(otherColumns(), before);
-  assert.deepEqual(edited.focusTeams, initial.focusTeams);
-  assert.deepEqual(edited.settings, initial.settings);
-  await app.focus('energy'); await app.focus('damage');
-  assert.deepEqual(teamScores(), beforeScores);
-  const exported = await app.export(), imported = load(); await imported.import(exported);
-  for (const restored of [load(exported), imported]) {
-    assert.deepEqual(restored.state().supportRanking, edited.supportRanking);
     assert.deepEqual(supportRankingRows(restored), supportRankingRows(app));
-    assert.equal(Number(restored.elements.get('support-crit-chance').value), 400);
-    assert.equal(Number(restored.elements.get('support-super-crit-chance').value), 500);
-    assert.equal(Number(restored.elements.get('support-ultra-crit-chance').value), 600);
   }
 });
 
-test('Combined support rankings refresh after toggle, scenario and profile edits while original Damage stays unchanged', async () => {
-  const app = load(fixture()), teams = clone(app.state().focusTeams);
-  await app.click('support-rankings', {supportSort: 'damageWithSupport', supportHero: 'druid'});
-  const druid = () => supportRankingRows(app).find(hero => hero.id === 'druid').multipliers;
-  const before = druid();
-  assert.ok(Math.abs(before.damageWithSupport / before.damage - 72.8 * 17.48) < 0.01);
+test('the two Damage focuses honor their support skill rules and reflect profile, tile and scenario edits', async () => {
+  const app = load(fixture()), teams = app.state().focusTeams;
+  await app.focus('damage');
+  await app.click('support-rankings', {supportHero: 'druid'});
+  const druid = () => supportRankingRows(app).find(r => r.id === 'druid').score;
+  const baseline = druid();
+  await app.focus('damageBuffSwap');
+  const swapped = druid();
+  assert.ok(swapped < baseline);
+  await app.focus('damage');
   await app.check('damage-support-skills', false);
-  assertSupportRankingValues(app);
-  assert.equal(druid().damageWithSupport, druid().damage);
+  assert.equal(druid(), swapped);
   await app.check('damage-support-skills', true);
-  assertSupportRankingValues(app);
-  assert.deepEqual(druid(), before);
+  assert.equal(druid(), baseline);
+
   await app.change('damage-support-profile-hero', null, 'druid');
   await app.change('damage-support-profile-fields', {damageSupportField: 'damageSupportDruidDamage'}, 9000);
   await app.change('damage-support-profile-fields', {damageSupportField: 'damageSupportDruidDamagePerSecond'}, 100);
   await app.change('damage-support-seconds', null, 7.5);
   assertSupportRankingValues(app);
-  const after = druid();
-  assert.equal(after.damage, before.damage);
-  assert.notEqual(after.damageWithSupport, before.damageWithSupport);
-  assert.ok(Math.abs(after.damageWithSupport / after.damage - 91 * 8.5) < 0.01);
+  const edited = druid();
+  assert.ok(Math.abs(edited / swapped - 91 * 8.5) < 0.01);
   const detail = app.elements.get('support-hero-details').innerHTML;
-  assert.ok(detail.includes('9,000') && detail.includes('750'), 'Selected skill breakdown should refresh with its score');
+  assert.ok(detail.includes('9,000') && detail.includes('750'));
+  await app.change('support-tile', null, 'skill');
+  assert.ok(druid() > edited);
+  assert.equal(app.state().settings.snowFort, false);
+  assertSupportRankingValues(app);
+
+  await app.focus('damageBuffSwap');
+  assert.equal(druid(), swapped);
+  await app.focus('damage');
+  const exported = await app.export(), imported = load();
+  await imported.import(exported);
+  for (const restored of [load(exported), imported]) {
+    assert.equal(restored.elements.get('support-tile').value, 'skill');
+    assert.deepEqual(supportRankingRows(restored), supportRankingRows(app));
+  }
   assert.deepEqual(app.state().focusTeams, teams);
 });
 
-test('Combined ranking sort and explicit skill tile survive reload export and import independently of team Snow Fort', async () => {
-  const app = load(fixture()), teams = clone(app.state().focusTeams);
-  await app.click('support-rankings', {supportSort: 'damageWithSupport', supportHero: 'druid'});
-  const normal = supportRankingRows(app).find(hero => hero.id === 'druid').multipliers;
-  await app.change('support-tile', null, 'skill');
-  assert.equal(app.state().supportRanking.tile, 'skill');
-  assert.equal(app.state().settings.snowFort, false);
-  const report = assertSupportRankingValues(app), skill = supportRankingRows(app).find(hero => hero.id === 'druid').multipliers;
-  assert.equal(report.damageSupportContext.tileBoost, 1.2);
-  assert.equal(report.damageSupportContext.masteryTileBoost, 1.2);
-  assert.equal(skill.damage, normal.damage);
-  assert.ok(skill.damageWithSupport > normal.damageWithSupport);
-  const exported = await app.export(), imported = load(); await imported.import(exported);
-  for (const restored of [load(exported), imported]) {
-    assert.deepEqual(restored.state().supportRanking, app.state().supportRanking);
-    assert.equal(restored.state().supportRanking.sort, 'damageWithSupport');
-    assert.equal(restored.elements.get('support-tile').value, 'skill');
-    assert.equal(restored.state().settings.snowFort, false);
-    assertSupportRankingValues(restored);
-    assert.deepEqual(restored.state().focusTeams, teams);
-  }
-  for (const tile of ['milestone', 'normal']) {
-    await app.change('support-tile', null, tile);
-    assert.equal(app.state().supportRanking.tile, tile);
+test('the Damage reference recalculates the selected damage ranking independently of team and XP inputs', async () => {
+  const app = load(fixture());
+  await app.focus('damage');
+  const initial = app.state(), reference = {critChance: 241, superChance: 258, ultraChance: 120};
+  const legacy = app.state();
+  delete legacy.supportRanking.damageReference;
+  assert.deepEqual(load(legacy).state().supportRanking.damageReference, reference);
+  assert.equal(app.elements.get('support-damage-settings').hidden, false);
+  await app.click('support-rankings', {supportHero: 'battlemage'});
+  const score = () => supportRankingRows(app).find(r => r.id === 'battlemage').score;
+  for (const [id, value] of [['support-crit-chance', 400], ['support-super-crit-chance', 500], ['support-ultra-crit-chance', 600]]) {
+    const before = score();
+    await app.change(id, null, value);
+    assert.notEqual(score(), before);
     assertSupportRankingValues(app);
   }
-  assert.deepEqual(app.state().focusTeams, teams);
+  assert.match(app.elements.get('support-damage-context').textContent, /1,200 .*×61/);
+  assert.match(app.elements.get('support-hero-details').innerHTML, /Ultra Crit Chance<\/td><td class="numeric">600%<\/td>/);
+  assert.deepEqual(app.state().supportRanking.damageReference, {critChance: 400, superChance: 500, ultraChance: 600});
+  assert.deepEqual(app.state().supportRanking.xpReference, initial.supportRanking.xpReference);
+  assert.deepEqual(app.state().focusTeams, initial.focusTeams);
+  assert.deepEqual(app.state().settings, initial.settings);
+  const exported = await app.export(), imported = load();
+  await imported.import(exported);
+  for (const restored of [load(exported), imported]) assert.deepEqual(supportRankingRows(restored), supportRankingRows(app));
+  await app.focus('experience');
+  assert.equal(app.elements.get('support-damage-settings').hidden, true);
+});
+
+test('Immortal rankings preview the chosen slot, respect the boss priority and leave both lineups intact', async () => {
+  const saved = immortalFixture(), panel = saved.immortal.teams.ranged;
+  panel.teams.a = [slot('archer'), slot('hunter'), slot('wizard')];
+  panel.teams.b = [slot('hunter', 985), slot('deadeye', 100), slot('wizard', 8000)];
+  panel.ascensionOverrides = {b: {deadeye: {maxAttackSpeedLevel: 5}}};
+  const app = load(saved);
+  await app.click('immortal-modes', {immortalMode: 'ranged'});
+  await app.change('support-team', null, 'b');
+  await app.change('support-slot', null, 1);
+  const original = clone(app.state().immortal.teams);
+  assert.equal(app.elements.get('support-slot-field').hidden, false);
+  for (const [priority, metric] of [['hits', 'totalHitRate'], ['damage', 'score']]) {
+    await app.change('immortal-priority', null, priority);
+    const state = app.state();
+    const options = {...state.settings, heroAscensions: {...state.settings.heroAscensions, deadeye: {maxAttackSpeedLevel: 5}}};
+    const config = state.immortal.config, source = state.immortal.teams.ranged.teams.b;
+    const rows = supportRankingRows(app);
+    assert.equal(rows.length, 42);
+    let previous;
+    for (const row of rows) {
+      const candidate = source.map((slot, index) => index === 1 ? {...slot, id: row.id} : slot);
+      const report = app.engine.immortal.evaluate(candidate, options, config);
+      assert.ok(Math.abs(row.score - report[metric]) <= 1e-6 * Math.max(1,report[metric]), row.id + ' ' + priority);
+      if (previous) assert.ok(app.engine.immortal.compareResults(previous,report,priority) >= 0, 'tiebreak order');
+      previous = report;
+    }
+  }
+  await app.check('support-lineup-only', true);
+  assert.deepEqual(supportRankingRows(app).map(row => row.id).sort(), ['deadeye','hunter','wizard']);
+  assert.deepEqual(app.state().immortal.teams, original);
+  await app.focus('energy');
+  assert.equal(app.elements.get('support-slot-field').hidden, true);
+});
+
+test('Immortal previews keep a fourth copy unranked and handle an empty side', async () => {
+  const saved = immortalFixture(), panel = saved.immortal.teams.ranged;
+  panel.teams.a = [slot('archer'), slot('hunter'), slot('hunter'), slot('hunter')];
+  panel.teams.b = [];
+  const app = load(saved);
+  await app.click('immortal-modes', {immortalMode: 'ranged'});
+  const hunter = () => supportRankingRows(app).find(row => row.id === 'hunter');
+  assert.equal(hunter().rank, null, 'Hunter would be the fourth copy in slot one');
+  await app.click('support-rankings', {supportHero: 'hunter'});
+  assert.match(app.elements.get('support-hero-details').innerHTML, /three copies/i);
+  await app.change('support-slot', null, 1);
+  assert.ok(hunter().rank > 0, 'replacing an existing Hunter is legal');
+  await app.change('support-team', null, 'b');
+  assert.equal(app.elements.get('support-slot').disabled, true);
+  assert.equal(supportRankingRows(app).length, 0);
+  await app.check('support-lineup-only', true);
+  assert.equal(supportRankingRows(app).length, 0);
+  assert.equal(app.elements.get('support-hero-details').innerHTML, '');
+});
+
+test('a deployed-buff Immortal preview ranks only replacements that leave all four supports on the field', async () => {
+  const saved = immortalFixture();
+  saved.immortal.buffTeams.mage = 'deploy';
+  saved.immortal.teams.mage.teams.a = ['hunter','warlock','titan','apprentice'].map(id => slot(id));
+  const app = load(saved);
+  await app.click('immortal-modes', {immortalMode: 'mage'});
+  const ranked = () => supportRankingRows(app).filter(row => row.rank !== null);
+  assert.deepEqual(ranked().map(row => row.id), ['wizard']);
+  await app.change('support-slot', null, 1);
+  assert.equal(ranked().length, 0, 'this slot cannot supply both Warlock and Wizard');
+  assert.equal(app.elements.get('support-warnings').hidden, false);
+  await app.change('immortal-buff-preset', null, 'warlock');
+  assert.equal(ranked().length, 42, 'switching to external buffs reopens the whole roster');
+  assert.equal(app.elements.get('support-warnings').hidden, true);
 });
 
 test('Power Mage suggestions require Captain and flag saved teams without replacing their heroes', async () => {
@@ -3128,7 +3243,7 @@ test('zero-kill pushing default reaches comparisons, rankings and both Damage su
     assert.ok(Math.abs(skills.find(entry => entry.id === 'druid').factor - 72.8 * 17.48) < 1e-8,
       'Twenty seconds of Druid buildup does not require kills');
   }
-  await app.click('support-rankings', {supportSort: 'damageWithSupport', supportHero: 'spelldancer'});
+  await app.click('support-rankings', {supportHero: 'spelldancer'});
   const report = assertSupportRankingValues(app);
   assert.equal(report.damageSupportContext.stacks, 0);
   assert.equal(report.damageSupportContext.seconds, 20);
