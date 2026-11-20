@@ -342,7 +342,7 @@ if __name__ == '__main__':
     apply_verified(data)
     output.write_text('// Spreadsheet data with verified screenshot corrections. Rebuild via source/extract_data.py.\n'
                       + 'window.HERO_DATA = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':'))
-                      + ';\n', encoding='utf-8')
+                      + ';\n', encoding='utf-8', newline='\n')
     summary = data['meta']['synergyReview']
     print(f'Applied {summary["typeCorrectedRecords"]} type, {summary["scopeCorrectedRecords"]} scope and {summary["signCorrectedRecords"]} sign corrections; {summary["inferredBaseRecords"]} integer bases inferred. '
           f'{summary["observedEffects"]} observed effects / {summary["uniqueEffects"]} unique effects.')

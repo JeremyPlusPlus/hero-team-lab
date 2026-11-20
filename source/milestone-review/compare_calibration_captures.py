@@ -94,9 +94,9 @@ def build_capture_review():
         })
     result = {'captureCount': len(captures), 'captures': captures,
               'note': 'Separate calibration captures do not change zero-deployment baseline context or hero coverage. Compounded stacking is inferred; tile state and interaction remain unverified.'}
-    (ROOT / 'calibration-captures-review.json').write_text(json.dumps(result, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+    (ROOT / 'calibration-captures-review.json').write_text(json.dumps(result, indent=2, ensure_ascii=False) + '\n', encoding='utf-8', newline='\n')
     with (ROOT / 'calibration-captures-comparison.csv').open('w', encoding='utf-8-sig', newline='') as out:
-        writer = csv.writer(out)
+        writer = csv.writer(out, lineterminator='\n')
         writer.writerow(['Capture', 'Hero', 'Level', 'Type', 'Scope', 'Unit', 'Active inferred base', 'Observed signed display',
                          'Compounded raw', 'Compounded display', 'Compounded matches', 'Additive display', 'Additive matches',
                          'Compounded plus synergy-only bonuses display', 'Extra synergy bonuses matches', 'Fields match'])

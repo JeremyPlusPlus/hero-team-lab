@@ -39,7 +39,7 @@ For a scoring change, check the detailed Team A/B result and the relevant sugges
 
 `data.js` is generated. The extractor combines the original hero values in `source/hero-records.json` with corrections recorded under `source/milestone-review/` and `source/synergy-review/`. For a correction based on gameplay, update the relevant review records so the next rebuild preserves the evidence and the change.
 
-Use Python 3 to rebuild the data, check the capture calibration and source rebuild, then regenerate the app.
+Use Python 3.10 or newer to rebuild the data, check the capture calibration and source rebuild, then regenerate the app.
 
 ```sh
 python -X utf8 source/extract_data.py

@@ -59,7 +59,7 @@ data['meta']['milestoneReview'] = {
 }
 output.write_text('// Spreadsheet synergies with screenshot-derived milestone bases. Rebuild via source/extract_data.py.\n'
                   + 'window.HERO_DATA = ' + json.dumps(data, ensure_ascii=False, separators=(',', ':'))
-                  + ';\n', encoding='utf-8')
+                  + ';\n', encoding='utf-8', newline='\n')
 print(f'Activated {len(activated)} heroes / {sum(len(heroes[i]["milestones"]) for i in activated)} milestones at account scale {scale}.')
 if missing:
     print(f'Not activated: {len(missing)} heroes without source synergy data.')

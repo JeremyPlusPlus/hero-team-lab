@@ -31,7 +31,7 @@ if not reference.exists():
     reference.write_text(json.dumps({
         'meta': original['meta'],
         'heroes': [{k: h[k] for k in ('id', 'name', 'milestones')} for h in original['heroes']],
-    }, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+    }, indent=2, ensure_ascii=False) + '\n', encoding='utf-8', newline='\n')
 sheet = json.loads(reference.read_text(encoding='utf-8'))
 sheet_heroes = {h['id']: h for h in sheet['heroes']}
 aliases = {**sheet['meta'].get('statAliases', {}), 'Battlepass Exp': 'Battle Pass Exp'}
@@ -134,10 +134,10 @@ review = {
         'note': 'Deployed-team captures require the inferred milestone bases. Run this builder again after activation to restore their full audit.',
     } if args.defer_capture_review else build_capture_review()),
 }
-(ROOT / 'review.json').write_text(json.dumps(review, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+(ROOT / 'review.json').write_text(json.dumps(review, indent=2, ensure_ascii=False) + '\n', encoding='utf-8', newline='\n')
 
 with (ROOT / 'milestones.csv').open('w', newline='', encoding='utf-8-sig') as out:
-    writer = csv.writer(out)
+    writer = csv.writer(out, lineterminator='\n')
     writer.writerow(['Hero', 'Level', 'Displayed signed value', 'Unit', 'Stat', 'Scope',
                      'Sheet base value', 'Sheet stat', 'Sheet scope', 'Review status', 'Evidence image'])
     for h in heroes:

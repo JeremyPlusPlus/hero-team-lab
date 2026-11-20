@@ -109,7 +109,7 @@ payload = {
 output = ROOT.parent / 'data.js'
 output.write_text('// Generated from the linked spreadsheet by source/extract_data.py.\n'
                   + 'window.HERO_DATA = ' + json.dumps(payload, ensure_ascii=False, separators=(',', ':'))
-                  + ';\n', encoding='utf-8')
+                  + ';\n', encoding='utf-8', newline='\n')
 print(f'Extracted {len(heroes)} heroes, {sum(len(h["synergies"]) for h in heroes)} synergies, '
       f'{sum(len(h["milestones"]) for h in heroes)} milestones, {len(stats)} raw stat names.')
 print(f'Source updated {payload["meta"]["sourceUpdated"]}, game {payload["meta"]["gameVersion"]}.')

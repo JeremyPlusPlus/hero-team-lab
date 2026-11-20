@@ -32,7 +32,7 @@ with zipfile.ZipFile(ROOT / 'hero-source.xlsx') as z:
         if int(row) <= 43 and (len(column), column) <= (2, 'DW') and entry['v'] is not None:
             records[address] = entry['v']
     public_input = {'Introduction': {cell: sheets['Introduction'][cell]['v'] for cell in ('C25', 'C28')}, 'Data': records}
-    (ROOT / 'hero-records.json').write_text(json.dumps(public_input, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    (ROOT / 'hero-records.json').write_text(json.dumps(public_input, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     (ROOT / 'workbook.json').write_text(json.dumps(sheets, ensure_ascii=False, indent=2), encoding='utf-8')
     for name, cells in sheets.items():
         lines = [f'{cell}: {entry}' for cell,entry in cells.items()]
