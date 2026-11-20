@@ -1,0 +1,1585 @@
+{
+  "batch": "batch-26.json",
+  "status": "activated-in-confirmed-overrides",
+  "observedEffects": 43,
+  "coverage": {
+    "uniqueEffects": 43,
+    "uniqueGroups": 16,
+    "newUniqueEffectsVsEarlierBatches": 13,
+    "newUniqueGroupsVsEarlierBatches": 6,
+    "overlappingEffectAppearances": 30,
+    "repeatedPortraitAppearances": 0,
+    "note": "Coverage counts reflect the audit creation snapshot; aggregate coverage recomputes all available batches."
+  },
+  "frozenMagnitudeMatches": 40,
+  "currentMagnitudeMatches": 41,
+  "currentFullMatches": 40,
+  "newOverrideRecords": 3,
+  "overrides": [
+    {
+      "ownerId": "deadeye",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "dicemaster"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false,
+        "source": "Data!C40:F40"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-26.json",
+      "evidence": {
+        "groupId": "deadeye-s1",
+        "sourceImageId": "deadeye-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "templar"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": false,
+        "source": "Data!L40:O40"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-26.json",
+      "evidence": {
+        "groupId": "deadeye-s3",
+        "sourceImageId": "deadeye-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 5,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master active-event capture context and account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 7,
+      "tier": 4,
+      "requires": [
+        "wizard"
+      ],
+      "expectedOriginal": {
+        "type": "Energy Income",
+        "value": 1,
+        "global": true,
+        "source": "Data!AD40:AG40"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-26.json",
+      "evidence": {
+        "groupId": "deadeye-s7",
+        "sourceImageId": "deadeye-9gm-event-02",
+        "displayedValue": 1173,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Damage",
+      "inferredBaseValue": 125,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master active-event capture context and account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    }
+  ],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "deadeye",
+      "index": 1,
+      "tier": 1,
+      "groupId": "deadeye-s1",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 117,
+        "signedValue": -117,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "-117% Skill Cooldown (personal effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 117,
+      "frozenPredictedSignedValue": 117,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": [
+        "sign"
+      ]
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 1,
+      "tier": 1,
+      "groupId": "deadeye-s1",
+      "observed": {
+        "ownerId": "dicemaster",
+        "ownerName": "Dicemaster",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+235% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 10,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 10,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 2,
+      "tier": 1,
+      "groupId": "deadeye-s2",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 1173,
+        "signedValue": 1173,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,173% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 50,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 50,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 1173,
+      "frozenPredictedSignedValue": 1173,
+      "integerBaseCandidates": [
+        50
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "praetorian",
+      "index": 2,
+      "tier": 1,
+      "groupId": "deadeye-s2",
+      "observed": {
+        "ownerId": "praetorian",
+        "ownerName": "Praetorian",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+469% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 20,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 20,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "titan",
+      "index": 2,
+      "tier": 1,
+      "groupId": "deadeye-s2",
+      "observed": {
+        "ownerId": "titan",
+        "ownerName": "Titan",
+        "displayedValue": 94,
+        "signedValue": -94,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "-94% Skill Cooldown (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": -4,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 4,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": -94,
+      "frozenPredictedSignedValue": 94,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 3,
+      "tier": 2,
+      "groupId": "deadeye-s3",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 117,
+        "signedValue": 117,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+117 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 70,
+      "frozenPredictedSignedValue": 70,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": [
+        "value"
+      ]
+    },
+    {
+      "ownerId": "templar",
+      "index": 3,
+      "tier": 2,
+      "groupId": "deadeye-s3",
+      "observed": {
+        "ownerId": "templar",
+        "ownerName": "Templar",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 40,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 40,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        40
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 4,
+      "tier": 2,
+      "groupId": "deadeye-s4",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 586,
+        "signedValue": 586,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+586% Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 25,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 25,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 586,
+      "frozenPredictedSignedValue": 586,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlock",
+      "index": 4,
+      "tier": 2,
+      "groupId": "deadeye-s4",
+      "observed": {
+        "ownerId": "warlock",
+        "ownerName": "Warlock",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,407% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 60,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 60,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 1407,
+      "frozenPredictedSignedValue": 1407,
+      "integerBaseCandidates": [
+        60
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "veteran",
+      "index": 4,
+      "tier": 2,
+      "groupId": "deadeye-s4",
+      "observed": {
+        "ownerId": "veteran",
+        "ownerName": "Veteran",
+        "displayedValue": 3519,
+        "signedValue": 3519,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,519% Crit Damage (personal effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 150,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 150,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 3519,
+      "frozenPredictedSignedValue": 3519,
+      "integerBaseCandidates": [
+        150
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 5,
+      "tier": 3,
+      "groupId": "deadeye-s5",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 751,
+        "signedValue": 751,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+751% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 80,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 80,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 751,
+      "frozenPredictedSignedValue": 751,
+      "integerBaseCandidates": [
+        80
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 5,
+      "tier": 3,
+      "groupId": "deadeye-s5",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 751,
+        "signedValue": 751,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+751% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 80,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 80,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 751,
+      "frozenPredictedSignedValue": 751,
+      "integerBaseCandidates": [
+        80
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 6,
+      "tier": 3,
+      "groupId": "deadeye-s6",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 281,
+        "signedValue": 281,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+281% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 30,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 30,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 281,
+      "frozenPredictedSignedValue": 281,
+      "integerBaseCandidates": [
+        30
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "titan",
+      "index": 6,
+      "tier": 3,
+      "groupId": "deadeye-s6",
+      "observed": {
+        "ownerId": "titan",
+        "ownerName": "Titan",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 100,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 100,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        100
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sovereign",
+      "index": 6,
+      "tier": 3,
+      "groupId": "deadeye-s6",
+      "observed": {
+        "ownerId": "sovereign",
+        "ownerName": "Sovereign",
+        "displayedValue": 9,
+        "signedValue": 9,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+9 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 1,
+        "global": true,
+        "unit": "flat"
+      },
+      "frozen": {
+        "type": "Rank Exp",
+        "value": 25,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 9,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        1
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 7,
+      "tier": 4,
+      "groupId": "deadeye-s7",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 1173,
+        "signedValue": 1173,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,173% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 1,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 1,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 9,
+      "frozenPredictedSignedValue": 9,
+      "integerBaseCandidates": [
+        125
+      ],
+      "changedFields": [
+        "type",
+        "value"
+      ]
+    },
+    {
+      "ownerId": "wizard",
+      "index": 7,
+      "tier": 4,
+      "groupId": "deadeye-s7",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 1173,
+        "signedValue": 1173,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,173% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 125,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 125,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1173,
+      "frozenPredictedSignedValue": 1173,
+      "integerBaseCandidates": [
+        125
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 8,
+      "tier": 4,
+      "groupId": "deadeye-s8",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 4692,
+        "signedValue": 4692,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+4,692% Super Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 500,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 500,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 4692,
+      "frozenPredictedSignedValue": 4692,
+      "integerBaseCandidates": [
+        500
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 8,
+      "tier": 4,
+      "groupId": "deadeye-s8",
+      "observed": {
+        "ownerId": "elementalist",
+        "ownerName": "Elementalist",
+        "displayedValue": 3284,
+        "signedValue": 3284,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,284% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 350,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 350,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 3284,
+      "frozenPredictedSignedValue": 3284,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlock",
+      "index": 8,
+      "tier": 4,
+      "groupId": "deadeye-s8",
+      "observed": {
+        "ownerId": "warlock",
+        "ownerName": "Warlock",
+        "displayedValue": 4692,
+        "signedValue": 4692,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+4,692% Super Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 500,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 500,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 4692,
+      "frozenPredictedSignedValue": 4692,
+      "integerBaseCandidates": [
+        500
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 9,
+      "tier": 5,
+      "groupId": "deadeye-s9",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 1412,
+        "signedValue": 1412,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,412% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 175,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 175,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 1412,
+      "frozenPredictedSignedValue": 1412,
+      "integerBaseCandidates": [
+        175
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "viking",
+      "index": 9,
+      "tier": 5,
+      "groupId": "deadeye-s9",
+      "observed": {
+        "ownerId": "viking",
+        "ownerName": "Viking",
+        "displayedValue": 65,
+        "signedValue": 65,
+        "type": "Super Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+65% Super Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Chance",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Chance",
+        "value": 8,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 65,
+      "frozenPredictedSignedValue": 65,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 10,
+      "tier": 5,
+      "groupId": "deadeye-s10",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 81,
+        "signedValue": 81,
+        "type": "Super Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+81% Super Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Chance",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Chance",
+        "value": 10,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 81,
+      "frozenPredictedSignedValue": 81,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "gladiator",
+      "index": 10,
+      "tier": 5,
+      "groupId": "deadeye-s10",
+      "observed": {
+        "ownerId": "gladiator",
+        "ownerName": "Gladiator",
+        "displayedValue": 5043,
+        "signedValue": 5043,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+5,043% Super Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 625,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 625,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 5043,
+      "frozenPredictedSignedValue": 5043,
+      "integerBaseCandidates": [
+        625
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 10,
+      "tier": 5,
+      "groupId": "deadeye-s10",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 65,
+        "signedValue": 65,
+        "type": "Super Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+65% Super Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Amount",
+        "value": 8,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Super Energy",
+        "value": 8,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 65,
+      "frozenPredictedSignedValue": 65,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 11,
+      "tier": 6,
+      "groupId": "deadeye-s11",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 40,
+        "signedValue": 40,
+        "type": "Ultra Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+40% Ultra Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Chance",
+        "value": 5,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Chance",
+        "value": 5,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 40,
+      "frozenPredictedSignedValue": 40,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "archer",
+      "index": 11,
+      "tier": 6,
+      "groupId": "deadeye-s11",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 4035,
+        "signedValue": 4035,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+4,035% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 500,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 500,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 4035,
+      "frozenPredictedSignedValue": 4035,
+      "integerBaseCandidates": [
+        500
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 12,
+      "tier": 6,
+      "groupId": "deadeye-s12",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 2219,
+        "signedValue": 2219,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2219,
+      "frozenPredictedSignedValue": 2219,
+      "integerBaseCandidates": [
+        275
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "battlemage",
+      "index": 12,
+      "tier": 6,
+      "groupId": "deadeye-s12",
+      "observed": {
+        "ownerId": "battlemage",
+        "ownerName": "Battlemage",
+        "displayedValue": 48,
+        "signedValue": 48,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+48 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 6,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 6,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 48,
+      "frozenPredictedSignedValue": 48,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 12,
+      "tier": 6,
+      "groupId": "deadeye-s12",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 2219,
+        "signedValue": 2219,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2219,
+      "frozenPredictedSignedValue": 2219,
+      "integerBaseCandidates": [
+        275
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 13,
+      "tier": 7,
+      "groupId": "deadeye-s13",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 100,
+        "signedValue": 100,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+100 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": false
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 100,
+      "frozenPredictedSignedValue": 100,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 13,
+      "tier": 7,
+      "groupId": "deadeye-s13",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 1993,
+        "signedValue": 1993,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,993% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 300,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 300,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 1993,
+      "frozenPredictedSignedValue": 1993,
+      "integerBaseCandidates": [
+        300
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 14,
+      "tier": 7,
+      "groupId": "deadeye-s14",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 13286,
+        "signedValue": 13286,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+13,286% Super Crit Damage (personal effect)"
+      },
+      "current": {
+        "type": "Super Crit Damage",
+        "value": 2000,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Damage",
+        "value": 2000,
+        "global": false
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 13286,
+      "frozenPredictedSignedValue": 13286,
+      "integerBaseCandidates": [
+        2000
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "champion",
+      "index": 14,
+      "tier": 7,
+      "groupId": "deadeye-s14",
+      "observed": {
+        "ownerId": "champion",
+        "ownerName": "Champion",
+        "displayedValue": 53,
+        "signedValue": 53,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+53 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 8,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 53,
+      "frozenPredictedSignedValue": 53,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 14,
+      "tier": 7,
+      "groupId": "deadeye-s14",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 2325,
+        "signedValue": 2325,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,325% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 350,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 350,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 2325,
+      "frozenPredictedSignedValue": 2325,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 15,
+      "tier": 8,
+      "groupId": "deadeye-s15",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 26,
+        "signedValue": 26,
+        "type": "Ultra Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+26% Ultra Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Chance",
+        "value": 7,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Chance",
+        "value": 7,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 26,
+      "frozenPredictedSignedValue": 26,
+      "integerBaseCandidates": [
+        7
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "praetorian",
+      "index": 15,
+      "tier": 8,
+      "groupId": "deadeye-s15",
+      "observed": {
+        "ownerId": "praetorian",
+        "ownerName": "Praetorian",
+        "displayedValue": 11260,
+        "signedValue": 11260,
+        "type": "Ultra Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+11,260% Ultra Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Damage",
+        "value": 3000,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Damage",
+        "value": 3000,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 11260,
+      "frozenPredictedSignedValue": 11260,
+      "integerBaseCandidates": [
+        3000
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "titan",
+      "index": 15,
+      "tier": 8,
+      "groupId": "deadeye-s15",
+      "observed": {
+        "ownerId": "titan",
+        "ownerName": "Titan",
+        "displayedValue": 113,
+        "signedValue": 113,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+113 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 30,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 30,
+        "global": false
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 113,
+      "frozenPredictedSignedValue": 113,
+      "integerBaseCandidates": [
+        30
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 15,
+      "tier": 8,
+      "groupId": "deadeye-s15",
+      "observed": {
+        "ownerId": "dicemaster",
+        "ownerName": "Dicemaster",
+        "displayedValue": 225,
+        "signedValue": 225,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+225% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 60,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 60,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 225,
+      "frozenPredictedSignedValue": 225,
+      "integerBaseCandidates": [
+        60
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 16,
+      "tier": 9,
+      "groupId": "deadeye-s16",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 751,
+        "signedValue": 751,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+751% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 200,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 200,
+        "global": false
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 751,
+      "frozenPredictedSignedValue": 751,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 16,
+      "tier": 9,
+      "groupId": "deadeye-s16",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 56,
+        "signedValue": 56,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+56 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 56,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 16,
+      "tier": 9,
+      "groupId": "deadeye-s16",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 12198,
+        "signedValue": 12198,
+        "type": "Ultra Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+12,198% Ultra Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Damage",
+        "value": 3250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Damage",
+        "value": 3250,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 12198,
+      "frozenPredictedSignedValue": 12198,
+      "integerBaseCandidates": [
+        3250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 16,
+      "tier": 9,
+      "groupId": "deadeye-s16",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 30,
+        "signedValue": 30,
+        "type": "Ultra Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+30% Ultra Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Chance",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Chance",
+        "value": 8,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 30,
+      "frozenPredictedSignedValue": 30,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    }
+  ],
+  "captureContextNote": "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+  "afterProposedCorrectionsMatchingEffects": 43,
+  "verifiedImageHashes": [
+    {
+      "sourceImageId": "deadeye-9gm-event-01",
+      "sha256": "c6b3044085aa885d323d64c7d6cb1b85e48cf629cd4546425158c57b824a24c1"
+    },
+    {
+      "sourceImageId": "deadeye-9gm-event-02",
+      "sha256": "df6bd9b7ec2e749a57d2fab9351ef553102d15ebf5f253b79ba8612b6c9f78f6"
+    },
+    {
+      "sourceImageId": "deadeye-9gm-event-03",
+      "sha256": "0d1f0fdaac6321055e9b019933ca5755867aaa2a0de532774ed5b2a8bc1efb33"
+    }
+  ],
+  "comparisonBasis": "The currentMagnitudeMatches/currentFullMatches fields record the active data before this capture set was applied.",
+  "matchesAfterCorrections": 43
+}

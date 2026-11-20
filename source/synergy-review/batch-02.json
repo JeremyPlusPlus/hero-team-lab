@@ -1,0 +1,917 @@
+{
+  "meta": {
+    "batch": "02",
+    "selectedHero": {
+      "id": "ninja",
+      "name": "Ninja"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 15,
+          "warden": 0
+        }
+      }
+    },
+    "contextNotes": [
+      "The nine-Grand-Master count, Snow Fort map modifiers, and account synergy bonuses are inferred continuation of the preceding Militia capture context; these screenshots do not independently establish them.",
+      "Ninja tile placement and all partner owner tile placements are unspecified.",
+      "Tier I shows no rank requirement or individual hero rank badges; those values are null.",
+      "Effects are assigned to the hero portrait directly above each downward arrow. Required hero order follows the screenshot.",
+      "All displayed rank badges are preserved independently of preceding captures, including Warden at Rank 2291 in Tier VIII."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "ninja-01",
+        "originalPath": "images/ninja-01.png",
+        "archivePath": "images/ninja-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ninja-02",
+        "originalPath": "images/ninja-02.png",
+        "archivePath": "images/ninja-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "ninja-03",
+        "originalPath": "images/ninja-03.png",
+        "archivePath": "images/ninja-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "ninja-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "ninja-01",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": null
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 533,
+          "signedValue": 533,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+533% Damage (personal effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 107,
+          "signedValue": 107,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+107% Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "ninja-01",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": null
+        },
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": null
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 1066,
+          "signedValue": 1066,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,066% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 85,
+          "signedValue": 85,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+85% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 427,
+          "signedValue": 427,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+427% Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "ninja-01",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": 4503
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 171,
+          "signedValue": 171,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+171% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 320,
+          "signedValue": -320,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-320% Skill Cooldown (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "ninja-01",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 4508
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 128,
+          "signedValue": 128,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+128 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 128,
+          "signedValue": 128,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+128 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,280% Attack Speed (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "ninja-01",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5003
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 682,
+          "signedValue": 682,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+682% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 171,
+          "signedValue": 171,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+171 Rank Exp (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "ninja-01",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5024
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": 4503
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 2133,
+          "signedValue": 2133,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,133% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 299,
+          "signedValue": 299,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+299 Rank Exp (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "ninja-02",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": 4504
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 1066,
+          "signedValue": 1066,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,066% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+9 Energy Income (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "ninja-02",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4632
+        },
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 34,
+          "signedValue": 34,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+34% Super Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 60,
+          "signedValue": 60,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+60% Super Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 34,
+          "signedValue": 34,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+34% Super Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "ninja-02",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5004
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 22,
+          "signedValue": 22,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+22 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 59,
+          "signedValue": 59,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+59% Super Gold Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "ninja-02",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 29,
+          "signedValue": 29,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+29% Super Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+51% Super Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+51% Super Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "ninja-02",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 15,
+          "signedValue": 15,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+15% Ultra Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 37,
+          "signedValue": 37,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+37 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "ninja-02",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 4402,
+          "signedValue": 4402,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,402% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 31177,
+          "signedValue": 31177,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+31,177% Ultra Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "ninja-03",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 4527
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 30,
+          "signedValue": 30,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+30% Super Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 91,
+          "signedValue": 91,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+91% Super Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "ninja-03",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 5000
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": 4503
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 85,
+          "signedValue": 85,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+85% Super Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 9663,
+          "signedValue": 9663,
+          "type": "Ultra Boss Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+9,663% Ultra Boss Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 121,
+          "signedValue": 121,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+121 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "ninja-03",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 5000
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        },
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 2291
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 7677,
+          "signedValue": 7677,
+          "type": "Boss Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+7,677% Boss Gold (personal effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 10236,
+          "signedValue": 10236,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+10,236% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 10236,
+          "signedValue": 10236,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+10,236% Ultra Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 33,
+          "signedValue": 33,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+33 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ninja-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "ninja-03",
+      "requiredHeroes": [
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 4527
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4511
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+51 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Ultra Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 136,
+          "signedValue": 136,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+136 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

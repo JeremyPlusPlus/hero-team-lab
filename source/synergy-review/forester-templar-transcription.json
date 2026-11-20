@@ -1,0 +1,46 @@
+{
+  "captures": [
+    {
+      "batch": "23", "owner": "forester", "images": ["a69bd93b-f1dd-47f5-82b6-7df47429ea4d", "9e8fc0fe-a05a-4142-9f80-879b199dd135", "9cf6b48f-3757-4d93-90d0-701d005ee440"],
+      "groups": [
+        [["forester",null,-117,"Skill Cooldown",false,"percent"],["witch",null,-117,"Skill Cooldown",false,"percent"]],
+        [["forester",null,586,"Attack Speed",false,"percent"],["assassin",null,-235,"Skill Cooldown",false,"percent"],["archer",null,70,"Rank Exp",true,"flat"]],
+        [["forester",5000,938,"Crit Damage",true,"percent"],["captain",4525,117,"Skill Duration",false,"flat"]],
+        [["forester",5000,141,"Skill Duration",false,"flat"],["gladiator",5002,1407,"Attack Speed",false,"percent"],["ranger",5016,235,"Rank Exp",true,"flat"]],
+        [["forester",5000,1877,"Kill Gold",false,"percent"],["elementalist",4506,206,"Attack Speed",true,"percent"]],
+        [["forester",5000,28,"Super Exp Amount",true,"percent"],["peacekeeper",4518,9,"Super Exp Chance",true,"percent"],["berserker",5000,328,"Rank Exp",true,"flat"]],
+        [["forester",5000,4222,"Super Crit Damage",true,"percent"],["rogue",4503,9,"Skill Power",true,"flat"]],
+        [["forester",5000,19,"Skill Power",true,"flat"],["templar",3405,141,"Super Crit Chance",false,"percent"],["sovereign",5000,56,"Super Gold Chance",true,"percent"]],
+        [["forester",5000,81,"Super Exp Amount",true,"percent"],["paladin",4502,81,"Super Exp Amount",true,"percent"]],
+        [["forester",5000,3631,"Damage",false,"percent"],["ranger",5016,5043,"Super Crit Damage",true,"percent"],["warden",4523,2905,"Damage",false,"percent"]],
+        [["forester",5000,30260,"Ultra Gold Amount",false,"percent"],["warlock",5001,-242,"Skill Cooldown",false,"percent"]],
+        [["forester",5000,2219,"Kill Gold",true,"percent"],["battlemage",4508,48,"Energy Income",true,"flat"],["deadeye",5000,2219,"Kill Gold",true,"percent"]],
+        [["forester",5000,5647,"Super Crit Damage",true,"percent"],["chieftain",4632,5647,"Super Gold Amount",true,"percent"]],
+        [["forester",5000,2325,"Damage",true,"percent"],["viking",5014,53,"Skill Power",true,"flat"],["veteran",5123,166,"Super Exp Amount",true,"percent"]],
+        [["forester",5000,11260,"Ultra Gold Amount",true,"percent"],["samurai",5000,45,"Skill Power",true,"flat"],["berserker",5000,1501,"Damage",true,"percent"],["ranger",5016,3003,"Boss Gold",true,"percent"]],
+        [["forester",5000,30,"Ultra Crit Chance",true,"percent"],["sorcerer",4506,56,"Skill Power",true,"flat"],["necromancer",5000,12198,"Ultra Crit Damage",true,"percent"],["deadeye",5000,751,"Attack Speed",false,"percent"]]
+      ]
+    },
+    {
+      "batch": "24", "owner": "templar", "images": ["3a437054-745d-4a95-aba5-ab51c9fd94ef", "9a2b0bc3-13e6-4bf1-92af-410612423adc", "de5b7518-62b7-4338-b79a-d2bec5d9b3ef"],
+      "groups": [
+        [["templar",null,47,"Skill Power",false,"flat"],["captain",null,235,"Crit Damage",true,"percent"]],
+        [["templar",null,1173,"Crit Damage",false,"percent"],["champion",null,141,"Attack Speed",true,"percent"],["warden",null,56,"Rank Exp",true,"flat"]],
+        [["templar",3405,938,"Damage",true,"percent"],["deadeye",5000,117,"Skill Power",false,"flat"]],
+        [["templar",3405,1407,"Kill Gold",true,"percent"],["samurai",5000,1407,"Kill Gold",true,"percent"],["skymage",5001,235,"Rank Exp",true,"flat"]],
+        [["templar",3405,-75,"Skill Cooldown",true,"percent"],["arbalest",5000,188,"Rank Exp",true,"flat"]],
+        [["templar",3405,938,"Attack Speed",false,"percent"],["druid",4644,2346,"Kill Gold",false,"percent"],["scout",4506,-281,"Skill Cooldown",false,"percent"]],
+        [["templar",3405,2815,"Damage",false,"percent"],["paladin",4502,94,"Super Gold Chance",false,"percent"]],
+        [["templar",3405,141,"Super Crit Chance",false,"percent"],["sovereign",5000,56,"Super Gold Chance",true,"percent"],["forester",5000,19,"Skill Power",true,"flat"]],
+        [["templar",3405,24,"Energy Income",true,"flat"],["gladiator",5002,24,"Energy Income",true,"flat"]],
+        [["templar",3405,97,"Super Exp Amount",true,"percent"],["dicemaster",4549,3631,"Kill Gold",false,"percent"],["sniper",5000,1614,"Damage",true,"percent"]],
+        [["templar",3405,2017,"Kill Gold",true,"percent"],["sorcerer",4506,2017,"Damage",true,"percent"]],
+        [["templar",3405,24,"Ultra Gold Chance",true,"percent"],["necromancer",5000,48,"Energy Income",true,"flat"],["rogue",4503,4842,"Damage",false,"percent"]],
+        [["templar",3405,133,"Super Exp Amount",true,"percent"],["veteran",5123,133,"Boss Exp",true,"percent"]],
+        [["templar",3405,133,"Super Energy Amount",true,"percent"],["paladin",4502,40,"Super Energy Chance",true,"percent"],["berserker",5000,53,"Energy Income",true,"flat"]],
+        [["templar",3405,113,"Skill Power",false,"flat"],["witch",5000,113,"Skill Power",false,"flat"],["battlemage",4508,11260,"Ultra Crit Damage",true,"percent"],["spelldancer",4627,75,"Skill Duration",false,"flat"]],
+        [["templar",3405,56,"Energy Income",true,"flat"],["templar",3405,56,"Energy Income",true,"flat"],["scout",4506,4,"Battle Pass Exp",true,"flat"],["sniper",5000,12198,"Ultra Crit Damage",true,"percent"]]
+      ]
+    }
+  ]
+}

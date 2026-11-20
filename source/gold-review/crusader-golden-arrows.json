@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-04",
+  "source": "User screenshot and explicit attack-count reply",
+  "image": "images/crusader-golden-arrows.png",
+  "hero": "crusader",
+  "skill": {
+    "name": "Golden Arrows",
+    "killGoldPercentPerAttack": 6420,
+    "excludesAllBossGoldBonuses": true,
+    "cooldownSeconds": 24,
+    "durationSeconds": 20,
+    "waveBossEfficiency": 0.5
+  },
+  "mastery": {
+    "level": 10,
+    "additionalGoldPercentPerConsecutiveAttack": 20.6,
+    "sameEnemyRequired": true,
+    "stacking": "additive",
+    "maxStacks": 500
+  },
+  "confirmedScenario": {
+    "userReply": "1 attack on a wave boss",
+    "attacks": 1,
+    "target": "wave boss"
+  },
+  "model": {
+    "timing": "Configured attacks occur on the same wave boss while Golden Arrows is active, followed by one final kill payout. No attack-speed or cooldown averaging.",
+    "firstAttack": "Zero prior consecutive-hit stacks; an interpretation of consecutive attacks, not a separately confirmed in-game measurement.",
+    "passiveKillGold": "Global and selected attacker personal Kill Gold milestones, synergies, Grand Master factors and Kill Gold tile. Excludes the separately calibrated Rogue and Hunter on-kill factors.",
+    "generatedGold": "passiveKillGold * (activeBonus / 100) * 0.5 * SUM(1 + masteryBonus / 100 * MIN(priorHits, 500))",
+    "firstHitFactor": 32.1,
+    "combinedScore": "Existing final boss-kill index plus generated gold on the same normalized base-gold scale.",
+    "unconfirmedInteractions": "Super/Ultra reward tiers, chance spillover, and Rogue/Hunter/Sovereign conditional on-kill skills are not applied to generated gold because their applicability is unconfirmed. The final kill still receives them normally.",
+    "skillTile": "Continue the previously confirmed 1.20 multiplier for active and mastery bonuses, local to the selected Crusader. This new screenshot's tile state was not separately confirmed; treat its values as the editable no-tile baseline.",
+    "fixedCalibration": "Captured totals are held fixed across candidate teams. Do not reapply account, milestone, synergy, GM, event or generic Skill Power boosts.",
+    "ownership": "Only the selected Crusader generates attack gold. Support copies do not contribute attacks or lend their skill-tile boost."
+  }
+}

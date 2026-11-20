@@ -1,0 +1,1611 @@
+{
+  "batch": "batch-25.json",
+  "status": "activated-in-confirmed-overrides",
+  "observedEffects": 43,
+  "coverage": {
+    "uniqueEffects": 43,
+    "uniqueGroups": 16,
+    "newUniqueEffectsVsEarlierBatches": 15,
+    "newUniqueGroupsVsEarlierBatches": 6,
+    "overlappingEffectAppearances": 28,
+    "repeatedPortraitAppearances": 0,
+    "note": "Coverage counts reflect the audit creation snapshot; aggregate coverage recomputes all available batches."
+  },
+  "frozenMagnitudeMatches": 42,
+  "currentMagnitudeMatches": 42,
+  "currentFullMatches": 39,
+  "newOverrideRecords": 4,
+  "overrides": [
+    {
+      "ownerId": "chieftain",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "warlock"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 2,
+        "global": true,
+        "source": "Data!C29:F29"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-25.json",
+      "evidence": {
+        "groupId": "chieftain-s1",
+        "sourceImageId": "chieftain-9gm-event-01",
+        "displayedValue": 47,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "berserker",
+        "ballista"
+      ],
+      "expectedOriginal": {
+        "type": "Attack Speed",
+        "value": 24,
+        "global": false,
+        "source": "Data!G29:K29"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-25.json",
+      "evidence": {
+        "groupId": "chieftain-s2",
+        "sourceImageId": "chieftain-9gm-event-01",
+        "displayedValue": 586,
+        "unit": "percent",
+        "global": false
+      },
+      "inferredBaseValue": 25,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master active-event capture context and account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "ballista",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "berserker",
+        "chieftain"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 4,
+        "global": true,
+        "source": "Data!G28:K28"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-25.json",
+      "evidence": {
+        "groupId": "chieftain-s2",
+        "sourceImageId": "chieftain-9gm-event-01",
+        "displayedValue": 94,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "paladin",
+      "index": 8,
+      "tier": 4,
+      "requires": [
+        "chieftain",
+        "sniper"
+      ],
+      "expectedOriginal": {
+        "type": "Super Energy",
+        "value": 4,
+        "global": true,
+        "source": "Data!AH20:AL20"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-25.json",
+      "evidence": {
+        "groupId": "chieftain-s8",
+        "sourceImageId": "chieftain-9gm-event-02",
+        "displayedValue": 38,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Energy Amount"
+    }
+  ],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "chieftain",
+      "index": 1,
+      "tier": 1,
+      "groupId": "chieftain-s1",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 47,
+        "signedValue": -47,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "-47% Skill Cooldown (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 2,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 47,
+      "frozenPredictedSignedValue": 47,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": [
+        "sign"
+      ]
+    },
+    {
+      "ownerId": "warlock",
+      "index": 1,
+      "tier": 1,
+      "groupId": "chieftain-s1",
+      "observed": {
+        "ownerId": "warlock",
+        "ownerName": "Warlock",
+        "displayedValue": 117,
+        "signedValue": 117,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+117% Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 5,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 5,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 117,
+      "frozenPredictedSignedValue": 117,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 2,
+      "tier": 1,
+      "groupId": "chieftain-s2",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 586,
+        "signedValue": 586,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+586% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 24,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 24,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 563,
+      "frozenPredictedSignedValue": 563,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": [
+        "value"
+      ]
+    },
+    {
+      "ownerId": "berserker",
+      "index": 2,
+      "tier": 1,
+      "groupId": "chieftain-s2",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+469% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 20,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 20,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ballista",
+      "index": 2,
+      "tier": 1,
+      "groupId": "chieftain-s2",
+      "observed": {
+        "ownerId": "ballista",
+        "ownerName": "Ballista",
+        "displayedValue": 94,
+        "signedValue": -94,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "-94% Skill Cooldown (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": 4,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 4,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 94,
+      "frozenPredictedSignedValue": 94,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": [
+        "sign"
+      ]
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 3,
+      "tier": 2,
+      "groupId": "chieftain-s3",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 188,
+        "signedValue": 188,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+188% Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 8,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 188,
+      "frozenPredictedSignedValue": 188,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "archer",
+      "index": 3,
+      "tier": 2,
+      "groupId": "chieftain-s3",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 188,
+        "signedValue": 188,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+188% Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 8,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 188,
+      "frozenPredictedSignedValue": 188,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 4,
+      "tier": 2,
+      "groupId": "chieftain-s4",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,407% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 60,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 60,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 1407,
+      "frozenPredictedSignedValue": 1407,
+      "integerBaseCandidates": [
+        60
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sovereign",
+      "index": 4,
+      "tier": 2,
+      "groupId": "chieftain-s4",
+      "observed": {
+        "ownerId": "sovereign",
+        "ownerName": "Sovereign",
+        "displayedValue": 3519,
+        "signedValue": 3519,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,519% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 150,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 150,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 3519,
+      "frozenPredictedSignedValue": 3519,
+      "integerBaseCandidates": [
+        150
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "captain",
+      "index": 4,
+      "tier": 2,
+      "groupId": "chieftain-s4",
+      "observed": {
+        "ownerId": "captain",
+        "ownerName": "Captain",
+        "displayedValue": 3519,
+        "signedValue": 3519,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,519% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 150,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 150,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 3519,
+      "frozenPredictedSignedValue": 3519,
+      "integerBaseCandidates": [
+        150
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 5,
+      "tier": 3,
+      "groupId": "chieftain-s5",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 751,
+        "signedValue": 751,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+751% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 80,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 80,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 751,
+      "frozenPredictedSignedValue": 751,
+      "integerBaseCandidates": [
+        80
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 5,
+      "tier": 3,
+      "groupId": "chieftain-s5",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 75,
+        "signedValue": -75,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "-75% Skill Cooldown (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": -8,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 8,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": -75,
+      "frozenPredictedSignedValue": 75,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 6,
+      "tier": 3,
+      "groupId": "chieftain-s6",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 2346,
+        "signedValue": 2346,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+2,346% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 250,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 250,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 2346,
+      "frozenPredictedSignedValue": 2346,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "arbalest",
+      "index": 6,
+      "tier": 3,
+      "groupId": "chieftain-s6",
+      "observed": {
+        "ownerId": "arbalest",
+        "ownerName": "Arbalest",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+938% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 100,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 100,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        100
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sniper",
+      "index": 6,
+      "tier": 3,
+      "groupId": "chieftain-s6",
+      "observed": {
+        "ownerId": "sniper",
+        "ownerName": "Sniper",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 100,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 100,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        100
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 7,
+      "tier": 4,
+      "groupId": "chieftain-s7",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Super Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+19% Super Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Amount",
+        "value": 2,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Super Energy",
+        "value": 2,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "druid",
+      "index": 7,
+      "tier": 4,
+      "groupId": "chieftain-s7",
+      "observed": {
+        "ownerId": "druid",
+        "ownerName": "Druid",
+        "displayedValue": 2815,
+        "signedValue": 2815,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+2,815% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 300,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 300,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 2815,
+      "frozenPredictedSignedValue": 2815,
+      "integerBaseCandidates": [
+        300
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 8,
+      "tier": 4,
+      "groupId": "chieftain-s8",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 8914,
+        "signedValue": 8914,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+8,914% Super Gold Amount (personal effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 950,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 950,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 8914,
+      "frozenPredictedSignedValue": 8914,
+      "integerBaseCandidates": [
+        950
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "paladin",
+      "index": 8,
+      "tier": 4,
+      "groupId": "chieftain-s8",
+      "observed": {
+        "ownerId": "paladin",
+        "ownerName": "Paladin",
+        "displayedValue": 38,
+        "signedValue": 38,
+        "type": "Super Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+38% Super Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy",
+        "value": 4,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Energy",
+        "value": 4,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 38,
+      "frozenPredictedSignedValue": 38,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": [
+        "type"
+      ]
+    },
+    {
+      "ownerId": "sniper",
+      "index": 8,
+      "tier": 4,
+      "groupId": "chieftain-s8",
+      "observed": {
+        "ownerId": "sniper",
+        "ownerName": "Sniper",
+        "displayedValue": 8914,
+        "signedValue": 8914,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+8,914% Super Crit Damage (personal effect)"
+      },
+      "current": {
+        "type": "Super Crit Damage",
+        "value": 950,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Damage",
+        "value": 950,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 8914,
+      "frozenPredictedSignedValue": 8914,
+      "integerBaseCandidates": [
+        950
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 9,
+      "tier": 5,
+      "groupId": "chieftain-s9",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 1412,
+        "signedValue": 1412,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,412% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 175,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 175,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 1412,
+      "frozenPredictedSignedValue": 1412,
+      "integerBaseCandidates": [
+        175
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "battlemage",
+      "index": 9,
+      "tier": 5,
+      "groupId": "chieftain-s9",
+      "observed": {
+        "ownerId": "battlemage",
+        "ownerName": "Battlemage",
+        "displayedValue": 161,
+        "signedValue": 161,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+161% Super Gold Chance (personal effect)"
+      },
+      "current": {
+        "type": "Super Gold Chance",
+        "value": 20,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 20,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 161,
+      "frozenPredictedSignedValue": 161,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 10,
+      "tier": 5,
+      "groupId": "chieftain-s10",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 56,
+        "signedValue": 56,
+        "type": "Super Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+56% Super Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Chance",
+        "value": 7,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Exp Chance",
+        "value": 7,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 56,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        7
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ninja",
+      "index": 10,
+      "tier": 5,
+      "groupId": "chieftain-s10",
+      "observed": {
+        "ownerId": "ninja",
+        "ownerName": "Ninja",
+        "displayedValue": 32,
+        "signedValue": 32,
+        "type": "Super Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+32% Super Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Chance",
+        "value": 4,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Energy Chance",
+        "value": 4,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 32,
+      "frozenPredictedSignedValue": 32,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "veteran",
+      "index": 10,
+      "tier": 5,
+      "groupId": "chieftain-s10",
+      "observed": {
+        "ownerId": "veteran",
+        "ownerName": "Veteran",
+        "displayedValue": 56,
+        "signedValue": 56,
+        "type": "Super Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+56% Super Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Chance",
+        "value": 7,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Exp Chance",
+        "value": 7,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 56,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        7
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 11,
+      "tier": 6,
+      "groupId": "chieftain-s11",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 40,
+        "signedValue": 40,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+40 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 5,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 5,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 40,
+      "frozenPredictedSignedValue": 40,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "viking",
+      "index": 11,
+      "tier": 6,
+      "groupId": "chieftain-s11",
+      "observed": {
+        "ownerId": "viking",
+        "ownerName": "Viking",
+        "displayedValue": 2017,
+        "signedValue": 2017,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,017% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 250,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2017,
+      "frozenPredictedSignedValue": 2017,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 12,
+      "tier": 6,
+      "groupId": "chieftain-s12",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 2219,
+        "signedValue": 2219,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,219% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 275,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 275,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2219,
+      "frozenPredictedSignedValue": 2219,
+      "integerBaseCandidates": [
+        275
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 12,
+      "tier": 6,
+      "groupId": "chieftain-s12",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 18156,
+        "signedValue": 18156,
+        "type": "Ultra Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+18,156% Ultra Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Amount",
+        "value": 2250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Amount",
+        "value": 2250,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 18156,
+      "frozenPredictedSignedValue": 18156,
+      "integerBaseCandidates": [
+        2250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "spelldancer",
+      "index": 12,
+      "tier": 6,
+      "groupId": "chieftain-s12",
+      "observed": {
+        "ownerId": "spelldancer",
+        "ownerName": "Spelldancer",
+        "displayedValue": 2219,
+        "signedValue": 2219,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,219% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 275,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 275,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2219,
+      "frozenPredictedSignedValue": 2219,
+      "integerBaseCandidates": [
+        275
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 13,
+      "tier": 7,
+      "groupId": "chieftain-s13",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 5647,
+        "signedValue": 5647,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+5,647% Super Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 850,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 850,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 5647,
+      "frozenPredictedSignedValue": 5647,
+      "integerBaseCandidates": [
+        850
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 13,
+      "tier": 7,
+      "groupId": "chieftain-s13",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 5647,
+        "signedValue": 5647,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+5,647% Super Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Damage",
+        "value": 850,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Damage",
+        "value": 850,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 5647,
+      "frozenPredictedSignedValue": 5647,
+      "integerBaseCandidates": [
+        850
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 14,
+      "tier": 7,
+      "groupId": "chieftain-s14",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 2325,
+        "signedValue": 2325,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,325% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 350,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 350,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 2325,
+      "frozenPredictedSignedValue": 2325,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 14,
+      "tier": 7,
+      "groupId": "chieftain-s14",
+      "observed": {
+        "ownerId": "elementalist",
+        "ownerName": "Elementalist",
+        "displayedValue": 133,
+        "signedValue": 133,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+133 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 20,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 20,
+        "global": false
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 133,
+      "frozenPredictedSignedValue": 133,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sovereign",
+      "index": 14,
+      "tier": 7,
+      "groupId": "chieftain-s14",
+      "observed": {
+        "ownerId": "sovereign",
+        "ownerName": "Sovereign",
+        "displayedValue": 6145,
+        "signedValue": 6145,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+6,145% Super Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 925,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 925,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 6145,
+      "frozenPredictedSignedValue": 6145,
+      "integerBaseCandidates": [
+        925
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 15,
+      "tier": 8,
+      "groupId": "chieftain-s15",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 1501,
+        "signedValue": 1501,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,501% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 400,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 400,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 1501,
+      "frozenPredictedSignedValue": 1501,
+      "integerBaseCandidates": [
+        400
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "druid",
+      "index": 15,
+      "tier": 8,
+      "groupId": "chieftain-s15",
+      "observed": {
+        "ownerId": "druid",
+        "ownerName": "Druid",
+        "displayedValue": 394,
+        "signedValue": 394,
+        "type": "Ultra Exp Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+394% Ultra Exp Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Exp Amount",
+        "value": 105,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Exp Amount",
+        "value": 105,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 394,
+      "frozenPredictedSignedValue": 394,
+      "integerBaseCandidates": [
+        105
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlock",
+      "index": 15,
+      "tier": 8,
+      "groupId": "chieftain-s15",
+      "observed": {
+        "ownerId": "warlock",
+        "ownerName": "Warlock",
+        "displayedValue": 113,
+        "signedValue": 113,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+113 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 30,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 30,
+        "global": false
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 113,
+      "frozenPredictedSignedValue": 113,
+      "integerBaseCandidates": [
+        30
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "archer",
+      "index": 15,
+      "tier": 8,
+      "groupId": "chieftain-s15",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 26,
+        "signedValue": 26,
+        "type": "Ultra Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+26% Ultra Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Exp Chance",
+        "value": 7,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Exp Chance",
+        "value": 7,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 26,
+      "frozenPredictedSignedValue": 26,
+      "integerBaseCandidates": [
+        7
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 16,
+      "tier": 9,
+      "groupId": "chieftain-s16",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 75,
+        "signedValue": -75,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "-75% Skill Cooldown (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": -20,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 20,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": -75,
+      "frozenPredictedSignedValue": 75,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "druid",
+      "index": 16,
+      "tier": 9,
+      "groupId": "chieftain-s16",
+      "observed": {
+        "ownerId": "druid",
+        "ownerName": "Druid",
+        "displayedValue": 30,
+        "signedValue": 30,
+        "type": "Ultra Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+30% Ultra Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Energy Chance",
+        "value": 8,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Ultra Energe Chance",
+        "value": 8,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 30,
+      "frozenPredictedSignedValue": 30,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 16,
+      "tier": 9,
+      "groupId": "chieftain-s16",
+      "observed": {
+        "ownerId": "elementalist",
+        "ownerName": "Elementalist",
+        "displayedValue": 30,
+        "signedValue": 30,
+        "type": "Ultra Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+30% Ultra Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Energy Chance",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Energy Chance",
+        "value": 8,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 30,
+      "frozenPredictedSignedValue": 30,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 16,
+      "tier": 9,
+      "groupId": "chieftain-s16",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 281,
+        "signedValue": 281,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+281% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 75,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 75,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 281,
+      "frozenPredictedSignedValue": 281,
+      "integerBaseCandidates": [
+        75
+      ],
+      "changedFields": []
+    }
+  ],
+  "captureContextNote": "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+  "afterProposedCorrectionsMatchingEffects": 43,
+  "verifiedImageHashes": [
+    {
+      "sourceImageId": "chieftain-9gm-event-01",
+      "sha256": "ba7d820f81424d61acc0b9b37d8fe08f1eb6ab6d5529b682d0c3584a7174eb2b"
+    },
+    {
+      "sourceImageId": "chieftain-9gm-event-02",
+      "sha256": "d8be8f2a39c99cf628660b18f2a604426afe0476351a0bd53b76bb40b5ff80eb"
+    },
+    {
+      "sourceImageId": "chieftain-9gm-event-03",
+      "sha256": "ed8c8dc49dbd24eda0ebc02cc88106cca4b100b126917c1f6e5bdeada12e6599"
+    }
+  ],
+  "comparisonBasis": "The currentMagnitudeMatches/currentFullMatches fields record the active data before this capture set was applied.",
+  "matchesAfterCorrections": 43
+}

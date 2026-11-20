@@ -1,0 +1,923 @@
+{
+  "meta": {
+    "batch": "13",
+    "selectedHero": {
+      "id": "apprentice",
+      "name": "Apprentice"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "The user explicitly confirmed nine deployed Grand Masters and confirmed the synergy event remains active for these screenshots (+25% milestones, +10% synergy effects).",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the preceding profile; they were not separately reconfirmed for this capture.",
+      "Crusader +25% and Warden +0% owner bonuses follow the established account profile. Crusader was explicitly confirmed at +25% immediately before this capture set.",
+      "Owner tile placements are unspecified. The off-synergy-tile model is inferred from the repeated values; the screenshots do not establish tile placement.",
+      "Tier I shows no individual rank badges or rank requirement. Later rank badges are transcribed exactly and are not interpreted as run levels.",
+      "Each effect belongs to the portrait directly above its arrow. Repeated portraits are preserved as separate required copies and separate visible effects."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "apprentice-9gm-event-01",
+        "originalPath": "images/apprentice-9gm-event-01.png",
+        "archivePath": "images/apprentice-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "apprentice-9gm-event-02",
+        "originalPath": "images/apprentice-9gm-event-02.png",
+        "archivePath": "images/apprentice-9gm-event-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "apprentice-9gm-event-03",
+        "originalPath": "images/apprentice-9gm-event-03.png",
+        "archivePath": "images/apprentice-9gm-event-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "apprentice-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "apprentice-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": null
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 70,
+          "signedValue": 70,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+70% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "apprentice-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": null
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": null
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 94,
+          "signedValue": -94,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-94% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 70,
+          "signedValue": 70,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+70 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 235,
+          "signedValue": -235,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-235% Skill Cooldown (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "Rank 15+",
+      "sourceImageId": "apprentice-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "Rank 15+",
+      "sourceImageId": "apprentice-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 141,
+          "signedValue": 141,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+141 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 352,
+          "signedValue": 352,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+352% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "Rank 50+",
+      "sourceImageId": "apprentice-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 1877,
+          "signedValue": 1877,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,877% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 206,
+          "signedValue": 206,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+206% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "Rank 50+",
+      "sourceImageId": "apprentice-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        },
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 4627
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 188,
+          "signedValue": 188,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+188% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 113,
+          "signedValue": 113,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+113 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "apprentice-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+19% Super Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 7976,
+          "signedValue": 7976,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+7,976% Super Crit Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "apprentice-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5002
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5064
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 38,
+          "signedValue": 38,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+38% Super Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 3284,
+          "signedValue": 3284,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,284% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "apprentice-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 8876,
+          "signedValue": 8876,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+8,876% Super Gold Amount (personal effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 3228,
+          "signedValue": 3228,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,228% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "apprentice-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": 4503
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 1614,
+          "signedValue": 1614,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,614% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 32,
+          "signedValue": 32,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+32 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 202,
+          "signedValue": 202,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+202% Super Gold Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "apprentice-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4527
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 40,
+          "signedValue": 40,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+40 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 16,
+          "signedValue": 16,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16% Ultra Gold Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "apprentice-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 2219,
+          "signedValue": 2219,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 18156,
+          "signedValue": 18156,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+18,156% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 34295,
+          "signedValue": 34295,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+34,295% Ultra Crit Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "Rank 500+",
+      "sourceImageId": "apprentice-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4549
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 100,
+          "signedValue": 100,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+100 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 4650,
+          "signedValue": 4650,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,650% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "Rank 500+",
+      "sourceImageId": "apprentice-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        },
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 2325,
+          "signedValue": 2325,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,325% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 53,
+          "signedValue": 53,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+53 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 13286,
+          "signedValue": 13286,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+13,286% Super Crit Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "Rank 1000+",
+      "sourceImageId": "apprentice-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 3753,
+          "signedValue": 3753,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+3,753% Super Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 3753,
+          "signedValue": 3753,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,753% Damage (personal effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 38,
+          "signedValue": 38,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+38 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 244,
+          "signedValue": 244,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+244% Ultra Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "Rank 1500+",
+      "sourceImageId": "apprentice-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4549
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+56 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 12198,
+          "signedValue": 12198,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+12,198% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 281,
+          "signedValue": 281,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+281% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 24396,
+          "signedValue": 24396,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+24,396% Ultra Crit Damage (personal effect)"
+        }
+      ]
+    }
+  ]
+}

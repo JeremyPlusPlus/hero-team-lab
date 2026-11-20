@@ -1,0 +1,920 @@
+{
+  "meta": {
+    "batch": "09",
+    "selectedHero": {
+      "id": "sovereign",
+      "name": "Sovereign"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 15,
+          "warden": 0
+        }
+      }
+    },
+    "contextNotes": [
+      "The nine-Grand-Master count, Snow Fort map modifiers, and account synergy bonuses are inferred continuation of preceding captures; they were not re-confirmed for these screenshots.",
+      "Sovereign tile placement and all partner owner tile placements are unspecified.",
+      "The continuing owner-bonus assumption is +25% by default, +15% for Crusader, and 0% for Warden.",
+      "Tier I shows no rank requirement or individual hero rank badges; those values are null.",
+      "Effects are assigned to the hero portrait directly above each downward arrow. Required hero and effect order follows the screenshot.",
+      "Repeated hero portraits and their effects are preserved as separate ordered array entries; they have not been deduplicated.",
+      "Displayed rank badges are transcribed independently for this capture and are not copied from prior batches.",
+      "Tier VIII contains three Crusader portraits, each with +22% Ultra Gold Chance (GLOBAL effect). Battlemage shows Rank 4508 in Tier V."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "sovereign-01",
+        "originalPath": "images/sovereign-01.png",
+        "archivePath": "images/sovereign-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "sovereign-02",
+        "originalPath": "images/sovereign-02.png",
+        "archivePath": "images/sovereign-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "sovereign-03",
+        "originalPath": "images/sovereign-03.png",
+        "archivePath": "images/sovereign-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "sovereign-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "sovereign-01",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": null
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 107,
+          "signedValue": -107,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-107% Skill Cooldown (personal effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 43,
+          "signedValue": 43,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+43% Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "sovereign-01",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": null
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": null
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 427,
+          "signedValue": 427,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+427% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 85,
+          "signedValue": -85,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-85% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 1066,
+          "signedValue": 1066,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,066% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "sovereign-01",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5003
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 853,
+          "signedValue": 853,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+853% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 2133,
+          "signedValue": 2133,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,133% Crit Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "sovereign-01",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4511
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 3199,
+          "signedValue": 3199,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,199% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 3199,
+          "signedValue": 3199,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,199% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "sovereign-01",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 68,
+          "signedValue": 68,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+68 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 68,
+          "signedValue": 68,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+68 Skill Duration (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "sovereign-01",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 4528
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+9 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 853,
+          "signedValue": 853,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+853% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "sovereign-02",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 4505
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 1066,
+          "signedValue": 1066,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,066% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 94,
+          "signedValue": 94,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+94 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "sovereign-02",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": 5004
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+51% Super Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 128,
+          "signedValue": 128,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+128% Super Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 17,
+          "signedValue": 17,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+17 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "sovereign-02",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 4527
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 59,
+          "signedValue": 59,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+59% Super Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 2934,
+          "signedValue": 2934,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,934% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "sovereign-02",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        },
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 4508
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 29,
+          "signedValue": 29,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+29 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 3301,
+          "signedValue": 3301,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,301% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 4585,
+          "signedValue": 4585,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+4,585% Super Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "sovereign-02",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 4508
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 330,
+          "signedValue": 330,
+          "type": "Ultra Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+330% Ultra Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 37,
+          "signedValue": 37,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+37% Ultra Gold Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "sovereign-02",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4632
+        },
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 4402,
+          "signedValue": 4402,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,402% Damage (personal effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 22,
+          "signedValue": 22,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+22% Ultra Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 18,
+          "signedValue": 18,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+18% Ultra Energy Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "sovereign-03",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 42,
+          "signedValue": 42,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+42 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 5133,
+          "signedValue": 5133,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,133% Super Gold Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "sovereign-03",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 5586,
+          "signedValue": 5586,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,586% Super Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 2114,
+          "signedValue": 2114,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,114% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 121,
+          "signedValue": 121,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+121 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "sovereign-03",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 4505
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 4505
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 4505
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 10236,
+          "signedValue": 10236,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+10,236% Ultra Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 22,
+          "signedValue": 22,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+22% Ultra Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 22,
+          "signedValue": 22,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+22% Ultra Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 22,
+          "signedValue": 22,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+22% Ultra Gold Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sovereign-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "sovereign-03",
+      "requiredHeroes": [
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": 4503
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 4505
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 136,
+          "signedValue": 136,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+136 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 11089,
+          "signedValue": 11089,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+11,089% Ultra Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 11089,
+          "signedValue": 11089,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+11,089% Ultra Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 628,
+          "signedValue": 628,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+628% Attack Speed (personal effect)"
+        }
+      ]
+    }
+  ]
+}

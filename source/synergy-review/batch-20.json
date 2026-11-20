@@ -1,0 +1,923 @@
+{
+  "meta": {
+    "batch": "20",
+    "selectedHero": {
+      "id": "samurai",
+      "name": "Samurai"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the recorded profile by inference.",
+      "Crusader +25% was explicitly confirmed in the preceding capture set; Warden remains assumed +0%.",
+      "Owner tile placements are unspecified. The off-synergy-tile model is inferred from the repeated values, not directly established by these screenshots.",
+      "Tier I has no rank requirement or individual rank badges. Later badges are transcribed independently from this batch.",
+      "Each effect belongs to the portrait directly above its arrow. Repeated portraits are preserved as separate required copies and effects."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "samurai-9gm-event-01",
+        "originalPath": "images/samurai-9gm-event-01.png",
+        "archivePath": "images/samurai-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "samurai-9gm-event-02",
+        "originalPath": "images/samurai-9gm-event-02.png",
+        "archivePath": "images/samurai-9gm-event-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "samurai-9gm-event-03",
+        "originalPath": "images/samurai-9gm-event-03.png",
+        "archivePath": "images/samurai-9gm-event-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "samurai-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "samurai-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": null
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 47,
+          "signedValue": -47,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-47% Skill Cooldown (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "samurai-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": null
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": null
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+235% Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+469% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+469% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "samurai-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 117,
+          "signedValue": 117,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+117 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "samurai-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": 2264
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+235 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "samurai-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 751,
+          "signedValue": 751,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+751% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 751,
+          "signedValue": 751,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+751% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "samurai-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+938% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+469% Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "samurai-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5018
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+19% Super Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+19% Super Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "samurai-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 8914,
+          "signedValue": 8914,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+8,914% Super Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 15,
+          "signedValue": 15,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+15 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "samurai-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 65,
+          "signedValue": 65,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+65% Super Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 3228,
+          "signedValue": 3228,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,228% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "samurai-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 3631,
+          "signedValue": 3631,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,631% Damage (personal effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 10087,
+          "signedValue": 10087,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+10,087% Super Gold Amount (personal effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 1614,
+          "signedValue": 1614,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,614% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "samurai-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 40,
+          "signedValue": 40,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+40 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 16139,
+          "signedValue": 16139,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16,139% Ultra Gold Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "samurai-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 2219,
+          "signedValue": 2219,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "samurai-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 33,
+          "signedValue": 33,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+33% Super Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 100,
+          "signedValue": 100,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+100% Super Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "samurai-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4525
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 53,
+          "signedValue": 53,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+53 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 53,
+          "signedValue": 53,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+53 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 40,
+          "signedValue": 40,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+40% Super Energy Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "samurai-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 45,
+          "signedValue": 45,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+45 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 1501,
+          "signedValue": 1501,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,501% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 11260,
+          "signedValue": 11260,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+11,260% Ultra Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 3003,
+          "signedValue": 3003,
+          "type": "Boss Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+3,003% Boss Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "samurai-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "samurai-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        },
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 12198,
+          "signedValue": 12198,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+12,198% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 8,
+          "signedValue": 8,
+          "type": "Shadow Runes",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+8 Shadow Runes (personal effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 281,
+          "signedValue": 281,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+281% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+56 Skill Power (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

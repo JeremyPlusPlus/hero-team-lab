@@ -1,0 +1,924 @@
+{
+  "meta": {
+    "batch": "12",
+    "selectedHero": {
+      "id": "hunter",
+      "name": "Hunter"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 10,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "The user explicitly confirmed ten deployed Grand Masters and an active event with +25% global milestone effects and +10% synergy effects. The event is separate from permanent account boosts.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary owner +25% bonuses continue the earlier account context; those components were not reconfirmed in these screenshots.",
+      "Owner tile placements are unspecified. The off-synergy-tile model reproduces unchanged displayed values and is used as an inference, not a confirmed placement.",
+      "The user confirmed Crusader now has a +25% owner synergy bonus, replacing the older +15% account setting. Its unchanged tier IX base 200 reproduces the displayed 826 at +25%; the older +15% assumption predicts 760.",
+      "Tier I shows no rank requirements or individual rank badges; those fields are null.",
+      "Effects are assigned to the portrait directly above each downward arrow. Required hero order follows the screenshots.",
+      "Hunter header and all its visible rank badges show 4661. Partner rank badges are transcribed independently of prior captures."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "hunter-event-01",
+        "originalPath": "images/hunter-event-01.png",
+        "archivePath": "images/hunter-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "hunter-event-02",
+        "originalPath": "images/hunter-event-02.png",
+        "archivePath": "images/hunter-event-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "hunter-event-03",
+        "originalPath": "images/hunter-event-03.png",
+        "archivePath": "images/hunter-event-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "hunter-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "hunter-event-01",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": null
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 258,
+          "signedValue": 258,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+258% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 645,
+          "signedValue": 645,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+645% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "hunter-event-01",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": null
+        },
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": null
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 258,
+          "signedValue": -258,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-258% Skill Cooldown (personal effect)"
+        },
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 103,
+          "signedValue": -103,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-103% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 77,
+          "signedValue": 77,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+77 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "hunter-event-01",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 2580,
+          "signedValue": 2580,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,580% Damage (personal effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 155,
+          "signedValue": 155,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+155 Rank Exp (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "hunter-event-01",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 1548,
+          "signedValue": 1548,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,548% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 258,
+          "signedValue": 258,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+258 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 310,
+          "signedValue": 310,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+310% Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "hunter-event-01",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5010
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 83,
+          "signedValue": 83,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+83 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 10,
+          "signedValue": 10,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+10 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "hunter-event-01",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 516,
+          "signedValue": 516,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+516% Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 1032,
+          "signedValue": 1032,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,032% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 1032,
+          "signedValue": 1032,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,032% Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "hunter-event-02",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 1290,
+          "signedValue": 1290,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,290% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 41,
+          "signedValue": 41,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+41% Super Gold Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "hunter-event-02",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 5000
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4525
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 155,
+          "signedValue": 155,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+155% Super Gold Chance (personal effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 3612,
+          "signedValue": 3612,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,612% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 1548,
+          "signedValue": 1548,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,548% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "hunter-event-02",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 71,
+          "signedValue": 71,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+71% Super Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 1553,
+          "signedValue": 1553,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,553% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "hunter-event-02",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4525
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 3994,
+          "signedValue": 3994,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,994% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 5548,
+          "signedValue": 5548,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,548% Super Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 89,
+          "signedValue": 89,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+89% Super Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "hunter-event-02",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 44,
+          "signedValue": 44,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+44 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 89,
+          "signedValue": 89,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+89 Skill Duration (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "hunter-event-02",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 19972,
+          "signedValue": 19972,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+19,972% Ultra Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 311,
+          "signedValue": 311,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+311% Ultra Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 27,
+          "signedValue": 27,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+27% Ultra Gold Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "hunter-event-03",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+51 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 6211,
+          "signedValue": 6211,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+6,211% Super Gold Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "hunter-event-03",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": 5000
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 14615,
+          "signedValue": 14615,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+14,615% Super Gold Amount (personal effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 58,
+          "signedValue": 58,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+58 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 102,
+          "signedValue": 102,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+102% Super Gold Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "hunter-event-03",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": 4503
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 124,
+          "signedValue": 124,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+124 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 12386,
+          "signedValue": 12386,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+12,386% Ultra Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 29,
+          "signedValue": 29,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+29% Ultra Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 3303,
+          "signedValue": 3303,
+          "type": "Boss Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+3,303% Boss Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "hunter-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "hunter-event-03",
+      "requiredHeroes": [
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": 4503
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 13418,
+          "signedValue": 13418,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+13,418% Ultra Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 165,
+          "signedValue": 165,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+165 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 13418,
+          "signedValue": 13418,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+13,418% Ultra Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 826,
+          "signedValue": 826,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+826% Attack Speed (personal effect)"
+        }
+      ]
+    }
+  ]
+}

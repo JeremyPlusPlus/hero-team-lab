@@ -1,0 +1,889 @@
+{
+  "captureCount": 1,
+  "captures": [
+    {
+      "id": "militia-nine-grand-masters",
+      "heroId": "militia",
+      "heroName": "Militia",
+      "sourceCapture": "source/milestone-review/calibration-capture-militia-nine-grand-masters.json",
+      "archivedImage": "source/milestone-review/images/militia-nine-grand-masters.png",
+      "imageSha256": "9010ccb084cd16df355ce158dde33c481a3b7e7e2ebc3e7949d975c6e8540604",
+      "context": {
+        "grandMasterCount": 9,
+        "grandMasterCountEvidence": "User stated nine Grand Masters were deployed.",
+        "grandMasterBonusPercent": 10,
+        "accountMilestoneScale": 2.8125,
+        "accountMilestoneScaleEvidence": "Previously confirmed permanent baseline: talents 1.5 * global modifier 1.25 * hero Ascension 1.5. Original baseline captures had zero deployed heroes.",
+        "milestoneTileActive": null,
+        "tileEvidence": "Not supplied for this capture. The formula without an additional tile effect fits; actual placement and tile stacking are not established by this fit.",
+        "globalSynergyOnlyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "globalSynergyOnlyBonusesAppliedToMilestones": false,
+        "stackingEvidence": "Compounded Grand Master milestone strength is inferred from the screenshot and confirmed component values; the user supplied the bonuses and count, not this stacking rule."
+      },
+      "comparisonBasis": "Active screenshot-inferred bases read from data.js; no base modifications.",
+      "observedMilestones": 17,
+      "matchingFields": 17,
+      "models": {
+        "compoundedGrandMasters": {
+          "scale": 6.631727880937506,
+          "matchingMilestones": 17
+        },
+        "additiveGrandMasters": {
+          "scale": 5.34375,
+          "matchingMilestones": 0
+        },
+        "compoundedPlusSynergyOnlyBonuses": {
+          "scale": 7.677053988170281,
+          "matchingMilestones": 0
+        }
+      },
+      "commonScaleInterval": [
+        6.631666666666667,
+        6.632857142857143
+      ],
+      "intervalUpperExclusive": true,
+      "compoundedScaleInsideInterval": true,
+      "tileInteractionValidated": false,
+      "records": [
+        {
+          "level": 25,
+          "observed": {
+            "level": 25,
+            "displayedValue": 66,
+            "signedValue": 66,
+            "type": "Damage",
+            "global": false,
+            "unit": "percent",
+            "sourceText": "+66% Damage (personal effect)"
+          },
+          "activeInferredBase": {
+            "level": 25,
+            "value": 10,
+            "type": "Damage",
+            "global": false,
+            "unit": "percent",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 28,
+            "displayedSignedValue": 28,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.55,
+            6.65
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 66.31727880937505,
+              "displayedSignedValue": 66,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 53.4375,
+              "displayedSignedValue": 53,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 76.7705398817028,
+              "displayedSignedValue": 77,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 75,
+          "observed": {
+            "level": 75,
+            "displayedValue": 7,
+            "signedValue": 7,
+            "type": "Skill Power",
+            "global": false,
+            "unit": "flat",
+            "sourceText": "+7 Skill Power (personal effect)"
+          },
+          "activeInferredBase": {
+            "level": 75,
+            "value": 1,
+            "type": "Skill Power",
+            "global": false,
+            "unit": "flat",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 3,
+            "displayedSignedValue": 3,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.5,
+            7.5
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 6.631727880937506,
+              "displayedSignedValue": 7,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 5.34375,
+              "displayedSignedValue": 5,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 7.677053988170281,
+              "displayedSignedValue": 8,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 150,
+          "observed": {
+            "level": 150,
+            "displayedValue": 199,
+            "signedValue": 199,
+            "type": "Crit Damage",
+            "global": false,
+            "unit": "percent",
+            "sourceText": "+199% Crit Damage (personal effect)"
+          },
+          "activeInferredBase": {
+            "level": 150,
+            "value": 30,
+            "type": "Crit Damage",
+            "global": false,
+            "unit": "percent",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 84,
+            "displayedSignedValue": 84,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.616666666666666,
+            6.65
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 198.95183642812518,
+              "displayedSignedValue": 199,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 160.3125,
+              "displayedSignedValue": 160,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 230.3116196451084,
+              "displayedSignedValue": 230,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 250,
+          "observed": {
+            "level": 250,
+            "displayedValue": 66,
+            "signedValue": 66,
+            "type": "Range",
+            "global": false,
+            "unit": "percent",
+            "sourceText": "+66% Range (personal effect)"
+          },
+          "activeInferredBase": {
+            "level": 250,
+            "value": 10,
+            "type": "Range",
+            "global": false,
+            "unit": "percent",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 28,
+            "displayedSignedValue": 28,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.55,
+            6.65
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 66.31727880937505,
+              "displayedSignedValue": 66,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 53.4375,
+              "displayedSignedValue": 53,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 76.7705398817028,
+              "displayedSignedValue": 77,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 500,
+          "observed": {
+            "level": 500,
+            "displayedValue": 53,
+            "signedValue": 53,
+            "type": "Rank Exp",
+            "global": true,
+            "unit": "flat",
+            "sourceText": "+53 Rank Exp (GLOBAL effect)"
+          },
+          "activeInferredBase": {
+            "level": 500,
+            "value": 8,
+            "type": "Rank Exp",
+            "global": true,
+            "unit": "flat",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 23,
+            "displayedSignedValue": 23,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.5625,
+            6.6875
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 53.053823047500046,
+              "displayedSignedValue": 53,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 42.75,
+              "displayedSignedValue": 43,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 61.416431905362245,
+              "displayedSignedValue": 61,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 750,
+          "observed": {
+            "level": 750,
+            "displayedValue": 20,
+            "signedValue": 20,
+            "type": "Skill Power",
+            "global": false,
+            "unit": "flat",
+            "sourceText": "+20 Skill Power (personal effect)"
+          },
+          "activeInferredBase": {
+            "level": 750,
+            "value": 3,
+            "type": "Skill Power",
+            "global": false,
+            "unit": "flat",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 8,
+            "displayedSignedValue": 8,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.5,
+            6.833333333333333
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 19.89518364281252,
+              "displayedSignedValue": 20,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 16.03125,
+              "displayedSignedValue": 16,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 23.031161964510844,
+              "displayedSignedValue": 23,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 1000,
+          "observed": {
+            "level": 1000,
+            "displayedValue": 106,
+            "signedValue": -106,
+            "type": "Skill Cooldown",
+            "global": false,
+            "unit": "percent",
+            "sourceText": "-106% Skill Cooldown (personal effect)"
+          },
+          "activeInferredBase": {
+            "level": 1000,
+            "value": -16,
+            "type": "Skill Cooldown",
+            "global": false,
+            "unit": "percent",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 45,
+            "displayedSignedValue": -45,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.59375,
+            6.65625
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": -106.10764609500009,
+              "displayedSignedValue": -106,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": -85.5,
+              "displayedSignedValue": -86,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": -122.83286381072449,
+              "displayedSignedValue": -123,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 1500,
+          "observed": {
+            "level": 1500,
+            "displayedValue": 106,
+            "signedValue": 106,
+            "type": "Attack Speed",
+            "global": true,
+            "unit": "percent",
+            "sourceText": "+106% Attack Speed (GLOBAL effect)"
+          },
+          "activeInferredBase": {
+            "level": 1500,
+            "value": 16,
+            "type": "Attack Speed",
+            "global": true,
+            "unit": "percent",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 45,
+            "displayedSignedValue": 45,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.59375,
+            6.65625
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 106.10764609500009,
+              "displayedSignedValue": 106,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 85.5,
+              "displayedSignedValue": 86,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 122.83286381072449,
+              "displayedSignedValue": 123,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 2000,
+          "observed": {
+            "level": 2000,
+            "displayedValue": 27,
+            "signedValue": 27,
+            "type": "Super Crit Chance",
+            "global": true,
+            "unit": "percent",
+            "sourceText": "+27% Super Crit Chance (GLOBAL effect)"
+          },
+          "activeInferredBase": {
+            "level": 2000,
+            "value": 4,
+            "type": "Super Crit Chance",
+            "global": true,
+            "unit": "percent",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 11,
+            "displayedSignedValue": 11,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.625,
+            6.875
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 26.526911523750023,
+              "displayedSignedValue": 27,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 21.375,
+              "displayedSignedValue": 21,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 30.708215952681122,
+              "displayedSignedValue": 31,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 2500,
+          "observed": {
+            "level": 2500,
+            "displayedValue": 199,
+            "signedValue": 199,
+            "type": "Super Gold Amount",
+            "global": true,
+            "unit": "percent",
+            "sourceText": "+199% Super Gold Amount (GLOBAL effect)"
+          },
+          "activeInferredBase": {
+            "level": 2500,
+            "value": 30,
+            "type": "Super Gold Amount",
+            "global": true,
+            "unit": "percent",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 84,
+            "displayedSignedValue": 84,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.616666666666666,
+            6.65
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 198.95183642812518,
+              "displayedSignedValue": 199,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 160.3125,
+              "displayedSignedValue": 160,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 230.3116196451084,
+              "displayedSignedValue": 230,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 3000,
+          "observed": {
+            "level": 3000,
+            "displayedValue": 239,
+            "signedValue": 239,
+            "type": "Damage",
+            "global": true,
+            "unit": "percent",
+            "sourceText": "+239% Damage (GLOBAL effect)"
+          },
+          "activeInferredBase": {
+            "level": 3000,
+            "value": 36,
+            "type": "Damage",
+            "global": true,
+            "unit": "percent",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 101,
+            "displayedSignedValue": 101,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.625,
+            6.652777777777778
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 238.7422037137502,
+              "displayedSignedValue": 239,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 192.375,
+              "displayedSignedValue": 192,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 276.3739435741301,
+              "displayedSignedValue": 276,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 3500,
+          "observed": {
+            "level": 3500,
+            "displayedValue": 99,
+            "signedValue": 99,
+            "type": "Ultra Exp Amount",
+            "global": true,
+            "unit": "percent",
+            "sourceText": "+99% Ultra Exp Amount (GLOBAL effect)"
+          },
+          "activeInferredBase": {
+            "level": 3500,
+            "value": 15,
+            "type": "Ultra Exp Amount",
+            "global": true,
+            "unit": "percent",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 42,
+            "displayedSignedValue": 42,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.566666666666666,
+            6.633333333333334
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 99.47591821406259,
+              "displayedSignedValue": 99,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 80.15625,
+              "displayedSignedValue": 80,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 115.1558098225542,
+              "displayedSignedValue": 115,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 4000,
+          "observed": {
+            "level": 4000,
+            "displayedValue": 33,
+            "signedValue": 33,
+            "type": "Energy Income",
+            "global": true,
+            "unit": "flat",
+            "sourceText": "+33 Energy Income (GLOBAL effect)"
+          },
+          "activeInferredBase": {
+            "level": 4000,
+            "value": 5,
+            "type": "Energy Income",
+            "global": true,
+            "unit": "flat",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 14,
+            "displayedSignedValue": 14,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.5,
+            6.7
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 33.15863940468753,
+              "displayedSignedValue": 33,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 26.71875,
+              "displayedSignedValue": 27,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 38.3852699408514,
+              "displayedSignedValue": 38,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 5000,
+          "observed": {
+            "level": 5000,
+            "displayedValue": 13,
+            "signedValue": 13,
+            "type": "Ultra Energy Chance",
+            "global": true,
+            "unit": "percent",
+            "sourceText": "+13% Ultra Energy Chance (GLOBAL effect)"
+          },
+          "activeInferredBase": {
+            "level": 5000,
+            "value": 2,
+            "type": "Ultra Energy Chance",
+            "global": true,
+            "unit": "percent",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 6,
+            "displayedSignedValue": 6,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.25,
+            6.75
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 13.263455761875012,
+              "displayedSignedValue": 13,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 10.6875,
+              "displayedSignedValue": 11,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 15.354107976340561,
+              "displayedSignedValue": 15,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 6000,
+          "observed": {
+            "level": 6000,
+            "displayedValue": 166,
+            "signedValue": 166,
+            "type": "Attack Speed",
+            "global": true,
+            "unit": "percent",
+            "sourceText": "+166% Attack Speed (GLOBAL effect)"
+          },
+          "activeInferredBase": {
+            "level": 6000,
+            "value": 25,
+            "type": "Attack Speed",
+            "global": true,
+            "unit": "percent",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 70,
+            "displayedSignedValue": 70,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.62,
+            6.66
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 165.79319702343764,
+              "displayedSignedValue": 166,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 133.59375,
+              "displayedSignedValue": 134,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 191.926349704257,
+              "displayedSignedValue": 192,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 7500,
+          "observed": {
+            "level": 7500,
+            "displayedValue": 1990,
+            "signedValue": 1990,
+            "type": "Ultra Crit Damage",
+            "global": false,
+            "unit": "percent",
+            "sourceText": "+1,990% Ultra Crit Damage (personal effect)"
+          },
+          "activeInferredBase": {
+            "level": 7500,
+            "value": 300,
+            "type": "Ultra Crit Damage",
+            "global": false,
+            "unit": "percent",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 844,
+            "displayedSignedValue": 844,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.631666666666667,
+            6.635
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 1989.5183642812517,
+              "displayedSignedValue": 1990,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 1603.125,
+              "displayedSignedValue": 1603,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 2303.1161964510843,
+              "displayedSignedValue": 2303,
+              "matches": false
+            }
+          }
+        },
+        {
+          "level": 10000,
+          "observed": {
+            "level": 10000,
+            "displayedValue": 2321,
+            "signedValue": 2321,
+            "type": "Super Crit Damage",
+            "global": false,
+            "unit": "percent",
+            "sourceText": "+2,321% Super Crit Damage (personal effect)"
+          },
+          "activeInferredBase": {
+            "level": 10000,
+            "value": 350,
+            "type": "Super Crit Damage",
+            "global": false,
+            "unit": "percent",
+            "source": "source/milestone-review/images/militia.png",
+            "displayedValue": 984,
+            "displayedSignedValue": 984,
+            "referenceScale": 2.8125,
+            "normalization": "inferred-integer-base"
+          },
+          "fieldsMatch": true,
+          "commonScaleInterval": [
+            6.63,
+            6.632857142857143
+          ],
+          "predictions": {
+            "compoundedGrandMasters": {
+              "scale": 6.631727880937506,
+              "rawSignedValue": 2321.104758328127,
+              "displayedSignedValue": 2321,
+              "matches": true
+            },
+            "additiveGrandMasters": {
+              "scale": 5.34375,
+              "rawSignedValue": 1870.3125,
+              "displayedSignedValue": 1870,
+              "matches": false
+            },
+            "compoundedPlusSynergyOnlyBonuses": {
+              "scale": 7.677053988170281,
+              "rawSignedValue": 2686.9688958595984,
+              "displayedSignedValue": 2687,
+              "matches": false
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "note": "Separate calibration captures do not change zero-deployment baseline context or hero coverage. Compounded stacking is inferred; tile state and interaction remain unverified."
+}

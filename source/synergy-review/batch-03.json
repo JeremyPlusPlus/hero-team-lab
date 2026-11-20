@@ -1,0 +1,919 @@
+{
+  "meta": {
+    "batch": "03",
+    "selectedHero": {
+      "id": "spelldancer",
+      "name": "Spelldancer"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 15,
+          "warden": 0
+        }
+      }
+    },
+    "contextNotes": [
+      "The nine-Grand-Master count, Snow Fort map modifiers, and account synergy bonuses are inferred continuation of the preceding captures; they were not re-confirmed for these screenshots.",
+      "Spelldancer tile placement and all partner owner tile placements are unspecified.",
+      "The continuing owner-bonus assumption is +25% by default, +15% for Crusader, and 0% for Warden.",
+      "Tier I shows no rank requirement or individual hero rank badges; those values are null.",
+      "Effects are assigned to the hero portrait directly above each downward arrow. Required hero order follows the screenshot.",
+      "All displayed rank badges are preserved independently of preceding captures, including Warden at Rank 4523.",
+      "Battlemage is displayed at Rank 1450 in Tier VIII; this is preserved exactly."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "spelldancer-01",
+        "originalPath": "images/spelldancer-01.png",
+        "archivePath": "images/spelldancer-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "spelldancer-02",
+        "originalPath": "images/spelldancer-02.png",
+        "archivePath": "images/spelldancer-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "spelldancer-03",
+        "originalPath": "images/spelldancer-03.png",
+        "archivePath": "images/spelldancer-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "spelldancer-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "spelldancer-01",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": null
+        },
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 213,
+          "signedValue": 213,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+213% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 21,
+          "signedValue": 21,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+21 Rank Exp (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "spelldancer-01",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": null
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": null
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 533,
+          "signedValue": 533,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+533% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 1066,
+          "signedValue": 1066,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,066% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 427,
+          "signedValue": 427,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+427% Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "spelldancer-01",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 853,
+          "signedValue": 853,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+853% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 2133,
+          "signedValue": 2133,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,133% Crit Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "spelldancer-01",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5024
+        },
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 149,
+          "signedValue": -149,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-149% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 102,
+          "signedValue": 102,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+102 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "spelldancer-01",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 4502
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 682,
+          "signedValue": 682,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+682% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 299,
+          "signedValue": 299,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+299% Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "spelldancer-01",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 5000
+        },
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 102,
+          "signedValue": 102,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+102 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 2133,
+          "signedValue": 2133,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,133% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 171,
+          "signedValue": 171,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+171% Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "spelldancer-02",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 3839,
+          "signedValue": 3839,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+3,839% Super Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+9 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "spelldancer-02",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4632
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 34,
+          "signedValue": 34,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+34% Super Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 34,
+          "signedValue": 34,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+34% Super Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 60,
+          "signedValue": 60,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+60% Super Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "spelldancer-02",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": 4515
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 22,
+          "signedValue": 22,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+22 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 2934,
+          "signedValue": 2934,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,934% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "spelldancer-02",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5003
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 29,
+          "signedValue": 29,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+29% Super Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 183,
+          "signedValue": 183,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+183% Super Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 29,
+          "signedValue": 29,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+29 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "spelldancer-02",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 37,
+          "signedValue": 37,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+37 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 3668,
+          "signedValue": 3668,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,668% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "spelldancer-02",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 16506,
+          "signedValue": 16506,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16,506% Ultra Gold Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "spelldancer-03",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 5133,
+          "signedValue": 5133,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,133% Super Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 1812,
+          "signedValue": 1812,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,812% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "spelldancer-03",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 4527
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 36,
+          "signedValue": 36,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+36% Super Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 72,
+          "signedValue": 72,
+          "type": "Power Mage Energy",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+72% Power Mage Energy (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "spelldancer-03",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        },
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 1450
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": 5004
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 68,
+          "signedValue": 68,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+68 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 102,
+          "signedValue": 102,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+102 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 10236,
+          "signedValue": 10236,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+10,236% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 102,
+          "signedValue": 102,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+102 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "spelldancer-03",
+      "requiredHeroes": [
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 5000
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": 4504
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5003
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 11089,
+          "signedValue": 11089,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+11,089% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 68,
+          "signedValue": 68,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+68% Ultra Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+51 Skill Power (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

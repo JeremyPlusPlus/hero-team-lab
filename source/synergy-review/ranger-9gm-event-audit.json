@@ -1,0 +1,1627 @@
+{
+  "batch": "batch-18.json",
+  "status": "activated-in-confirmed-overrides",
+  "observedEffects": 43,
+  "coverage": {
+    "uniqueEffects": 43,
+    "uniqueGroups": 16,
+    "newUniqueEffectsVsEarlierBatches": 26,
+    "newUniqueGroupsVsEarlierBatches": 10,
+    "overlappingEffectAppearances": 17,
+    "repeatedPortraitAppearances": 0
+  },
+  "frozenMagnitudeMatches": 40,
+  "currentMagnitudeMatches": 40,
+  "currentFullMatches": 40,
+  "newOverrideRecords": 3,
+  "overrides": [
+    {
+      "ownerId": "ranger",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "peacekeeper"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 1,
+        "global": false,
+        "source": "Data!C16:F16"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-18.json",
+      "evidence": {
+        "groupId": "ranger-s1",
+        "sourceImageId": "ranger-9gm-event-01",
+        "displayedValue": 47,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 2,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the immediately prior user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "ranger",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "elementalist",
+        "arbalest"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 2,
+        "global": false,
+        "source": "Data!G16:K16"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-18.json",
+      "evidence": {
+        "groupId": "ranger-s2",
+        "sourceImageId": "ranger-9gm-event-01",
+        "displayedValue": 70,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 3,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the immediately prior user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "ranger"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 4,
+        "global": false,
+        "source": "Data!L42:O42"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-18.json",
+      "evidence": {
+        "groupId": "ranger-s3",
+        "sourceImageId": "ranger-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 5,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the immediately prior user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    }
+  ],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "ranger",
+      "index": 1,
+      "tier": 1,
+      "groupId": "ranger-s1",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 47,
+        "signedValue": 47,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+47 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 1,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 1,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 23,
+      "frozenPredictedSignedValue": 23,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": [
+        "value"
+      ]
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 1,
+      "tier": 1,
+      "groupId": "ranger-s1",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+235% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 2,
+      "tier": 1,
+      "groupId": "ranger-s2",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 70,
+        "signedValue": 70,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+70 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 2,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 2,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Duration",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 47,
+      "frozenPredictedSignedValue": 47,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": [
+        "value"
+      ]
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 2,
+      "tier": 1,
+      "groupId": "ranger-s2",
+      "observed": {
+        "ownerId": "elementalist",
+        "ownerName": "Elementalist",
+        "displayedValue": 1173,
+        "signedValue": 1173,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,173% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 50,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 50,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 1173,
+      "frozenPredictedSignedValue": 1173,
+      "integerBaseCandidates": [
+        50
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "arbalest",
+      "index": 2,
+      "tier": 1,
+      "groupId": "ranger-s2",
+      "observed": {
+        "ownerId": "arbalest",
+        "ownerName": "Arbalest",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+235% Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 10,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 10,
+        "global": false
+      },
+      "canonicalCurrentType": "Crit Chance",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 3,
+      "tier": 2,
+      "groupId": "ranger-s3",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+235% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 3,
+      "tier": 2,
+      "groupId": "ranger-s3",
+      "observed": {
+        "ownerId": "dicemaster",
+        "ownerName": "Dicemaster",
+        "displayedValue": 117,
+        "signedValue": 117,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+117 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 4,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 4,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Duration",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 94,
+      "frozenPredictedSignedValue": 94,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": [
+        "value"
+      ]
+    },
+    {
+      "ownerId": "ranger",
+      "index": 4,
+      "tier": 2,
+      "groupId": "ranger-s4",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Rank Exp",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+235 Rank Exp (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Rank Exp",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "gladiator",
+      "index": 4,
+      "tier": 2,
+      "groupId": "ranger-s4",
+      "observed": {
+        "ownerId": "gladiator",
+        "ownerName": "Gladiator",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,407% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 60,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 60,
+        "global": false
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 1407,
+      "frozenPredictedSignedValue": 1407,
+      "integerBaseCandidates": [
+        60
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 4,
+      "tier": 2,
+      "groupId": "ranger-s4",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 141,
+        "signedValue": 141,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+141 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 6,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 6,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Duration",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 141,
+      "frozenPredictedSignedValue": 141,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 5,
+      "tier": 3,
+      "groupId": "ranger-s5",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 1877,
+        "signedValue": 1877,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,877% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 200,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 200,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1877,
+      "frozenPredictedSignedValue": 1877,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 5,
+      "tier": 3,
+      "groupId": "ranger-s5",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 1877,
+        "signedValue": 1877,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,877% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 200,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 200,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1877,
+      "frozenPredictedSignedValue": 1877,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 6,
+      "tier": 3,
+      "groupId": "ranger-s6",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 2346,
+        "signedValue": 2346,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+2,346% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": false
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 2346,
+      "frozenPredictedSignedValue": 2346,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 6,
+      "tier": 3,
+      "groupId": "ranger-s6",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 2346,
+        "signedValue": 2346,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+2,346% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 250,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 250,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 2346,
+      "frozenPredictedSignedValue": 2346,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 6,
+      "tier": 3,
+      "groupId": "ranger-s6",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+469% Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false
+      },
+      "canonicalCurrentType": "Crit Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        50
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 7,
+      "tier": 4,
+      "groupId": "ranger-s7",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 9,
+        "signedValue": 9,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+9 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 1,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 1,
+        "global": true
+      },
+      "canonicalCurrentType": "Energy Income",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 9,
+      "frozenPredictedSignedValue": 9,
+      "integerBaseCandidates": [
+        1
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "battlemage",
+      "index": 7,
+      "tier": 4,
+      "groupId": "ranger-s7",
+      "observed": {
+        "ownerId": "battlemage",
+        "ownerName": "Battlemage",
+        "displayedValue": 4222,
+        "signedValue": 4222,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+4,222% Super Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 450,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 450,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Gold Amount",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 4222,
+      "frozenPredictedSignedValue": 4222,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 8,
+      "tier": 4,
+      "groupId": "ranger-s8",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 141,
+        "signedValue": 141,
+        "type": "Super Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+141% Super Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Super Crit Chance",
+        "value": 15,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Chance",
+        "value": 15,
+        "global": false
+      },
+      "canonicalCurrentType": "Super Crit Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 141,
+      "frozenPredictedSignedValue": 141,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 8,
+      "tier": 4,
+      "groupId": "ranger-s8",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+19 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ballista",
+      "index": 8,
+      "tier": 4,
+      "groupId": "ranger-s8",
+      "observed": {
+        "ownerId": "ballista",
+        "ownerName": "Ballista",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,407% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 150,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 150,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1407,
+      "frozenPredictedSignedValue": 1407,
+      "integerBaseCandidates": [
+        150
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 9,
+      "tier": 5,
+      "groupId": "ranger-s9",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 65,
+        "signedValue": 65,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+65% Super Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Chance",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 8,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Gold Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 65,
+      "frozenPredictedSignedValue": 65,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ninja",
+      "index": 9,
+      "tier": 5,
+      "groupId": "ranger-s9",
+      "observed": {
+        "ownerId": "ninja",
+        "ownerName": "Ninja",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+24 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 10,
+      "tier": 5,
+      "groupId": "ranger-s10",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 5043,
+        "signedValue": 5043,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+5,043% Super Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Damage",
+        "value": 625,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Damage",
+        "value": 625,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Crit Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 5043,
+      "frozenPredictedSignedValue": 5043,
+      "integerBaseCandidates": [
+        625
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 10,
+      "tier": 5,
+      "groupId": "ranger-s10",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 3631,
+        "signedValue": 3631,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,631% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 450,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 450,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3631,
+      "frozenPredictedSignedValue": 3631,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warden",
+      "index": 10,
+      "tier": 5,
+      "groupId": "ranger-s10",
+      "observed": {
+        "ownerId": "warden",
+        "ownerName": "Warden",
+        "displayedValue": 2905,
+        "signedValue": 2905,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+2,905% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 450,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 450,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 6.45554939805252,
+      "predictedSignedValue": 2905,
+      "frozenPredictedSignedValue": 2905,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 11,
+      "tier": 6,
+      "groupId": "ranger-s11",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 2017,
+        "signedValue": 2017,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,017% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": true
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2017,
+      "frozenPredictedSignedValue": 2017,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 11,
+      "tier": 6,
+      "groupId": "ranger-s11",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 202,
+        "signedValue": 202,
+        "type": "Ultra Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+202% Ultra Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Energy Amount",
+        "value": 25,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Energy Amount",
+        "value": 25,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Energy Amount",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 202,
+      "frozenPredictedSignedValue": 202,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 12,
+      "tier": 6,
+      "groupId": "ranger-s12",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 2219,
+        "signedValue": 2219,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,219% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 275,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 275,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2219,
+      "frozenPredictedSignedValue": 2219,
+      "integerBaseCandidates": [
+        275
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "viking",
+      "index": 12,
+      "tier": 6,
+      "groupId": "ranger-s12",
+      "observed": {
+        "ownerId": "viking",
+        "ownerName": "Viking",
+        "displayedValue": 48,
+        "signedValue": 48,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+48 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 6,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 6,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 48,
+      "frozenPredictedSignedValue": 48,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 12,
+      "tier": 6,
+      "groupId": "ranger-s12",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 48,
+        "signedValue": 48,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+48 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 6,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 6,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 48,
+      "frozenPredictedSignedValue": 48,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 13,
+      "tier": 7,
+      "groupId": "ranger-s13",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 47,
+        "signedValue": 47,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+47 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 7,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 7,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 47,
+      "frozenPredictedSignedValue": 47,
+      "integerBaseCandidates": [
+        7
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "archer",
+      "index": 13,
+      "tier": 7,
+      "groupId": "ranger-s13",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 133,
+        "signedValue": 133,
+        "type": "Super Exp Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+133% Super Exp Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Amount",
+        "value": 20,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Exp Amount",
+        "value": 20,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Exp Amount",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 133,
+      "frozenPredictedSignedValue": 133,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 14,
+      "tier": 7,
+      "groupId": "ranger-s14",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 66,
+        "signedValue": 66,
+        "type": "Super Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+66% Super Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Chance",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Exp Chance",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Exp Chance",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 66,
+      "frozenPredictedSignedValue": 66,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 14,
+      "tier": 7,
+      "groupId": "ranger-s14",
+      "observed": {
+        "ownerId": "dicemaster",
+        "ownerName": "Dicemaster",
+        "displayedValue": 166,
+        "signedValue": 166,
+        "type": "Super Exp Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+166% Super Exp Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Amount",
+        "value": 25,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Exp Amount",
+        "value": 25,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Exp Amount",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 166,
+      "frozenPredictedSignedValue": 166,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ballista",
+      "index": 14,
+      "tier": 7,
+      "groupId": "ranger-s14",
+      "observed": {
+        "ownerId": "ballista",
+        "ownerName": "Ballista",
+        "displayedValue": 166,
+        "signedValue": 166,
+        "type": "Super Exp Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+166% Super Exp Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Amount",
+        "value": 25,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Exp Amount",
+        "value": 25,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Exp Amount",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 166,
+      "frozenPredictedSignedValue": 166,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 15,
+      "tier": 8,
+      "groupId": "ranger-s15",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 3003,
+        "signedValue": 3003,
+        "type": "Boss Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+3,003% Boss Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Boss Gold",
+        "value": 800,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Boss Gold",
+        "value": 800,
+        "global": true
+      },
+      "canonicalCurrentType": "Boss Gold",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 3003,
+      "frozenPredictedSignedValue": 3003,
+      "integerBaseCandidates": [
+        800
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 15,
+      "tier": 8,
+      "groupId": "ranger-s15",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 45,
+        "signedValue": 45,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+45 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 12,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 12,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 45,
+      "frozenPredictedSignedValue": 45,
+      "integerBaseCandidates": [
+        12
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 15,
+      "tier": 8,
+      "groupId": "ranger-s15",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 1501,
+        "signedValue": 1501,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,501% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 400,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 400,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 1501,
+      "frozenPredictedSignedValue": 1501,
+      "integerBaseCandidates": [
+        400
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 15,
+      "tier": 8,
+      "groupId": "ranger-s15",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 11260,
+        "signedValue": 11260,
+        "type": "Ultra Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+11,260% Ultra Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Amount",
+        "value": 3000,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Amount",
+        "value": 3000,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Gold Amount",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 11260,
+      "frozenPredictedSignedValue": 11260,
+      "integerBaseCandidates": [
+        3000
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 16,
+      "tier": 9,
+      "groupId": "ranger-s16",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 281,
+        "signedValue": 281,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+281% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 75,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 75,
+        "global": true
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 281,
+      "frozenPredictedSignedValue": 281,
+      "integerBaseCandidates": [
+        75
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 16,
+      "tier": 9,
+      "groupId": "ranger-s16",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 75,
+        "signedValue": -75,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "-75% Skill Cooldown (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": -20,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 20,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Cooldown",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": -75,
+      "frozenPredictedSignedValue": 75,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "druid",
+      "index": 16,
+      "tier": 9,
+      "groupId": "ranger-s16",
+      "observed": {
+        "ownerId": "druid",
+        "ownerName": "Druid",
+        "displayedValue": 30,
+        "signedValue": 30,
+        "type": "Ultra Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+30% Ultra Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Energy Chance",
+        "value": 8,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Ultra Energe Chance",
+        "value": 8,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Energy Chance",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 30,
+      "frozenPredictedSignedValue": 30,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 16,
+      "tier": 9,
+      "groupId": "ranger-s16",
+      "observed": {
+        "ownerId": "elementalist",
+        "ownerName": "Elementalist",
+        "displayedValue": 30,
+        "signedValue": 30,
+        "type": "Ultra Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+30% Ultra Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Energy Chance",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Energy Chance",
+        "value": 8,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Energy Chance",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 30,
+      "frozenPredictedSignedValue": 30,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    }
+  ],
+  "labelNormalizations": [],
+  "archiveChecks": [
+    {
+      "archivePath": "images/ranger-9gm-event-01.png",
+      "sha256": "2e0d1214fddb899f30d206639f8686f2989a7d093c7bc3937e141d13156aa2e0",
+      "byteIdenticalToOriginal": true
+    },
+    {
+      "archivePath": "images/ranger-9gm-event-02.png",
+      "sha256": "c6e8e4c0c3b5b3a60c2712e7ed0591c947d87d7d856b813c80058fdb56d6dea6",
+      "byteIdenticalToOriginal": true
+    },
+    {
+      "archivePath": "images/ranger-9gm-event-03.png",
+      "sha256": "2f1ebfb68d23e470f13af20b948c5efd511f9adfe890d871f4745b2bc472be47",
+      "byteIdenticalToOriginal": true
+    }
+  ]
+}

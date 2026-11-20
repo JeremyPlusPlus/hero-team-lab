@@ -1,0 +1,840 @@
+{
+  "batch": "batch-12.json",
+  "status": "activated-in-confirmed-overrides",
+  "observedEffects": 43,
+  "matchedCurrentMagnitudeWithCaptureContext": 39,
+  "fullyMatchingCurrentFields": 36,
+  "captureContextChanges": [
+    {
+      "ownerId": "crusader",
+      "field": "ownerSynergyBonusPercent",
+      "previous": 15,
+      "evidence": "User confirmed Crusader now has +25% owner synergy bonus; unchanged tier IX base 200 reproduces 826. Older +15% assumption predicts 760.",
+      "captureConfirmed": 25
+    }
+  ],
+  "overrides": [
+    {
+      "ownerId": "hunter",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "apprentice",
+        "druid"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": false,
+        "source": "Data!G7:K7"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s2",
+        "sourceImageId": "hunter-event-01",
+        "displayedValue": 258,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "druid",
+        "hunter"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 4,
+        "global": true,
+        "source": "Data!G3:K3"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s2",
+        "sourceImageId": "hunter-event-01",
+        "displayedValue": 103,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "druid",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "apprentice",
+        "hunter"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": false,
+        "source": "Data!G6:K6"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s2",
+        "sourceImageId": "hunter-event-01",
+        "displayedValue": 77,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 3,
+      "inferenceNote": "Unique whole-number base reproducing the rounded display under ten Grand Masters, the active +10% synergy event, and the recorded account/map context. Off-synergy-tile placement is inferred. Crusader uses a user-confirmed +25% owner bonus, supported by its unchanged tier IX value; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "hunter",
+      "index": 5,
+      "tier": 3,
+      "requires": [
+        "viking"
+      ],
+      "expectedOriginal": {
+        "type": "Attack Speed",
+        "value": 80,
+        "global": false,
+        "source": "Data!U7:X7"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s5",
+        "sourceImageId": "hunter-event-01",
+        "displayedValue": 83,
+        "unit": "flat",
+        "global": false
+      },
+      "confirmedType": "Skill Power",
+      "inferredBaseValue": 8,
+      "inferenceNote": "Unique whole-number base reproducing the rounded display under ten Grand Masters, the active +10% synergy event, and the recorded account/map context. Off-synergy-tile placement is inferred. Crusader uses a user-confirmed +25% owner bonus, supported by its unchanged tier IX value; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "viking",
+      "index": 5,
+      "tier": 3,
+      "requires": [
+        "hunter"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 7,
+        "global": false,
+        "source": "Data!U5:X5"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s5",
+        "sourceImageId": "hunter-event-01",
+        "displayedValue": 10,
+        "unit": "flat",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 1,
+      "inferenceNote": "Unique whole-number base reproducing the rounded display under ten Grand Masters, the active +10% synergy event, and the recorded account/map context. Off-synergy-tile placement is inferred. Crusader uses a user-confirmed +25% owner bonus, supported by its unchanged tier IX value; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "hunter",
+      "index": 11,
+      "tier": 6,
+      "requires": [
+        "crusader"
+      ],
+      "expectedOriginal": {
+        "type": "Energy Income",
+        "value": 5,
+        "global": true,
+        "source": "Data!AV7:AY7"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s11",
+        "sourceImageId": "hunter-event-02",
+        "displayedValue": 44,
+        "unit": "flat",
+        "global": true
+      },
+      "confirmedType": "Skill Power"
+    },
+    {
+      "ownerId": "crusader",
+      "index": 11,
+      "tier": 6,
+      "requires": [
+        "hunter"
+      ],
+      "expectedOriginal": {
+        "type": "Damage",
+        "value": 250,
+        "global": true,
+        "source": "Data!AV31:AY31"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s11",
+        "sourceImageId": "hunter-event-02",
+        "displayedValue": 89,
+        "unit": "flat",
+        "global": false
+      },
+      "confirmedType": "Skill Duration",
+      "confirmedGlobal": false,
+      "inferredBaseValue": 10,
+      "inferenceNote": "Unique whole-number base reproducing the rounded display under ten Grand Masters, the active +10% synergy event, and the recorded account/map context. Off-synergy-tile placement is inferred. Crusader uses a user-confirmed +25% owner bonus, supported by its unchanged tier IX value; this is not a direct unboosted base observation."
+    }
+  ],
+  "audit": [
+    {
+      "ownerId": "hunter",
+      "index": 1,
+      "tier": 1,
+      "groupId": "hunter-s1",
+      "type": "Kill Gold",
+      "currentType": "Kill Gold",
+      "currentBase": 10,
+      "currentGlobal": true,
+      "shown": 258,
+      "predictedMagnitude": 258,
+      "factor": 25.803431460239008,
+      "changedFields": []
+    },
+    {
+      "ownerId": "scout",
+      "index": 1,
+      "tier": 1,
+      "groupId": "hunter-s1",
+      "type": "Damage",
+      "currentType": "Damage",
+      "currentBase": 25,
+      "currentGlobal": false,
+      "shown": 645,
+      "predictedMagnitude": 645,
+      "factor": 25.803431460239008,
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 2,
+      "tier": 1,
+      "groupId": "hunter-s2",
+      "type": "Skill Cooldown",
+      "currentType": "Skill Cooldown",
+      "currentBase": 10,
+      "currentGlobal": false,
+      "shown": -258,
+      "predictedMagnitude": 258,
+      "factor": 25.803431460239008,
+      "changedFields": [
+        "sign"
+      ]
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 2,
+      "tier": 1,
+      "groupId": "hunter-s2",
+      "type": "Skill Cooldown",
+      "currentType": "Skill Cooldown",
+      "currentBase": 4,
+      "currentGlobal": true,
+      "shown": -103,
+      "predictedMagnitude": 103,
+      "factor": 25.803431460239008,
+      "changedFields": [
+        "sign"
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 2,
+      "tier": 1,
+      "groupId": "hunter-s2",
+      "type": "Skill Power",
+      "currentType": "Skill Power",
+      "currentBase": 2,
+      "currentGlobal": false,
+      "shown": 77,
+      "predictedMagnitude": 52,
+      "factor": 25.803431460239008,
+      "changedFields": [
+        "value"
+      ],
+      "baseInterval": [
+        2.9647219641263716,
+        3.0034764996051475
+      ],
+      "uniqueBase": 3
+    },
+    {
+      "ownerId": "hunter",
+      "index": 3,
+      "tier": 2,
+      "groupId": "hunter-s3",
+      "type": "Damage",
+      "currentType": "Damage",
+      "currentBase": 100,
+      "currentGlobal": false,
+      "shown": 2580,
+      "predictedMagnitude": 2580,
+      "factor": 25.803431460239008,
+      "changedFields": []
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 3,
+      "tier": 2,
+      "groupId": "hunter-s3",
+      "type": "Rank Exp",
+      "currentType": "Rank Exp",
+      "currentBase": 6,
+      "currentGlobal": true,
+      "shown": 155,
+      "predictedMagnitude": 155,
+      "factor": 25.803431460239008,
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 4,
+      "tier": 2,
+      "groupId": "hunter-s4",
+      "type": "Kill Gold",
+      "currentType": "Kill Gold",
+      "currentBase": 60,
+      "currentGlobal": true,
+      "shown": 1548,
+      "predictedMagnitude": 1548,
+      "factor": 25.803431460239008,
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 4,
+      "tier": 2,
+      "groupId": "hunter-s4",
+      "type": "Rank Exp",
+      "currentType": "Rank Exp",
+      "currentBase": 10,
+      "currentGlobal": true,
+      "shown": 258,
+      "predictedMagnitude": 258,
+      "factor": 25.803431460239008,
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 4,
+      "tier": 2,
+      "groupId": "hunter-s4",
+      "type": "Crit Chance",
+      "currentType": "Crit Chance",
+      "currentBase": 12,
+      "currentGlobal": true,
+      "shown": 310,
+      "predictedMagnitude": 310,
+      "factor": 25.803431460239008,
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 5,
+      "tier": 3,
+      "groupId": "hunter-s5",
+      "type": "Skill Power",
+      "currentType": "Attack Speed",
+      "currentBase": 80,
+      "currentGlobal": false,
+      "shown": 83,
+      "predictedMagnitude": 826,
+      "factor": 10.321372584095602,
+      "changedFields": [
+        "type",
+        "value"
+      ],
+      "baseInterval": [
+        7.993122942497571,
+        8.090009281194511
+      ],
+      "uniqueBase": 8
+    },
+    {
+      "ownerId": "viking",
+      "index": 5,
+      "tier": 3,
+      "groupId": "hunter-s5",
+      "type": "Skill Power",
+      "currentType": "Skill Power",
+      "currentBase": 7,
+      "currentGlobal": false,
+      "shown": 10,
+      "predictedMagnitude": 72,
+      "factor": 10.321372584095602,
+      "changedFields": [
+        "global",
+        "value"
+      ],
+      "baseInterval": [
+        0.9204202176209324,
+        1.0173065563178727
+      ],
+      "uniqueBase": 1
+    },
+    {
+      "ownerId": "hunter",
+      "index": 6,
+      "tier": 3,
+      "groupId": "hunter-s6",
+      "type": "Crit Chance",
+      "currentType": "Crit Chance",
+      "currentBase": 50,
+      "currentGlobal": false,
+      "shown": 516,
+      "predictedMagnitude": 516,
+      "factor": 10.321372584095602,
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 6,
+      "tier": 3,
+      "groupId": "hunter-s6",
+      "type": "Attack Speed",
+      "currentType": "Attack Speed",
+      "currentBase": 100,
+      "currentGlobal": false,
+      "shown": 1032,
+      "predictedMagnitude": 1032,
+      "factor": 10.321372584095602,
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 6,
+      "tier": 3,
+      "groupId": "hunter-s6",
+      "type": "Crit Damage",
+      "currentType": "Crit Damage",
+      "currentBase": 100,
+      "currentGlobal": true,
+      "shown": 1032,
+      "predictedMagnitude": 1032,
+      "factor": 10.321372584095602,
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 7,
+      "tier": 4,
+      "groupId": "hunter-s7",
+      "type": "Damage",
+      "currentType": "Damage",
+      "currentBase": 125,
+      "currentGlobal": true,
+      "shown": 1290,
+      "predictedMagnitude": 1290,
+      "factor": 10.321372584095602,
+      "changedFields": []
+    },
+    {
+      "ownerId": "champion",
+      "index": 7,
+      "tier": 4,
+      "groupId": "hunter-s7",
+      "type": "Super Gold Chance",
+      "currentType": "Super Gold Chance",
+      "currentBase": 4,
+      "currentGlobal": true,
+      "shown": 41,
+      "predictedMagnitude": 41,
+      "factor": 10.321372584095602,
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 8,
+      "tier": 4,
+      "groupId": "hunter-s8",
+      "type": "Super Gold Chance",
+      "currentType": "Super Gold Chance",
+      "currentBase": 15,
+      "currentGlobal": false,
+      "shown": 155,
+      "predictedMagnitude": 155,
+      "factor": 10.321372584095602,
+      "changedFields": []
+    },
+    {
+      "ownerId": "arbalest",
+      "index": 8,
+      "tier": 4,
+      "groupId": "hunter-s8",
+      "type": "Kill Gold",
+      "currentType": "Kill Gold",
+      "currentBase": 350,
+      "currentGlobal": false,
+      "shown": 3612,
+      "predictedMagnitude": 3612,
+      "factor": 10.321372584095602,
+      "changedFields": []
+    },
+    {
+      "ownerId": "captain",
+      "index": 8,
+      "tier": 4,
+      "groupId": "hunter-s8",
+      "type": "Kill Gold",
+      "currentType": "Kill Gold",
+      "currentBase": 150,
+      "currentGlobal": true,
+      "shown": 1548,
+      "predictedMagnitude": 1548,
+      "factor": 10.321372584095602,
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 9,
+      "tier": 5,
+      "groupId": "hunter-s9",
+      "type": "Super Crit Chance",
+      "currentType": "Super Crit Chance",
+      "currentBase": 8,
+      "currentGlobal": true,
+      "shown": 71,
+      "predictedMagnitude": 71,
+      "factor": 8.876380422322217,
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 9,
+      "tier": 5,
+      "groupId": "hunter-s9",
+      "type": "Damage",
+      "currentType": "Damage",
+      "currentBase": 175,
+      "currentGlobal": true,
+      "shown": 1553,
+      "predictedMagnitude": 1553,
+      "factor": 8.876380422322217,
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 10,
+      "tier": 5,
+      "groupId": "hunter-s10",
+      "type": "Kill Gold",
+      "currentType": "Kill Gold",
+      "currentBase": 450,
+      "currentGlobal": false,
+      "shown": 3994,
+      "predictedMagnitude": 3994,
+      "factor": 8.876380422322217,
+      "changedFields": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 10,
+      "tier": 5,
+      "groupId": "hunter-s10",
+      "type": "Super Crit Damage",
+      "currentType": "Super Crit Damage",
+      "currentBase": 625,
+      "currentGlobal": true,
+      "shown": 5548,
+      "predictedMagnitude": 5548,
+      "factor": 8.876380422322217,
+      "changedFields": []
+    },
+    {
+      "ownerId": "captain",
+      "index": 10,
+      "tier": 5,
+      "groupId": "hunter-s10",
+      "type": "Super Crit Chance",
+      "currentType": "Super Crit Chance",
+      "currentBase": 10,
+      "currentGlobal": true,
+      "shown": 89,
+      "predictedMagnitude": 89,
+      "factor": 8.876380422322217,
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 11,
+      "tier": 6,
+      "groupId": "hunter-s11",
+      "type": "Skill Power",
+      "currentType": "Energy Income",
+      "currentBase": 5,
+      "currentGlobal": true,
+      "shown": 44,
+      "predictedMagnitude": 44,
+      "factor": 8.876380422322217,
+      "changedFields": [
+        "type"
+      ]
+    },
+    {
+      "ownerId": "crusader",
+      "index": 11,
+      "tier": 6,
+      "groupId": "hunter-s11",
+      "type": "Skill Duration",
+      "currentType": "Damage",
+      "currentBase": 250,
+      "currentGlobal": true,
+      "shown": 89,
+      "predictedMagnitude": 2219,
+      "factor": 8.876380422322217,
+      "changedFields": [
+        "type",
+        "global",
+        "value"
+      ],
+      "baseInterval": [
+        9.970280203115363,
+        10.0829387364839
+      ],
+      "uniqueBase": 10
+    },
+    {
+      "ownerId": "hunter",
+      "index": 12,
+      "tier": 6,
+      "groupId": "hunter-s12",
+      "type": "Ultra Gold Amount",
+      "currentType": "Ultra Gold Amount",
+      "currentBase": 2250,
+      "currentGlobal": true,
+      "shown": 19972,
+      "predictedMagnitude": 19972,
+      "factor": 8.876380422322217,
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 12,
+      "tier": 6,
+      "groupId": "hunter-s12",
+      "type": "Ultra Energy Amount",
+      "currentType": "Ultra Energy Amount",
+      "currentBase": 35,
+      "currentGlobal": true,
+      "shown": 311,
+      "predictedMagnitude": 311,
+      "factor": 8.876380422322217,
+      "changedFields": []
+    },
+    {
+      "ownerId": "druid",
+      "index": 12,
+      "tier": 6,
+      "groupId": "hunter-s12",
+      "type": "Ultra Gold Chance",
+      "currentType": "Ultra Gold Chance",
+      "currentBase": 3,
+      "currentGlobal": true,
+      "shown": 27,
+      "predictedMagnitude": 27,
+      "factor": 8.876380422322217,
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 13,
+      "tier": 7,
+      "groupId": "hunter-s13",
+      "type": "Skill Power",
+      "currentType": "Skill Power",
+      "currentBase": 7,
+      "currentGlobal": true,
+      "shown": 51,
+      "predictedMagnitude": 51,
+      "factor": 7.307531789539687,
+      "changedFields": []
+    },
+    {
+      "ownerId": "sniper",
+      "index": 13,
+      "tier": 7,
+      "groupId": "hunter-s13",
+      "type": "Super Gold Amount",
+      "currentType": "Super Gold Amount",
+      "currentBase": 850,
+      "currentGlobal": true,
+      "shown": 6211,
+      "predictedMagnitude": 6211,
+      "factor": 7.307531789539687,
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 14,
+      "tier": 7,
+      "groupId": "hunter-s14",
+      "type": "Super Gold Amount",
+      "currentType": "Super Gold Amount",
+      "currentBase": 2000,
+      "currentGlobal": false,
+      "shown": 14615,
+      "predictedMagnitude": 14615,
+      "factor": 7.307531789539687,
+      "changedFields": []
+    },
+    {
+      "ownerId": "praetorian",
+      "index": 14,
+      "tier": 7,
+      "groupId": "hunter-s14",
+      "type": "Skill Power",
+      "currentType": "Skill Power",
+      "currentBase": 8,
+      "currentGlobal": true,
+      "shown": 58,
+      "predictedMagnitude": 58,
+      "factor": 7.307531789539687,
+      "changedFields": []
+    },
+    {
+      "ownerId": "scout",
+      "index": 14,
+      "tier": 7,
+      "groupId": "hunter-s14",
+      "type": "Super Gold Chance",
+      "currentType": "Super Gold Chance",
+      "currentBase": 14,
+      "currentGlobal": true,
+      "shown": 102,
+      "predictedMagnitude": 102,
+      "factor": 7.307531789539687,
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 15,
+      "tier": 8,
+      "groupId": "hunter-s15",
+      "type": "Skill Power",
+      "currentType": "Skill Power",
+      "currentBase": 30,
+      "currentGlobal": false,
+      "shown": 124,
+      "predictedMagnitude": 124,
+      "factor": 4.128549033638241,
+      "changedFields": []
+    },
+    {
+      "ownerId": "paladin",
+      "index": 15,
+      "tier": 8,
+      "groupId": "hunter-s15",
+      "type": "Ultra Gold Amount",
+      "currentType": "Ultra Gold Amount",
+      "currentBase": 3000,
+      "currentGlobal": true,
+      "shown": 12386,
+      "predictedMagnitude": 12386,
+      "factor": 4.128549033638241,
+      "changedFields": []
+    },
+    {
+      "ownerId": "scout",
+      "index": 15,
+      "tier": 8,
+      "groupId": "hunter-s15",
+      "type": "Ultra Gold Chance",
+      "currentType": "Ultra Gold Chance",
+      "currentBase": 7,
+      "currentGlobal": true,
+      "shown": 29,
+      "predictedMagnitude": 29,
+      "factor": 4.128549033638241,
+      "changedFields": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 15,
+      "tier": 8,
+      "groupId": "hunter-s15",
+      "type": "Boss Gold",
+      "currentType": "Boss Gold",
+      "currentBase": 800,
+      "currentGlobal": true,
+      "shown": 3303,
+      "predictedMagnitude": 3303,
+      "factor": 4.128549033638241,
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 16,
+      "tier": 9,
+      "groupId": "hunter-s16",
+      "type": "Ultra Gold Amount",
+      "currentType": "Ultra Gold Amount",
+      "currentBase": 3250,
+      "currentGlobal": true,
+      "shown": 13418,
+      "predictedMagnitude": 13418,
+      "factor": 4.128549033638241,
+      "changedFields": []
+    },
+    {
+      "ownerId": "sovereign",
+      "index": 16,
+      "tier": 9,
+      "groupId": "hunter-s16",
+      "type": "Skill Power",
+      "currentType": "Skill Power",
+      "currentBase": 40,
+      "currentGlobal": false,
+      "shown": 165,
+      "predictedMagnitude": 165,
+      "factor": 4.128549033638241,
+      "changedFields": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 16,
+      "tier": 9,
+      "groupId": "hunter-s16",
+      "type": "Ultra Gold Amount",
+      "currentType": "Ultra Gold Amount",
+      "currentBase": 3250,
+      "currentGlobal": true,
+      "shown": 13418,
+      "predictedMagnitude": 13418,
+      "factor": 4.128549033638241,
+      "changedFields": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 16,
+      "tier": 9,
+      "groupId": "hunter-s16",
+      "type": "Attack Speed",
+      "currentType": "Attack Speed",
+      "currentBase": 200,
+      "currentGlobal": false,
+      "shown": 826,
+      "predictedMagnitude": 826,
+      "factor": 4.128549033638241,
+      "changedFields": []
+    }
+  ],
+  "comparisonBasis": "Current fields and magnitude match counts describe active data before these seven corrections; all43 observations match after activation."
+}

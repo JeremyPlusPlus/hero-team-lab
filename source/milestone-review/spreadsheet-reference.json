@@ -1,0 +1,4981 @@
+{
+  "meta": {
+    "sourceURL": "https://docs.google.com/spreadsheets/d/1fhCvf0yoFYqoTic86KpcjGmAFDYv-RHGCAas8sG1B6U/edit?gid=63100333#gid=63100333",
+    "title": "Mana / Osto Hero Synergy Sheet",
+    "gameVersion": "V11.72",
+    "sourceUpdated": "2025-09-02",
+    "sourceUpdatedExcelSerial": 45902,
+    "importedAt": "2026-11-02",
+    "credits": [
+      "Mana",
+      "Osto",
+      "devilkk"
+    ],
+    "statAliases": {
+      "Ultra Crit Chnce": "Ultra Crit Chance",
+      "Ultra Crit Dmage": "Ultra Crit Damage",
+      "Ultra Ctir Damage": "Ultra Crit Damage",
+      "Ultra Energe Chance": "Ultra Energy Chance",
+      "Bp Exp": "Battle Pass Exp"
+    },
+    "sourceRange": "Data!A2:DW43"
+  },
+  "heroes": [
+    {
+      "id": "militia",
+      "name": "Militia",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 10,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!BZ2:CB2"
+        },
+        {
+          "level": 75,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CC2:CE2"
+        },
+        {
+          "level": 150,
+          "value": 30,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!CF2:CH2"
+        },
+        {
+          "level": 250,
+          "value": 10,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CI2:CK2"
+        },
+        {
+          "level": 500,
+          "value": 5,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CL2:CN2"
+        },
+        {
+          "level": 750,
+          "value": 2,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CO2:CQ2"
+        },
+        {
+          "level": 1000,
+          "value": 16,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CR2:CT2"
+        },
+        {
+          "level": 1500,
+          "value": 16,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CU2:CW2"
+        },
+        {
+          "level": 2000,
+          "value": 4,
+          "type": "Super Crit Chance",
+          "global": true,
+          "source": "Data!CX2:CZ2"
+        },
+        {
+          "level": 2500,
+          "value": 30,
+          "type": "Super Gold Amount",
+          "global": true,
+          "source": "Data!DA2:DC2"
+        },
+        {
+          "level": 3000,
+          "value": 36,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DD2:DF2"
+        },
+        {
+          "level": 3500,
+          "value": 15,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DG2:DI2"
+        },
+        {
+          "level": 4000,
+          "value": 5,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DJ2:DL2"
+        },
+        {
+          "level": 5000,
+          "value": 75,
+          "type": "Super Gold Amount",
+          "global": true,
+          "source": "Data!DM2:DO2"
+        },
+        {
+          "level": 6000,
+          "value": 25,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!DP2:DR2"
+        },
+        {
+          "level": 7500,
+          "value": 300,
+          "type": "Ultra Crit Damage",
+          "global": false,
+          "source": "Data!DS2:DU2"
+        }
+      ]
+    },
+    {
+      "id": "apprentice",
+      "name": "Apprentice",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!BZ3:CB3"
+        },
+        {
+          "level": 75,
+          "value": 2,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CC3:CE3"
+        },
+        {
+          "level": 150,
+          "value": 8,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CF3:CH3"
+        },
+        {
+          "level": 250,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CI3:CK3"
+        },
+        {
+          "level": 500,
+          "value": 3,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CL3:CN3"
+        },
+        {
+          "level": 750,
+          "value": 18,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CO3:CQ3"
+        },
+        {
+          "level": 1000,
+          "value": 21,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CR3:CT3"
+        },
+        {
+          "level": 1500,
+          "value": 17,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CU3:CW3"
+        },
+        {
+          "level": 2000,
+          "value": 90,
+          "type": "Super Gold Amount",
+          "global": false,
+          "source": "Data!CX3:CZ3"
+        },
+        {
+          "level": 2500,
+          "value": 10,
+          "type": "Super Exp Amount",
+          "global": true,
+          "source": "Data!DA3:DC3"
+        },
+        {
+          "level": 3000,
+          "value": 1,
+          "type": "Ultra Crit Chance",
+          "global": true,
+          "source": "Data!DD3:DF3"
+        },
+        {
+          "level": 3500,
+          "value": 2,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DG3:DI3"
+        },
+        {
+          "level": 4000,
+          "value": 175,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DJ3:DL3"
+        },
+        {
+          "level": 5000,
+          "value": 75,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DM3:DO3"
+        },
+        {
+          "level": 6000,
+          "value": 5,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DP3:DR3"
+        },
+        {
+          "level": 7500,
+          "value": 125,
+          "type": "Super Crit Damage",
+          "global": true,
+          "source": "Data!DS3:DU3"
+        }
+      ]
+    },
+    {
+      "id": "scout",
+      "name": "Scout",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 3,
+          "type": "Kill Gold",
+          "global": true,
+          "source": "Data!BZ4:CB4"
+        },
+        {
+          "level": 75,
+          "value": 10,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CC4:CE4"
+        },
+        {
+          "level": 150,
+          "value": 9,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CF4:CH4"
+        },
+        {
+          "level": 250,
+          "value": 10,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CI4:CK4"
+        },
+        {
+          "level": 500,
+          "value": 2,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CL4:CN4"
+        },
+        {
+          "level": 750,
+          "value": 2,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CO4:CQ4"
+        },
+        {
+          "level": 1000,
+          "value": 5,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CR4:CT4"
+        },
+        {
+          "level": 1500,
+          "value": 80,
+          "type": "Super Crit Damage",
+          "global": false,
+          "source": "Data!CU4:CW4"
+        },
+        {
+          "level": 2000,
+          "value": 1,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!CX4:CZ4"
+        },
+        {
+          "level": 2500,
+          "value": 6,
+          "type": "Super Exp Chance",
+          "global": true,
+          "source": "Data!DA4:DC4"
+        },
+        {
+          "level": 3000,
+          "value": 125,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DD4:DF4"
+        },
+        {
+          "level": 3500,
+          "value": 2,
+          "type": "Ultra Gold Chance",
+          "global": true,
+          "source": "Data!DG4:DI4"
+        },
+        {
+          "level": 4000,
+          "value": 20,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DJ4:DL4"
+        },
+        {
+          "level": 5000,
+          "value": 65,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!DM4:DO4"
+        },
+        {
+          "level": 6000,
+          "value": 100,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DP4:DR4"
+        },
+        {
+          "level": 7500,
+          "value": 125,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DS4:DU4"
+        }
+      ]
+    },
+    {
+      "id": "viking",
+      "name": "Viking",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!BZ5:CB5"
+        },
+        {
+          "level": 75,
+          "value": 6,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CC5:CE5"
+        },
+        {
+          "level": 150,
+          "value": 9,
+          "type": "Kill Gold",
+          "global": true,
+          "source": "Data!CF5:CH5"
+        },
+        {
+          "level": 250,
+          "value": 12,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CI5:CK5"
+        },
+        {
+          "level": 500,
+          "value": 2,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CL5:CN5"
+        },
+        {
+          "level": 750,
+          "value": 13,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CO5:CQ5"
+        },
+        {
+          "level": 1000,
+          "value": 5,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CR5:CT5"
+        },
+        {
+          "level": 1500,
+          "value": 2,
+          "type": "Super Exp Chance",
+          "global": true,
+          "source": "Data!CU5:CW5"
+        },
+        {
+          "level": 2000,
+          "value": 20,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CX5:CZ5"
+        },
+        {
+          "level": 2500,
+          "value": 20,
+          "type": "Range",
+          "global": false,
+          "source": "Data!DA5:DC5"
+        },
+        {
+          "level": 3000,
+          "value": 125,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DD5:DF5"
+        },
+        {
+          "level": 3500,
+          "value": 2,
+          "type": "Ultra Crit Chance",
+          "global": true,
+          "source": "Data!DG5:DI5"
+        },
+        {
+          "level": 4000,
+          "value": 175,
+          "type": "Ultra Gold Amount",
+          "global": false,
+          "source": "Data!DJ5:DL5"
+        },
+        {
+          "level": 5000,
+          "value": 20,
+          "type": "Super Crit Chance",
+          "global": false,
+          "source": "Data!DM5:DO5"
+        },
+        {
+          "level": 6000,
+          "value": 5,
+          "type": "Skill Power",
+          "global": true,
+          "source": "Data!DP5:DR5"
+        },
+        {
+          "level": 7500,
+          "value": 5,
+          "type": "Boss Exp",
+          "global": true,
+          "source": "Data!DS5:DU5"
+        }
+      ]
+    },
+    {
+      "id": "druid",
+      "name": "Druid",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 1,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!BZ6:CB6"
+        },
+        {
+          "level": 75,
+          "value": 20,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CC6:CE6"
+        },
+        {
+          "level": 150,
+          "value": 9,
+          "type": "Kill Gold",
+          "global": true,
+          "source": "Data!CF6:CH6"
+        },
+        {
+          "level": 250,
+          "value": 40,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!CI6:CK6"
+        },
+        {
+          "level": 500,
+          "value": 12,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CL6:CN6"
+        },
+        {
+          "level": 750,
+          "value": 2,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CO6:CQ6"
+        },
+        {
+          "level": 1000,
+          "value": 8,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CR6:CT6"
+        },
+        {
+          "level": 1500,
+          "value": 8,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CU6:CW6"
+        },
+        {
+          "level": 2000,
+          "value": 4,
+          "type": "Super Crit Chance",
+          "global": true,
+          "source": "Data!CX6:CZ6"
+        },
+        {
+          "level": 2500,
+          "value": 20,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!DA6:DC6"
+        },
+        {
+          "level": 3000,
+          "value": 4,
+          "type": "Ultra Gold Chance",
+          "global": false,
+          "source": "Data!DD6:DF6"
+        },
+        {
+          "level": 3500,
+          "value": 4,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DG6:DI6"
+        },
+        {
+          "level": 4000,
+          "value": 50,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DJ6:DL6"
+        },
+        {
+          "level": 5000,
+          "value": 25,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DM6:DO6"
+        },
+        {
+          "level": 6000,
+          "value": 100,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DP6:DR6"
+        },
+        {
+          "level": 7500,
+          "value": 25,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DS6:DU6"
+        }
+      ]
+    },
+    {
+      "id": "hunter",
+      "name": "Hunter",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!BZ7:CB7"
+        },
+        {
+          "level": 75,
+          "value": 6,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CC7:CE7"
+        },
+        {
+          "level": 150,
+          "value": 6,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CF7:CH7"
+        },
+        {
+          "level": 250,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CI7:CK7"
+        },
+        {
+          "level": 500,
+          "value": 12,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CL7:CN7"
+        },
+        {
+          "level": 750,
+          "value": 6,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CO7:CQ7"
+        },
+        {
+          "level": 1000,
+          "value": 70,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CR7:CT7"
+        },
+        {
+          "level": 1500,
+          "value": 2,
+          "type": "Super Gold Chance",
+          "global": true,
+          "source": "Data!CU7:CW7"
+        },
+        {
+          "level": 2000,
+          "value": 9,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CX7:CZ7"
+        },
+        {
+          "level": 2500,
+          "value": 5,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DA7:DC7"
+        },
+        {
+          "level": 3000,
+          "value": 1,
+          "type": "Ultra Crit Chance",
+          "global": true,
+          "source": "Data!DD7:DF7"
+        },
+        {
+          "level": 3500,
+          "value": 42,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DG7:DI7"
+        },
+        {
+          "level": 4000,
+          "value": 3,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DJ7:DL7"
+        },
+        {
+          "level": 5000,
+          "value": 15,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DM7:DO7"
+        },
+        {
+          "level": 6000,
+          "value": 250,
+          "type": "Super Gold Amount",
+          "global": false,
+          "source": "Data!DP7:DR7"
+        },
+        {
+          "level": 7500,
+          "value": 10,
+          "type": "Instant Skill Chance",
+          "global": true,
+          "source": "Data!DS7:DU7"
+        }
+      ]
+    },
+    {
+      "id": "ninja",
+      "name": "Ninja",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Range",
+          "global": false,
+          "source": "Data!BZ8:CB8"
+        },
+        {
+          "level": 75,
+          "value": 1,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CC8:CE8"
+        },
+        {
+          "level": 150,
+          "value": 2,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CF8:CH8"
+        },
+        {
+          "level": 250,
+          "value": 20,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CI8:CK8"
+        },
+        {
+          "level": 500,
+          "value": 5,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CL8:CN8"
+        },
+        {
+          "level": 750,
+          "value": 6,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CO8:CQ8"
+        },
+        {
+          "level": 1000,
+          "value": 3,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CR8:CT8"
+        },
+        {
+          "level": 1500,
+          "value": 80,
+          "type": "Super Crit Damage",
+          "global": false,
+          "source": "Data!CU8:CW8"
+        },
+        {
+          "level": 2000,
+          "value": 12,
+          "type": "Super Gold Chance",
+          "global": false,
+          "source": "Data!CX8:CZ8"
+        },
+        {
+          "level": 2500,
+          "value": 30,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DA8:DC8"
+        },
+        {
+          "level": 3000,
+          "value": 3,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DD8:DF8"
+        },
+        {
+          "level": 3500,
+          "value": 2,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DG8:DI8"
+        },
+        {
+          "level": 4000,
+          "value": 50,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DJ8:DL8"
+        },
+        {
+          "level": 5000,
+          "value": 6,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DM8:DO8"
+        },
+        {
+          "level": 6000,
+          "value": 100,
+          "type": "Super Gold Amount",
+          "global": true,
+          "source": "Data!DP8:DR8"
+        },
+        {
+          "level": 7500,
+          "value": 20,
+          "type": "Super Energy Amount",
+          "global": true,
+          "source": "Data!DS8:DU8"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer",
+      "name": "Sorcerer",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!BZ9:CB9"
+        },
+        {
+          "level": 75,
+          "value": 6,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CC9:CE9"
+        },
+        {
+          "level": 150,
+          "value": 9,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CF9:CH9"
+        },
+        {
+          "level": 250,
+          "value": 4,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CI9:CK9"
+        },
+        {
+          "level": 500,
+          "value": 15,
+          "type": "Kill Gold",
+          "global": true,
+          "source": "Data!CL9:CN9"
+        },
+        {
+          "level": 750,
+          "value": 30,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CO9:CQ9"
+        },
+        {
+          "level": 1000,
+          "value": 16,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CR9:CT9"
+        },
+        {
+          "level": 1500,
+          "value": 8,
+          "type": "Super Crit Chance",
+          "global": false,
+          "source": "Data!CU9:CW9"
+        },
+        {
+          "level": 2000,
+          "value": 18,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CX9:CZ9"
+        },
+        {
+          "level": 2500,
+          "value": 8,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!DA9:DC9"
+        },
+        {
+          "level": 3000,
+          "value": 125,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DD9:DF9"
+        },
+        {
+          "level": 3500,
+          "value": 15,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DG9:DI9"
+        },
+        {
+          "level": 4000,
+          "value": 175,
+          "type": "Ultra Gold Amount",
+          "global": false,
+          "source": "Data!DJ9:DL9"
+        },
+        {
+          "level": 5000,
+          "value": 75,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DM9:DO9"
+        },
+        {
+          "level": 6000,
+          "value": 25,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!DP9:DR9"
+        },
+        {
+          "level": 7500,
+          "value": 125,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "source": "Data!DS9:DU9"
+        }
+      ]
+    },
+    {
+      "id": "forester",
+      "name": "Forester",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 10,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!BZ10:CB10"
+        },
+        {
+          "level": 75,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CC10:CE10"
+        },
+        {
+          "level": 150,
+          "value": 30,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!CF10:CH10"
+        },
+        {
+          "level": 250,
+          "value": 12,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CI10:CK10"
+        },
+        {
+          "level": 500,
+          "value": 3,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CL10:CN10"
+        },
+        {
+          "level": 750,
+          "value": 30,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CO10:CQ10"
+        },
+        {
+          "level": 1000,
+          "value": 15,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CR10:CT10"
+        },
+        {
+          "level": 1500,
+          "value": 2,
+          "type": "Super Exp Chance",
+          "global": true,
+          "source": "Data!CU10:CW10"
+        },
+        {
+          "level": 2000,
+          "value": 7,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CX10:CZ10"
+        },
+        {
+          "level": 2500,
+          "value": 22,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!DA10:DC10"
+        },
+        {
+          "level": 3000,
+          "value": 125,
+          "type": "Ultra Gold Amount",
+          "global": false,
+          "source": "Data!DD10:DF10"
+        },
+        {
+          "level": 3500,
+          "value": 42,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "source": "Data!DG10:DI10"
+        },
+        {
+          "level": 4000,
+          "value": 5,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DJ10:DL10"
+        },
+        {
+          "level": 5000,
+          "value": 4,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DM10:DO10"
+        },
+        {
+          "level": 6000,
+          "value": 10,
+          "type": "Super Crit Chance",
+          "global": true,
+          "source": "Data!DP10:DR10"
+        },
+        {
+          "level": 7500,
+          "value": 125,
+          "type": "Super Crit Damage",
+          "global": true,
+          "source": "Data!DS10:DU10"
+        }
+      ]
+    },
+    {
+      "id": "assassin",
+      "name": "Assassin",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!BZ11:CB11"
+        },
+        {
+          "level": 75,
+          "value": 6,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CC11:CE11"
+        },
+        {
+          "level": 150,
+          "value": 8,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CF11:CH11"
+        },
+        {
+          "level": 250,
+          "value": 4,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CI11:CK11"
+        },
+        {
+          "level": 500,
+          "value": 25,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CL11:CN11"
+        },
+        {
+          "level": 750,
+          "value": 13,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CO11:CQ11"
+        },
+        {
+          "level": 1000,
+          "value": 21,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CR11:CT11"
+        },
+        {
+          "level": 1500,
+          "value": 24,
+          "type": "Super Gold Amount",
+          "global": true,
+          "source": "Data!CU11:CW11"
+        },
+        {
+          "level": 2000,
+          "value": 4,
+          "type": "Super Exp Chance",
+          "global": true,
+          "source": "Data!CX11:CZ11"
+        },
+        {
+          "level": 2500,
+          "value": 8,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!DA11:DC11"
+        },
+        {
+          "level": 3000,
+          "value": 4,
+          "type": "Ultra Crit Chance",
+          "global": false,
+          "source": "Data!DD11:DF11"
+        },
+        {
+          "level": 3500,
+          "value": 42,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DG11:DI11"
+        },
+        {
+          "level": 4000,
+          "value": 20,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DJ11:DL11"
+        },
+        {
+          "level": 5000,
+          "value": 25,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!DM11:DO11"
+        },
+        {
+          "level": 6000,
+          "value": 250,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DP11:DR11"
+        },
+        {
+          "level": 7500,
+          "value": 125,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "source": "Data!DS11:DU11"
+        }
+      ]
+    },
+    {
+      "id": "witch",
+      "name": "Witch",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 2,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!BZ12:CB12"
+        },
+        {
+          "level": 75,
+          "value": 1,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CC12:CE12"
+        },
+        {
+          "level": 150,
+          "value": 8,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CF12:CH12"
+        },
+        {
+          "level": 250,
+          "value": 40,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CI12:CK12"
+        },
+        {
+          "level": 500,
+          "value": 12,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CL12:CN12"
+        },
+        {
+          "level": 750,
+          "value": 60,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!CO12:CQ12"
+        },
+        {
+          "level": 1000,
+          "value": 70,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!CR12:CT12"
+        },
+        {
+          "level": 1500,
+          "value": 6,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CU12:CW12"
+        },
+        {
+          "level": 2000,
+          "value": 4,
+          "type": "Super Exp Chance",
+          "global": true,
+          "source": "Data!CX12:CZ12"
+        },
+        {
+          "level": 2500,
+          "value": 5,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DA12:DC12"
+        },
+        {
+          "level": 3000,
+          "value": 1,
+          "type": "Ultra Gold Chance",
+          "global": true,
+          "source": "Data!DD12:DF12"
+        },
+        {
+          "level": 3500,
+          "value": 42,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DG12:DI12"
+        },
+        {
+          "level": 4000,
+          "value": 8,
+          "type": "Ultra Crit Chance",
+          "global": false,
+          "source": "Data!DJ12:DL12"
+        },
+        {
+          "level": 5000,
+          "value": 4,
+          "type": "Skill Power",
+          "global": true,
+          "source": "Data!DM12:DO12"
+        },
+        {
+          "level": 6000,
+          "value": 100,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DP12:DR12"
+        },
+        {
+          "level": 7500,
+          "value": 12,
+          "type": "Super Crit Chance",
+          "global": true,
+          "source": "Data!DS12:DU12"
+        }
+      ]
+    },
+    {
+      "id": "archer",
+      "name": "Archer",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 10,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!BZ13:CB13"
+        },
+        {
+          "level": 75,
+          "value": 2,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CC13:CE13"
+        },
+        {
+          "level": 150,
+          "value": 8,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CF13:CH13"
+        },
+        {
+          "level": 250,
+          "value": 40,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!CI13:CK13"
+        },
+        {
+          "level": 500,
+          "value": 2,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CL13:CN13"
+        },
+        {
+          "level": 750,
+          "value": 18,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CO13:CQ13"
+        },
+        {
+          "level": 1000,
+          "value": 3,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CR13:CT13"
+        },
+        {
+          "level": 1500,
+          "value": 8,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CU13:CW13"
+        },
+        {
+          "level": 2000,
+          "value": 12,
+          "type": "Super Crit Chance",
+          "global": false,
+          "source": "Data!CX13:CZ13"
+        },
+        {
+          "level": 2500,
+          "value": 20,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!DA13:DC13"
+        },
+        {
+          "level": 3000,
+          "value": 36,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DD13:DF13"
+        },
+        {
+          "level": 3500,
+          "value": 4,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DG13:DI13"
+        },
+        {
+          "level": 4000,
+          "value": 175,
+          "type": "Ultra Gold Amount",
+          "global": false,
+          "source": "Data!DJ13:DL13"
+        },
+        {
+          "level": 5000,
+          "value": 15,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DM13:DO13"
+        },
+        {
+          "level": 6000,
+          "value": 15,
+          "type": "Super Exp Amount",
+          "global": true,
+          "source": "Data!DP13:DR13"
+        },
+        {
+          "level": 7500,
+          "value": 10,
+          "type": "Instant Skill Chance",
+          "global": false,
+          "source": "Data!DS13:DU13"
+        }
+      ]
+    },
+    {
+      "id": "peacekeeper",
+      "name": "Peacekeeper",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 1,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!BZ14:CB14"
+        },
+        {
+          "level": 75,
+          "value": 20,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!CC14:CE14"
+        },
+        {
+          "level": 150,
+          "value": 3,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CF14:CH14"
+        },
+        {
+          "level": 250,
+          "value": 2,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CI14:CK14"
+        },
+        {
+          "level": 500,
+          "value": 12,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CL14:CN14"
+        },
+        {
+          "level": 750,
+          "value": 18,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CO14:CQ14"
+        },
+        {
+          "level": 1000,
+          "value": 70,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!CR14:CT14"
+        },
+        {
+          "level": 1500,
+          "value": 3,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CU14:CW14"
+        },
+        {
+          "level": 2000,
+          "value": 20,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CX14:CZ14"
+        },
+        {
+          "level": 2500,
+          "value": 2,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DA14:DC14"
+        },
+        {
+          "level": 3000,
+          "value": 36,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "source": "Data!DD14:DF14"
+        },
+        {
+          "level": 3500,
+          "value": 2,
+          "type": "Ultra Gold Chance",
+          "global": true,
+          "source": "Data!DG14:DI14"
+        },
+        {
+          "level": 4000,
+          "value": 175,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DJ14:DL14"
+        },
+        {
+          "level": 5000,
+          "value": 75,
+          "type": "Super Gold Amount",
+          "global": true,
+          "source": "Data!DM14:DO14"
+        },
+        {
+          "level": 6000,
+          "value": 100,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DP14:DR14"
+        },
+        {
+          "level": 7500,
+          "value": 1,
+          "type": "Battle Pass Exp",
+          "global": true,
+          "source": "Data!DS14:DU14"
+        }
+      ]
+    },
+    {
+      "id": "wizard",
+      "name": "Wizard",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Range",
+          "global": false,
+          "source": "Data!BZ15:CB15"
+        },
+        {
+          "level": 75,
+          "value": 2,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CC15:CE15"
+        },
+        {
+          "level": 150,
+          "value": 9,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CF15:CH15"
+        },
+        {
+          "level": 250,
+          "value": 2,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CI15:CK15"
+        },
+        {
+          "level": 500,
+          "value": 12,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CL15:CN15"
+        },
+        {
+          "level": 750,
+          "value": 6,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CO15:CQ15"
+        },
+        {
+          "level": 1000,
+          "value": 14,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CR15:CT15"
+        },
+        {
+          "level": 1500,
+          "value": 3,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CU15:CW15"
+        },
+        {
+          "level": 2000,
+          "value": 4,
+          "type": "Super Gold Chance",
+          "global": true,
+          "source": "Data!CX15:CZ15"
+        },
+        {
+          "level": 2500,
+          "value": 100,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DA15:DC15"
+        },
+        {
+          "level": 3000,
+          "value": 3,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DD15:DF15"
+        },
+        {
+          "level": 3500,
+          "value": 42,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "source": "Data!DG15:DI15"
+        },
+        {
+          "level": 4000,
+          "value": 20,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DJ15:DL15"
+        },
+        {
+          "level": 5000,
+          "value": 22,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!DM15:DO15"
+        },
+        {
+          "level": 6000,
+          "value": 10,
+          "type": "Skill Duration",
+          "global": true,
+          "source": "Data!DP15:DR15"
+        },
+        {
+          "level": 7500,
+          "value": 8,
+          "type": "Skill Power",
+          "global": true,
+          "source": "Data!DS15:DU15"
+        }
+      ]
+    },
+    {
+      "id": "ranger",
+      "name": "Ranger",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!BZ16:CB16"
+        },
+        {
+          "level": 75,
+          "value": 1,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CC16:CE16"
+        },
+        {
+          "level": 150,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CF16:CH16"
+        },
+        {
+          "level": 250,
+          "value": 40,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!CI16:CK16"
+        },
+        {
+          "level": 500,
+          "value": 15,
+          "type": "Kill Gold",
+          "global": true,
+          "source": "Data!CL16:CN16"
+        },
+        {
+          "level": 750,
+          "value": 4,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CO16:CQ16"
+        },
+        {
+          "level": 1000,
+          "value": 16,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CR16:CT16"
+        },
+        {
+          "level": 1500,
+          "value": 5,
+          "type": "Super Exp Amount",
+          "global": true,
+          "source": "Data!CU16:CW16"
+        },
+        {
+          "level": 2000,
+          "value": 27,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CX16:CZ16"
+        },
+        {
+          "level": 2500,
+          "value": 20,
+          "type": "Range",
+          "global": false,
+          "source": "Data!DA16:DC16"
+        },
+        {
+          "level": 3000,
+          "value": 4,
+          "type": "Ultra Crit Chance",
+          "global": false,
+          "source": "Data!DD16:DF16"
+        },
+        {
+          "level": 3500,
+          "value": 2,
+          "type": "Ultra Gold Chance",
+          "global": true,
+          "source": "Data!DG16:DI16"
+        },
+        {
+          "level": 4000,
+          "value": 175,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DJ16:DL16"
+        },
+        {
+          "level": 5000,
+          "value": 25,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DM16:DO16"
+        },
+        {
+          "level": 6000,
+          "value": 5,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DP16:DR16"
+        },
+        {
+          "level": 7500,
+          "value": 20,
+          "type": "Super Exp Amount",
+          "global": true,
+          "source": "Data!DS16:DU16"
+        }
+      ]
+    },
+    {
+      "id": "samurai",
+      "name": "Samurai",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!BZ17:CB17"
+        },
+        {
+          "level": 75,
+          "value": 6,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CC17:CE17"
+        },
+        {
+          "level": 150,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CF17:CH17"
+        },
+        {
+          "level": 250,
+          "value": 10,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CI17:CK17"
+        },
+        {
+          "level": 500,
+          "value": 50,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CL17:CN17"
+        },
+        {
+          "level": 750,
+          "value": 18,
+          "type": "Kill Gold",
+          "global": true,
+          "source": "Data!CO17:CQ17"
+        },
+        {
+          "level": 1000,
+          "value": 14,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CR17:CT17"
+        },
+        {
+          "level": 1500,
+          "value": 6,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CU17:CW17"
+        },
+        {
+          "level": 2000,
+          "value": 27,
+          "type": "Super Crit Damage",
+          "global": true,
+          "source": "Data!CX17:CZ17"
+        },
+        {
+          "level": 2500,
+          "value": 10,
+          "type": "Super Exp Amount",
+          "global": true,
+          "source": "Data!DA17:DC17"
+        },
+        {
+          "level": 3000,
+          "value": 4,
+          "type": "Ultra Gold Chance",
+          "global": false,
+          "source": "Data!DD17:DF17"
+        },
+        {
+          "level": 3500,
+          "value": 150,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DG17:DI17"
+        },
+        {
+          "level": 4000,
+          "value": 3,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DJ17:DL17"
+        },
+        {
+          "level": 5000,
+          "value": 20,
+          "type": "Super Crit Chance",
+          "global": false,
+          "source": "Data!DM17:DO17"
+        },
+        {
+          "level": 6000,
+          "value": 20,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DP17:DR17"
+        },
+        {
+          "level": 7500,
+          "value": 125,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "source": "Data!DS17:DU17"
+        }
+      ]
+    },
+    {
+      "id": "elementalist",
+      "name": "Elementalist",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 3,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!BZ18:CB18"
+        },
+        {
+          "level": 75,
+          "value": 1,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CC18:CE18"
+        },
+        {
+          "level": 150,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CF18:CH18"
+        },
+        {
+          "level": 250,
+          "value": 10,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CI18:CK18"
+        },
+        {
+          "level": 500,
+          "value": 25,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CL18:CN18"
+        },
+        {
+          "level": 750,
+          "value": 4,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CO18:CQ18"
+        },
+        {
+          "level": 1000,
+          "value": 70,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!CR18:CT18"
+        },
+        {
+          "level": 1500,
+          "value": 80,
+          "type": "Super Crit Damage",
+          "global": false,
+          "source": "Data!CU18:CW18"
+        },
+        {
+          "level": 2000,
+          "value": 7,
+          "type": "Super Exp Amount",
+          "global": true,
+          "source": "Data!CX18:CZ18"
+        },
+        {
+          "level": 2500,
+          "value": 2,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DA18:DC18"
+        },
+        {
+          "level": 3000,
+          "value": 125,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DD18:DF18"
+        },
+        {
+          "level": 3500,
+          "value": 2,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DG18:DI18"
+        },
+        {
+          "level": 4000,
+          "value": 50,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DJ18:DL18"
+        },
+        {
+          "level": 5000,
+          "value": 75,
+          "type": "Super Gold Amount",
+          "global": true,
+          "source": "Data!DM18:DO18"
+        },
+        {
+          "level": 6000,
+          "value": 10,
+          "type": "Super Crit Chance",
+          "global": true,
+          "source": "Data!DP18:DR18"
+        },
+        {
+          "level": 7500,
+          "value": 25,
+          "type": "Goblin Gold",
+          "global": true,
+          "source": "Data!DS18:DU18"
+        }
+      ]
+    },
+    {
+      "id": "arbalest",
+      "name": "Arbalest",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 1,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!BZ19:CB19"
+        },
+        {
+          "level": 75,
+          "value": 6,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CC19:CE19"
+        },
+        {
+          "level": 150,
+          "value": 8,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CF19:CH19"
+        },
+        {
+          "level": 250,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CI19:CK19"
+        },
+        {
+          "level": 500,
+          "value": 50,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CL19:CN19"
+        },
+        {
+          "level": 750,
+          "value": 13,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CO19:CQ19"
+        },
+        {
+          "level": 1000,
+          "value": 14,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CR19:CT19"
+        },
+        {
+          "level": 1500,
+          "value": 2,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CU19:CW19"
+        },
+        {
+          "level": 2000,
+          "value": 4,
+          "type": "Super Exp Chance",
+          "global": true,
+          "source": "Data!CX19:CZ19"
+        },
+        {
+          "level": 2500,
+          "value": 100,
+          "type": "Super Gold Amount",
+          "global": false,
+          "source": "Data!DA19:DC19"
+        },
+        {
+          "level": 3000,
+          "value": 125,
+          "type": "Ultra Crit Damage",
+          "global": false,
+          "source": "Data!DD19:DF19"
+        },
+        {
+          "level": 3500,
+          "value": 15,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DG19:DI19"
+        },
+        {
+          "level": 4000,
+          "value": 5,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DJ19:DL19"
+        },
+        {
+          "level": 5000,
+          "value": 10,
+          "type": "Super Energy Amount",
+          "global": true,
+          "source": "Data!DM19:DO19"
+        },
+        {
+          "level": 6000,
+          "value": 8,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DP19:DR19"
+        },
+        {
+          "level": 7500,
+          "value": 25,
+          "type": "Ultra Energy Amount",
+          "global": true,
+          "source": "Data!DS19:DU19"
+        }
+      ]
+    },
+    {
+      "id": "paladin",
+      "name": "Paladin",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 10,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!BZ20:CB20"
+        },
+        {
+          "level": 75,
+          "value": 1,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CC20:CE20"
+        },
+        {
+          "level": 150,
+          "value": 30,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CF20:CH20"
+        },
+        {
+          "level": 250,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CI20:CK20"
+        },
+        {
+          "level": 500,
+          "value": 10,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CL20:CN20"
+        },
+        {
+          "level": 750,
+          "value": 60,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!CO20:CQ20"
+        },
+        {
+          "level": 1000,
+          "value": 7,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CR20:CT20"
+        },
+        {
+          "level": 1500,
+          "value": 2,
+          "type": "Super Crit Chance",
+          "global": true,
+          "source": "Data!CU20:CW20"
+        },
+        {
+          "level": 2000,
+          "value": 18,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CX20:CZ20"
+        },
+        {
+          "level": 2500,
+          "value": 6,
+          "type": "Super Exp Chance",
+          "global": true,
+          "source": "Data!DA20:DC20"
+        },
+        {
+          "level": 3000,
+          "value": 3,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DD20:DF20"
+        },
+        {
+          "level": 3500,
+          "value": 42,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DG20:DI20"
+        },
+        {
+          "level": 4000,
+          "value": 50,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DJ20:DL20"
+        },
+        {
+          "level": 5000,
+          "value": 22,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!DM20:DO20"
+        },
+        {
+          "level": 6000,
+          "value": 8,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DP20:DR20"
+        },
+        {
+          "level": 7500,
+          "value": 125,
+          "type": "Super Gold Amount",
+          "global": true,
+          "source": "Data!DS20:DU20"
+        }
+      ]
+    },
+    {
+      "id": "battlemage",
+      "name": "Battlemage",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!BZ21:CB21"
+        },
+        {
+          "level": 75,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CC21:CE21"
+        },
+        {
+          "level": 150,
+          "value": 6,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CF21:CH21"
+        },
+        {
+          "level": 250,
+          "value": 40,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!CI21:CK21"
+        },
+        {
+          "level": 500,
+          "value": 50,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CL21:CN21"
+        },
+        {
+          "level": 750,
+          "value": 6,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CO21:CQ21"
+        },
+        {
+          "level": 1000,
+          "value": 5,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CR21:CT21"
+        },
+        {
+          "level": 1500,
+          "value": 18,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CU21:CW21"
+        },
+        {
+          "level": 2000,
+          "value": 27,
+          "type": "Super Crit Damage",
+          "global": true,
+          "source": "Data!CX21:CZ21"
+        },
+        {
+          "level": 2500,
+          "value": 20,
+          "type": "Range",
+          "global": false,
+          "source": "Data!DA21:DC21"
+        },
+        {
+          "level": 3000,
+          "value": 1,
+          "type": "Ultra Gold Chance",
+          "global": true,
+          "source": "Data!DD21:DF21"
+        },
+        {
+          "level": 3500,
+          "value": 4,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DG21:DI21"
+        },
+        {
+          "level": 4000,
+          "value": 50,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DJ21:DL21"
+        },
+        {
+          "level": 5000,
+          "value": 75,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DM21:DO21"
+        },
+        {
+          "level": 6000,
+          "value": 30,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DP21:DR21"
+        },
+        {
+          "level": 7500,
+          "value": 6,
+          "type": "Ultra Crit Chance",
+          "global": true,
+          "source": "Data!DS21:DU21"
+        }
+      ]
+    },
+    {
+      "id": "sniper",
+      "name": "Sniper",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Range",
+          "global": false,
+          "source": "Data!BZ22:CB22"
+        },
+        {
+          "level": 75,
+          "value": 20,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CC22:CE22"
+        },
+        {
+          "level": 150,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CF22:CH22"
+        },
+        {
+          "level": 250,
+          "value": 8,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CI22:CK22"
+        },
+        {
+          "level": 500,
+          "value": 5,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CL22:CN22"
+        },
+        {
+          "level": 750,
+          "value": 2,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CO22:CQ22"
+        },
+        {
+          "level": 1000,
+          "value": 5,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CR22:CT22"
+        },
+        {
+          "level": 1500,
+          "value": 18,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CU22:CW22"
+        },
+        {
+          "level": 2000,
+          "value": 27,
+          "type": "Super Gold Amount",
+          "global": true,
+          "source": "Data!CX22:CZ22"
+        },
+        {
+          "level": 2500,
+          "value": 100,
+          "type": "Super Crit Damage",
+          "global": false,
+          "source": "Data!DA22:DC22"
+        },
+        {
+          "level": 3000,
+          "value": 1,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DD22:DF22"
+        },
+        {
+          "level": 3500,
+          "value": 4,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DG22:DI22"
+        },
+        {
+          "level": 4000,
+          "value": 50,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DJ22:DL22"
+        },
+        {
+          "level": 5000,
+          "value": 4,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DM22:DO22"
+        },
+        {
+          "level": 6000,
+          "value": 250,
+          "type": "Ultra Crit Damage",
+          "global": false,
+          "source": "Data!DP22:DR22"
+        },
+        {
+          "level": 7500,
+          "value": 30,
+          "type": "Super Crit Chance",
+          "global": false,
+          "source": "Data!DS22:DU22"
+        }
+      ]
+    },
+    {
+      "id": "gladiator",
+      "name": "Gladiator",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 3,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!BZ23:CB23"
+        },
+        {
+          "level": 75,
+          "value": 10,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CC23:CE23"
+        },
+        {
+          "level": 150,
+          "value": 8,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CF23:CH23"
+        },
+        {
+          "level": 250,
+          "value": 2,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CI23:CK23"
+        },
+        {
+          "level": 500,
+          "value": 15,
+          "type": "Kill Gold",
+          "global": true,
+          "source": "Data!CL23:CN23"
+        },
+        {
+          "level": 750,
+          "value": 2,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CO23:CQ23"
+        },
+        {
+          "level": 1000,
+          "value": 15,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CR23:CT23"
+        },
+        {
+          "level": 1500,
+          "value": 24,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CU23:CW23"
+        },
+        {
+          "level": 2000,
+          "value": 7,
+          "type": "Super Exp Amount",
+          "global": true,
+          "source": "Data!CX23:CZ23"
+        },
+        {
+          "level": 2500,
+          "value": 2,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DA23:DC23"
+        },
+        {
+          "level": 3000,
+          "value": 125,
+          "type": "Ultra Crit Damage",
+          "global": false,
+          "source": "Data!DD23:DF23"
+        },
+        {
+          "level": 3500,
+          "value": 150,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DG23:DI23"
+        },
+        {
+          "level": 4000,
+          "value": 8,
+          "type": "Ultra Gold Chance",
+          "global": false,
+          "source": "Data!DJ23:DL23"
+        },
+        {
+          "level": 5000,
+          "value": 20,
+          "type": "Super Crit Chance",
+          "global": false,
+          "source": "Data!DM23:DO23"
+        },
+        {
+          "level": 6000,
+          "value": 80,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!DP23:DR23"
+        },
+        {
+          "level": 7500,
+          "value": 125,
+          "type": "Super Crit Damage",
+          "global": true,
+          "source": "Data!DS23:DU23"
+        }
+      ]
+    },
+    {
+      "id": "spelldancer",
+      "name": "Spelldancer",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!BZ24:CB24"
+        },
+        {
+          "level": 75,
+          "value": 7,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CC24:CE24"
+        },
+        {
+          "level": 150,
+          "value": 2,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CF24:CH24"
+        },
+        {
+          "level": 250,
+          "value": 4,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CI24:CK24"
+        },
+        {
+          "level": 500,
+          "value": 2,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CL24:CN24"
+        },
+        {
+          "level": 750,
+          "value": 60,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!CO24:CQ24"
+        },
+        {
+          "level": 1000,
+          "value": 21,
+          "type": "Kill Gold",
+          "global": true,
+          "source": "Data!CR24:CT24"
+        },
+        {
+          "level": 1500,
+          "value": 40,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CU24:CW24"
+        },
+        {
+          "level": 2000,
+          "value": 27,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CX24:CZ24"
+        },
+        {
+          "level": 2500,
+          "value": 6,
+          "type": "Super Crit Chance",
+          "global": true,
+          "source": "Data!DA24:DC24"
+        },
+        {
+          "level": 3000,
+          "value": 1,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DD24:DF24"
+        },
+        {
+          "level": 3500,
+          "value": 150,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DG24:DI24"
+        },
+        {
+          "level": 4000,
+          "value": 175,
+          "type": "Ultra Gold Amount",
+          "global": false,
+          "source": "Data!DJ24:DL24"
+        },
+        {
+          "level": 5000,
+          "value": 22,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!DM24:DO24"
+        },
+        {
+          "level": 6000,
+          "value": 100,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DP24:DR24"
+        },
+        {
+          "level": 7500,
+          "value": 125,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "source": "Data!DS24:DU24"
+        }
+      ]
+    },
+    {
+      "id": "rogue",
+      "name": "Rogue",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 1,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!BZ25:CB25"
+        },
+        {
+          "level": 75,
+          "value": 7,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CC25:CE25"
+        },
+        {
+          "level": 150,
+          "value": 9,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CF25:CH25"
+        },
+        {
+          "level": 250,
+          "value": 20,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CI25:CK25"
+        },
+        {
+          "level": 500,
+          "value": 50,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!CL25:CN25"
+        },
+        {
+          "level": 750,
+          "value": 18,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CO25:CQ25"
+        },
+        {
+          "level": 1000,
+          "value": 7,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CR25:CT25"
+        },
+        {
+          "level": 1500,
+          "value": 8,
+          "type": "Super Crit Chance",
+          "global": false,
+          "source": "Data!CU25:CW25"
+        },
+        {
+          "level": 2000,
+          "value": 4,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CX25:CZ25"
+        },
+        {
+          "level": 2500,
+          "value": 2,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DA25:DC25"
+        },
+        {
+          "level": 3000,
+          "value": 1,
+          "type": "Ultra Gold Chance",
+          "global": true,
+          "source": "Data!DD25:DF25"
+        },
+        {
+          "level": 3500,
+          "value": 150,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DG25:DI25"
+        },
+        {
+          "level": 4000,
+          "value": 20,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DJ25:DL25"
+        },
+        {
+          "level": 5000,
+          "value": 75,
+          "type": "Kill Gold",
+          "global": true,
+          "source": "Data!DM25:DO25"
+        },
+        {
+          "level": 6000,
+          "value": 20,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DP25:DR25"
+        },
+        {
+          "level": 7500,
+          "value": 10,
+          "type": "Instant Skill Chance",
+          "global": false,
+          "source": "Data!DS25:DU25"
+        }
+      ]
+    },
+    {
+      "id": "berserker",
+      "name": "Berserker",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 10,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!BZ26:CB26"
+        },
+        {
+          "level": 75,
+          "value": 2,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CC26:CE26"
+        },
+        {
+          "level": 150,
+          "value": 8,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CF26:CH26"
+        },
+        {
+          "level": 250,
+          "value": 2,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CI26:CK26"
+        },
+        {
+          "level": 500,
+          "value": 3,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CL26:CN26"
+        },
+        {
+          "level": 750,
+          "value": 60,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!CO26:CQ26"
+        },
+        {
+          "level": 1000,
+          "value": 70,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CR26:CT26"
+        },
+        {
+          "level": 1500,
+          "value": 17,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CU26:CW26"
+        },
+        {
+          "level": 2000,
+          "value": 18,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CX26:CZ26"
+        },
+        {
+          "level": 2500,
+          "value": 5,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DA26:DC26"
+        },
+        {
+          "level": 3000,
+          "value": 125,
+          "type": "Ultra Gold Amount",
+          "global": false,
+          "source": "Data!DD26:DF26"
+        },
+        {
+          "level": 3500,
+          "value": 2,
+          "type": "Ultra Crit Chance",
+          "global": true,
+          "source": "Data!DG26:DI26"
+        },
+        {
+          "level": 4000,
+          "value": 50,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DJ26:DL26"
+        },
+        {
+          "level": 5000,
+          "value": 4,
+          "type": "Skill Power",
+          "global": true,
+          "source": "Data!DM26:DO26"
+        },
+        {
+          "level": 6000,
+          "value": 100,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DP26:DR26"
+        },
+        {
+          "level": 7500,
+          "value": 300,
+          "type": "Ultra Crit Damage",
+          "global": false,
+          "source": "Data!DS26:DU26"
+        }
+      ]
+    },
+    {
+      "id": "skymage",
+      "name": "Skymage",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 3,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!BZ27:CB27"
+        },
+        {
+          "level": 75,
+          "value": 2,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CC27:CE27"
+        },
+        {
+          "level": 150,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CF27:CH27"
+        },
+        {
+          "level": 250,
+          "value": 10,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CI27:CK27"
+        },
+        {
+          "level": 500,
+          "value": 5,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CL27:CN27"
+        },
+        {
+          "level": 750,
+          "value": 13,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CO27:CQ27"
+        },
+        {
+          "level": 1000,
+          "value": 21,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CR27:CT27"
+        },
+        {
+          "level": 1500,
+          "value": 3,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CU27:CW27"
+        },
+        {
+          "level": 2000,
+          "value": 1,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!CX27:CZ27"
+        },
+        {
+          "level": 2500,
+          "value": 16,
+          "type": "Super Gold Chance",
+          "global": false,
+          "source": "Data!DA27:DC27"
+        },
+        {
+          "level": 3000,
+          "value": 125,
+          "type": "Ultra Crit Damage",
+          "global": false,
+          "source": "Data!DD27:DF27"
+        },
+        {
+          "level": 3500,
+          "value": 150,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DG27:DI27"
+        },
+        {
+          "level": 4000,
+          "value": 3,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DJ27:DL27"
+        },
+        {
+          "level": 5000,
+          "value": 75,
+          "type": "Super Gold Amount",
+          "global": true,
+          "source": "Data!DM27:DO27"
+        },
+        {
+          "level": 6000,
+          "value": 25,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!DP27:DR27"
+        },
+        {
+          "level": 7500,
+          "value": 125,
+          "type": "Super Crit Damage",
+          "global": true,
+          "source": "Data!DS27:DU27"
+        }
+      ]
+    },
+    {
+      "id": "ballista",
+      "name": "Ballista",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 1,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!BZ28:CB28"
+        },
+        {
+          "level": 75,
+          "value": 20,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!CC28:CE28"
+        },
+        {
+          "level": 150,
+          "value": 3,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CF28:CH28"
+        },
+        {
+          "level": 250,
+          "value": 2,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CI28:CK28"
+        },
+        {
+          "level": 500,
+          "value": 12,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CL28:CN28"
+        },
+        {
+          "level": 750,
+          "value": 14,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CO28:CQ28"
+        },
+        {
+          "level": 1000,
+          "value": 70,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!CR28:CT28"
+        },
+        {
+          "level": 1500,
+          "value": 80,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CU28:CW28"
+        },
+        {
+          "level": 2000,
+          "value": 18,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CX28:CZ28"
+        },
+        {
+          "level": 2500,
+          "value": 5,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DA28:DC28"
+        },
+        {
+          "level": 3000,
+          "value": 3,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DD28:DF28"
+        },
+        {
+          "level": 3500,
+          "value": 2,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DG28:DI28"
+        },
+        {
+          "level": 4000,
+          "value": 50,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "source": "Data!DJ28:DL28"
+        },
+        {
+          "level": 5000,
+          "value": 12,
+          "type": "Super Exp Amount",
+          "global": true,
+          "source": "Data!DM28:DO28"
+        },
+        {
+          "level": 6000,
+          "value": 5,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DP28:DR28"
+        },
+        {
+          "level": 7500,
+          "value": 10,
+          "type": "Instant Skill Chance",
+          "global": false,
+          "source": "Data!DS28:DU28"
+        }
+      ]
+    },
+    {
+      "id": "chieftain",
+      "name": "Chieftain",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 2,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!BZ29:CB29"
+        },
+        {
+          "level": 75,
+          "value": 20,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CC29:CE29"
+        },
+        {
+          "level": 150,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CF29:CH29"
+        },
+        {
+          "level": 250,
+          "value": 12,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CI29:CK29"
+        },
+        {
+          "level": 500,
+          "value": 5,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CL29:CN29"
+        },
+        {
+          "level": 750,
+          "value": 14,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CO29:CQ29"
+        },
+        {
+          "level": 1000,
+          "value": 15,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CR29:CT29"
+        },
+        {
+          "level": 1500,
+          "value": 8,
+          "type": "Super Gold Chance",
+          "global": false,
+          "source": "Data!CU29:CW29"
+        },
+        {
+          "level": 2000,
+          "value": 7,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CX29:CZ29"
+        },
+        {
+          "level": 2500,
+          "value": 16,
+          "type": "Super Crit Chance",
+          "global": false,
+          "source": "Data!DA29:DC29"
+        },
+        {
+          "level": 3000,
+          "value": 36,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DD29:DF29"
+        },
+        {
+          "level": 3500,
+          "value": 42,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DG29:DI29"
+        },
+        {
+          "level": 4000,
+          "value": 20,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DJ29:DL29"
+        },
+        {
+          "level": 5000,
+          "value": 12,
+          "type": "Super Exp Amount",
+          "global": true,
+          "source": "Data!DM29:DO29"
+        },
+        {
+          "level": 6000,
+          "value": 100,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DP29:DR29"
+        },
+        {
+          "level": 7500,
+          "value": 10,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DS29:DU29"
+        }
+      ]
+    },
+    {
+      "id": "warlock",
+      "name": "Warlock",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 1,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!BZ30:CB30"
+        },
+        {
+          "level": 75,
+          "value": 20,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CC30:CE30"
+        },
+        {
+          "level": 150,
+          "value": 2,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CF30:CH30"
+        },
+        {
+          "level": 250,
+          "value": 8,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CI30:CK30"
+        },
+        {
+          "level": 500,
+          "value": 50,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!CL30:CN30"
+        },
+        {
+          "level": 750,
+          "value": 4,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CO30:CQ30"
+        },
+        {
+          "level": 1000,
+          "value": 15,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CR30:CT30"
+        },
+        {
+          "level": 1500,
+          "value": 8,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CU30:CW30"
+        },
+        {
+          "level": 2000,
+          "value": 4,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CX30:CZ30"
+        },
+        {
+          "level": 2500,
+          "value": 30,
+          "type": "Super Gold Amount",
+          "global": true,
+          "source": "Data!DA30:DC30"
+        },
+        {
+          "level": 3000,
+          "value": 3,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DD30:DF30"
+        },
+        {
+          "level": 3500,
+          "value": 6,
+          "type": "Ultra Crit Chance",
+          "global": false,
+          "source": "Data!DG30:DI30"
+        },
+        {
+          "level": 4000,
+          "value": 20,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DJ30:DL30"
+        },
+        {
+          "level": 5000,
+          "value": 8,
+          "type": "Super Crit Chance",
+          "global": true,
+          "source": "Data!DM30:DO30"
+        },
+        {
+          "level": 6000,
+          "value": 15,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!DP30:DR30"
+        },
+        {
+          "level": 7500,
+          "value": 25,
+          "type": "Ultra Energy Amount",
+          "global": true,
+          "source": "Data!DS30:DU30"
+        }
+      ]
+    },
+    {
+      "id": "crusader",
+      "name": "Crusader",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 3,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!BZ31:CB31"
+        },
+        {
+          "level": 75,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CC31:CE31"
+        },
+        {
+          "level": 150,
+          "value": 3,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CF31:CH31"
+        },
+        {
+          "level": 250,
+          "value": 10,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CI31:CK31"
+        },
+        {
+          "level": 500,
+          "value": 12,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CL31:CN31"
+        },
+        {
+          "level": 750,
+          "value": 18,
+          "type": "Kill Gold",
+          "global": true,
+          "source": "Data!CO31:CQ31"
+        },
+        {
+          "level": 1000,
+          "value": 5,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CR31:CT31"
+        },
+        {
+          "level": 1500,
+          "value": 40,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CU31:CW31"
+        },
+        {
+          "level": 2000,
+          "value": 27,
+          "type": "Super Crit Damage",
+          "global": true,
+          "source": "Data!CX31:CZ31"
+        },
+        {
+          "level": 2500,
+          "value": 10,
+          "type": "Super Exp Amount",
+          "global": true,
+          "source": "Data!DA31:DC31"
+        },
+        {
+          "level": 3000,
+          "value": 125,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DD31:DF31"
+        },
+        {
+          "level": 3500,
+          "value": 42,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DG31:DI31"
+        },
+        {
+          "level": 4000,
+          "value": 3,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DJ31:DL31"
+        },
+        {
+          "level": 5000,
+          "value": 200,
+          "type": "Super Gold Amount",
+          "global": false,
+          "source": "Data!DM31:DO31"
+        },
+        {
+          "level": 6000,
+          "value": 20,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DP31:DR31"
+        },
+        {
+          "level": 7500,
+          "value": 300,
+          "type": "Ultra Gold Amount",
+          "global": false,
+          "source": "Data!DS31:DU31"
+        }
+      ]
+    },
+    {
+      "id": "champion",
+      "name": "Champion",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Range",
+          "global": false,
+          "source": "Data!BZ32:CB32"
+        },
+        {
+          "level": 75,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CC32:CE32"
+        },
+        {
+          "level": 150,
+          "value": 6,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CF32:CH32"
+        },
+        {
+          "level": 250,
+          "value": 4,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CI32:CK32"
+        },
+        {
+          "level": 500,
+          "value": 50,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!CL32:CN32"
+        },
+        {
+          "level": 750,
+          "value": 60,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!CO32:CQ32"
+        },
+        {
+          "level": 1000,
+          "value": 5,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CR32:CT32"
+        },
+        {
+          "level": 1500,
+          "value": 3,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CU32:CW32"
+        },
+        {
+          "level": 2000,
+          "value": 90,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CX32:CZ32"
+        },
+        {
+          "level": 2500,
+          "value": 10,
+          "type": "Super Exp Amount",
+          "global": true,
+          "source": "Data!DA32:DC32"
+        },
+        {
+          "level": 3000,
+          "value": 36,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "source": "Data!DD32:DF32"
+        },
+        {
+          "level": 3500,
+          "value": 42,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DG32:DI32"
+        },
+        {
+          "level": 4000,
+          "value": 8,
+          "type": "Ultra Gold Chance",
+          "global": false,
+          "source": "Data!DJ32:DL32"
+        },
+        {
+          "level": 5000,
+          "value": 4,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DM32:DO32"
+        },
+        {
+          "level": 6000,
+          "value": 8,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DP32:DR32"
+        },
+        {
+          "level": 7500,
+          "value": 25,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DS32:DU32"
+        }
+      ]
+    },
+    {
+      "id": "templar",
+      "name": "Templar",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Range",
+          "global": false,
+          "source": "Data!BZ33:CB33"
+        },
+        {
+          "level": 75,
+          "value": 10,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CC33:CE33"
+        },
+        {
+          "level": 150,
+          "value": 8,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CF33:CH33"
+        },
+        {
+          "level": 250,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CI33:CK33"
+        },
+        {
+          "level": 500,
+          "value": 5,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CL33:CN33"
+        },
+        {
+          "level": 750,
+          "value": 18,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CO33:CQ33"
+        },
+        {
+          "level": 1000,
+          "value": 15,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CR33:CT33"
+        },
+        {
+          "level": 1500,
+          "value": 2,
+          "type": "Super Gold Chance",
+          "global": true,
+          "source": "Data!CU33:CW33"
+        },
+        {
+          "level": 2000,
+          "value": 7,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CX33:CZ33"
+        },
+        {
+          "level": 2500,
+          "value": 30,
+          "type": "Super Crit Damage",
+          "global": true,
+          "source": "Data!DA33:DC33"
+        },
+        {
+          "level": 3000,
+          "value": 10,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DD33:DF33"
+        },
+        {
+          "level": 3500,
+          "value": 150,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DG33:DI33"
+        },
+        {
+          "level": 4000,
+          "value": 5,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DJ33:DL33"
+        },
+        {
+          "level": 5000,
+          "value": 22,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!DM33:DO33"
+        },
+        {
+          "level": 6000,
+          "value": 100,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DP33:DR33"
+        },
+        {
+          "level": 7500,
+          "value": 8,
+          "type": "Range",
+          "global": true,
+          "source": "Data!DS33:DU33"
+        }
+      ]
+    },
+    {
+      "id": "captain",
+      "name": "Captain",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 2,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!BZ34:CB34"
+        },
+        {
+          "level": 75,
+          "value": 1,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CC34:CE34"
+        },
+        {
+          "level": 150,
+          "value": 30,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CF34:CH34"
+        },
+        {
+          "level": 250,
+          "value": 12,
+          "type": "Kill Gold",
+          "global": true,
+          "source": "Data!CI34:CK34"
+        },
+        {
+          "level": 500,
+          "value": 2,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CL34:CN34"
+        },
+        {
+          "level": 750,
+          "value": 60,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!CO34:CQ34"
+        },
+        {
+          "level": 1000,
+          "value": 8,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CR34:CT34"
+        },
+        {
+          "level": 1500,
+          "value": 17,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CU34:CW34"
+        },
+        {
+          "level": 2000,
+          "value": 7,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CX34:CZ34"
+        },
+        {
+          "level": 2500,
+          "value": 22,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!DA34:DC34"
+        },
+        {
+          "level": 3000,
+          "value": 36,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DD34:DF34"
+        },
+        {
+          "level": 3500,
+          "value": 2,
+          "type": "Ultra Crit Chance",
+          "global": true,
+          "source": "Data!DG34:DI34"
+        },
+        {
+          "level": 4000,
+          "value": 175,
+          "type": "Ultra Gold Amount",
+          "global": false,
+          "source": "Data!DJ34:DL34"
+        },
+        {
+          "level": 5000,
+          "value": 6,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DM34:DO34"
+        },
+        {
+          "level": 6000,
+          "value": 20,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DP34:DR34"
+        },
+        {
+          "level": 7500,
+          "value": 15,
+          "type": "Power Mage Energy",
+          "global": true,
+          "source": "Data!DS34:DU34"
+        }
+      ]
+    },
+    {
+      "id": "warlord",
+      "name": "Warlord",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 1,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!BZ35:CB35"
+        },
+        {
+          "level": 75,
+          "value": 7,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CC35:CE35"
+        },
+        {
+          "level": 150,
+          "value": 2,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CF35:CH35"
+        },
+        {
+          "level": 250,
+          "value": 12,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CI35:CK35"
+        },
+        {
+          "level": 500,
+          "value": 12,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CL35:CN35"
+        },
+        {
+          "level": 750,
+          "value": 30,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CO35:CQ35"
+        },
+        {
+          "level": 1000,
+          "value": 8,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CR35:CT35"
+        },
+        {
+          "level": 1500,
+          "value": 3,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CU35:CW35"
+        },
+        {
+          "level": 2000,
+          "value": 27,
+          "type": "Super Gold Amount",
+          "global": true,
+          "source": "Data!CX35:CZ35"
+        },
+        {
+          "level": 2500,
+          "value": 30,
+          "type": "Super Crit Damage",
+          "global": true,
+          "source": "Data!DA35:DC35"
+        },
+        {
+          "level": 3000,
+          "value": 125,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DD35:DF35"
+        },
+        {
+          "level": 3500,
+          "value": 4,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DG35:DI35"
+        },
+        {
+          "level": 4000,
+          "value": 3,
+          "type": "Super Exp Chance",
+          "global": true,
+          "source": "Data!DJ35:DL35"
+        },
+        {
+          "level": 5000,
+          "value": 25,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DM35:DO35"
+        },
+        {
+          "level": 6000,
+          "value": 25,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!DP35:DR35"
+        },
+        {
+          "level": 7500,
+          "value": 30,
+          "type": "Super Crit Chance",
+          "global": false,
+          "source": "Data!DS35:DU35"
+        }
+      ]
+    },
+    {
+      "id": "necromancer",
+      "name": "Necromancer",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 10,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!BZ36:CB36"
+        },
+        {
+          "level": 75,
+          "value": 20,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!CC36:CE36"
+        },
+        {
+          "level": 150,
+          "value": 8,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CF36:CH36"
+        },
+        {
+          "level": 250,
+          "value": 2,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CI36:CK36"
+        },
+        {
+          "level": 500,
+          "value": 10,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CL36:CN36"
+        },
+        {
+          "level": 750,
+          "value": 6,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CO36:CQ36"
+        },
+        {
+          "level": 1000,
+          "value": 2,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CR36:CT36"
+        },
+        {
+          "level": 1500,
+          "value": 80,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CU36:CW36"
+        },
+        {
+          "level": 2000,
+          "value": 4,
+          "type": "Super Crit Chance",
+          "global": true,
+          "source": "Data!CX36:CZ36"
+        },
+        {
+          "level": 2500,
+          "value": 22,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!DA36:DC36"
+        },
+        {
+          "level": 3000,
+          "value": 36,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DD36:DF36"
+        },
+        {
+          "level": 3500,
+          "value": 2,
+          "type": "Ultra Gold Chance",
+          "global": true,
+          "source": "Data!DG36:DI36"
+        },
+        {
+          "level": 4000,
+          "value": 7,
+          "type": "Super Exp Chance",
+          "global": true,
+          "source": "Data!DJ36:DL36"
+        },
+        {
+          "level": 5000,
+          "value": 75,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DM36:DO36"
+        },
+        {
+          "level": 6000,
+          "value": 5,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DP36:DR36"
+        },
+        {
+          "level": 7500,
+          "value": 8,
+          "type": "Skill Power",
+          "global": true,
+          "source": "Data!DS36:DU36"
+        }
+      ]
+    },
+    {
+      "id": "warden",
+      "name": "Warden",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!BZ37:CB37"
+        },
+        {
+          "level": 75,
+          "value": 1,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CC37:CE37"
+        },
+        {
+          "level": 150,
+          "value": 9,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CF37:CH37"
+        },
+        {
+          "level": 250,
+          "value": 4,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CI37:CK37"
+        },
+        {
+          "level": 500,
+          "value": 25,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CL37:CN37"
+        },
+        {
+          "level": 750,
+          "value": 13,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CO37:CQ37"
+        },
+        {
+          "level": 1000,
+          "value": 15,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CR37:CT37"
+        },
+        {
+          "level": 1500,
+          "value": 8,
+          "type": "Super Gold Chance",
+          "global": false,
+          "source": "Data!CU37:CW37"
+        },
+        {
+          "level": 2000,
+          "value": 7,
+          "type": "Super Exp Amount",
+          "global": true,
+          "source": "Data!CX37:CZ37"
+        },
+        {
+          "level": 2500,
+          "value": 30,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DA37:DC37"
+        },
+        {
+          "level": 3000,
+          "value": 10,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DD37:DF37"
+        },
+        {
+          "level": 3500,
+          "value": 150,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DG37:DI37"
+        },
+        {
+          "level": 4000,
+          "value": 175,
+          "type": "Ultra Crit Damage",
+          "global": false,
+          "source": "Data!DJ37:DL37"
+        },
+        {
+          "level": 5000,
+          "value": 65,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!DM37:DO37"
+        },
+        {
+          "level": 6000,
+          "value": 25,
+          "type": "Super Crit Chance",
+          "global": false,
+          "source": "Data!DP37:DR37"
+        },
+        {
+          "level": 7500,
+          "value": 125,
+          "type": "Super Crit Damage",
+          "global": true,
+          "source": "Data!DS37:DU37"
+        }
+      ]
+    },
+    {
+      "id": "praetorian",
+      "name": "Praetorian",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 3,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!BZ38:CB38"
+        },
+        {
+          "level": 75,
+          "value": 6,
+          "type": "Kill Gold",
+          "global": true,
+          "source": "Data!CC38:CE38"
+        },
+        {
+          "level": 150,
+          "value": 9,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CF38:CH38"
+        },
+        {
+          "level": 250,
+          "value": 4,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CI38:CK38"
+        },
+        {
+          "level": 500,
+          "value": 12,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CL38:CN38"
+        },
+        {
+          "level": 750,
+          "value": 4,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CO38:CQ38"
+        },
+        {
+          "level": 1000,
+          "value": 15,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CR38:CT38"
+        },
+        {
+          "level": 1500,
+          "value": 16,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CU38:CW38"
+        },
+        {
+          "level": 2000,
+          "value": 4,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CX38:CZ38"
+        },
+        {
+          "level": 2500,
+          "value": 22,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!DA38:DC38"
+        },
+        {
+          "level": 3000,
+          "value": 125,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DD38:DF38"
+        },
+        {
+          "level": 3500,
+          "value": 6,
+          "type": "Ultra Crit Chance",
+          "global": false,
+          "source": "Data!DG38:DI38"
+        },
+        {
+          "level": 4000,
+          "value": 5,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DJ38:DL38"
+        },
+        {
+          "level": 5000,
+          "value": 15,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DM38:DO38"
+        },
+        {
+          "level": 6000,
+          "value": 250,
+          "type": "Ultra Crit Damage",
+          "global": false,
+          "source": "Data!DP38:DR38"
+        },
+        {
+          "level": 7500,
+          "value": 30,
+          "type": "Super Crit Chance",
+          "global": false,
+          "source": "Data!DS38:DU38"
+        }
+      ]
+    },
+    {
+      "id": "sovereign",
+      "name": "Sovereign",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 1,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!BZ39:CB39"
+        },
+        {
+          "level": 75,
+          "value": 2,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CC39:CE39"
+        },
+        {
+          "level": 150,
+          "value": 9,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CF39:CH39"
+        },
+        {
+          "level": 250,
+          "value": 10,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CI39:CK39"
+        },
+        {
+          "level": 500,
+          "value": 12,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CL39:CN39"
+        },
+        {
+          "level": 750,
+          "value": 12,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CO39:CQ39"
+        },
+        {
+          "level": 1000,
+          "value": 21,
+          "type": "Kill Gold",
+          "global": true,
+          "source": "Data!CR39:CT39"
+        },
+        {
+          "level": 1500,
+          "value": 8,
+          "type": "Super Crit Chance",
+          "global": false,
+          "source": "Data!CU39:CW39"
+        },
+        {
+          "level": 2000,
+          "value": 90,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CX39:CZ39"
+        },
+        {
+          "level": 2500,
+          "value": 30,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DA39:DC39"
+        },
+        {
+          "level": 3000,
+          "value": 10,
+          "type": "Ultra Exp",
+          "global": true,
+          "source": "Data!DD39:DF39"
+        },
+        {
+          "level": 3500,
+          "value": 4,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DG39:DI39"
+        },
+        {
+          "level": 4000,
+          "value": 3,
+          "type": "Ultra Crit Chance",
+          "global": true,
+          "source": "Data!DJ39:DL39"
+        },
+        {
+          "level": 5000,
+          "value": 75,
+          "type": "Super Gold Amount",
+          "global": true,
+          "source": "Data!DM39:DO39"
+        },
+        {
+          "level": 6000,
+          "value": 100,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "source": "Data!DP39:DR39"
+        },
+        {
+          "level": 7500,
+          "value": 5,
+          "type": "Instant Rags to Riches",
+          "global": true,
+          "source": "Data!DS39:DU39"
+        }
+      ]
+    },
+    {
+      "id": "deadeye",
+      "name": "Deadeye",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!BZ40:CB40"
+        },
+        {
+          "level": 75,
+          "value": 4,
+          "type": "Attack Speed",
+          "global": true,
+          "source": "Data!CC40:CE40"
+        },
+        {
+          "level": 150,
+          "value": 30,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!CF40:CH40"
+        },
+        {
+          "level": 250,
+          "value": 2,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CI40:CK40"
+        },
+        {
+          "level": 500,
+          "value": 15,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CL40:CN40"
+        },
+        {
+          "level": 750,
+          "value": 14,
+          "type": "Skill Cooldown",
+          "global": false,
+          "source": "Data!CO40:CQ40"
+        },
+        {
+          "level": 1000,
+          "value": 3,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CR40:CT40"
+        },
+        {
+          "level": 1500,
+          "value": 24,
+          "type": "Super Crit Damage",
+          "global": true,
+          "source": "Data!CU40:CW40"
+        },
+        {
+          "level": 2000,
+          "value": 18,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CX40:CZ40"
+        },
+        {
+          "level": 2500,
+          "value": 100,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DA40:DC40"
+        },
+        {
+          "level": 3000,
+          "value": 4,
+          "type": "Ultra Gold Chance",
+          "global": false,
+          "source": "Data!DD40:DF40"
+        },
+        {
+          "level": 3500,
+          "value": 150,
+          "type": "Ultra Crit Damage",
+          "global": false,
+          "source": "Data!DG40:DI40"
+        },
+        {
+          "level": 4000,
+          "value": 3,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DJ40:DL40"
+        },
+        {
+          "level": 5000,
+          "value": 15,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DM40:DO40"
+        },
+        {
+          "level": 6000,
+          "value": 100,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "source": "Data!DP40:DR40"
+        },
+        {
+          "level": 7500,
+          "value": 300,
+          "type": "Super Crit Damage",
+          "global": false,
+          "source": "Data!DS40:DU40"
+        }
+      ]
+    },
+    {
+      "id": "titan",
+      "name": "Titan",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 1,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!BZ41:CB41"
+        },
+        {
+          "level": 75,
+          "value": 7,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CC41:CE41"
+        },
+        {
+          "level": 150,
+          "value": 30,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CF41:CH41"
+        },
+        {
+          "level": 250,
+          "value": 40,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!CI41:CK41"
+        },
+        {
+          "level": 500,
+          "value": 2,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CL41:CN41"
+        },
+        {
+          "level": 750,
+          "value": 18,
+          "type": "Crit Damage",
+          "global": true,
+          "source": "Data!CO41:CQ41"
+        },
+        {
+          "level": 1000,
+          "value": 7,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CR41:CT41"
+        },
+        {
+          "level": 1500,
+          "value": 17,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CU41:CW41"
+        },
+        {
+          "level": 2000,
+          "value": 12,
+          "type": "Super Crit Chance",
+          "global": false,
+          "source": "Data!CX41:CZ41"
+        },
+        {
+          "level": 2500,
+          "value": 50,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!DA41:DC41"
+        },
+        {
+          "level": 3000,
+          "value": 1,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "source": "Data!DD41:DF41"
+        },
+        {
+          "level": 3500,
+          "value": 2,
+          "type": "Ultra Gold Chance",
+          "global": true,
+          "source": "Data!DG41:DI41"
+        },
+        {
+          "level": 4000,
+          "value": 50,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DJ41:DL41"
+        },
+        {
+          "level": 5000,
+          "value": 75,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!DM41:DO41"
+        },
+        {
+          "level": 6000,
+          "value": 5,
+          "type": "Skill Power",
+          "global": true,
+          "source": "Data!DP41:DR41"
+        },
+        {
+          "level": 7500,
+          "value": 125,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "source": "Data!DS41:DU41"
+        }
+      ]
+    },
+    {
+      "id": "dicemaster",
+      "name": "Dicemaster",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 10,
+          "type": "Kill Gold",
+          "global": false,
+          "source": "Data!BZ42:CB42"
+        },
+        {
+          "level": 75,
+          "value": 7,
+          "type": "Crit Chance",
+          "global": false,
+          "source": "Data!CC42:CE42"
+        },
+        {
+          "level": 150,
+          "value": 3,
+          "type": "Rank Exp",
+          "global": true,
+          "source": "Data!CF42:CH42"
+        },
+        {
+          "level": 250,
+          "value": 12,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CI42:CK42"
+        },
+        {
+          "level": 500,
+          "value": 3,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CL42:CN42"
+        },
+        {
+          "level": 750,
+          "value": 60,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!CO42:CQ42"
+        },
+        {
+          "level": 1000,
+          "value": 7,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CR42:CT42"
+        },
+        {
+          "level": 1500,
+          "value": 17,
+          "type": "Range",
+          "global": false,
+          "source": "Data!CU42:CW42"
+        },
+        {
+          "level": 2000,
+          "value": 45,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CX42:CZ42"
+        },
+        {
+          "level": 2500,
+          "value": 5,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!DA42:DC42"
+        },
+        {
+          "level": 3000,
+          "value": 36,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "source": "Data!DD42:DF42"
+        },
+        {
+          "level": 3500,
+          "value": 6,
+          "type": "Ultra Gold Chance",
+          "global": false,
+          "source": "Data!DG42:DI42"
+        },
+        {
+          "level": 4000,
+          "value": 175,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!DJ42:DL42"
+        },
+        {
+          "level": 5000,
+          "value": 200,
+          "type": "Super Crit Damage",
+          "global": false,
+          "source": "Data!DM42:DO42"
+        },
+        {
+          "level": 6000,
+          "value": 100,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "source": "Data!DP42:DR42"
+        },
+        {
+          "level": 7500,
+          "value": 8,
+          "type": "Skill Power",
+          "global": true,
+          "source": "Data!DS42:DU42"
+        }
+      ]
+    },
+    {
+      "id": "veteran",
+      "name": "Veteran",
+      "milestones": [
+        {
+          "level": 25,
+          "value": 5,
+          "type": "Range",
+          "global": false,
+          "source": "Data!BZ43:CB43"
+        },
+        {
+          "level": 75,
+          "value": 2,
+          "type": "Skill Cooldown",
+          "global": true,
+          "source": "Data!CC43:CE43"
+        },
+        {
+          "level": 150,
+          "value": 15,
+          "type": "Attack Speed",
+          "global": false,
+          "source": "Data!CF43:CH43"
+        },
+        {
+          "level": 250,
+          "value": 2,
+          "type": "Crit Chance",
+          "global": true,
+          "source": "Data!CI43:CK43"
+        },
+        {
+          "level": 500,
+          "value": 50,
+          "type": "Crit Damage",
+          "global": false,
+          "source": "Data!CL43:CN43"
+        },
+        {
+          "level": 750,
+          "value": 60,
+          "type": "Damage",
+          "global": false,
+          "source": "Data!CO43:CQ43"
+        },
+        {
+          "level": 1000,
+          "value": 5,
+          "type": "Skill Duration",
+          "global": false,
+          "source": "Data!CR43:CT43"
+        },
+        {
+          "level": 1500,
+          "value": 3,
+          "type": "Skill Power",
+          "global": false,
+          "source": "Data!CU43:CW43"
+        },
+        {
+          "level": 2000,
+          "value": 27,
+          "type": "Damage",
+          "global": true,
+          "source": "Data!CX43:CZ43"
+        },
+        {
+          "level": 2500,
+          "value": 6,
+          "type": "Super Crit Chance",
+          "global": true,
+          "source": "Data!DA43:DC43"
+        },
+        {
+          "level": 3000,
+          "value": 10,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "source": "Data!DD43:DF43"
+        },
+        {
+          "level": 3500,
+          "value": 4,
+          "type": "Energy Income",
+          "global": true,
+          "source": "Data!DG43:DI43"
+        },
+        {
+          "level": 4000,
+          "value": 8,
+          "type": "Ultra Gold Chance",
+          "global": false,
+          "source": "Data!DJ43:DL43"
+        },
+        {
+          "level": 5000,
+          "value": 4,
+          "type": "Skill Power",
+          "global": true,
+          "source": "Data!DM43:DO43"
+        },
+        {
+          "level": 6000,
+          "value": 15,
+          "type": "Super Exp Amount",
+          "global": true,
+          "source": "Data!DP43:DR43"
+        },
+        {
+          "level": 7500,
+          "value": 0.05,
+          "type": "Instant Trainee",
+          "global": true,
+          "source": "Data!DS43:DU43"
+        }
+      ]
+    }
+  ]
+}

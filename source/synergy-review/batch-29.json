@@ -1,0 +1,371 @@
+{
+  "meta": {
+    "batch": "29",
+    "selectedHero": {
+      "id": "crusader",
+      "name": "Crusader"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the recorded profile by inference.",
+      "Crusader +25% was explicitly confirmed in the preceding capture set; Warden remains assumed +0%.",
+      "Owner tile placements are unspecified. The off-synergy-tile model is inferred from the repeated values, not directly established by these screenshots.",
+      "Tier I has no rank requirement or individual rank badges. Later badges are transcribed independently from this batch.",
+      "Each effect belongs to the portrait directly above its arrow. Repeated portraits are preserved as separate required copies and effects.",
+      "This is a partial selected-hero page; missing tiers are not marked captured."
+    ],
+    "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+    "captureCompleteness": "partial",
+    "capturedTiers": [
+      1,
+      2,
+      3
+    ],
+    "groupsCount": 6,
+    "effectsCount": 15,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "crusader-9gm-event-01",
+        "originalPath": "images/crusader-9gm-event-01.png",
+        "archivePath": "images/crusader-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "crusader-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "crusader-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": null
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 47,
+          "signedValue": -47,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-47% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 586,
+          "signedValue": 586,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+586% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "crusader-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "crusader-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": null
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": null
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 141,
+          "signedValue": 141,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+141% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 235,
+          "signedValue": -235,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-235% Skill Cooldown (personal effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+469% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "crusader-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "crusader-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "crusader-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "crusader-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        },
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 3519,
+          "signedValue": 3519,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,519% Damage (personal effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+235 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 469,
+          "signedValue": -469,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-469% Skill Cooldown (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "crusader-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "crusader-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 75,
+          "signedValue": 75,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+75 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 1877,
+          "signedValue": 1877,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,877% Crit Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "crusader-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "crusader-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        },
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5016
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+469% Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Damage (personal effect)"
+        },
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Kill Gold (personal effect)"
+        }
+      ]
+    }
+  ]
+}

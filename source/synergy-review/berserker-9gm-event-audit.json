@@ -1,0 +1,1086 @@
+{
+  "batch": "batch-32.json",
+  "status": "audited-no-corrections-needed",
+  "observedEffects": 30,
+  "coverage": {
+    "uniqueEffects": 30,
+    "uniqueGroups": 12,
+    "newUniqueEffectsVsEarlierBatches": 4,
+    "newUniqueGroupsVsEarlierBatches": 2,
+    "overlappingEffectAppearances": 26,
+    "repeatedPortraitAppearances": 0
+  },
+  "frozenMagnitudeMatches": 24,
+  "currentMagnitudeMatches": 30,
+  "currentFullMatches": 30,
+  "newOverrideRecords": 0,
+  "overrides": [],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "berserker",
+      "index": 1,
+      "tier": 1,
+      "groupId": "berserker-s1",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+235% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 1,
+      "tier": 1,
+      "groupId": "berserker-s1",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+235% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Crit Damage",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 2,
+      "tier": 1,
+      "groupId": "berserker-s2",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+469% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 20,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 20,
+        "global": true
+      },
+      "canonicalCurrentType": "Crit Damage",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 2,
+      "tier": 1,
+      "groupId": "berserker-s2",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 586,
+        "signedValue": 586,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+586% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 25,
+        "global": false,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 24,
+        "global": false
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 586,
+      "frozenPredictedSignedValue": 563,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ballista",
+      "index": 2,
+      "tier": 1,
+      "groupId": "berserker-s2",
+      "observed": {
+        "ownerId": "ballista",
+        "ownerName": "Ballista",
+        "displayedValue": 94,
+        "signedValue": -94,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "-94% Skill Cooldown (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": -4,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 4,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Cooldown",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": -94,
+      "frozenPredictedSignedValue": 94,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 3,
+      "tier": 2,
+      "groupId": "berserker-s3",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 23,
+        "signedValue": 23,
+        "type": "Super Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+23% Super Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Chance",
+        "value": 1,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 40,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Exp Chance",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 23,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        1
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "veteran",
+      "index": 3,
+      "tier": 2,
+      "groupId": "berserker-s3",
+      "observed": {
+        "ownerId": "veteran",
+        "ownerName": "Veteran",
+        "displayedValue": 117,
+        "signedValue": 117,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+117 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 5,
+        "global": false,
+        "unit": "flat"
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 40,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 117,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 4,
+      "tier": 2,
+      "groupId": "berserker-s4",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 141,
+        "signedValue": 141,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+141 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 6,
+        "global": false,
+        "unit": "flat"
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 5,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 141,
+      "frozenPredictedSignedValue": 117,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ninja",
+      "index": 4,
+      "tier": 2,
+      "groupId": "berserker-s4",
+      "observed": {
+        "ownerId": "ninja",
+        "ownerName": "Ninja",
+        "displayedValue": 141,
+        "signedValue": 141,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+141 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 6,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 6,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Duration",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 141,
+      "frozenPredictedSignedValue": 141,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "scout",
+      "index": 4,
+      "tier": 2,
+      "groupId": "berserker-s4",
+      "observed": {
+        "ownerId": "scout",
+        "ownerName": "Scout",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,407% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 60,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 60,
+        "global": false
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 1407,
+      "frozenPredictedSignedValue": 1407,
+      "integerBaseCandidates": [
+        60
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 5,
+      "tier": 3,
+      "groupId": "berserker-s5",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 206,
+        "signedValue": 206,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+206% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 22,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 22,
+        "global": true
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 206,
+      "frozenPredictedSignedValue": 206,
+      "integerBaseCandidates": [
+        22
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 5,
+      "tier": 3,
+      "groupId": "berserker-s5",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 1877,
+        "signedValue": 1877,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,877% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 200,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 200,
+        "global": false
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1877,
+      "frozenPredictedSignedValue": 1877,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 6,
+      "tier": 3,
+      "groupId": "berserker-s6",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 328,
+        "signedValue": 328,
+        "type": "Rank Exp",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+328 Rank Exp (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Rank Exp",
+        "value": 35,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Rank Exp",
+        "value": 35,
+        "global": true
+      },
+      "canonicalCurrentType": "Rank Exp",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 328,
+      "frozenPredictedSignedValue": 328,
+      "integerBaseCandidates": [
+        35
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 6,
+      "tier": 3,
+      "groupId": "berserker-s6",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 9,
+        "signedValue": 9,
+        "type": "Super Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+9% Super Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Chance",
+        "value": 1,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 10,
+        "global": false
+      },
+      "canonicalCurrentType": "Super Exp Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 9,
+      "frozenPredictedSignedValue": 94,
+      "integerBaseCandidates": [
+        1
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 6,
+      "tier": 3,
+      "groupId": "berserker-s6",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 28,
+        "signedValue": 28,
+        "type": "Super Exp Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+28% Super Exp Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Amount",
+        "value": 3,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 100,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Exp Amount",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 28,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 7,
+      "tier": 4,
+      "groupId": "berserker-s7",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 38,
+        "signedValue": 38,
+        "type": "Super Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+38% Super Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Chance",
+        "value": 4,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Chance",
+        "value": 4,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Crit Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 38,
+      "frozenPredictedSignedValue": 38,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "arbalest",
+      "index": 7,
+      "tier": 4,
+      "groupId": "berserker-s7",
+      "observed": {
+        "ownerId": "arbalest",
+        "ownerName": "Arbalest",
+        "displayedValue": 7976,
+        "signedValue": 7976,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+7,976% Super Gold Amount (personal effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 850,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 850,
+        "global": false
+      },
+      "canonicalCurrentType": "Super Gold Amount",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 7976,
+      "frozenPredictedSignedValue": 7976,
+      "integerBaseCandidates": [
+        850
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 8,
+      "tier": 4,
+      "groupId": "berserker-s8",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+19 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 8,
+      "tier": 4,
+      "groupId": "berserker-s8",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+19 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Energy Income",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 8,
+      "tier": 4,
+      "groupId": "berserker-s8",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Super Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+19% Super Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Energy Chance",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Energy Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 9,
+      "tier": 5,
+      "groupId": "berserker-s9",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 3228,
+        "signedValue": 3228,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,228% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 400,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 400,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3228,
+      "frozenPredictedSignedValue": 3228,
+      "integerBaseCandidates": [
+        400
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 9,
+      "tier": 5,
+      "groupId": "berserker-s9",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 65,
+        "signedValue": 65,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+65% Super Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Chance",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 8,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Gold Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 65,
+      "frozenPredictedSignedValue": 65,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 10,
+      "tier": 5,
+      "groupId": "berserker-s10",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 3631,
+        "signedValue": 3631,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,631% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 450,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 450,
+        "global": false
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3631,
+      "frozenPredictedSignedValue": 3631,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "titan",
+      "index": 10,
+      "tier": 5,
+      "groupId": "berserker-s10",
+      "observed": {
+        "ownerId": "titan",
+        "ownerName": "Titan",
+        "displayedValue": 32,
+        "signedValue": 32,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+32 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 4,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 4,
+        "global": true
+      },
+      "canonicalCurrentType": "Energy Income",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 32,
+      "frozenPredictedSignedValue": 32,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 10,
+      "tier": 5,
+      "groupId": "berserker-s10",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 3631,
+        "signedValue": 3631,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,631% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 450,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 450,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3631,
+      "frozenPredictedSignedValue": 3631,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 11,
+      "tier": 6,
+      "groupId": "berserker-s11",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 40,
+        "signedValue": 40,
+        "type": "Ultra Gold Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+40% Ultra Gold Chance (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Chance",
+        "value": 5,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Chance",
+        "value": 5,
+        "global": false
+      },
+      "canonicalCurrentType": "Ultra Gold Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 40,
+      "frozenPredictedSignedValue": 40,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sovereign",
+      "index": 11,
+      "tier": 6,
+      "groupId": "berserker-s11",
+      "observed": {
+        "ownerId": "sovereign",
+        "ownerName": "Sovereign",
+        "displayedValue": 363,
+        "signedValue": 363,
+        "type": "Ultra Exp Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+363% Ultra Exp Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Exp Amount",
+        "value": 45,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Exp Amount",
+        "value": 45,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Exp Amount",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 363,
+      "frozenPredictedSignedValue": 363,
+      "integerBaseCandidates": [
+        45
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 12,
+      "tier": 6,
+      "groupId": "berserker-s12",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 282,
+        "signedValue": 282,
+        "type": "Ultra Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+282% Ultra Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Energy Amount",
+        "value": 35,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Energy Amount",
+        "value": 35,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Energy Amount",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 282,
+      "frozenPredictedSignedValue": 282,
+      "integerBaseCandidates": [
+        35
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "druid",
+      "index": 12,
+      "tier": 6,
+      "groupId": "berserker-s12",
+      "observed": {
+        "ownerId": "druid",
+        "ownerName": "Druid",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Ultra Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+24% Ultra Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Chance",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Chance",
+        "value": 3,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Gold Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 12,
+      "tier": 6,
+      "groupId": "berserker-s12",
+      "observed": {
+        "ownerId": "hunter",
+        "ownerName": "Hunter",
+        "displayedValue": 18156,
+        "signedValue": 18156,
+        "type": "Ultra Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+18,156% Ultra Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Amount",
+        "value": 2250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Amount",
+        "value": 2250,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Gold Amount",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 18156,
+      "frozenPredictedSignedValue": 18156,
+      "integerBaseCandidates": [
+        2250
+      ],
+      "changedFields": []
+    }
+  ],
+  "labelNormalizations": [],
+  "archiveChecks": [
+    {
+      "archivePath": "images/berserker-9gm-event-01.png",
+      "sha256": "dfd8a80d5f3637c977c3cb2abf4238c4dc1f592209c90f1786d3a2c21ea14b14",
+      "byteIdenticalToOriginal": true
+    },
+    {
+      "archivePath": "images/berserker-9gm-event-02.png",
+      "sha256": "f6fce2f6c5a5d8f0c25c0596a8e791e6f6f2d57ffabeb0a58603358093f17335",
+      "byteIdenticalToOriginal": true
+    }
+  ],
+  "comparisonBasis": "Current fields and predictions are the pre-application snapshot; no corrections were necessary for this batch.",
+  "matchesAfterCorrections": 30
+}

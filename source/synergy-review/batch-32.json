@@ -1,0 +1,681 @@
+{
+  "meta": {
+    "batch": "32",
+    "selectedHero": {
+      "id": "berserker",
+      "name": "Berserker"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the earlier user-confirmed capture set. They were not separately restated for this batch; overlapping displayed values support the continuation assumption.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the preceding account profile; they were not separately reconfirmed for this capture.",
+      "Crusader +25% was explicitly confirmed earlier by the user; Warden +0% follows the established account profile.",
+      "Owner tile placements are unspecified. Off-synergy-tile placement is inferred from repeated values and is not established by the screenshots.",
+      "Tier I shows no individual rank badges or rank requirement. Later rank badges are transcribed exactly and are not interpreted as run levels.",
+      "Each effect belongs to the portrait directly above its arrow. Required hero order and effect order follow the screenshot.",
+      "This is a partial capture: Wizard tiers I-III and V-VII; Berserker tiers I-VI. Missing tiers are not marked captured."
+    ],
+    "captureCompleteness": "partial",
+    "capturedTiers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "groupsCount": 12,
+    "effectsCount": 30,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "berserker-9gm-event-01",
+        "originalPath": "images/berserker-9gm-event-01.png",
+        "archivePath": "images/berserker-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "berserker-9gm-event-02",
+        "originalPath": "images/berserker-9gm-event-02.png",
+        "archivePath": "images/berserker-9gm-event-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "berserker-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "berserker-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": null
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "berserker-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "berserker-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": null
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": null
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+469% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 586,
+          "signedValue": 586,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+586% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 94,
+          "signedValue": -94,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-94% Skill Cooldown (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "berserker-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "Rank 15+",
+      "sourceImageId": "berserker-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5138
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 23,
+          "signedValue": 23,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+23% Super Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 117,
+          "signedValue": 117,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+117 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "berserker-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "Rank 15+",
+      "sourceImageId": "berserker-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4527
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 141,
+          "signedValue": 141,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+141 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 141,
+          "signedValue": 141,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+141 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,407% Attack Speed (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "berserker-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "Rank 50+",
+      "sourceImageId": "berserker-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 206,
+          "signedValue": 206,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+206% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 1877,
+          "signedValue": 1877,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,877% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "berserker-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "Rank 50+",
+      "sourceImageId": "berserker-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 328,
+          "signedValue": 328,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+328 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+9% Super Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 28,
+          "signedValue": 28,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+28% Super Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "berserker-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "berserker-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 38,
+          "signedValue": 38,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+38% Super Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 7976,
+          "signedValue": 7976,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+7,976% Super Gold Amount (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "berserker-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "berserker-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        },
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+19 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+19 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+19% Super Energy Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "berserker-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "berserker-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 3228,
+          "signedValue": 3228,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,228% Damage (personal effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 65,
+          "signedValue": 65,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+65% Super Gold Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "berserker-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "berserker-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 5000
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 3631,
+          "signedValue": 3631,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,631% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 32,
+          "signedValue": 32,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+32 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 3631,
+          "signedValue": 3631,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,631% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "berserker-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "berserker-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 40,
+          "signedValue": 40,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+40% Ultra Gold Chance (personal effect)"
+        },
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 363,
+          "signedValue": 363,
+          "type": "Ultra Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+363% Ultra Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "berserker-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "berserker-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 282,
+          "signedValue": 282,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+282% Ultra Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 18156,
+          "signedValue": 18156,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+18,156% Ultra Gold Amount (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

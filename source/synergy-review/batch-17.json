@@ -1,0 +1,936 @@
+{
+  "meta": {
+    "batch": "17",
+    "selectedHero": {
+      "id": "sorcerer",
+      "name": "Sorcerer"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture set. They were not separately restated for this batch; overlapping displayed values support the continuation assumption.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the preceding account profile; they were not separately reconfirmed for this capture.",
+      "Crusader +25% was explicitly confirmed earlier by the user; Warden +0% follows the established account profile.",
+      "Owner tile placements are unspecified. Off-synergy-tile placement is inferred from repeated values and is not established by the screenshots.",
+      "Tier I shows no individual rank badges or rank requirement. Later rank badges are transcribed exactly and are not interpreted as run levels.",
+      "Each effect belongs to the portrait directly above its arrow. Required hero order and effect order follow the screenshot."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "sorcerer-9gm-event-01",
+        "originalPath": "images/sorcerer-9gm-event-01.png",
+        "archivePath": "images/sorcerer-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "sorcerer-9gm-event-02",
+        "originalPath": "images/sorcerer-9gm-event-02.png",
+        "archivePath": "images/sorcerer-9gm-event-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "sorcerer-9gm-event-03",
+        "originalPath": "images/sorcerer-9gm-event-03.png",
+        "archivePath": "images/sorcerer-9gm-event-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+    "captureCompleteness": "full",
+    "capturedTiers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "groups": [
+    {
+      "id": "sorcerer-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "sorcerer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": null
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 586,
+          "signedValue": 586,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+586% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "sorcerer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": null
+        },
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": null
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 94,
+          "signedValue": 94,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+94% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 1173,
+          "signedValue": 1173,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,173% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+469% Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "Rank 15+",
+      "sourceImageId": "sorcerer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "Rank 15+",
+      "sourceImageId": "sorcerer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 469,
+          "signedValue": -469,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-469% Skill Cooldown (personal effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+235 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 3519,
+          "signedValue": 3519,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,519% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "Rank 50+",
+      "sourceImageId": "sorcerer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 751,
+          "signedValue": 751,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+751% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 1877,
+          "signedValue": 1877,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,877% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "Rank 50+",
+      "sourceImageId": "sorcerer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4549
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Damage (personal effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "sorcerer-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 1173,
+          "signedValue": 1173,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,173% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+19% Super Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "sorcerer-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+19% Super Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+19 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+19 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "sorcerer-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+24 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+24 Energy Income (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "sorcerer-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": 5000
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 202,
+          "signedValue": 202,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+202% Super Gold Chance (personal effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 1614,
+          "signedValue": 1614,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,614% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 3631,
+          "signedValue": 3631,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,631% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "sorcerer-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": 2255
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "sorcerer-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5018
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 2219,
+          "signedValue": 2219,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Gold Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "Rank 500+",
+      "sourceImageId": "sorcerer-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 80,
+          "signedValue": 80,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+80% Super Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 5647,
+          "signedValue": 5647,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,647% Super Gold Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "Rank 500+",
+      "sourceImageId": "sorcerer-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 4683
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 2325,
+          "signedValue": 2325,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,325% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 2325,
+          "signedValue": 2325,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,325% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 2325,
+          "signedValue": 2325,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,325% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "Rank 1000+",
+      "sourceImageId": "sorcerer-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5002
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4525
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 11260,
+          "signedValue": 11260,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+11,260% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 38,
+          "signedValue": 38,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+38 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 26,
+          "signedValue": 26,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+26% Ultra Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 113,
+          "signedValue": 113,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+113 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "sorcerer-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "Rank 1500+",
+      "sourceImageId": "sorcerer-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        },
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+56 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 12198,
+          "signedValue": 12198,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+12,198% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 30,
+          "signedValue": 30,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+30% Ultra Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 751,
+          "signedValue": 751,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+751% Attack Speed (personal effect)"
+        }
+      ]
+    }
+  ]
+}

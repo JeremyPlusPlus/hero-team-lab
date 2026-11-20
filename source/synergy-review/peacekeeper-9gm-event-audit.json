@@ -1,0 +1,138 @@
+{
+  "batch": "batch-21.json",
+  "status": "activated-in-confirmed-overrides",
+  "observedEffects": 15,
+  "matchedCurrentMagnitudeWithCaptureContext": 11,
+  "fullyMatchingCurrentFields": 10,
+  "overrides": [
+    {
+      "ownerId": "ranger",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "peacekeeper"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 1,
+        "global": false,
+        "source": "Data!C16:F16"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-21.json",
+      "evidence": {
+        "groupId": "peacekeeper-s1",
+        "sourceImageId": "peacekeeper-9gm-event-01",
+        "displayedValue": 47,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 2,
+      "inferenceNote": "Unique integer base under the continuing nine-GM event profile and standard owner bonus. This is conditional inference, not direct observation of an unboosted base."
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "militia"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": false,
+        "source": "Data!L14:O14"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-21.json",
+      "evidence": {
+        "groupId": "peacekeeper-s3",
+        "sourceImageId": "peacekeeper-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 5,
+      "inferenceNote": "Unique integer base under the continuing nine-GM event profile and standard owner bonus. This is conditional inference, not direct observation of an unboosted base."
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 5,
+      "tier": 3,
+      "requires": [
+        "chieftain"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 8,
+        "global": true,
+        "source": "Data!U14:X14"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-21.json",
+      "evidence": {
+        "groupId": "peacekeeper-s5",
+        "sourceImageId": "peacekeeper-9gm-event-01",
+        "displayedValue": 75,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "berserker",
+        "forester"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 10,
+        "global": false,
+        "source": "Data!Y14:AC14"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-21.json",
+      "evidence": {
+        "groupId": "peacekeeper-s6",
+        "sourceImageId": "peacekeeper-9gm-event-01",
+        "displayedValue": 9,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Exp Chance",
+      "confirmedGlobal": true,
+      "inferredBaseValue": 1,
+      "inferenceNote": "Unique integer base under the continuing nine-GM event profile and standard owner bonus. This is conditional inference, not direct observation of an unboosted base."
+    },
+    {
+      "ownerId": "forester",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "peacekeeper",
+        "berserker"
+      ],
+      "expectedOriginal": {
+        "type": "Damage",
+        "value": 100,
+        "global": true,
+        "source": "Data!Y10:AC10"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-21.json",
+      "evidence": {
+        "groupId": "peacekeeper-s6",
+        "sourceImageId": "peacekeeper-9gm-event-01",
+        "displayedValue": 28,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Exp Amount",
+      "inferredBaseValue": 3,
+      "inferenceNote": "Unique integer base under the continuing nine-GM event profile and standard owner bonus. This is conditional inference, not direct observation of an unboosted base."
+    }
+  ]
+}

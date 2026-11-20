@@ -1,0 +1,18 @@
+﻿Capture,Hero,Level,Type,Scope,Unit,Active inferred base,Observed signed display,Compounded raw,Compounded display,Compounded matches,Additive display,Additive matches,Compounded plus synergy-only bonuses display,Extra synergy bonuses matches,Fields match
+militia-nine-grand-masters,Militia,25,Damage,Personal,percent,10,66,66.31727880937505,66,True,53,False,77,False,True
+militia-nine-grand-masters,Militia,75,Skill Power,Personal,flat,1,7,6.631727880937506,7,True,5,False,8,False,True
+militia-nine-grand-masters,Militia,150,Crit Damage,Personal,percent,30,199,198.95183642812518,199,True,160,False,230,False,True
+militia-nine-grand-masters,Militia,250,Range,Personal,percent,10,66,66.31727880937505,66,True,53,False,77,False,True
+militia-nine-grand-masters,Militia,500,Rank Exp,Global,flat,8,53,53.053823047500046,53,True,43,False,61,False,True
+militia-nine-grand-masters,Militia,750,Skill Power,Personal,flat,3,20,19.89518364281252,20,True,16,False,23,False,True
+militia-nine-grand-masters,Militia,1000,Skill Cooldown,Personal,percent,-16,-106,-106.10764609500009,-106,True,-86,False,-123,False,True
+militia-nine-grand-masters,Militia,1500,Attack Speed,Global,percent,16,106,106.10764609500009,106,True,86,False,123,False,True
+militia-nine-grand-masters,Militia,2000,Super Crit Chance,Global,percent,4,27,26.526911523750023,27,True,21,False,31,False,True
+militia-nine-grand-masters,Militia,2500,Super Gold Amount,Global,percent,30,199,198.95183642812518,199,True,160,False,230,False,True
+militia-nine-grand-masters,Militia,3000,Damage,Global,percent,36,239,238.7422037137502,239,True,192,False,276,False,True
+militia-nine-grand-masters,Militia,3500,Ultra Exp Amount,Global,percent,15,99,99.47591821406259,99,True,80,False,115,False,True
+militia-nine-grand-masters,Militia,4000,Energy Income,Global,flat,5,33,33.15863940468753,33,True,27,False,38,False,True
+militia-nine-grand-masters,Militia,5000,Ultra Energy Chance,Global,percent,2,13,13.263455761875012,13,True,11,False,15,False,True
+militia-nine-grand-masters,Militia,6000,Attack Speed,Global,percent,25,166,165.79319702343764,166,True,134,False,192,False,True
+militia-nine-grand-masters,Militia,7500,Ultra Crit Damage,Personal,percent,300,1990,1989.5183642812517,1990,True,1603,False,2303,False,True
+militia-nine-grand-masters,Militia,10000,Super Crit Damage,Personal,percent,350,2321,2321.104758328127,2321,True,1870,False,2687,False,True

@@ -1,0 +1,550 @@
+{
+  "batch": "batch-34.json",
+  "status": "audited-no-corrections-needed",
+  "observedEffects": 15,
+  "coverage": {
+    "uniqueEffects": 15,
+    "uniqueGroups": 6,
+    "newUniqueEffectsVsEarlierBatches": 4,
+    "newUniqueGroupsVsEarlierBatches": 2,
+    "overlappingEffectAppearances": 11,
+    "repeatedPortraitAppearances": 0,
+    "note": "Coverage counts reflect the audit creation snapshot; aggregate coverage recomputes all available batches."
+  },
+  "frozenMagnitudeMatches": 15,
+  "currentMagnitudeMatches": 15,
+  "currentFullMatches": 15,
+  "newOverrideRecords": 0,
+  "overrides": [],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "peacekeeper",
+      "index": 9,
+      "tier": 5,
+      "groupId": "peacekeeper-s9",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 3228,
+        "signedValue": 3228,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,228% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 400,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 400,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3228,
+      "frozenPredictedSignedValue": 3228,
+      "integerBaseCandidates": [
+        400
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 9,
+      "tier": 5,
+      "groupId": "peacekeeper-s9",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 3228,
+        "signedValue": 3228,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,228% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 400,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 400,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3228,
+      "frozenPredictedSignedValue": 3228,
+      "integerBaseCandidates": [
+        400
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 10,
+      "tier": 5,
+      "groupId": "peacekeeper-s10",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 32,
+        "signedValue": 32,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+32 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 4,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 4,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 32,
+      "frozenPredictedSignedValue": 32,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 10,
+      "tier": 5,
+      "groupId": "peacekeeper-s10",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 1614,
+        "signedValue": 1614,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,614% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 200,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 200,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 1614,
+      "frozenPredictedSignedValue": 1614,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 10,
+      "tier": 5,
+      "groupId": "peacekeeper-s10",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 202,
+        "signedValue": 202,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+202% Super Gold Chance (personal effect)"
+      },
+      "current": {
+        "type": "Super Gold Chance",
+        "value": 25,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 25,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 202,
+      "frozenPredictedSignedValue": 202,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 11,
+      "tier": 6,
+      "groupId": "peacekeeper-s11",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 16139,
+        "signedValue": 16139,
+        "type": "Ultra Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+16,139% Ultra Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Damage",
+        "value": 2000,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Damage",
+        "value": 2000,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 16139,
+      "frozenPredictedSignedValue": 16139,
+      "integerBaseCandidates": [
+        2000
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "scout",
+      "index": 11,
+      "tier": 6,
+      "groupId": "peacekeeper-s11",
+      "observed": {
+        "ownerId": "scout",
+        "ownerName": "Scout",
+        "displayedValue": 2017,
+        "signedValue": 2017,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,017% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2017,
+      "frozenPredictedSignedValue": 2017,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 12,
+      "tier": 6,
+      "groupId": "peacekeeper-s12",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Ultra Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+24% Ultra Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Energy Chance",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Energy Chance",
+        "value": 3,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sovereign",
+      "index": 12,
+      "tier": 6,
+      "groupId": "peacekeeper-s12",
+      "observed": {
+        "ownerId": "sovereign",
+        "ownerName": "Sovereign",
+        "displayedValue": 4842,
+        "signedValue": 4842,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+4,842% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 600,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 600,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 4842,
+      "frozenPredictedSignedValue": 4842,
+      "integerBaseCandidates": [
+        600
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warden",
+      "index": 12,
+      "tier": 6,
+      "groupId": "peacekeeper-s12",
+      "observed": {
+        "ownerId": "warden",
+        "ownerName": "Warden",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Ultra Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+19% Ultra Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Energy Chance",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Energy Chance",
+        "value": 3,
+        "global": true
+      },
+      "factor": 6.45554939805252,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 13,
+      "tier": 7,
+      "groupId": "peacekeeper-s13",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 1993,
+        "signedValue": 1993,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,993% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 300,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 300,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 1993,
+      "frozenPredictedSignedValue": 1993,
+      "integerBaseCandidates": [
+        300
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "captain",
+      "index": 13,
+      "tier": 7,
+      "groupId": "peacekeeper-s13",
+      "observed": {
+        "ownerId": "captain",
+        "ownerName": "Captain",
+        "displayedValue": 100,
+        "signedValue": 100,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+100 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": false
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 100,
+      "frozenPredictedSignedValue": 100,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 14,
+      "tier": 7,
+      "groupId": "peacekeeper-s14",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 133,
+        "signedValue": 133,
+        "type": "Super Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+133% Super Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Amount",
+        "value": 20,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Energy Amount",
+        "value": 20,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 133,
+      "frozenPredictedSignedValue": 133,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "gladiator",
+      "index": 14,
+      "tier": 7,
+      "groupId": "peacekeeper-s14",
+      "observed": {
+        "ownerId": "gladiator",
+        "ownerName": "Gladiator",
+        "displayedValue": 53,
+        "signedValue": 53,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+53 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 8,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 53,
+      "frozenPredictedSignedValue": 53,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlord",
+      "index": 14,
+      "tier": 7,
+      "groupId": "peacekeeper-s14",
+      "observed": {
+        "ownerId": "warlord",
+        "ownerName": "Warlord",
+        "displayedValue": 10629,
+        "signedValue": 10629,
+        "type": "Ultra Boss Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+10,629% Ultra Boss Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Boss Damage",
+        "value": 1600,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Boss Damage",
+        "value": 1600,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 10629,
+      "frozenPredictedSignedValue": 10629,
+      "integerBaseCandidates": [
+        1600
+      ],
+      "changedFields": []
+    }
+  ],
+  "captureContextNote": "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+  "afterProposedCorrectionsMatchingEffects": 15,
+  "verifiedImageHashes": [
+    {
+      "sourceImageId": "peacekeeper-9gm-event-02",
+      "sha256": "011bcf0a975db5e77f2fac9afa9a466ab0b981c4ce0a774dcfc529b2351a1dfa"
+    }
+  ],
+  "labelNormalizations": [],
+  "comparisonBasis": "Current fields and predictions are the pre-application snapshot; no corrections were necessary for this batch.",
+  "matchesAfterCorrections": 15,
+  "archiveChecks": [
+    {
+      "archivePath": "images/peacekeeper-9gm-event-02.png",
+      "sha256": "011bcf0a975db5e77f2fac9afa9a466ab0b981c4ce0a774dcfc529b2351a1dfa",
+      "byteIdenticalToOriginal": true
+    }
+  ]
+}

@@ -1,0 +1,1568 @@
+{
+  "batch": "batch-11.json",
+  "status": "review-proposals-not-activated",
+  "counts": {
+    "effects": 43,
+    "currentMagnitudeMatches": 43,
+    "frozenMagnitudeMatches": 41,
+    "changedRecords": 0
+  },
+  "captureContextChange": {
+    "ownerId": "crusader",
+    "previousBonusPercent": 15,
+    "status": "user-confirmed",
+    "expectedAtPreviousBonus": 760,
+    "displayedValue": 826,
+    "confirmedBonusPercent": 25
+  },
+  "proposedOverrides": [],
+  "observations": [
+    {
+      "ownerId": "rogue",
+      "index": 1,
+      "tier": 1,
+      "sourceGroupId": "rogue-s1",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 77,
+        "signedValue": 77,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+77% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "value": 3,
+        "type": "Attack Speed",
+        "global": true
+      },
+      "frozen": {
+        "value": 3,
+        "type": "Attack Speed",
+        "global": true
+      },
+      "factor": 25.803431460239,
+      "predictedDisplayedValue": 77,
+      "frozenPredictedDisplayedValue": 77,
+      "integerBaseCandidates": [
+        3
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "sniper",
+      "index": 1,
+      "tier": 1,
+      "sourceGroupId": "rogue-s1",
+      "observed": {
+        "ownerId": "sniper",
+        "ownerName": "Sniper",
+        "displayedValue": 645,
+        "signedValue": 645,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+645% Damage (personal effect)"
+      },
+      "current": {
+        "value": 25,
+        "type": "Damage",
+        "global": false
+      },
+      "frozen": {
+        "value": 25,
+        "type": "Damage",
+        "global": false
+      },
+      "factor": 25.803431460239,
+      "predictedDisplayedValue": 645,
+      "frozenPredictedDisplayedValue": 645,
+      "integerBaseCandidates": [
+        25
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 2,
+      "tier": 1,
+      "sourceGroupId": "rogue-s2",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 516,
+        "signedValue": 516,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+516% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "value": 20,
+        "type": "Damage",
+        "global": true
+      },
+      "frozen": {
+        "value": 20,
+        "type": "Damage",
+        "global": true
+      },
+      "factor": 25.803431460239,
+      "predictedDisplayedValue": 516,
+      "frozenPredictedDisplayedValue": 516,
+      "integerBaseCandidates": [
+        20
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "gladiator",
+      "index": 2,
+      "tier": 1,
+      "sourceGroupId": "rogue-s2",
+      "observed": {
+        "ownerId": "gladiator",
+        "ownerName": "Gladiator",
+        "displayedValue": 1290,
+        "signedValue": 1290,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,290% Damage (personal effect)"
+      },
+      "current": {
+        "value": 50,
+        "type": "Damage",
+        "global": false
+      },
+      "frozen": {
+        "value": 50,
+        "type": "Damage",
+        "global": false
+      },
+      "factor": 25.803431460239,
+      "predictedDisplayedValue": 1290,
+      "frozenPredictedDisplayedValue": 1290,
+      "integerBaseCandidates": [
+        50
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "battlemage",
+      "index": 2,
+      "tier": 1,
+      "sourceGroupId": "rogue-s2",
+      "observed": {
+        "ownerId": "battlemage",
+        "ownerName": "Battlemage",
+        "displayedValue": 645,
+        "signedValue": 645,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+645% Attack Speed (personal effect)"
+      },
+      "current": {
+        "value": 25,
+        "type": "Attack Speed",
+        "global": false
+      },
+      "frozen": {
+        "value": 24,
+        "type": "Attack Speed",
+        "global": false
+      },
+      "factor": 25.803431460239,
+      "predictedDisplayedValue": 645,
+      "frozenPredictedDisplayedValue": 619,
+      "integerBaseCandidates": [
+        25
+      ],
+      "mismatches": [],
+      "existingOverride": {
+        "ownerId": "battlemage",
+        "index": 2,
+        "tier": 1,
+        "requires": [
+          "gladiator",
+          "rogue"
+        ],
+        "expectedOriginal": {
+          "type": "Attack Speed",
+          "value": 24,
+          "global": false,
+          "source": "Data!G21:K21"
+        },
+        "confirmedUnit": "percent",
+        "evidenceBatch": "batch-04.json",
+        "evidence": {
+          "groupId": "gladiator-s2",
+          "sourceImageId": "gladiator-01",
+          "displayedValue": 533,
+          "signedValue": 533,
+          "unit": "percent",
+          "global": false
+        },
+        "inferredBaseValue": 25,
+        "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. This capture context and off-synergy-tile model are inferred from matching effects and overlapping captures, not separately confirmed; the base is not directly observed unboosted."
+      }
+    },
+    {
+      "ownerId": "rogue",
+      "index": 3,
+      "tier": 2,
+      "sourceGroupId": "rogue-s3",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 387,
+        "signedValue": -387,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "-387% Skill Cooldown (personal effect)"
+      },
+      "current": {
+        "value": -15,
+        "type": "Skill Cooldown",
+        "global": false
+      },
+      "frozen": {
+        "value": 15,
+        "type": "Skill Cooldown",
+        "global": false
+      },
+      "factor": 25.803431460239,
+      "predictedDisplayedValue": 387,
+      "frozenPredictedDisplayedValue": 387,
+      "integerBaseCandidates": [
+        15
+      ],
+      "mismatches": [],
+      "existingOverride": {
+        "ownerId": "rogue",
+        "index": 3,
+        "tier": 2,
+        "requires": [
+          "ninja"
+        ],
+        "expectedOriginal": {
+          "type": "Skill Cooldown",
+          "value": 15,
+          "global": false,
+          "source": "Data!L25:O25"
+        },
+        "confirmedUnit": "percent",
+        "evidenceBatch": "batch-02.json",
+        "evidence": {
+          "groupId": "ninja-s3",
+          "sourceImageId": "ninja-01",
+          "displayedValue": 320,
+          "unit": "percent",
+          "global": false
+        },
+        "confirmedSign": -1
+      }
+    },
+    {
+      "ownerId": "ninja",
+      "index": 3,
+      "tier": 2,
+      "sourceGroupId": "rogue-s3",
+      "observed": {
+        "ownerId": "ninja",
+        "ownerName": "Ninja",
+        "displayedValue": 206,
+        "signedValue": 206,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+206% Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "value": 8,
+        "type": "Crit Chance",
+        "global": true
+      },
+      "frozen": {
+        "value": 8,
+        "type": "Crit Chance",
+        "global": true
+      },
+      "factor": 25.803431460239,
+      "predictedDisplayedValue": 206,
+      "frozenPredictedDisplayedValue": 206,
+      "integerBaseCandidates": [
+        8
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 4,
+      "tier": 2,
+      "sourceGroupId": "rogue-s4",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 1548,
+        "signedValue": 1548,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,548% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "value": 60,
+        "type": "Kill Gold",
+        "global": true
+      },
+      "frozen": {
+        "value": 60,
+        "type": "Kill Gold",
+        "global": true
+      },
+      "factor": 25.803431460239,
+      "predictedDisplayedValue": 1548,
+      "frozenPredictedDisplayedValue": 1548,
+      "integerBaseCandidates": [
+        60
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "champion",
+      "index": 4,
+      "tier": 2,
+      "sourceGroupId": "rogue-s4",
+      "observed": {
+        "ownerId": "champion",
+        "ownerName": "Champion",
+        "displayedValue": 516,
+        "signedValue": -516,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "-516% Skill Cooldown (personal effect)"
+      },
+      "current": {
+        "value": -20,
+        "type": "Skill Cooldown",
+        "global": false
+      },
+      "frozen": {
+        "value": 20,
+        "type": "Skill Cooldown",
+        "global": false
+      },
+      "factor": 25.803431460239,
+      "predictedDisplayedValue": 516,
+      "frozenPredictedDisplayedValue": 516,
+      "integerBaseCandidates": [
+        20
+      ],
+      "mismatches": [],
+      "existingOverride": {
+        "ownerId": "champion",
+        "index": 4,
+        "tier": 2,
+        "requires": [
+          "praetorian",
+          "rogue"
+        ],
+        "expectedOriginal": {
+          "type": "Skill Cooldown",
+          "value": 20,
+          "global": false,
+          "source": "Data!P32:T32"
+        },
+        "confirmedUnit": "percent",
+        "evidenceBatch": "batch-06.json",
+        "evidence": {
+          "groupId": "praetorian-s4",
+          "sourceImageId": "praetorian-01",
+          "displayedValue": 427,
+          "signedValue": -427,
+          "unit": "percent",
+          "global": false
+        },
+        "confirmedSign": -1
+      }
+    },
+    {
+      "ownerId": "praetorian",
+      "index": 4,
+      "tier": 2,
+      "sourceGroupId": "rogue-s4",
+      "observed": {
+        "ownerId": "praetorian",
+        "ownerName": "Praetorian",
+        "displayedValue": 387,
+        "signedValue": 387,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+387% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "value": 15,
+        "type": "Attack Speed",
+        "global": true
+      },
+      "frozen": {
+        "value": 15,
+        "type": "Attack Speed",
+        "global": true
+      },
+      "factor": 25.803431460239,
+      "predictedDisplayedValue": 387,
+      "frozenPredictedDisplayedValue": 387,
+      "integerBaseCandidates": [
+        15
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 5,
+      "tier": 3,
+      "sourceGroupId": "rogue-s5",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 165,
+        "signedValue": 165,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+165% Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "value": 16,
+        "type": "Crit Chance",
+        "global": true
+      },
+      "frozen": {
+        "value": 16,
+        "type": "Crit Chance",
+        "global": true
+      },
+      "factor": 10.3213725840956,
+      "predictedDisplayedValue": 165,
+      "frozenPredictedDisplayedValue": 165,
+      "integerBaseCandidates": [
+        16
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "captain",
+      "index": 5,
+      "tier": 3,
+      "sourceGroupId": "rogue-s5",
+      "observed": {
+        "ownerId": "captain",
+        "ownerName": "Captain",
+        "displayedValue": 826,
+        "signedValue": 826,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+826% Attack Speed (personal effect)"
+      },
+      "current": {
+        "value": 80,
+        "type": "Attack Speed",
+        "global": false
+      },
+      "frozen": {
+        "value": 80,
+        "type": "Attack Speed",
+        "global": false
+      },
+      "factor": 10.3213725840956,
+      "predictedDisplayedValue": 826,
+      "frozenPredictedDisplayedValue": 826,
+      "integerBaseCandidates": [
+        80
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 6,
+      "tier": 3,
+      "sourceGroupId": "rogue-s6",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 361,
+        "signedValue": 361,
+        "type": "Rank Exp",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+361 Rank Exp (GLOBAL effect)"
+      },
+      "current": {
+        "value": 35,
+        "type": "Rank Exp",
+        "global": true
+      },
+      "frozen": {
+        "value": 25,
+        "type": "Rank Exp",
+        "global": true
+      },
+      "factor": 10.3213725840956,
+      "predictedDisplayedValue": 361,
+      "frozenPredictedDisplayedValue": 258,
+      "integerBaseCandidates": [
+        35
+      ],
+      "mismatches": [],
+      "existingOverride": {
+        "ownerId": "rogue",
+        "index": 6,
+        "tier": 3,
+        "requires": [
+          "ninja",
+          "archer"
+        ],
+        "expectedOriginal": {
+          "type": "Rank Exp",
+          "value": 25,
+          "global": true,
+          "source": "Data!Y25:AC25"
+        },
+        "confirmedUnit": "flat",
+        "evidenceBatch": "batch-02.json",
+        "evidence": {
+          "groupId": "ninja-s6",
+          "sourceImageId": "ninja-01",
+          "displayedValue": 299,
+          "unit": "flat",
+          "global": true
+        },
+        "inferredBaseValue": 35,
+        "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the prior nine-Grand-Master account/map context. Continuing context and no synergy tile are inferred from the 16 matching Ninja effects; this is not a direct unboosted base observation."
+      }
+    },
+    {
+      "ownerId": "ninja",
+      "index": 6,
+      "tier": 3,
+      "sourceGroupId": "rogue-s6",
+      "observed": {
+        "ownerId": "ninja",
+        "ownerName": "Ninja",
+        "displayedValue": 310,
+        "signedValue": 310,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+310% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "value": 30,
+        "type": "Attack Speed",
+        "global": true
+      },
+      "frozen": {
+        "value": 30,
+        "type": "Attack Speed",
+        "global": true
+      },
+      "factor": 10.3213725840956,
+      "predictedDisplayedValue": 310,
+      "frozenPredictedDisplayedValue": 310,
+      "integerBaseCandidates": [
+        30
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "archer",
+      "index": 6,
+      "tier": 3,
+      "sourceGroupId": "rogue-s6",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 2580,
+        "signedValue": 2580,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+2,580% Crit Damage (personal effect)"
+      },
+      "current": {
+        "value": 250,
+        "type": "Crit Damage",
+        "global": false
+      },
+      "frozen": {
+        "value": 250,
+        "type": "Crit Damage",
+        "global": false
+      },
+      "factor": 10.3213725840956,
+      "predictedDisplayedValue": 2580,
+      "frozenPredictedDisplayedValue": 2580,
+      "integerBaseCandidates": [
+        250
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 7,
+      "tier": 4,
+      "sourceGroupId": "rogue-s7",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 10,
+        "signedValue": 10,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+10 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "value": 1,
+        "type": "Skill Power",
+        "global": true
+      },
+      "frozen": {
+        "value": 1,
+        "type": "Skill Power",
+        "global": true
+      },
+      "factor": 10.3213725840956,
+      "predictedDisplayedValue": 10,
+      "frozenPredictedDisplayedValue": 10,
+      "integerBaseCandidates": [
+        1
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 7,
+      "tier": 4,
+      "sourceGroupId": "rogue-s7",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 4645,
+        "signedValue": 4645,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+4,645% Super Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "value": 450,
+        "type": "Super Crit Damage",
+        "global": true
+      },
+      "frozen": {
+        "value": 450,
+        "type": "Super Crit Damage",
+        "global": true
+      },
+      "factor": 10.3213725840956,
+      "predictedDisplayedValue": 4645,
+      "frozenPredictedDisplayedValue": 4645,
+      "integerBaseCandidates": [
+        450
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 8,
+      "tier": 4,
+      "sourceGroupId": "rogue-s8",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 72,
+        "signedValue": 72,
+        "type": "Super Exp Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+72% Super Exp Amount (GLOBAL effect)"
+      },
+      "current": {
+        "value": 7,
+        "type": "Super Exp Amount",
+        "global": true
+      },
+      "frozen": {
+        "value": 7,
+        "type": "Super Exp Amount",
+        "global": true
+      },
+      "factor": 10.3213725840956,
+      "predictedDisplayedValue": 72,
+      "frozenPredictedDisplayedValue": 72,
+      "integerBaseCandidates": [
+        7
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "druid",
+      "index": 8,
+      "tier": 4,
+      "sourceGroupId": "rogue-s8",
+      "observed": {
+        "ownerId": "druid",
+        "ownerName": "Druid",
+        "displayedValue": 62,
+        "signedValue": 62,
+        "type": "Super Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+62% Super Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "value": 6,
+        "type": "Super Crit Chance",
+        "global": true
+      },
+      "frozen": {
+        "value": 6,
+        "type": "Super Crit Chance",
+        "global": true
+      },
+      "factor": 10.3213725840956,
+      "predictedDisplayedValue": 62,
+      "frozenPredictedDisplayedValue": 62,
+      "integerBaseCandidates": [
+        6
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 8,
+      "tier": 4,
+      "sourceGroupId": "rogue-s8",
+      "observed": {
+        "ownerId": "dicemaster",
+        "ownerName": "Dicemaster",
+        "displayedValue": 5161,
+        "signedValue": 5161,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+5,161% Super Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "value": 500,
+        "type": "Super Crit Damage",
+        "global": true
+      },
+      "frozen": {
+        "value": 500,
+        "type": "Super Crit Damage",
+        "global": true
+      },
+      "factor": 10.3213725840956,
+      "predictedDisplayedValue": 5161,
+      "frozenPredictedDisplayedValue": 5161,
+      "integerBaseCandidates": [
+        500
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 9,
+      "tier": 5,
+      "sourceGroupId": "rogue-s9",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 27,
+        "signedValue": 27,
+        "type": "Super Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+27% Super Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "value": 3,
+        "type": "Super Energy Chance",
+        "global": true
+      },
+      "frozen": {
+        "value": 3,
+        "type": "Super Energy Chance",
+        "global": true
+      },
+      "factor": 8.876380422322216,
+      "predictedDisplayedValue": 27,
+      "frozenPredictedDisplayedValue": 27,
+      "integerBaseCandidates": [
+        3
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "veteran",
+      "index": 9,
+      "tier": 5,
+      "sourceGroupId": "rogue-s9",
+      "observed": {
+        "ownerId": "veteran",
+        "ownerName": "Veteran",
+        "displayedValue": 9764,
+        "signedValue": 9764,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+9,764% Super Crit Damage (personal effect)"
+      },
+      "current": {
+        "value": 1100,
+        "type": "Super Crit Damage",
+        "global": false
+      },
+      "frozen": {
+        "value": 1100,
+        "type": "Super Crit Damage",
+        "global": false
+      },
+      "factor": 8.876380422322216,
+      "predictedDisplayedValue": 9764,
+      "frozenPredictedDisplayedValue": 9764,
+      "integerBaseCandidates": [
+        1100
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 10,
+      "tier": 5,
+      "sourceGroupId": "rogue-s10",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 222,
+        "signedValue": 222,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+222% Super Gold Chance (personal effect)"
+      },
+      "current": {
+        "value": 25,
+        "type": "Super Gold Chance",
+        "global": false
+      },
+      "frozen": {
+        "value": 25,
+        "type": "Super Gold Chance",
+        "global": false
+      },
+      "factor": 8.876380422322216,
+      "predictedDisplayedValue": 222,
+      "frozenPredictedDisplayedValue": 222,
+      "integerBaseCandidates": [
+        25
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 10,
+      "tier": 5,
+      "sourceGroupId": "rogue-s10",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 36,
+        "signedValue": 36,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+36 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "value": 4,
+        "type": "Skill Power",
+        "global": true
+      },
+      "frozen": {
+        "value": 4,
+        "type": "Skill Power",
+        "global": true
+      },
+      "factor": 8.876380422322216,
+      "predictedDisplayedValue": 36,
+      "frozenPredictedDisplayedValue": 36,
+      "integerBaseCandidates": [
+        4
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 10,
+      "tier": 5,
+      "sourceGroupId": "rogue-s10",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 1775,
+        "signedValue": 1775,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,775% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "value": 200,
+        "type": "Damage",
+        "global": true
+      },
+      "frozen": {
+        "value": 200,
+        "type": "Damage",
+        "global": true
+      },
+      "factor": 8.876380422322216,
+      "predictedDisplayedValue": 1775,
+      "frozenPredictedDisplayedValue": 1775,
+      "integerBaseCandidates": [
+        200
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 11,
+      "tier": 6,
+      "sourceGroupId": "rogue-s11",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 4438,
+        "signedValue": 4438,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+4,438% Kill Gold (personal effect)"
+      },
+      "current": {
+        "value": 500,
+        "type": "Kill Gold",
+        "global": false
+      },
+      "frozen": {
+        "value": 500,
+        "type": "Kill Gold",
+        "global": false
+      },
+      "factor": 8.876380422322216,
+      "predictedDisplayedValue": 4438,
+      "frozenPredictedDisplayedValue": 4438,
+      "integerBaseCandidates": [
+        500
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "captain",
+      "index": 11,
+      "tier": 6,
+      "sourceGroupId": "rogue-s11",
+      "observed": {
+        "ownerId": "captain",
+        "ownerName": "Captain",
+        "displayedValue": 44,
+        "signedValue": 44,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+44 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "value": 5,
+        "type": "Energy Income",
+        "global": true
+      },
+      "frozen": {
+        "value": 5,
+        "type": "Energy Income",
+        "global": true
+      },
+      "factor": 8.876380422322216,
+      "predictedDisplayedValue": 44,
+      "frozenPredictedDisplayedValue": 44,
+      "integerBaseCandidates": [
+        5
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 12,
+      "tier": 6,
+      "sourceGroupId": "rogue-s12",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 5326,
+        "signedValue": 5326,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+5,326% Damage (personal effect)"
+      },
+      "current": {
+        "value": 600,
+        "type": "Damage",
+        "global": false
+      },
+      "frozen": {
+        "value": 600,
+        "type": "Damage",
+        "global": false
+      },
+      "factor": 8.876380422322216,
+      "predictedDisplayedValue": 5326,
+      "frozenPredictedDisplayedValue": 5326,
+      "integerBaseCandidates": [
+        600
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "templar",
+      "index": 12,
+      "tier": 6,
+      "sourceGroupId": "rogue-s12",
+      "observed": {
+        "ownerId": "templar",
+        "ownerName": "Templar",
+        "displayedValue": 27,
+        "signedValue": 27,
+        "type": "Ultra Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+27% Ultra Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "value": 3,
+        "type": "Ultra Gold Chance",
+        "global": true
+      },
+      "frozen": {
+        "value": 3,
+        "type": "Ultra Gold Chance",
+        "global": true
+      },
+      "factor": 8.876380422322216,
+      "predictedDisplayedValue": 27,
+      "frozenPredictedDisplayedValue": 27,
+      "integerBaseCandidates": [
+        3
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 12,
+      "tier": 6,
+      "sourceGroupId": "rogue-s12",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 53,
+        "signedValue": 53,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+53 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "value": 6,
+        "type": "Energy Income",
+        "global": true
+      },
+      "frozen": {
+        "value": 6,
+        "type": "Energy Income",
+        "global": true
+      },
+      "factor": 8.876380422322216,
+      "predictedDisplayedValue": 53,
+      "frozenPredictedDisplayedValue": 53,
+      "integerBaseCandidates": [
+        6
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 13,
+      "tier": 7,
+      "sourceGroupId": "rogue-s13",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 6211,
+        "signedValue": 6211,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+6,211% Super Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "value": 850,
+        "type": "Super Gold Amount",
+        "global": true
+      },
+      "frozen": {
+        "value": 850,
+        "type": "Super Gold Amount",
+        "global": true
+      },
+      "factor": 7.307531789539685,
+      "predictedDisplayedValue": 6211,
+      "frozenPredictedDisplayedValue": 6211,
+      "integerBaseCandidates": [
+        850
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 13,
+      "tier": 7,
+      "sourceGroupId": "rogue-s13",
+      "observed": {
+        "ownerId": "elementalist",
+        "ownerName": "Elementalist",
+        "displayedValue": 6211,
+        "signedValue": 6211,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+6,211% Super Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "value": 850,
+        "type": "Super Gold Amount",
+        "global": true
+      },
+      "frozen": {
+        "value": 850,
+        "type": "Super Gold Amount",
+        "global": true
+      },
+      "factor": 7.307531789539685,
+      "predictedDisplayedValue": 6211,
+      "frozenPredictedDisplayedValue": 6211,
+      "integerBaseCandidates": [
+        850
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 14,
+      "tier": 7,
+      "sourceGroupId": "rogue-s14",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 146,
+        "signedValue": 146,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+146 Skill Power (personal effect)"
+      },
+      "current": {
+        "value": 20,
+        "type": "Skill Power",
+        "global": false
+      },
+      "frozen": {
+        "value": 20,
+        "type": "Skill Duration",
+        "global": false
+      },
+      "factor": 7.307531789539685,
+      "predictedDisplayedValue": 146,
+      "frozenPredictedDisplayedValue": 146,
+      "integerBaseCandidates": [
+        20
+      ],
+      "mismatches": [],
+      "existingOverride": {
+        "ownerId": "rogue",
+        "index": 14,
+        "tier": 7,
+        "requires": [
+          "ninja",
+          "assassin"
+        ],
+        "expectedOriginal": {
+          "type": "Skill Duration",
+          "value": 20,
+          "global": false,
+          "source": "Data!BI25:BM25"
+        },
+        "confirmedUnit": "flat",
+        "evidenceBatch": "batch-02.json",
+        "evidence": {
+          "groupId": "ninja-s14",
+          "sourceImageId": "ninja-03",
+          "displayedValue": 121,
+          "unit": "flat",
+          "global": false
+        },
+        "confirmedType": "Skill Power"
+      }
+    },
+    {
+      "ownerId": "ninja",
+      "index": 14,
+      "tier": 7,
+      "sourceGroupId": "rogue-s14",
+      "observed": {
+        "ownerId": "ninja",
+        "ownerName": "Ninja",
+        "displayedValue": 102,
+        "signedValue": 102,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+102% Super Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "value": 14,
+        "type": "Super Gold Chance",
+        "global": true
+      },
+      "frozen": {
+        "value": 14,
+        "type": "Super Gold Chance",
+        "global": true
+      },
+      "factor": 7.307531789539685,
+      "predictedDisplayedValue": 102,
+      "frozenPredictedDisplayedValue": 102,
+      "integerBaseCandidates": [
+        14
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 14,
+      "tier": 7,
+      "sourceGroupId": "rogue-s14",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 11692,
+        "signedValue": 11692,
+        "type": "Ultra Boss Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+11,692% Ultra Boss Damage (GLOBAL effect)"
+      },
+      "current": {
+        "value": 1600,
+        "type": "Ultra Boss Damage",
+        "global": true
+      },
+      "frozen": {
+        "value": 1600,
+        "type": "Ultra Boss Damage",
+        "global": true
+      },
+      "factor": 7.307531789539685,
+      "predictedDisplayedValue": 11692,
+      "frozenPredictedDisplayedValue": 11692,
+      "integerBaseCandidates": [
+        1600
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 15,
+      "tier": 8,
+      "sourceGroupId": "rogue-s15",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 3303,
+        "signedValue": 3303,
+        "type": "Boss Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+3,303% Boss Gold (GLOBAL effect)"
+      },
+      "current": {
+        "value": 800,
+        "type": "Boss Gold",
+        "global": true
+      },
+      "frozen": {
+        "value": 800,
+        "type": "Boss Gold",
+        "global": true
+      },
+      "factor": 4.12854903363824,
+      "predictedDisplayedValue": 3303,
+      "frozenPredictedDisplayedValue": 3303,
+      "integerBaseCandidates": [
+        800
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "paladin",
+      "index": 15,
+      "tier": 8,
+      "sourceGroupId": "rogue-s15",
+      "observed": {
+        "ownerId": "paladin",
+        "ownerName": "Paladin",
+        "displayedValue": 12386,
+        "signedValue": 12386,
+        "type": "Ultra Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+12,386% Ultra Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "value": 3000,
+        "type": "Ultra Gold Amount",
+        "global": true
+      },
+      "frozen": {
+        "value": 3000,
+        "type": "Ultra Gold Amount",
+        "global": true
+      },
+      "factor": 4.12854903363824,
+      "predictedDisplayedValue": 12386,
+      "frozenPredictedDisplayedValue": 12386,
+      "integerBaseCandidates": [
+        3000
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "scout",
+      "index": 15,
+      "tier": 8,
+      "sourceGroupId": "rogue-s15",
+      "observed": {
+        "ownerId": "scout",
+        "ownerName": "Scout",
+        "displayedValue": 29,
+        "signedValue": 29,
+        "type": "Ultra Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+29% Ultra Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "value": 7,
+        "type": "Ultra Gold Chance",
+        "global": true
+      },
+      "frozen": {
+        "value": 7,
+        "type": "Ultra Gold Chance",
+        "global": true
+      },
+      "factor": 4.12854903363824,
+      "predictedDisplayedValue": 29,
+      "frozenPredictedDisplayedValue": 29,
+      "integerBaseCandidates": [
+        7
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 15,
+      "tier": 8,
+      "sourceGroupId": "rogue-s15",
+      "observed": {
+        "ownerId": "hunter",
+        "ownerName": "Hunter",
+        "displayedValue": 124,
+        "signedValue": 124,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+124 Skill Power (personal effect)"
+      },
+      "current": {
+        "value": 30,
+        "type": "Skill Power",
+        "global": false
+      },
+      "frozen": {
+        "value": 30,
+        "type": "Skill Power",
+        "global": false
+      },
+      "factor": 4.12854903363824,
+      "predictedDisplayedValue": 124,
+      "frozenPredictedDisplayedValue": 124,
+      "integerBaseCandidates": [
+        30
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 16,
+      "tier": 9,
+      "sourceGroupId": "rogue-s16",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 13418,
+        "signedValue": 13418,
+        "type": "Ultra Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+13,418% Ultra Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "value": 3250,
+        "type": "Ultra Gold Amount",
+        "global": true
+      },
+      "frozen": {
+        "value": 3250,
+        "type": "Ultra Gold Amount",
+        "global": true
+      },
+      "factor": 4.12854903363824,
+      "predictedDisplayedValue": 13418,
+      "frozenPredictedDisplayedValue": 13418,
+      "integerBaseCandidates": [
+        3250
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "sovereign",
+      "index": 16,
+      "tier": 9,
+      "sourceGroupId": "rogue-s16",
+      "observed": {
+        "ownerId": "sovereign",
+        "ownerName": "Sovereign",
+        "displayedValue": 165,
+        "signedValue": 165,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+165 Skill Power (personal effect)"
+      },
+      "current": {
+        "value": 40,
+        "type": "Skill Power",
+        "global": false
+      },
+      "frozen": {
+        "value": 40,
+        "type": "Skill Power",
+        "global": false
+      },
+      "factor": 4.12854903363824,
+      "predictedDisplayedValue": 165,
+      "frozenPredictedDisplayedValue": 165,
+      "integerBaseCandidates": [
+        40
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 16,
+      "tier": 9,
+      "sourceGroupId": "rogue-s16",
+      "observed": {
+        "ownerId": "hunter",
+        "ownerName": "Hunter",
+        "displayedValue": 13418,
+        "signedValue": 13418,
+        "type": "Ultra Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+13,418% Ultra Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "value": 3250,
+        "type": "Ultra Gold Amount",
+        "global": true
+      },
+      "frozen": {
+        "value": 3250,
+        "type": "Ultra Gold Amount",
+        "global": true
+      },
+      "factor": 4.12854903363824,
+      "predictedDisplayedValue": 13418,
+      "frozenPredictedDisplayedValue": 13418,
+      "integerBaseCandidates": [
+        3250
+      ],
+      "mismatches": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 16,
+      "tier": 9,
+      "sourceGroupId": "rogue-s16",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 826,
+        "signedValue": 826,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+826% Attack Speed (personal effect)"
+      },
+      "current": {
+        "value": 200,
+        "type": "Attack Speed",
+        "global": false
+      },
+      "frozen": {
+        "value": 200,
+        "type": "Attack Speed",
+        "global": false
+      },
+      "factor": 4.12854903363824,
+      "predictedDisplayedValue": 826,
+      "frozenPredictedDisplayedValue": 826,
+      "integerBaseCandidates": [
+        200
+      ],
+      "mismatches": []
+    }
+  ]
+}

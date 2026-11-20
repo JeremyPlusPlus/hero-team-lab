@@ -1,0 +1,371 @@
+{
+  "meta": {
+    "batch": "27",
+    "selectedHero": {
+      "id": "archer",
+      "name": "Archer"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the earlier user-confirmed capture set. They were not separately restated for this batch; overlapping displayed values support the continuation assumption.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the preceding account profile; they were not separately reconfirmed for this capture.",
+      "Crusader +25% was explicitly confirmed earlier by the user; Warden +0% follows the established account profile.",
+      "Owner tile placements are unspecified. Off-synergy-tile placement is inferred from repeated values and is not established by the screenshots.",
+      "All visible tier IV-VI portrait rank badges are transcribed exactly and are not interpreted as run levels.",
+      "Each effect belongs to the portrait directly above its arrow. Required hero order and effect order follow the screenshot.",
+      "This partial capture contains tiers IV-VI only. Missing tiers are not marked captured."
+    ],
+    "captureCompleteness": "partial",
+    "capturedTiers": [
+      4,
+      5,
+      6
+    ],
+    "groupsCount": 6,
+    "effectsCount": 15,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "archer-9gm-event-01",
+        "originalPath": "images/archer-9gm-event-01.png",
+        "archivePath": "images/archer-9gm-event-01.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "archer-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "archer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5072
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4525
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+9% Super Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 94,
+          "signedValue": 94,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+94% Super Gold Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "archer-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "archer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5072
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5002
+        },
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 3284,
+          "signedValue": 3284,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,284% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 38,
+          "signedValue": 38,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+38% Super Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "archer-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "archer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5072
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+24 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 8876,
+          "signedValue": 8876,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+8,876% Super Gold Amount (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "archer-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "archer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5072
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5001
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 5043,
+          "signedValue": 5043,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,043% Super Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 81,
+          "signedValue": 81,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+81% Super Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 3631,
+          "signedValue": 3631,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,631% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "archer-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "archer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5072
+        },
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 4035,
+          "signedValue": 4035,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,035% Damage (personal effect)"
+        },
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 40,
+          "signedValue": 40,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+40% Ultra Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "archer-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "archer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5072
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 18156,
+          "signedValue": 18156,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+18,156% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 4842,
+          "signedValue": 4842,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,842% Damage (personal effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 4842,
+          "signedValue": 4842,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,842% Kill Gold (personal effect)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,923 @@
+{
+  "meta": {
+    "batch": "25",
+    "selectedHero": {
+      "id": "chieftain",
+      "name": "Chieftain"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the recorded profile by inference.",
+      "Crusader +25% was explicitly confirmed in the preceding capture set; Warden remains assumed +0%.",
+      "Owner tile placements are unspecified. The off-synergy-tile model is inferred from the repeated values, not directly established by these screenshots.",
+      "Tier I has no rank requirement or individual rank badges. Later badges are transcribed independently from this batch.",
+      "Each effect belongs to the portrait directly above its arrow. Repeated portraits are preserved as separate required copies and effects."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "chieftain-9gm-event-01",
+        "originalPath": "images/chieftain-9gm-event-01.png",
+        "archivePath": "images/chieftain-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "chieftain-9gm-event-02",
+        "originalPath": "images/chieftain-9gm-event-02.png",
+        "archivePath": "images/chieftain-9gm-event-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "chieftain-9gm-event-03",
+        "originalPath": "images/chieftain-9gm-event-03.png",
+        "archivePath": "images/chieftain-9gm-event-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "chieftain-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "chieftain-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": null
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 47,
+          "signedValue": -47,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-47% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 117,
+          "signedValue": 117,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+117% Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "chieftain-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": null
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": null
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 586,
+          "signedValue": 586,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+586% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+469% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 94,
+          "signedValue": -94,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-94% Skill Cooldown (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "chieftain-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5072
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 188,
+          "signedValue": 188,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+188% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 188,
+          "signedValue": 188,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+188% Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "chieftain-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4525
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 3519,
+          "signedValue": 3519,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,519% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 3519,
+          "signedValue": 3519,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,519% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "chieftain-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 751,
+          "signedValue": 751,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+751% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 75,
+          "signedValue": -75,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-75% Skill Cooldown (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "chieftain-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Damage (personal effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+938% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "chieftain-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+19% Super Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 2815,
+          "signedValue": 2815,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,815% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "chieftain-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 8914,
+          "signedValue": 8914,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+8,914% Super Gold Amount (personal effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 38,
+          "signedValue": 38,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+38% Super Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 8914,
+          "signedValue": 8914,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+8,914% Super Crit Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "chieftain-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 4508
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 1412,
+          "signedValue": 1412,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,412% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 161,
+          "signedValue": 161,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+161% Super Gold Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "chieftain-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4527
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5123
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+56% Super Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 32,
+          "signedValue": 32,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+32% Super Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+56% Super Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "chieftain-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5014
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 40,
+          "signedValue": 40,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+40 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "chieftain-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        },
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 4627
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 2219,
+          "signedValue": 2219,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,219% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 18156,
+          "signedValue": 18156,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+18,156% Ultra Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 2219,
+          "signedValue": 2219,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,219% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "chieftain-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 5647,
+          "signedValue": 5647,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,647% Super Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 5647,
+          "signedValue": 5647,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,647% Super Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "chieftain-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        },
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 2325,
+          "signedValue": 2325,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,325% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 133,
+          "signedValue": 133,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+133 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 6145,
+          "signedValue": 6145,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+6,145% Super Gold Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "chieftain-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5001
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5072
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 1501,
+          "signedValue": 1501,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,501% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 394,
+          "signedValue": 394,
+          "type": "Ultra Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+394% Ultra Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 113,
+          "signedValue": 113,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+113 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 26,
+          "signedValue": 26,
+          "type": "Ultra Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+26% Ultra Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "chieftain-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        },
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5016
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 75,
+          "signedValue": -75,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-75% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 30,
+          "signedValue": 30,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+30% Ultra Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 30,
+          "signedValue": 30,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+30% Ultra Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 281,
+          "signedValue": 281,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+281% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

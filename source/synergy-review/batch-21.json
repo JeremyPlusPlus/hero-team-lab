@@ -1,0 +1,369 @@
+{
+  "meta": {
+    "batch": "21",
+    "selectedHero": {
+      "id": "peacekeeper",
+      "name": "Peacekeeper"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+    "contextNotes": [
+      "Nine Grand Masters and the active synergy event continue the preceding user-confirmed capture context; these settings were not restated for this batch. Overlapping values support this continuation.",
+      "Snow Fort, three global +5% modifiers, early-tier multipliers and owner modifiers continue the recorded profile by inference. Crusader +25% was previously confirmed; Warden remains +0%.",
+      "Owner tiles are unspecified; comparison assumes owners off synergy tiles.",
+      "This is a partial selected-hero page. Missing tiers are not marked captured.",
+      "Exact displayed values, labels, scopes, and ranks are transcribed from the screenshot."
+    ],
+    "captureCompleteness": "partial",
+    "capturedTiers": [
+      1,
+      2,
+      3
+    ],
+    "groupsCount": 6,
+    "effectsCount": 15,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "peacekeeper-9gm-event-01",
+        "originalPath": "images/peacekeeper-9gm-event-01.png",
+        "archivePath": "images/peacekeeper-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "peacekeeper-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "peacekeeper-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": null
+        },
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 47,
+          "signedValue": 47,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+47 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "peacekeeper-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "peacekeeper-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": null
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": null
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+469% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+235% Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+469% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "peacekeeper-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "peacekeeper-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 117,
+          "signedValue": 117,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+117 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "peacekeeper-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "peacekeeper-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5018
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 3519,
+          "signedValue": 3519,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,519% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 3519,
+          "signedValue": 3519,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,519% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "peacekeeper-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "peacekeeper-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 75,
+          "signedValue": -75,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-75% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 751,
+          "signedValue": 751,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+751% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "peacekeeper-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "peacekeeper-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+9% Super Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 328,
+          "signedValue": 328,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+328 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 28,
+          "signedValue": 28,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+28% Super Exp Amount (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

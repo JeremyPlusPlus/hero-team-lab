@@ -1,0 +1,20 @@
+{
+  "status": "active-calibrated",
+  "expectedHeroes": 60,
+  "capturedAt": "2026-11-02",
+  "deployedHeroes": 0,
+  "reportedPermanentBonuses": [
+    {"source": "Talents", "percent": 50},
+    {"source": "Another global modifier (not named)", "percent": 25},
+    {"source": "Ascension points, on each hero", "percent": 50}
+  ],
+  "provisionalScale": 2.8125,
+  "provisionalScaleConfirmed": true,
+  "confirmedAccountScale": 2.8125,
+  "normalization": "Talents 1.5 × global modifier 1.25 × each hero's Ascension 1.5 = 2.8125. Screenshots were taken with no heroes deployed, so Grand Master and placement effects are absent. Each base is inferred as the unique whole-number magnitude that reproduces the screenshot under this scale and nearest-integer display rounding; cooldown signs are restored afterward.",
+  "normalizationNotes": "Base values are inferred from rounded displays, not read as unrounded game values. The original ingestion screenshots had zero deployed heroes and retain account scale 2.8125. A separate nine-Grand-Master Militia capture supports compounded milestone strength: 2.8125 * 1.1^9 reproduces all 17 displays; the prior additive Grand Master interpretation reproduces none. Tile state and its interaction are unverified in that capture. The three synergy-only +5% bonuses do not apply to milestones. Effective bonuses retain fractions. Captain's Power Mage Energy base of 10 is conditional on the same scaling rule and remains flagged; Power Mage Energy contributes to the user-defined Energy + Power Mages objective; other named skill effects are visible but unscored.",
+  "grandMasterMilestoneStacking": "multiply",
+  "grandMasterMilestoneStackingEvidence": "Inferred from the separate nine-Grand-Master Militia screenshot and confirmed component values; supersedes the earlier additive interpretation without changing zero-deployment base normalization.",
+  "additionalCalibrationCaptures": ["source/milestone-review/calibration-capture-militia-nine-grand-masters.json"],
+  "calculationStatus": "Screenshot-derived milestones for the 42-hero spreadsheet roster are active through level 10000. Synergies remain from the original spreadsheet. The other 18 heroes await data."
+}

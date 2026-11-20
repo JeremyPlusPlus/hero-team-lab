@@ -1,0 +1,681 @@
+{
+  "meta": {
+    "batch": "31",
+    "selectedHero": {
+      "id": "wizard",
+      "name": "Wizard"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the earlier user-confirmed capture set. They were not separately restated for this batch; overlapping displayed values support the continuation assumption.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the preceding account profile; they were not separately reconfirmed for this capture.",
+      "Crusader +25% was explicitly confirmed earlier by the user; Warden +0% follows the established account profile.",
+      "Owner tile placements are unspecified. Off-synergy-tile placement is inferred from repeated values and is not established by the screenshots.",
+      "Tier I shows no individual rank badges or rank requirement. Later rank badges are transcribed exactly and are not interpreted as run levels.",
+      "Each effect belongs to the portrait directly above its arrow. Required hero order and effect order follow the screenshot.",
+      "This is a partial capture: Wizard tiers I-III and V-VII; Berserker tiers I-VI. Missing tiers are not marked captured."
+    ],
+    "captureCompleteness": "partial",
+    "capturedTiers": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7
+    ],
+    "groupsCount": 12,
+    "effectsCount": 30,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "wizard-9gm-event-01",
+        "originalPath": "images/wizard-9gm-event-01.png",
+        "archivePath": "images/wizard-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "wizard-9gm-event-02",
+        "originalPath": "images/wizard-9gm-event-02.png",
+        "archivePath": "images/wizard-9gm-event-02.png",
+        "tiers": [
+          5,
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "wizard-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "wizard-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": null
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 47,
+          "signedValue": 47,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+47% Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "wizard-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "wizard-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": null
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": null
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+469% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+469% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+235% Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "wizard-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "Rank 15+",
+      "sourceImageId": "wizard-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        },
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 4508
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 188,
+          "signedValue": 188,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+188% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 117,
+          "signedValue": 117,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+117 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "wizard-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "Rank 15+",
+      "sourceImageId": "wizard-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 5000
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4549
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 352,
+          "signedValue": 352,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+352% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 3519,
+          "signedValue": 3519,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,519% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 3519,
+          "signedValue": 3519,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,519% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "wizard-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "Rank 50+",
+      "sourceImageId": "wizard-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4527
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 188,
+          "signedValue": 188,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+188 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 751,
+          "signedValue": 751,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+751% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "wizard-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "Rank 50+",
+      "sourceImageId": "wizard-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+469% Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "wizard-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "wizard-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5001
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+24 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 4438,
+          "signedValue": 4438,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+4,438% Super Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "wizard-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "wizard-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 3631,
+          "signedValue": 3631,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,631% Damage (personal effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 3631,
+          "signedValue": 3631,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,631% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 32,
+          "signedValue": 32,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+32 Energy Income (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "wizard-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "wizard-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5018
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 202,
+          "signedValue": 202,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+202% Ultra Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "wizard-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "wizard-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+56% Ultra Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+56% Ultra Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 34295,
+          "signedValue": 34295,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+34,295% Ultra Gold Amount (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "wizard-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "Rank 500+",
+      "sourceImageId": "wizard-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 266,
+          "signedValue": 266,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+266% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 100,
+          "signedValue": 100,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+100 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "wizard-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "Rank 500+",
+      "sourceImageId": "wizard-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 2325,
+          "signedValue": 2325,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,325% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 2325,
+          "signedValue": 2325,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,325% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 2325,
+          "signedValue": 2325,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,325% Damage (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,920 @@
+{
+  "meta": {
+    "batch": "08",
+    "selectedHero": {
+      "id": "titan",
+      "name": "Titan"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 15,
+          "warden": 0
+        }
+      }
+    },
+    "contextNotes": [
+      "The nine-Grand-Master count, Snow Fort map modifiers, and account synergy bonuses are inferred continuation of preceding captures; they were not re-confirmed for these screenshots.",
+      "Titan tile placement and all partner owner tile placements are unspecified.",
+      "The continuing owner-bonus assumption is +25% by default, +15% for Crusader, and 0% for Warden.",
+      "Tier I shows no rank requirement or individual hero rank badges; those values are null.",
+      "Effects are assigned to the hero portrait directly above each downward arrow. Required hero and effect order follows the screenshot.",
+      "Repeated hero portraits and their effects are preserved as separate ordered array entries; they have not been deduplicated.",
+      "Displayed rank badges are transcribed independently for this capture and are not copied from prior batches.",
+      "Tier IX contains two Warlock portraits, each with +51 Energy Income (GLOBAL effect). Viking shows Rank 5003 in Tier IV."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "titan-01",
+        "originalPath": "images/titan-01.png",
+        "archivePath": "images/titan-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "titan-02",
+        "originalPath": "images/titan-02.png",
+        "archivePath": "images/titan-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "titan-03",
+        "originalPath": "images/titan-03.png",
+        "archivePath": "images/titan-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "titan-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "titan-01",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": null
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 43,
+          "signedValue": 43,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+43 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 43,
+          "signedValue": 43,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+43 Skill Duration (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "titan-01",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": null
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": null
+        },
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 85,
+          "signedValue": -85,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-85% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 427,
+          "signedValue": 427,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+427% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 1066,
+          "signedValue": 1066,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,066% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "titan-01",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 213,
+          "signedValue": 213,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+213% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 682,
+          "signedValue": 682,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+682% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "titan-01",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5003
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 3199,
+          "signedValue": 3199,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,199% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 320,
+          "signedValue": 320,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+320% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 3199,
+          "signedValue": 3199,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,199% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "titan-01",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 4505
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 1706,
+          "signedValue": 1706,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,706% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 63,
+          "signedValue": 63,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+63 Skill Duration (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "titan-01",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 4528
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 853,
+          "signedValue": 853,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+853% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+9 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "titan-02",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 7251,
+          "signedValue": 7251,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+7,251% Super Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 17,
+          "signedValue": 17,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+17% Super Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "titan-02",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5003
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 4538
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "titan-02",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 88,
+          "signedValue": 88,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+88 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 59,
+          "signedValue": 59,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+59% Super Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "titan-02",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 4508
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5003
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 29,
+          "signedValue": 29,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+29 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 3301,
+          "signedValue": 3301,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,301% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 3301,
+          "signedValue": 3301,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,301% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "titan-02",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 4527
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 3668,
+          "signedValue": 3668,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,668% Damage (personal effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 15,
+          "signedValue": 15,
+          "type": "Ultra Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+15% Ultra Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "titan-02",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5024
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 4402,
+          "signedValue": 4402,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,402% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 4402,
+          "signedValue": 4402,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,402% Damage (personal effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 16506,
+          "signedValue": 16506,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16,506% Ultra Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "titan-03",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 1812,
+          "signedValue": 1812,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,812% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 1812,
+          "signedValue": 1812,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,812% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "titan-03",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5000
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5024
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 151,
+          "signedValue": 151,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+151% Super Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 60,
+          "signedValue": 60,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+60% Super Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "titan-03",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": 4504
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4506
+        },
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 4528
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 102,
+          "signedValue": 102,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+102 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 10236,
+          "signedValue": 10236,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+10,236% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 205,
+          "signedValue": 205,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+205% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "titan-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "titan-03",
+      "requiredHeroes": [
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 11089,
+          "signedValue": 11089,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+11,089% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Ultra Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+51 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+51 Energy Income (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,924 @@
+{
+  "meta": {
+    "batch": "15",
+    "selectedHero": {
+      "id": "viking",
+      "name": "Viking"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "The user explicitly confirmed nine Grand Masters for these captures and subsequently confirmed the synergy event remained active (+25% milestone effects, +10% synergy effects).",
+      "Snow Fort, three global +5% synergy modifiers, early-tier multipliers and ordinary +25% owner bonuses continue the previously recorded account context by inference.",
+      "Crusader +25% was explicitly confirmed in the preceding capture; Warden remains assumed +0%.",
+      "Owner tiles are unspecified; the off-synergy-tile model is used and its consistency is checked.",
+      "Displayed values are transcribed directly; the event and Grand Master factors are recorded separately and never baked into source bases.",
+      "Tier I has no displayed rank requirement or per-hero rank badges. Later badges are transcribed independently, rather than copied from earlier screenshots.",
+      "Each effect belongs to the portrait above its downward arrow; required-hero order follows the screenshots."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "viking-9gm-event-01",
+        "originalPath": "images/viking-9gm-event-01.png",
+        "archivePath": "images/viking-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "viking-9gm-event-02",
+        "originalPath": "images/viking-9gm-event-02.png",
+        "archivePath": "images/viking-9gm-event-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "viking-9gm-event-03",
+        "originalPath": "images/viking-9gm-event-03.png",
+        "archivePath": "images/viking-9gm-event-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "viking-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "viking-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": null
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+235% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 47,
+          "signedValue": 47,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+47 Skill Duration (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "viking-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": null
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": null
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 70,
+          "signedValue": 70,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+70 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 235,
+          "signedValue": -235,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-235% Skill Cooldown (personal effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 94,
+          "signedValue": 94,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+94% Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "viking-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 4627
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "viking-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 164,
+          "signedValue": -164,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-164% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 3519,
+          "signedValue": 3519,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,519% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 23,
+          "signedValue": 23,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+23 Energy Income (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "viking-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+9 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 75,
+          "signedValue": 75,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+75 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "viking-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4549
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Damage (personal effect)"
+        },
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "viking-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 7976,
+          "signedValue": 7976,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+7,976% Super Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 1173,
+          "signedValue": 1173,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,173% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "viking-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 5000
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "viking-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 65,
+          "signedValue": 65,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+65% Super Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 1412,
+          "signedValue": 1412,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,412% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "viking-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 10087,
+          "signedValue": 10087,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+10,087% Super Gold Amount (personal effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 3631,
+          "signedValue": 3631,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,631% Damage (personal effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 1614,
+          "signedValue": 1614,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,614% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "viking-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 40,
+          "signedValue": 40,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+40 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "viking-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 2219,
+          "signedValue": 2219,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,219% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "viking-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 9300,
+          "signedValue": 9300,
+          "type": "Ultra Boss Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+9,300% Ultra Boss Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 1993,
+          "signedValue": 1993,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,993% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "viking-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5109
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 53,
+          "signedValue": 53,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+53 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 2325,
+          "signedValue": 2325,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,325% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 166,
+          "signedValue": 166,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+166% Super Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "viking-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 4676
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5018
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 150,
+          "signedValue": 150,
+          "type": "Boss Exp",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+150% Boss Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 394,
+          "signedValue": 394,
+          "type": "Ultra Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+394% Ultra Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 3003,
+          "signedValue": 3003,
+          "type": "Boss Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+3,003% Boss Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 113,
+          "signedValue": 113,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+113 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "viking-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "viking-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5064
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5018
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5109
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+56 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 150,
+          "signedValue": 150,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+150 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 38,
+          "signedValue": 38,
+          "type": "Ultra Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+38% Ultra Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Ultra Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+469% Ultra Exp Amount (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

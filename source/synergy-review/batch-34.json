@@ -1,0 +1,371 @@
+{
+  "meta": {
+    "batch": "34",
+    "selectedHero": {
+      "id": "peacekeeper",
+      "name": "Peacekeeper"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the recorded profile by inference.",
+      "Crusader +25% was explicitly confirmed in the preceding capture set; Warden remains assumed +0%.",
+      "Owner tile placements are unspecified. The off-synergy-tile model is inferred from the repeated values, not directly established by these screenshots.",
+      "Tier I has no rank requirement or individual rank badges. Later badges are transcribed independently from this batch.",
+      "Each effect belongs to the portrait directly above its arrow. Repeated portraits are preserved as separate required copies and effects.",
+      "This is a partial selected-hero page; missing tiers are not marked captured."
+    ],
+    "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+    "captureCompleteness": "partial",
+    "capturedTiers": [
+      5,
+      6,
+      7
+    ],
+    "groupsCount": 6,
+    "effectsCount": 15,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "peacekeeper-9gm-event-02",
+        "originalPath": "images/peacekeeper-9gm-event-02.png",
+        "archivePath": "images/peacekeeper-9gm-event-02.png",
+        "tiers": [
+          5,
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "peacekeeper-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "peacekeeper-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 3228,
+          "signedValue": 3228,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,228% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 3228,
+          "signedValue": 3228,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,228% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "peacekeeper-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "peacekeeper-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": 4503
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 32,
+          "signedValue": 32,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+32 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 1614,
+          "signedValue": 1614,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,614% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 202,
+          "signedValue": 202,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+202% Super Gold Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "peacekeeper-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "peacekeeper-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 16139,
+          "signedValue": 16139,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16,139% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "peacekeeper-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "peacekeeper-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 4842,
+          "signedValue": 4842,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,842% Damage (personal effect)"
+        },
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+19% Ultra Energy Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "peacekeeper-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "peacekeeper-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4525
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 1993,
+          "signedValue": 1993,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,993% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 100,
+          "signedValue": 100,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+100 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "peacekeeper-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "peacekeeper-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5002
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 133,
+          "signedValue": 133,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+133% Super Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 53,
+          "signedValue": 53,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+53 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 10629,
+          "signedValue": 10629,
+          "type": "Ultra Boss Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+10,629% Ultra Boss Damage (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

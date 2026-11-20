@@ -1,0 +1,556 @@
+{
+  "batch": "batch-27.json",
+  "status": "audited-no-corrections-needed",
+  "observedEffects": 15,
+  "coverage": {
+    "uniqueEffects": 15,
+    "uniqueGroups": 6,
+    "newUniqueEffectsVsEarlierBatches": 7,
+    "newUniqueGroupsVsEarlierBatches": 3,
+    "overlappingEffectAppearances": 8,
+    "repeatedPortraitAppearances": 0
+  },
+  "frozenMagnitudeMatches": 15,
+  "currentMagnitudeMatches": 15,
+  "currentFullMatches": 15,
+  "newOverrideRecords": 0,
+  "overrides": [],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "archer",
+      "index": 7,
+      "tier": 4,
+      "groupId": "archer-s7",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 9,
+        "signedValue": 9,
+        "type": "Super Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+9% Super Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Chance",
+        "value": 1,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Energy Chance",
+        "value": 1,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Energy Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 9,
+      "frozenPredictedSignedValue": 9,
+      "integerBaseCandidates": [
+        1
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "captain",
+      "index": 7,
+      "tier": 4,
+      "groupId": "archer-s7",
+      "observed": {
+        "ownerId": "captain",
+        "ownerName": "Captain",
+        "displayedValue": 94,
+        "signedValue": 94,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+94% Super Gold Chance (personal effect)"
+      },
+      "current": {
+        "type": "Super Gold Chance",
+        "value": 10,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 10,
+        "global": false
+      },
+      "canonicalCurrentType": "Super Gold Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 94,
+      "frozenPredictedSignedValue": 94,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "archer",
+      "index": 8,
+      "tier": 4,
+      "groupId": "archer-s8",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 3284,
+        "signedValue": 3284,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,284% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 350,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 350,
+        "global": false
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 3284,
+      "frozenPredictedSignedValue": 3284,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "gladiator",
+      "index": 8,
+      "tier": 4,
+      "groupId": "archer-s8",
+      "observed": {
+        "ownerId": "gladiator",
+        "ownerName": "Gladiator",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,407% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 150,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 150,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1407,
+      "frozenPredictedSignedValue": 1407,
+      "integerBaseCandidates": [
+        150
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 8,
+      "tier": 4,
+      "groupId": "archer-s8",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 38,
+        "signedValue": 38,
+        "type": "Super Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+38% Super Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Amount",
+        "value": 4,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Super Energy",
+        "value": 4,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Energy Amount",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 38,
+      "frozenPredictedSignedValue": 38,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "archer",
+      "index": 9,
+      "tier": 5,
+      "groupId": "archer-s9",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+24 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 9,
+      "tier": 5,
+      "groupId": "archer-s9",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 8876,
+        "signedValue": 8876,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+8,876% Super Gold Amount (personal effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 1100,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 1100,
+        "global": false
+      },
+      "canonicalCurrentType": "Super Gold Amount",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 8876,
+      "frozenPredictedSignedValue": 8876,
+      "integerBaseCandidates": [
+        1100
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "archer",
+      "index": 10,
+      "tier": 5,
+      "groupId": "archer-s10",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 5043,
+        "signedValue": 5043,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+5,043% Super Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 625,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 625,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Gold Amount",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 5043,
+      "frozenPredictedSignedValue": 5043,
+      "integerBaseCandidates": [
+        625
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "champion",
+      "index": 10,
+      "tier": 5,
+      "groupId": "archer-s10",
+      "observed": {
+        "ownerId": "champion",
+        "ownerName": "Champion",
+        "displayedValue": 81,
+        "signedValue": 81,
+        "type": "Super Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+81% Super Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Chance",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Chance",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Crit Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 81,
+      "frozenPredictedSignedValue": 81,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlock",
+      "index": 10,
+      "tier": 5,
+      "groupId": "archer-s10",
+      "observed": {
+        "ownerId": "warlock",
+        "ownerName": "Warlock",
+        "displayedValue": 3631,
+        "signedValue": 3631,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,631% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 450,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 450,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3631,
+      "frozenPredictedSignedValue": 3631,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "archer",
+      "index": 11,
+      "tier": 6,
+      "groupId": "archer-s11",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 4035,
+        "signedValue": 4035,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+4,035% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 500,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 500,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 4035,
+      "frozenPredictedSignedValue": 4035,
+      "integerBaseCandidates": [
+        500
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 11,
+      "tier": 6,
+      "groupId": "archer-s11",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 40,
+        "signedValue": 40,
+        "type": "Ultra Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+40% Ultra Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Chance",
+        "value": 5,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Chance",
+        "value": 5,
+        "global": false
+      },
+      "canonicalCurrentType": "Ultra Crit Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 40,
+      "frozenPredictedSignedValue": 40,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "archer",
+      "index": 12,
+      "tier": 6,
+      "groupId": "archer-s12",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 18156,
+        "signedValue": 18156,
+        "type": "Ultra Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+18,156% Ultra Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Damage",
+        "value": 2250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Damage",
+        "value": 2250,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Crit Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 18156,
+      "frozenPredictedSignedValue": 18156,
+      "integerBaseCandidates": [
+        2250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "militia",
+      "index": 12,
+      "tier": 6,
+      "groupId": "archer-s12",
+      "observed": {
+        "ownerId": "militia",
+        "ownerName": "Militia",
+        "displayedValue": 4842,
+        "signedValue": 4842,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+4,842% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 600,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 600,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 4842,
+      "frozenPredictedSignedValue": 4842,
+      "integerBaseCandidates": [
+        600
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "titan",
+      "index": 12,
+      "tier": 6,
+      "groupId": "archer-s12",
+      "observed": {
+        "ownerId": "titan",
+        "ownerName": "Titan",
+        "displayedValue": 4842,
+        "signedValue": 4842,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+4,842% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 600,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 600,
+        "global": false
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 4842,
+      "frozenPredictedSignedValue": 4842,
+      "integerBaseCandidates": [
+        600
+      ],
+      "changedFields": []
+    }
+  ],
+  "labelNormalizations": [],
+  "archiveChecks": [
+    {
+      "archivePath": "images/archer-9gm-event-01.png",
+      "sha256": "36d47b0b9e6bb5d97818bb3ba1b700261c54d18fcea929f6df13f24bf92274f7",
+      "byteIdenticalToOriginal": true
+    }
+  ],
+  "comparisonBasis": "Current magnitude/field match counts describe active data before this batch was applied.",
+  "matchesAfterCorrections": 15
+}

@@ -1,0 +1,655 @@
+{
+  "meta": {
+    "batch": "33",
+    "selectedHero": {
+      "id": "necromancer",
+      "name": "Necromancer"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the recorded profile by inference.",
+      "Crusader +25% was explicitly confirmed in the preceding capture set; Warden remains assumed +0%.",
+      "Owner tile placements are unspecified. The off-synergy-tile model is inferred from the repeated values, not directly established by these screenshots.",
+      "Tier I has no rank requirement or individual rank badges. Later badges are transcribed independently from this batch.",
+      "Each effect belongs to the portrait directly above its arrow. Repeated portraits are preserved as separate required copies and effects.",
+      "This is a partial selected-hero page; missing tiers are not marked captured.",
+      "The second screenshot shows Templar rank 4185, Viking rank 5016 and Ballista rank 5024. They are transcribed independently of previous captures."
+    ],
+    "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+    "captureCompleteness": "partial",
+    "capturedTiers": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      8
+    ],
+    "groupsCount": 11,
+    "effectsCount": 29,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "necromancer-9gm-event-01",
+        "originalPath": "images/necromancer-9gm-event-01.png",
+        "archivePath": "images/necromancer-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "necromancer-9gm-event-02",
+        "originalPath": "images/necromancer-9gm-event-02.png",
+        "archivePath": "images/necromancer-9gm-event-02.png",
+        "tiers": [
+          6,
+          7,
+          8
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "necromancer-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "necromancer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": null
+        },
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 586,
+          "signedValue": 586,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+586% Damage (personal effect)"
+        },
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 38,
+          "signedValue": 38,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+38% Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "necromancer-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "necromancer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": null
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": null
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 70,
+          "signedValue": 70,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+70 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 70,
+          "signedValue": 70,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+70 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 70,
+          "signedValue": 70,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+70 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "necromancer-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "necromancer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 399,
+          "signedValue": 399,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+399% Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "necromancer-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "necromancer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 281,
+          "signedValue": 281,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+281% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+235 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "necromancer-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "necromancer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 1877,
+          "signedValue": 1877,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,877% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 751,
+          "signedValue": 751,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+751% Attack Speed (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "necromancer-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "necromancer-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+938% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+469% Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "necromancer-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "necromancer-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 30260,
+          "signedValue": 30260,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+30,260% Ultra Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 30260,
+          "signedValue": 30260,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+30,260% Ultra Gold Amount (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "necromancer-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "necromancer-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": 4185
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": 4503
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 4842,
+          "signedValue": 4842,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,842% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "necromancer-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "necromancer-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 9300,
+          "signedValue": 9300,
+          "type": "Ultra Boss Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+9,300% Ultra Boss Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 830,
+          "signedValue": 830,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+830% Attack Speed (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "necromancer-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "necromancer-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 133,
+          "signedValue": 133,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+133 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 100,
+          "signedValue": 100,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+100 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 797,
+          "signedValue": 797,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+797% Attack Speed (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "necromancer-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "necromancer-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5016
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5024
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 3003,
+          "signedValue": 3003,
+          "type": "Boss Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+3,003% Boss Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 150,
+          "signedValue": 150,
+          "type": "Boss Exp",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+150% Boss Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 394,
+          "signedValue": 394,
+          "type": "Ultra Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+394% Ultra Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 113,
+          "signedValue": 113,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+113 Skill Power (personal effect)"
+        }
+      ]
+    }
+  ]
+}

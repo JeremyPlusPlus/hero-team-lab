@@ -1,0 +1,924 @@
+{
+  "meta": {
+    "batch": "19",
+    "selectedHero": {
+      "id": "warlord",
+      "name": "Warlord"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the recorded profile by inference.",
+      "Crusader +25% was explicitly confirmed in the preceding capture set; Warden remains assumed +0%.",
+      "Owner tile placements are unspecified. The off-synergy-tile model is inferred from the repeated values, not directly established by these screenshots.",
+      "Tier I has no rank requirement or individual rank badges. Later badges are transcribed independently from this batch.",
+      "Each effect belongs to the portrait directly above its arrow. Repeated portraits are preserved as separate required copies and effects.",
+      "Tier IX contains two Warlock portraits, both rank 5001, each showing +56 Energy Income (GLOBAL effect)."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "warlord-9gm-event-01",
+        "originalPath": "images/warlord-9gm-event-01.png",
+        "archivePath": "images/warlord-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "warlord-9gm-event-02",
+        "originalPath": "images/warlord-9gm-event-02.png",
+        "archivePath": "images/warlord-9gm-event-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "warlord-9gm-event-03",
+        "originalPath": "images/warlord-9gm-event-03.png",
+        "archivePath": "images/warlord-9gm-event-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "warlord-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "warlord-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": null
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+235% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 586,
+          "signedValue": 586,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+586% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "warlord-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": null
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": null
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 70,
+          "signedValue": 70,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+70 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 70,
+          "signedValue": 70,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+70 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 70,
+          "signedValue": 70,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+70 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "warlord-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "warlord-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5018
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 3519,
+          "signedValue": 3519,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,519% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 3519,
+          "signedValue": 3519,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,519% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "warlord-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 751,
+          "signedValue": 751,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+751% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 235,
+          "signedValue": -235,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-235% Skill Cooldown (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "warlord-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 4685
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+469% Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "warlord-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 2815,
+          "signedValue": 2815,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,815% Damage (personal effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 4222,
+          "signedValue": 4222,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+4,222% Super Gold Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "warlord-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5110
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+19 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+19 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 66,
+          "signedValue": 66,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+66% Super Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "warlord-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 65,
+          "signedValue": 65,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+65% Super Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 97,
+          "signedValue": 97,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+97 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "warlord-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 1614,
+          "signedValue": 1614,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,614% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 3631,
+          "signedValue": 3631,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,631% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 32,
+          "signedValue": 32,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+32 Energy Income (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "warlord-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4549
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 40,
+          "signedValue": 40,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+40% Ultra Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 40,
+          "signedValue": 40,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+40% Ultra Gold Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "warlord-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 4685
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 34295,
+          "signedValue": 34295,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+34,295% Ultra Gold Amount (personal effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+56% Ultra Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+56% Ultra Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "warlord-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 1993,
+          "signedValue": 1993,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,993% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 9300,
+          "signedValue": 9300,
+          "type": "Ultra Boss Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+9,300% Ultra Boss Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "warlord-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 10629,
+          "signedValue": 10629,
+          "type": "Ultra Boss Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+10,629% Ultra Boss Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 133,
+          "signedValue": 133,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+133% Super Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 53,
+          "signedValue": 53,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+53 Energy Income (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "warlord-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 38,
+          "signedValue": 38,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+38 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 3753,
+          "signedValue": 3753,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,753% Damage (personal effect)"
+        },
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 3753,
+          "signedValue": 3753,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+3,753% Super Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 244,
+          "signedValue": 244,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+244% Ultra Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlord-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "warlord-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5001
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5001
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 281,
+          "signedValue": 281,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+281% Ultra Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 12198,
+          "signedValue": 12198,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+12,198% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+56 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+56 Energy Income (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

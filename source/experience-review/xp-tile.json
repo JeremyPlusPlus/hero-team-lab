@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-19",
+  "source": "User's in-game test of the XP tile and Veteran's Exp Share",
+  "confirmed": {
+    "xpBonusPercent": 20,
+    "scope": "Kills made by the hero occupying the XP tile",
+    "affectsVeteranSharedXp": true,
+    "recipientRule": "Veteran shares the killer's tile-boosted award with all heroes. A recipient's own tile gives no additional bonus to a shared kill."
+  },
+  "model": {
+    "tileId": "experience",
+    "maximumTiles": 1,
+    "defaultMultiplier": 1.2,
+    "stat": "Own Kill Exp Multiplier",
+    "xpTileAward": "Killer's payout multiplied once by 1.20 while standing on the active XP tile",
+    "sharedAward": "Killer's payout including its tile multiplier, times the effective Veteran share chance",
+    "referenceHandling": "XP tile is separate from calibrated Rank EXP and Super/Ultra chances",
+    "search": "Compare the XP tile on eligible killers against milestone, synergy and skill placements",
+    "comparison": "Compare Normal, XP, Milestone, Synergy and Skill power for the current attacker. Score the leveling hero's direct or shared reward and allow legal tile exchanges.",
+    "mapDisabled": "Assignments are retained but the tile has no effect"
+  }
+}

@@ -1,0 +1,1635 @@
+{
+  "batch": "batch-17.json",
+  "status": "activated-in-confirmed-overrides",
+  "observedEffects": 43,
+  "coverage": {
+    "uniqueEffects": 43,
+    "uniqueGroups": 16,
+    "newUniqueEffectsVsEarlierBatches": 28,
+    "newUniqueGroupsVsEarlierBatches": 11,
+    "overlappingEffectAppearances": 15,
+    "repeatedPortraitAppearances": 0
+  },
+  "frozenMagnitudeMatches": 40,
+  "currentMagnitudeMatches": 42,
+  "currentFullMatches": 40,
+  "newOverrideRecords": 3,
+  "overrides": [
+    {
+      "ownerId": "sorcerer",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "champion"
+      ],
+      "expectedOriginal": {
+        "type": "Damage",
+        "value": 100,
+        "global": false,
+        "source": "Data!L9:O9"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-17.json",
+      "evidence": {
+        "groupId": "sorcerer-s3",
+        "sourceImageId": "sorcerer-9gm-event-01",
+        "displayedValue": 938,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 40,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the immediately prior user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 4,
+      "tier": 2,
+      "requires": [
+        "paladin",
+        "crusader"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 20,
+        "global": false,
+        "source": "Data!P9:T9"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-17.json",
+      "evidence": {
+        "groupId": "sorcerer-s4",
+        "sourceImageId": "sorcerer-9gm-event-01",
+        "displayedValue": 469,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 7,
+      "tier": 4,
+      "requires": [
+        "sorcerer"
+      ],
+      "expectedOriginal": {
+        "type": "Super Energy",
+        "value": 2,
+        "global": true,
+        "source": "Data!AD18:AG18"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-17.json",
+      "evidence": {
+        "groupId": "sorcerer-s7",
+        "sourceImageId": "sorcerer-9gm-event-02",
+        "displayedValue": 19,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Energy Amount"
+    }
+  ],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "sorcerer",
+      "index": 1,
+      "tier": 1,
+      "groupId": "sorcerer-s1",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 586,
+        "signedValue": 586,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+586% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 25,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 25,
+        "global": false
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 586,
+      "frozenPredictedSignedValue": 586,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "archer",
+      "index": 1,
+      "tier": 1,
+      "groupId": "sorcerer-s1",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+235% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 2,
+      "tier": 1,
+      "groupId": "sorcerer-s2",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 94,
+        "signedValue": 94,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+94% Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 4,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 10,
+        "global": false
+      },
+      "canonicalCurrentType": "Crit Chance",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 94,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ninja",
+      "index": 2,
+      "tier": 1,
+      "groupId": "sorcerer-s2",
+      "observed": {
+        "ownerId": "ninja",
+        "ownerName": "Ninja",
+        "displayedValue": 1173,
+        "signedValue": 1173,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,173% Crit Damage (personal effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 50,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 50,
+        "global": false
+      },
+      "canonicalCurrentType": "Crit Damage",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 1173,
+      "frozenPredictedSignedValue": 1173,
+      "integerBaseCandidates": [
+        50
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 2,
+      "tier": 1,
+      "groupId": "sorcerer-s2",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+469% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 20,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 50,
+        "global": false
+      },
+      "canonicalCurrentType": "Crit Damage",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 1173,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 3,
+      "tier": 2,
+      "groupId": "sorcerer-s3",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 100,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 100,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 2346,
+      "frozenPredictedSignedValue": 2346,
+      "integerBaseCandidates": [
+        40
+      ],
+      "changedFields": [
+        "global",
+        "value"
+      ]
+    },
+    {
+      "ownerId": "champion",
+      "index": 3,
+      "tier": 2,
+      "groupId": "sorcerer-s3",
+      "observed": {
+        "ownerId": "champion",
+        "ownerName": "Champion",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 40,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 40,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        40
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 4,
+      "tier": 2,
+      "groupId": "sorcerer-s4",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 469,
+        "signedValue": -469,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "-469% Skill Cooldown (personal effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": 20,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 20,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Cooldown",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": [
+        "sign"
+      ]
+    },
+    {
+      "ownerId": "paladin",
+      "index": 4,
+      "tier": 2,
+      "groupId": "sorcerer-s4",
+      "observed": {
+        "ownerId": "paladin",
+        "ownerName": "Paladin",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Rank Exp",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+235 Rank Exp (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Rank Exp",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 4,
+      "tier": 2,
+      "groupId": "sorcerer-s4",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 3519,
+        "signedValue": 3519,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,519% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 150,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 150,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 3519,
+      "frozenPredictedSignedValue": 3519,
+      "integerBaseCandidates": [
+        150
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 5,
+      "tier": 3,
+      "groupId": "sorcerer-s5",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 751,
+        "signedValue": 751,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+751% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 80,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 80,
+        "global": false
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 751,
+      "frozenPredictedSignedValue": 751,
+      "integerBaseCandidates": [
+        80
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 5,
+      "tier": 3,
+      "groupId": "sorcerer-s5",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 1877,
+        "signedValue": 1877,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,877% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 200,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 200,
+        "global": false
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1877,
+      "frozenPredictedSignedValue": 1877,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 6,
+      "tier": 3,
+      "groupId": "sorcerer-s6",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 2346,
+        "signedValue": 2346,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+2,346% Crit Damage (personal effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 250,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 250,
+        "global": false
+      },
+      "canonicalCurrentType": "Crit Damage",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 2346,
+      "frozenPredictedSignedValue": 2346,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "viking",
+      "index": 6,
+      "tier": 3,
+      "groupId": "sorcerer-s6",
+      "observed": {
+        "ownerId": "viking",
+        "ownerName": "Viking",
+        "displayedValue": 2346,
+        "signedValue": 2346,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+2,346% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 250,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 250,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 2346,
+      "frozenPredictedSignedValue": 2346,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 6,
+      "tier": 3,
+      "groupId": "sorcerer-s6",
+      "observed": {
+        "ownerId": "dicemaster",
+        "ownerName": "Dicemaster",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 100,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 100,
+        "global": true
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        100
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 7,
+      "tier": 4,
+      "groupId": "sorcerer-s7",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 1173,
+        "signedValue": 1173,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,173% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 125,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 125,
+        "global": true
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1173,
+      "frozenPredictedSignedValue": 1173,
+      "integerBaseCandidates": [
+        125
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 7,
+      "tier": 4,
+      "groupId": "sorcerer-s7",
+      "observed": {
+        "ownerId": "elementalist",
+        "ownerName": "Elementalist",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Super Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+19% Super Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Energy",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Energy Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": [
+        "type"
+      ]
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 8,
+      "tier": 4,
+      "groupId": "sorcerer-s8",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Super Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+19% Super Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Energy Chance",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Energy Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 8,
+      "tier": 4,
+      "groupId": "sorcerer-s8",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+19 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Energy Income",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 8,
+      "tier": 4,
+      "groupId": "sorcerer-s8",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+19 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 9,
+      "tier": 5,
+      "groupId": "sorcerer-s9",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+24 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "scout",
+      "index": 9,
+      "tier": 5,
+      "groupId": "sorcerer-s9",
+      "observed": {
+        "ownerId": "scout",
+        "ownerName": "Scout",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+24 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 3,
+        "global": true
+      },
+      "canonicalCurrentType": "Energy Income",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 10,
+      "tier": 5,
+      "groupId": "sorcerer-s10",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 202,
+        "signedValue": 202,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+202% Super Gold Chance (personal effect)"
+      },
+      "current": {
+        "type": "Super Gold Chance",
+        "value": 25,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 25,
+        "global": false
+      },
+      "canonicalCurrentType": "Super Gold Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 202,
+      "frozenPredictedSignedValue": 202,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "praetorian",
+      "index": 10,
+      "tier": 5,
+      "groupId": "sorcerer-s10",
+      "observed": {
+        "ownerId": "praetorian",
+        "ownerName": "Praetorian",
+        "displayedValue": 1614,
+        "signedValue": 1614,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,614% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 200,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 200,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 1614,
+      "frozenPredictedSignedValue": 1614,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 10,
+      "tier": 5,
+      "groupId": "sorcerer-s10",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 3631,
+        "signedValue": 3631,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,631% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 450,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 450,
+        "global": false
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3631,
+      "frozenPredictedSignedValue": 3631,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 11,
+      "tier": 6,
+      "groupId": "sorcerer-s11",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 2017,
+        "signedValue": 2017,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,017% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 250,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2017,
+      "frozenPredictedSignedValue": 2017,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "templar",
+      "index": 11,
+      "tier": 6,
+      "groupId": "sorcerer-s11",
+      "observed": {
+        "ownerId": "templar",
+        "ownerName": "Templar",
+        "displayedValue": 2017,
+        "signedValue": 2017,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,017% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": true
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2017,
+      "frozenPredictedSignedValue": 2017,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 12,
+      "tier": 6,
+      "groupId": "sorcerer-s12",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Ultra Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+24% Ultra Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Exp Chance",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Exp Chance",
+        "value": 3,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Exp Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 12,
+      "tier": 6,
+      "groupId": "sorcerer-s12",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 2219,
+        "signedValue": 2219,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2219,
+      "frozenPredictedSignedValue": 2219,
+      "integerBaseCandidates": [
+        275
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ballista",
+      "index": 12,
+      "tier": 6,
+      "groupId": "sorcerer-s12",
+      "observed": {
+        "ownerId": "ballista",
+        "ownerName": "Ballista",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Ultra Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+24% Ultra Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Chance",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Chance",
+        "value": 3,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Gold Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 13,
+      "tier": 7,
+      "groupId": "sorcerer-s13",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 80,
+        "signedValue": 80,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+80% Super Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Chance",
+        "value": 12,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 12,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Gold Chance",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 80,
+      "frozenPredictedSignedValue": 80,
+      "integerBaseCandidates": [
+        12
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "paladin",
+      "index": 13,
+      "tier": 7,
+      "groupId": "sorcerer-s13",
+      "observed": {
+        "ownerId": "paladin",
+        "ownerName": "Paladin",
+        "displayedValue": 5647,
+        "signedValue": 5647,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+5,647% Super Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 850,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 850,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Gold Amount",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 5647,
+      "frozenPredictedSignedValue": 5647,
+      "integerBaseCandidates": [
+        850
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 14,
+      "tier": 7,
+      "groupId": "sorcerer-s14",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 2325,
+        "signedValue": 2325,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,325% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 350,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 350,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 2325,
+      "frozenPredictedSignedValue": 2325,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 14,
+      "tier": 7,
+      "groupId": "sorcerer-s14",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 2325,
+        "signedValue": 2325,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,325% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 350,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 350,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 2325,
+      "frozenPredictedSignedValue": 2325,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 14,
+      "tier": 7,
+      "groupId": "sorcerer-s14",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 2325,
+        "signedValue": 2325,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,325% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 350,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 350,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 2325,
+      "frozenPredictedSignedValue": 2325,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 15,
+      "tier": 8,
+      "groupId": "sorcerer-s15",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 11260,
+        "signedValue": 11260,
+        "type": "Ultra Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+11,260% Ultra Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Dmage",
+        "value": 3000,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Dmage",
+        "value": 3000,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Crit Damage",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 11260,
+      "frozenPredictedSignedValue": 11260,
+      "integerBaseCandidates": [
+        3000
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "militia",
+      "index": 15,
+      "tier": 8,
+      "groupId": "sorcerer-s15",
+      "observed": {
+        "ownerId": "militia",
+        "ownerName": "Militia",
+        "displayedValue": 38,
+        "signedValue": 38,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+38 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Energy Income",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 38,
+      "frozenPredictedSignedValue": 38,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "gladiator",
+      "index": 15,
+      "tier": 8,
+      "groupId": "sorcerer-s15",
+      "observed": {
+        "ownerId": "gladiator",
+        "ownerName": "Gladiator",
+        "displayedValue": 26,
+        "signedValue": 26,
+        "type": "Ultra Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+26% Ultra Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Energy Chance",
+        "value": 7,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Energy Chance",
+        "value": 7,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Energy Chance",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 26,
+      "frozenPredictedSignedValue": 26,
+      "integerBaseCandidates": [
+        7
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "captain",
+      "index": 15,
+      "tier": 8,
+      "groupId": "sorcerer-s15",
+      "observed": {
+        "ownerId": "captain",
+        "ownerName": "Captain",
+        "displayedValue": 113,
+        "signedValue": 113,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+113 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 30,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 30,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 113,
+      "frozenPredictedSignedValue": 113,
+      "integerBaseCandidates": [
+        30
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 16,
+      "tier": 9,
+      "groupId": "sorcerer-s16",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 56,
+        "signedValue": 56,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+56 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 56,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 16,
+      "tier": 9,
+      "groupId": "sorcerer-s16",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 12198,
+        "signedValue": 12198,
+        "type": "Ultra Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+12,198% Ultra Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Damage",
+        "value": 3250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Damage",
+        "value": 3250,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Crit Damage",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 12198,
+      "frozenPredictedSignedValue": 12198,
+      "integerBaseCandidates": [
+        3250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 16,
+      "tier": 9,
+      "groupId": "sorcerer-s16",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 30,
+        "signedValue": 30,
+        "type": "Ultra Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+30% Ultra Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Chance",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Chance",
+        "value": 8,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Crit Chance",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 30,
+      "frozenPredictedSignedValue": 30,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 16,
+      "tier": 9,
+      "groupId": "sorcerer-s16",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 751,
+        "signedValue": 751,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+751% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 200,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 200,
+        "global": false
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 751,
+      "frozenPredictedSignedValue": 751,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    }
+  ],
+  "labelNormalizations": [
+    {
+      "ownerId": "sorcerer",
+      "index": 15,
+      "sourceType": "Ultra Crit Dmage",
+      "observedType": "Ultra Crit Damage",
+      "canonicalType": "Ultra Crit Damage"
+    }
+  ],
+  "archiveChecks": [
+    {
+      "archivePath": "images/sorcerer-9gm-event-01.png",
+      "sha256": "ebfd6988646424e3074fde804e45c9d6ee1966d551df76f05543c7e1e5cca58a",
+      "byteIdenticalToOriginal": true
+    },
+    {
+      "archivePath": "images/sorcerer-9gm-event-02.png",
+      "sha256": "f13f47eaaffbc747b02d5501729686f8aabc1fc743f261b8d5fb746730867900",
+      "byteIdenticalToOriginal": true
+    },
+    {
+      "archivePath": "images/sorcerer-9gm-event-03.png",
+      "sha256": "8cecc4b80a00f21a308f3d624f56cf255be2c9eefdaffa6cfabcc8849e673294",
+      "byteIdenticalToOriginal": true
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "militia-nine-grand-masters",
+  "capturedAt": "2026-11-02",
+  "heroId": "militia",
+  "heroName": "Militia",
+  "sourceImage": "source/milestone-review/images/militia-nine-grand-masters.png",
+  "imageSha256": "9010ccb084cd16df355ce158dde33c481a3b7e7e2ebc3e7949d975c6e8540604",
+  "archivedImage": "source/milestone-review/images/militia-nine-grand-masters.png",
+  "purpose": "Independent deployed-team multiplier check against active inferred milestone bases; not another hero ingestion batch.",
+  "context": {
+    "grandMasterCount": 9,
+    "grandMasterCountEvidence": "User stated nine Grand Masters were deployed.",
+    "grandMasterBonusPercent": 10,
+    "accountMilestoneScale": 2.8125,
+    "accountMilestoneScaleEvidence": "Previously confirmed permanent baseline: talents 1.5 * global modifier 1.25 * hero Ascension 1.5. Original baseline captures had zero deployed heroes.",
+    "milestoneTileActive": null,
+    "tileEvidence": "Not supplied for this capture. The formula without an additional tile effect fits; actual placement and tile stacking are not established by this fit.",
+    "globalSynergyOnlyBonusesPercent": [5, 5, 5],
+    "globalSynergyOnlyBonusesAppliedToMilestones": false,
+    "stackingEvidence": "Compounded Grand Master milestone strength is inferred from the screenshot and confirmed component values; the user supplied the bonuses and count, not this stacking rule."
+  },
+  "baseStats": {"damage": 10, "dps": 10, "attackSpeed": 1, "range": 3.6},
+  "milestones": [
+    {"level":25,"displayedValue":66,"signedValue":66,"type":"Damage","global":false,"unit":"percent","sourceText":"+66% Damage (personal effect)"},
+    {"level":75,"displayedValue":7,"signedValue":7,"type":"Skill Power","global":false,"unit":"flat","sourceText":"+7 Skill Power (personal effect)"},
+    {"level":150,"displayedValue":199,"signedValue":199,"type":"Crit Damage","global":false,"unit":"percent","sourceText":"+199% Crit Damage (personal effect)"},
+    {"level":250,"displayedValue":66,"signedValue":66,"type":"Range","global":false,"unit":"percent","sourceText":"+66% Range (personal effect)"},
+    {"level":500,"displayedValue":53,"signedValue":53,"type":"Rank Exp","global":true,"unit":"flat","sourceText":"+53 Rank Exp (GLOBAL effect)"},
+    {"level":750,"displayedValue":20,"signedValue":20,"type":"Skill Power","global":false,"unit":"flat","sourceText":"+20 Skill Power (personal effect)"},
+    {"level":1000,"displayedValue":106,"signedValue":-106,"type":"Skill Cooldown","global":false,"unit":"percent","sourceText":"-106% Skill Cooldown (personal effect)"},
+    {"level":1500,"displayedValue":106,"signedValue":106,"type":"Attack Speed","global":true,"unit":"percent","sourceText":"+106% Attack Speed (GLOBAL effect)"},
+    {"level":2000,"displayedValue":27,"signedValue":27,"type":"Super Crit Chance","global":true,"unit":"percent","sourceText":"+27% Super Crit Chance (GLOBAL effect)"},
+    {"level":2500,"displayedValue":199,"signedValue":199,"type":"Super Gold Amount","global":true,"unit":"percent","sourceText":"+199% Super Gold Amount (GLOBAL effect)"},
+    {"level":3000,"displayedValue":239,"signedValue":239,"type":"Damage","global":true,"unit":"percent","sourceText":"+239% Damage (GLOBAL effect)"},
+    {"level":3500,"displayedValue":99,"signedValue":99,"type":"Ultra Exp Amount","global":true,"unit":"percent","sourceText":"+99% Ultra Exp Amount (GLOBAL effect)"},
+    {"level":4000,"displayedValue":33,"signedValue":33,"type":"Energy Income","global":true,"unit":"flat","sourceText":"+33 Energy Income (GLOBAL effect)"},
+    {"level":5000,"displayedValue":13,"signedValue":13,"type":"Ultra Energy Chance","global":true,"unit":"percent","sourceText":"+13% Ultra Energy Chance (GLOBAL effect)"},
+    {"level":6000,"displayedValue":166,"signedValue":166,"type":"Attack Speed","global":true,"unit":"percent","sourceText":"+166% Attack Speed (GLOBAL effect)"},
+    {"level":7500,"displayedValue":1990,"signedValue":1990,"type":"Ultra Crit Damage","global":false,"unit":"percent","sourceText":"+1,990% Ultra Crit Damage (personal effect)"},
+    {"level":10000,"displayedValue":2321,"signedValue":2321,"type":"Super Crit Damage","global":false,"unit":"percent","sourceText":"+2,321% Super Crit Damage (personal effect)"}
+  ]
+}

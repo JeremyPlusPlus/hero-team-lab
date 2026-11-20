@@ -1,0 +1,371 @@
+{
+  "meta": {
+    "batch": "35",
+    "selectedHero": {
+      "id": "skymage",
+      "name": "Skymage"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the recorded profile by inference.",
+      "Crusader +25% was explicitly confirmed in the preceding capture set; Warden remains assumed +0%.",
+      "Owner tile placements are unspecified. The off-synergy-tile model is inferred from the repeated values, not directly established by these screenshots.",
+      "Tier I has no rank requirement or individual rank badges. Later badges are transcribed independently from this batch.",
+      "Each effect belongs to the portrait directly above its arrow. Repeated portraits are preserved as separate required copies and effects.",
+      "This is a partial selected-hero page; missing tiers are not marked captured."
+    ],
+    "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+    "captureCompleteness": "partial",
+    "capturedTiers": [
+      4,
+      5,
+      6
+    ],
+    "groupsCount": 6,
+    "effectsCount": 15,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "skymage-9gm-event-01",
+        "originalPath": "images/skymage-9gm-event-01.png",
+        "archivePath": "images/skymage-9gm-event-01.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "skymage-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "skymage-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4549
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 38,
+          "signedValue": 38,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+38% Super Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+9 Energy Income (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "skymage-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "skymage-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5138
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+19 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+19 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 66,
+          "signedValue": 66,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+66% Super Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "skymage-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "skymage-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 1412,
+          "signedValue": 1412,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,412% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 65,
+          "signedValue": 65,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+65% Super Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "skymage-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "skymage-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5002
+        },
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 65,
+          "signedValue": 65,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+65% Super Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 5043,
+          "signedValue": 5043,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,043% Super Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 81,
+          "signedValue": 81,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+81% Super Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "skymage-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "skymage-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 16,
+          "signedValue": 16,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16% Ultra Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 16,
+          "signedValue": 16,
+          "type": "Ultra Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16% Ultra Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "skymage-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "skymage-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        },
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5024
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 2219,
+          "signedValue": 2219,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Gold Chance (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

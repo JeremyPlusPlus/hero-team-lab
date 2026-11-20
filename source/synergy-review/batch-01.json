@@ -1,0 +1,900 @@
+{
+  "meta": {
+    "batch": "01",
+    "selectedHero": {
+      "id": "militia",
+      "name": "Militia"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": null
+    },
+    "contextNotes": [
+      "Grand Master count and Snow Fort modifiers were supplied with the capture context.",
+      "Owner tile placements and other synergy modifiers are unknown.",
+      "Tier I shows no rank requirement; its rankRequirement is null.",
+      "Effects are assigned to the hero portrait directly above each downward arrow. Required hero order follows the screenshot."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "militia-01",
+        "originalPath": "images/militia-01.png",
+        "archivePath": "images/militia-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "militia-02",
+        "originalPath": "images/militia-02.png",
+        "archivePath": "images/militia-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "militia-03",
+        "originalPath": "images/militia-03.png",
+        "archivePath": "images/militia-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "militia-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "militia-01",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": null
+        },
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 213,
+          "signedValue": 213,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+213% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 64,
+          "signedValue": 64,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+64% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "militia-01",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": null
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": null
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 213,
+          "signedValue": -213,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-213% Skill Cooldown (personal effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 64,
+          "signedValue": 64,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+64 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 85,
+          "signedValue": 85,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+85% Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "militia-01",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4637
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 2133,
+          "signedValue": 2133,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,133% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 107,
+          "signedValue": 107,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+107 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "militia-01",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 5000
+        },
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 4537
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "militia-01",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 136,
+          "signedValue": 136,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+136% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 1706,
+          "signedValue": 1706,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,706% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "militia-01",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5000
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4511
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 853,
+          "signedValue": 853,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+853% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 299,
+          "signedValue": 299,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+299 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 853,
+          "signedValue": 853,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+853% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "militia-02",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+9 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 85,
+          "signedValue": 85,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+85% Super Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "militia-02",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 4502
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 4505
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+51% Super Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 2986,
+          "signedValue": 2986,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,986% Damage (personal effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 31,
+          "signedValue": 31,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+31% Super Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "militia-02",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": 4504
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 73,
+          "signedValue": 73,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+73% Super Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 4035,
+          "signedValue": 4035,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+4,035% Super Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "militia-02",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 4538
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 4527
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 183,
+          "signedValue": 183,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+183% Super Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 9170,
+          "signedValue": 9170,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+9,170% Super Gold Amount (personal effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 59,
+          "signedValue": 59,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+59% Super Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "militia-02",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 3668,
+          "signedValue": 3668,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,668% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 29,
+          "signedValue": 29,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+29% Ultra Gold Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "militia-02",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5023
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 4402,
+          "signedValue": 4402,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,402% Damage (personal effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 4402,
+          "signedValue": 4402,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,402% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 16506,
+          "signedValue": 16506,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16,506% Ultra Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "militia-03",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5003
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 121,
+          "signedValue": 121,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+121% Super Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+48% Super Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "militia-03",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 4527
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 36,
+          "signedValue": 36,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+36% Super Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 72,
+          "signedValue": 72,
+          "type": "Power Mage Energy",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+72% Power Mage Energy (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "militia-03",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4511
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 34,
+          "signedValue": 34,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+34 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 10236,
+          "signedValue": 10236,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+10,236% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 102,
+          "signedValue": 102,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+102 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "militia-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "militia-03",
+      "requiredHeroes": [
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 4527
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4511
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Ultra Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+51 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 136,
+          "signedValue": 136,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+136 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+node_modules/
+source/workbook.json
+source/*.txt
+__pycache__/
+*.log
+source/hero-source.xlsx
+source/synergy-review/build_*_capture.py
+/outputs/synergy-audit-*/
+/*.png
+/*.jpg
+/source/**/*.png
+/source/**/*.jpg
+/.source-rebuild-*/

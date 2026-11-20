@@ -1,0 +1,927 @@
+{
+  "batch": "batch-16.json",
+  "status": "activated-in-confirmed-overrides",
+  "observedEffects": 43,
+  "matchedCurrentMagnitudeWithCaptureContext": 42,
+  "fullyMatchingCurrentFields": 38,
+  "newUniqueEffectsRelativeToPriorBatches": 24,
+  "overrides": [
+    {
+      "ownerId": "druid",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "viking"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 1,
+        "global": false,
+        "source": "Data!C6:F6"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-16.json",
+      "evidence": {
+        "groupId": "druid-s1",
+        "sourceImageId": "druid-9gm-event-01",
+        "displayedValue": 47,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 2,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under nine Grand Masters, the confirmed active +10% synergy event, and the recorded account/map profile. The owner is assumed off a synergy tile; this is an inferred base, not a directly observed unboosted value."
+    },
+    {
+      "ownerId": "scout",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "druid",
+        "templar"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 30,
+        "global": false,
+        "source": "Data!Y4:AC4"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-16.json",
+      "evidence": {
+        "groupId": "druid-s6",
+        "sourceImageId": "druid-9gm-event-01",
+        "displayedValue": 281,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 7,
+      "tier": 4,
+      "requires": [
+        "druid"
+      ],
+      "expectedOriginal": {
+        "type": "Super Energy",
+        "value": 2,
+        "global": true,
+        "source": "Data!AD29:AG29"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-16.json",
+      "evidence": {
+        "groupId": "druid-s7",
+        "sourceImageId": "druid-9gm-event-02",
+        "displayedValue": 19,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Energy Amount"
+    },
+    {
+      "ownerId": "druid",
+      "index": 16,
+      "tier": 9,
+      "requires": [
+        "chieftain",
+        "elementalist",
+        "ranger"
+      ],
+      "expectedOriginal": {
+        "type": "Ultra Energe Chance",
+        "value": 8,
+        "global": true,
+        "source": "Data!BT6:BY6"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-16.json",
+      "evidence": {
+        "groupId": "druid-s16",
+        "sourceImageId": "druid-9gm-event-03",
+        "displayedValue": 30,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Ultra Energy Chance",
+      "correctionNote": "Spelling normalization only: the existing engine alias already treats Ultra Energe Chance as Ultra Energy Chance. This does not change scoring."
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 16,
+      "tier": 9,
+      "requires": [
+        "druid",
+        "elementalist",
+        "ranger"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 20,
+        "global": true,
+        "source": "Data!BT29:BY29"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-16.json",
+      "evidence": {
+        "groupId": "druid-s16",
+        "sourceImageId": "druid-9gm-event-03",
+        "displayedValue": 75,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    }
+  ],
+  "existingOverrideConflicts": [],
+  "comparisons": [
+    {
+      "ownerId": "druid",
+      "index": 1,
+      "tier": 1,
+      "groupId": "druid-s1",
+      "currentType": "Skill Duration",
+      "currentBase": 1,
+      "currentGlobal": false,
+      "observedType": "Skill Duration",
+      "observedGlobal": false,
+      "shown": 47,
+      "predictedSignedValue": 23,
+      "factor": 23.457664963853638,
+      "changedFields": [
+        "value"
+      ],
+      "integerBaseCandidates": [
+        2
+      ]
+    },
+    {
+      "ownerId": "viking",
+      "index": 1,
+      "tier": 1,
+      "groupId": "druid-s1",
+      "currentType": "Attack Speed",
+      "currentBase": 10,
+      "currentGlobal": false,
+      "observedType": "Attack Speed",
+      "observedGlobal": false,
+      "shown": 235,
+      "predictedSignedValue": 235,
+      "factor": 23.457664963853638,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        10
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 2,
+      "tier": 1,
+      "groupId": "druid-s2",
+      "currentType": "Skill Power",
+      "currentBase": 3,
+      "currentGlobal": false,
+      "observedType": "Skill Power",
+      "observedGlobal": false,
+      "shown": 70,
+      "predictedSignedValue": 70,
+      "factor": 23.457664963853638,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        3
+      ]
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 2,
+      "tier": 1,
+      "groupId": "druid-s2",
+      "currentType": "Skill Cooldown",
+      "currentBase": -4,
+      "currentGlobal": true,
+      "observedType": "Skill Cooldown",
+      "observedGlobal": true,
+      "shown": -94,
+      "predictedSignedValue": -94,
+      "factor": 23.457664963853638,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        4
+      ]
+    },
+    {
+      "ownerId": "hunter",
+      "index": 2,
+      "tier": 1,
+      "groupId": "druid-s2",
+      "currentType": "Skill Cooldown",
+      "currentBase": -10,
+      "currentGlobal": false,
+      "observedType": "Skill Cooldown",
+      "observedGlobal": false,
+      "shown": -235,
+      "predictedSignedValue": -235,
+      "factor": 23.457664963853638,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        10
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 3,
+      "tier": 2,
+      "groupId": "druid-s3",
+      "currentType": "Damage",
+      "currentBase": 40,
+      "currentGlobal": true,
+      "observedType": "Damage",
+      "observedGlobal": true,
+      "shown": 938,
+      "predictedSignedValue": 938,
+      "factor": 23.457664963853638,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        40
+      ]
+    },
+    {
+      "ownerId": "arbalest",
+      "index": 3,
+      "tier": 2,
+      "groupId": "druid-s3",
+      "currentType": "Damage",
+      "currentBase": 40,
+      "currentGlobal": true,
+      "observedType": "Damage",
+      "observedGlobal": true,
+      "shown": 938,
+      "predictedSignedValue": 938,
+      "factor": 23.457664963853638,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        40
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 4,
+      "tier": 2,
+      "groupId": "druid-s4",
+      "currentType": "Crit Chance",
+      "currentBase": 12,
+      "currentGlobal": true,
+      "observedType": "Crit Chance",
+      "observedGlobal": true,
+      "shown": 281,
+      "predictedSignedValue": 281,
+      "factor": 23.457664963853638,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        12
+      ]
+    },
+    {
+      "ownerId": "militia",
+      "index": 4,
+      "tier": 2,
+      "groupId": "druid-s4",
+      "currentType": "Damage",
+      "currentBase": 60,
+      "currentGlobal": true,
+      "observedType": "Damage",
+      "observedGlobal": true,
+      "shown": 1407,
+      "predictedSignedValue": 1407,
+      "factor": 23.457664963853638,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        60
+      ]
+    },
+    {
+      "ownerId": "battlemage",
+      "index": 4,
+      "tier": 2,
+      "groupId": "druid-s4",
+      "currentType": "Crit Damage",
+      "currentBase": 60,
+      "currentGlobal": true,
+      "observedType": "Crit Damage",
+      "observedGlobal": true,
+      "shown": 1407,
+      "predictedSignedValue": 1407,
+      "factor": 23.457664963853638,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        60
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 5,
+      "tier": 3,
+      "groupId": "druid-s5",
+      "currentType": "Crit Damage",
+      "currentBase": 200,
+      "currentGlobal": false,
+      "observedType": "Crit Damage",
+      "observedGlobal": false,
+      "shown": 1877,
+      "predictedSignedValue": 1877,
+      "factor": 9.383065985541455,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        200
+      ]
+    },
+    {
+      "ownerId": "skymage",
+      "index": 5,
+      "tier": 3,
+      "groupId": "druid-s5",
+      "currentType": "Crit Chance",
+      "currentBase": 35,
+      "currentGlobal": false,
+      "observedType": "Crit Chance",
+      "observedGlobal": false,
+      "shown": 328,
+      "predictedSignedValue": 328,
+      "factor": 9.383065985541455,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        35
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 6,
+      "tier": 3,
+      "groupId": "druid-s6",
+      "currentType": "Kill Gold",
+      "currentBase": 250,
+      "currentGlobal": false,
+      "observedType": "Kill Gold",
+      "observedGlobal": false,
+      "shown": 2346,
+      "predictedSignedValue": 2346,
+      "factor": 9.383065985541455,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        250
+      ]
+    },
+    {
+      "ownerId": "templar",
+      "index": 6,
+      "tier": 3,
+      "groupId": "druid-s6",
+      "currentType": "Attack Speed",
+      "currentBase": 100,
+      "currentGlobal": false,
+      "observedType": "Attack Speed",
+      "observedGlobal": false,
+      "shown": 938,
+      "predictedSignedValue": 938,
+      "factor": 9.383065985541455,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        100
+      ]
+    },
+    {
+      "ownerId": "scout",
+      "index": 6,
+      "tier": 3,
+      "groupId": "druid-s6",
+      "currentType": "Skill Cooldown",
+      "currentBase": 30,
+      "currentGlobal": false,
+      "observedType": "Skill Cooldown",
+      "observedGlobal": false,
+      "shown": -281,
+      "predictedSignedValue": 281,
+      "factor": 9.383065985541455,
+      "changedFields": [
+        "sign"
+      ],
+      "integerBaseCandidates": [
+        30
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 7,
+      "tier": 4,
+      "groupId": "druid-s7",
+      "currentType": "Damage",
+      "currentBase": 300,
+      "currentGlobal": false,
+      "observedType": "Damage",
+      "observedGlobal": false,
+      "shown": 2815,
+      "predictedSignedValue": 2815,
+      "factor": 9.383065985541455,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        300
+      ]
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 7,
+      "tier": 4,
+      "groupId": "druid-s7",
+      "currentType": "Super Energy",
+      "currentBase": 2,
+      "currentGlobal": true,
+      "observedType": "Super Energy Amount",
+      "observedGlobal": true,
+      "shown": 19,
+      "predictedSignedValue": 19,
+      "factor": 9.383065985541455,
+      "changedFields": [
+        "type"
+      ],
+      "integerBaseCandidates": [
+        2
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 8,
+      "tier": 4,
+      "groupId": "druid-s8",
+      "currentType": "Super Crit Chance",
+      "currentBase": 6,
+      "currentGlobal": true,
+      "observedType": "Super Crit Chance",
+      "observedGlobal": true,
+      "shown": 56,
+      "predictedSignedValue": 56,
+      "factor": 9.383065985541455,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        6
+      ]
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 8,
+      "tier": 4,
+      "groupId": "druid-s8",
+      "currentType": "Super Crit Damage",
+      "currentBase": 500,
+      "currentGlobal": true,
+      "observedType": "Super Crit Damage",
+      "observedGlobal": true,
+      "shown": 4692,
+      "predictedSignedValue": 4692,
+      "factor": 9.383065985541455,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        500
+      ]
+    },
+    {
+      "ownerId": "rogue",
+      "index": 8,
+      "tier": 4,
+      "groupId": "druid-s8",
+      "currentType": "Super Exp Amount",
+      "currentBase": 7,
+      "currentGlobal": true,
+      "observedType": "Super Exp Amount",
+      "observedGlobal": true,
+      "shown": 66,
+      "predictedSignedValue": 66,
+      "factor": 9.383065985541455,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        7
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 9,
+      "tier": 5,
+      "groupId": "druid-s9",
+      "currentType": "Kill Gold",
+      "currentBase": 400,
+      "currentGlobal": false,
+      "observedType": "Kill Gold",
+      "observedGlobal": false,
+      "shown": 3228,
+      "predictedSignedValue": 3228,
+      "factor": 8.069436747565652,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        400
+      ]
+    },
+    {
+      "ownerId": "captain",
+      "index": 9,
+      "tier": 5,
+      "groupId": "druid-s9",
+      "currentType": "Super Exp Amount",
+      "currentBase": 10,
+      "currentGlobal": true,
+      "observedType": "Super Exp Amount",
+      "observedGlobal": true,
+      "shown": 81,
+      "predictedSignedValue": 81,
+      "factor": 8.069436747565652,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        10
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 10,
+      "tier": 5,
+      "groupId": "druid-s10",
+      "currentType": "Energy Income",
+      "currentBase": 4,
+      "currentGlobal": true,
+      "observedType": "Energy Income",
+      "observedGlobal": true,
+      "shown": 32,
+      "predictedSignedValue": 32,
+      "factor": 8.069436747565652,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        4
+      ]
+    },
+    {
+      "ownerId": "paladin",
+      "index": 10,
+      "tier": 5,
+      "groupId": "druid-s10",
+      "currentType": "Kill Gold",
+      "currentBase": 450,
+      "currentGlobal": false,
+      "observedType": "Kill Gold",
+      "observedGlobal": false,
+      "shown": 3631,
+      "predictedSignedValue": 3631,
+      "factor": 8.069436747565652,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        450
+      ]
+    },
+    {
+      "ownerId": "warlord",
+      "index": 10,
+      "tier": 5,
+      "groupId": "druid-s10",
+      "currentType": "Kill Gold",
+      "currentBase": 200,
+      "currentGlobal": true,
+      "observedType": "Kill Gold",
+      "observedGlobal": true,
+      "shown": 1614,
+      "predictedSignedValue": 1614,
+      "factor": 8.069436747565652,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        200
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 11,
+      "tier": 6,
+      "groupId": "druid-s11",
+      "currentType": "Ultra Crit Damage",
+      "currentBase": 2000,
+      "currentGlobal": true,
+      "observedType": "Ultra Crit Damage",
+      "observedGlobal": true,
+      "shown": 16139,
+      "predictedSignedValue": 16139,
+      "factor": 8.069436747565652,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        2000
+      ]
+    },
+    {
+      "ownerId": "witch",
+      "index": 11,
+      "tier": 6,
+      "groupId": "druid-s11",
+      "currentType": "Ultra Energy Amount",
+      "currentBase": 25,
+      "currentGlobal": true,
+      "observedType": "Ultra Energy Amount",
+      "observedGlobal": true,
+      "shown": 202,
+      "predictedSignedValue": 202,
+      "factor": 8.069436747565652,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        25
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 12,
+      "tier": 6,
+      "groupId": "druid-s12",
+      "currentType": "Ultra Gold Chance",
+      "currentBase": 3,
+      "currentGlobal": true,
+      "observedType": "Ultra Gold Chance",
+      "observedGlobal": true,
+      "shown": 24,
+      "predictedSignedValue": 24,
+      "factor": 8.069436747565652,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        3
+      ]
+    },
+    {
+      "ownerId": "berserker",
+      "index": 12,
+      "tier": 6,
+      "groupId": "druid-s12",
+      "currentType": "Ultra Energy Amount",
+      "currentBase": 35,
+      "currentGlobal": true,
+      "observedType": "Ultra Energy Amount",
+      "observedGlobal": true,
+      "shown": 282,
+      "predictedSignedValue": 282,
+      "factor": 8.069436747565652,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        35
+      ]
+    },
+    {
+      "ownerId": "hunter",
+      "index": 12,
+      "tier": 6,
+      "groupId": "druid-s12",
+      "currentType": "Ultra Gold Amount",
+      "currentBase": 2250,
+      "currentGlobal": true,
+      "observedType": "Ultra Gold Amount",
+      "observedGlobal": true,
+      "shown": 18156,
+      "predictedSignedValue": 18156,
+      "factor": 8.069436747565652,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        2250
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 13,
+      "tier": 7,
+      "groupId": "druid-s13",
+      "currentType": "Damage",
+      "currentBase": 300,
+      "currentGlobal": true,
+      "observedType": "Damage",
+      "observedGlobal": true,
+      "shown": 1993,
+      "predictedSignedValue": 1993,
+      "factor": 6.643210717763351,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        300
+      ]
+    },
+    {
+      "ownerId": "spelldancer",
+      "index": 13,
+      "tier": 7,
+      "groupId": "druid-s13",
+      "currentType": "Super Crit Damage",
+      "currentBase": 850,
+      "currentGlobal": true,
+      "observedType": "Super Crit Damage",
+      "observedGlobal": true,
+      "shown": 5647,
+      "predictedSignedValue": 5647,
+      "factor": 6.643210717763351,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        850
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 14,
+      "tier": 7,
+      "groupId": "druid-s14",
+      "currentType": "Energy Income",
+      "currentBase": 8,
+      "currentGlobal": true,
+      "observedType": "Energy Income",
+      "observedGlobal": true,
+      "shown": 53,
+      "predictedSignedValue": 53,
+      "factor": 6.643210717763351,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        8
+      ]
+    },
+    {
+      "ownerId": "samurai",
+      "index": 14,
+      "tier": 7,
+      "groupId": "druid-s14",
+      "currentType": "Skill Power",
+      "currentBase": 8,
+      "currentGlobal": true,
+      "observedType": "Skill Power",
+      "observedGlobal": true,
+      "shown": 53,
+      "predictedSignedValue": 53,
+      "factor": 6.643210717763351,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        8
+      ]
+    },
+    {
+      "ownerId": "captain",
+      "index": 14,
+      "tier": 7,
+      "groupId": "druid-s14",
+      "currentType": "Super Energy Chance",
+      "currentBase": 6,
+      "currentGlobal": true,
+      "observedType": "Super Energy Chance",
+      "observedGlobal": true,
+      "shown": 40,
+      "predictedSignedValue": 40,
+      "factor": 6.643210717763351,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        6
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 15,
+      "tier": 8,
+      "groupId": "druid-s15",
+      "currentType": "Ultra Exp Amount",
+      "currentBase": 105,
+      "currentGlobal": true,
+      "observedType": "Ultra Exp Amount",
+      "observedGlobal": true,
+      "shown": 394,
+      "predictedSignedValue": 394,
+      "factor": 3.753226394216582,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        105
+      ]
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 15,
+      "tier": 8,
+      "groupId": "druid-s15",
+      "currentType": "Damage",
+      "currentBase": 400,
+      "currentGlobal": true,
+      "observedType": "Damage",
+      "observedGlobal": true,
+      "shown": 1501,
+      "predictedSignedValue": 1501,
+      "factor": 3.753226394216582,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        400
+      ]
+    },
+    {
+      "ownerId": "warlock",
+      "index": 15,
+      "tier": 8,
+      "groupId": "druid-s15",
+      "currentType": "Skill Power",
+      "currentBase": 30,
+      "currentGlobal": false,
+      "observedType": "Skill Power",
+      "observedGlobal": false,
+      "shown": 113,
+      "predictedSignedValue": 113,
+      "factor": 3.753226394216582,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        30
+      ]
+    },
+    {
+      "ownerId": "archer",
+      "index": 15,
+      "tier": 8,
+      "groupId": "druid-s15",
+      "currentType": "Ultra Exp Chance",
+      "currentBase": 7,
+      "currentGlobal": true,
+      "observedType": "Ultra Exp Chance",
+      "observedGlobal": true,
+      "shown": 26,
+      "predictedSignedValue": 26,
+      "factor": 3.753226394216582,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        7
+      ]
+    },
+    {
+      "ownerId": "druid",
+      "index": 16,
+      "tier": 9,
+      "groupId": "druid-s16",
+      "currentType": "Ultra Energe Chance",
+      "currentBase": 8,
+      "currentGlobal": true,
+      "observedType": "Ultra Energy Chance",
+      "observedGlobal": true,
+      "shown": 30,
+      "predictedSignedValue": 30,
+      "factor": 3.753226394216582,
+      "changedFields": [
+        "type"
+      ],
+      "integerBaseCandidates": [
+        8
+      ]
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 16,
+      "tier": 9,
+      "groupId": "druid-s16",
+      "currentType": "Skill Cooldown",
+      "currentBase": 20,
+      "currentGlobal": true,
+      "observedType": "Skill Cooldown",
+      "observedGlobal": true,
+      "shown": -75,
+      "predictedSignedValue": 75,
+      "factor": 3.753226394216582,
+      "changedFields": [
+        "sign"
+      ],
+      "integerBaseCandidates": [
+        20
+      ]
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 16,
+      "tier": 9,
+      "groupId": "druid-s16",
+      "currentType": "Ultra Energy Chance",
+      "currentBase": 8,
+      "currentGlobal": true,
+      "observedType": "Ultra Energy Chance",
+      "observedGlobal": true,
+      "shown": 30,
+      "predictedSignedValue": 30,
+      "factor": 3.753226394216582,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        8
+      ]
+    },
+    {
+      "ownerId": "ranger",
+      "index": 16,
+      "tier": 9,
+      "groupId": "druid-s16",
+      "currentType": "Attack Speed",
+      "currentBase": 75,
+      "currentGlobal": true,
+      "observedType": "Attack Speed",
+      "observedGlobal": true,
+      "shown": 281,
+      "predictedSignedValue": 281,
+      "factor": 3.753226394216582,
+      "changedFields": [],
+      "integerBaseCandidates": [
+        75
+      ]
+    }
+  ],
+  "afterProposedCorrectionsMatchingEffects": 43,
+  "overlapNote": "Druid tier-I Skill Duration is observed in both these batches; apply its shared owner/index correction only once. Scout tier-III cooldown overlaps the new Scout capture. Unique-effect counts are from the audit creation snapshot; the aggregate review recomputes all batches.",
+  "comparisonBasis": "Pre-correction comparisons are retained for audit. The listed corrections are active, deduplicated by owner/index across the four new batches."
+}

@@ -1,0 +1,139 @@
+HERO TEAM LAB - QUICK START
+Updated November 19, 2026
+
+1. Extract this ZIP to a folder.
+2. Open hero-team-lab.html in your desktop web browser.
+3. Choose a focus, review the account settings, and set up Team A and Team B.
+4. Use Suggest team B or Suggest tiles to compare alternatives.
+
+The calculator runs offline. No installation, account or server is needed.
+All required code, styling and hero data are inside the HTML file.
+
+INCLUDED MODES
+Energy, Energy + Power Mages, Gold, Experience, Damage, Damage - Buff swap,
+and Immortal Boss Damage each keep their own team comparisons.
+Gold and Damage use the selected attacker. Choose the best attacker too
+lets suggestions search for the attacker as well as supports.
+
+For Experience, select the hero to level. All copies of that hero share its
+level and combat style. Plan levels 1-4,500 compares teams, styles, attackers
+and tiles across the climb. Use in B loads a recommended range.
+Best available compares Tycoon from level 1,250 and Magnate from 4,000,
+including their global Rank EXP and synergy boosts when another hero attacks.
+The plan checks Magnate for levels 4,000-4,500. You can also pin it manually.
+Experience supports have their own Grand Master, Tycoon or Magnate choices.
+Each team has a Compare support styles in suggestions checkbox, enabled by
+default. Suggestions can then compare mixed support styles; turn it off to
+keep manual styles. Locks protect heroes and levels, while styles can change.
+Current comparisons use the styles shown. Copies of a hero share one style,
+and all copies must reach its unlock level. The actual GM count is displayed.
+Old teams keep their inherited Grand Master setup until edited or suggested.
+With Snow Fort enabled, the XP tile gives the hero making the kill +20% XP.
+Veteran shares that boosted reward with every eligible hero. If a teammate
+kills off the tile, standing the leveling hero on it adds no XP to that kill.
+The attacker tile table compares XP, Normal, Milestone, Synergy and Skill
+power. Suggest tiles and the leveling plan also compare other placements.
+Changing the leveling target keeps the tile on its current occupant.
+
+For Immortal Boss Damage, choose Skill damage, Melee, Mage, or Ranged.
+Suggest all four B teams searches each boss with its own buff preset.
+Open Damage by hero to inspect scoring hits, Lightning Storm and boss DPS.
+
+Required heroes depend on the focus:
+- Experience: at least one Archer, Ballista and Veteran.
+- Gold: at least one Hunter, Rogue and Sovereign.
+- Energy + Power Mages: at least one Captain.
+Energy, Damage, Buff swap and all four Immortal modes have no XP-hero minimum.
+Immortal still keeps the supports required by its selected buff preset.
+XP abilities still contribute to XP comparisons when present in other builds;
+the XP trio is not forced into those builds.
+
+This corrects the earlier all-build requirement. Existing saved and imported
+teams are preserved, including any XP heroes added by earlier suggestions.
+Rerun Suggest team B in each desired focus to get a new recommendation.
+
+SET THE CALCULATOR TO YOUR ACCOUNT
+Included defaults reflect one account, not universal game values. Review
+hero levels, account bonuses, event/map options and active skill settings.
+
+Open My ascensions and select the account baseline to enter your current
+12 ranks for each hero. They save automatically and apply to every focus.
+Global Damage, Kill Gold, Rank EXP and Energy Income apply per deployed copy.
+To compare Hunter builds, copy A to B, select Team B build in My ascensions,
+then try Kill Gold 14, Milestone 0 and Synergy 0. Team A keeps the baseline.
+Empty trial fields inherit your account ranks. Enter 0 for an unpurchased
+upgrade. Choose Use my baseline for this hero to clear that hero's trial.
+
+Gold defaults to farming Mimic Boss Chests. The expected payout includes
+Super and Ultra proc chances. For an hourly index, enter enemies cleared
+per hour for each team. The starting estimate is one Mimic encounter per
+20 enemies. Enter the share of double encounters if known. A measured
+successful Mimic kills/hour takes precedence over those estimates.
+
+The Gold chance defaults are 50% Super / 50% Ultra BEFORE deploying heroes.
+Damage defaults are 135% Crit / 109% Super Crit / 48% Ultra Crit before heroes.
+The Chance reference section accepts your pre-team totals or a capture of
+Team A/B with an attacker and active skills. Do not enter deployed totals
+as pre-team values. Each tier contributes only chance above its own 100% cap
+to the shared spillover pool. Gold, Damage and Buff swap save separate references.
+
+The Experience reference is +66,000,000 Rank EXP, about 260% Super / 450% Ultra
+EXP chance on the recorded Wizard/Viking team with Archer level 5,000 and
+ten Grand Masters. Replace these with your own measured totals and capture
+the matching team. Other reference settings are assumptions shown in the app.
+The all-Grand-Master checkbox describes the capture, not the leveling plan.
+
+XP skill settings default to the supplied no-tile captures: Archer +13,240%
+with wave-75,000 mastery and full boss-tag coverage; Ballista +3,865% plus
+6.5% per mastery stack; Veteran +149.2 Super EXP chance points and +1,626%
+Super EXP at 100 stacks. Default mastery stacks are 100 for warmed-up farming.
+Change Ballista to 68 stacks to reproduce the screenshot's +442% mastery.
+The XP tile search compares the killer's XP tile and all three
+named skills with milestone/synergy tiles.
+Each named ability supplies once; copies still provide milestones/synergies.
+Duplicate XP heroes are support copies. Immortal remains a separate model
+where multiple Champions can cast Lightning Storm, as requested.
+
+On tagged bosses, Archer's wave mastery multiplies its whole mark. The
+Skill Power tile boosts the active mark. Wave mastery and the mastery stacks
+on Ballista and Veteran use account Mastery Power. With the captured Archer
+profile, a killing Archer gains slightly more from XP than from Skill Power.
+When another hero kills, Archer can mark from Skill Power while that killer
+uses XP. Veteran shares their combined reward.
+Tile predictions start from the no-tile skill values in the XP panel. Update
+those values if your in-game abilities change with the lineup or level.
+
+LEVELING RESULTS FOR THE INCLUDED XP PROFILE
+These comparisons used all 42 heroes, level-15,000 supports, wave 75,000,
+the synergy event, fully tagged bosses, guaranteed in-range Veteran sharing
+and equal boss kill rates. The killer stands on the XP tile in every row.
+
+Hero to level   Levels                    Boss killer    Leveler's tile
+Archer          1-999                     Templar        Skill Power
+                1,000-1,249               Archer         XP
+                1,250-2,499               Templar        Skill Power
+                2,500-4,500               Archer         XP
+Ballista        1-999                     Viking         Skill Power
+                1,000-4,500               Ballista       XP
+Veteran         1-999                     Archer         Skill Power
+                1,000-4,500               Veteran        XP
+
+When Archer kills for Veteran, a second Archer on Skill Power supplies the
+mark. At levels 1,500-2,499, Ballista's own kills led Templar's shared kills
+by just 0.57% per boss. Kill speed can decide which earns more XP per hour.
+
+Scores are comparison indexes. Searches are heuristic. Mimic farming weights
+the actual chance of each payout tier. The standard boss, Damage and XP
+indexes flag below-cap tiers and keep their guaranteed-tier assumption.
+
+SAVING, UPDATING AND SHARING
+Changes save in this browser when local storage is available. Keep the HTML
+in the same location and use Export setup to back up your saved teams.
+Back up your setup before replacing an older HTML file with this version.
+Then reopen or reload the file and rerun suggestions or Rebuild plan.
+
+Browser saves are NOT inside this ZIP. To share a particular lineup, send
+its exported setup JSON along with the ZIP. The recipient can click Import
+and choose that JSON. Version-20 setups include your account ascension ranks
+and each team's trial builds. Ranks from version 19 become the account
+baseline when you update. Use the latest HTML to import a version-20 setup.

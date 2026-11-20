@@ -1,0 +1,923 @@
+{
+  "meta": {
+    "batch": "26",
+    "selectedHero": {
+      "id": "deadeye",
+      "name": "Deadeye"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the recorded profile by inference.",
+      "Crusader +25% was explicitly confirmed in the preceding capture set; Warden remains assumed +0%.",
+      "Owner tile placements are unspecified. The off-synergy-tile model is inferred from the repeated values, not directly established by these screenshots.",
+      "Tier I has no rank requirement or individual rank badges. Later badges are transcribed independently from this batch.",
+      "Each effect belongs to the portrait directly above its arrow. Repeated portraits are preserved as separate required copies and effects."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "deadeye-9gm-event-01",
+        "originalPath": "images/deadeye-9gm-event-01.png",
+        "archivePath": "images/deadeye-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "deadeye-9gm-event-02",
+        "originalPath": "images/deadeye-9gm-event-02.png",
+        "archivePath": "images/deadeye-9gm-event-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "deadeye-9gm-event-03",
+        "originalPath": "images/deadeye-9gm-event-03.png",
+        "archivePath": "images/deadeye-9gm-event-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "deadeye-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "deadeye-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": null
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 117,
+          "signedValue": -117,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-117% Skill Cooldown (personal effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+235% Attack Speed (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "deadeye-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": null
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": null
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 1173,
+          "signedValue": 1173,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,173% Damage (personal effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+469% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 94,
+          "signedValue": -94,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-94% Skill Cooldown (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "deadeye-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": 3407
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 117,
+          "signedValue": 117,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+117 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "deadeye-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5001
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5123
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 586,
+          "signedValue": 586,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+586% Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 3519,
+          "signedValue": 3519,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,519% Crit Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "deadeye-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 751,
+          "signedValue": 751,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+751% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 751,
+          "signedValue": 751,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+751% Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "deadeye-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 281,
+          "signedValue": 281,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+281% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+9 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "deadeye-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 1173,
+          "signedValue": 1173,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,173% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 1173,
+          "signedValue": 1173,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,173% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "deadeye-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5001
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 4692,
+          "signedValue": 4692,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+4,692% Super Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 3284,
+          "signedValue": 3284,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,284% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 4692,
+          "signedValue": 4692,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+4,692% Super Gold Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "deadeye-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5014
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 1412,
+          "signedValue": 1412,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,412% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 65,
+          "signedValue": 65,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+65% Super Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "deadeye-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5002
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 81,
+          "signedValue": 81,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+81% Super Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 5043,
+          "signedValue": 5043,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,043% Super Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 65,
+          "signedValue": 65,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+65% Super Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "deadeye-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5072
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 40,
+          "signedValue": 40,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+40% Ultra Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 4035,
+          "signedValue": 4035,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,035% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "deadeye-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 4508
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 2219,
+          "signedValue": 2219,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 2219,
+          "signedValue": 2219,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "deadeye-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 100,
+          "signedValue": 100,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+100 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 1993,
+          "signedValue": 1993,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,993% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "deadeye-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        },
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 13286,
+          "signedValue": 13286,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+13,286% Super Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 53,
+          "signedValue": 53,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+53 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 2325,
+          "signedValue": 2325,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,325% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "deadeye-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": 5000
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 5000
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4549
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 26,
+          "signedValue": 26,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+26% Ultra Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 11260,
+          "signedValue": 11260,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+11,260% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 113,
+          "signedValue": 113,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+113 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 225,
+          "signedValue": 225,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+225% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "deadeye-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "deadeye-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 751,
+          "signedValue": 751,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+751% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+56 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 12198,
+          "signedValue": 12198,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+12,198% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 30,
+          "signedValue": 30,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+30% Ultra Crit Chance (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

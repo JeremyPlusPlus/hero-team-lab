@@ -1,0 +1,40 @@
+{
+  "captures": [
+    {
+      "batch": "31", "owner": "wizard", "images": ["e686433f-dfb4-49dd-86dd-6626f1723ca7", "5c8f462a-6a59-414e-93ac-d571c44f5cef"],
+      "imageTiers": [[1,2,3],[5,6,7]], "indices": [1,2,3,4,5,6,9,10,11,12,13,14],
+      "groups": [
+        [["wizard",null,235,"Damage",true,"percent"],["elementalist",null,47,"Crit Chance",true,"percent"]],
+        [["wizard",null,469,"Kill Gold",true,"percent"],["peacekeeper",null,469,"Crit Damage",true,"percent"],["samurai",null,235,"Crit Chance",false,"percent"]],
+        [["wizard",5000,188,"Crit Chance",true,"percent"],["battlemage",4508,117,"Skill Power",false,"flat"]],
+        [["wizard",5000,352,"Attack Speed",true,"percent"],["titan",5000,3519,"Kill Gold",false,"percent"],["dicemaster",4549,3519,"Damage",false,"percent"]],
+        [["wizard",5000,188,"Rank Exp",true,"flat"],["ninja",4527,751,"Kill Gold",true,"percent"]],
+        [["wizard",5000,938,"Crit Damage",true,"percent"],["warlord",5000,469,"Crit Chance",false,"percent"],["witch",5000,938,"Damage",true,"percent"]],
+        [["wizard",5000,24,"Energy Income",true,"flat"],["warlock",5001,4438,"Super Crit Damage",true,"percent"]],
+        [["wizard",5000,3631,"Damage",false,"percent"],["berserker",5000,3631,"Kill Gold",false,"percent"],["titan",5000,32,"Energy Income",true,"flat"]],
+        [["wizard",5000,202,"Ultra Energy Amount",true,"percent"],["ranger",5018,2017,"Kill Gold",true,"percent"]],
+        [["wizard",5000,56,"Ultra Crit Chance",false,"percent"],["assassin",4535,56,"Ultra Crit Chance",false,"percent"],["warlord",5000,34295,"Ultra Gold Amount",false,"percent"]],
+        [["wizard",5000,266,"Attack Speed",true,"percent"],["crusader",5002,100,"Skill Power",false,"flat"]],
+        [["wizard",5000,2325,"Damage",true,"percent"],["sorcerer",4506,2325,"Damage",true,"percent"],["skymage",5001,2325,"Damage",true,"percent"]]
+      ]
+    },
+    {
+      "batch": "32", "owner": "berserker", "images": ["96714294-a1e1-49d7-9f6a-1f8cf4c62ac2", "287a34a1-97e7-4c84-a78e-8fd924e4f76b"],
+      "imageTiers": [[1,2,3],[4,5,6]], "indices": [1,2,3,4,5,6,7,8,9,10,11,12],
+      "groups": [
+        [["berserker",null,235,"Damage",true,"percent"],["skymage",null,235,"Crit Damage",true,"percent"]],
+        [["berserker",null,469,"Crit Damage",true,"percent"],["chieftain",null,586,"Attack Speed",false,"percent"],["ballista",null,-94,"Skill Cooldown",true,"percent"]],
+        [["berserker",5000,23,"Super Exp Chance",true,"percent"],["veteran",5138,117,"Skill Power",false,"flat"]],
+        [["berserker",5000,141,"Skill Power",false,"flat"],["ninja",4527,141,"Skill Duration",false,"flat"],["scout",4506,1407,"Attack Speed",false,"percent"]],
+        [["berserker",5000,206,"Attack Speed",true,"percent"],["apprentice",4529,1877,"Kill Gold",false,"percent"]],
+        [["berserker",5000,328,"Rank Exp",true,"flat"],["peacekeeper",4518,9,"Super Exp Chance",true,"percent"],["forester",5000,28,"Super Exp Amount",true,"percent"]],
+        [["berserker",5000,38,"Super Crit Chance",true,"percent"],["arbalest",5000,7976,"Super Gold Amount",false,"percent"]],
+        [["berserker",5000,19,"Skill Power",true,"flat"],["assassin",4535,19,"Energy Income",true,"flat"],["sorcerer",4506,19,"Super Energy Chance",true,"percent"]],
+        [["berserker",5000,3228,"Damage",false,"percent"],["samurai",5000,65,"Super Gold Chance",true,"percent"]],
+        [["berserker",5000,3631,"Kill Gold",false,"percent"],["titan",5000,32,"Energy Income",true,"flat"],["wizard",5000,3631,"Damage",false,"percent"]],
+        [["berserker",5000,40,"Ultra Gold Chance",false,"percent"],["sovereign",5000,363,"Ultra Exp Amount",true,"percent"]],
+        [["berserker",5000,282,"Ultra Energy Amount",true,"percent"],["druid",4644,24,"Ultra Gold Chance",true,"percent"],["hunter",4661,18156,"Ultra Gold Amount",true,"percent"]]
+      ]
+    }
+  ]
+}

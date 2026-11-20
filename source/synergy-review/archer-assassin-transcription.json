@@ -1,0 +1,26 @@
+{
+  "captures": [
+    {
+      "batch": "27", "owner": "archer", "images": ["8936706e-c326-47af-91ed-268d9bcdd654"],
+      "groups": [
+        [["archer",5072,9,"Super Energy Chance",true,"percent"],["captain",4525,94,"Super Gold Chance",false,"percent"]],
+        [["archer",5072,3284,"Kill Gold",false,"percent"],["gladiator",5002,1407,"Damage",true,"percent"],["apprentice",4529,38,"Super Energy Amount",true,"percent"]],
+        [["archer",5072,24,"Skill Power",true,"flat"],["crusader",5002,8876,"Super Gold Amount",false,"percent"]],
+        [["archer",5072,5043,"Super Gold Amount",true,"percent"],["champion",5009,81,"Super Crit Chance",true,"percent"],["warlock",5001,3631,"Damage",false,"percent"]],
+        [["archer",5072,4035,"Damage",false,"percent"],["deadeye",5000,40,"Ultra Crit Chance",false,"percent"]],
+        [["archer",5072,18156,"Ultra Crit Damage",true,"percent"],["militia",5000,4842,"Damage",false,"percent"],["titan",5000,4842,"Kill Gold",false,"percent"]]
+      ]
+    },
+    {
+      "batch": "28", "owner": "assassin", "images": ["c2c63756-0723-4325-969a-c31b9307f395"],
+      "groups": [
+        [["assassin",4535,1173,"Kill Gold",true,"percent"],["peacekeeper",4518,2815,"Damage",false,"percent"]],
+        [["assassin",4535,19,"Energy Income",true,"flat"],["berserker",5000,19,"Skill Power",true,"flat"],["sorcerer",4506,19,"Super Energy Chance",true,"percent"]],
+        [["assassin",4535,1412,"Damage",true,"percent"],["dicemaster",4549,1412,"Damage",true,"percent"]],
+        [["assassin",4535,5043,"Super Crit Damage",true,"percent"],["hunter",4661,3631,"Kill Gold",false,"percent"],["captain",4525,81,"Super Crit Chance",true,"percent"]],
+        [["assassin",4535,16,"Ultra Exp Chance",true,"percent"],["skymage",5001,16,"Ultra Crit Chance",true,"percent"]],
+        [["assassin",4535,56,"Ultra Crit Chance",false,"percent"],["warlord",5000,34295,"Ultra Gold Amount",false,"percent"],["wizard",5000,56,"Ultra Crit Chance",false,"percent"]]
+      ]
+    }
+  ]
+}

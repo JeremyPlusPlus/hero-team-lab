@@ -1,0 +1,1256 @@
+﻿owner,index,tier,rank minimum,partners,observed type,scope,displayed signed value,unit,sheet type,sheet base,tier factor,relative owner factor,component raw magnitude,component predicted magnitude,fits supplied components,empirical predicted magnitude,fits empirical common scale,additive GM predicted magnitude,fits additive GM model,conditional integer candidates
+Militia,1,1,,apprentice,Damage,global,213,percent,Damage,10,6.25,1.0,213.2514996713967,213,True,213,True,172,False,10
+Apprentice,1,1,,militia,Attack Speed,global,64,percent,Attack Speed,3,6.25,1.0,63.97544990141901,64,True,64,True,52,False,3
+Militia,2,1,,"viking, scout",Skill Cooldown,personal,-213,percent,Skill Cooldown,10,6.25,1.0,213.2514996713967,213,True,213,True,172,False,10
+Viking,2,1,,"militia, scout",Rank Exp,global,64,flat,Rank Exp,3,6.25,1.0,63.97544990141901,64,True,64,True,52,False,3
+Scout,2,1,,"militia, viking",Crit Chance,global,85,percent,Crit Chance,4,6.25,1.0,85.30059986855868,85,True,85,True,69,False,4
+Militia,3,2,15,peacekeeper,Kill Gold,personal,2133,percent,Kill Gold,100,6.25,1.0,2132.514996713967,2133,True,2133,True,1718,False,100
+Peacekeeper,3,2,15,militia,Skill Power,personal,107,flat,Skill Power,3,6.25,1.0,63.97544990141901,64,False,64,False,52,False,5
+Militia,4,2,15,"druid, battlemage",Damage,global,1280,percent,Damage,60,6.25,1.0,1279.5089980283801,1280,True,1280,True,1031,False,60
+Druid,4,2,15,"militia, battlemage",Crit Chance,global,256,percent,Crit Chance,12,6.25,1.0,255.90179960567605,256,True,256,True,206,False,12
+Battlemage,4,2,15,"militia, druid",Crit Damage,global,1280,percent,Crit Damage,60,6.25,1.0,1279.5089980283801,1280,True,1280,True,1031,False,60
+Militia,5,3,50,gladiator,Crit Chance,global,136,percent,Crit Chance,16,2.5,1.0,136.48095978969388,136,True,136,True,110,False,16
+Gladiator,5,3,50,militia,Kill Gold,personal,1706,percent,Kill Gold,200,2.5,1.0,1706.0119973711735,1706,True,1706,True,1375,False,200
+Militia,6,3,50,"captain, warlock",Attack Speed,personal,853,percent,Attack Speed,100,2.5,1.0,853.0059986855867,853,True,853,True,687,False,100
+Warlock,6,3,50,"militia, captain",Rank Exp,global,299,flat,Rank Exp,35,2.5,1.0,298.55209953995535,299,True,299,True,241,False,35
+Captain,6,3,50,"militia, warlock",Damage,global,853,percent,Damage,100,2.5,1.0,853.0059986855867,853,True,853,True,687,False,100
+Militia,7,4,100,witch,Energy Income,global,9,flat,Energy Income,1,2.5,1.0,8.530059986855868,9,True,9,True,7,False,1
+Witch,7,4,100,militia,Super Crit Chance,personal,85,percent,Super Crit Chance,10,2.5,1.0,85.30059986855868,85,True,85,True,69,False,10
+Militia,8,4,100,"champion, crusader",Super Gold Chance,global,51,percent,Super Gold Chance,6,2.5,1.0,51.18035992113521,51,True,51,True,41,False,6
+Champion,8,4,100,"militia, crusader",Damage,personal,2986,percent,Damage,350,2.5,1.0,2985.5209953995536,2986,True,2986,True,2406,False,350
+Crusader,8,4,100,"militia, champion",Super Energy Amount,global,31,percent,Super Energy,4,2.5,0.9199999999999999,31.39062075162959,31,True,31,True,25,False,4
+Militia,9,5,150,praetorian,Super Exp Amount,global,73,percent,Super Exp Amount,10,2.15,1.0,73.35851588696046,73,True,73,True,59,False,10
+Praetorian,9,5,150,militia,Super Crit Damage,global,4035,percent,Super Crit Damage,550,2.15,1.0,4034.7183737828254,4035,True,4035,True,3251,False,550
+Militia,10,5,150,"necromancer, arbalest",Super Crit Chance,personal,183,percent,Super Crit Chance,25,2.15,1.0,183.39628971740117,183,True,183,True,148,False,25
+Necromancer,10,5,150,"militia, arbalest",Super Gold Amount,personal,9170,percent,Super Gold Amount,1250,2.15,1.0,9169.814485870058,9170,True,9170,True,7389,False,1250
+Arbalest,10,5,150,"militia, necromancer",Super Energy Amount,global,59,percent,Super Energy,8,2.15,1.0,58.68681270956837,59,True,59,True,47,False,8
+Militia,11,6,250,warden,Kill Gold,personal,3668,percent,Kill Gold,500,2.15,1.0,3667.9257943480234,3668,True,3668,True,2956,False,500
+Warden,11,6,250,militia,Ultra Gold Chance,personal,29,percent,Ultra Gold Chance,5,2.15,0.8,29.34340635478418,29,True,29,True,24,False,5
+Militia,12,6,250,"titan, archer",Damage,personal,4402,percent,Damage,600,2.15,1.0,4401.5109532176275,4402,True,4402,True,3547,False,600
+Titan,12,6,250,"militia, archer",Kill Gold,personal,4402,percent,Kill Gold,600,2.15,1.0,4401.5109532176275,4402,True,4402,True,3547,False,600
+Archer,12,6,250,"militia, titan",Ultra Crit Damage,global,16506,percent,Ultra Crit Damage,2250,2.15,1.0,16505.666074566103,16506,True,16506,True,13300,False,2250
+Militia,13,7,500,ballista,Super Exp Amount,global,121,percent,Super Exp Amount,20,1.77,1.0,120.7856494138791,121,True,121,True,97,False,20
+Ballista,13,7,500,militia,Super Exp Chance,global,48,percent,Super Exp Chance,8,1.77,1.0,48.31425976555164,48,True,48,True,39,False,8
+Militia,14,7,500,"spelldancer, arbalest",Energy Income,global,48,flat,Energy Income,8,1.77,1.0,48.31425976555164,48,True,48,True,39,False,8
+Spelldancer,14,7,500,"militia, arbalest",Super Energy Chance,global,36,percent,Super Energy Chance,6,1.77,1.0,36.23569482416373,36,True,36,True,29,False,6
+Arbalest,14,7,500,"militia, spelldancer",Power Mage Energy,global,72,percent,Power Mage Energy,15,1.77,1.0,90.58923706040932,91,False,91,False,73,False,12
+Militia,15,8,1000,"gladiator, sorcerer, captain",Energy Income,global,34,flat,Energy Income,10,1,1.0,34.12023994742347,34,True,34,True,27,False,10
+Gladiator,15,8,1000,"militia, sorcerer, captain",Ultra Energy Chance,global,24,percent,Ultra Energy Chance,7,1,1.0,23.88416796319643,24,True,24,True,19,False,7
+Sorcerer,15,8,1000,"militia, gladiator, captain",Ultra Crit Damage,global,10236,percent,Ultra Crit Dmage,3000,1,1.0,10236.071984227041,10236,True,10236,True,8248,False,3000
+Captain,15,8,1000,"militia, gladiator, sorcerer",Skill Power,personal,102,flat,Skill Power,30,1,1.0,102.36071984227041,102,True,102,True,82,False,30
+Militia,16,9,1500,"ninja, arbalest, captain",Ultra Energy Amount,global,256,percent,Ultra Energy Amount,75,1,1.0,255.90179960567605,256,True,256,True,206,False,75
+Ninja,16,9,1500,"militia, arbalest, captain",Energy Income,global,51,flat,Energy Income,15,1,1.0,51.18035992113521,51,True,51,True,41,False,15
+Arbalest,16,9,1500,"militia, ninja, captain",Skill Power,personal,136,flat,Skill Power,40,1,1.0,136.48095978969388,136,True,136,True,110,False,40
+Captain,16,9,1500,"militia, ninja, arbalest",Attack Speed,global,256,percent,Attack Speed,75,1,1.0,255.90179960567605,256,True,256,True,206,False,75
+Ninja,1,1,,assassin,Damage,personal,533,percent,Damage,25,6.25,1.0,533.1287491784917,533,True,533,True,430,False,25
+Assassin,1,1,,ninja,Crit Chance,personal,107,percent,Crit Chance,5,6.25,1.0,106.62574983569834,107,True,107,True,86,False,5
+Ninja,2,1,,"sorcerer, witch",Crit Damage,personal,1066,percent,Crit Damage,50,6.25,1.0,1066.2574983569834,1066,True,1066,True,859,False,50
+Sorcerer,2,1,,"ninja, witch",Crit Chance,global,85,percent,Crit Chance,10,6.25,1.0,213.2514996713967,213,False,213,False,172,False,4
+Witch,2,1,,"ninja, sorcerer",Crit Damage,global,427,percent,Crit Damage,50,6.25,1.0,1066.2574983569834,1066,False,1066,False,859,False,20
+Ninja,3,2,15,rogue,Crit Chance,global,171,percent,Crit Chance,8,6.25,1.0,170.60119973711735,171,True,171,True,137,False,8
+Rogue,3,2,15,ninja,Skill Cooldown,personal,-320,percent,Skill Cooldown,15,6.25,1.0,319.87724950709503,320,True,320,True,258,False,15
+Ninja,4,2,15,"berserker, scout",Skill Duration,personal,128,flat,Skill Duration,6,6.25,1.0,127.95089980283802,128,True,128,True,103,False,6
+Berserker,4,2,15,"ninja, scout",Skill Power,personal,128,flat,Skill Power,5,6.25,1.0,106.62574983569834,107,False,107,False,86,False,6
+Scout,4,2,15,"ninja, berserker",Attack Speed,personal,1280,percent,Attack Speed,60,6.25,1.0,1279.5089980283801,1280,True,1280,True,1031,False,60
+Ninja,5,3,50,wizard,Kill Gold,global,682,percent,Kill Gold,80,2.5,1.0,682.4047989484694,682,True,682,True,550,False,80
+Wizard,5,3,50,ninja,Rank Exp,global,171,flat,Rank Exp,20,2.5,1.0,170.60119973711735,171,True,171,True,137,False,20
+Ninja,6,3,50,"archer, rogue",Attack Speed,global,256,percent,Attack Speed,30,2.5,1.0,255.90179960567605,256,True,256,True,206,False,30
+Archer,6,3,50,"ninja, rogue",Crit Damage,personal,2133,percent,Crit Damage,250,2.5,1.0,2132.514996713967,2133,True,2133,True,1718,False,250
+Rogue,6,3,50,"ninja, archer",Rank Exp,global,299,flat,Rank Exp,25,2.5,1.0,213.2514996713967,213,False,213,False,172,False,35
+Ninja,7,4,100,praetorian,Damage,global,1066,percent,Damage,125,2.5,1.0,1066.2574983569834,1066,True,1066,True,859,False,125
+Praetorian,7,4,100,ninja,Energy Income,global,9,flat,Energy Income,1,2.5,1.0,8.530059986855868,9,True,9,True,7,False,1
+Ninja,8,4,100,"peacekeeper, spelldancer",Super Exp Chance,global,34,percent,Super Exp Chance,4,2.5,1.0,34.12023994742347,34,True,34,True,27,False,4
+Peacekeeper,8,4,100,"ninja, spelldancer",Super Exp Amount,global,60,percent,Super Gold Amount,500,2.5,1.0,4265.029993427934,4265,False,4265,False,3437,False,7
+Spelldancer,8,4,100,"ninja, peacekeeper",Super Exp Chance,global,34,percent,Super Exp Chance,4,2.5,1.0,34.12023994742347,34,True,34,True,27,False,4
+Ninja,9,5,150,ranger,Skill Power,global,22,flat,Skill Power,3,2.15,1.0,22.00755476608814,22,True,22,True,18,False,3
+Ranger,9,5,150,ninja,Super Gold Chance,global,59,percent,Super Gold Chance,8,2.15,1.0,58.68681270956837,59,True,59,True,47,False,8
+Ninja,10,5,150,"chieftain, veteran",Super Energy Chance,global,29,percent,Super Energy Chance,4,2.15,1.0,29.343406354784186,29,True,29,True,24,False,4
+Chieftain,10,5,150,"ninja, veteran",Super Exp Chance,global,51,percent,Super Exp Chance,7,2.15,1.0,51.35096112087233,51,True,51,True,41,False,7
+Veteran,10,5,150,"ninja, chieftain",Super Exp Chance,global,51,percent,Super Exp Chance,7,2.15,1.0,51.35096112087233,51,True,51,True,41,False,7
+Ninja,11,6,250,apprentice,Ultra Gold Chance,global,15,percent,Ultra Gold Chance,2,2.15,1.0,14.671703177392093,15,True,15,True,12,False,2
+Apprentice,11,6,250,ninja,Skill Power,global,37,flat,Skill Power,5,2.15,1.0,36.67925794348023,37,True,37,True,30,False,5
+Ninja,12,6,250,"gladiator, warlock",Kill Gold,personal,4402,percent,Kill Gold,600,2.15,1.0,4401.5109532176275,4402,True,4402,True,3547,False,600
+Gladiator,12,6,250,"ninja, warlock",Ultra Crit Damage,personal,31177,percent,Ultra Crit Damage,4250,2.15,1.0,31177.369251958196,31177,True,31177,True,25122,False,4250
+Warlock,12,6,250,"ninja, gladiator",Kill Gold,global,2017,percent,Kill Gold,600,2.15,1.0,4401.5109532176275,4402,False,4402,False,3547,False,275
+Ninja,13,7,500,arbalest,Super Energy Chance,global,30,percent,Super Energy Chance,5,1.77,1.0,30.196412353469775,30,True,30,True,24,False,5
+Arbalest,13,7,500,ninja,Super Energy Amount,global,91,percent,Super Energy Amount,15,1.77,1.0,90.58923706040932,91,True,91,True,73,False,15
+Ninja,14,7,500,"assassin, rogue",Super Gold Chance,global,85,percent,Super Gold Chance,14,1.77,1.0,84.54995458971537,85,True,85,True,68,False,14
+Assassin,14,7,500,"ninja, rogue",Ultra Boss Damage,global,9663,percent,Ultra Boss Damage,1600,1.77,1.0,9662.851953110328,9663,True,9663,True,7786,False,1600
+Rogue,14,7,500,"ninja, assassin",Skill Power,personal,121,flat,Skill Duration,20,1.77,1.0,120.7856494138791,121,True,121,True,97,False,20
+Ninja,15,8,1000,"assassin, elementalist, warden",Boss Gold,personal,7677,percent,Boss Gold,2250,1,1.0,7677.053988170282,7677,True,7677,True,6186,False,2250
+Assassin,15,8,1000,"ninja, elementalist, warden",Ultra Crit Damage,global,10236,percent,Ultra Crit Damage,3000,1,1.0,10236.071984227041,10236,True,10236,True,8248,False,3000
+Elementalist,15,8,1000,"ninja, assassin, warden",Ultra Gold Amount,global,10236,percent,Ultra Gold Amount,3000,1,1.0,10236.071984227041,10236,True,10236,True,8248,False,3000
+Warden,15,8,1000,"ninja, assassin, elementalist",Skill Power,global,33,flat,Skill Power,12,1,0.8,32.755430349526534,33,True,33,True,26,False,12
+Ninja,16,9,1500,"militia, arbalest, captain",Energy Income,global,51,flat,Energy Income,15,1,1.0,51.18035992113521,51,True,51,True,41,False,15
+Militia,16,9,1500,"ninja, arbalest, captain",Ultra Energy Amount,global,256,percent,Ultra Energy Amount,75,1,1.0,255.90179960567605,256,True,256,True,206,False,75
+Arbalest,16,9,1500,"militia, ninja, captain",Skill Power,personal,136,flat,Skill Power,40,1,1.0,136.48095978969388,136,True,136,True,110,False,40
+Captain,16,9,1500,"militia, ninja, arbalest",Attack Speed,global,256,percent,Attack Speed,75,1,1.0,255.90179960567605,256,True,256,True,206,False,75
+Spelldancer,1,1,,battlemage,Kill Gold,global,213,percent,Kill Gold,10,6.25,1.0,213.2514996713967,213,True,213,True,172,False,10
+Battlemage,1,1,,spelldancer,Rank Exp,global,21,flat,Rank Exp,1,6.25,1.0,21.32514996713967,21,True,21,True,17,False,1
+Spelldancer,2,1,,"paladin, sniper",Attack Speed,personal,533,percent,Attack Speed,25,6.25,1.0,533.1287491784917,533,True,533,True,430,False,25
+Paladin,2,1,,"spelldancer, sniper",Kill Gold,personal,1066,percent,Kill Gold,50,6.25,1.0,1066.2574983569834,1066,True,1066,True,859,False,50
+Sniper,2,1,,"paladin, spelldancer",Crit Damage,global,427,percent,Crit Damage,20,6.25,1.0,426.5029993427934,427,True,427,True,344,False,20
+Spelldancer,3,2,15,viking,Crit Damage,global,853,percent,Crit Damage,100,6.25,1.0,2132.514996713967,2133,False,2133,False,1718,False,40
+Viking,3,2,15,spelldancer,Crit Damage,personal,2133,percent,Crit Damage,100,6.25,1.0,2132.514996713967,2133,True,2133,True,1718,False,100
+Spelldancer,4,2,15,"archer, warden",Skill Cooldown,global,-149,percent,Skill Cooldown,7,6.25,1.0,149.27604976997767,149,True,149,True,120,False,7
+Archer,4,2,15,"spelldancer, warden",Damage,global,1280,percent,Damage,60,6.25,1.0,1279.5089980283801,1280,True,1280,True,1031,False,60
+Warden,4,2,15,"spelldancer, archer",Skill Power,personal,102,flat,Skill Power,5,6.25,0.8,85.30059986855868,85,False,85,False,69,False,6
+Spelldancer,5,3,50,champion,Damage,global,682,percent,Damage,200,2.5,1.0,1706.0119973711735,1706,False,1706,False,1375,False,80
+Champion,5,3,50,spelldancer,Crit Chance,personal,299,percent,Crit Chance,35,2.5,1.0,298.55209953995535,299,True,299,True,241,False,35
+Spelldancer,6,3,50,"assassin, apprentice",Skill Power,personal,102,flat,Skill Power,10,2.5,1.0,85.30059986855868,85,False,85,False,69,False,12
+Assassin,6,3,50,"apprentice, spelldancer",Kill Gold,personal,2133,percent,Kill Gold,250,2.5,1.0,2132.514996713967,2133,True,2133,True,1718,False,250
+Apprentice,6,3,50,"assassin, spelldancer",Crit Chance,global,171,percent,Crit Chance,50,2.5,1.0,426.5029993427934,427,False,427,False,344,False,20
+Spelldancer,7,4,100,warlock,Super Crit Damage,global,3839,percent,Super Crit Damage,850,2.5,1.0,7250.550988827487,7251,False,7251,False,5842,False,450
+Warlock,7,4,100,spelldancer,Skill Power,global,9,flat,Skill Power,1,2.5,1.0,8.530059986855868,9,True,9,True,7,False,1
+Spelldancer,8,4,100,"ninja, peacekeeper",Super Exp Chance,global,34,percent,Super Exp Chance,4,2.5,1.0,34.12023994742347,34,True,34,True,27,False,4
+Ninja,8,4,100,"peacekeeper, spelldancer",Super Exp Chance,global,34,percent,Super Exp Chance,4,2.5,1.0,34.12023994742347,34,True,34,True,27,False,4
+Peacekeeper,8,4,100,"ninja, spelldancer",Super Exp Amount,global,60,percent,Super Gold Amount,500,2.5,1.0,4265.029993427934,4265,False,4265,False,3437,False,7
+Spelldancer,9,5,150,sniper,Skill Power,global,22,flat,Kill Gold,400,2.15,1.0,2934.340635478419,2934,False,2934,False,2364,False,3
+Sniper,9,5,150,spelldancer,Damage,personal,2934,percent,Energy Income,3,2.15,1.0,22.00755476608814,22,False,22,False,18,False,400
+Spelldancer,10,5,150,"scout, ballista",Super Energy Chance,global,29,percent,Super Energy Chance,4,2.15,1.0,29.343406354784186,29,True,29,True,24,False,4
+Scout,10,5,150,"spelldancer, ballista",Super Crit Chance,personal,183,percent,Super Crit Chance,25,2.15,1.0,183.39628971740117,183,True,183,True,148,False,25
+Ballista,10,5,150,"spelldancer, scout",Skill Power,global,29,flat,Skill Power,4,2.15,1.0,29.343406354784186,29,True,29,True,24,False,4
+Spelldancer,11,6,250,veteran,Skill Power,global,37,flat,Skill Power,5,2.15,1.0,36.67925794348023,37,True,37,True,30,False,5
+Veteran,11,6,250,spelldancer,Kill Gold,personal,3668,percent,Kill Gold,500,2.15,1.0,3667.9257943480234,3668,True,3668,True,2956,False,500
+Spelldancer,12,6,250,"chieftain, witch",Damage,global,2017,percent,Damage,275,2.15,1.0,2017.3591868914127,2017,True,2017,True,1626,False,275
+Chieftain,12,6,250,"witch, spelldancer",Damage,global,2017,percent,Damage,275,2.15,1.0,2017.3591868914127,2017,True,2017,True,1626,False,275
+Witch,12,6,250,"chieftain, spelldancer",Ultra Gold Amount,global,16506,percent,Ultra Gold Amount,2250,2.15,1.0,16505.666074566103,16506,True,16506,True,13300,False,2250
+Spelldancer,13,7,500,druid,Super Crit Damage,global,5133,percent,Super Crit Damage,850,1.77,1.0,5133.390100089861,5133,True,5133,True,4136,False,850
+Druid,13,7,500,spelldancer,Damage,global,1812,percent,Damage,300,1.77,1.0,1811.7847412081865,1812,True,1812,True,1460,False,300
+Spelldancer,14,7,500,"militia, arbalest",Super Energy Chance,global,36,percent,Super Energy Chance,6,1.77,1.0,36.23569482416373,36,True,36,True,29,False,6
+Militia,14,7,500,"spelldancer, arbalest",Energy Income,global,48,flat,Energy Income,8,1.77,1.0,48.31425976555164,48,True,48,True,39,False,8
+Arbalest,14,7,500,"militia, spelldancer",Power Mage Energy,global,72,percent,Power Mage Energy,15,1.77,1.0,90.58923706040932,91,False,91,False,73,False,12
+Spelldancer,15,8,1000,"witch, battlemage, templar",Skill Duration,personal,68,flat,Skill Duration,20,1,1.0,68.24047989484694,68,True,68,True,55,False,20
+Witch,15,8,1000,"battlemage, spelldancer, templar",Skill Power,personal,102,flat,Skill Power,30,1,1.0,102.36071984227041,102,True,102,True,82,False,30
+Battlemage,15,8,1000,"witch, spelldancer, templar",Ultra Crit Damage,global,10236,percent,Ultra Crit Damage,3000,1,1.0,10236.071984227041,10236,True,10236,True,8248,False,3000
+Templar,15,8,1000,"witch, battlemage, spelldancer",Skill Power,personal,102,flat,Skill Power,30,1,1.0,102.36071984227041,102,True,102,True,82,False,30
+Spelldancer,16,9,1500,"assassin, praetorian, wizard",Ultra Crit Damage,global,11089,percent,Ultra Crit Damage,3250,1,1.0,11089.077982912628,11089,True,11089,True,8935,False,3250
+Assassin,16,9,1500,"praetorian, wizard, spelldancer",Attack Speed,global,256,percent,Attack Speed,75,1,1.0,255.90179960567605,256,True,256,True,206,False,75
+Praetorian,16,9,1500,"assassin, wizard, spelldancer",Ultra Crit Chance,personal,68,percent,Ultra Crit Chnce,20,1,1.0,68.24047989484694,68,True,68,True,55,False,20
+Wizard,16,9,1500,"assassin, praetorian, spelldancer",Skill Power,global,51,flat,Skill Power,15,1,1.0,51.18035992113521,51,True,51,True,41,False,15
+Gladiator,1,1,,paladin,Crit Damage,personal,533,percent,Crit Damage,25,6.25,1.0,533.1287491784917,533,True,533,True,430,False,25
+Paladin,1,1,,gladiator,Skill Power,personal,43,flat,Skill Power,1,6.25,1.0,21.32514996713967,21,False,21,False,17,False,2
+Gladiator,2,1,,"battlemage, rogue",Damage,personal,1066,percent,Damage,50,6.25,1.0,1066.2574983569834,1066,True,1066,True,859,False,50
+Battlemage,2,1,,"gladiator, rogue",Attack Speed,personal,533,percent,Attack Speed,24,6.25,1.0,511.8035992113521,512,False,512,False,412,False,25
+Rogue,2,1,,"gladiator, battlemage",Damage,global,427,percent,Damage,20,6.25,1.0,426.5029993427934,427,True,427,True,344,False,20
+Gladiator,3,2,15,assassin,Skill Cooldown,global,-107,percent,Skill Cooldown,5,6.25,1.0,106.62574983569834,107,True,107,True,86,False,5
+Assassin,3,2,15,gladiator,Attack Speed,global,213,percent,Attack Speed,10,6.25,1.0,213.2514996713967,213,True,213,True,172,False,10
+Gladiator,4,2,15,"forester, ranger",Attack Speed,personal,1280,percent,Attack Speed,60,6.25,1.0,1279.5089980283801,1280,True,1280,True,1031,False,60
+Forester,4,2,15,"gladiator, ranger",Skill Duration,personal,128,flat,Skill Duration,6,6.25,1.0,127.95089980283802,128,True,128,True,103,False,6
+Ranger,4,2,15,"gladiator, forester",Rank Exp,global,213,flat,Rank Exp,10,6.25,1.0,213.2514996713967,213,True,213,True,172,False,10
+Gladiator,5,3,50,militia,Kill Gold,personal,1706,percent,Kill Gold,200,2.5,1.0,1706.0119973711735,1706,True,1706,True,1375,False,200
+Militia,5,3,50,gladiator,Crit Chance,global,136,percent,Crit Chance,16,2.5,1.0,136.48095978969388,136,True,136,True,110,False,16
+Gladiator,6,3,50,"champion, elementalist",Crit Chance,global,171,percent,Crit Chance,20,2.5,1.0,170.60119973711735,171,True,171,True,137,False,20
+Champion,6,3,50,"gladiator, elementalist",Crit Damage,global,853,percent,Crit Damage,100,2.5,1.0,853.0059986855867,853,True,853,True,687,False,100
+Elementalist,6,3,50,"gladiator, champion",Crit Damage,global,853,percent,Crit Damage,250,2.5,1.0,2132.514996713967,2133,False,2133,False,1718,False,100
+Gladiator,7,4,100,viking,Kill Gold,global,1066,percent,Kill Gold,125,2.5,1.0,1066.2574983569834,1066,True,1066,True,859,False,125
+Viking,7,4,100,gladiator,Super Crit Damage,personal,7251,percent,Super Crit Damage,850,2.5,1.0,7250.550988827487,7251,True,7251,True,5842,False,850
+Gladiator,8,4,100,"apprentice, archer",Damage,global,1280,percent,Damage,150,2.5,1.0,1279.5089980283801,1280,True,1280,True,1031,False,150
+Apprentice,8,4,100,"gladiator, archer",Super Energy Amount,global,34,percent,Super Energy,4,2.5,1.0,34.12023994742347,34,True,34,True,27,False,4
+Archer,8,4,100,"gladiator, apprentice",Kill Gold,personal,2986,percent,Kill Gold,350,2.5,1.0,2985.5209953995536,2986,True,2986,True,2406,False,350
+Gladiator,9,5,150,templar,Energy Income,global,22,flat,Energy Income,3,2.15,1.0,22.00755476608814,22,True,22,True,18,False,3
+Templar,9,5,150,gladiator,Energy Income,global,22,flat,Energy Income,3,2.15,1.0,22.00755476608814,22,True,22,True,18,False,3
+Gladiator,10,5,150,"skymage, deadeye",Super Gold Amount,global,4585,percent,Super Gold Amount,625,2.15,1.0,4584.907242935029,4585,True,4585,True,3694,False,625
+Skymage,10,5,150,"gladiator, deadeye",Super Energy Amount,global,59,percent,Super Energy,8,2.15,1.0,58.68681270956837,59,True,59,True,47,False,8
+Deadeye,10,5,150,"gladiator, skymage",Super Crit Chance,global,73,percent,Super Crit Chance,10,2.15,1.0,73.35851588696046,73,True,73,True,59,False,10
+Gladiator,11,6,250,ballista,Ultra Exp Amount,global,330,percent,Ultra Exp Amount,45,2.15,1.0,330.1133214913221,330,True,330,True,266,False,45
+Ballista,11,6,250,gladiator,Ultra Energy Amount,global,183,percent,Ultra Energy Amount,25,2.15,1.0,183.39628971740117,183,True,183,True,148,False,25
+Gladiator,12,6,250,"ninja, warlock",Ultra Crit Damage,personal,31177,percent,Ultra Crit Damage,4250,2.15,1.0,31177.369251958196,31177,True,31177,True,25122,False,4250
+Ninja,12,6,250,"gladiator, warlock",Kill Gold,personal,4402,percent,Kill Gold,600,2.15,1.0,4401.5109532176275,4402,True,4402,True,3547,False,600
+Warlock,12,6,250,"ninja, gladiator",Kill Gold,global,2017,percent,Kill Gold,600,2.15,1.0,4401.5109532176275,4402,False,4402,False,3547,False,275
+Gladiator,13,7,500,samurai,Super Energy Amount,global,91,percent,Super Energy Amount,15,1.77,1.0,90.58923706040932,91,True,91,True,73,False,15
+Samurai,13,7,500,gladiator,Super Energy Chance,global,30,percent,Super Energy Chance,5,1.77,1.0,30.196412353469775,30,True,30,True,24,False,5
+Gladiator,14,7,500,"peacekeeper, warlord",Energy Income,global,48,flat,Energy Income,8,1.77,1.0,48.31425976555164,48,True,48,True,39,False,8
+Peacekeeper,14,7,500,"gladiator, warlord",Super Energy Amount,global,121,percent,Super Energy Amount,20,1.77,1.0,120.7856494138791,121,True,121,True,97,False,20
+Warlord,14,7,500,"peacekeeper, gladiator",Ultra Boss Damage,global,9663,percent,Ultra Boss Damage,1600,1.77,1.0,9662.851953110328,9663,True,9663,True,7786,False,1600
+Gladiator,15,8,1000,"militia, sorcerer, captain",Ultra Energy Chance,global,24,percent,Ultra Energy Chance,7,1,1.0,23.88416796319643,24,True,24,True,19,False,7
+Militia,15,8,1000,"gladiator, sorcerer, captain",Energy Income,global,34,flat,Energy Income,10,1,1.0,34.12023994742347,34,True,34,True,27,False,10
+Sorcerer,15,8,1000,"militia, gladiator, captain",Ultra Crit Damage,global,10236,percent,Ultra Crit Dmage,3000,1,1.0,10236.071984227041,10236,True,10236,True,8248,False,3000
+Captain,15,8,1000,"militia, gladiator, sorcerer",Skill Power,personal,102,flat,Skill Power,30,1,1.0,102.36071984227041,102,True,102,True,82,False,30
+Gladiator,16,9,1500,"peacekeeper, berserker, warden",Attack Speed,global,256,percent,Attack Speed,75,1,1.0,255.90179960567605,256,True,256,True,206,False,75
+Peacekeeper,16,9,1500,"gladiator, berserker, warden",Alien Tech,global,10,flat,Alien Tech,3,1,1.0,10.236071984227042,10,True,10,True,8,False,3
+Berserker,16,9,1500,"peacekeeper, gladiator, warden",Ultra Crit Chance,global,27,percent,Ultra Crit Chance,8,1,1.0,27.296191957938778,27,True,27,True,22,False,8
+Warden,16,9,1500,"peacekeeper, gladiator, berserker",Ultra Crit Damage,global,8871,percent,Ultra Ctir Damage,3250,1,0.8,8871.262386330101,8871,True,8871,True,7148,False,3250
+Veteran,1,1,,titan,Skill Duration,personal,43,flat,Skill Duration,1,6.25,1.0,21.32514996713967,21,False,21,False,17,False,2
+Titan,1,1,,veteran,Skill Duration,personal,43,flat,Skill Duration,1,6.25,1.0,21.32514996713967,21,False,21,False,17,False,2
+Veteran,2,1,,"sovereign, dicemaster",Kill Gold,personal,1066,percent,Kill Gold,50,6.25,1.0,1066.2574983569834,1066,True,1066,True,859,False,50
+Sovereign,2,1,,"dicemaster, veteran",Damage,global,427,percent,Damage,20,6.25,1.0,426.5029993427934,427,True,427,True,344,False,20
+Dicemaster,2,1,,"sovereign, veteran",Skill Cooldown,global,-85,percent,Skill Cooldown,4,6.25,1.0,85.30059986855868,85,True,85,True,69,False,4
+Veteran,3,2,15,berserker,Skill Power,personal,107,flat,Attack Speed,40,6.25,1.0,853.0059986855867,853,False,853,False,687,False,5
+Berserker,3,2,15,veteran,Super Exp Chance,global,21,percent,Kill Gold,40,6.25,1.0,853.0059986855867,853,False,853,False,687,False,1
+Veteran,4,2,15,"warlock, deadeye",Crit Damage,personal,3199,percent,Crit Damage,150,6.25,1.0,3198.7724950709503,3199,True,3199,True,2578,False,150
+Warlock,4,2,15,"deadeye, veteran",Damage,global,1280,percent,Damage,60,6.25,1.0,1279.5089980283801,1280,True,1280,True,1031,False,60
+Deadeye,4,2,15,"warlock, veteran",Crit Chance,personal,533,percent,Crit Chance,25,6.25,1.0,533.1287491784917,533,True,533,True,430,False,25
+Veteran,5,3,50,battlemage,Damage,global,682,percent,Damage,80,2.5,1.0,682.4047989484694,682,True,682,True,550,False,80
+Battlemage,5,3,50,veteran,Damage,global,682,percent,Damage,80,2.5,1.0,682.4047989484694,682,True,682,True,550,False,80
+Veteran,6,3,50,"paladin, praetorian",Skill Cooldown,global,-85,percent,Skill Cooldown,10,2.5,1.0,85.30059986855868,85,True,85,True,69,False,10
+Paladin,6,3,50,"praetorian, veteran",Crit Damage,personal,2133,percent,Crit Damage,250,2.5,1.0,2132.514996713967,2133,True,2133,True,1718,False,250
+Praetorian,6,3,50,"paladin, veteran",Skill Cooldown,personal,-256,percent,Skill Cooldown,30,2.5,1.0,255.90179960567605,256,True,256,True,206,False,30
+Veteran,7,4,100,necromancer,Damage,personal,2559,percent,Damage,300,2.5,1.0,2559.0179960567602,2559,True,2559,True,2062,False,300
+Necromancer,7,4,100,veteran,Super Energy Chance,global,9,percent,Super Energy Chance,1,2.5,1.0,8.530059986855868,9,True,9,True,7,False,1
+Veteran,8,4,100,"warlord, skymage",Super Exp Amount,global,60,percent,Super Gold Chance,6,2.5,1.0,51.18035992113521,51,False,51,False,41,False,7
+Warlord,8,4,100,"skymage, veteran",Skill Power,global,17,flat,Skill Power,2,2.5,1.0,17.060119973711735,17,True,17,True,14,False,2
+Skymage,8,4,100,"warlord, veteran",Skill Power,global,17,flat,Skill Power,2,2.5,1.0,17.060119973711735,17,True,17,True,14,False,2
+Veteran,9,5,150,rogue,Super Crit Damage,personal,8069,percent,Super Crit Damage,1100,2.15,1.0,8069.436747565651,8069,True,8069,True,6502,False,1100
+Rogue,9,5,150,veteran,Super Energy Chance,global,22,percent,Super Energy Chance,3,2.15,1.0,22.00755476608814,22,True,22,True,18,False,3
+Veteran,10,5,150,"ninja, chieftain",Super Exp Chance,global,51,percent,Super Exp Chance,7,2.15,1.0,51.35096112087233,51,True,51,True,41,False,7
+Ninja,10,5,150,"chieftain, veteran",Super Energy Chance,global,29,percent,Super Energy Chance,4,2.15,1.0,29.343406354784186,29,True,29,True,24,False,4
+Chieftain,10,5,150,"ninja, veteran",Super Exp Chance,global,51,percent,Super Exp Chance,7,2.15,1.0,51.35096112087233,51,True,51,True,41,False,7
+Veteran,11,6,250,spelldancer,Kill Gold,personal,3668,percent,Kill Gold,500,2.15,1.0,3667.9257943480234,3668,True,3668,True,2956,False,500
+Spelldancer,11,6,250,veteran,Skill Power,global,37,flat,Skill Power,5,2.15,1.0,36.67925794348023,37,True,37,True,30,False,5
+Veteran,12,6,250,"arbalest, captain",Energy Income,global,44,flat,Energy Income,6,2.15,1.0,44.01510953217628,44,True,44,True,35,False,6
+Arbalest,12,6,250,"captain, veteran",Skill Power,global,44,flat,Skill Power,6,2.15,1.0,44.01510953217628,44,True,44,True,35,False,6
+Captain,12,6,250,"arbalest, veteran",Damage,personal,4402,percent,Damage,600,2.15,1.0,4401.5109532176275,4402,True,4402,True,3547,False,600
+Veteran,13,7,500,templar,Boss Exp,global,121,percent,Boss Exp,20,1.77,1.0,120.7856494138791,121,True,121,True,97,False,20
+Templar,13,7,500,veteran,Super Exp Amount,global,121,percent,Super Exp Amount,20,1.77,1.0,120.7856494138791,121,True,121,True,97,False,20
+Veteran,14,7,500,"viking, forester",Super Exp Amount,global,151,percent,Super Exp Amount,25,1.77,1.0,150.98206176734888,151,True,151,True,122,False,25
+Viking,14,7,500,"forester, veteran",Skill Power,global,48,flat,Skill Power,8,1.77,1.0,48.31425976555164,48,True,48,True,39,False,8
+Forester,14,7,500,"viking, veteran",Damage,global,2114,percent,Damage,350,1.77,1.0,2113.748864742884,2114,True,2114,True,1703,False,350
+Veteran,15,8,1000,"champion, skymage, sniper",Skill Power,global,41,flat,Skill Power,12,1,1.0,40.94428793690817,41,True,41,True,33,False,12
+Champion,15,8,1000,"skymage, sniper, veteran",Boss Exp,global,136,percent,Boss Exp,40,1,1.0,136.48095978969388,136,True,136,True,110,False,40
+Skymage,15,8,1000,"champion, sniper, veteran",Ultra Exp Amount,global,358,percent,Ultra Exp Amount,105,1,1.0,358.26251944794643,358,True,358,True,289,False,105
+Sniper,15,8,1000,"champion, skymage, veteran",Attack Speed,personal,597,percent,Attack Speed,175,1,1.0,597.1041990799108,597,True,597,True,481,False,175
+Veteran,16,9,1500,"viking, archer, ballista",Ultra Exp Amount,global,427,percent,Ultra Exp Amount,125,1,1.0,426.5029993427934,427,True,427,True,344,False,125
+Viking,16,9,1500,"archer, ballista, veteran",Skill Power,global,51,flat,Skill Power,15,1,1.0,51.18035992113521,51,True,51,True,41,False,15
+Archer,16,9,1500,"viking, ballista, veteran",Skill Power,personal,136,flat,Skill Power,40,1,1.0,136.48095978969388,136,True,136,True,110,False,40
+Ballista,16,9,1500,"viking, archer, veteran",Ultra Exp Chance,global,34,percent,Ultra Exp Chance,10,1,1.0,34.12023994742347,34,True,34,True,27,False,10
+Praetorian,1,1,,sovereign,Crit Chance,global,43,percent,Crit Chance,2,6.25,1.0,42.65029993427934,43,True,43,True,34,False,2
+Sovereign,1,1,,praetorian,Skill Cooldown,personal,-107,percent,Skill Cooldown,5,6.25,1.0,106.62574983569834,107,True,107,True,86,False,5
+Praetorian,2,1,,"titan, deadeye",Kill Gold,global,427,percent,Kill Gold,20,6.25,1.0,426.5029993427934,427,True,427,True,344,False,20
+Titan,2,1,,"praetorian, deadeye",Skill Cooldown,global,-85,percent,Skill Cooldown,4,6.25,1.0,85.30059986855868,85,True,85,True,69,False,4
+Deadeye,2,1,,"praetorian, titan",Damage,personal,1066,percent,Damage,50,6.25,1.0,1066.2574983569834,1066,True,1066,True,859,False,50
+Praetorian,3,2,15,warlock,Damage,personal,2133,percent,Damage,100,6.25,1.0,2132.514996713967,2133,True,2133,True,1718,False,100
+Warlock,3,2,15,praetorian,Skill Cooldown,global,-107,percent,Skill Cooldown,5,6.25,1.0,106.62574983569834,107,True,107,True,86,False,5
+Praetorian,4,2,15,"champion, rogue",Attack Speed,global,320,percent,Attack Speed,15,6.25,1.0,319.87724950709503,320,True,320,True,258,False,15
+Champion,4,2,15,"praetorian, rogue",Skill Cooldown,personal,-427,percent,Skill Cooldown,20,6.25,1.0,426.5029993427934,427,True,427,True,344,False,20
+Rogue,4,2,15,"champion, praetorian",Kill Gold,global,1280,percent,Kill Gold,60,6.25,1.0,1279.5089980283801,1280,True,1280,True,1031,False,60
+Praetorian,5,3,50,dicemaster,Skill Power,personal,68,flat,Skill Power,7,2.5,1.0,59.710419907991074,60,False,60,False,48,False,8
+Dicemaster,5,3,50,praetorian,Crit Chance,global,136,percent,Crit Chance,16,2.5,1.0,136.48095978969388,136,True,136,True,110,False,16
+Praetorian,6,3,50,"paladin, veteran",Skill Cooldown,personal,-256,percent,Skill Cooldown,30,2.5,1.0,255.90179960567605,256,True,256,True,206,False,30
+Paladin,6,3,50,"praetorian, veteran",Crit Damage,personal,2133,percent,Crit Damage,250,2.5,1.0,2132.514996713967,2133,True,2133,True,1718,False,250
+Veteran,6,3,50,"paladin, praetorian",Skill Cooldown,global,-85,percent,Skill Cooldown,10,2.5,1.0,85.30059986855868,85,True,85,True,69,False,10
+Praetorian,7,4,100,ninja,Energy Income,global,9,flat,Energy Income,1,2.5,1.0,8.530059986855868,9,True,9,True,7,False,1
+Ninja,7,4,100,praetorian,Damage,global,1066,percent,Damage,125,2.5,1.0,1066.2574983569834,1066,True,1066,True,859,False,125
+Praetorian,8,4,100,"wizard, battlemage",Super Crit Chance,personal,128,percent,Super Crit Chance,15,2.5,1.0,127.95089980283802,128,True,128,True,103,False,15
+Wizard,8,4,100,"praetorian, battlemage",Attack Speed,global,341,percent,Super Gold Amount,950,2.5,1.0,8103.556987513074,8104,False,8104,False,6530,False,40
+Battlemage,8,4,100,"praetorian, wizard",Damage,global,1280,percent,Damage,350,2.5,1.0,2985.5209953995536,2986,False,2986,False,2406,False,150
+Praetorian,9,5,150,militia,Super Crit Damage,global,4035,percent,Super Crit Damage,550,2.15,1.0,4034.7183737828254,4035,True,4035,True,3251,False,550
+Militia,9,5,150,praetorian,Super Exp Amount,global,73,percent,Super Exp Amount,10,2.15,1.0,73.35851588696046,73,True,73,True,59,False,10
+Praetorian,10,5,150,"sorcerer, crusader",Damage,global,1467,percent,Damage,200,2.15,1.0,1467.1703177392094,1467,True,1467,True,1182,False,200
+Sorcerer,10,5,150,"praetorian, crusader",Super Gold Chance,personal,183,percent,Super Gold Chance,25,2.15,1.0,183.39628971740117,183,True,183,True,148,False,25
+Crusader,10,5,150,"praetorian, sorcerer",Kill Gold,personal,3037,percent,Kill Gold,450,2.15,0.9199999999999999,3037.0425577201627,3037,True,3037,True,2447,False,450
+Praetorian,11,6,250,samurai,Ultra Gold Amount,global,14672,percent,Ultra Gold Amount,2000,2.15,1.0,14671.703177392093,14672,True,14672,True,11822,False,2000
+Samurai,11,6,250,praetorian,Energy Income,global,37,flat,Energy Income,5,2.15,1.0,36.67925794348023,37,True,37,True,30,False,5
+Praetorian,12,6,250,"apprentice, sniper",Ultra Crit Damage,global,16506,percent,Ultra Crit Damage,2250,2.15,1.0,16505.666074566103,16506,True,16506,True,13300,False,2250
+Apprentice,12,6,250,"praetorian, sniper",Kill Gold,global,2017,percent,Kill Gold,275,2.15,1.0,2017.3591868914127,2017,True,2017,True,1626,False,275
+Sniper,12,6,250,"praetorian, apprentice",Ultra Crit Damage,personal,31177,percent,Ultra Gold Amount,4250,2.15,1.0,31177.369251958196,31177,True,31177,True,25122,False,4250
+Praetorian,13,7,500,necromancer,Attack Speed,personal,755,percent,Attack Speed,125,1.77,1.0,754.9103088367443,755,True,755,True,608,False,125
+Necromancer,13,7,500,praetorian,Ultra Boss Damage,global,8455,percent,Ultra Boss Damage,1400,1.77,1.0,8454.995458971536,8455,True,8455,True,6813,False,1400
+Praetorian,14,7,500,"scout, hunter",Skill Power,global,48,flat,Skill Power,8,1.77,1.0,48.31425976555164,48,True,48,True,39,False,8
+Scout,14,7,500,"praetorian, hunter",Super Gold Chance,global,85,percent,Super Gold Chance,14,1.77,1.0,84.54995458971537,85,True,85,True,68,False,14
+Hunter,14,7,500,"praetorian, scout",Super Gold Amount,personal,12079,percent,Super Gold Amount,2000,1.77,1.0,12078.56494138791,12079,True,12079,True,9733,False,2000
+Praetorian,15,8,1000,"titan, dicemaster, deadeye",Ultra Crit Damage,global,10236,percent,Ultra Crit Damage,3000,1,1.0,10236.071984227041,10236,True,10236,True,8248,False,3000
+Titan,15,8,1000,"praetorian, dicemaster, deadeye",Skill Power,personal,102,flat,Skill Power,30,1,1.0,102.36071984227041,102,True,102,True,82,False,30
+Dicemaster,15,8,1000,"praetorian, titan, deadeye",Attack Speed,global,205,percent,Attack Speed,60,1,1.0,204.72143968454083,205,True,205,True,165,False,60
+Deadeye,15,8,1000,"praetorian, titan, dicemaster",Ultra Crit Chance,global,24,percent,Ultra Crit Chance,7,1,1.0,23.88416796319643,24,True,24,True,19,False,7
+Praetorian,16,9,1500,"assassin, wizard, spelldancer",Ultra Crit Chance,personal,68,percent,Ultra Crit Chnce,20,1,1.0,68.24047989484694,68,True,68,True,55,False,20
+Assassin,16,9,1500,"praetorian, wizard, spelldancer",Attack Speed,global,256,percent,Attack Speed,75,1,1.0,255.90179960567605,256,True,256,True,206,False,75
+Wizard,16,9,1500,"assassin, praetorian, spelldancer",Skill Power,global,51,flat,Skill Power,15,1,1.0,51.18035992113521,51,True,51,True,41,False,15
+Spelldancer,16,9,1500,"assassin, praetorian, wizard",Ultra Crit Damage,global,11089,percent,Ultra Crit Damage,3250,1,1.0,11089.077982912628,11089,True,11089,True,8935,False,3250
+Battlemage,1,1,,spelldancer,Rank Exp,global,21,flat,Rank Exp,1,6.25,1.0,21.32514996713967,21,True,21,True,17,False,1
+Spelldancer,1,1,,battlemage,Kill Gold,global,213,percent,Kill Gold,10,6.25,1.0,213.2514996713967,213,True,213,True,172,False,10
+Battlemage,2,1,,"gladiator, rogue",Attack Speed,personal,533,percent,Attack Speed,24,6.25,1.0,511.8035992113521,512,False,512,False,412,False,25
+Gladiator,2,1,,"battlemage, rogue",Damage,personal,1066,percent,Damage,50,6.25,1.0,1066.2574983569834,1066,True,1066,True,859,False,50
+Rogue,2,1,,"gladiator, battlemage",Damage,global,427,percent,Damage,20,6.25,1.0,426.5029993427934,427,True,427,True,344,False,20
+Battlemage,3,2,15,wizard,Skill Power,personal,107,flat,Skill Power,3,6.25,1.0,63.97544990141901,64,False,64,False,52,False,5
+Wizard,3,2,15,battlemage,Crit Chance,global,171,percent,Crit Chance,8,6.25,1.0,170.60119973711735,171,True,171,True,137,False,8
+Battlemage,4,2,15,"militia, druid",Crit Damage,global,1280,percent,Crit Damage,60,6.25,1.0,1279.5089980283801,1280,True,1280,True,1031,False,60
+Militia,4,2,15,"druid, battlemage",Damage,global,1280,percent,Damage,60,6.25,1.0,1279.5089980283801,1280,True,1280,True,1031,False,60
+Druid,4,2,15,"militia, battlemage",Crit Chance,global,256,percent,Crit Chance,12,6.25,1.0,255.90179960567605,256,True,256,True,206,False,12
+Battlemage,5,3,50,veteran,Damage,global,682,percent,Damage,80,2.5,1.0,682.4047989484694,682,True,682,True,550,False,80
+Veteran,5,3,50,battlemage,Damage,global,682,percent,Damage,80,2.5,1.0,682.4047989484694,682,True,682,True,550,False,80
+Battlemage,6,3,50,"ballista, warden",Skill Cooldown,personal,-256,percent,Skill Cooldown,30,2.5,1.0,255.90179960567605,256,True,256,True,206,False,30
+Ballista,6,3,50,"battlemage, warden",Attack Speed,personal,853,percent,Attack Speed,100,2.5,1.0,853.0059986855867,853,True,853,True,687,False,100
+Warden,6,3,50,"battlemage, ballista",Skill Cooldown,global,-68,percent,Skill Cooldown,10,2.5,0.8,68.24047989484694,68,True,68,True,55,False,10
+Battlemage,7,4,100,ranger,Super Gold Amount,global,3839,percent,Super Gold Amount,450,2.5,1.0,3838.5269940851404,3839,True,3839,True,3093,False,450
+Ranger,7,4,100,battlemage,Energy Income,global,9,flat,Energy Income,1,2.5,1.0,8.530059986855868,9,True,9,True,7,False,1
+Battlemage,8,4,100,"praetorian, wizard",Damage,global,1280,percent,Damage,350,2.5,1.0,2985.5209953995536,2986,False,2986,False,2406,False,150
+Praetorian,8,4,100,"wizard, battlemage",Super Crit Chance,personal,128,percent,Super Crit Chance,15,2.5,1.0,127.95089980283802,128,True,128,True,103,False,15
+Wizard,8,4,100,"praetorian, battlemage",Attack Speed,global,341,percent,Super Gold Amount,950,2.5,1.0,8103.556987513074,8104,False,8104,False,6530,False,40
+Battlemage,9,5,150,chieftain,Super Gold Chance,personal,147,percent,Super Gold Chance,20,2.15,1.0,146.71703177392092,147,True,147,True,118,False,20
+Chieftain,9,5,150,battlemage,Kill Gold,global,1284,percent,Kill Gold,175,2.15,1.0,1283.7740280218081,1284,True,1284,True,1034,False,175
+Battlemage,10,5,150,"witch, sovereign",Super Crit Damage,global,4585,percent,Super Crit Damage,625,2.15,1.0,4584.907242935029,4585,True,4585,True,3694,False,625
+Witch,10,5,150,"battlemage, sovereign",Kill Gold,personal,3301,percent,Kill Gold,450,2.15,1.0,3301.133214913221,3301,True,3301,True,2660,False,450
+Sovereign,10,5,150,"witch, battlemage",Energy Income,global,29,flat,Energy Income,4,2.15,1.0,29.343406354784186,29,True,29,True,24,False,4
+Battlemage,11,6,250,paladin,Kill Gold,global,1834,percent,Kill Gold,250,2.15,1.0,1833.9628971740117,1834,True,1834,True,1478,False,250
+Paladin,11,6,250,battlemage,Damage,personal,3668,percent,Damage,500,2.15,1.0,3667.9257943480234,3668,True,3668,True,2956,False,500
+Battlemage,12,6,250,"forester, deadeye",Energy Income,global,44,flat,Energy Income,6,2.15,1.0,44.01510953217628,44,True,44,True,35,False,6
+Forester,12,6,250,"battlemage, deadeye",Kill Gold,global,2017,percent,Kill Gold,275,2.15,1.0,2017.3591868914127,2017,True,2017,True,1626,False,275
+Deadeye,12,6,250,"battlemage, forester",Kill Gold,global,2017,percent,Kill Gold,275,2.15,1.0,2017.3591868914127,2017,True,2017,True,1626,False,275
+Battlemage,13,7,500,berserker,Attack Speed,global,242,percent,Attack Speed,40,1.77,1.0,241.5712988277582,242,True,242,True,195,False,40
+Berserker,13,7,500,battlemage,Damage,global,1812,percent,Damage,300,1.77,1.0,1811.7847412081865,1812,True,1812,True,1460,False,300
+Battlemage,14,7,500,"sniper, crusader",Damage,global,2114,percent,Damage,350,1.77,1.0,2113.748864742884,2114,True,2114,True,1703,False,350
+Sniper,14,7,500,"battlemage, crusader",Ultra Boss Damage,global,9663,percent,Ultra Boss Damage,1600,1.77,1.0,9662.851953110328,9663,True,9663,True,7786,False,1600
+Crusader,14,7,500,"battlemage, sniper",Super Gold Amount,personal,11112,percent,Super Gold Amount,2000,1.77,0.9199999999999999,11112.279746076874,11112,True,11112,True,8954,False,2000
+Battlemage,15,8,1000,"witch, spelldancer, templar",Ultra Crit Damage,global,10236,percent,Ultra Crit Damage,3000,1,1.0,10236.071984227041,10236,True,10236,True,8248,False,3000
+Witch,15,8,1000,"battlemage, spelldancer, templar",Skill Power,personal,102,flat,Skill Power,30,1,1.0,102.36071984227041,102,True,102,True,82,False,30
+Spelldancer,15,8,1000,"witch, battlemage, templar",Skill Duration,personal,68,flat,Skill Duration,20,1,1.0,68.24047989484694,68,True,68,True,55,False,20
+Templar,15,8,1000,"witch, battlemage, spelldancer",Skill Power,personal,102,flat,Skill Power,30,1,1.0,102.36071984227041,102,True,102,True,82,False,30
+Battlemage,16,9,1500,"samurai, paladin, champion",Skill Power,global,51,flat,Skill Power,15,1,1.0,51.18035992113521,51,True,51,True,41,False,15
+Samurai,16,9,1500,"paladin, champion, battlemage",Ultra Crit Damage,global,11089,percent,Ultra Crit Damage,3250,1,1.0,11089.077982912628,11089,True,11089,True,8935,False,3250
+Paladin,16,9,1500,"samurai, champion, battlemage",Shadow Runes,personal,7,flat,Shadow Runes,2,1,1.0,6.824047989484694,7,True,7,True,5,False,2
+Champion,16,9,1500,"samurai, paladin, battlemage",Attack Speed,global,256,percent,Attack Speed,75,1,1.0,255.90179960567605,256,True,256,True,206,False,75
+Titan,1,1,,veteran,Skill Duration,personal,43,flat,Skill Duration,1,6.25,1.0,21.32514996713967,21,False,21,False,17,False,2
+Veteran,1,1,,titan,Skill Duration,personal,43,flat,Skill Duration,1,6.25,1.0,21.32514996713967,21,False,21,False,17,False,2
+Titan,2,1,,"praetorian, deadeye",Skill Cooldown,global,-85,percent,Skill Cooldown,4,6.25,1.0,85.30059986855868,85,True,85,True,69,False,4
+Praetorian,2,1,,"titan, deadeye",Kill Gold,global,427,percent,Kill Gold,20,6.25,1.0,426.5029993427934,427,True,427,True,344,False,20
+Deadeye,2,1,,"praetorian, titan",Damage,personal,1066,percent,Damage,50,6.25,1.0,1066.2574983569834,1066,True,1066,True,859,False,50
+Titan,3,2,15,warden,Attack Speed,global,213,percent,Attack Speed,40,6.25,1.0,853.0059986855867,853,False,853,False,687,False,10
+Warden,3,2,15,titan,Damage,global,682,percent,Damage,40,6.25,0.8,682.4047989484694,682,True,682,True,550,False,40
+Titan,4,2,15,"wizard, dicemaster",Kill Gold,personal,3199,percent,Kill Gold,150,6.25,1.0,3198.7724950709503,3199,True,3199,True,2578,False,150
+Wizard,4,2,15,"titan, dicemaster",Attack Speed,global,320,percent,Attack Speed,15,6.25,1.0,319.87724950709503,320,True,320,True,258,False,15
+Dicemaster,4,2,15,"titan, wizard",Damage,personal,3199,percent,Damage,150,6.25,1.0,3198.7724950709503,3199,True,3199,True,2578,False,150
+Titan,5,3,50,crusader,Crit Damage,personal,1706,percent,Crit Damage,200,2.5,1.0,1706.0119973711735,1706,True,1706,True,1375,False,200
+Crusader,5,3,50,titan,Skill Duration,personal,63,flat,Skill Duration,8,2.5,0.9199999999999999,62.78124150325918,63,True,63,True,51,False,8
+Titan,6,3,50,"sovereign, deadeye",Damage,global,853,percent,Damage,100,2.5,1.0,853.0059986855867,853,True,853,True,687,False,100
+Sovereign,6,3,50,"titan, deadeye",Skill Power,global,9,flat,Rank Exp,25,2.5,1.0,213.2514996713967,213,False,213,False,172,False,1
+Deadeye,6,3,50,"titan, sovereign",Attack Speed,global,256,percent,Attack Speed,30,2.5,1.0,255.90179960567605,256,True,256,True,206,False,30
+Titan,7,4,100,apprentice,Super Crit Damage,personal,7251,percent,Super Crit Damage,850,2.5,1.0,7250.550988827487,7251,True,7251,True,5842,False,850
+Apprentice,7,4,100,titan,Super Exp Chance,global,17,percent,Super Exp Chance,2,2.5,1.0,17.060119973711735,17,True,17,True,14,False,2
+Titan,8,4,100,"viking, necromancer",Kill Gold,global,1280,percent,Kill Gold,150,2.5,1.0,1279.5089980283801,1280,True,1280,True,1031,False,150
+Viking,8,4,100,"titan, necromancer",Kill Gold,global,1280,percent,Kill Gold,150,2.5,1.0,1279.5089980283801,1280,True,1280,True,1031,False,150
+Necromancer,8,4,100,"viking, titan",Damage,global,1280,percent,Damage,175,2.5,1.0,1492.7604976997768,1493,False,1493,False,1203,False,150
+Titan,9,5,150,warlord,Skill Power,personal,88,flat,Super Gold Chance,20,2.15,1.0,146.71703177392092,147,False,147,False,118,False,12
+Warlord,9,5,150,titan,Super Crit Chance,global,59,percent,Super Energy Chance,3,2.15,1.0,22.00755476608814,22,False,22,False,18,False,8
+Titan,10,5,150,"berserker, wizard",Energy Income,global,29,flat,Energy Income,4,2.15,1.0,29.343406354784186,29,True,29,True,24,False,4
+Berserker,10,5,150,"titan, wizard",Kill Gold,personal,3301,percent,Kill Gold,450,2.15,1.0,3301.133214913221,3301,True,3301,True,2660,False,450
+Wizard,10,5,150,"berserker, titan",Damage,personal,3301,percent,Damage,450,2.15,1.0,3301.133214913221,3301,True,3301,True,2660,False,450
+Titan,11,6,250,arbalest,Damage,personal,3668,percent,Damage,500,2.15,1.0,3667.9257943480234,3668,True,3668,True,2956,False,500
+Arbalest,11,6,250,titan,Ultra Exp Chance,global,15,percent,Ultra Exp Chance,2,2.15,1.0,14.671703177392093,15,True,15,True,12,False,2
+Titan,12,6,250,"militia, archer",Kill Gold,personal,4402,percent,Kill Gold,600,2.15,1.0,4401.5109532176275,4402,True,4402,True,3547,False,600
+Militia,12,6,250,"titan, archer",Damage,personal,4402,percent,Damage,600,2.15,1.0,4401.5109532176275,4402,True,4402,True,3547,False,600
+Archer,12,6,250,"militia, titan",Ultra Crit Damage,global,16506,percent,Ultra Crit Damage,2250,2.15,1.0,16505.666074566103,16506,True,16506,True,13300,False,2250
+Titan,13,7,500,witch,Damage,global,1812,percent,Damage,300,1.77,1.0,1811.7847412081865,1812,True,1812,True,1460,False,300
+Witch,13,7,500,titan,Damage,global,1812,percent,Damage,300,1.77,1.0,1811.7847412081865,1812,True,1812,True,1460,False,300
+Titan,14,7,500,"warlock, archer",Skill Power,global,48,flat,Skill Power,8,1.77,1.0,48.31425976555164,48,True,48,True,39,False,8
+Warlock,14,7,500,"titan, archer",Super Exp Amount,global,151,percent,Super Exp Amount,25,1.77,1.0,150.98206176734888,151,True,151,True,122,False,25
+Archer,14,7,500,"titan, warlock",Super Exp Chance,global,60,percent,Super Exp Chance,10,1.77,1.0,60.39282470693955,60,True,60,True,49,False,10
+Titan,15,8,1000,"praetorian, dicemaster, deadeye",Skill Power,personal,102,flat,Skill Power,30,1,1.0,102.36071984227041,102,True,102,True,82,False,30
+Praetorian,15,8,1000,"titan, dicemaster, deadeye",Ultra Crit Damage,global,10236,percent,Ultra Crit Damage,3000,1,1.0,10236.071984227041,10236,True,10236,True,8248,False,3000
+Dicemaster,15,8,1000,"praetorian, titan, deadeye",Attack Speed,global,205,percent,Attack Speed,60,1,1.0,204.72143968454083,205,True,205,True,165,False,60
+Deadeye,15,8,1000,"praetorian, titan, dicemaster",Ultra Crit Chance,global,24,percent,Ultra Crit Chance,7,1,1.0,23.88416796319643,24,True,24,True,19,False,7
+Titan,16,9,1500,"warlord, warlock, warlock",Ultra Crit Damage,global,11089,percent,Ultra Crit Damage,3250,1,1.0,11089.077982912628,11089,True,11089,True,8935,False,3250
+Warlord,16,9,1500,"titan, warlock, warlock",Ultra Energy Amount,global,256,percent,Ultra Energy Amount,75,1,1.0,255.90179960567605,256,True,256,True,206,False,75
+Warlock,16,9,1500,"warlord, titan, warlock",Energy Income,global,51,flat,Energy Income,15,1,1.0,51.18035992113521,51,True,51,True,41,False,15
+Warlock,16,9,1500,"warlord, titan, warlock",Energy Income,global,51,flat,Energy Income,15,1,1.0,51.18035992113521,51,True,51,True,41,False,15
+Sovereign,1,1,,praetorian,Skill Cooldown,personal,-107,percent,Skill Cooldown,5,6.25,1.0,106.62574983569834,107,True,107,True,86,False,5
+Praetorian,1,1,,sovereign,Crit Chance,global,43,percent,Crit Chance,2,6.25,1.0,42.65029993427934,43,True,43,True,34,False,2
+Sovereign,2,1,,"dicemaster, veteran",Damage,global,427,percent,Damage,20,6.25,1.0,426.5029993427934,427,True,427,True,344,False,20
+Dicemaster,2,1,,"sovereign, veteran",Skill Cooldown,global,-85,percent,Skill Cooldown,4,6.25,1.0,85.30059986855868,85,True,85,True,69,False,4
+Veteran,2,1,,"sovereign, dicemaster",Kill Gold,personal,1066,percent,Kill Gold,50,6.25,1.0,1066.2574983569834,1066,True,1066,True,859,False,50
+Sovereign,3,2,15,ballista,Crit Damage,global,853,percent,Crit Damage,50,6.25,1.0,1066.2574983569834,1066,False,1066,False,859,False,40
+Ballista,3,2,15,sovereign,Crit Damage,personal,2133,percent,Crit Damage,100,6.25,1.0,2132.514996713967,2133,True,2133,True,1718,False,100
+Sovereign,4,2,15,"chieftain, captain",Kill Gold,personal,3199,percent,Kill Gold,150,6.25,1.0,3198.7724950709503,3199,True,3199,True,2578,False,150
+Chieftain,4,2,15,"sovereign, captain",Crit Damage,global,1280,percent,Crit Damage,60,6.25,1.0,1279.5089980283801,1280,True,1280,True,1031,False,60
+Captain,4,2,15,"chieftain, sovereign",Kill Gold,personal,3199,percent,Kill Gold,150,6.25,1.0,3198.7724950709503,3199,True,3199,True,2578,False,150
+Sovereign,5,3,50,warlock,Skill Power,personal,68,flat,Skill Power,7,2.5,1.0,59.710419907991074,60,False,60,False,48,False,8
+Warlock,5,3,50,sovereign,Skill Duration,personal,68,flat,Skill Duration,8,2.5,1.0,68.24047989484694,68,True,68,True,55,False,8
+Sovereign,6,3,50,"titan, deadeye",Skill Power,global,9,flat,Rank Exp,25,2.5,1.0,213.2514996713967,213,False,213,False,172,False,1
+Titan,6,3,50,"sovereign, deadeye",Damage,global,853,percent,Damage,100,2.5,1.0,853.0059986855867,853,True,853,True,687,False,100
+Deadeye,6,3,50,"titan, sovereign",Attack Speed,global,256,percent,Attack Speed,30,2.5,1.0,255.90179960567605,256,True,256,True,206,False,30
+Sovereign,7,4,100,crusader,Kill Gold,global,1066,percent,Kill Gold,125,2.5,1.0,1066.2574983569834,1066,True,1066,True,859,False,125
+Crusader,7,4,100,sovereign,Skill Power,personal,94,flat,Super Crit Chance,10,2.5,0.9199999999999999,78.47655187907398,78,False,78,False,63,False,12
+Sovereign,8,4,100,"templar, forester",Super Gold Chance,global,51,percent,Super Gold Chance,6,2.5,1.0,51.18035992113521,51,True,51,True,41,False,6
+Templar,8,4,100,"sovereign, forester",Super Crit Chance,personal,128,percent,Super Crit Chance,15,2.5,1.0,127.95089980283802,128,True,128,True,103,False,15
+Forester,8,4,100,"templar, sovereign",Skill Power,global,17,flat,Skill Power,2,2.5,1.0,17.060119973711735,17,True,17,True,14,False,2
+Sovereign,9,5,150,arbalest,Super Crit Chance,global,59,percent,Super Crit Chance,8,2.15,1.0,58.68681270956837,59,True,59,True,47,False,8
+Arbalest,9,5,150,sovereign,Damage,personal,2934,percent,Damage,400,2.15,1.0,2934.340635478419,2934,True,2934,True,2364,False,400
+Sovereign,10,5,150,"witch, battlemage",Energy Income,global,29,flat,Energy Income,4,2.15,1.0,29.343406354784186,29,True,29,True,24,False,4
+Witch,10,5,150,"battlemage, sovereign",Kill Gold,personal,3301,percent,Kill Gold,450,2.15,1.0,3301.133214913221,3301,True,3301,True,2660,False,450
+Battlemage,10,5,150,"witch, sovereign",Super Crit Damage,global,4585,percent,Super Crit Damage,625,2.15,1.0,4584.907242935029,4585,True,4585,True,3694,False,625
+Sovereign,11,6,250,berserker,Ultra Exp Amount,global,330,percent,Ultra Exp Amount,45,2.15,1.0,330.1133214913221,330,True,330,True,266,False,45
+Berserker,11,6,250,sovereign,Ultra Gold Chance,personal,37,percent,Ultra Gold Chance,5,2.15,1.0,36.67925794348023,37,True,37,True,30,False,5
+Sovereign,12,6,250,"peacekeeper, warden",Damage,personal,4402,percent,Damage,600,2.15,1.0,4401.5109532176275,4402,True,4402,True,3547,False,600
+Peacekeeper,12,6,250,"sovereign, warden",Ultra Energy Chance,global,22,percent,Ultra Energy Chance,3,2.15,1.0,22.00755476608814,22,True,22,True,18,False,3
+Warden,12,6,250,"peacekeeper, sovereign",Ultra Energy Chance,global,18,percent,Ultra Energy Chance,3,2.15,0.8,17.60604381287051,18,True,18,True,14,False,3
+Sovereign,13,7,500,warlock,Skill Power,global,42,flat,Skill Power,7,1.77,1.0,42.274977294857685,42,True,42,True,34,False,7
+Warlock,13,7,500,sovereign,Super Gold Amount,global,5133,percent,Super Gold Amount,850,1.77,1.0,5133.390100089861,5133,True,5133,True,4136,False,850
+Sovereign,14,7,500,"chieftain, elementalist",Super Gold Amount,global,5586,percent,Super Gold Amount,925,1.77,1.0,5586.336285391908,5586,True,5586,True,4501,False,925
+Chieftain,14,7,500,"elementalist, sovereign",Kill Gold,global,2114,percent,Kill Gold,350,1.77,1.0,2113.748864742884,2114,True,2114,True,1703,False,350
+Elementalist,14,7,500,"chieftain, sovereign",Skill Power,personal,121,flat,Skill Power,20,1.77,1.0,120.7856494138791,121,True,121,True,97,False,20
+Sovereign,15,8,1000,"crusader, crusader, crusader",Ultra Gold Amount,global,10236,percent,Ultra Gold Amount,3000,1,1.0,10236.071984227041,10236,True,10236,True,8248,False,3000
+Crusader,15,8,1000,"sovereign, crusader, crusader",Ultra Gold Chance,global,22,percent,Ultra Gold Chance,7,1,0.9199999999999999,21.973434526140714,22,True,22,True,18,False,7
+Crusader,15,8,1000,"sovereign, crusader, crusader",Ultra Gold Chance,global,22,percent,Ultra Gold Chance,7,1,0.9199999999999999,21.973434526140714,22,True,22,True,18,False,7
+Crusader,15,8,1000,"sovereign, crusader, crusader",Ultra Gold Chance,global,22,percent,Ultra Gold Chance,7,1,0.9199999999999999,21.973434526140714,22,True,22,True,18,False,7
+Sovereign,16,9,1500,"hunter, rogue, crusader",Skill Power,personal,136,flat,Skill Power,40,1,1.0,136.48095978969388,136,True,136,True,110,False,40
+Hunter,16,9,1500,"sovereign, rogue, crusader",Ultra Gold Amount,global,11089,percent,Ultra Gold Amount,3250,1,1.0,11089.077982912628,11089,True,11089,True,8935,False,3250
+Rogue,16,9,1500,"sovereign, hunter, crusader",Ultra Gold Amount,global,11089,percent,Ultra Gold Amount,3250,1,1.0,11089.077982912628,11089,True,11089,True,8935,False,3250
+Crusader,16,9,1500,"sovereign, hunter, rogue",Attack Speed,personal,628,percent,Attack Speed,200,1,0.9199999999999999,627.8124150325918,628,True,628,True,506,False,200
+Warden,1,1,,necromancer,Crit Chance,global,34,percent,Crit Chance,2,6.25,0.8,34.12023994742347,34,True,34,True,27,False,2
+Necromancer,1,1,,warden,Damage,personal,533,percent,Damage,25,6.25,1.0,533.1287491784917,533,True,533,True,430,False,25
+Warden,2,1,,"champion, templar",Rank Exp,global,51,flat,Rank Exp,3,6.25,0.8,51.18035992113521,51,True,51,True,41,False,3
+Champion,2,1,,"templar, warden",Attack Speed,global,128,percent,Attack Speed,6,6.25,1.0,127.95089980283802,128,True,128,True,103,False,6
+Templar,2,1,,"champion, warden",Crit Damage,personal,1066,percent,Crit Damage,50,6.25,1.0,1066.2574983569834,1066,True,1066,True,859,False,50
+Warden,3,2,15,titan,Damage,global,682,percent,Damage,40,6.25,0.8,682.4047989484694,682,True,682,True,550,False,40
+Titan,3,2,15,warden,Attack Speed,global,213,percent,Attack Speed,40,6.25,1.0,853.0059986855867,853,False,853,False,687,False,10
+Warden,4,2,15,"spelldancer, archer",Skill Power,personal,102,flat,Skill Power,5,6.25,0.8,85.30059986855868,85,False,85,False,69,False,6
+Spelldancer,4,2,15,"archer, warden",Skill Cooldown,global,-149,percent,Skill Cooldown,7,6.25,1.0,149.27604976997767,149,True,149,True,120,False,7
+Archer,4,2,15,"spelldancer, warden",Damage,global,1280,percent,Damage,60,6.25,1.0,1279.5089980283801,1280,True,1280,True,1031,False,60
+Warden,5,3,50,archer,Kill Gold,personal,1365,percent,Kill Gold,200,2.5,0.8,1364.8095978969386,1365,True,1365,True,1100,False,200
+Archer,5,3,50,warden,Attack Speed,global,188,percent,Attack Speed,22,2.5,1.0,187.6613197108291,188,True,188,True,151,False,22
+Warden,6,3,50,"battlemage, ballista",Skill Cooldown,global,-68,percent,Skill Cooldown,10,2.5,0.8,68.24047989484694,68,True,68,True,55,False,10
+Battlemage,6,3,50,"ballista, warden",Skill Cooldown,personal,-256,percent,Skill Cooldown,30,2.5,1.0,255.90179960567605,256,True,256,True,206,False,30
+Ballista,6,3,50,"battlemage, warden",Attack Speed,personal,853,percent,Attack Speed,100,2.5,1.0,853.0059986855867,853,True,853,True,687,False,100
+Warden,7,4,100,sniper,Super Crit Damage,personal,5800,percent,Super Crit Damage,850,2.5,0.8,5800.440791061989,5800,True,5800,True,4674,False,850
+Sniper,7,4,100,warden,Kill Gold,global,1066,percent,Kill Gold,125,2.5,1.0,1066.2574983569834,1066,True,1066,True,859,False,125
+Warden,8,4,100,"samurai, scout",Skill Power,global,14,flat,Skill Power,2,2.5,0.8,13.648095978969387,14,True,14,True,11,False,2
+Samurai,8,4,100,"scout, warden",Super Crit Damage,personal,8104,percent,Super Crit Damage,950,2.5,1.0,8103.556987513074,8104,True,8104,True,6530,False,950
+Scout,8,4,100,"samurai, warden",Damage,global,1280,percent,Damage,150,2.5,1.0,1279.5089980283801,1280,True,1280,True,1031,False,150
+Warden,9,5,150,elementalist,Kill Gold,personal,2347,percent,Kill Gold,400,2.15,0.8,2347.4725083827343,2347,True,2347,True,1892,False,400
+Elementalist,9,5,150,warden,Super Exp Amount,global,73,percent,Super Exp Amount,10,2.15,1.0,73.35851588696046,73,True,73,True,59,False,10
+Warden,10,5,150,"forester, ranger",Damage,personal,2641,percent,Damage,450,2.15,0.8,2640.9065719305763,2641,True,2641,True,2128,False,450
+Forester,10,5,150,"ranger, warden",Damage,personal,3301,percent,Damage,450,2.15,1.0,3301.133214913221,3301,True,3301,True,2660,False,450
+Ranger,10,5,150,"forester, warden",Super Crit Damage,global,4585,percent,Super Crit Damage,625,2.15,1.0,4584.907242935029,4585,True,4585,True,3694,False,625
+Warden,11,6,250,militia,Ultra Gold Chance,personal,29,percent,Ultra Gold Chance,5,2.15,0.8,29.34340635478418,29,True,29,True,24,False,5
+Militia,11,6,250,warden,Kill Gold,personal,3668,percent,Kill Gold,500,2.15,1.0,3667.9257943480234,3668,True,3668,True,2956,False,500
+Warden,12,6,250,"peacekeeper, sovereign",Ultra Energy Chance,global,18,percent,Ultra Energy Chance,3,2.15,0.8,17.60604381287051,18,True,18,True,14,False,3
+Peacekeeper,12,6,250,"sovereign, warden",Ultra Energy Chance,global,22,percent,Ultra Energy Chance,3,2.15,1.0,22.00755476608814,22,True,22,True,18,False,3
+Sovereign,12,6,250,"peacekeeper, warden",Damage,personal,4402,percent,Damage,600,2.15,1.0,4401.5109532176275,4402,True,4402,True,3547,False,600
+Warden,13,7,500,skymage,Super Crit Damage,global,4107,percent,Super Crit Damage,850,1.77,0.8,4106.7120800718885,4107,True,4107,True,3309,False,850
+Skymage,13,7,500,warden,Super Crit Chance,global,72,percent,Super Crit Chance,12,1.77,1.0,72.47138964832746,72,True,72,True,58,False,12
+Warden,14,7,500,"witch, necromancer",Attack Speed,personal,725,percent,Attack Speed,150,1.77,0.8,724.7138964832745,725,True,725,True,584,False,150
+Witch,14,7,500,"necromancer, warden",Skill Duration,personal,91,flat,Skill Duration,15,1.77,1.0,90.58923706040932,91,True,91,True,73,False,15
+Necromancer,14,7,500,"witch, warden",Skill Power,personal,121,flat,Skill Power,20,1.77,1.0,120.7856494138791,121,True,121,True,97,False,20
+Warden,15,8,1000,"ninja, assassin, elementalist",Skill Power,global,33,flat,Skill Power,12,1,0.8,32.755430349526534,33,True,33,True,26,False,12
+Ninja,15,8,1000,"assassin, elementalist, warden",Boss Gold,personal,7677,percent,Boss Gold,2250,1,1.0,7677.053988170282,7677,True,7677,True,6186,False,2250
+Assassin,15,8,1000,"ninja, elementalist, warden",Ultra Crit Damage,global,10236,percent,Ultra Crit Damage,3000,1,1.0,10236.071984227041,10236,True,10236,True,8248,False,3000
+Elementalist,15,8,1000,"ninja, assassin, warden",Ultra Gold Amount,global,10236,percent,Ultra Gold Amount,3000,1,1.0,10236.071984227041,10236,True,10236,True,8248,False,3000
+Warden,16,9,1500,"peacekeeper, gladiator, berserker",Ultra Crit Damage,global,8871,percent,Ultra Ctir Damage,3250,1,0.8,8871.262386330101,8871,True,8871,True,7148,False,3250
+Peacekeeper,16,9,1500,"gladiator, berserker, warden",Alien Tech,global,10,flat,Alien Tech,3,1,1.0,10.236071984227042,10,True,10,True,8,False,3
+Gladiator,16,9,1500,"peacekeeper, berserker, warden",Attack Speed,global,256,percent,Attack Speed,75,1,1.0,255.90179960567605,256,True,256,True,206,False,75
+Berserker,16,9,1500,"peacekeeper, gladiator, warden",Ultra Crit Chance,global,27,percent,Ultra Crit Chance,8,1,1.0,27.296191957938778,27,True,27,True,22,False,8
+Rogue,1,1,,sniper,Attack Speed,global,77,percent,Attack Speed,3,6.25,1.0,77.410294380717,77,True,77,True,60,False,3
+Sniper,1,1,,rogue,Damage,personal,645,percent,Damage,25,6.25,1.0,645.0857865059751,645,True,645,True,497,False,25
+Rogue,2,1,,"gladiator, battlemage",Damage,global,516,percent,Damage,20,6.25,1.0,516.0686292047801,516,True,516,True,398,False,20
+Gladiator,2,1,,"battlemage, rogue",Damage,personal,1290,percent,Damage,50,6.25,1.0,1290.1715730119502,1290,True,1290,True,995,False,50
+Battlemage,2,1,,"gladiator, rogue",Attack Speed,personal,645,percent,Attack Speed,24,6.25,1.0,619.282355045736,619,False,619,False,478,False,25
+Rogue,3,2,15,ninja,Skill Cooldown,personal,-387,percent,Skill Cooldown,15,6.25,1.0,387.0514719035851,387,True,387,True,298,False,15
+Ninja,3,2,15,rogue,Crit Chance,global,206,percent,Crit Chance,8,6.25,1.0,206.42745168191203,206,True,206,True,159,False,8
+Rogue,4,2,15,"champion, praetorian",Kill Gold,global,1548,percent,Kill Gold,60,6.25,1.0,1548.2058876143403,1548,True,1548,True,1194,False,60
+Champion,4,2,15,"praetorian, rogue",Skill Cooldown,personal,-516,percent,Skill Cooldown,20,6.25,1.0,516.0686292047801,516,True,516,True,398,False,20
+Praetorian,4,2,15,"champion, rogue",Attack Speed,global,387,percent,Attack Speed,15,6.25,1.0,387.0514719035851,387,True,387,True,298,False,15
+Rogue,5,3,50,captain,Crit Chance,global,165,percent,Crit Chance,16,2.5,1.0,165.1419613455296,165,True,165,True,127,False,16
+Captain,5,3,50,rogue,Attack Speed,personal,826,percent,Attack Speed,80,2.5,1.0,825.709806727648,826,True,826,True,637,False,80
+Rogue,6,3,50,"ninja, archer",Rank Exp,global,361,flat,Rank Exp,25,2.5,1.0,258.03431460239,258,False,258,False,199,False,35
+Ninja,6,3,50,"archer, rogue",Attack Speed,global,310,percent,Attack Speed,30,2.5,1.0,309.641177522868,310,True,310,True,239,False,30
+Archer,6,3,50,"ninja, rogue",Crit Damage,personal,2580,percent,Crit Damage,250,2.5,1.0,2580.3431460239003,2580,True,2580,True,1990,False,250
+Rogue,7,4,100,forester,Skill Power,global,10,flat,Skill Power,1,2.5,1.0,10.3213725840956,10,True,10,True,8,False,1
+Forester,7,4,100,rogue,Super Crit Damage,global,4645,percent,Super Crit Damage,450,2.5,1.0,4644.61766284302,4645,True,4645,True,3581,False,450
+Rogue,8,4,100,"druid, dicemaster",Super Exp Amount,global,72,percent,Super Exp Amount,7,2.5,1.0,72.2496080886692,72,True,72,True,56,False,7
+Druid,8,4,100,"dicemaster, rogue",Super Crit Chance,global,62,percent,Super Crit Chance,6,2.5,1.0,61.92823550457361,62,True,62,True,48,False,6
+Dicemaster,8,4,100,"druid, rogue",Super Crit Damage,global,5161,percent,Super Crit Damage,500,2.5,1.0,5160.686292047801,5161,True,5161,True,3979,False,500
+Rogue,9,5,150,veteran,Super Energy Chance,global,27,percent,Super Energy Chance,3,2.15,1.0,26.629141266966652,27,True,27,True,21,False,3
+Veteran,9,5,150,rogue,Super Crit Damage,personal,9764,percent,Super Crit Damage,1100,2.15,1.0,9764.01846455444,9764,True,9764,True,7529,False,1100
+Rogue,10,5,150,"peacekeeper, apprentice",Super Gold Chance,personal,222,percent,Super Gold Chance,25,2.15,1.0,221.90951055805544,222,True,222,True,171,False,25
+Peacekeeper,10,5,150,"apprentice, rogue",Skill Power,global,36,flat,Skill Power,4,2.15,1.0,35.50552168928887,36,True,36,True,27,False,4
+Apprentice,10,5,150,"peacekeeper, rogue",Damage,global,1775,percent,Damage,200,2.15,1.0,1775.2760844644436,1775,True,1775,True,1369,False,200
+Rogue,11,6,250,captain,Kill Gold,personal,4438,percent,Kill Gold,500,2.15,1.0,4438.190211161109,4438,True,4438,True,3422,False,500
+Captain,11,6,250,rogue,Energy Income,global,44,flat,Energy Income,5,2.15,1.0,44.38190211161108,44,True,44,True,34,False,5
+Rogue,12,6,250,"templar, necromancer",Damage,personal,5326,percent,Damage,600,2.15,1.0,5325.828253393331,5326,True,5326,True,4107,False,600
+Templar,12,6,250,"necromancer, rogue",Ultra Gold Chance,global,27,percent,Ultra Gold Chance,3,2.15,1.0,26.629141266966652,27,True,27,True,21,False,3
+Necromancer,12,6,250,"templar, rogue",Energy Income,global,53,flat,Energy Income,6,2.15,1.0,53.258282533933304,53,True,53,True,41,False,6
+Rogue,13,7,500,elementalist,Super Gold Amount,global,6211,percent,Super Gold Amount,850,1.77,1.0,6211.402021108734,6211,True,6211,True,4790,False,850
+Elementalist,13,7,500,rogue,Super Gold Amount,global,6211,percent,Super Gold Amount,850,1.77,1.0,6211.402021108734,6211,True,6211,True,4790,False,850
+Rogue,14,7,500,"ninja, assassin",Skill Power,personal,146,flat,Skill Duration,20,1.77,1.0,146.15063579079373,146,True,146,True,113,False,20
+Ninja,14,7,500,"assassin, rogue",Super Gold Chance,global,102,percent,Super Gold Chance,14,1.77,1.0,102.3054450535556,102,True,102,True,79,False,14
+Assassin,14,7,500,"ninja, rogue",Ultra Boss Damage,global,11692,percent,Ultra Boss Damage,1600,1.77,1.0,11692.050863263497,11692,True,11692,True,9016,False,1600
+Rogue,15,8,1000,"paladin, scout, hunter",Boss Gold,global,3303,percent,Boss Gold,800,1,1.0,3302.839226910593,3303,True,3303,True,2547,False,800
+Paladin,15,8,1000,"scout, hunter, rogue",Ultra Gold Amount,global,12386,percent,Ultra Gold Amount,3000,1,1.0,12385.647100914723,12386,True,12386,True,9550,False,3000
+Scout,15,8,1000,"paladin, hunter, rogue",Ultra Gold Chance,global,29,percent,Ultra Gold Chance,7,1,1.0,28.89984323546769,29,True,29,True,22,False,7
+Hunter,15,8,1000,"paladin, scout, rogue",Skill Power,personal,124,flat,Skill Power,30,1,1.0,123.85647100914723,124,True,124,True,96,False,30
+Rogue,16,9,1500,"sovereign, hunter, crusader",Ultra Gold Amount,global,13418,percent,Ultra Gold Amount,3250,1,1.0,13417.784359324283,13418,True,13418,True,10346,False,3250
+Sovereign,16,9,1500,"hunter, rogue, crusader",Skill Power,personal,165,flat,Skill Power,40,1,1.0,165.14196134552964,165,True,165,True,127,False,40
+Hunter,16,9,1500,"sovereign, rogue, crusader",Ultra Gold Amount,global,13418,percent,Ultra Gold Amount,3250,1,1.0,13417.784359324283,13418,True,13418,True,10346,False,3250
+Crusader,16,9,1500,"sovereign, hunter, rogue",Attack Speed,personal,826,percent,Attack Speed,200,1,1.0,825.7098067276482,826,True,826,True,637,False,200
+Hunter,1,1,,scout,Kill Gold,global,258,percent,Kill Gold,10,6.25,1.0,258.03431460239005,258,True,258,True,199,False,10
+Scout,1,1,,hunter,Damage,personal,645,percent,Damage,25,6.25,1.0,645.0857865059751,645,True,645,True,497,False,25
+Hunter,2,1,,"apprentice, druid",Skill Cooldown,personal,-258,percent,Skill Cooldown,10,6.25,1.0,258.03431460239005,258,True,258,True,199,False,10
+Apprentice,2,1,,"druid, hunter",Skill Cooldown,global,-103,percent,Skill Cooldown,4,6.25,1.0,103.21372584095602,103,True,103,True,80,False,4
+Druid,2,1,,"apprentice, hunter",Skill Power,personal,77,flat,Skill Power,2,6.25,1.0,51.60686292047801,52,False,52,False,40,False,3
+Hunter,3,2,15,elementalist,Damage,personal,2580,percent,Damage,100,6.25,1.0,2580.3431460239003,2580,True,2580,True,1990,False,100
+Elementalist,3,2,15,hunter,Rank Exp,global,155,flat,Rank Exp,6,6.25,1.0,154.820588761434,155,True,155,True,119,False,6
+Hunter,4,2,15,"witch, necromancer",Kill Gold,global,1548,percent,Kill Gold,60,6.25,1.0,1548.2058876143403,1548,True,1548,True,1194,False,60
+Witch,4,2,15,"necromancer, hunter",Rank Exp,global,258,flat,Rank Exp,10,6.25,1.0,258.03431460239005,258,True,258,True,199,False,10
+Necromancer,4,2,15,"witch, hunter",Crit Chance,global,310,percent,Crit Chance,12,6.25,1.0,309.641177522868,310,True,310,True,239,False,12
+Hunter,5,3,50,viking,Skill Power,personal,83,flat,Attack Speed,80,2.5,1.0,825.709806727648,826,False,826,False,637,False,8
+Viking,5,3,50,hunter,Skill Power,global,10,flat,Skill Power,7,2.5,1.0,72.2496080886692,72,False,72,False,56,False,1
+Hunter,6,3,50,"samurai, necromancer",Crit Chance,personal,516,percent,Crit Chance,50,2.5,1.0,516.06862920478,516,True,516,True,398,False,50
+Samurai,6,3,50,"necromancer, hunter",Attack Speed,personal,1032,percent,Attack Speed,100,2.5,1.0,1032.13725840956,1032,True,1032,True,796,False,100
+Necromancer,6,3,50,"samurai, hunter",Crit Damage,global,1032,percent,Crit Damage,100,2.5,1.0,1032.13725840956,1032,True,1032,True,796,False,100
+Hunter,7,4,100,champion,Damage,global,1290,percent,Damage,125,2.5,1.0,1290.1715730119502,1290,True,1290,True,995,False,125
+Champion,7,4,100,hunter,Super Gold Chance,global,41,percent,Super Gold Chance,4,2.5,1.0,41.2854903363824,41,True,41,True,32,False,4
+Hunter,8,4,100,"arbalest, captain",Super Gold Chance,personal,155,percent,Super Gold Chance,15,2.5,1.0,154.820588761434,155,True,155,True,119,False,15
+Arbalest,8,4,100,"hunter, captain",Kill Gold,personal,3612,percent,Kill Gold,350,2.5,1.0,3612.48040443346,3612,True,3612,True,2786,False,350
+Captain,8,4,100,"hunter, arbalest",Kill Gold,global,1548,percent,Kill Gold,150,2.5,1.0,1548.20588761434,1548,True,1548,True,1194,False,150
+Hunter,9,5,150,skymage,Super Crit Chance,global,71,percent,Super Crit Chance,8,2.15,1.0,71.01104337857774,71,True,71,True,55,False,8
+Skymage,9,5,150,hunter,Damage,global,1553,percent,Damage,175,2.15,1.0,1553.366573906388,1553,True,1553,True,1198,False,175
+Hunter,10,5,150,"assassin, captain",Kill Gold,personal,3994,percent,Kill Gold,450,2.15,1.0,3994.371190044998,3994,True,3994,True,3080,False,450
+Assassin,10,5,150,"hunter, captain",Super Crit Damage,global,5548,percent,Super Crit Damage,625,2.15,1.0,5547.737763951386,5548,True,5548,True,4278,False,625
+Captain,10,5,150,"assassin, hunter",Super Crit Chance,global,89,percent,Super Crit Chance,10,2.15,1.0,88.76380422322217,89,True,89,True,68,False,10
+Hunter,11,6,250,crusader,Skill Power,global,44,flat,Energy Income,5,2.15,1.0,44.38190211161108,44,True,44,True,34,False,5
+Crusader,11,6,250,hunter,Skill Duration,personal,89,flat,Damage,250,2.15,1.0,2219.0951055805544,2219,False,2219,False,1711,False,10
+Hunter,12,6,250,"berserker, druid",Ultra Gold Amount,global,19972,percent,Ultra Gold Amount,2250,2.15,1.0,19971.85595022499,19972,True,19972,True,15400,False,2250
+Berserker,12,6,250,"druid, hunter",Ultra Energy Amount,global,311,percent,Ultra Energy Amount,35,2.15,1.0,310.6733147812776,311,True,311,True,240,False,35
+Druid,12,6,250,"berserker, hunter",Ultra Gold Chance,global,27,percent,Ultra Gold Chance,3,2.15,1.0,26.629141266966652,27,True,27,True,21,False,3
+Hunter,13,7,500,sniper,Skill Power,global,51,flat,Skill Power,7,1.77,1.0,51.1527225267778,51,True,51,True,39,False,7
+Sniper,13,7,500,hunter,Super Gold Amount,global,6211,percent,Super Gold Amount,850,1.77,1.0,6211.402021108734,6211,True,6211,True,4790,False,850
+Hunter,14,7,500,"praetorian, scout",Super Gold Amount,personal,14615,percent,Super Gold Amount,2000,1.77,1.0,14615.063579079371,14615,True,14615,True,11269,False,2000
+Praetorian,14,7,500,"scout, hunter",Skill Power,global,58,flat,Skill Power,8,1.77,1.0,58.46025431631749,58,True,58,True,45,False,8
+Scout,14,7,500,"praetorian, hunter",Super Gold Chance,global,102,percent,Super Gold Chance,14,1.77,1.0,102.3054450535556,102,True,102,True,79,False,14
+Hunter,15,8,1000,"paladin, scout, rogue",Skill Power,personal,124,flat,Skill Power,30,1,1.0,123.85647100914723,124,True,124,True,96,False,30
+Paladin,15,8,1000,"scout, hunter, rogue",Ultra Gold Amount,global,12386,percent,Ultra Gold Amount,3000,1,1.0,12385.647100914723,12386,True,12386,True,9550,False,3000
+Scout,15,8,1000,"paladin, hunter, rogue",Ultra Gold Chance,global,29,percent,Ultra Gold Chance,7,1,1.0,28.89984323546769,29,True,29,True,22,False,7
+Rogue,15,8,1000,"paladin, scout, hunter",Boss Gold,global,3303,percent,Boss Gold,800,1,1.0,3302.839226910593,3303,True,3303,True,2547,False,800
+Hunter,16,9,1500,"sovereign, rogue, crusader",Ultra Gold Amount,global,13418,percent,Ultra Gold Amount,3250,1,1.0,13417.784359324283,13418,True,13418,True,10346,False,3250
+Sovereign,16,9,1500,"hunter, rogue, crusader",Skill Power,personal,165,flat,Skill Power,40,1,1.0,165.14196134552964,165,True,165,True,127,False,40
+Rogue,16,9,1500,"sovereign, hunter, crusader",Ultra Gold Amount,global,13418,percent,Ultra Gold Amount,3250,1,1.0,13417.784359324283,13418,True,13418,True,10346,False,3250
+Crusader,16,9,1500,"sovereign, hunter, rogue",Attack Speed,personal,826,percent,Attack Speed,200,1,1.0,825.7098067276482,826,True,826,True,637,False,200
+Apprentice,1,1,,militia,Attack Speed,global,70,percent,Attack Speed,3,6.25,1.0,70.37299489156092,70,True,70,True,57,False,3
+Militia,1,1,,apprentice,Damage,global,235,percent,Damage,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Apprentice,2,1,,"druid, hunter",Skill Cooldown,global,-94,percent,Skill Cooldown,4,6.25,1.0,93.83065985541455,94,True,94,True,76,False,4
+Druid,2,1,,"apprentice, hunter",Skill Power,personal,70,flat,Skill Power,2,6.25,1.0,46.915329927707276,47,False,47,False,38,False,3
+Hunter,2,1,,"apprentice, druid",Skill Cooldown,personal,-235,percent,Skill Cooldown,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Apprentice,3,2,15,skymage,Crit Damage,global,938,percent,Crit Damage,40,6.25,1.0,938.3065985541455,938,True,938,True,756,False,40
+Skymage,3,2,15,apprentice,Kill Gold,global,938,percent,Kill Gold,100,6.25,1.0,2345.766496385364,2346,False,2346,False,1890,False,40
+Apprentice,4,2,15,"elementalist, sniper",Damage,global,1407,percent,Damage,150,6.25,1.0,3518.6497445780456,3519,False,3519,False,2835,False,60
+Elementalist,4,2,15,"apprentice, sniper",Skill Duration,personal,141,flat,Skill Duration,6,6.25,1.0,140.74598978312184,141,True,141,True,113,False,6
+Sniper,4,2,15,"apprentice, elementalist",Attack Speed,global,352,percent,Attack Speed,15,6.25,1.0,351.8649744578046,352,True,352,True,284,False,15
+Apprentice,5,3,50,berserker,Kill Gold,personal,1877,percent,Kill Gold,200,2.5,1.0,1876.613197108291,1877,True,1877,True,1512,False,200
+Berserker,5,3,50,apprentice,Attack Speed,global,206,percent,Attack Speed,22,2.5,1.0,206.427451681912,206,True,206,True,166,False,22
+Apprentice,6,3,50,"assassin, spelldancer",Crit Chance,global,188,percent,Crit Chance,50,2.5,1.0,469.15329927707273,469,False,469,False,378,False,20
+Assassin,6,3,50,"apprentice, spelldancer",Kill Gold,personal,2346,percent,Kill Gold,250,2.5,1.0,2345.7664963853636,2346,True,2346,True,1890,False,250
+Spelldancer,6,3,50,"assassin, apprentice",Skill Power,personal,113,flat,Skill Power,10,2.5,1.0,93.83065985541455,94,False,94,False,76,False,12
+Apprentice,7,4,100,titan,Super Exp Chance,global,19,percent,Super Exp Chance,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Titan,7,4,100,apprentice,Super Crit Damage,personal,7976,percent,Super Crit Damage,850,2.5,1.0,7975.606087710236,7976,True,7976,True,6427,False,850
+Apprentice,8,4,100,"gladiator, archer",Super Energy Amount,global,38,percent,Super Energy,4,2.5,1.0,37.53226394216582,38,True,38,True,30,False,4
+Gladiator,8,4,100,"apprentice, archer",Damage,global,1407,percent,Damage,150,2.5,1.0,1407.4598978312183,1407,True,1407,True,1134,False,150
+Archer,8,4,100,"gladiator, apprentice",Kill Gold,personal,3284,percent,Kill Gold,350,2.5,1.0,3284.0730949395092,3284,True,3284,True,2646,False,350
+Apprentice,9,5,150,necromancer,Super Gold Amount,personal,8876,percent,Super Gold Amount,1100,2.15,1.0,8876.380422322216,8876,True,8876,True,7152,False,1100
+Necromancer,9,5,150,apprentice,Kill Gold,personal,3228,percent,Kill Gold,400,2.15,1.0,3227.774699026261,3228,True,3228,True,2601,False,400
+Apprentice,10,5,150,"peacekeeper, rogue",Damage,global,1614,percent,Damage,200,2.15,1.0,1613.8873495131304,1614,True,1614,True,1300,False,200
+Peacekeeper,10,5,150,"apprentice, rogue",Skill Power,global,32,flat,Skill Power,4,2.15,1.0,32.27774699026261,32,True,32,True,26,False,4
+Rogue,10,5,150,"peacekeeper, apprentice",Super Gold Chance,personal,202,percent,Super Gold Chance,25,2.15,1.0,201.7359186891413,202,True,202,True,163,False,25
+Apprentice,11,6,250,ninja,Skill Power,global,40,flat,Skill Power,5,2.15,1.0,40.34718373782826,40,True,40,True,33,False,5
+Ninja,11,6,250,apprentice,Ultra Gold Chance,global,16,percent,Ultra Gold Chance,2,2.15,1.0,16.138873495131303,16,True,16,True,13,False,2
+Apprentice,12,6,250,"praetorian, sniper",Kill Gold,global,2219,percent,Kill Gold,275,2.15,1.0,2219.095105580554,2219,True,2219,True,1788,False,275
+Praetorian,12,6,250,"apprentice, sniper",Ultra Crit Damage,global,18156,percent,Ultra Crit Damage,2250,2.15,1.0,18156.232682022717,18156,True,18156,True,14630,False,2250
+Sniper,12,6,250,"praetorian, apprentice",Ultra Crit Damage,personal,34295,percent,Ultra Gold Amount,4250,2.15,1.0,34295.10617715402,34295,True,34295,True,27634,False,4250
+Apprentice,13,7,500,dicemaster,Skill Power,personal,100,flat,Skill Power,15,1.77,1.0,99.64816076645026,100,True,100,True,80,False,15
+Dicemaster,13,7,500,apprentice,Damage,personal,4650,percent,Damage,700,1.77,1.0,4650.247502434346,4650,True,4650,True,3747,False,700
+Apprentice,14,7,500,"champion, deadeye",Damage,global,2325,percent,Damage,350,1.77,1.0,2325.123751217173,2325,True,2325,True,1874,False,350
+Champion,14,7,500,"apprentice, deadeye",Skill Power,global,53,flat,Skill Power,8,1.77,1.0,53.14568574210681,53,True,53,True,43,False,8
+Deadeye,14,7,500,"champion, apprentice",Super Crit Damage,personal,13286,percent,Super Crit Damage,2000,1.77,1.0,13286.421435526701,13286,True,13286,True,10706,False,2000
+Apprentice,15,8,1000,"peacekeeper, warlord, arbalest",Super Crit Damage,global,3753,percent,Super Crit Damage,1000,1,1.0,3753.2263942165823,3753,True,3753,True,3024,False,1000
+Peacekeeper,15,8,1000,"warlord, apprentice, arbalest",Damage,personal,3753,percent,Damage,1000,1,1.0,3753.2263942165823,3753,True,3753,True,3024,False,1000
+Warlord,15,8,1000,"peacekeeper, apprentice, arbalest",Energy Income,global,38,flat,Energy Income,10,1,1.0,37.53226394216582,38,True,38,True,30,False,10
+Arbalest,15,8,1000,"peacekeeper, warlord, apprentice",Ultra Energy Amount,global,244,percent,Ultra Energy Amount,65,1,1.0,243.95971562407783,244,True,244,True,197,False,65
+Apprentice,16,9,1500,"witch, skymage, dicemaster",Skill Power,global,56,flat,Skill Power,15,1,1.0,56.29839591324873,56,True,56,True,45,False,15
+Witch,16,9,1500,"apprentice, skymage, dicemaster",Ultra Crit Damage,global,12198,percent,Ultra Crit Damage,3250,1,1.0,12197.985781203892,12198,True,12198,True,9829,False,3250
+Skymage,16,9,1500,"apprentice, witch, dicemaster",Attack Speed,global,281,percent,Attack Speed,75,1,1.0,281.4919795662437,281,True,281,True,227,False,75
+Dicemaster,16,9,1500,"apprentice, witch, skymage",Ultra Crit Damage,personal,24396,percent,Ultra Crit Damage,6500,1,1.0,24395.971562407783,24396,True,24396,True,19658,False,6500
+Scout,1,1,,hunter,Damage,personal,586,percent,Damage,25,6.25,1.0,586.441624096341,586,True,586,True,473,False,25
+Hunter,1,1,,scout,Kill Gold,global,235,percent,Kill Gold,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Scout,2,1,,"militia, viking",Crit Chance,global,94,percent,Crit Chance,4,6.25,1.0,93.83065985541455,94,True,94,True,76,False,4
+Militia,2,1,,"viking, scout",Skill Cooldown,personal,-235,percent,Skill Cooldown,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Viking,2,1,,"militia, scout",Rank Exp,global,70,flat,Rank Exp,3,6.25,1.0,70.37299489156092,70,True,70,True,57,False,3
+Scout,3,2,15,paladin,Kill Gold,personal,2346,percent,Kill Gold,100,6.25,1.0,2345.766496385364,2346,True,2346,True,1890,False,100
+Paladin,3,2,15,scout,Attack Speed,global,235,percent,Attack Speed,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Scout,4,2,15,"ninja, berserker",Attack Speed,personal,1407,percent,Attack Speed,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Ninja,4,2,15,"berserker, scout",Skill Duration,personal,141,flat,Skill Duration,6,6.25,1.0,140.74598978312184,141,True,141,True,113,False,6
+Berserker,4,2,15,"ninja, scout",Skill Power,personal,141,flat,Skill Power,5,6.25,1.0,117.28832481926818,117,False,117,False,95,False,6
+Scout,5,3,50,ballista,Crit Damage,global,751,percent,Crit Damage,80,2.5,1.0,750.6452788433164,751,True,751,True,605,False,80
+Ballista,5,3,50,scout,Skill Power,personal,75,flat,Skill Power,7,2.5,1.0,65.68146189879019,66,False,66,False,53,False,8
+Scout,6,3,50,"druid, templar",Skill Cooldown,personal,-281,percent,Skill Cooldown,30,2.5,1.0,281.49197956624363,281,True,281,True,227,False,30
+Druid,6,3,50,"templar, scout",Kill Gold,personal,2346,percent,Kill Gold,250,2.5,1.0,2345.7664963853636,2346,True,2346,True,1890,False,250
+Templar,6,3,50,"druid, scout",Attack Speed,personal,938,percent,Attack Speed,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Scout,7,4,100,warlord,Super Gold Amount,global,4222,percent,Super Gold Amount,450,2.5,1.0,4222.3796934936545,4222,True,4222,True,3402,False,450
+Warlord,7,4,100,scout,Damage,personal,2815,percent,Damage,300,2.5,1.0,2814.9197956624366,2815,True,2815,True,2268,False,300
+Scout,8,4,100,"samurai, warden",Damage,global,1407,percent,Damage,150,2.5,1.0,1407.4598978312183,1407,True,1407,True,1134,False,150
+Samurai,8,4,100,"scout, warden",Super Crit Damage,personal,8914,percent,Super Crit Damage,950,2.5,1.0,8913.912686264383,8914,True,8914,True,7183,False,950
+Warden,8,4,100,"samurai, scout",Skill Power,global,15,flat,Skill Power,2,2.5,0.8,15.012905576866327,15,True,15,True,12,False,2
+Scout,9,5,150,sorcerer,Energy Income,global,24,flat,Energy Income,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Sorcerer,9,5,150,scout,Skill Power,global,24,flat,Skill Power,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Scout,10,5,150,"spelldancer, ballista",Super Crit Chance,personal,202,percent,Super Crit Chance,25,2.15,1.0,201.7359186891413,202,True,202,True,163,False,25
+Spelldancer,10,5,150,"scout, ballista",Super Energy Chance,global,32,percent,Super Energy Chance,4,2.15,1.0,32.27774699026261,32,True,32,True,26,False,4
+Ballista,10,5,150,"spelldancer, scout",Skill Power,global,32,flat,Skill Power,4,2.15,1.0,32.27774699026261,32,True,32,True,26,False,4
+Scout,11,6,250,peacekeeper,Kill Gold,global,2017,percent,Kill Gold,250,2.15,1.0,2017.359186891413,2017,True,2017,True,1626,False,250
+Peacekeeper,11,6,250,scout,Ultra Crit Damage,global,16139,percent,Ultra Crit Damage,2000,2.15,1.0,16138.873495131304,16139,True,16139,True,13004,False,2000
+Scout,12,6,250,"elementalist, dicemaster",Ultra Exp Amount,global,484,percent,Ultra Exp Amount,60,2.15,1.0,484.1662048539391,484,True,484,True,390,False,60
+Elementalist,12,6,250,"dicemaster, scout",Skill Power,global,48,flat,Skill Power,6,2.15,1.0,48.416620485393906,48,True,48,True,39,False,6
+Dicemaster,12,6,250,"elementalist, scout",Ultra Crit Chance,global,24,percent,Ultra Crit Chance,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Scout,13,7,500,champion,Super Gold Amount,global,5647,percent,Super Gold Amount,850,1.77,1.0,5646.729110098848,5647,True,5647,True,4550,False,850
+Champion,13,7,500,scout,Super Exp Amount,global,133,percent,Super Exp Amount,20,1.77,1.0,132.86421435526702,133,True,133,True,107,False,20
+Scout,14,7,500,"praetorian, hunter",Super Gold Chance,global,93,percent,Super Gold Chance,14,1.77,1.0,93.00495004868691,93,True,93,True,75,False,14
+Praetorian,14,7,500,"scout, hunter",Skill Power,global,53,flat,Skill Power,8,1.77,1.0,53.14568574210681,53,True,53,True,43,False,8
+Hunter,14,7,500,"praetorian, scout",Super Gold Amount,personal,13286,percent,Super Gold Amount,2000,1.77,1.0,13286.421435526701,13286,True,13286,True,10706,False,2000
+Scout,15,8,1000,"paladin, hunter, rogue",Ultra Gold Chance,global,26,percent,Ultra Gold Chance,7,1,1.0,26.272584759516075,26,True,26,True,21,False,7
+Paladin,15,8,1000,"scout, hunter, rogue",Ultra Gold Amount,global,11260,percent,Ultra Gold Amount,3000,1,1.0,11259.679182649747,11260,True,11260,True,9073,False,3000
+Hunter,15,8,1000,"paladin, scout, rogue",Skill Power,personal,113,flat,Skill Power,30,1,1.0,112.59679182649747,113,True,113,True,91,False,30
+Rogue,15,8,1000,"paladin, scout, hunter",Boss Gold,global,3003,percent,Boss Gold,800,1,1.0,3002.5811153732657,3003,True,3003,True,2419,False,800
+Scout,16,9,1500,"templar, templar, sniper",Battle Pass Exp,global,4,flat,Bp Exp,1,1,1.0,3.753226394216582,4,True,4,True,3,False,1
+Templar,16,9,1500,"templar, scout, sniper",Energy Income,global,56,flat,Energy Income,15,1,1.0,56.29839591324873,56,True,56,True,45,False,15
+Templar,16,9,1500,"templar, scout, sniper",Energy Income,global,56,flat,Energy Income,15,1,1.0,56.29839591324873,56,True,56,True,45,False,15
+Sniper,16,9,1500,"templar, templar, scout",Ultra Crit Damage,global,12198,percent,Ultra Crit Damage,3250,1,1.0,12197.985781203892,12198,True,12198,True,9829,False,3250
+Viking,1,1,,druid,Attack Speed,personal,235,percent,Attack Speed,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Druid,1,1,,viking,Skill Duration,personal,47,flat,Skill Duration,1,6.25,1.0,23.457664963853638,23,False,23,False,19,False,2
+Viking,2,1,,"militia, scout",Rank Exp,global,70,flat,Rank Exp,3,6.25,1.0,70.37299489156092,70,True,70,True,57,False,3
+Militia,2,1,,"viking, scout",Skill Cooldown,personal,-235,percent,Skill Cooldown,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Scout,2,1,,"militia, viking",Crit Chance,global,94,percent,Crit Chance,4,6.25,1.0,93.83065985541455,94,True,94,True,76,False,4
+Viking,3,2,15,spelldancer,Crit Damage,personal,2346,percent,Crit Damage,100,6.25,1.0,2345.766496385364,2346,True,2346,True,1890,False,100
+Spelldancer,3,2,15,viking,Crit Damage,global,938,percent,Crit Damage,100,6.25,1.0,2345.766496385364,2346,False,2346,False,1890,False,40
+Viking,4,2,15,"assassin, arbalest",Skill Cooldown,global,-164,percent,Skill Cooldown,7,6.25,1.0,164.20365474697547,164,True,164,True,132,False,7
+Assassin,4,2,15,"viking, arbalest",Crit Damage,personal,3519,percent,Crit Damage,150,6.25,1.0,3518.6497445780456,3519,True,3519,True,2835,False,150
+Arbalest,4,2,15,"viking, assassin",Energy Income,global,23,flat,Crit Damage,150,6.25,1.0,3518.6497445780456,3519,False,3519,False,2835,False,1
+Viking,5,3,50,hunter,Skill Power,global,9,flat,Skill Power,7,2.5,1.0,65.68146189879019,66,False,66,False,53,False,1
+Hunter,5,3,50,viking,Skill Power,personal,75,flat,Attack Speed,80,2.5,1.0,750.6452788433164,751,False,751,False,605,False,8
+Viking,6,3,50,"sorcerer, dicemaster",Damage,personal,2346,percent,Damage,250,2.5,1.0,2345.7664963853636,2346,True,2346,True,1890,False,250
+Sorcerer,6,3,50,"viking, dicemaster",Crit Damage,personal,2346,percent,Crit Damage,250,2.5,1.0,2345.7664963853636,2346,True,2346,True,1890,False,250
+Dicemaster,6,3,50,"viking, sorcerer",Kill Gold,global,938,percent,Kill Gold,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Viking,7,4,100,gladiator,Super Crit Damage,personal,7976,percent,Super Crit Damage,850,2.5,1.0,7975.606087710236,7976,True,7976,True,6427,False,850
+Gladiator,7,4,100,viking,Kill Gold,global,1173,percent,Kill Gold,125,2.5,1.0,1172.8832481926818,1173,True,1173,True,945,False,125
+Viking,8,4,100,"titan, necromancer",Kill Gold,global,1407,percent,Kill Gold,150,2.5,1.0,1407.4598978312183,1407,True,1407,True,1134,False,150
+Titan,8,4,100,"viking, necromancer",Kill Gold,global,1407,percent,Kill Gold,150,2.5,1.0,1407.4598978312183,1407,True,1407,True,1134,False,150
+Necromancer,8,4,100,"viking, titan",Damage,global,1407,percent,Damage,175,2.5,1.0,1642.0365474697546,1642,False,1642,False,1323,False,150
+Viking,9,5,150,deadeye,Super Crit Chance,global,65,percent,Super Crit Chance,8,2.15,1.0,64.55549398052521,65,True,65,True,52,False,8
+Deadeye,9,5,150,viking,Damage,global,1412,percent,Damage,175,2.15,1.0,1412.1514308239891,1412,True,1412,True,1138,False,175
+Viking,10,5,150,"samurai, elementalist",Super Gold Amount,personal,10087,percent,Super Gold Amount,1250,2.15,1.0,10086.795934457065,10087,True,10087,True,8128,False,1250
+Samurai,10,5,150,"viking, elementalist",Damage,personal,3631,percent,Damage,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Elementalist,10,5,150,"viking, samurai",Damage,global,1614,percent,Damage,200,2.15,1.0,1613.8873495131304,1614,True,1614,True,1300,False,200
+Viking,11,6,250,chieftain,Damage,global,2017,percent,Damage,250,2.15,1.0,2017.359186891413,2017,True,2017,True,1626,False,250
+Chieftain,11,6,250,viking,Skill Power,global,40,flat,Skill Power,5,2.15,1.0,40.34718373782826,40,True,40,True,33,False,5
+Viking,12,6,250,"ranger, crusader",Skill Power,global,48,flat,Skill Power,6,2.15,1.0,48.416620485393906,48,True,48,True,39,False,6
+Ranger,12,6,250,"viking, crusader",Damage,global,2219,percent,Damage,275,2.15,1.0,2219.095105580554,2219,True,2219,True,1788,False,275
+Crusader,12,6,250,"viking, ranger",Skill Power,global,48,flat,Skill Power,6,2.15,1.0,48.416620485393906,48,True,48,True,39,False,6
+Viking,13,7,500,warlord,Ultra Boss Damage,global,9300,percent,Ultra Boss Damage,1400,1.77,1.0,9300.495004868691,9300,True,9300,True,7494,False,1400
+Warlord,13,7,500,viking,Damage,global,1993,percent,Damage,300,1.77,1.0,1992.9632153290052,1993,True,1993,True,1606,False,300
+Viking,14,7,500,"forester, veteran",Skill Power,global,53,flat,Skill Power,8,1.77,1.0,53.14568574210681,53,True,53,True,43,False,8
+Forester,14,7,500,"viking, veteran",Damage,global,2325,percent,Damage,350,1.77,1.0,2325.123751217173,2325,True,2325,True,1874,False,350
+Veteran,14,7,500,"viking, forester",Super Exp Amount,global,166,percent,Super Exp Amount,25,1.77,1.0,166.08026794408377,166,True,166,True,134,False,25
+Viking,15,8,1000,"wizard, necromancer, ballista",Boss Exp,global,150,percent,Boss Exp,40,1,1.0,150.12905576866328,150,True,150,True,121,False,40
+Wizard,15,8,1000,"viking, necromancer, ballista",Ultra Exp Amount,global,394,percent,Ultra Exp Amount,105,1,1.0,394.08877139274114,394,True,394,True,318,False,105
+Necromancer,15,8,1000,"viking, wizard, ballista",Boss Damage,global,3003,percent,Boss Damage,800,1,1.0,3002.5811153732657,3003,True,3003,True,2419,False,800
+Ballista,15,8,1000,"viking, wizard, necromancer",Skill Power,personal,113,flat,Skill Power,30,1,1.0,112.59679182649747,113,True,113,True,91,False,30
+Viking,16,9,1500,"archer, ballista, veteran",Skill Power,global,56,flat,Skill Power,15,1,1.0,56.29839591324873,56,True,56,True,45,False,15
+Archer,16,9,1500,"viking, ballista, veteran",Skill Power,personal,150,flat,Skill Power,40,1,1.0,150.12905576866328,150,True,150,True,121,False,40
+Ballista,16,9,1500,"viking, archer, veteran",Ultra Exp Chance,global,38,percent,Ultra Exp Chance,10,1,1.0,37.53226394216582,38,True,38,True,30,False,10
+Veteran,16,9,1500,"viking, archer, ballista",Ultra Exp Amount,global,469,percent,Ultra Exp Amount,125,1,1.0,469.1532992770728,469,True,469,True,378,False,125
+Druid,1,1,,viking,Skill Duration,personal,47,flat,Skill Duration,1,6.25,1.0,23.457664963853638,23,False,23,False,19,False,2
+Viking,1,1,,druid,Attack Speed,personal,235,percent,Attack Speed,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Druid,2,1,,"apprentice, hunter",Skill Power,personal,70,flat,Skill Power,2,6.25,1.0,46.915329927707276,47,False,47,False,38,False,3
+Apprentice,2,1,,"druid, hunter",Skill Cooldown,global,-94,percent,Skill Cooldown,4,6.25,1.0,93.83065985541455,94,True,94,True,76,False,4
+Hunter,2,1,,"apprentice, druid",Skill Cooldown,personal,-235,percent,Skill Cooldown,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Druid,3,2,15,arbalest,Damage,global,938,percent,Damage,40,6.25,1.0,938.3065985541455,938,True,938,True,756,False,40
+Arbalest,3,2,15,druid,Damage,global,938,percent,Damage,40,6.25,1.0,938.3065985541455,938,True,938,True,756,False,40
+Druid,4,2,15,"militia, battlemage",Crit Chance,global,281,percent,Crit Chance,12,6.25,1.0,281.4919795662437,281,True,281,True,227,False,12
+Militia,4,2,15,"druid, battlemage",Damage,global,1407,percent,Damage,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Battlemage,4,2,15,"militia, druid",Crit Damage,global,1407,percent,Crit Damage,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Druid,5,3,50,skymage,Crit Damage,personal,1877,percent,Crit Damage,200,2.5,1.0,1876.613197108291,1877,True,1877,True,1512,False,200
+Skymage,5,3,50,druid,Crit Chance,personal,328,percent,Crit Chance,35,2.5,1.0,328.40730949395095,328,True,328,True,265,False,35
+Druid,6,3,50,"templar, scout",Kill Gold,personal,2346,percent,Kill Gold,250,2.5,1.0,2345.7664963853636,2346,True,2346,True,1890,False,250
+Templar,6,3,50,"druid, scout",Attack Speed,personal,938,percent,Attack Speed,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Scout,6,3,50,"druid, templar",Skill Cooldown,personal,-281,percent,Skill Cooldown,30,2.5,1.0,281.49197956624363,281,True,281,True,227,False,30
+Druid,7,4,100,chieftain,Damage,personal,2815,percent,Damage,300,2.5,1.0,2814.9197956624366,2815,True,2815,True,2268,False,300
+Chieftain,7,4,100,druid,Super Energy Amount,global,19,percent,Super Energy,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Druid,8,4,100,"dicemaster, rogue",Super Crit Chance,global,56,percent,Super Crit Chance,6,2.5,1.0,56.298395913248726,56,True,56,True,45,False,6
+Dicemaster,8,4,100,"druid, rogue",Super Crit Damage,global,4692,percent,Super Crit Damage,500,2.5,1.0,4691.532992770727,4692,True,4692,True,3780,False,500
+Rogue,8,4,100,"druid, dicemaster",Super Exp Amount,global,66,percent,Super Exp Amount,7,2.5,1.0,65.68146189879019,66,True,66,True,53,False,7
+Druid,9,5,150,captain,Kill Gold,personal,3228,percent,Kill Gold,400,2.15,1.0,3227.774699026261,3228,True,3228,True,2601,False,400
+Captain,9,5,150,druid,Super Exp Amount,global,81,percent,Super Exp Amount,10,2.15,1.0,80.69436747565652,81,True,81,True,65,False,10
+Druid,10,5,150,"paladin, warlord",Energy Income,global,32,flat,Energy Income,4,2.15,1.0,32.27774699026261,32,True,32,True,26,False,4
+Paladin,10,5,150,"warlord, druid",Kill Gold,personal,3631,percent,Kill Gold,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Warlord,10,5,150,"paladin, druid",Kill Gold,global,1614,percent,Kill Gold,200,2.15,1.0,1613.8873495131304,1614,True,1614,True,1300,False,200
+Druid,11,6,250,witch,Ultra Crit Damage,global,16139,percent,Ultra Crit Damage,2000,2.15,1.0,16138.873495131304,16139,True,16139,True,13004,False,2000
+Witch,11,6,250,druid,Ultra Energy Amount,global,202,percent,Ultra Energy Amount,25,2.15,1.0,201.7359186891413,202,True,202,True,163,False,25
+Druid,12,6,250,"berserker, hunter",Ultra Gold Chance,global,24,percent,Ultra Gold Chance,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Berserker,12,6,250,"druid, hunter",Ultra Energy Amount,global,282,percent,Ultra Energy Amount,35,2.15,1.0,282.4302861647978,282,True,282,True,228,False,35
+Hunter,12,6,250,"berserker, druid",Ultra Gold Amount,global,18156,percent,Ultra Gold Amount,2250,2.15,1.0,18156.232682022717,18156,True,18156,True,14630,False,2250
+Druid,13,7,500,spelldancer,Damage,global,1993,percent,Damage,300,1.77,1.0,1992.9632153290052,1993,True,1993,True,1606,False,300
+Spelldancer,13,7,500,druid,Super Crit Damage,global,5647,percent,Super Crit Damage,850,1.77,1.0,5646.729110098848,5647,True,5647,True,4550,False,850
+Druid,14,7,500,"samurai, captain",Energy Income,global,53,flat,Energy Income,8,1.77,1.0,53.14568574210681,53,True,53,True,43,False,8
+Samurai,14,7,500,"druid, captain",Skill Power,global,53,flat,Skill Power,8,1.77,1.0,53.14568574210681,53,True,53,True,43,False,8
+Captain,14,7,500,"samurai, druid",Super Energy Chance,global,40,percent,Super Energy Chance,6,1.77,1.0,39.8592643065801,40,True,40,True,32,False,6
+Druid,15,8,1000,"chieftain, warlock, archer",Ultra Exp Amount,global,394,percent,Ultra Exp Amount,105,1,1.0,394.08877139274114,394,True,394,True,318,False,105
+Chieftain,15,8,1000,"druid, warlock, archer",Damage,global,1501,percent,Damage,400,1,1.0,1501.2905576866328,1501,True,1501,True,1210,False,400
+Warlock,15,8,1000,"chieftain, druid, archer",Skill Power,personal,113,flat,Skill Power,30,1,1.0,112.59679182649747,113,True,113,True,91,False,30
+Archer,15,8,1000,"chieftain, druid, warlock",Ultra Exp Chance,global,26,percent,Ultra Exp Chance,7,1,1.0,26.272584759516075,26,True,26,True,21,False,7
+Druid,16,9,1500,"chieftain, elementalist, ranger",Ultra Energy Chance,global,30,percent,Ultra Energe Chance,8,1,1.0,30.025811153732658,30,True,30,True,24,False,8
+Chieftain,16,9,1500,"druid, elementalist, ranger",Skill Cooldown,global,-75,percent,Skill Cooldown,20,1,1.0,75.06452788433164,75,True,75,True,60,False,20
+Elementalist,16,9,1500,"chieftain, druid, ranger",Ultra Energy Chance,global,30,percent,Ultra Energy Chance,8,1,1.0,30.025811153732658,30,True,30,True,24,False,8
+Ranger,16,9,1500,"chieftain, druid, elementalist",Attack Speed,global,281,percent,Attack Speed,75,1,1.0,281.4919795662437,281,True,281,True,227,False,75
+Sorcerer,1,1,,archer,Kill Gold,personal,586,percent,Kill Gold,25,6.25,1.0,586.441624096341,586,True,586,True,473,False,25
+Archer,1,1,,sorcerer,Kill Gold,global,235,percent,Kill Gold,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Sorcerer,2,1,,"ninja, witch",Crit Chance,global,94,percent,Crit Chance,10,6.25,1.0,234.57664963853637,235,False,235,False,189,False,4
+Ninja,2,1,,"sorcerer, witch",Crit Damage,personal,1173,percent,Crit Damage,50,6.25,1.0,1172.883248192682,1173,True,1173,True,945,False,50
+Witch,2,1,,"ninja, sorcerer",Crit Damage,global,469,percent,Crit Damage,50,6.25,1.0,1172.883248192682,1173,False,1173,False,945,False,20
+Sorcerer,3,2,15,champion,Damage,global,938,percent,Damage,100,6.25,1.0,2345.766496385364,2346,False,2346,False,1890,False,40
+Champion,3,2,15,sorcerer,Damage,global,938,percent,Damage,40,6.25,1.0,938.3065985541455,938,True,938,True,756,False,40
+Sorcerer,4,2,15,"paladin, crusader",Skill Cooldown,personal,-469,percent,Skill Cooldown,20,6.25,1.0,469.15329927707273,469,True,469,True,378,False,20
+Paladin,4,2,15,"sorcerer, crusader",Rank Exp,global,235,flat,Rank Exp,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Crusader,4,2,15,"paladin, sorcerer",Damage,personal,3519,percent,Damage,150,6.25,1.0,3518.6497445780456,3519,True,3519,True,2835,False,150
+Sorcerer,5,3,50,necromancer,Attack Speed,personal,751,percent,Attack Speed,80,2.5,1.0,750.6452788433164,751,True,751,True,605,False,80
+Necromancer,5,3,50,sorcerer,Kill Gold,personal,1877,percent,Kill Gold,200,2.5,1.0,1876.613197108291,1877,True,1877,True,1512,False,200
+Sorcerer,6,3,50,"viking, dicemaster",Crit Damage,personal,2346,percent,Crit Damage,250,2.5,1.0,2345.7664963853636,2346,True,2346,True,1890,False,250
+Viking,6,3,50,"sorcerer, dicemaster",Damage,personal,2346,percent,Damage,250,2.5,1.0,2345.7664963853636,2346,True,2346,True,1890,False,250
+Dicemaster,6,3,50,"viking, sorcerer",Kill Gold,global,938,percent,Kill Gold,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Sorcerer,7,4,100,elementalist,Kill Gold,global,1173,percent,Kill Gold,125,2.5,1.0,1172.8832481926818,1173,True,1173,True,945,False,125
+Elementalist,7,4,100,sorcerer,Super Energy Amount,global,19,percent,Super Energy,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Sorcerer,8,4,100,"assassin, berserker",Super Energy Chance,global,19,percent,Super Energy Chance,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Assassin,8,4,100,"berserker, sorcerer",Energy Income,global,19,flat,Energy Income,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Berserker,8,4,100,"assassin, sorcerer",Skill Power,global,19,flat,Skill Power,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Sorcerer,9,5,150,scout,Skill Power,global,24,flat,Skill Power,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Scout,9,5,150,sorcerer,Energy Income,global,24,flat,Energy Income,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Sorcerer,10,5,150,"praetorian, crusader",Super Gold Chance,personal,202,percent,Super Gold Chance,25,2.15,1.0,201.7359186891413,202,True,202,True,163,False,25
+Praetorian,10,5,150,"sorcerer, crusader",Damage,global,1614,percent,Damage,200,2.15,1.0,1613.8873495131304,1614,True,1614,True,1300,False,200
+Crusader,10,5,150,"praetorian, sorcerer",Kill Gold,personal,3631,percent,Kill Gold,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Sorcerer,11,6,250,templar,Damage,global,2017,percent,Damage,250,2.15,1.0,2017.359186891413,2017,True,2017,True,1626,False,250
+Templar,11,6,250,sorcerer,Kill Gold,global,2017,percent,Kill Gold,250,2.15,1.0,2017.359186891413,2017,True,2017,True,1626,False,250
+Sorcerer,12,6,250,"skymage, ballista",Ultra Exp Chance,global,24,percent,Ultra Exp Chance,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Skymage,12,6,250,"sorcerer, ballista",Kill Gold,global,2219,percent,Kill Gold,275,2.15,1.0,2219.095105580554,2219,True,2219,True,1788,False,275
+Ballista,12,6,250,"sorcerer, skymage",Ultra Gold Chance,global,24,percent,Ultra Gold Chance,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Sorcerer,13,7,500,paladin,Super Gold Chance,global,80,percent,Super Gold Chance,12,1.77,1.0,79.7185286131602,80,True,80,True,64,False,12
+Paladin,13,7,500,sorcerer,Super Gold Amount,global,5647,percent,Super Gold Amount,850,1.77,1.0,5646.729110098848,5647,True,5647,True,4550,False,850
+Sorcerer,14,7,500,"wizard, skymage",Damage,global,2325,percent,Damage,350,1.77,1.0,2325.123751217173,2325,True,2325,True,1874,False,350
+Wizard,14,7,500,"sorcerer, skymage",Damage,global,2325,percent,Damage,350,1.77,1.0,2325.123751217173,2325,True,2325,True,1874,False,350
+Skymage,14,7,500,"sorcerer, wizard",Damage,global,2325,percent,Damage,350,1.77,1.0,2325.123751217173,2325,True,2325,True,1874,False,350
+Sorcerer,15,8,1000,"militia, gladiator, captain",Ultra Crit Damage,global,11260,percent,Ultra Crit Dmage,3000,1,1.0,11259.679182649747,11260,True,11260,True,9073,False,3000
+Militia,15,8,1000,"gladiator, sorcerer, captain",Energy Income,global,38,flat,Energy Income,10,1,1.0,37.53226394216582,38,True,38,True,30,False,10
+Gladiator,15,8,1000,"militia, sorcerer, captain",Ultra Energy Chance,global,26,percent,Ultra Energy Chance,7,1,1.0,26.272584759516075,26,True,26,True,21,False,7
+Captain,15,8,1000,"militia, gladiator, sorcerer",Skill Power,personal,113,flat,Skill Power,30,1,1.0,112.59679182649747,113,True,113,True,91,False,30
+Sorcerer,16,9,1500,"necromancer, forester, deadeye",Skill Power,global,56,flat,Skill Power,15,1,1.0,56.29839591324873,56,True,56,True,45,False,15
+Necromancer,16,9,1500,"sorcerer, forester, deadeye",Ultra Crit Damage,global,12198,percent,Ultra Crit Damage,3250,1,1.0,12197.985781203892,12198,True,12198,True,9829,False,3250
+Forester,16,9,1500,"sorcerer, necromancer, deadeye",Ultra Crit Chance,global,30,percent,Ultra Crit Chance,8,1,1.0,30.025811153732658,30,True,30,True,24,False,8
+Deadeye,16,9,1500,"sorcerer, necromancer, forester",Attack Speed,personal,751,percent,Attack Speed,200,1,1.0,750.6452788433164,751,True,751,True,605,False,200
+Ranger,1,1,,peacekeeper,Skill Power,personal,47,flat,Skill Power,1,6.25,1.0,23.457664963853638,23,False,23,False,19,False,2
+Peacekeeper,1,1,,ranger,Kill Gold,global,235,percent,Kill Gold,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Ranger,2,1,,"elementalist, arbalest",Skill Duration,personal,70,flat,Skill Duration,2,6.25,1.0,46.915329927707276,47,False,47,False,38,False,3
+Elementalist,2,1,,"ranger, arbalest",Damage,personal,1173,percent,Damage,50,6.25,1.0,1172.883248192682,1173,True,1173,True,945,False,50
+Arbalest,2,1,,"elementalist, ranger",Crit Chance,personal,235,percent,Crit Chance,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Ranger,3,2,15,dicemaster,Attack Speed,global,235,percent,Attack Speed,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Dicemaster,3,2,15,ranger,Skill Duration,personal,117,flat,Skill Duration,4,6.25,1.0,93.83065985541455,94,False,94,False,76,False,5
+Ranger,4,2,15,"gladiator, forester",Rank Exp,global,235,flat,Rank Exp,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Gladiator,4,2,15,"forester, ranger",Attack Speed,personal,1407,percent,Attack Speed,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Forester,4,2,15,"gladiator, ranger",Skill Duration,personal,141,flat,Skill Duration,6,6.25,1.0,140.74598978312184,141,True,141,True,113,False,6
+Ranger,5,3,50,assassin,Damage,personal,1877,percent,Damage,200,2.5,1.0,1876.613197108291,1877,True,1877,True,1512,False,200
+Assassin,5,3,50,ranger,Damage,personal,1877,percent,Damage,200,2.5,1.0,1876.613197108291,1877,True,1877,True,1512,False,200
+Ranger,6,3,50,"skymage, crusader",Kill Gold,personal,2346,percent,Kill Gold,250,2.5,1.0,2345.7664963853636,2346,True,2346,True,1890,False,250
+Skymage,6,3,50,"ranger, crusader",Damage,personal,2346,percent,Damage,250,2.5,1.0,2345.7664963853636,2346,True,2346,True,1890,False,250
+Crusader,6,3,50,"skymage, ranger",Crit Chance,personal,469,percent,Crit Chance,50,2.5,1.0,469.15329927707273,469,True,469,True,378,False,50
+Ranger,7,4,100,battlemage,Energy Income,global,9,flat,Energy Income,1,2.5,1.0,9.383065985541455,9,True,9,True,8,False,1
+Battlemage,7,4,100,ranger,Super Gold Amount,global,4222,percent,Super Gold Amount,450,2.5,1.0,4222.3796934936545,4222,True,4222,True,3402,False,450
+Ranger,8,4,100,"witch, ballista",Super Crit Chance,personal,141,percent,Super Crit Chance,15,2.5,1.0,140.74598978312181,141,True,141,True,113,False,15
+Witch,8,4,100,"ranger, ballista",Skill Power,global,19,flat,Skill Power,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Ballista,8,4,100,"witch, ranger",Damage,global,1407,percent,Damage,150,2.5,1.0,1407.4598978312183,1407,True,1407,True,1134,False,150
+Ranger,9,5,150,ninja,Super Gold Chance,global,65,percent,Super Gold Chance,8,2.15,1.0,64.55549398052521,65,True,65,True,52,False,8
+Ninja,9,5,150,ranger,Skill Power,global,24,flat,Skill Power,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Ranger,10,5,150,"forester, warden",Super Crit Damage,global,5043,percent,Super Crit Damage,625,2.15,1.0,5043.397967228532,5043,True,5043,True,4064,False,625
+Forester,10,5,150,"ranger, warden",Damage,personal,3631,percent,Damage,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Warden,10,5,150,"forester, ranger",Damage,personal,2905,percent,Damage,450,2.15,0.8,2904.997229123634,2905,True,2905,True,2341,False,450
+Ranger,11,6,250,wizard,Kill Gold,global,2017,percent,Kill Gold,250,2.15,1.0,2017.359186891413,2017,True,2017,True,1626,False,250
+Wizard,11,6,250,ranger,Ultra Energy Amount,global,202,percent,Ultra Energy Amount,25,2.15,1.0,201.7359186891413,202,True,202,True,163,False,25
+Ranger,12,6,250,"viking, crusader",Damage,global,2219,percent,Damage,275,2.15,1.0,2219.095105580554,2219,True,2219,True,1788,False,275
+Viking,12,6,250,"ranger, crusader",Skill Power,global,48,flat,Skill Power,6,2.15,1.0,48.416620485393906,48,True,48,True,39,False,6
+Crusader,12,6,250,"viking, ranger",Skill Power,global,48,flat,Skill Power,6,2.15,1.0,48.416620485393906,48,True,48,True,39,False,6
+Ranger,13,7,500,archer,Skill Power,global,47,flat,Skill Power,7,1.77,1.0,46.502475024343454,47,True,47,True,37,False,7
+Archer,13,7,500,ranger,Super Exp Amount,global,133,percent,Super Exp Amount,20,1.77,1.0,132.86421435526702,133,True,133,True,107,False,20
+Ranger,14,7,500,"dicemaster, ballista",Super Exp Chance,global,66,percent,Super Exp Chance,10,1.77,1.0,66.43210717763351,66,True,66,True,54,False,10
+Dicemaster,14,7,500,"ranger, ballista",Super Exp Amount,global,166,percent,Super Exp Amount,25,1.77,1.0,166.08026794408377,166,True,166,True,134,False,25
+Ballista,14,7,500,"dicemaster, ranger",Super Exp Amount,global,166,percent,Super Exp Amount,25,1.77,1.0,166.08026794408377,166,True,166,True,134,False,25
+Ranger,15,8,1000,"samurai, berserker, forester",Boss Gold,global,3003,percent,Boss Gold,800,1,1.0,3002.5811153732657,3003,True,3003,True,2419,False,800
+Samurai,15,8,1000,"berserker, forester, ranger",Skill Power,global,45,flat,Skill Power,12,1,1.0,45.038716730598985,45,True,45,True,36,False,12
+Berserker,15,8,1000,"samurai, forester, ranger",Damage,global,1501,percent,Damage,400,1,1.0,1501.2905576866328,1501,True,1501,True,1210,False,400
+Forester,15,8,1000,"samurai, berserker, ranger",Ultra Gold Amount,global,11260,percent,Ultra Gold Amount,3000,1,1.0,11259.679182649747,11260,True,11260,True,9073,False,3000
+Ranger,16,9,1500,"chieftain, druid, elementalist",Attack Speed,global,281,percent,Attack Speed,75,1,1.0,281.4919795662437,281,True,281,True,227,False,75
+Chieftain,16,9,1500,"druid, elementalist, ranger",Skill Cooldown,global,-75,percent,Skill Cooldown,20,1,1.0,75.06452788433164,75,True,75,True,60,False,20
+Druid,16,9,1500,"chieftain, elementalist, ranger",Ultra Energy Chance,global,30,percent,Ultra Energe Chance,8,1,1.0,30.025811153732658,30,True,30,True,24,False,8
+Elementalist,16,9,1500,"chieftain, druid, ranger",Ultra Energy Chance,global,30,percent,Ultra Energy Chance,8,1,1.0,30.025811153732658,30,True,30,True,24,False,8
+Warlord,1,1,,champion,Attack Speed,personal,235,percent,Attack Speed,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Champion,1,1,,warlord,Kill Gold,personal,586,percent,Kill Gold,25,6.25,1.0,586.441624096341,586,True,586,True,473,False,25
+Warlord,2,1,,"necromancer, captain",Skill Duration,personal,70,flat,Skill Duration,2,6.25,1.0,46.915329927707276,47,False,47,False,38,False,3
+Necromancer,2,1,,"warlord, captain",Skill Duration,personal,70,flat,Skill Duration,2,6.25,1.0,46.915329927707276,47,False,47,False,38,False,3
+Captain,2,1,,"warlord, necromancer",Skill Power,personal,70,flat,Skill Power,2,6.25,1.0,46.915329927707276,47,False,47,False,38,False,3
+Warlord,3,2,15,crusader,Attack Speed,global,235,percent,Rank Exp,6,6.25,1.0,140.74598978312184,141,False,141,False,113,False,10
+Crusader,3,2,15,warlord,Kill Gold,global,938,percent,Kill Gold,40,6.25,1.0,938.3065985541455,938,True,938,True,756,False,40
+Warlord,4,2,15,"peacekeeper, ballista",Crit Damage,personal,3519,percent,Crit Damage,150,6.25,1.0,3518.6497445780456,3519,True,3519,True,2835,False,150
+Peacekeeper,4,2,15,"warlord, ballista",Damage,global,1407,percent,Damage,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Ballista,4,2,15,"peacekeeper, warlord",Damage,personal,3519,percent,Damage,150,6.25,1.0,3518.6497445780456,3519,True,3519,True,2835,False,150
+Warlord,5,3,50,sniper,Damage,global,751,percent,Damage,80,2.5,1.0,750.6452788433164,751,True,751,True,605,False,80
+Sniper,5,3,50,warlord,Skill Cooldown,personal,-235,percent,Skill Cooldown,25,2.5,1.0,234.57664963853637,235,True,235,True,189,False,25
+Warlord,6,3,50,"witch, wizard",Crit Chance,personal,469,percent,Crit Chance,50,2.5,1.0,469.15329927707273,469,True,469,True,378,False,50
+Witch,6,3,50,"warlord, wizard",Damage,global,938,percent,Damage,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Wizard,6,3,50,"warlord, witch",Crit Damage,global,938,percent,Crit Damage,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Warlord,7,4,100,scout,Damage,personal,2815,percent,Damage,300,2.5,1.0,2814.9197956624366,2815,True,2815,True,2268,False,300
+Scout,7,4,100,warlord,Super Gold Amount,global,4222,percent,Super Gold Amount,450,2.5,1.0,4222.3796934936545,4222,True,4222,True,3402,False,450
+Warlord,8,4,100,"skymage, veteran",Skill Power,global,19,flat,Skill Power,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Skymage,8,4,100,"warlord, veteran",Skill Power,global,19,flat,Skill Power,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Veteran,8,4,100,"warlord, skymage",Super Exp Amount,global,66,percent,Super Gold Chance,6,2.5,1.0,56.298395913248726,56,False,56,False,45,False,7
+Warlord,9,5,150,titan,Super Crit Chance,global,65,percent,Super Energy Chance,3,2.15,1.0,24.208310242696953,24,False,24,False,20,False,8
+Titan,9,5,150,warlord,Skill Power,personal,97,flat,Super Gold Chance,20,2.15,1.0,161.38873495131304,161,False,161,False,130,False,12
+Warlord,10,5,150,"paladin, druid",Kill Gold,global,1614,percent,Kill Gold,200,2.15,1.0,1613.8873495131304,1614,True,1614,True,1300,False,200
+Paladin,10,5,150,"warlord, druid",Kill Gold,personal,3631,percent,Kill Gold,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Druid,10,5,150,"paladin, warlord",Energy Income,global,32,flat,Energy Income,4,2.15,1.0,32.27774699026261,32,True,32,True,26,False,4
+Warlord,11,6,250,dicemaster,Ultra Crit Chance,personal,40,percent,Ultra Crit Chance,5,2.15,1.0,40.34718373782826,40,True,40,True,33,False,5
+Dicemaster,11,6,250,warlord,Ultra Gold Chance,personal,40,percent,Ultra Gold Chance,5,2.15,1.0,40.34718373782826,40,True,40,True,33,False,5
+Warlord,12,6,250,"assassin, wizard",Ultra Gold Amount,personal,34295,percent,Ultra Gold Amount,4250,2.15,1.0,34295.10617715402,34295,True,34295,True,27634,False,4250
+Assassin,12,6,250,"warlord, wizard",Ultra Crit Chance,personal,56,percent,Ultra Crit Chance,7,2.15,1.0,56.48605723295956,56,True,56,True,46,False,7
+Wizard,12,6,250,"assassin, warlord",Ultra Crit Chance,personal,56,percent,Ultra Crit Chance,7,2.15,1.0,56.48605723295956,56,True,56,True,46,False,7
+Warlord,13,7,500,viking,Damage,global,1993,percent,Damage,300,1.77,1.0,1992.9632153290052,1993,True,1993,True,1606,False,300
+Viking,13,7,500,warlord,Ultra Boss Damage,global,9300,percent,Ultra Boss Damage,1400,1.77,1.0,9300.495004868691,9300,True,9300,True,7494,False,1400
+Warlord,14,7,500,"peacekeeper, gladiator",Ultra Boss Damage,global,10629,percent,Ultra Boss Damage,1600,1.77,1.0,10629.137148421361,10629,True,10629,True,8565,False,1600
+Peacekeeper,14,7,500,"gladiator, warlord",Super Energy Amount,global,133,percent,Super Energy Amount,20,1.77,1.0,132.86421435526702,133,True,133,True,107,False,20
+Gladiator,14,7,500,"peacekeeper, warlord",Energy Income,global,53,flat,Energy Income,8,1.77,1.0,53.14568574210681,53,True,53,True,43,False,8
+Warlord,15,8,1000,"peacekeeper, apprentice, arbalest",Energy Income,global,38,flat,Energy Income,10,1,1.0,37.53226394216582,38,True,38,True,30,False,10
+Peacekeeper,15,8,1000,"warlord, apprentice, arbalest",Damage,personal,3753,percent,Damage,1000,1,1.0,3753.2263942165823,3753,True,3753,True,3024,False,1000
+Apprentice,15,8,1000,"peacekeeper, warlord, arbalest",Super Crit Damage,global,3753,percent,Super Crit Damage,1000,1,1.0,3753.2263942165823,3753,True,3753,True,3024,False,1000
+Arbalest,15,8,1000,"peacekeeper, warlord, apprentice",Ultra Energy Amount,global,244,percent,Ultra Energy Amount,65,1,1.0,243.95971562407783,244,True,244,True,197,False,65
+Warlord,16,9,1500,"titan, warlock, warlock",Ultra Energy Amount,global,281,percent,Ultra Energy Amount,75,1,1.0,281.4919795662437,281,True,281,True,227,False,75
+Titan,16,9,1500,"warlord, warlock, warlock",Ultra Crit Damage,global,12198,percent,Ultra Crit Damage,3250,1,1.0,12197.985781203892,12198,True,12198,True,9829,False,3250
+Warlock,16,9,1500,"warlord, titan, warlock",Energy Income,global,56,flat,Energy Income,15,1,1.0,56.29839591324873,56,True,56,True,45,False,15
+Warlock,16,9,1500,"warlord, titan, warlock",Energy Income,global,56,flat,Energy Income,15,1,1.0,56.29839591324873,56,True,56,True,45,False,15
+Samurai,1,1,,arbalest,Damage,global,235,percent,Damage,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Arbalest,1,1,,samurai,Skill Cooldown,global,-47,percent,Skill Cooldown,2,6.25,1.0,46.915329927707276,47,True,47,True,38,False,2
+Samurai,2,1,,"peacekeeper, wizard",Crit Chance,personal,235,percent,Crit Chance,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Peacekeeper,2,1,,"samurai, wizard",Crit Damage,global,469,percent,Crit Damage,20,6.25,1.0,469.15329927707273,469,True,469,True,378,False,20
+Wizard,2,1,,"peacekeeper, samurai",Kill Gold,global,469,percent,Kill Gold,20,6.25,1.0,469.15329927707273,469,True,469,True,378,False,20
+Samurai,3,2,15,witch,Skill Duration,personal,117,flat,Skill Duration,4,6.25,1.0,93.83065985541455,94,False,94,False,76,False,5
+Witch,3,2,15,samurai,Attack Speed,global,235,percent,Attack Speed,40,6.25,1.0,938.3065985541455,938,False,938,False,756,False,10
+Samurai,4,2,15,"skymage, templar",Kill Gold,global,1407,percent,Kill Gold,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Skymage,4,2,15,"samurai, templar",Rank Exp,global,235,flat,Rank Exp,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Templar,4,2,15,"samurai, skymage",Kill Gold,global,1407,percent,Kill Gold,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Samurai,5,3,50,deadeye,Crit Damage,global,751,percent,Crit Damage,80,2.5,1.0,750.6452788433164,751,True,751,True,605,False,80
+Deadeye,5,3,50,samurai,Kill Gold,global,751,percent,Kill Gold,80,2.5,1.0,750.6452788433164,751,True,751,True,605,False,80
+Samurai,6,3,50,"necromancer, hunter",Attack Speed,personal,938,percent,Attack Speed,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Necromancer,6,3,50,"samurai, hunter",Crit Damage,global,938,percent,Crit Damage,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Hunter,6,3,50,"samurai, necromancer",Crit Chance,personal,469,percent,Crit Chance,50,2.5,1.0,469.15329927707273,469,True,469,True,378,False,50
+Samurai,7,4,100,ballista,Super Exp Chance,global,19,percent,Super Exp Chance,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Ballista,7,4,100,samurai,Super Exp Chance,global,19,percent,Super Exp Chance,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Samurai,8,4,100,"scout, warden",Super Crit Damage,personal,8914,percent,Super Crit Damage,950,2.5,1.0,8913.912686264383,8914,True,8914,True,7183,False,950
+Scout,8,4,100,"samurai, warden",Damage,global,1407,percent,Damage,150,2.5,1.0,1407.4598978312183,1407,True,1407,True,1134,False,150
+Warden,8,4,100,"samurai, scout",Skill Power,global,15,flat,Skill Power,2,2.5,0.8,15.012905576866327,15,True,15,True,12,False,2
+Samurai,9,5,150,berserker,Super Gold Chance,global,65,percent,Super Gold Chance,8,2.15,1.0,64.55549398052521,65,True,65,True,52,False,8
+Berserker,9,5,150,samurai,Damage,personal,3228,percent,Damage,400,2.15,1.0,3227.774699026261,3228,True,3228,True,2601,False,400
+Samurai,10,5,150,"viking, elementalist",Damage,personal,3631,percent,Damage,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Viking,10,5,150,"samurai, elementalist",Super Gold Amount,personal,10087,percent,Super Gold Amount,1250,2.15,1.0,10086.795934457065,10087,True,10087,True,8128,False,1250
+Elementalist,10,5,150,"viking, samurai",Damage,global,1614,percent,Damage,200,2.15,1.0,1613.8873495131304,1614,True,1614,True,1300,False,200
+Samurai,11,6,250,praetorian,Energy Income,global,40,flat,Energy Income,5,2.15,1.0,40.34718373782826,40,True,40,True,33,False,5
+Praetorian,11,6,250,samurai,Ultra Gold Amount,global,16139,percent,Ultra Gold Amount,2000,2.15,1.0,16138.873495131304,16139,True,16139,True,13004,False,2000
+Samurai,12,6,250,"paladin, champion",Kill Gold,global,2219,percent,Kill Gold,275,2.15,1.0,2219.095105580554,2219,True,2219,True,1788,False,275
+Paladin,12,6,250,"samurai, champion",Skill Power,global,48,flat,Skill Power,6,2.15,1.0,48.416620485393906,48,True,48,True,39,False,6
+Champion,12,6,250,"samurai, paladin",Ultra Exp Chance,global,24,percent,Ultra Exp Chance,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Samurai,13,7,500,gladiator,Super Energy Chance,global,33,percent,Super Energy Chance,5,1.77,1.0,33.216053588816756,33,True,33,True,27,False,5
+Gladiator,13,7,500,samurai,Super Energy Amount,global,100,percent,Super Energy Amount,15,1.77,1.0,99.64816076645026,100,True,100,True,80,False,15
+Samurai,14,7,500,"druid, captain",Skill Power,global,53,flat,Skill Power,8,1.77,1.0,53.14568574210681,53,True,53,True,43,False,8
+Druid,14,7,500,"samurai, captain",Energy Income,global,53,flat,Energy Income,8,1.77,1.0,53.14568574210681,53,True,53,True,43,False,8
+Captain,14,7,500,"samurai, druid",Super Energy Chance,global,40,percent,Super Energy Chance,6,1.77,1.0,39.8592643065801,40,True,40,True,32,False,6
+Samurai,15,8,1000,"berserker, forester, ranger",Skill Power,global,45,flat,Skill Power,12,1,1.0,45.038716730598985,45,True,45,True,36,False,12
+Berserker,15,8,1000,"samurai, forester, ranger",Damage,global,1501,percent,Damage,400,1,1.0,1501.2905576866328,1501,True,1501,True,1210,False,400
+Forester,15,8,1000,"samurai, berserker, ranger",Ultra Gold Amount,global,11260,percent,Ultra Gold Amount,3000,1,1.0,11259.679182649747,11260,True,11260,True,9073,False,3000
+Ranger,15,8,1000,"samurai, berserker, forester",Boss Gold,global,3003,percent,Boss Gold,800,1,1.0,3002.5811153732657,3003,True,3003,True,2419,False,800
+Samurai,16,9,1500,"paladin, champion, battlemage",Ultra Crit Damage,global,12198,percent,Ultra Crit Damage,3250,1,1.0,12197.985781203892,12198,True,12198,True,9829,False,3250
+Paladin,16,9,1500,"samurai, champion, battlemage",Shadow Runes,personal,8,flat,Shadow Runes,2,1,1.0,7.506452788433164,8,True,8,True,6,False,2
+Champion,16,9,1500,"samurai, paladin, battlemage",Attack Speed,global,281,percent,Attack Speed,75,1,1.0,281.4919795662437,281,True,281,True,227,False,75
+Battlemage,16,9,1500,"samurai, paladin, champion",Skill Power,global,56,flat,Skill Power,15,1,1.0,56.29839591324873,56,True,56,True,45,False,15
+Peacekeeper,1,1,,ranger,Kill Gold,global,235,percent,Kill Gold,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Ranger,1,1,,peacekeeper,Skill Power,personal,47,flat,Skill Power,1,6.25,1.0,23.457664963853638,23,False,23,False,19,False,2
+Peacekeeper,2,1,,"samurai, wizard",Crit Damage,global,469,percent,Crit Damage,20,6.25,1.0,469.15329927707273,469,True,469,True,378,False,20
+Samurai,2,1,,"peacekeeper, wizard",Crit Chance,personal,235,percent,Crit Chance,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Wizard,2,1,,"peacekeeper, samurai",Kill Gold,global,469,percent,Kill Gold,20,6.25,1.0,469.15329927707273,469,True,469,True,378,False,20
+Peacekeeper,3,2,15,militia,Skill Power,personal,117,flat,Skill Power,3,6.25,1.0,70.37299489156092,70,False,70,False,57,False,5
+Militia,3,2,15,peacekeeper,Kill Gold,personal,2346,percent,Kill Gold,100,6.25,1.0,2345.766496385364,2346,True,2346,True,1890,False,100
+Peacekeeper,4,2,15,"warlord, ballista",Damage,global,1407,percent,Damage,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Warlord,4,2,15,"peacekeeper, ballista",Crit Damage,personal,3519,percent,Crit Damage,150,6.25,1.0,3518.6497445780456,3519,True,3519,True,2835,False,150
+Ballista,4,2,15,"peacekeeper, warlord",Damage,personal,3519,percent,Damage,150,6.25,1.0,3518.6497445780456,3519,True,3519,True,2835,False,150
+Peacekeeper,5,3,50,chieftain,Skill Cooldown,global,-75,percent,Skill Cooldown,8,2.5,1.0,75.06452788433164,75,True,75,True,60,False,8
+Chieftain,5,3,50,peacekeeper,Kill Gold,global,751,percent,Kill Gold,80,2.5,1.0,750.6452788433164,751,True,751,True,605,False,80
+Peacekeeper,6,3,50,"berserker, forester",Super Exp Chance,global,9,percent,Skill Duration,10,2.5,1.0,93.83065985541455,94,False,94,False,76,False,1
+Berserker,6,3,50,"peacekeeper, forester",Rank Exp,global,328,flat,Rank Exp,35,2.5,1.0,328.40730949395095,328,True,328,True,265,False,35
+Forester,6,3,50,"peacekeeper, berserker",Super Exp Amount,global,28,percent,Damage,100,2.5,1.0,938.3065985541455,938,False,938,False,756,False,3
+Arbalest,11,6,250,titan,Ultra Exp Chance,global,16,percent,Ultra Exp Chance,2,2.15,1.0,16.138873495131303,16,True,16,True,13,False,2
+Titan,11,6,250,arbalest,Damage,personal,4035,percent,Damage,500,2.15,1.0,4034.718373782826,4035,True,4035,True,3251,False,500
+Arbalest,12,6,250,"captain, veteran",Skill Power,global,48,flat,Skill Power,6,2.15,1.0,48.416620485393906,48,True,48,True,39,False,6
+Captain,12,6,250,"arbalest, veteran",Damage,personal,4842,percent,Damage,600,2.15,1.0,4841.662048539391,4842,True,4842,True,3901,False,600
+Veteran,12,6,250,"arbalest, captain",Energy Income,global,48,flat,Energy Income,6,2.15,1.0,48.416620485393906,48,True,48,True,39,False,6
+Arbalest,13,7,500,ninja,Super Energy Amount,global,100,percent,Super Energy Amount,15,1.77,1.0,99.64816076645026,100,True,100,True,80,False,15
+Ninja,13,7,500,arbalest,Super Energy Chance,global,33,percent,Super Energy Chance,5,1.77,1.0,33.216053588816756,33,True,33,True,27,False,5
+Arbalest,14,7,500,"militia, spelldancer",Power Mage Energy,global,80,percent,Power Mage Energy,15,1.77,1.0,99.64816076645026,100,False,100,False,80,True,12
+Militia,14,7,500,"spelldancer, arbalest",Energy Income,global,53,flat,Energy Income,8,1.77,1.0,53.14568574210681,53,True,53,True,43,False,8
+Spelldancer,14,7,500,"militia, arbalest",Super Energy Chance,global,40,percent,Super Energy Chance,6,1.77,1.0,39.8592643065801,40,True,40,True,32,False,6
+Arbalest,15,8,1000,"peacekeeper, warlord, apprentice",Ultra Energy Amount,global,244,percent,Ultra Energy Amount,65,1,1.0,243.95971562407783,244,True,244,True,197,False,65
+Peacekeeper,15,8,1000,"warlord, apprentice, arbalest",Damage,personal,3753,percent,Damage,1000,1,1.0,3753.2263942165823,3753,True,3753,True,3024,False,1000
+Warlord,15,8,1000,"peacekeeper, apprentice, arbalest",Energy Income,global,38,flat,Energy Income,10,1,1.0,37.53226394216582,38,True,38,True,30,False,10
+Apprentice,15,8,1000,"peacekeeper, warlord, arbalest",Super Crit Damage,global,3753,percent,Super Crit Damage,1000,1,1.0,3753.2263942165823,3753,True,3753,True,3024,False,1000
+Forester,1,1,,witch,Skill Cooldown,personal,-117,percent,Skill Cooldown,5,6.25,1.0,117.28832481926818,117,True,117,True,95,False,5
+Witch,1,1,,forester,Skill Cooldown,personal,-117,percent,Skill Cooldown,5,6.25,1.0,117.28832481926818,117,True,117,True,95,False,5
+Forester,2,1,,"assassin, archer",Attack Speed,personal,586,percent,Attack Speed,24,6.25,1.0,562.9839591324874,563,False,563,False,454,False,25
+Assassin,2,1,,"forester, archer",Skill Cooldown,personal,-235,percent,Skill Cooldown,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Archer,2,1,,"assassin, forester",Rank Exp,global,70,flat,Rank Exp,3,6.25,1.0,70.37299489156092,70,True,70,True,57,False,3
+Forester,3,2,15,captain,Crit Damage,global,938,percent,Crit Damage,40,6.25,1.0,938.3065985541455,938,True,938,True,756,False,40
+Captain,3,2,15,forester,Skill Duration,personal,117,flat,Skill Duration,4,6.25,1.0,93.83065985541455,94,False,94,False,76,False,5
+Forester,4,2,15,"gladiator, ranger",Skill Duration,personal,141,flat,Skill Duration,6,6.25,1.0,140.74598978312184,141,True,141,True,113,False,6
+Gladiator,4,2,15,"forester, ranger",Attack Speed,personal,1407,percent,Attack Speed,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Ranger,4,2,15,"gladiator, forester",Rank Exp,global,235,flat,Rank Exp,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Forester,5,3,50,elementalist,Kill Gold,personal,1877,percent,Kill Gold,200,2.5,1.0,1876.613197108291,1877,True,1877,True,1512,False,200
+Elementalist,5,3,50,forester,Attack Speed,global,206,percent,Attack Speed,22,2.5,1.0,206.427451681912,206,True,206,True,166,False,22
+Forester,6,3,50,"peacekeeper, berserker",Super Exp Amount,global,28,percent,Damage,100,2.5,1.0,938.3065985541455,938,False,938,False,756,False,3
+Peacekeeper,6,3,50,"berserker, forester",Super Exp Chance,global,9,percent,Skill Duration,10,2.5,1.0,93.83065985541455,94,False,94,False,76,False,1
+Berserker,6,3,50,"peacekeeper, forester",Rank Exp,global,328,flat,Rank Exp,35,2.5,1.0,328.40730949395095,328,True,328,True,265,False,35
+Forester,7,4,100,rogue,Super Crit Damage,global,4222,percent,Super Crit Damage,450,2.5,1.0,4222.3796934936545,4222,True,4222,True,3402,False,450
+Rogue,7,4,100,forester,Skill Power,global,9,flat,Skill Power,1,2.5,1.0,9.383065985541455,9,True,9,True,8,False,1
+Forester,8,4,100,"templar, sovereign",Skill Power,global,19,flat,Skill Power,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Templar,8,4,100,"sovereign, forester",Super Crit Chance,personal,141,percent,Super Crit Chance,15,2.5,1.0,140.74598978312181,141,True,141,True,113,False,15
+Sovereign,8,4,100,"templar, forester",Super Gold Chance,global,56,percent,Super Gold Chance,6,2.5,1.0,56.298395913248726,56,True,56,True,45,False,6
+Forester,9,5,150,paladin,Super Exp Amount,global,81,percent,Super Exp Amount,10,2.15,1.0,80.69436747565652,81,True,81,True,65,False,10
+Paladin,9,5,150,forester,Super Exp Amount,global,81,percent,Super Exp Amount,10,2.15,1.0,80.69436747565652,81,True,81,True,65,False,10
+Forester,10,5,150,"ranger, warden",Damage,personal,3631,percent,Damage,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Ranger,10,5,150,"forester, warden",Super Crit Damage,global,5043,percent,Super Crit Damage,625,2.15,1.0,5043.397967228532,5043,True,5043,True,4064,False,625
+Warden,10,5,150,"forester, ranger",Damage,personal,2905,percent,Damage,450,2.15,0.8,2904.997229123634,2905,True,2905,True,2341,False,450
+Forester,11,6,250,warlock,Ultra Gold Amount,personal,30260,percent,Ultra Gold Amount,3750,2.15,1.0,30260.387803371195,30260,True,30260,True,24383,False,3750
+Warlock,11,6,250,forester,Skill Cooldown,personal,-242,percent,Ultra Energy Chance,1,2.15,1.0,8.069436747565652,8,False,8,False,7,False,30
+Forester,12,6,250,"battlemage, deadeye",Kill Gold,global,2219,percent,Kill Gold,275,2.15,1.0,2219.095105580554,2219,True,2219,True,1788,False,275
+Battlemage,12,6,250,"forester, deadeye",Energy Income,global,48,flat,Energy Income,6,2.15,1.0,48.416620485393906,48,True,48,True,39,False,6
+Deadeye,12,6,250,"battlemage, forester",Kill Gold,global,2219,percent,Kill Gold,275,2.15,1.0,2219.095105580554,2219,True,2219,True,1788,False,275
+Forester,13,7,500,chieftain,Super Crit Damage,global,5647,percent,Super Crit Damage,850,1.77,1.0,5646.729110098848,5647,True,5647,True,4550,False,850
+Chieftain,13,7,500,forester,Super Gold Amount,global,5647,percent,Super Gold Amount,850,1.77,1.0,5646.729110098848,5647,True,5647,True,4550,False,850
+Forester,14,7,500,"viking, veteran",Damage,global,2325,percent,Damage,350,1.77,1.0,2325.123751217173,2325,True,2325,True,1874,False,350
+Viking,14,7,500,"forester, veteran",Skill Power,global,53,flat,Skill Power,8,1.77,1.0,53.14568574210681,53,True,53,True,43,False,8
+Veteran,14,7,500,"viking, forester",Super Exp Amount,global,166,percent,Super Exp Amount,25,1.77,1.0,166.08026794408377,166,True,166,True,134,False,25
+Forester,15,8,1000,"samurai, berserker, ranger",Ultra Gold Amount,global,11260,percent,Ultra Gold Amount,3000,1,1.0,11259.679182649747,11260,True,11260,True,9073,False,3000
+Samurai,15,8,1000,"berserker, forester, ranger",Skill Power,global,45,flat,Skill Power,12,1,1.0,45.038716730598985,45,True,45,True,36,False,12
+Berserker,15,8,1000,"samurai, forester, ranger",Damage,global,1501,percent,Damage,400,1,1.0,1501.2905576866328,1501,True,1501,True,1210,False,400
+Ranger,15,8,1000,"samurai, berserker, forester",Boss Gold,global,3003,percent,Boss Gold,800,1,1.0,3002.5811153732657,3003,True,3003,True,2419,False,800
+Forester,16,9,1500,"sorcerer, necromancer, deadeye",Ultra Crit Chance,global,30,percent,Ultra Crit Chance,8,1,1.0,30.025811153732658,30,True,30,True,24,False,8
+Sorcerer,16,9,1500,"necromancer, forester, deadeye",Skill Power,global,56,flat,Skill Power,15,1,1.0,56.29839591324873,56,True,56,True,45,False,15
+Necromancer,16,9,1500,"sorcerer, forester, deadeye",Ultra Crit Damage,global,12198,percent,Ultra Crit Damage,3250,1,1.0,12197.985781203892,12198,True,12198,True,9829,False,3250
+Deadeye,16,9,1500,"sorcerer, necromancer, forester",Attack Speed,personal,751,percent,Attack Speed,200,1,1.0,750.6452788433164,751,True,751,True,605,False,200
+Templar,1,1,,captain,Skill Power,personal,47,flat,Skill Power,1,6.25,1.0,23.457664963853638,23,False,23,False,19,False,2
+Captain,1,1,,templar,Crit Damage,global,235,percent,Crit Damage,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Templar,2,1,,"champion, warden",Crit Damage,personal,1173,percent,Crit Damage,50,6.25,1.0,1172.883248192682,1173,True,1173,True,945,False,50
+Champion,2,1,,"templar, warden",Attack Speed,global,141,percent,Attack Speed,6,6.25,1.0,140.74598978312184,141,True,141,True,113,False,6
+Warden,2,1,,"champion, templar",Rank Exp,global,56,flat,Rank Exp,3,6.25,0.8,56.298395913248726,56,True,56,True,45,False,3
+Templar,3,2,15,deadeye,Damage,global,938,percent,Damage,40,6.25,1.0,938.3065985541455,938,True,938,True,756,False,40
+Deadeye,3,2,15,templar,Skill Power,personal,117,flat,Skill Power,3,6.25,1.0,70.37299489156092,70,False,70,False,57,False,5
+Templar,4,2,15,"samurai, skymage",Kill Gold,global,1407,percent,Kill Gold,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Samurai,4,2,15,"skymage, templar",Kill Gold,global,1407,percent,Kill Gold,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Skymage,4,2,15,"samurai, templar",Rank Exp,global,235,flat,Rank Exp,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Templar,5,3,50,arbalest,Skill Cooldown,global,-75,percent,Skill Cooldown,8,2.5,1.0,75.06452788433164,75,True,75,True,60,False,8
+Arbalest,5,3,50,templar,Rank Exp,global,188,flat,Rank Exp,20,2.5,1.0,187.6613197108291,188,True,188,True,151,False,20
+Templar,6,3,50,"druid, scout",Attack Speed,personal,938,percent,Attack Speed,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Druid,6,3,50,"templar, scout",Kill Gold,personal,2346,percent,Kill Gold,250,2.5,1.0,2345.7664963853636,2346,True,2346,True,1890,False,250
+Scout,6,3,50,"druid, templar",Skill Cooldown,personal,-281,percent,Skill Cooldown,30,2.5,1.0,281.49197956624363,281,True,281,True,227,False,30
+Templar,7,4,100,paladin,Damage,personal,2815,percent,Damage,300,2.5,1.0,2814.9197956624366,2815,True,2815,True,2268,False,300
+Paladin,7,4,100,templar,Super Gold Chance,personal,94,percent,Super Gold Chance,10,2.5,1.0,93.83065985541455,94,True,94,True,76,False,10
+Templar,8,4,100,"sovereign, forester",Super Crit Chance,personal,141,percent,Super Crit Chance,15,2.5,1.0,140.74598978312181,141,True,141,True,113,False,15
+Sovereign,8,4,100,"templar, forester",Super Gold Chance,global,56,percent,Super Gold Chance,6,2.5,1.0,56.298395913248726,56,True,56,True,45,False,6
+Forester,8,4,100,"templar, sovereign",Skill Power,global,19,flat,Skill Power,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Templar,9,5,150,gladiator,Energy Income,global,24,flat,Energy Income,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Gladiator,9,5,150,templar,Energy Income,global,24,flat,Energy Income,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Templar,10,5,150,"dicemaster, sniper",Super Exp Amount,global,97,percent,Super Exp Amount,12,2.15,1.0,96.83324097078781,97,True,97,True,78,False,12
+Dicemaster,10,5,150,"templar, sniper",Kill Gold,personal,3631,percent,Kill Gold,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Sniper,10,5,150,"templar, dicemaster",Damage,global,1614,percent,Damage,200,2.15,1.0,1613.8873495131304,1614,True,1614,True,1300,False,200
+Templar,11,6,250,sorcerer,Kill Gold,global,2017,percent,Kill Gold,250,2.15,1.0,2017.359186891413,2017,True,2017,True,1626,False,250
+Sorcerer,11,6,250,templar,Damage,global,2017,percent,Damage,250,2.15,1.0,2017.359186891413,2017,True,2017,True,1626,False,250
+Templar,12,6,250,"necromancer, rogue",Ultra Gold Chance,global,24,percent,Ultra Gold Chance,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Necromancer,12,6,250,"templar, rogue",Energy Income,global,48,flat,Energy Income,6,2.15,1.0,48.416620485393906,48,True,48,True,39,False,6
+Rogue,12,6,250,"templar, necromancer",Damage,personal,4842,percent,Damage,600,2.15,1.0,4841.662048539391,4842,True,4842,True,3901,False,600
+Templar,13,7,500,veteran,Super Exp Amount,global,133,percent,Super Exp Amount,20,1.77,1.0,132.86421435526702,133,True,133,True,107,False,20
+Veteran,13,7,500,templar,Boss Exp,global,133,percent,Boss Exp,20,1.77,1.0,132.86421435526702,133,True,133,True,107,False,20
+Templar,14,7,500,"paladin, berserker",Super Energy Amount,global,133,percent,Super Energy Amount,20,1.77,1.0,132.86421435526702,133,True,133,True,107,False,20
+Paladin,14,7,500,"berserker, templar",Super Energy Chance,global,40,percent,Super Energy Chance,6,1.77,1.0,39.8592643065801,40,True,40,True,32,False,6
+Berserker,14,7,500,"paladin, templar",Energy Income,global,53,flat,Energy Income,8,1.77,1.0,53.14568574210681,53,True,53,True,43,False,8
+Templar,15,8,1000,"witch, battlemage, spelldancer",Skill Power,personal,113,flat,Skill Power,30,1,1.0,112.59679182649747,113,True,113,True,91,False,30
+Witch,15,8,1000,"battlemage, spelldancer, templar",Skill Power,personal,113,flat,Skill Power,30,1,1.0,112.59679182649747,113,True,113,True,91,False,30
+Battlemage,15,8,1000,"witch, spelldancer, templar",Ultra Crit Damage,global,11260,percent,Ultra Crit Damage,3000,1,1.0,11259.679182649747,11260,True,11260,True,9073,False,3000
+Spelldancer,15,8,1000,"witch, battlemage, templar",Skill Duration,personal,75,flat,Skill Duration,20,1,1.0,75.06452788433164,75,True,75,True,60,False,20
+Templar,16,9,1500,"templar, scout, sniper",Energy Income,global,56,flat,Energy Income,15,1,1.0,56.29839591324873,56,True,56,True,45,False,15
+Templar,16,9,1500,"templar, scout, sniper",Energy Income,global,56,flat,Energy Income,15,1,1.0,56.29839591324873,56,True,56,True,45,False,15
+Scout,16,9,1500,"templar, templar, sniper",Battle Pass Exp,global,4,flat,Bp Exp,1,1,1.0,3.753226394216582,4,True,4,True,3,False,1
+Sniper,16,9,1500,"templar, templar, scout",Ultra Crit Damage,global,12198,percent,Ultra Crit Damage,3250,1,1.0,12197.985781203892,12198,True,12198,True,9829,False,3250
+Chieftain,1,1,,warlock,Skill Cooldown,global,-47,percent,Skill Cooldown,2,6.25,1.0,46.915329927707276,47,True,47,True,38,False,2
+Warlock,1,1,,chieftain,Crit Chance,personal,117,percent,Crit Chance,5,6.25,1.0,117.28832481926818,117,True,117,True,95,False,5
+Chieftain,2,1,,"berserker, ballista",Attack Speed,personal,586,percent,Attack Speed,24,6.25,1.0,562.9839591324874,563,False,563,False,454,False,25
+Berserker,2,1,,"chieftain, ballista",Crit Damage,global,469,percent,Crit Damage,20,6.25,1.0,469.15329927707273,469,True,469,True,378,False,20
+Ballista,2,1,,"berserker, chieftain",Skill Cooldown,global,-94,percent,Skill Cooldown,4,6.25,1.0,93.83065985541455,94,True,94,True,76,False,4
+Chieftain,3,2,15,archer,Crit Chance,global,188,percent,Crit Chance,8,6.25,1.0,187.6613197108291,188,True,188,True,151,False,8
+Archer,3,2,15,chieftain,Crit Chance,global,188,percent,Crit Chance,8,6.25,1.0,187.6613197108291,188,True,188,True,151,False,8
+Chieftain,4,2,15,"sovereign, captain",Crit Damage,global,1407,percent,Crit Damage,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Sovereign,4,2,15,"chieftain, captain",Kill Gold,personal,3519,percent,Kill Gold,150,6.25,1.0,3518.6497445780456,3519,True,3519,True,2835,False,150
+Captain,4,2,15,"chieftain, sovereign",Kill Gold,personal,3519,percent,Kill Gold,150,6.25,1.0,3518.6497445780456,3519,True,3519,True,2835,False,150
+Chieftain,5,3,50,peacekeeper,Kill Gold,global,751,percent,Kill Gold,80,2.5,1.0,750.6452788433164,751,True,751,True,605,False,80
+Peacekeeper,5,3,50,chieftain,Skill Cooldown,global,-75,percent,Skill Cooldown,8,2.5,1.0,75.06452788433164,75,True,75,True,60,False,8
+Chieftain,6,3,50,"arbalest, sniper",Damage,personal,2346,percent,Damage,250,2.5,1.0,2345.7664963853636,2346,True,2346,True,1890,False,250
+Arbalest,6,3,50,"chieftain, sniper",Attack Speed,personal,938,percent,Attack Speed,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Sniper,6,3,50,"chieftain, arbalest",Kill Gold,global,938,percent,Kill Gold,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Chieftain,7,4,100,druid,Super Energy Amount,global,19,percent,Super Energy,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Druid,7,4,100,chieftain,Damage,personal,2815,percent,Damage,300,2.5,1.0,2814.9197956624366,2815,True,2815,True,2268,False,300
+Chieftain,8,4,100,"paladin, sniper",Super Gold Amount,personal,8914,percent,Super Gold Amount,950,2.5,1.0,8913.912686264383,8914,True,8914,True,7183,False,950
+Paladin,8,4,100,"chieftain, sniper",Super Energy Amount,global,38,percent,Super Energy,4,2.5,1.0,37.53226394216582,38,True,38,True,30,False,4
+Sniper,8,4,100,"paladin, chieftain",Super Crit Damage,personal,8914,percent,Super Crit Damage,950,2.5,1.0,8913.912686264383,8914,True,8914,True,7183,False,950
+Chieftain,9,5,150,battlemage,Kill Gold,global,1412,percent,Kill Gold,175,2.15,1.0,1412.1514308239891,1412,True,1412,True,1138,False,175
+Battlemage,9,5,150,chieftain,Super Gold Chance,personal,161,percent,Super Gold Chance,20,2.15,1.0,161.38873495131304,161,True,161,True,130,False,20
+Chieftain,10,5,150,"ninja, veteran",Super Exp Chance,global,56,percent,Super Exp Chance,7,2.15,1.0,56.48605723295956,56,True,56,True,46,False,7
+Ninja,10,5,150,"chieftain, veteran",Super Energy Chance,global,32,percent,Super Energy Chance,4,2.15,1.0,32.27774699026261,32,True,32,True,26,False,4
+Veteran,10,5,150,"ninja, chieftain",Super Exp Chance,global,56,percent,Super Exp Chance,7,2.15,1.0,56.48605723295956,56,True,56,True,46,False,7
+Chieftain,11,6,250,viking,Skill Power,global,40,flat,Skill Power,5,2.15,1.0,40.34718373782826,40,True,40,True,33,False,5
+Viking,11,6,250,chieftain,Damage,global,2017,percent,Damage,250,2.15,1.0,2017.359186891413,2017,True,2017,True,1626,False,250
+Chieftain,12,6,250,"witch, spelldancer",Damage,global,2219,percent,Damage,275,2.15,1.0,2219.095105580554,2219,True,2219,True,1788,False,275
+Witch,12,6,250,"chieftain, spelldancer",Ultra Gold Amount,global,18156,percent,Ultra Gold Amount,2250,2.15,1.0,18156.232682022717,18156,True,18156,True,14630,False,2250
+Spelldancer,12,6,250,"chieftain, witch",Damage,global,2219,percent,Damage,275,2.15,1.0,2219.095105580554,2219,True,2219,True,1788,False,275
+Chieftain,13,7,500,forester,Super Gold Amount,global,5647,percent,Super Gold Amount,850,1.77,1.0,5646.729110098848,5647,True,5647,True,4550,False,850
+Forester,13,7,500,chieftain,Super Crit Damage,global,5647,percent,Super Crit Damage,850,1.77,1.0,5646.729110098848,5647,True,5647,True,4550,False,850
+Chieftain,14,7,500,"elementalist, sovereign",Kill Gold,global,2325,percent,Kill Gold,350,1.77,1.0,2325.123751217173,2325,True,2325,True,1874,False,350
+Elementalist,14,7,500,"chieftain, sovereign",Skill Power,personal,133,flat,Skill Power,20,1.77,1.0,132.86421435526702,133,True,133,True,107,False,20
+Sovereign,14,7,500,"chieftain, elementalist",Super Gold Amount,global,6145,percent,Super Gold Amount,925,1.77,1.0,6144.9699139311,6145,True,6145,True,4952,False,925
+Chieftain,15,8,1000,"druid, warlock, archer",Damage,global,1501,percent,Damage,400,1,1.0,1501.2905576866328,1501,True,1501,True,1210,False,400
+Druid,15,8,1000,"chieftain, warlock, archer",Ultra Exp Amount,global,394,percent,Ultra Exp Amount,105,1,1.0,394.08877139274114,394,True,394,True,318,False,105
+Warlock,15,8,1000,"chieftain, druid, archer",Skill Power,personal,113,flat,Skill Power,30,1,1.0,112.59679182649747,113,True,113,True,91,False,30
+Archer,15,8,1000,"chieftain, druid, warlock",Ultra Exp Chance,global,26,percent,Ultra Exp Chance,7,1,1.0,26.272584759516075,26,True,26,True,21,False,7
+Chieftain,16,9,1500,"druid, elementalist, ranger",Skill Cooldown,global,-75,percent,Skill Cooldown,20,1,1.0,75.06452788433164,75,True,75,True,60,False,20
+Druid,16,9,1500,"chieftain, elementalist, ranger",Ultra Energy Chance,global,30,percent,Ultra Energe Chance,8,1,1.0,30.025811153732658,30,True,30,True,24,False,8
+Elementalist,16,9,1500,"chieftain, druid, ranger",Ultra Energy Chance,global,30,percent,Ultra Energy Chance,8,1,1.0,30.025811153732658,30,True,30,True,24,False,8
+Ranger,16,9,1500,"chieftain, druid, elementalist",Attack Speed,global,281,percent,Attack Speed,75,1,1.0,281.4919795662437,281,True,281,True,227,False,75
+Deadeye,1,1,,dicemaster,Skill Cooldown,personal,-117,percent,Skill Cooldown,5,6.25,1.0,117.28832481926818,117,True,117,True,95,False,5
+Dicemaster,1,1,,deadeye,Attack Speed,personal,235,percent,Attack Speed,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Deadeye,2,1,,"praetorian, titan",Damage,personal,1173,percent,Damage,50,6.25,1.0,1172.883248192682,1173,True,1173,True,945,False,50
+Praetorian,2,1,,"titan, deadeye",Kill Gold,global,469,percent,Kill Gold,20,6.25,1.0,469.15329927707273,469,True,469,True,378,False,20
+Titan,2,1,,"praetorian, deadeye",Skill Cooldown,global,-94,percent,Skill Cooldown,4,6.25,1.0,93.83065985541455,94,True,94,True,76,False,4
+Deadeye,3,2,15,templar,Skill Power,personal,117,flat,Skill Power,3,6.25,1.0,70.37299489156092,70,False,70,False,57,False,5
+Templar,3,2,15,deadeye,Damage,global,938,percent,Damage,40,6.25,1.0,938.3065985541455,938,True,938,True,756,False,40
+Deadeye,4,2,15,"warlock, veteran",Crit Chance,personal,586,percent,Crit Chance,25,6.25,1.0,586.441624096341,586,True,586,True,473,False,25
+Warlock,4,2,15,"deadeye, veteran",Damage,global,1407,percent,Damage,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Veteran,4,2,15,"warlock, deadeye",Crit Damage,personal,3519,percent,Crit Damage,150,6.25,1.0,3518.6497445780456,3519,True,3519,True,2835,False,150
+Deadeye,5,3,50,samurai,Kill Gold,global,751,percent,Kill Gold,80,2.5,1.0,750.6452788433164,751,True,751,True,605,False,80
+Samurai,5,3,50,deadeye,Crit Damage,global,751,percent,Crit Damage,80,2.5,1.0,750.6452788433164,751,True,751,True,605,False,80
+Deadeye,6,3,50,"titan, sovereign",Attack Speed,global,281,percent,Attack Speed,30,2.5,1.0,281.49197956624363,281,True,281,True,227,False,30
+Titan,6,3,50,"sovereign, deadeye",Damage,global,938,percent,Damage,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Sovereign,6,3,50,"titan, deadeye",Skill Power,global,9,flat,Rank Exp,25,2.5,1.0,234.57664963853637,235,False,235,False,189,False,1
+Deadeye,7,4,100,wizard,Damage,global,1173,percent,Energy Income,1,2.5,1.0,9.383065985541455,9,False,9,False,8,False,125
+Wizard,7,4,100,deadeye,Kill Gold,global,1173,percent,Kill Gold,125,2.5,1.0,1172.8832481926818,1173,True,1173,True,945,False,125
+Deadeye,8,4,100,"elementalist, warlock",Super Gold Amount,global,4692,percent,Super Gold Amount,500,2.5,1.0,4691.532992770727,4692,True,4692,True,3780,False,500
+Elementalist,8,4,100,"warlock, deadeye",Kill Gold,personal,3284,percent,Kill Gold,350,2.5,1.0,3284.0730949395092,3284,True,3284,True,2646,False,350
+Warlock,8,4,100,"elementalist, deadeye",Super Gold Amount,global,4692,percent,Super Gold Amount,500,2.5,1.0,4691.532992770727,4692,True,4692,True,3780,False,500
+Deadeye,9,5,150,viking,Damage,global,1412,percent,Damage,175,2.15,1.0,1412.1514308239891,1412,True,1412,True,1138,False,175
+Viking,9,5,150,deadeye,Super Crit Chance,global,65,percent,Super Crit Chance,8,2.15,1.0,64.55549398052521,65,True,65,True,52,False,8
+Deadeye,10,5,150,"gladiator, skymage",Super Crit Chance,global,81,percent,Super Crit Chance,10,2.15,1.0,80.69436747565652,81,True,81,True,65,False,10
+Gladiator,10,5,150,"skymage, deadeye",Super Gold Amount,global,5043,percent,Super Gold Amount,625,2.15,1.0,5043.397967228532,5043,True,5043,True,4064,False,625
+Skymage,10,5,150,"gladiator, deadeye",Super Energy Amount,global,65,percent,Super Energy,8,2.15,1.0,64.55549398052521,65,True,65,True,52,False,8
+Deadeye,11,6,250,archer,Ultra Crit Chance,personal,40,percent,Ultra Crit Chance,5,2.15,1.0,40.34718373782826,40,True,40,True,33,False,5
+Archer,11,6,250,deadeye,Damage,personal,4035,percent,Damage,500,2.15,1.0,4034.718373782826,4035,True,4035,True,3251,False,500
+Deadeye,12,6,250,"battlemage, forester",Kill Gold,global,2219,percent,Kill Gold,275,2.15,1.0,2219.095105580554,2219,True,2219,True,1788,False,275
+Battlemage,12,6,250,"forester, deadeye",Energy Income,global,48,flat,Energy Income,6,2.15,1.0,48.416620485393906,48,True,48,True,39,False,6
+Forester,12,6,250,"battlemage, deadeye",Kill Gold,global,2219,percent,Kill Gold,275,2.15,1.0,2219.095105580554,2219,True,2219,True,1788,False,275
+Deadeye,13,7,500,assassin,Skill Power,personal,100,flat,Skill Power,15,1.77,1.0,99.64816076645026,100,True,100,True,80,False,15
+Assassin,13,7,500,deadeye,Damage,global,1993,percent,Damage,300,1.77,1.0,1992.9632153290052,1993,True,1993,True,1606,False,300
+Deadeye,14,7,500,"champion, apprentice",Super Crit Damage,personal,13286,percent,Super Crit Damage,2000,1.77,1.0,13286.421435526701,13286,True,13286,True,10706,False,2000
+Champion,14,7,500,"apprentice, deadeye",Skill Power,global,53,flat,Skill Power,8,1.77,1.0,53.14568574210681,53,True,53,True,43,False,8
+Apprentice,14,7,500,"champion, deadeye",Damage,global,2325,percent,Damage,350,1.77,1.0,2325.123751217173,2325,True,2325,True,1874,False,350
+Deadeye,15,8,1000,"praetorian, titan, dicemaster",Ultra Crit Chance,global,26,percent,Ultra Crit Chance,7,1,1.0,26.272584759516075,26,True,26,True,21,False,7
+Praetorian,15,8,1000,"titan, dicemaster, deadeye",Ultra Crit Damage,global,11260,percent,Ultra Crit Damage,3000,1,1.0,11259.679182649747,11260,True,11260,True,9073,False,3000
+Titan,15,8,1000,"praetorian, dicemaster, deadeye",Skill Power,personal,113,flat,Skill Power,30,1,1.0,112.59679182649747,113,True,113,True,91,False,30
+Dicemaster,15,8,1000,"praetorian, titan, deadeye",Attack Speed,global,225,percent,Attack Speed,60,1,1.0,225.19358365299493,225,True,225,True,181,False,60
+Deadeye,16,9,1500,"sorcerer, necromancer, forester",Attack Speed,personal,751,percent,Attack Speed,200,1,1.0,750.6452788433164,751,True,751,True,605,False,200
+Sorcerer,16,9,1500,"necromancer, forester, deadeye",Skill Power,global,56,flat,Skill Power,15,1,1.0,56.29839591324873,56,True,56,True,45,False,15
+Necromancer,16,9,1500,"sorcerer, forester, deadeye",Ultra Crit Damage,global,12198,percent,Ultra Crit Damage,3250,1,1.0,12197.985781203892,12198,True,12198,True,9829,False,3250
+Forester,16,9,1500,"sorcerer, necromancer, deadeye",Ultra Crit Chance,global,30,percent,Ultra Crit Chance,8,1,1.0,30.025811153732658,30,True,30,True,24,False,8
+Archer,7,4,100,captain,Super Energy Chance,global,9,percent,Super Energy Chance,1,2.5,1.0,9.383065985541455,9,True,9,True,8,False,1
+Captain,7,4,100,archer,Super Gold Chance,personal,94,percent,Super Gold Chance,10,2.5,1.0,93.83065985541455,94,True,94,True,76,False,10
+Archer,8,4,100,"gladiator, apprentice",Kill Gold,personal,3284,percent,Kill Gold,350,2.5,1.0,3284.0730949395092,3284,True,3284,True,2646,False,350
+Gladiator,8,4,100,"apprentice, archer",Damage,global,1407,percent,Damage,150,2.5,1.0,1407.4598978312183,1407,True,1407,True,1134,False,150
+Apprentice,8,4,100,"gladiator, archer",Super Energy Amount,global,38,percent,Super Energy,4,2.5,1.0,37.53226394216582,38,True,38,True,30,False,4
+Archer,9,5,150,crusader,Skill Power,global,24,flat,Skill Power,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Crusader,9,5,150,archer,Super Gold Amount,personal,8876,percent,Super Gold Amount,1100,2.15,1.0,8876.380422322216,8876,True,8876,True,7152,False,1100
+Archer,10,5,150,"champion, warlock",Super Gold Amount,global,5043,percent,Super Gold Amount,625,2.15,1.0,5043.397967228532,5043,True,5043,True,4064,False,625
+Champion,10,5,150,"warlock, archer",Super Crit Chance,global,81,percent,Super Crit Chance,10,2.15,1.0,80.69436747565652,81,True,81,True,65,False,10
+Warlock,10,5,150,"champion, archer",Damage,personal,3631,percent,Damage,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Archer,11,6,250,deadeye,Damage,personal,4035,percent,Damage,500,2.15,1.0,4034.718373782826,4035,True,4035,True,3251,False,500
+Deadeye,11,6,250,archer,Ultra Crit Chance,personal,40,percent,Ultra Crit Chance,5,2.15,1.0,40.34718373782826,40,True,40,True,33,False,5
+Archer,12,6,250,"militia, titan",Ultra Crit Damage,global,18156,percent,Ultra Crit Damage,2250,2.15,1.0,18156.232682022717,18156,True,18156,True,14630,False,2250
+Militia,12,6,250,"titan, archer",Damage,personal,4842,percent,Damage,600,2.15,1.0,4841.662048539391,4842,True,4842,True,3901,False,600
+Titan,12,6,250,"militia, archer",Kill Gold,personal,4842,percent,Kill Gold,600,2.15,1.0,4841.662048539391,4842,True,4842,True,3901,False,600
+Assassin,7,4,100,peacekeeper,Kill Gold,global,1173,percent,Kill Gold,125,2.5,1.0,1172.8832481926818,1173,True,1173,True,945,False,125
+Peacekeeper,7,4,100,assassin,Damage,personal,2815,percent,Damage,300,2.5,1.0,2814.9197956624366,2815,True,2815,True,2268,False,300
+Assassin,8,4,100,"berserker, sorcerer",Energy Income,global,19,flat,Energy Income,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Berserker,8,4,100,"assassin, sorcerer",Skill Power,global,19,flat,Skill Power,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Sorcerer,8,4,100,"assassin, berserker",Super Energy Chance,global,19,percent,Super Energy Chance,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Assassin,9,5,150,dicemaster,Damage,global,1412,percent,Damage,175,2.15,1.0,1412.1514308239891,1412,True,1412,True,1138,False,175
+Dicemaster,9,5,150,assassin,Damage,global,1412,percent,Damage,175,2.15,1.0,1412.1514308239891,1412,True,1412,True,1138,False,175
+Assassin,10,5,150,"hunter, captain",Super Crit Damage,global,5043,percent,Super Crit Damage,625,2.15,1.0,5043.397967228532,5043,True,5043,True,4064,False,625
+Hunter,10,5,150,"assassin, captain",Kill Gold,personal,3631,percent,Kill Gold,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Captain,10,5,150,"assassin, hunter",Super Crit Chance,global,81,percent,Super Crit Chance,10,2.15,1.0,80.69436747565652,81,True,81,True,65,False,10
+Assassin,11,6,250,skymage,Ultra Exp Chance,global,16,percent,Ultra Exp Chance,2,2.15,1.0,16.138873495131303,16,True,16,True,13,False,2
+Skymage,11,6,250,assassin,Ultra Crit Chance,global,16,percent,Ultra Crit Chance,2,2.15,1.0,16.138873495131303,16,True,16,True,13,False,2
+Assassin,12,6,250,"warlord, wizard",Ultra Crit Chance,personal,56,percent,Ultra Crit Chance,7,2.15,1.0,56.48605723295956,56,True,56,True,46,False,7
+Warlord,12,6,250,"assassin, wizard",Ultra Gold Amount,personal,34295,percent,Ultra Gold Amount,4250,2.15,1.0,34295.10617715402,34295,True,34295,True,27634,False,4250
+Wizard,12,6,250,"assassin, warlord",Ultra Crit Chance,personal,56,percent,Ultra Crit Chance,7,2.15,1.0,56.48605723295956,56,True,56,True,46,False,7
+Crusader,1,1,,ballista,Skill Cooldown,global,-47,percent,Skill Cooldown,2,6.25,1.0,46.915329927707276,47,True,47,True,38,False,2
+Ballista,1,1,,crusader,Kill Gold,personal,586,percent,Kill Gold,25,6.25,1.0,586.441624096341,586,True,586,True,473,False,25
+Crusader,2,1,,"skymage, warlock",Attack Speed,global,141,percent,Attack Speed,6,6.25,1.0,140.74598978312184,141,True,141,True,113,False,6
+Skymage,2,1,,"crusader, warlock",Skill Cooldown,personal,-235,percent,Skill Cooldown,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Warlock,2,1,,"crusader, skymage",Kill Gold,global,469,percent,Kill Gold,20,6.25,1.0,469.15329927707273,469,True,469,True,378,False,20
+Crusader,3,2,15,warlord,Kill Gold,global,938,percent,Kill Gold,40,6.25,1.0,938.3065985541455,938,True,938,True,756,False,40
+Warlord,3,2,15,crusader,Attack Speed,global,235,percent,Rank Exp,6,6.25,1.0,140.74598978312184,141,False,141,False,113,False,10
+Crusader,4,2,15,"paladin, sorcerer",Damage,personal,3519,percent,Damage,150,6.25,1.0,3518.6497445780456,3519,True,3519,True,2835,False,150
+Paladin,4,2,15,"sorcerer, crusader",Rank Exp,global,235,flat,Rank Exp,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Sorcerer,4,2,15,"paladin, crusader",Skill Cooldown,personal,-469,percent,Skill Cooldown,20,6.25,1.0,469.15329927707273,469,True,469,True,378,False,20
+Crusader,5,3,50,titan,Skill Duration,personal,75,flat,Skill Duration,8,2.5,1.0,75.06452788433164,75,True,75,True,60,False,8
+Titan,5,3,50,crusader,Crit Damage,personal,1877,percent,Crit Damage,200,2.5,1.0,1876.613197108291,1877,True,1877,True,1512,False,200
+Crusader,6,3,50,"skymage, ranger",Crit Chance,personal,469,percent,Crit Chance,50,2.5,1.0,469.15329927707273,469,True,469,True,378,False,50
+Skymage,6,3,50,"ranger, crusader",Damage,personal,2346,percent,Damage,250,2.5,1.0,2345.7664963853636,2346,True,2346,True,1890,False,250
+Ranger,6,3,50,"skymage, crusader",Kill Gold,personal,2346,percent,Kill Gold,250,2.5,1.0,2345.7664963853636,2346,True,2346,True,1890,False,250
+Champion,7,4,100,hunter,Super Gold Chance,global,38,percent,Super Gold Chance,4,2.5,1.0,37.53226394216582,38,True,38,True,30,False,4
+Hunter,7,4,100,champion,Damage,global,1173,percent,Damage,125,2.5,1.0,1172.8832481926818,1173,True,1173,True,945,False,125
+Champion,8,4,100,"militia, crusader",Damage,personal,3284,percent,Damage,350,2.5,1.0,3284.0730949395092,3284,True,3284,True,2646,False,350
+Militia,8,4,100,"champion, crusader",Super Gold Chance,global,56,percent,Super Gold Chance,6,2.5,1.0,56.298395913248726,56,True,56,True,45,False,6
+Crusader,8,4,100,"militia, champion",Super Energy Amount,global,38,percent,Super Energy,4,2.5,1.0,37.53226394216582,38,True,38,True,30,False,4
+Champion,9,5,150,ballista,Kill Gold,personal,3228,percent,Kill Gold,400,2.15,1.0,3227.774699026261,3228,True,3228,True,2601,False,400
+Ballista,9,5,150,champion,Kill Gold,global,1412,percent,Kill Gold,175,2.15,1.0,1412.1514308239891,1412,True,1412,True,1138,False,175
+Champion,10,5,150,"warlock, archer",Super Crit Chance,global,81,percent,Super Crit Chance,10,2.15,1.0,80.69436747565652,81,True,81,True,65,False,10
+Warlock,10,5,150,"champion, archer",Damage,personal,3631,percent,Damage,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Archer,10,5,150,"champion, warlock",Super Gold Amount,global,5043,percent,Super Gold Amount,625,2.15,1.0,5043.397967228532,5043,True,5043,True,4064,False,625
+Champion,11,6,250,sniper,Energy Income,global,40,flat,Energy Income,5,2.15,1.0,40.34718373782826,40,True,40,True,33,False,5
+Sniper,11,6,250,champion,Ultra Crit Chance,global,16,percent,Ultra Crit Chance,2,2.15,1.0,16.138873495131303,16,True,16,True,13,False,2
+Champion,12,6,250,"samurai, paladin",Ultra Exp Chance,global,24,percent,Ultra Exp Chance,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Samurai,12,6,250,"paladin, champion",Kill Gold,global,2219,percent,Kill Gold,275,2.15,1.0,2219.095105580554,2219,True,2219,True,1788,False,275
+Paladin,12,6,250,"samurai, champion",Skill Power,global,48,flat,Skill Power,6,2.15,1.0,48.416620485393906,48,True,48,True,39,False,6
+Wizard,1,1,,elementalist,Damage,global,235,percent,Damage,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Elementalist,1,1,,wizard,Crit Chance,global,47,percent,Crit Chance,2,6.25,1.0,46.915329927707276,47,True,47,True,38,False,2
+Wizard,2,1,,"peacekeeper, samurai",Kill Gold,global,469,percent,Kill Gold,20,6.25,1.0,469.15329927707273,469,True,469,True,378,False,20
+Peacekeeper,2,1,,"samurai, wizard",Crit Damage,global,469,percent,Crit Damage,20,6.25,1.0,469.15329927707273,469,True,469,True,378,False,20
+Samurai,2,1,,"peacekeeper, wizard",Crit Chance,personal,235,percent,Crit Chance,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Wizard,3,2,15,battlemage,Crit Chance,global,188,percent,Crit Chance,8,6.25,1.0,187.6613197108291,188,True,188,True,151,False,8
+Battlemage,3,2,15,wizard,Skill Power,personal,117,flat,Skill Power,3,6.25,1.0,70.37299489156092,70,False,70,False,57,False,5
+Wizard,4,2,15,"titan, dicemaster",Attack Speed,global,352,percent,Attack Speed,15,6.25,1.0,351.8649744578046,352,True,352,True,284,False,15
+Titan,4,2,15,"wizard, dicemaster",Kill Gold,personal,3519,percent,Kill Gold,150,6.25,1.0,3518.6497445780456,3519,True,3519,True,2835,False,150
+Dicemaster,4,2,15,"titan, wizard",Damage,personal,3519,percent,Damage,150,6.25,1.0,3518.6497445780456,3519,True,3519,True,2835,False,150
+Wizard,5,3,50,ninja,Rank Exp,global,188,flat,Rank Exp,20,2.5,1.0,187.6613197108291,188,True,188,True,151,False,20
+Ninja,5,3,50,wizard,Kill Gold,global,751,percent,Kill Gold,80,2.5,1.0,750.6452788433164,751,True,751,True,605,False,80
+Wizard,6,3,50,"warlord, witch",Crit Damage,global,938,percent,Crit Damage,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Warlord,6,3,50,"witch, wizard",Crit Chance,personal,469,percent,Crit Chance,50,2.5,1.0,469.15329927707273,469,True,469,True,378,False,50
+Witch,6,3,50,"warlord, wizard",Damage,global,938,percent,Damage,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Wizard,9,5,150,warlock,Energy Income,global,24,flat,Energy Income,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Warlock,9,5,150,wizard,Super Crit Damage,global,4438,percent,Super Crit Damage,550,2.15,1.0,4438.190211161108,4438,True,4438,True,3576,False,550
+Wizard,10,5,150,"berserker, titan",Damage,personal,3631,percent,Damage,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Berserker,10,5,150,"titan, wizard",Kill Gold,personal,3631,percent,Kill Gold,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Titan,10,5,150,"berserker, wizard",Energy Income,global,32,flat,Energy Income,4,2.15,1.0,32.27774699026261,32,True,32,True,26,False,4
+Wizard,11,6,250,ranger,Ultra Energy Amount,global,202,percent,Ultra Energy Amount,25,2.15,1.0,201.7359186891413,202,True,202,True,163,False,25
+Ranger,11,6,250,wizard,Kill Gold,global,2017,percent,Kill Gold,250,2.15,1.0,2017.359186891413,2017,True,2017,True,1626,False,250
+Wizard,12,6,250,"assassin, warlord",Ultra Crit Chance,personal,56,percent,Ultra Crit Chance,7,2.15,1.0,56.48605723295956,56,True,56,True,46,False,7
+Assassin,12,6,250,"warlord, wizard",Ultra Crit Chance,personal,56,percent,Ultra Crit Chance,7,2.15,1.0,56.48605723295956,56,True,56,True,46,False,7
+Warlord,12,6,250,"assassin, wizard",Ultra Gold Amount,personal,34295,percent,Ultra Gold Amount,4250,2.15,1.0,34295.10617715402,34295,True,34295,True,27634,False,4250
+Wizard,13,7,500,crusader,Attack Speed,global,266,percent,Attack Speed,40,1.77,1.0,265.72842871053405,266,True,266,True,214,False,40
+Crusader,13,7,500,wizard,Skill Power,personal,100,flat,Skill Power,15,1.77,1.0,99.64816076645026,100,True,100,True,80,False,15
+Wizard,14,7,500,"sorcerer, skymage",Damage,global,2325,percent,Damage,350,1.77,1.0,2325.123751217173,2325,True,2325,True,1874,False,350
+Sorcerer,14,7,500,"wizard, skymage",Damage,global,2325,percent,Damage,350,1.77,1.0,2325.123751217173,2325,True,2325,True,1874,False,350
+Skymage,14,7,500,"sorcerer, wizard",Damage,global,2325,percent,Damage,350,1.77,1.0,2325.123751217173,2325,True,2325,True,1874,False,350
+Berserker,1,1,,skymage,Damage,global,235,percent,Damage,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Skymage,1,1,,berserker,Crit Damage,global,235,percent,Crit Damage,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Berserker,2,1,,"chieftain, ballista",Crit Damage,global,469,percent,Crit Damage,20,6.25,1.0,469.15329927707273,469,True,469,True,378,False,20
+Chieftain,2,1,,"berserker, ballista",Attack Speed,personal,586,percent,Attack Speed,24,6.25,1.0,562.9839591324874,563,False,563,False,454,False,25
+Ballista,2,1,,"berserker, chieftain",Skill Cooldown,global,-94,percent,Skill Cooldown,4,6.25,1.0,93.83065985541455,94,True,94,True,76,False,4
+Berserker,3,2,15,veteran,Super Exp Chance,global,23,percent,Kill Gold,40,6.25,1.0,938.3065985541455,938,False,938,False,756,False,1
+Veteran,3,2,15,berserker,Skill Power,personal,117,flat,Attack Speed,40,6.25,1.0,938.3065985541455,938,False,938,False,756,False,5
+Berserker,4,2,15,"ninja, scout",Skill Power,personal,141,flat,Skill Power,5,6.25,1.0,117.28832481926818,117,False,117,False,95,False,6
+Ninja,4,2,15,"berserker, scout",Skill Duration,personal,141,flat,Skill Duration,6,6.25,1.0,140.74598978312184,141,True,141,True,113,False,6
+Scout,4,2,15,"ninja, berserker",Attack Speed,personal,1407,percent,Attack Speed,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Berserker,5,3,50,apprentice,Attack Speed,global,206,percent,Attack Speed,22,2.5,1.0,206.427451681912,206,True,206,True,166,False,22
+Apprentice,5,3,50,berserker,Kill Gold,personal,1877,percent,Kill Gold,200,2.5,1.0,1876.613197108291,1877,True,1877,True,1512,False,200
+Berserker,6,3,50,"peacekeeper, forester",Rank Exp,global,328,flat,Rank Exp,35,2.5,1.0,328.40730949395095,328,True,328,True,265,False,35
+Peacekeeper,6,3,50,"berserker, forester",Super Exp Chance,global,9,percent,Skill Duration,10,2.5,1.0,93.83065985541455,94,False,94,False,76,False,1
+Forester,6,3,50,"peacekeeper, berserker",Super Exp Amount,global,28,percent,Damage,100,2.5,1.0,938.3065985541455,938,False,938,False,756,False,3
+Berserker,7,4,100,arbalest,Super Crit Chance,global,38,percent,Super Crit Chance,4,2.5,1.0,37.53226394216582,38,True,38,True,30,False,4
+Arbalest,7,4,100,berserker,Super Gold Amount,personal,7976,percent,Super Gold Amount,850,2.5,1.0,7975.606087710236,7976,True,7976,True,6427,False,850
+Berserker,8,4,100,"assassin, sorcerer",Skill Power,global,19,flat,Skill Power,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Assassin,8,4,100,"berserker, sorcerer",Energy Income,global,19,flat,Energy Income,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Sorcerer,8,4,100,"assassin, berserker",Super Energy Chance,global,19,percent,Super Energy Chance,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Berserker,9,5,150,samurai,Damage,personal,3228,percent,Damage,400,2.15,1.0,3227.774699026261,3228,True,3228,True,2601,False,400
+Samurai,9,5,150,berserker,Super Gold Chance,global,65,percent,Super Gold Chance,8,2.15,1.0,64.55549398052521,65,True,65,True,52,False,8
+Berserker,10,5,150,"titan, wizard",Kill Gold,personal,3631,percent,Kill Gold,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Titan,10,5,150,"berserker, wizard",Energy Income,global,32,flat,Energy Income,4,2.15,1.0,32.27774699026261,32,True,32,True,26,False,4
+Wizard,10,5,150,"berserker, titan",Damage,personal,3631,percent,Damage,450,2.15,1.0,3631.2465364045433,3631,True,3631,True,2926,False,450
+Berserker,11,6,250,sovereign,Ultra Gold Chance,personal,40,percent,Ultra Gold Chance,5,2.15,1.0,40.34718373782826,40,True,40,True,33,False,5
+Sovereign,11,6,250,berserker,Ultra Exp Amount,global,363,percent,Ultra Exp Amount,45,2.15,1.0,363.1246536404543,363,True,363,True,293,False,45
+Berserker,12,6,250,"druid, hunter",Ultra Energy Amount,global,282,percent,Ultra Energy Amount,35,2.15,1.0,282.4302861647978,282,True,282,True,228,False,35
+Druid,12,6,250,"berserker, hunter",Ultra Gold Chance,global,24,percent,Ultra Gold Chance,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Hunter,12,6,250,"berserker, druid",Ultra Gold Amount,global,18156,percent,Ultra Gold Amount,2250,2.15,1.0,18156.232682022717,18156,True,18156,True,14630,False,2250
+Necromancer,1,1,,warden,Damage,personal,586,percent,Damage,25,6.25,1.0,586.441624096341,586,True,586,True,473,False,25
+Warden,1,1,,necromancer,Crit Chance,global,38,percent,Crit Chance,2,6.25,0.8,37.53226394216582,38,True,38,True,30,False,2
+Necromancer,2,1,,"warlord, captain",Skill Duration,personal,70,flat,Skill Duration,2,6.25,1.0,46.915329927707276,47,False,47,False,38,False,3
+Warlord,2,1,,"necromancer, captain",Skill Duration,personal,70,flat,Skill Duration,2,6.25,1.0,46.915329927707276,47,False,47,False,38,False,3
+Captain,2,1,,"warlord, necromancer",Skill Power,personal,70,flat,Skill Power,2,6.25,1.0,46.915329927707276,47,False,47,False,38,False,3
+Necromancer,3,2,15,sniper,Attack Speed,global,235,percent,Attack Speed,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Sniper,3,2,15,necromancer,Crit Chance,personal,399,percent,Crit Chance,17,6.25,1.0,398.78030438551184,399,True,399,True,321,False,17
+Necromancer,4,2,15,"witch, hunter",Crit Chance,global,281,percent,Crit Chance,12,6.25,1.0,281.4919795662437,281,True,281,True,227,False,12
+Witch,4,2,15,"necromancer, hunter",Rank Exp,global,235,flat,Rank Exp,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Hunter,4,2,15,"witch, necromancer",Kill Gold,global,1407,percent,Kill Gold,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Necromancer,5,3,50,sorcerer,Kill Gold,personal,1877,percent,Kill Gold,200,2.5,1.0,1876.613197108291,1877,True,1877,True,1512,False,200
+Sorcerer,5,3,50,necromancer,Attack Speed,personal,751,percent,Attack Speed,80,2.5,1.0,750.6452788433164,751,True,751,True,605,False,80
+Necromancer,6,3,50,"samurai, hunter",Crit Damage,global,938,percent,Crit Damage,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Samurai,6,3,50,"necromancer, hunter",Attack Speed,personal,938,percent,Attack Speed,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Hunter,6,3,50,"samurai, necromancer",Crit Chance,personal,469,percent,Crit Chance,50,2.5,1.0,469.15329927707273,469,True,469,True,378,False,50
+Necromancer,11,6,250,elementalist,Ultra Crit Damage,personal,30260,percent,Ultra Crit Damage,3750,2.15,1.0,30260.387803371195,30260,True,30260,True,24383,False,3750
+Elementalist,11,6,250,necromancer,Ultra Gold Amount,personal,30260,percent,Ultra Gold Amount,3750,2.15,1.0,30260.387803371195,30260,True,30260,True,24383,False,3750
+Necromancer,12,6,250,"templar, rogue",Energy Income,global,48,flat,Energy Income,6,2.15,1.0,48.416620485393906,48,True,48,True,39,False,6
+Templar,12,6,250,"necromancer, rogue",Ultra Gold Chance,global,24,percent,Ultra Gold Chance,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Rogue,12,6,250,"templar, necromancer",Damage,personal,4842,percent,Damage,600,2.15,1.0,4841.662048539391,4842,True,4842,True,3901,False,600
+Necromancer,13,7,500,praetorian,Ultra Boss Damage,global,9300,percent,Ultra Boss Damage,1400,1.77,1.0,9300.495004868691,9300,True,9300,True,7494,False,1400
+Praetorian,13,7,500,necromancer,Attack Speed,personal,830,percent,Attack Speed,125,1.77,1.0,830.4013397204188,830,True,830,True,669,False,125
+Necromancer,14,7,500,"witch, warden",Skill Power,personal,133,flat,Skill Power,20,1.77,1.0,132.86421435526702,133,True,133,True,107,False,20
+Witch,14,7,500,"necromancer, warden",Skill Duration,personal,100,flat,Skill Duration,15,1.77,1.0,99.64816076645026,100,True,100,True,80,False,15
+Warden,14,7,500,"witch, necromancer",Attack Speed,personal,797,percent,Attack Speed,150,1.77,0.8,797.1852861316021,797,True,797,True,642,False,150
+Necromancer,15,8,1000,"viking, wizard, ballista",Boss Damage,global,3003,percent,Boss Damage,800,1,1.0,3002.5811153732657,3003,True,3003,True,2419,False,800
+Viking,15,8,1000,"wizard, necromancer, ballista",Boss Exp,global,150,percent,Boss Exp,40,1,1.0,150.12905576866328,150,True,150,True,121,False,40
+Wizard,15,8,1000,"viking, necromancer, ballista",Ultra Exp Amount,global,394,percent,Ultra Exp Amount,105,1,1.0,394.08877139274114,394,True,394,True,318,False,105
+Ballista,15,8,1000,"viking, wizard, necromancer",Skill Power,personal,113,flat,Skill Power,30,1,1.0,112.59679182649747,113,True,113,True,91,False,30
+Peacekeeper,9,5,150,witch,Kill Gold,personal,3228,percent,Kill Gold,400,2.15,1.0,3227.774699026261,3228,True,3228,True,2601,False,400
+Witch,9,5,150,peacekeeper,Damage,personal,3228,percent,Damage,400,2.15,1.0,3227.774699026261,3228,True,3228,True,2601,False,400
+Peacekeeper,10,5,150,"apprentice, rogue",Skill Power,global,32,flat,Skill Power,4,2.15,1.0,32.27774699026261,32,True,32,True,26,False,4
+Apprentice,10,5,150,"peacekeeper, rogue",Damage,global,1614,percent,Damage,200,2.15,1.0,1613.8873495131304,1614,True,1614,True,1300,False,200
+Rogue,10,5,150,"peacekeeper, apprentice",Super Gold Chance,personal,202,percent,Super Gold Chance,25,2.15,1.0,201.7359186891413,202,True,202,True,163,False,25
+Peacekeeper,11,6,250,scout,Ultra Crit Damage,global,16139,percent,Ultra Crit Damage,2000,2.15,1.0,16138.873495131304,16139,True,16139,True,13004,False,2000
+Scout,11,6,250,peacekeeper,Kill Gold,global,2017,percent,Kill Gold,250,2.15,1.0,2017.359186891413,2017,True,2017,True,1626,False,250
+Peacekeeper,12,6,250,"sovereign, warden",Ultra Energy Chance,global,24,percent,Ultra Energy Chance,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Sovereign,12,6,250,"peacekeeper, warden",Damage,personal,4842,percent,Damage,600,2.15,1.0,4841.662048539391,4842,True,4842,True,3901,False,600
+Warden,12,6,250,"peacekeeper, sovereign",Ultra Energy Chance,global,19,percent,Ultra Energy Chance,3,2.15,0.8,19.366648194157563,19,True,19,True,16,False,3
+Peacekeeper,13,7,500,captain,Damage,global,1993,percent,Damage,300,1.77,1.0,1992.9632153290052,1993,True,1993,True,1606,False,300
+Captain,13,7,500,peacekeeper,Skill Power,personal,100,flat,Skill Power,15,1.77,1.0,99.64816076645026,100,True,100,True,80,False,15
+Peacekeeper,14,7,500,"gladiator, warlord",Super Energy Amount,global,133,percent,Super Energy Amount,20,1.77,1.0,132.86421435526702,133,True,133,True,107,False,20
+Gladiator,14,7,500,"peacekeeper, warlord",Energy Income,global,53,flat,Energy Income,8,1.77,1.0,53.14568574210681,53,True,53,True,43,False,8
+Warlord,14,7,500,"peacekeeper, gladiator",Ultra Boss Damage,global,10629,percent,Ultra Boss Damage,1600,1.77,1.0,10629.137148421361,10629,True,10629,True,8565,False,1600
+Skymage,7,4,100,dicemaster,Super Gold Chance,global,38,percent,Super Gold Chance,4,2.5,1.0,37.53226394216582,38,True,38,True,30,False,4
+Dicemaster,7,4,100,skymage,Energy Income,global,9,flat,Energy Income,1,2.5,1.0,9.383065985541455,9,True,9,True,8,False,1
+Skymage,8,4,100,"warlord, veteran",Skill Power,global,19,flat,Skill Power,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Warlord,8,4,100,"skymage, veteran",Skill Power,global,19,flat,Skill Power,2,2.5,1.0,18.76613197108291,19,True,19,True,15,False,2
+Veteran,8,4,100,"warlord, skymage",Super Exp Amount,global,66,percent,Super Gold Chance,6,2.5,1.0,56.298395913248726,56,False,56,False,45,False,7
+Skymage,9,5,150,hunter,Damage,global,1412,percent,Damage,175,2.15,1.0,1412.1514308239891,1412,True,1412,True,1138,False,175
+Hunter,9,5,150,skymage,Super Crit Chance,global,65,percent,Super Crit Chance,8,2.15,1.0,64.55549398052521,65,True,65,True,52,False,8
+Skymage,10,5,150,"gladiator, deadeye",Super Energy Amount,global,65,percent,Super Energy,8,2.15,1.0,64.55549398052521,65,True,65,True,52,False,8
+Gladiator,10,5,150,"skymage, deadeye",Super Gold Amount,global,5043,percent,Super Gold Amount,625,2.15,1.0,5043.397967228532,5043,True,5043,True,4064,False,625
+Deadeye,10,5,150,"gladiator, skymage",Super Crit Chance,global,81,percent,Super Crit Chance,10,2.15,1.0,80.69436747565652,81,True,81,True,65,False,10
+Skymage,11,6,250,assassin,Ultra Crit Chance,global,16,percent,Ultra Crit Chance,2,2.15,1.0,16.138873495131303,16,True,16,True,13,False,2
+Assassin,11,6,250,skymage,Ultra Exp Chance,global,16,percent,Ultra Exp Chance,2,2.15,1.0,16.138873495131303,16,True,16,True,13,False,2
+Skymage,12,6,250,"sorcerer, ballista",Kill Gold,global,2219,percent,Kill Gold,275,2.15,1.0,2219.095105580554,2219,True,2219,True,1788,False,275
+Sorcerer,12,6,250,"skymage, ballista",Ultra Exp Chance,global,24,percent,Ultra Exp Chance,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Ballista,12,6,250,"sorcerer, skymage",Ultra Gold Chance,global,24,percent,Ultra Gold Chance,3,2.15,1.0,24.208310242696953,24,True,24,True,20,False,3
+Witch,1,1,,forester,Skill Cooldown,personal,-117,percent,Skill Cooldown,5,6.25,1.0,117.28832481926818,117,True,117,True,95,False,5
+Forester,1,1,,witch,Skill Cooldown,personal,-117,percent,Skill Cooldown,5,6.25,1.0,117.28832481926818,117,True,117,True,95,False,5
+Witch,2,1,,"ninja, sorcerer",Crit Damage,global,469,percent,Crit Damage,50,6.25,1.0,1172.883248192682,1173,False,1173,False,945,False,20
+Ninja,2,1,,"sorcerer, witch",Crit Damage,personal,1173,percent,Crit Damage,50,6.25,1.0,1172.883248192682,1173,True,1173,True,945,False,50
+Sorcerer,2,1,,"ninja, witch",Crit Chance,global,94,percent,Crit Chance,10,6.25,1.0,234.57664963853637,235,False,235,False,189,False,4
+Witch,3,2,15,samurai,Attack Speed,global,235,percent,Attack Speed,40,6.25,1.0,938.3065985541455,938,False,938,False,756,False,10
+Samurai,3,2,15,witch,Skill Duration,personal,117,flat,Skill Duration,4,6.25,1.0,93.83065985541455,94,False,94,False,76,False,5
+Witch,4,2,15,"necromancer, hunter",Rank Exp,global,235,flat,Rank Exp,10,6.25,1.0,234.57664963853637,235,True,235,True,189,False,10
+Necromancer,4,2,15,"witch, hunter",Crit Chance,global,281,percent,Crit Chance,12,6.25,1.0,281.4919795662437,281,True,281,True,227,False,12
+Hunter,4,2,15,"witch, necromancer",Kill Gold,global,1407,percent,Kill Gold,60,6.25,1.0,1407.4598978312183,1407,True,1407,True,1134,False,60
+Witch,5,3,50,paladin,Kill Gold,global,751,percent,Kill Gold,80,2.5,1.0,750.6452788433164,751,True,751,True,605,False,80
+Paladin,5,3,50,witch,Skill Duration,personal,75,flat,Skill Duration,8,2.5,1.0,75.06452788433164,75,True,75,True,60,False,8
+Witch,6,3,50,"warlord, wizard",Damage,global,938,percent,Damage,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100
+Warlord,6,3,50,"witch, wizard",Crit Chance,personal,469,percent,Crit Chance,50,2.5,1.0,469.15329927707273,469,True,469,True,378,False,50
+Wizard,6,3,50,"warlord, witch",Crit Damage,global,938,percent,Crit Damage,100,2.5,1.0,938.3065985541455,938,True,938,True,756,False,100

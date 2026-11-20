@@ -1,0 +1,1583 @@
+{
+  "batch": "batch-20.json",
+  "status": "activated-in-confirmed-overrides",
+  "observedEffects": 43,
+  "coverage": {
+    "uniqueEffects": 43,
+    "uniqueGroups": 16,
+    "newUniqueEffectsVsEarlierBatches": 19,
+    "newUniqueGroupsVsEarlierBatches": 8,
+    "overlappingEffectAppearances": 24,
+    "repeatedPortraitAppearances": 0,
+    "note": "Coverage counts reflect the audit creation snapshot; aggregate coverage recomputes all available batches."
+  },
+  "frozenMagnitudeMatches": 41,
+  "currentMagnitudeMatches": 41,
+  "currentFullMatches": 40,
+  "newOverrideRecords": 3,
+  "overrides": [
+    {
+      "ownerId": "arbalest",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "samurai"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 2,
+        "global": true,
+        "source": "Data!C19:F19"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-20.json",
+      "evidence": {
+        "groupId": "samurai-s1",
+        "sourceImageId": "samurai-9gm-event-01",
+        "displayedValue": 47,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "samurai",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "witch"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 4,
+        "global": false,
+        "source": "Data!L17:O17"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-20.json",
+      "evidence": {
+        "groupId": "samurai-s3",
+        "sourceImageId": "samurai-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 5,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master active-event capture context and account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "witch",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "samurai"
+      ],
+      "expectedOriginal": {
+        "type": "Attack Speed",
+        "value": 40,
+        "global": false,
+        "source": "Data!L12:O12"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-20.json",
+      "evidence": {
+        "groupId": "samurai-s3",
+        "sourceImageId": "samurai-9gm-event-01",
+        "displayedValue": 235,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 10,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master active-event capture context and account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    }
+  ],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "samurai",
+      "index": 1,
+      "tier": 1,
+      "groupId": "samurai-s1",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+235% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 10,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "arbalest",
+      "index": 1,
+      "tier": 1,
+      "groupId": "samurai-s1",
+      "observed": {
+        "ownerId": "arbalest",
+        "ownerName": "Arbalest",
+        "displayedValue": 47,
+        "signedValue": -47,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "-47% Skill Cooldown (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 2,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 47,
+      "frozenPredictedSignedValue": 47,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": [
+        "sign"
+      ]
+    },
+    {
+      "ownerId": "samurai",
+      "index": 2,
+      "tier": 1,
+      "groupId": "samurai-s2",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+235% Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 10,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 10,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 2,
+      "tier": 1,
+      "groupId": "samurai-s2",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+469% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 20,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 20,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 2,
+      "tier": 1,
+      "groupId": "samurai-s2",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+469% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 20,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 20,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 3,
+      "tier": 2,
+      "groupId": "samurai-s3",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 117,
+        "signedValue": 117,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+117 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 4,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 4,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 94,
+      "frozenPredictedSignedValue": 94,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": [
+        "value"
+      ]
+    },
+    {
+      "ownerId": "witch",
+      "index": 3,
+      "tier": 2,
+      "groupId": "samurai-s3",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+235% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 40,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 40,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": [
+        "global",
+        "value"
+      ]
+    },
+    {
+      "ownerId": "samurai",
+      "index": 4,
+      "tier": 2,
+      "groupId": "samurai-s4",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,407% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 60,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 60,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 1407,
+      "frozenPredictedSignedValue": 1407,
+      "integerBaseCandidates": [
+        60
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 4,
+      "tier": 2,
+      "groupId": "samurai-s4",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Rank Exp",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+235 Rank Exp (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "templar",
+      "index": 4,
+      "tier": 2,
+      "groupId": "samurai-s4",
+      "observed": {
+        "ownerId": "templar",
+        "ownerName": "Templar",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,407% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 60,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 60,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 1407,
+      "frozenPredictedSignedValue": 1407,
+      "integerBaseCandidates": [
+        60
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 5,
+      "tier": 3,
+      "groupId": "samurai-s5",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 751,
+        "signedValue": 751,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+751% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 80,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 80,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 751,
+      "frozenPredictedSignedValue": 751,
+      "integerBaseCandidates": [
+        80
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 5,
+      "tier": 3,
+      "groupId": "samurai-s5",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 751,
+        "signedValue": 751,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+751% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 80,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 80,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 751,
+      "frozenPredictedSignedValue": 751,
+      "integerBaseCandidates": [
+        80
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 6,
+      "tier": 3,
+      "groupId": "samurai-s6",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+938% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 100,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 100,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        100
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 6,
+      "tier": 3,
+      "groupId": "samurai-s6",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 100,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 100,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        100
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 6,
+      "tier": 3,
+      "groupId": "samurai-s6",
+      "observed": {
+        "ownerId": "hunter",
+        "ownerName": "Hunter",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+469% Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        50
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 7,
+      "tier": 4,
+      "groupId": "samurai-s7",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Super Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+19% Super Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Exp Chance",
+        "value": 2,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ballista",
+      "index": 7,
+      "tier": 4,
+      "groupId": "samurai-s7",
+      "observed": {
+        "ownerId": "ballista",
+        "ownerName": "Ballista",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Super Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+19% Super Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Exp Chance",
+        "value": 2,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 8,
+      "tier": 4,
+      "groupId": "samurai-s8",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 8914,
+        "signedValue": 8914,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+8,914% Super Crit Damage (personal effect)"
+      },
+      "current": {
+        "type": "Super Crit Damage",
+        "value": 950,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Damage",
+        "value": 950,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 8914,
+      "frozenPredictedSignedValue": 8914,
+      "integerBaseCandidates": [
+        950
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "scout",
+      "index": 8,
+      "tier": 4,
+      "groupId": "samurai-s8",
+      "observed": {
+        "ownerId": "scout",
+        "ownerName": "Scout",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,407% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 150,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 150,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1407,
+      "frozenPredictedSignedValue": 1407,
+      "integerBaseCandidates": [
+        150
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warden",
+      "index": 8,
+      "tier": 4,
+      "groupId": "samurai-s8",
+      "observed": {
+        "ownerId": "warden",
+        "ownerName": "Warden",
+        "displayedValue": 15,
+        "signedValue": 15,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+15 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true
+      },
+      "factor": 7.5064527884331635,
+      "predictedSignedValue": 15,
+      "frozenPredictedSignedValue": 15,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 9,
+      "tier": 5,
+      "groupId": "samurai-s9",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 65,
+        "signedValue": 65,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+65% Super Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Chance",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 8,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 65,
+      "frozenPredictedSignedValue": 65,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 9,
+      "tier": 5,
+      "groupId": "samurai-s9",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 3228,
+        "signedValue": 3228,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,228% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 400,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 400,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3228,
+      "frozenPredictedSignedValue": 3228,
+      "integerBaseCandidates": [
+        400
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 10,
+      "tier": 5,
+      "groupId": "samurai-s10",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 3631,
+        "signedValue": 3631,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,631% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 450,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 450,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3631,
+      "frozenPredictedSignedValue": 3631,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "viking",
+      "index": 10,
+      "tier": 5,
+      "groupId": "samurai-s10",
+      "observed": {
+        "ownerId": "viking",
+        "ownerName": "Viking",
+        "displayedValue": 10087,
+        "signedValue": 10087,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+10,087% Super Gold Amount (personal effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 1250,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 1250,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 10087,
+      "frozenPredictedSignedValue": 10087,
+      "integerBaseCandidates": [
+        1250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 10,
+      "tier": 5,
+      "groupId": "samurai-s10",
+      "observed": {
+        "ownerId": "elementalist",
+        "ownerName": "Elementalist",
+        "displayedValue": 1614,
+        "signedValue": 1614,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,614% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 200,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 200,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 1614,
+      "frozenPredictedSignedValue": 1614,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 11,
+      "tier": 6,
+      "groupId": "samurai-s11",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 40,
+        "signedValue": 40,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+40 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 5,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 5,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 40,
+      "frozenPredictedSignedValue": 40,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "praetorian",
+      "index": 11,
+      "tier": 6,
+      "groupId": "samurai-s11",
+      "observed": {
+        "ownerId": "praetorian",
+        "ownerName": "Praetorian",
+        "displayedValue": 16139,
+        "signedValue": 16139,
+        "type": "Ultra Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+16,139% Ultra Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Amount",
+        "value": 2000,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Amount",
+        "value": 2000,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 16139,
+      "frozenPredictedSignedValue": 16139,
+      "integerBaseCandidates": [
+        2000
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 12,
+      "tier": 6,
+      "groupId": "samurai-s12",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 2219,
+        "signedValue": 2219,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2219,
+      "frozenPredictedSignedValue": 2219,
+      "integerBaseCandidates": [
+        275
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "paladin",
+      "index": 12,
+      "tier": 6,
+      "groupId": "samurai-s12",
+      "observed": {
+        "ownerId": "paladin",
+        "ownerName": "Paladin",
+        "displayedValue": 48,
+        "signedValue": 48,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+48 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 6,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 6,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 48,
+      "frozenPredictedSignedValue": 48,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "champion",
+      "index": 12,
+      "tier": 6,
+      "groupId": "samurai-s12",
+      "observed": {
+        "ownerId": "champion",
+        "ownerName": "Champion",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Ultra Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+24% Ultra Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Exp Chance",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Exp Chance",
+        "value": 3,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 13,
+      "tier": 7,
+      "groupId": "samurai-s13",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 33,
+        "signedValue": 33,
+        "type": "Super Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+33% Super Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Chance",
+        "value": 5,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Energy Chance",
+        "value": 5,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 33,
+      "frozenPredictedSignedValue": 33,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "gladiator",
+      "index": 13,
+      "tier": 7,
+      "groupId": "samurai-s13",
+      "observed": {
+        "ownerId": "gladiator",
+        "ownerName": "Gladiator",
+        "displayedValue": 100,
+        "signedValue": 100,
+        "type": "Super Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+100% Super Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Amount",
+        "value": 15,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Energy Amount",
+        "value": 15,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 100,
+      "frozenPredictedSignedValue": 100,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 14,
+      "tier": 7,
+      "groupId": "samurai-s14",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 53,
+        "signedValue": 53,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+53 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 8,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 53,
+      "frozenPredictedSignedValue": 53,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "druid",
+      "index": 14,
+      "tier": 7,
+      "groupId": "samurai-s14",
+      "observed": {
+        "ownerId": "druid",
+        "ownerName": "Druid",
+        "displayedValue": 53,
+        "signedValue": 53,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+53 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 8,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 53,
+      "frozenPredictedSignedValue": 53,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "captain",
+      "index": 14,
+      "tier": 7,
+      "groupId": "samurai-s14",
+      "observed": {
+        "ownerId": "captain",
+        "ownerName": "Captain",
+        "displayedValue": 40,
+        "signedValue": 40,
+        "type": "Super Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+40% Super Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Chance",
+        "value": 6,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Energy Chance",
+        "value": 6,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 40,
+      "frozenPredictedSignedValue": 40,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 15,
+      "tier": 8,
+      "groupId": "samurai-s15",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 45,
+        "signedValue": 45,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+45 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 12,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 12,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 45,
+      "frozenPredictedSignedValue": 45,
+      "integerBaseCandidates": [
+        12
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 15,
+      "tier": 8,
+      "groupId": "samurai-s15",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 1501,
+        "signedValue": 1501,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,501% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 400,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 400,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 1501,
+      "frozenPredictedSignedValue": 1501,
+      "integerBaseCandidates": [
+        400
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 15,
+      "tier": 8,
+      "groupId": "samurai-s15",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 11260,
+        "signedValue": 11260,
+        "type": "Ultra Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+11,260% Ultra Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Amount",
+        "value": 3000,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Amount",
+        "value": 3000,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 11260,
+      "frozenPredictedSignedValue": 11260,
+      "integerBaseCandidates": [
+        3000
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 15,
+      "tier": 8,
+      "groupId": "samurai-s15",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 3003,
+        "signedValue": 3003,
+        "type": "Boss Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+3,003% Boss Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Boss Gold",
+        "value": 800,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Boss Gold",
+        "value": 800,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 3003,
+      "frozenPredictedSignedValue": 3003,
+      "integerBaseCandidates": [
+        800
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 16,
+      "tier": 9,
+      "groupId": "samurai-s16",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 12198,
+        "signedValue": 12198,
+        "type": "Ultra Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+12,198% Ultra Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Damage",
+        "value": 3250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Damage",
+        "value": 3250,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 12198,
+      "frozenPredictedSignedValue": 12198,
+      "integerBaseCandidates": [
+        3250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "paladin",
+      "index": 16,
+      "tier": 9,
+      "groupId": "samurai-s16",
+      "observed": {
+        "ownerId": "paladin",
+        "ownerName": "Paladin",
+        "displayedValue": 8,
+        "signedValue": 8,
+        "type": "Shadow Runes",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+8 Shadow Runes (personal effect)"
+      },
+      "current": {
+        "type": "Shadow Runes",
+        "value": 2,
+        "global": false,
+        "unit": "flat"
+      },
+      "frozen": {
+        "type": "Shadow Runes",
+        "value": 2,
+        "global": false
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 8,
+      "frozenPredictedSignedValue": 8,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "champion",
+      "index": 16,
+      "tier": 9,
+      "groupId": "samurai-s16",
+      "observed": {
+        "ownerId": "champion",
+        "ownerName": "Champion",
+        "displayedValue": 281,
+        "signedValue": 281,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+281% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 75,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 75,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 281,
+      "frozenPredictedSignedValue": 281,
+      "integerBaseCandidates": [
+        75
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "battlemage",
+      "index": 16,
+      "tier": 9,
+      "groupId": "samurai-s16",
+      "observed": {
+        "ownerId": "battlemage",
+        "ownerName": "Battlemage",
+        "displayedValue": 56,
+        "signedValue": 56,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+56 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 56,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    }
+  ],
+  "captureContextNote": "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+  "afterProposedCorrectionsMatchingEffects": 43,
+  "verifiedImageHashes": [
+    {
+      "sourceImageId": "samurai-9gm-event-01",
+      "sha256": "0c3eea9ff9ebbbd7979c392330d6d2c4c5a980805a05767977a78bac1cf19bc7"
+    },
+    {
+      "sourceImageId": "samurai-9gm-event-02",
+      "sha256": "e2c028675e4a9ea11ce3e2b5c199df3b10db92b858904e790aea324dd3a2d3d9"
+    },
+    {
+      "sourceImageId": "samurai-9gm-event-03",
+      "sha256": "b7bd40def71afe9c6bb9d1f88e61113dd2a19250ef30f3adab07d8475aa0b37e"
+    }
+  ]
+}

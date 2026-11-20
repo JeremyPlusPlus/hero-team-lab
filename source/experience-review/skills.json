@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-10",
+  "source": "User screenshots and follow-up confirmations",
+  "context": {
+    "requiredHeroesExperienceOnly": [
+      "archer",
+      "ballista",
+      "veteran"
+    ],
+    "minimumCopiesEach": 1,
+    "skillPowerTile": false,
+    "farmingWave": 75000,
+    "veteranCaptureGrandMasters": 10,
+    "archerEffectiveCooldownSeconds": 0.25,
+    "archerTargeting": "Bosses; user reports every important enemy is tagged"
+  },
+  "requiredRosterCorrection": {
+    "source": "Latest user clarification on 2026-11-10",
+    "supersedes": "Earlier instruction to require Archer, Ballista and Veteran in every build, including Immortal",
+    "requiredByFocus": {
+      "experience": [
+        "archer",
+        "ballista",
+        "veteran"
+      ],
+      "gold": [
+        "hunter",
+        "rogue",
+        "sovereign"
+      ],
+      "powerMageEnergy": [
+        "captain"
+      ]
+    },
+    "otherFocuses": "No XP-hero minimum for Energy, Damage, Damage Buff swap or any Immortal mode. Immortal retains its selected buff preset's support requirements.",
+    "skillAvailability": "Enabled XP abilities still contribute to XP comparisons when their heroes are present in other builds; the heroes are not forced into those builds.",
+    "savedTeams": "Existing saved and imported teams are preserved. Rerun Suggest team B to search with the corrected focus-specific requirements."
+  },
+  "duplicateAbilityClarification": {
+    "namedBuffsStack": false,
+    "duplicateXpHeroes": "Support copies, not additional ability providers",
+    "immortalChampionException": "User explicitly chose to keep multiple casting Champions in Immortal mode"
+  },
+  "archer": {
+    "image": "archer-exp-bonus.png",
+    "skill": "Exp Bonus",
+    "rewardBonusPercent": 13240,
+    "displayedCooldownSeconds": 20,
+    "masteryLevel": 10,
+    "masteryBonusEffectPercentPerWave": 0.65,
+    "trainingDummyMasteryEffect": 0.5
+  },
+  "ballista": {
+    "image": "ballista-exp-aura.png",
+    "skill": "Exp Aura",
+    "rank": 5032,
+    "rewardBonusPercent": 3865,
+    "cooldownSeconds": 1,
+    "durationSeconds": 27,
+    "masteryLevel": 10,
+    "masteryExpPercentPerStack": 6.5,
+    "masteryMaximumStacks": 100,
+    "capturedStacks": 68,
+    "capturedMasteryBonusPercent": 442,
+    "trainingDummyMasteryEffect": 0.5
+  },
+  "veteran": {
+    "image": "veteran-exp-share.png",
+    "skill": "Exp Share",
+    "superExpChancePoints": 149.2,
+    "shareChancePercent": 365.5,
+    "cooldownSeconds": 1,
+    "durationSeconds": 103,
+    "masteryLevel": 10,
+    "displayedSuperExpPercentPerStack": 16.3,
+    "masteryMaximumStacks": 100,
+    "capturedStacks": 100,
+    "capturedMasteryBonusPercent": 1626,
+    "modeledSuperExpPercentPerStack": 16.26,
+    "trainingDummyMasteryEffect": 0.5
+  },
+  "modelAssumptions": [
+    "Active auras cover the enemies being scored and the XP recipient is within Veteran range. Archer coverage is 100% of scored boss rewards by default, not 100% of arbitrary wave trash.",
+    "One provider per named XP ability, confirmed by the user. Prefer a skill-tiled copy; duplicates retain their separate milestones and synergies but do not multiply the same named ability.",
+    "Archer's marked boss reward factor is (3 + 0.2 × effective Skill Power) × (1 + wave × masteryPercentPerWave / 100). Coverage weights this reward against an ordinary unmarked kill. The captured +13,240% mark gives 652 no-tile Skill Power. The 20% tile projects 782 from the rounded capture; account wave mastery uses the captured rate on every tile.",
+    "Ballista's active aura and stacked mastery are separate reward factors. The skill tile boosts the active aura via owner Skill Power. Mastery uses account Mastery Power.",
+    "Archer and Ballista reward factors are distinct from displayed additive Rank EXP and from each other. They apply once to the kill payout before Veteran sharing.",
+    "Default Ballista and Veteran stacks are 100 for warmed-up farming; Ballista's captured 68-stack state can be entered explicitly.",
+    "Veteran's entry uses 1626/100 for its per-stack mastery amount. Its active Super EXP and share chances use rounded Skill Power contributions. The skill tile boosts these active chances.",
+    "Share chance is capped at one shared award. Only Super/Ultra EXP chances feed the EXP spillover pool. No XP ability feeds Gold or Damage spillover.",
+    "The model uses the editable no-tile tooltips throughout a comparison. The game's pre-round Skill Power and changes across rosters or levels are not captured. Skill tiles scale the active Skill Power components. The mastery factors retain the account capture.",
+    "Cooldown controls tagging/uptime, not a direct payout multiplier. The farming model assumes regular enemies/bosses, not Training Dummy mastery reductions."
+  ],
+  "verifiedInBuild": {
+    "build": "26703178",
+    "date": "2026-11-19",
+    "skillPower": "cl.blc and ci.bbu apply the owner skill tile and round effective Skill Power",
+    "mastery": "ci.bbz computes account Mastery Power",
+    "archer": "cl.blz builds the full mark multiplier. by.zy applies it once to the kill.",
+    "auras": "by.bac applies Ballista and Veteran active bonuses. by.zw handles mastery stacks and Veteran shares."
+  }
+}

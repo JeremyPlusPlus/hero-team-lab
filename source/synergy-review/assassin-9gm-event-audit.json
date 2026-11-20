@@ -1,0 +1,556 @@
+{
+  "batch": "batch-28.json",
+  "status": "audited-no-corrections-needed",
+  "observedEffects": 15,
+  "coverage": {
+    "uniqueEffects": 15,
+    "uniqueGroups": 6,
+    "newUniqueEffectsVsEarlierBatches": 6,
+    "newUniqueGroupsVsEarlierBatches": 3,
+    "overlappingEffectAppearances": 9,
+    "repeatedPortraitAppearances": 0
+  },
+  "frozenMagnitudeMatches": 15,
+  "currentMagnitudeMatches": 15,
+  "currentFullMatches": 15,
+  "newOverrideRecords": 0,
+  "overrides": [],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "assassin",
+      "index": 7,
+      "tier": 4,
+      "groupId": "assassin-s7",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 1173,
+        "signedValue": 1173,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,173% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 125,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 125,
+        "global": true
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1173,
+      "frozenPredictedSignedValue": 1173,
+      "integerBaseCandidates": [
+        125
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 7,
+      "tier": 4,
+      "groupId": "assassin-s7",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 2815,
+        "signedValue": 2815,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+2,815% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 300,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 300,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 2815,
+      "frozenPredictedSignedValue": 2815,
+      "integerBaseCandidates": [
+        300
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 8,
+      "tier": 4,
+      "groupId": "assassin-s8",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+19 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Energy Income",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 8,
+      "tier": 4,
+      "groupId": "assassin-s8",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+19 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 8,
+      "tier": 4,
+      "groupId": "assassin-s8",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Super Energy Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+19% Super Energy Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Energy Chance",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Energy Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 9,
+      "tier": 5,
+      "groupId": "assassin-s9",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 1412,
+        "signedValue": 1412,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,412% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 175,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 175,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 1412,
+      "frozenPredictedSignedValue": 1412,
+      "integerBaseCandidates": [
+        175
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 9,
+      "tier": 5,
+      "groupId": "assassin-s9",
+      "observed": {
+        "ownerId": "dicemaster",
+        "ownerName": "Dicemaster",
+        "displayedValue": 1412,
+        "signedValue": 1412,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,412% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 175,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 175,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 1412,
+      "frozenPredictedSignedValue": 1412,
+      "integerBaseCandidates": [
+        175
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 10,
+      "tier": 5,
+      "groupId": "assassin-s10",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 5043,
+        "signedValue": 5043,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+5,043% Super Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Damage",
+        "value": 625,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Damage",
+        "value": 625,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Crit Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 5043,
+      "frozenPredictedSignedValue": 5043,
+      "integerBaseCandidates": [
+        625
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 10,
+      "tier": 5,
+      "groupId": "assassin-s10",
+      "observed": {
+        "ownerId": "hunter",
+        "ownerName": "Hunter",
+        "displayedValue": 3631,
+        "signedValue": 3631,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,631% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 450,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 450,
+        "global": false
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3631,
+      "frozenPredictedSignedValue": 3631,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "captain",
+      "index": 10,
+      "tier": 5,
+      "groupId": "assassin-s10",
+      "observed": {
+        "ownerId": "captain",
+        "ownerName": "Captain",
+        "displayedValue": 81,
+        "signedValue": 81,
+        "type": "Super Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+81% Super Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Chance",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Chance",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Crit Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 81,
+      "frozenPredictedSignedValue": 81,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 11,
+      "tier": 6,
+      "groupId": "assassin-s11",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 16,
+        "signedValue": 16,
+        "type": "Ultra Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+16% Ultra Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Exp Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Exp Chance",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Exp Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 16,
+      "frozenPredictedSignedValue": 16,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 11,
+      "tier": 6,
+      "groupId": "assassin-s11",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 16,
+        "signedValue": 16,
+        "type": "Ultra Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+16% Ultra Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Chance",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Crit Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 16,
+      "frozenPredictedSignedValue": 16,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 12,
+      "tier": 6,
+      "groupId": "assassin-s12",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 56,
+        "signedValue": 56,
+        "type": "Ultra Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+56% Ultra Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Chance",
+        "value": 7,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Chance",
+        "value": 7,
+        "global": false
+      },
+      "canonicalCurrentType": "Ultra Crit Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 56,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        7
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlord",
+      "index": 12,
+      "tier": 6,
+      "groupId": "assassin-s12",
+      "observed": {
+        "ownerId": "warlord",
+        "ownerName": "Warlord",
+        "displayedValue": 34295,
+        "signedValue": 34295,
+        "type": "Ultra Gold Amount",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+34,295% Ultra Gold Amount (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Amount",
+        "value": 4250,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Amount",
+        "value": 4250,
+        "global": false
+      },
+      "canonicalCurrentType": "Ultra Gold Amount",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 34295,
+      "frozenPredictedSignedValue": 34295,
+      "integerBaseCandidates": [
+        4250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 12,
+      "tier": 6,
+      "groupId": "assassin-s12",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 56,
+        "signedValue": 56,
+        "type": "Ultra Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+56% Ultra Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Chance",
+        "value": 7,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Chance",
+        "value": 7,
+        "global": false
+      },
+      "canonicalCurrentType": "Ultra Crit Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 56,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        7
+      ],
+      "changedFields": []
+    }
+  ],
+  "labelNormalizations": [],
+  "archiveChecks": [
+    {
+      "archivePath": "images/assassin-9gm-event-01.png",
+      "sha256": "de8eb9e34fbf2d3e46ab4d787a0150c93359f29fe74513a0b898c6ce019da555",
+      "byteIdenticalToOriginal": true
+    }
+  ],
+  "comparisonBasis": "Current magnitude/field match counts describe active data before this batch was applied.",
+  "matchesAfterCorrections": 15
+}

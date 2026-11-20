@@ -1,0 +1,715 @@
+﻿Hero,Level,Displayed signed value,Unit,Stat,Scope,Sheet base value,Sheet stat,Sheet scope,Review status,Evidence image
+Militia,25,28,percent,Damage,Personal,10,Damage,Personal,consistent,source/milestone-review/images/militia.png
+Militia,75,3,flat,Skill Power,Personal,1,Skill Power,Personal,consistent,source/milestone-review/images/militia.png
+Militia,150,84,percent,Crit Damage,Personal,30,Crit Damage,Personal,consistent,source/milestone-review/images/militia.png
+Militia,250,28,percent,Range,Personal,10,Range,Personal,consistent,source/milestone-review/images/militia.png
+Militia,500,23,flat,Rank Exp,Global,5,Rank Exp,Global,value-review,source/milestone-review/images/militia.png
+Militia,750,8,flat,Skill Power,Personal,2,Skill Power,Personal,value-review,source/milestone-review/images/militia.png
+Militia,1000,-45,percent,Skill Cooldown,Personal,16,Skill Cooldown,Personal,consistent,source/milestone-review/images/militia.png
+Militia,1500,45,percent,Attack Speed,Global,16,Attack Speed,Global,consistent,source/milestone-review/images/militia.png
+Militia,2000,11,percent,Super Crit Chance,Global,4,Super Crit Chance,Global,consistent,source/milestone-review/images/militia.png
+Militia,2500,84,percent,Super Gold Amount,Global,30,Super Gold Amount,Global,consistent,source/milestone-review/images/militia.png
+Militia,3000,101,percent,Damage,Global,36,Damage,Global,consistent,source/milestone-review/images/militia.png
+Militia,3500,42,percent,Ultra Exp Amount,Global,15,Ultra Exp Amount,Global,consistent,source/milestone-review/images/militia.png
+Militia,4000,14,flat,Energy Income,Global,5,Energy Income,Global,consistent,source/milestone-review/images/militia.png
+Militia,5000,6,percent,Ultra Energy Chance,Global,75,Super Gold Amount,Global,type-change,source/milestone-review/images/militia.png
+Militia,6000,70,percent,Attack Speed,Global,25,Attack Speed,Global,consistent,source/milestone-review/images/militia.png
+Militia,7500,844,percent,Ultra Crit Damage,Personal,300,Ultra Crit Damage,Personal,consistent,source/milestone-review/images/militia.png
+Militia,10000,984,percent,Super Crit Damage,Personal,,,,new-level,source/milestone-review/images/militia.png
+Apprentice,25,14,percent,Attack Speed,Personal,5,Attack Speed,Personal,consistent,source/milestone-review/images/apprentice.png
+Apprentice,75,-6,percent,Skill Cooldown,Global,2,Skill Cooldown,Global,consistent,source/milestone-review/images/apprentice.png
+Apprentice,150,23,percent,Crit Chance,Personal,8,Crit Chance,Personal,consistent,source/milestone-review/images/apprentice.png
+Apprentice,250,6,flat,Skill Power,Personal,1,Skill Power,Personal,value-review,source/milestone-review/images/apprentice.png
+Apprentice,500,8,flat,Skill Duration,Personal,3,Skill Duration,Personal,consistent,source/milestone-review/images/apprentice.png
+Apprentice,750,51,percent,Damage,Global,18,Damage,Global,consistent,source/milestone-review/images/apprentice.png
+Apprentice,1000,59,percent,Crit Damage,Global,21,Crit Damage,Global,consistent,source/milestone-review/images/apprentice.png
+Apprentice,1500,48,percent,Range,Personal,17,Range,Personal,consistent,source/milestone-review/images/apprentice.png
+Apprentice,2000,253,percent,Super Gold Amount,Personal,90,Super Gold Amount,Personal,consistent,source/milestone-review/images/apprentice.png
+Apprentice,2500,28,percent,Super Exp Amount,Global,10,Super Exp Amount,Global,consistent,source/milestone-review/images/apprentice.png
+Apprentice,3000,3,percent,Ultra Crit Chance,Global,1,Ultra Crit Chance,Global,consistent,source/milestone-review/images/apprentice.png
+Apprentice,3500,6,percent,Ultra Exp Chance,Global,2,Ultra Exp Chance,Global,consistent,source/milestone-review/images/apprentice.png
+Apprentice,4000,492,percent,Damage,Personal,175,Damage,Personal,consistent,source/milestone-review/images/apprentice.png
+Apprentice,5000,211,percent,Ultra Gold Amount,Global,75,Ultra Gold Amount,Global,consistent,source/milestone-review/images/apprentice.png
+Apprentice,6000,14,percent,Ultra Exp Chance,Global,5,Ultra Exp Chance,Global,consistent,source/milestone-review/images/apprentice.png
+Apprentice,7500,352,percent,Super Crit Damage,Global,125,Super Crit Damage,Global,consistent,source/milestone-review/images/apprentice.png
+Apprentice,10000,422,percent,Ultra Crit Damage,Global,,,,new-level,source/milestone-review/images/apprentice.png
+Scout,25,8,percent,Kill Gold,Global,3,Kill Gold,Global,consistent,source/milestone-review/images/scout.png
+Scout,75,28,percent,Attack Speed,Personal,10,Attack Speed,Personal,consistent,source/milestone-review/images/scout.png
+Scout,150,25,percent,Damage,Global,9,Damage,Global,consistent,source/milestone-review/images/scout.png
+Scout,250,-28,percent,Skill Cooldown,Personal,10,Skill Cooldown,Personal,consistent,source/milestone-review/images/scout.png
+Scout,500,8,flat,Skill Power,Personal,2,Skill Power,Personal,value-review,source/milestone-review/images/scout.png
+Scout,750,8,flat,Skill Power,Personal,2,Skill Power,Personal,value-review,source/milestone-review/images/scout.png
+Scout,1000,14,percent,Crit Chance,Global,5,Crit Chance,Global,consistent,source/milestone-review/images/scout.png
+Scout,1500,225,percent,Super Crit Damage,Personal,80,Super Crit Damage,Personal,consistent,source/milestone-review/images/scout.png
+Scout,2000,3,flat,Energy Income,Global,1,Energy Income,Global,consistent,source/milestone-review/images/scout.png
+Scout,2500,17,percent,Super Exp Chance,Global,6,Super Exp Chance,Global,consistent,source/milestone-review/images/scout.png
+Scout,3000,352,percent,Damage,Personal,125,Damage,Personal,consistent,source/milestone-review/images/scout.png
+Scout,3500,6,percent,Ultra Gold Chance,Global,2,Ultra Gold Chance,Global,consistent,source/milestone-review/images/scout.png
+Scout,4000,56,percent,Ultra Exp Amount,Global,20,Ultra Exp Amount,Global,consistent,source/milestone-review/images/scout.png
+Scout,5000,183,percent,Attack Speed,Personal,65,Attack Speed,Personal,consistent,source/milestone-review/images/scout.png
+Scout,6000,281,percent,Damage,Global,100,Damage,Global,consistent,source/milestone-review/images/scout.png
+Scout,7500,352,percent,Ultra Gold Amount,Global,125,Ultra Gold Amount,Global,consistent,source/milestone-review/images/scout.png
+Scout,10000,422,percent,Super Gold Amount,Global,,,,new-level,source/milestone-review/images/scout.png
+Viking,25,14,percent,Attack Speed,Personal,5,Attack Speed,Personal,consistent,source/milestone-review/images/viking.png
+Viking,75,17,percent,Crit Damage,Global,6,Crit Damage,Global,consistent,source/milestone-review/images/viking.png
+Viking,150,25,percent,Kill Gold,Global,9,Kill Gold,Global,consistent,source/milestone-review/images/viking.png
+Viking,250,34,percent,Damage,Global,12,Damage,Global,consistent,source/milestone-review/images/viking.png
+Viking,500,8,flat,Skill Power,Personal,2,Skill Power,Personal,value-review,source/milestone-review/images/viking.png
+Viking,750,37,percent,Crit Chance,Personal,13,Crit Chance,Personal,consistent,source/milestone-review/images/viking.png
+Viking,1000,14,flat,Skill Duration,Personal,5,Skill Duration,Personal,consistent,source/milestone-review/images/viking.png
+Viking,1500,6,percent,Super Exp Chance,Global,2,Super Exp Chance,Global,consistent,source/milestone-review/images/viking.png
+Viking,2000,-56,percent,Skill Cooldown,Personal,20,Skill Cooldown,Personal,consistent,source/milestone-review/images/viking.png
+Viking,2500,56,percent,Range,Personal,20,Range,Personal,consistent,source/milestone-review/images/viking.png
+Viking,3000,352,percent,Damage,Personal,125,Damage,Personal,consistent,source/milestone-review/images/viking.png
+Viking,3500,6,percent,Ultra Crit Chance,Global,2,Ultra Crit Chance,Global,consistent,source/milestone-review/images/viking.png
+Viking,4000,492,percent,Ultra Gold Amount,Personal,175,Ultra Gold Amount,Personal,consistent,source/milestone-review/images/viking.png
+Viking,5000,56,percent,Super Crit Chance,Personal,20,Super Crit Chance,Personal,consistent,source/milestone-review/images/viking.png
+Viking,6000,14,flat,Skill Power,Global,5,Skill Power,Global,consistent,source/milestone-review/images/viking.png
+Viking,7500,14,percent,Boss Exp,Global,5,Boss Exp,Global,consistent,source/milestone-review/images/viking.png
+Viking,10000,984,percent,Ultra Crit Damage,Personal,,,,new-level,source/milestone-review/images/viking.png
+Druid,25,3,flat,Skill Duration,Personal,1,Skill Duration,Personal,consistent,source/milestone-review/images/druid.png
+Druid,75,56,percent,Damage,Personal,20,Damage,Personal,consistent,source/milestone-review/images/druid.png
+Druid,150,25,percent,Kill Gold,Global,9,Kill Gold,Global,consistent,source/milestone-review/images/druid.png
+Druid,250,113,percent,Crit Damage,Personal,40,Crit Damage,Personal,consistent,source/milestone-review/images/druid.png
+Druid,500,34,percent,Range,Personal,12,Range,Personal,consistent,source/milestone-review/images/druid.png
+Druid,750,8,flat,Skill Power,Personal,2,Skill Power,Personal,value-review,source/milestone-review/images/druid.png
+Druid,1000,42,flat,Rank Exp,Global,8,Rank Exp,Global,value-review,source/milestone-review/images/druid.png
+Druid,1500,-23,percent,Skill Cooldown,Global,8,Skill Cooldown,Global,consistent,source/milestone-review/images/druid.png
+Druid,2000,11,percent,Super Crit Chance,Global,4,Super Crit Chance,Global,consistent,source/milestone-review/images/druid.png
+Druid,2500,56,percent,Attack Speed,Global,20,Attack Speed,Global,consistent,source/milestone-review/images/druid.png
+Druid,3000,11,percent,Ultra Gold Chance,Personal,4,Ultra Gold Chance,Personal,consistent,source/milestone-review/images/druid.png
+Druid,3500,11,flat,Energy Income,Global,4,Energy Income,Global,consistent,source/milestone-review/images/druid.png
+Druid,4000,141,percent,Damage,Global,50,Damage,Global,consistent,source/milestone-review/images/druid.png
+Druid,5000,70,percent,Ultra Exp Amount,Global,25,Ultra Exp Amount,Global,consistent,source/milestone-review/images/druid.png
+Druid,6000,281,percent,Ultra Gold Amount,Global,100,Ultra Gold Amount,Global,consistent,source/milestone-review/images/druid.png
+Druid,7500,70,flat,Skill Power,Personal,25,Skill Power,Personal,consistent,source/milestone-review/images/druid.png
+Druid,10000,422,percent,Super Crit Damage,Global,,,,new-level,source/milestone-review/images/druid.png
+Hunter,25,14,percent,Crit Chance,Personal,5,Crit Chance,Personal,consistent,source/milestone-review/images/hunter.png
+Hunter,75,17,percent,Crit Damage,Global,6,Crit Damage,Global,consistent,source/milestone-review/images/hunter.png
+Hunter,150,17,percent,Attack Speed,Global,6,Attack Speed,Global,consistent,source/milestone-review/images/hunter.png
+Hunter,250,6,flat,Skill Power,Personal,1,Skill Power,Personal,value-review,source/milestone-review/images/hunter.png
+Hunter,500,34,percent,Range,Personal,12,Range,Personal,consistent,source/milestone-review/images/hunter.png
+Hunter,750,34,flat,Rank Exp,Global,6,Rank Exp,Global,value-review,source/milestone-review/images/hunter.png
+Hunter,1000,197,percent,Damage,Personal,70,Damage,Personal,consistent,source/milestone-review/images/hunter.png
+Hunter,1500,6,percent,Super Gold Chance,Global,2,Super Gold Chance,Global,consistent,source/milestone-review/images/hunter.png
+Hunter,2000,-25,percent,Skill Cooldown,Global,9,Skill Cooldown,Global,consistent,source/milestone-review/images/hunter.png
+Hunter,2500,23,flat,Skill Power,Personal,5,Skill Power,Personal,value-review,source/milestone-review/images/hunter.png
+Hunter,3000,3,percent,Ultra Crit Chance,Global,1,Ultra Crit Chance,Global,consistent,source/milestone-review/images/hunter.png
+Hunter,3500,118,percent,Damage,Global,42,Damage,Global,consistent,source/milestone-review/images/hunter.png
+Hunter,4000,8,percent,Ultra Exp Chance,Global,3,Ultra Exp Chance,Global,consistent,source/milestone-review/images/hunter.png
+Hunter,5000,42,flat,Skill Power,Personal,15,Skill Power,Personal,consistent,source/milestone-review/images/hunter.png
+Hunter,6000,703,percent,Super Gold Amount,Personal,250,Super Gold Amount,Personal,consistent,source/milestone-review/images/hunter.png
+Hunter,7500,28,percent,Instant Skill Chance,Personal,10,Instant Skill Chance,Global,scope-change,source/milestone-review/images/hunter.png
+Hunter,10000,422,percent,Ultra Gold Amount,Global,,,,new-level,source/milestone-review/images/hunter.png
+Ninja,25,14,percent,Range,Personal,5,Range,Personal,consistent,source/milestone-review/images/ninja.png
+Ninja,75,3,percent,Crit Chance,Global,1,Crit Chance,Global,consistent,source/milestone-review/images/ninja.png
+Ninja,150,6,flat,Skill Duration,Personal,2,Skill Duration,Personal,consistent,source/milestone-review/images/ninja.png
+Ninja,250,56,percent,Attack Speed,Personal,20,Attack Speed,Personal,consistent,source/milestone-review/images/ninja.png
+Ninja,500,-14,percent,Skill Cooldown,Global,5,Skill Cooldown,Global,consistent,source/milestone-review/images/ninja.png
+Ninja,750,34,flat,Rank Exp,Global,6,Rank Exp,Global,value-review,source/milestone-review/images/ninja.png
+Ninja,1000,11,flat,Skill Power,Personal,3,Skill Power,Personal,value-review,source/milestone-review/images/ninja.png
+Ninja,1500,225,percent,Super Crit Damage,Personal,80,Super Crit Damage,Personal,consistent,source/milestone-review/images/ninja.png
+Ninja,2000,34,percent,Super Gold Chance,Personal,12,Super Gold Chance,Personal,consistent,source/milestone-review/images/ninja.png
+Ninja,2500,84,percent,Damage,Global,30,Damage,Global,consistent,source/milestone-review/images/ninja.png
+Ninja,3000,8,flat,Energy Income,Global,3,Energy Income,Global,consistent,source/milestone-review/images/ninja.png
+Ninja,3500,6,percent,Ultra Exp Chance,Global,2,Ultra Exp Chance,Global,consistent,source/milestone-review/images/ninja.png
+Ninja,4000,141,percent,Ultra Gold Amount,Global,50,Ultra Gold Amount,Global,consistent,source/milestone-review/images/ninja.png
+Ninja,5000,17,flat,Energy Income,Global,6,Energy Income,Global,consistent,source/milestone-review/images/ninja.png
+Ninja,6000,281,percent,Super Gold Amount,Global,100,Super Gold Amount,Global,consistent,source/milestone-review/images/ninja.png
+Ninja,7500,56,percent,Super Energy Amount,Global,20,Super Energy Amount,Global,consistent,source/milestone-review/images/ninja.png
+Ninja,10000,84,percent,Ultra Energy Amount,Global,,,,new-level,source/milestone-review/images/ninja.png
+Sorcerer,25,3,flat,Skill Power,Personal,1,Skill Power,Personal,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,75,17,percent,Crit Damage,Global,6,Crit Damage,Global,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,150,25,percent,Damage,Global,9,Damage,Global,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,250,14,flat,Rank Exp,Global,4,Rank Exp,Global,value-review,source/milestone-review/images/sorcerer.png
+Sorcerer,500,42,percent,Kill Gold,Global,15,Kill Gold,Global,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,750,84,percent,Attack Speed,Personal,30,Attack Speed,Personal,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,1000,-45,percent,Skill Cooldown,Personal,16,Skill Cooldown,Personal,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,1500,23,percent,Super Crit Chance,Personal,8,Super Crit Chance,Personal,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,2000,51,percent,Range,Personal,18,Range,Personal,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,2500,23,flat,Skill Duration,Personal,8,Skill Duration,Personal,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,3000,352,percent,Damage,Personal,125,Damage,Personal,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,3500,42,percent,Ultra Exp Amount,Global,15,Ultra Exp Amount,Global,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,4000,492,percent,Ultra Gold Amount,Personal,175,Ultra Gold Amount,Personal,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,5000,211,percent,Ultra Gold Amount,Global,75,Ultra Gold Amount,Global,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,6000,70,percent,Attack Speed,Global,25,Attack Speed,Global,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,7500,352,percent,Ultra Crit Damage,Global,125,Ultra Crit Damage,Global,consistent,source/milestone-review/images/sorcerer.png
+Sorcerer,10000,28,flat,Skill Duration,Personal,,,,new-level,source/milestone-review/images/sorcerer.png
+Forester,25,28,percent,Crit Damage,Personal,10,Crit Damage,Personal,consistent,source/milestone-review/images/forester.png
+Forester,75,3,flat,Skill Power,Personal,1,Skill Power,Personal,consistent,source/milestone-review/images/forester.png
+Forester,150,84,percent,Kill Gold,Personal,30,Kill Gold,Personal,consistent,source/milestone-review/images/forester.png
+Forester,250,34,percent,Damage,Global,12,Damage,Global,consistent,source/milestone-review/images/forester.png
+Forester,500,8,percent,Crit Chance,Global,3,Crit Chance,Global,consistent,source/milestone-review/images/forester.png
+Forester,750,84,percent,Attack Speed,Personal,30,Attack Speed,Personal,consistent,source/milestone-review/images/forester.png
+Forester,1000,42,percent,Range,Personal,15,Range,Personal,consistent,source/milestone-review/images/forester.png
+Forester,1500,6,percent,Super Exp Chance,Global,2,Super Exp Chance,Global,consistent,source/milestone-review/images/forester.png
+Forester,2000,20,flat,Skill Duration,Personal,7,Skill Duration,Personal,consistent,source/milestone-review/images/forester.png
+Forester,2500,-62,percent,Skill Cooldown,Personal,22,Skill Cooldown,Personal,consistent,source/milestone-review/images/forester.png
+Forester,3000,352,percent,Ultra Gold Amount,Personal,125,Ultra Gold Amount,Personal,consistent,source/milestone-review/images/forester.png
+Forester,3500,118,percent,Ultra Crit Damage,Global,42,Ultra Crit Damage,Global,consistent,source/milestone-review/images/forester.png
+Forester,4000,14,flat,Energy Income,Global,5,Energy Income,Global,consistent,source/milestone-review/images/forester.png
+Forester,5000,11,percent,Ultra Exp Chance,Global,4,Ultra Exp Chance,Global,consistent,source/milestone-review/images/forester.png
+Forester,6000,28,percent,Super Crit Chance,Global,10,Super Crit Chance,Global,consistent,source/milestone-review/images/forester.png
+Forester,7500,352,percent,Super Crit Damage,Global,125,Super Crit Damage,Global,consistent,source/milestone-review/images/forester.png
+Forester,10000,84,flat,Skill Power,Personal,,,,new-level,source/milestone-review/images/forester.png
+Assassin,25,3,flat,Skill Power,Personal,1,Skill Power,Personal,consistent,source/milestone-review/images/assassin.png
+Assassin,75,17,percent,Damage,Global,6,Damage,Global,consistent,source/milestone-review/images/assassin.png
+Assassin,150,23,percent,Crit Chance,Personal,8,Crit Chance,Personal,consistent,source/milestone-review/images/assassin.png
+Assassin,250,-11,percent,Skill Cooldown,Global,4,Skill Cooldown,Global,consistent,source/milestone-review/images/assassin.png
+Assassin,500,70,percent,Attack Speed,Personal,25,Attack Speed,Personal,consistent,source/milestone-review/images/assassin.png
+Assassin,750,37,percent,Range,Personal,13,Range,Personal,consistent,source/milestone-review/images/assassin.png
+Assassin,1000,59,percent,Crit Damage,Global,21,Crit Damage,Global,consistent,source/milestone-review/images/assassin.png
+Assassin,1500,68,percent,Super Gold Amount,Global,24,Super Gold Amount,Global,consistent,source/milestone-review/images/assassin.png
+Assassin,2000,11,percent,Super Exp Chance,Global,4,Super Exp Chance,Global,consistent,source/milestone-review/images/assassin.png
+Assassin,2500,23,flat,Skill Duration,Personal,8,Skill Duration,Personal,consistent,source/milestone-review/images/assassin.png
+Assassin,3000,11,percent,Ultra Crit Chance,Personal,4,Ultra Crit Chance,Personal,consistent,source/milestone-review/images/assassin.png
+Assassin,3500,118,percent,Damage,Global,42,Damage,Global,consistent,source/milestone-review/images/assassin.png
+Assassin,4000,56,percent,Ultra Exp Amount,Global,20,Ultra Exp Amount,Global,consistent,source/milestone-review/images/assassin.png
+Assassin,5000,-70,percent,Skill Cooldown,Personal,25,Skill Cooldown,Personal,consistent,source/milestone-review/images/assassin.png
+Assassin,6000,703,percent,Damage,Personal,250,Damage,Personal,consistent,source/milestone-review/images/assassin.png
+Assassin,7500,352,percent,Ultra Crit Damage,Global,125,Ultra Crit Damage,Global,consistent,source/milestone-review/images/assassin.png
+Assassin,10000,28,flat,Skill Duration,Personal,,,,new-level,source/milestone-review/images/assassin.png
+Witch,25,6,percent,Attack Speed,Global,2,Attack Speed,Global,consistent,source/milestone-review/images/witch.png
+Witch,75,3,percent,Crit Chance,Global,1,Crit Chance,Global,consistent,source/milestone-review/images/witch.png
+Witch,150,23,percent,Range,Personal,8,Range,Personal,consistent,source/milestone-review/images/witch.png
+Witch,250,113,percent,Damage,Personal,40,Damage,Personal,consistent,source/milestone-review/images/witch.png
+Witch,500,-34,percent,Skill Cooldown,Personal,12,Skill Cooldown,Personal,consistent,source/milestone-review/images/witch.png
+Witch,750,169,percent,Kill Gold,Personal,60,Kill Gold,Personal,consistent,source/milestone-review/images/witch.png
+Witch,1000,197,percent,Crit Damage,Personal,70,Crit Damage,Personal,consistent,source/milestone-review/images/witch.png
+Witch,1500,17,flat,Skill Duration,Personal,6,Skill Duration,Personal,consistent,source/milestone-review/images/witch.png
+Witch,2000,11,percent,Super Exp Chance,Global,4,Super Exp Chance,Global,consistent,source/milestone-review/images/witch.png
+Witch,2500,23,flat,Skill Power,Personal,5,Skill Power,Personal,value-review,source/milestone-review/images/witch.png
+Witch,3000,3,percent,Ultra Gold Chance,Global,1,Ultra Gold Chance,Global,consistent,source/milestone-review/images/witch.png
+Witch,3500,118,percent,Damage,Global,42,Damage,Global,consistent,source/milestone-review/images/witch.png
+Witch,4000,23,percent,Ultra Crit Chance,Personal,8,Ultra Crit Chance,Personal,consistent,source/milestone-review/images/witch.png
+Witch,5000,11,flat,Skill Power,Global,4,Skill Power,Global,consistent,source/milestone-review/images/witch.png
+Witch,6000,281,percent,Ultra Gold Amount,Global,100,Ultra Gold Amount,Global,consistent,source/milestone-review/images/witch.png
+Witch,7500,34,percent,Super Crit Chance,Global,12,Super Crit Chance,Global,consistent,source/milestone-review/images/witch.png
+Witch,10000,422,percent,Ultra Crit Damage,Global,,,,new-level,source/milestone-review/images/witch.png
+Archer,25,28,percent,Damage,Personal,10,Damage,Personal,consistent,source/milestone-review/images/archer.png
+Archer,75,6,flat,Rank Exp,Global,2,Rank Exp,Global,consistent,source/milestone-review/images/archer.png
+Archer,150,23,percent,Range,Personal,8,Range,Personal,consistent,source/milestone-review/images/archer.png
+Archer,250,113,percent,Kill Gold,Personal,40,Kill Gold,Personal,consistent,source/milestone-review/images/archer.png
+Archer,500,8,flat,Skill Power,Personal,2,Skill Power,Personal,value-review,source/milestone-review/images/archer.png
+Archer,750,51,percent,Crit Damage,Global,18,Crit Damage,Global,consistent,source/milestone-review/images/archer.png
+Archer,1000,11,flat,Skill Power,Personal,3,Skill Power,Personal,value-review,source/milestone-review/images/archer.png
+Archer,1500,-23,percent,Skill Cooldown,Global,8,Skill Cooldown,Global,consistent,source/milestone-review/images/archer.png
+Archer,2000,34,percent,Super Crit Chance,Personal,12,Super Crit Chance,Personal,consistent,source/milestone-review/images/archer.png
+Archer,2500,56,percent,Attack Speed,Global,20,Attack Speed,Global,consistent,source/milestone-review/images/archer.png
+Archer,3000,101,percent,Damage,Global,36,Damage,Global,consistent,source/milestone-review/images/archer.png
+Archer,3500,11,flat,Energy Income,Global,4,Energy Income,Global,consistent,source/milestone-review/images/archer.png
+Archer,4000,492,percent,Ultra Gold Amount,Personal,175,Ultra Gold Amount,Personal,consistent,source/milestone-review/images/archer.png
+Archer,5000,42,flat,Skill Power,Personal,15,Skill Power,Personal,consistent,source/milestone-review/images/archer.png
+Archer,6000,42,percent,Super Exp Amount,Global,15,Super Exp Amount,Global,consistent,source/milestone-review/images/archer.png
+Archer,7500,28,percent,Instant Skill Chance,Personal,10,Instant Skill Chance,Personal,consistent,source/milestone-review/images/archer.png
+Archer,10000,113,percent,Ultra Exp Amount,Global,,,,new-level,source/milestone-review/images/archer.png
+Peacekeeper,25,3,flat,Skill Duration,Personal,1,Skill Duration,Personal,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,75,56,percent,Crit Damage,Personal,20,Crit Damage,Personal,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,150,8,flat,Rank Exp,Global,3,Rank Exp,Global,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,250,6,percent,Crit Chance,Global,2,Crit Chance,Global,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,500,34,percent,Range,Personal,12,Range,Personal,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,750,51,percent,Damage,Global,18,Damage,Global,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,1000,197,percent,Kill Gold,Personal,70,Kill Gold,Personal,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,1500,14,flat,Skill Power,Personal,3,Skill Power,Personal,value-review,source/milestone-review/images/peacekeeper.png
+Peacekeeper,2000,-56,percent,Skill Cooldown,Personal,20,Skill Cooldown,Personal,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,2500,6,flat,Energy Income,Global,2,Energy Income,Global,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,3000,101,percent,Ultra Crit Damage,Global,36,Ultra Crit Damage,Global,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,3500,6,percent,Ultra Gold Chance,Global,2,Ultra Gold Chance,Global,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,4000,492,percent,Damage,Personal,175,Damage,Personal,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,5000,211,percent,Super Gold Amount,Global,75,Super Gold Amount,Global,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,6000,281,percent,Ultra Gold Amount,Global,100,Ultra Gold Amount,Global,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,7500,3,flat,Battlepass Exp,Global,1,Battle Pass Exp,Global,consistent,source/milestone-review/images/peacekeeper.png
+Peacekeeper,10000,984,percent,Ultra Crit Damage,Personal,,,,new-level,source/milestone-review/images/peacekeeper.png
+Wizard,25,14,percent,Range,Personal,5,Range,Personal,consistent,source/milestone-review/images/wizard.png
+Wizard,75,6,flat,Rank Exp,Global,2,Rank Exp,Global,consistent,source/milestone-review/images/wizard.png
+Wizard,150,25,percent,Crit Damage,Global,9,Crit Damage,Global,consistent,source/milestone-review/images/wizard.png
+Wizard,250,6,flat,Skill Duration,Personal,2,Skill Duration,Personal,consistent,source/milestone-review/images/wizard.png
+Wizard,500,34,percent,Crit Chance,Personal,12,Crit Chance,Personal,consistent,source/milestone-review/images/wizard.png
+Wizard,750,-17,percent,Skill Cooldown,Global,6,Skill Cooldown,Global,consistent,source/milestone-review/images/wizard.png
+Wizard,1000,39,percent,Attack Speed,Global,14,Attack Speed,Global,consistent,source/milestone-review/images/wizard.png
+Wizard,1500,14,flat,Skill Power,Personal,3,Skill Power,Personal,value-review,source/milestone-review/images/wizard.png
+Wizard,2000,11,percent,Super Gold Chance,Global,4,Super Gold Chance,Global,consistent,source/milestone-review/images/wizard.png
+Wizard,2500,281,percent,Damage,Personal,100,Damage,Personal,consistent,source/milestone-review/images/wizard.png
+Wizard,3000,8,flat,Energy Income,Global,3,Energy Income,Global,consistent,source/milestone-review/images/wizard.png
+Wizard,3500,118,percent,Ultra Crit Damage,Global,42,Ultra Crit Damage,Global,consistent,source/milestone-review/images/wizard.png
+Wizard,4000,56,percent,Ultra Exp Amount,Global,20,Ultra Exp Amount,Global,consistent,source/milestone-review/images/wizard.png
+Wizard,5000,62,percent,Attack Speed,Global,22,Attack Speed,Global,consistent,source/milestone-review/images/wizard.png
+Wizard,6000,28,flat,Skill Duration,Personal,10,Skill Duration,Global,scope-change,source/milestone-review/images/wizard.png
+Wizard,7500,23,flat,Skill Power,Global,8,Skill Power,Global,consistent,source/milestone-review/images/wizard.png
+Wizard,10000,422,percent,Damage,Global,,,,new-level,source/milestone-review/images/wizard.png
+Ranger,25,14,percent,Attack Speed,Personal,5,Attack Speed,Personal,consistent,source/milestone-review/images/ranger.png
+Ranger,75,3,percent,Crit Chance,Global,1,Crit Chance,Global,consistent,source/milestone-review/images/ranger.png
+Ranger,150,6,flat,Skill Power,Personal,1,Skill Power,Personal,value-review,source/milestone-review/images/ranger.png
+Ranger,250,113,percent,Crit Damage,Personal,40,Crit Damage,Personal,consistent,source/milestone-review/images/ranger.png
+Ranger,500,42,percent,Kill Gold,Global,15,Kill Gold,Global,consistent,source/milestone-review/images/ranger.png
+Ranger,750,11,flat,Skill Duration,Personal,4,Skill Duration,Personal,consistent,source/milestone-review/images/ranger.png
+Ranger,1000,-45,percent,Skill Cooldown,Personal,16,Skill Cooldown,Personal,consistent,source/milestone-review/images/ranger.png
+Ranger,1500,14,percent,Super Exp Amount,Global,5,Super Exp Amount,Global,consistent,source/milestone-review/images/ranger.png
+Ranger,2000,76,percent,Damage,Global,27,Damage,Global,consistent,source/milestone-review/images/ranger.png
+Ranger,2500,56,percent,Range,Personal,20,Range,Personal,consistent,source/milestone-review/images/ranger.png
+Ranger,3000,11,percent,Ultra Crit Chance,Personal,4,Ultra Crit Chance,Personal,consistent,source/milestone-review/images/ranger.png
+Ranger,3500,6,percent,Ultra Gold Chance,Global,2,Ultra Gold Chance,Global,consistent,source/milestone-review/images/ranger.png
+Ranger,4000,492,percent,Damage,Personal,175,Damage,Personal,consistent,source/milestone-review/images/ranger.png
+Ranger,5000,70,percent,Ultra Exp Amount,Global,25,Ultra Exp Amount,Global,consistent,source/milestone-review/images/ranger.png
+Ranger,6000,14,percent,Ultra Exp Chance,Global,5,Ultra Exp Chance,Global,consistent,source/milestone-review/images/ranger.png
+Ranger,7500,56,percent,Super Exp Amount,Global,20,Super Exp Amount,Global,consistent,source/milestone-review/images/ranger.png
+Ranger,10000,28,flat,Skill Power,Global,,,,new-level,source/milestone-review/images/ranger.png
+Samurai,25,14,percent,Crit Chance,Personal,5,Crit Chance,Personal,consistent,source/milestone-review/images/samurai.png
+Samurai,75,-17,percent,Skill Cooldown,Personal,6,Skill Cooldown,Personal,consistent,source/milestone-review/images/samurai.png
+Samurai,150,6,flat,Skill Power,Personal,1,Skill Power,Personal,value-review,source/milestone-review/images/samurai.png
+Samurai,250,28,percent,Range,Personal,10,Range,Personal,consistent,source/milestone-review/images/samurai.png
+Samurai,500,141,percent,Damage,Personal,50,Damage,Personal,consistent,source/milestone-review/images/samurai.png
+Samurai,750,51,percent,Kill Gold,Global,18,Kill Gold,Global,consistent,source/milestone-review/images/samurai.png
+Samurai,1000,39,percent,Attack Speed,Global,14,Attack Speed,Global,consistent,source/milestone-review/images/samurai.png
+Samurai,1500,17,flat,Skill Duration,Personal,6,Skill Duration,Personal,consistent,source/milestone-review/images/samurai.png
+Samurai,2000,76,percent,Super Crit Damage,Global,27,Super Crit Damage,Global,consistent,source/milestone-review/images/samurai.png
+Samurai,2500,28,percent,Super Exp Amount,Global,10,Super Exp Amount,Global,consistent,source/milestone-review/images/samurai.png
+Samurai,3000,11,percent,Ultra Gold Chance,Personal,4,Ultra Gold Chance,Personal,consistent,source/milestone-review/images/samurai.png
+Samurai,3500,422,percent,Damage,Personal,150,Damage,Personal,consistent,source/milestone-review/images/samurai.png
+Samurai,4000,8,percent,Ultra Exp Chance,Global,3,Ultra Exp Chance,Global,consistent,source/milestone-review/images/samurai.png
+Samurai,5000,56,percent,Super Crit Chance,Personal,20,Super Crit Chance,Personal,consistent,source/milestone-review/images/samurai.png
+Samurai,6000,56,flat,Skill Power,Personal,20,Skill Power,Personal,consistent,source/milestone-review/images/samurai.png
+Samurai,7500,352,percent,Ultra Crit Damage,Global,125,Ultra Crit Damage,Global,consistent,source/milestone-review/images/samurai.png
+Samurai,10000,14,flat,Skill Duration,Global,,,,new-level,source/milestone-review/images/samurai.png
+Elementalist,25,8,percent,Damage,Global,3,Damage,Global,consistent,source/milestone-review/images/elementalist.png
+Elementalist,75,3,flat,Skill Duration,Personal,1,Skill Duration,Personal,consistent,source/milestone-review/images/elementalist.png
+Elementalist,150,6,flat,Skill Power,Personal,1,Skill Power,Personal,value-review,source/milestone-review/images/elementalist.png
+Elementalist,250,28,percent,Range,Personal,10,Range,Personal,consistent,source/milestone-review/images/elementalist.png
+Elementalist,500,70,percent,Attack Speed,Personal,25,Attack Speed,Personal,consistent,source/milestone-review/images/elementalist.png
+Elementalist,750,11,percent,Crit Chance,Global,4,Crit Chance,Global,consistent,source/milestone-review/images/elementalist.png
+Elementalist,1000,197,percent,Kill Gold,Personal,70,Kill Gold,Personal,consistent,source/milestone-review/images/elementalist.png
+Elementalist,1500,225,percent,Super Crit Damage,Personal,80,Super Crit Damage,Personal,consistent,source/milestone-review/images/elementalist.png
+Elementalist,2000,20,percent,Super Exp Amount,Global,7,Super Exp Amount,Global,consistent,source/milestone-review/images/elementalist.png
+Elementalist,2500,6,flat,Energy Income,Global,2,Energy Income,Global,consistent,source/milestone-review/images/elementalist.png
+Elementalist,3000,352,percent,Damage,Personal,125,Damage,Personal,consistent,source/milestone-review/images/elementalist.png
+Elementalist,3500,6,percent,Ultra Exp Chance,Global,2,Ultra Exp Chance,Global,consistent,source/milestone-review/images/elementalist.png
+Elementalist,4000,141,percent,Ultra Gold Amount,Global,50,Ultra Gold Amount,Global,consistent,source/milestone-review/images/elementalist.png
+Elementalist,5000,211,percent,Super Gold Amount,Global,75,Super Gold Amount,Global,consistent,source/milestone-review/images/elementalist.png
+Elementalist,6000,28,percent,Super Crit Chance,Global,10,Super Crit Chance,Global,consistent,source/milestone-review/images/elementalist.png
+Elementalist,7500,70,percent,Goblin Gold,Global,25,Goblin Gold,Global,consistent,source/milestone-review/images/elementalist.png
+Elementalist,10000,422,percent,Kill Gold,Global,,,,new-level,source/milestone-review/images/elementalist.png
+Arbalest,25,-3,percent,Skill Cooldown,Global,1,Skill Cooldown,Global,consistent,source/milestone-review/images/arbalest.png
+Arbalest,75,17,percent,Crit Damage,Global,6,Crit Damage,Global,consistent,source/milestone-review/images/arbalest.png
+Arbalest,150,23,percent,Crit Chance,Personal,8,Crit Chance,Personal,consistent,source/milestone-review/images/arbalest.png
+Arbalest,250,6,flat,Skill Power,Personal,1,Skill Power,Personal,value-review,source/milestone-review/images/arbalest.png
+Arbalest,500,141,percent,Damage,Personal,50,Damage,Personal,consistent,source/milestone-review/images/arbalest.png
+Arbalest,750,37,percent,Range,Personal,13,Range,Personal,consistent,source/milestone-review/images/arbalest.png
+Arbalest,1000,39,percent,Attack Speed,Global,14,Attack Speed,Global,consistent,source/milestone-review/images/arbalest.png
+Arbalest,1500,14,flat,Skill Power,Personal,2,Skill Power,Personal,value-review,source/milestone-review/images/arbalest.png
+Arbalest,2000,11,percent,Super Exp Chance,Global,4,Super Exp Chance,Global,consistent,source/milestone-review/images/arbalest.png
+Arbalest,2500,281,percent,Super Gold Amount,Personal,100,Super Gold Amount,Personal,consistent,source/milestone-review/images/arbalest.png
+Arbalest,3000,352,percent,Ultra Crit Damage,Personal,125,Ultra Crit Damage,Personal,consistent,source/milestone-review/images/arbalest.png
+Arbalest,3500,42,percent,Ultra Exp Amount,Global,15,Ultra Exp Amount,Global,consistent,source/milestone-review/images/arbalest.png
+Arbalest,4000,14,flat,Energy Income,Global,5,Energy Income,Global,consistent,source/milestone-review/images/arbalest.png
+Arbalest,5000,28,percent,Super Energy Amount,Global,10,Super Energy Amount,Global,consistent,source/milestone-review/images/arbalest.png
+Arbalest,6000,23,flat,Energy Income,Global,8,Energy Income,Global,consistent,source/milestone-review/images/arbalest.png
+Arbalest,7500,70,percent,Ultra Energy Amount,Global,25,Ultra Energy Amount,Global,consistent,source/milestone-review/images/arbalest.png
+Arbalest,10000,14,percent,Instant Power Plant,Global,,,,new-level,source/milestone-review/images/arbalest.png
+Paladin,25,28,percent,Kill Gold,Personal,10,Kill Gold,Personal,consistent,source/milestone-review/images/paladin.png
+Paladin,75,3,flat,Skill Duration,Personal,1,Skill Duration,Personal,consistent,source/milestone-review/images/paladin.png
+Paladin,150,84,percent,Damage,Personal,30,Damage,Personal,consistent,source/milestone-review/images/paladin.png
+Paladin,250,6,flat,Skill Power,Personal,1,Skill Power,Personal,value-review,source/milestone-review/images/paladin.png
+Paladin,500,28,percent,Attack Speed,Global,10,Attack Speed,Global,consistent,source/milestone-review/images/paladin.png
+Paladin,750,169,percent,Crit Damage,Personal,60,Crit Damage,Personal,consistent,source/milestone-review/images/paladin.png
+Paladin,1000,-20,percent,Skill Cooldown,Global,7,Skill Cooldown,Global,consistent,source/milestone-review/images/paladin.png
+Paladin,1500,6,percent,Super Crit Chance,Global,2,Super Crit Chance,Global,consistent,source/milestone-review/images/paladin.png
+Paladin,2000,51,percent,Range,Personal,18,Range,Personal,consistent,source/milestone-review/images/paladin.png
+Paladin,2500,17,percent,Super Exp Chance,Global,6,Super Exp Chance,Global,consistent,source/milestone-review/images/paladin.png
+Paladin,3000,8,flat,Energy Income,Global,3,Energy Income,Global,consistent,source/milestone-review/images/paladin.png
+Paladin,3500,118,percent,Ultra Gold Amount,Global,42,Ultra Gold Amount,Global,consistent,source/milestone-review/images/paladin.png
+Paladin,4000,141,percent,Damage,Global,50,Damage,Global,consistent,source/milestone-review/images/paladin.png
+Paladin,5000,62,percent,Attack Speed,Global,22,Attack Speed,Global,consistent,source/milestone-review/images/paladin.png
+Paladin,6000,23,flat,Energy Income,Global,8,Energy Income,Global,consistent,source/milestone-review/images/paladin.png
+Paladin,7500,352,percent,Super Gold Amount,Global,125,Super Gold Amount,Global,consistent,source/milestone-review/images/paladin.png
+Paladin,10000,422,percent,Kill Gold,Global,,,,new-level,source/milestone-review/images/paladin.png
+Battlemage,25,14,percent,Crit Chance,Personal,5,Crit Chance,Personal,consistent,source/milestone-review/images/battlemage.png
+Battlemage,75,3,flat,Skill Power,Personal,1,Skill Power,Personal,consistent,source/milestone-review/images/battlemage.png
+Battlemage,150,17,percent,Attack Speed,Global,6,Attack Speed,Global,consistent,source/milestone-review/images/battlemage.png
+Battlemage,250,113,percent,Kill Gold,Personal,40,Kill Gold,Personal,consistent,source/milestone-review/images/battlemage.png
+Battlemage,500,141,percent,Damage,Personal,50,Damage,Personal,consistent,source/milestone-review/images/battlemage.png
+Battlemage,750,34,flat,Rank Exp,Global,6,Rank Exp,Global,value-review,source/milestone-review/images/battlemage.png
+Battlemage,1000,14,flat,Skill Duration,Personal,5,Skill Duration,Personal,consistent,source/milestone-review/images/battlemage.png
+Battlemage,1500,-51,percent,Skill Cooldown,Personal,18,Skill Cooldown,Personal,consistent,source/milestone-review/images/battlemage.png
+Battlemage,2000,76,percent,Super Crit Damage,Global,27,Super Crit Damage,Global,consistent,source/milestone-review/images/battlemage.png
+Battlemage,2500,56,percent,Range,Personal,20,Range,Personal,consistent,source/milestone-review/images/battlemage.png
+Battlemage,3000,3,percent,Ultra Gold Chance,Global,1,Ultra Gold Chance,Global,consistent,source/milestone-review/images/battlemage.png
+Battlemage,3500,11,flat,Energy Income,Global,4,Energy Income,Global,consistent,source/milestone-review/images/battlemage.png
+Battlemage,4000,141,percent,Damage,Global,50,Damage,Global,consistent,source/milestone-review/images/battlemage.png
+Battlemage,5000,211,percent,Ultra Gold Amount,Global,75,Ultra Gold Amount,Global,consistent,source/milestone-review/images/battlemage.png
+Battlemage,6000,84,percent,Ultra Exp Amount,Global,30,Ultra Exp Amount,Global,consistent,source/milestone-review/images/battlemage.png
+Battlemage,7500,17,percent,Ultra Crit Chance,Global,6,Ultra Crit Chance,Global,consistent,source/milestone-review/images/battlemage.png
+Battlemage,10000,84,flat,Skill Power,Personal,,,,new-level,source/milestone-review/images/battlemage.png
+Sniper,25,14,percent,Range,Personal,5,Range,Personal,consistent,source/milestone-review/images/sniper.png
+Sniper,75,56,percent,Damage,Personal,20,Damage,Personal,consistent,source/milestone-review/images/sniper.png
+Sniper,150,6,flat,Skill Power,Personal,1,Skill Power,Personal,value-review,source/milestone-review/images/sniper.png
+Sniper,250,23,percent,Attack Speed,Global,8,Attack Speed,Global,consistent,source/milestone-review/images/sniper.png
+Sniper,500,23,flat,Rank Exp,Global,5,Rank Exp,Global,value-review,source/milestone-review/images/sniper.png
+Sniper,750,8,flat,Skill Power,Personal,2,Skill Power,Personal,value-review,source/milestone-review/images/sniper.png
+Sniper,1000,14,percent,Crit Chance,Global,5,Crit Chance,Global,consistent,source/milestone-review/images/sniper.png
+Sniper,1500,-51,percent,Skill Cooldown,Personal,18,Skill Cooldown,Personal,consistent,source/milestone-review/images/sniper.png
+Sniper,2000,76,percent,Super Gold Amount,Global,27,Super Gold Amount,Global,consistent,source/milestone-review/images/sniper.png
+Sniper,2500,281,percent,Super Crit Damage,Personal,100,Super Crit Damage,Personal,consistent,source/milestone-review/images/sniper.png
+Sniper,3000,3,percent,Ultra Exp Chance,Global,1,Ultra Exp Chance,Global,consistent,source/milestone-review/images/sniper.png
+Sniper,3500,11,flat,Energy Income,Global,4,Energy Income,Global,consistent,source/milestone-review/images/sniper.png
+Sniper,4000,141,percent,Damage,Global,50,Damage,Global,consistent,source/milestone-review/images/sniper.png
+Sniper,5000,11,percent,Ultra Exp Chance,Global,4,Ultra Exp Chance,Global,consistent,source/milestone-review/images/sniper.png
+Sniper,6000,703,percent,Ultra Crit Damage,Personal,250,Ultra Crit Damage,Personal,consistent,source/milestone-review/images/sniper.png
+Sniper,7500,84,percent,Super Crit Chance,Personal,30,Super Crit Chance,Personal,consistent,source/milestone-review/images/sniper.png
+Sniper,10000,422,percent,Super Crit Damage,Global,,,,new-level,source/milestone-review/images/sniper.png
+Gladiator,25,8,percent,Crit Damage,Global,3,Crit Damage,Global,consistent,source/milestone-review/images/gladiator.png
+Gladiator,75,28,percent,Attack Speed,Personal,10,Attack Speed,Personal,consistent,source/milestone-review/images/gladiator.png
+Gladiator,150,23,percent,Range,Personal,8,Range,Personal,consistent,source/milestone-review/images/gladiator.png
+Gladiator,250,6,flat,Skill Duration,Personal,2,Skill Duration,Personal,consistent,source/milestone-review/images/gladiator.png
+Gladiator,500,42,percent,Kill Gold,Global,15,Kill Gold,Global,consistent,source/milestone-review/images/gladiator.png
+Gladiator,750,8,flat,Skill Power,Personal,2,Skill Power,Personal,value-review,source/milestone-review/images/gladiator.png
+Gladiator,1000,42,percent,Crit Chance,Personal,15,Crit Chance,Personal,consistent,source/milestone-review/images/gladiator.png
+Gladiator,1500,68,percent,Damage,Global,24,Damage,Global,consistent,source/milestone-review/images/gladiator.png
+Gladiator,2000,20,percent,Super Exp Amount,Global,7,Super Exp Amount,Global,consistent,source/milestone-review/images/gladiator.png
+Gladiator,2500,6,flat,Energy Income,Global,2,Energy Income,Global,consistent,source/milestone-review/images/gladiator.png
+Gladiator,3000,352,percent,Ultra Crit Damage,Personal,125,Ultra Crit Damage,Personal,consistent,source/milestone-review/images/gladiator.png
+Gladiator,3500,422,percent,Damage,Personal,150,Damage,Personal,consistent,source/milestone-review/images/gladiator.png
+Gladiator,4000,23,percent,Ultra Gold Chance,Personal,8,Ultra Gold Chance,Personal,consistent,source/milestone-review/images/gladiator.png
+Gladiator,5000,56,percent,Super Crit Chance,Personal,20,Super Crit Chance,Personal,consistent,source/milestone-review/images/gladiator.png
+Gladiator,6000,225,percent,Attack Speed,Personal,80,Attack Speed,Personal,consistent,source/milestone-review/images/gladiator.png
+Gladiator,7500,352,percent,Super Crit Damage,Global,125,Super Crit Damage,Global,consistent,source/milestone-review/images/gladiator.png
+Gladiator,10000,844,percent,Ultra Crit Damage,Personal,,,,new-level,source/milestone-review/images/gladiator.png
+Spelldancer,25,-14,percent,Skill Cooldown,Personal,5,Skill Cooldown,Personal,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,75,20,percent,Range,Personal,7,Range,Personal,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,150,6,flat,Skill Duration,Personal,2,Skill Duration,Personal,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,250,14,flat,Rank Exp,Global,4,Rank Exp,Global,value-review,source/milestone-review/images/spelldancer.png
+Spelldancer,500,8,flat,Skill Power,Personal,2,Skill Power,Personal,value-review,source/milestone-review/images/spelldancer.png
+Spelldancer,750,169,percent,Crit Damage,Personal,60,Crit Damage,Personal,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,1000,59,percent,Kill Gold,Global,21,Kill Gold,Global,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,1500,113,percent,Attack Speed,Personal,40,Attack Speed,Personal,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,2000,76,percent,Damage,Global,27,Damage,Global,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,2500,17,percent,Super Crit Chance,Global,6,Super Crit Chance,Global,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,3000,3,percent,Ultra Exp Chance,Global,1,Ultra Exp Chance,Global,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,3500,422,percent,Damage,Personal,150,Damage,Personal,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,4000,492,percent,Ultra Gold Amount,Personal,175,Ultra Gold Amount,Personal,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,5000,62,percent,Attack Speed,Global,22,Attack Speed,Global,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,6000,281,percent,Damage,Global,100,Damage,Global,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,7500,352,percent,Ultra Crit Damage,Global,125,Ultra Crit Damage,Global,consistent,source/milestone-review/images/spelldancer.png
+Spelldancer,10000,84,flat,Skill Power,Personal,,,,new-level,source/milestone-review/images/spelldancer.png
+Rogue,25,3,flat,Rank Exp,Global,1,Rank Exp,Global,consistent,source/milestone-review/images/rogue.png
+Rogue,75,20,percent,Range,Personal,7,Range,Personal,consistent,source/milestone-review/images/rogue.png
+Rogue,150,25,percent,Crit Damage,Global,9,Crit Damage,Global,consistent,source/milestone-review/images/rogue.png
+Rogue,250,56,percent,Attack Speed,Personal,20,Attack Speed,Personal,consistent,source/milestone-review/images/rogue.png
+Rogue,500,141,percent,Kill Gold,Personal,50,Kill Gold,Personal,consistent,source/milestone-review/images/rogue.png
+Rogue,750,51,percent,Damage,Global,18,Damage,Global,consistent,source/milestone-review/images/rogue.png
+Rogue,1000,-20,percent,Skill Cooldown,Global,7,Skill Cooldown,Global,consistent,source/milestone-review/images/rogue.png
+Rogue,1500,23,percent,Super Crit Chance,Personal,8,Super Crit Chance,Personal,consistent,source/milestone-review/images/rogue.png
+Rogue,2000,17,flat,Skill Power,Personal,4,Skill Power,Personal,value-review,source/milestone-review/images/rogue.png
+Rogue,2500,6,flat,Energy Income,Global,2,Energy Income,Global,consistent,source/milestone-review/images/rogue.png
+Rogue,3000,3,percent,Ultra Gold Chance,Global,1,Ultra Gold Chance,Global,consistent,source/milestone-review/images/rogue.png
+Rogue,3500,422,percent,Damage,Personal,150,Damage,Personal,consistent,source/milestone-review/images/rogue.png
+Rogue,4000,56,percent,Ultra Exp Amount,Global,20,Ultra Exp Amount,Global,consistent,source/milestone-review/images/rogue.png
+Rogue,5000,211,percent,Kill Gold,Global,75,Kill Gold,Global,consistent,source/milestone-review/images/rogue.png
+Rogue,6000,56,flat,Skill Power,Personal,20,Skill Power,Personal,consistent,source/milestone-review/images/rogue.png
+Rogue,7500,28,percent,Instant Skill Chance,Personal,10,Instant Skill Chance,Personal,consistent,source/milestone-review/images/rogue.png
+Rogue,10000,422,percent,Ultra Gold Amount,Global,,,,new-level,source/milestone-review/images/rogue.png
+Berserker,25,28,percent,Crit Damage,Personal,10,Crit Damage,Personal,consistent,source/milestone-review/images/berserker.png
+Berserker,75,6,flat,Rank Exp,Global,2,Rank Exp,Global,consistent,source/milestone-review/images/berserker.png
+Berserker,150,-23,percent,Skill Cooldown,Personal,8,Skill Cooldown,Personal,consistent,source/milestone-review/images/berserker.png
+Berserker,250,6,percent,Crit Chance,Global,2,Crit Chance,Global,consistent,source/milestone-review/images/berserker.png
+Berserker,500,8,flat,Skill Duration,Personal,3,Skill Duration,Personal,consistent,source/milestone-review/images/berserker.png
+Berserker,750,169,percent,Kill Gold,Personal,60,Kill Gold,Personal,consistent,source/milestone-review/images/berserker.png
+Berserker,1000,197,percent,Damage,Personal,70,Damage,Personal,consistent,source/milestone-review/images/berserker.png
+Berserker,1500,48,percent,Range,Personal,17,Range,Personal,consistent,source/milestone-review/images/berserker.png
+Berserker,2000,51,percent,Attack Speed,Global,18,Attack Speed,Global,consistent,source/milestone-review/images/berserker.png
+Berserker,2500,23,flat,Skill Power,Personal,5,Skill Power,Personal,value-review,source/milestone-review/images/berserker.png
+Berserker,3000,352,percent,Ultra Gold Amount,Personal,125,Ultra Gold Amount,Personal,consistent,source/milestone-review/images/berserker.png
+Berserker,3500,6,percent,Ultra Crit Chance,Global,2,Ultra Crit Chance,Global,consistent,source/milestone-review/images/berserker.png
+Berserker,4000,141,percent,Damage,Global,50,Damage,Global,consistent,source/milestone-review/images/berserker.png
+Berserker,5000,11,flat,Skill Power,Global,4,Skill Power,Global,consistent,source/milestone-review/images/berserker.png
+Berserker,6000,281,percent,Ultra Gold Amount,Global,100,Ultra Gold Amount,Global,consistent,source/milestone-review/images/berserker.png
+Berserker,7500,844,percent,Ultra Crit Damage,Personal,300,Ultra Crit Damage,Personal,consistent,source/milestone-review/images/berserker.png
+Berserker,10000,98,percent,Attack Speed,Global,,,,new-level,source/milestone-review/images/berserker.png
+Skymage,25,8,percent,Crit Damage,Global,3,Crit Damage,Global,consistent,source/milestone-review/images/skymage.png
+Skymage,75,6,flat,Rank Exp,Global,2,Rank Exp,Global,consistent,source/milestone-review/images/skymage.png
+Skymage,150,6,flat,Skill Power,Personal,1,Skill Power,Personal,value-review,source/milestone-review/images/skymage.png
+Skymage,250,28,percent,Crit Chance,Personal,10,Crit Chance,Personal,consistent,source/milestone-review/images/skymage.png
+Skymage,500,-14,percent,Skill Cooldown,Global,5,Skill Cooldown,Global,consistent,source/milestone-review/images/skymage.png
+Skymage,750,37,percent,Range,Personal,13,Range,Personal,consistent,source/milestone-review/images/skymage.png
+Skymage,1000,59,percent,Damage,Global,21,Damage,Global,consistent,source/milestone-review/images/skymage.png
+Skymage,1500,14,flat,Skill Power,Personal,3,Skill Power,Personal,value-review,source/milestone-review/images/skymage.png
+Skymage,2000,3,flat,Energy Income,Global,1,Energy Income,Global,consistent,source/milestone-review/images/skymage.png
+Skymage,2500,45,percent,Super Gold Chance,Personal,16,Super Gold Chance,Personal,consistent,source/milestone-review/images/skymage.png
+Skymage,3000,352,percent,Ultra Crit Damage,Personal,125,Ultra Crit Damage,Personal,consistent,source/milestone-review/images/skymage.png
+Skymage,3500,422,percent,Damage,Personal,150,Damage,Personal,consistent,source/milestone-review/images/skymage.png
+Skymage,4000,8,percent,Ultra Exp Chance,Global,3,Ultra Exp Chance,Global,consistent,source/milestone-review/images/skymage.png
+Skymage,5000,211,percent,Super Gold Amount,Global,75,Super Gold Amount,Global,consistent,source/milestone-review/images/skymage.png
+Skymage,6000,70,percent,Attack Speed,Global,25,Attack Speed,Global,consistent,source/milestone-review/images/skymage.png
+Skymage,7500,352,percent,Super Crit Damage,Global,125,Super Crit Damage,Global,consistent,source/milestone-review/images/skymage.png
+Skymage,10000,422,percent,Ultra Crit Damage,Global,,,,new-level,source/milestone-review/images/skymage.png
+Ballista,25,3,flat,Skill Duration,Personal,1,Skill Duration,Personal,consistent,source/milestone-review/images/ballista.png
+Ballista,75,56,percent,Crit Damage,Personal,20,Crit Damage,Personal,consistent,source/milestone-review/images/ballista.png
+Ballista,150,8,flat,Rank Exp,Global,3,Rank Exp,Global,consistent,source/milestone-review/images/ballista.png
+Ballista,250,6,percent,Crit Chance,Global,2,Crit Chance,Global,consistent,source/milestone-review/images/ballista.png
+Ballista,500,34,percent,Range,Personal,12,Range,Personal,consistent,source/milestone-review/images/ballista.png
+Ballista,750,-39,percent,Skill Cooldown,Personal,14,Skill Cooldown,Personal,consistent,source/milestone-review/images/ballista.png
+Ballista,1000,197,percent,Kill Gold,Personal,70,Kill Gold,Personal,consistent,source/milestone-review/images/ballista.png
+Ballista,1500,225,percent,Damage,Personal,80,Damage,Personal,consistent,source/milestone-review/images/ballista.png
+Ballista,2000,51,percent,Attack Speed,Global,18,Attack Speed,Global,consistent,source/milestone-review/images/ballista.png
+Ballista,2500,23,flat,Skill Power,Personal,5,Skill Power,Personal,value-review,source/milestone-review/images/ballista.png
+Ballista,3000,8,flat,Energy Income,Global,3,Energy Income,Global,consistent,source/milestone-review/images/ballista.png
+Ballista,3500,6,percent,Ultra Exp Chance,Global,2,Ultra Exp Chance,Global,consistent,source/milestone-review/images/ballista.png
+Ballista,4000,141,percent,Ultra Crit Damage,Global,50,Ultra Crit Damage,Global,consistent,source/milestone-review/images/ballista.png
+Ballista,5000,34,percent,Super Exp Amount,Global,12,Super Exp Amount,Global,consistent,source/milestone-review/images/ballista.png
+Ballista,6000,14,percent,Ultra Exp Chance,Global,5,Ultra Exp Chance,Global,consistent,source/milestone-review/images/ballista.png
+Ballista,7500,28,percent,Instant Skill Chance,Personal,10,Instant Skill Chance,Personal,consistent,source/milestone-review/images/ballista.png
+Ballista,10000,113,percent,Ultra Exp Amount,Global,,,,new-level,source/milestone-review/images/ballista.png
+Chieftain,25,6,percent,Attack Speed,Global,2,Attack Speed,Global,consistent,source/milestone-review/images/chieftain.png
+Chieftain,75,56,percent,Damage,Personal,20,Damage,Personal,consistent,source/milestone-review/images/chieftain.png
+Chieftain,150,6,flat,Skill Power,Personal,1,Skill Power,Personal,value-review,source/milestone-review/images/chieftain.png
+Chieftain,250,34,percent,Crit Damage,Global,12,Crit Damage,Global,consistent,source/milestone-review/images/chieftain.png
+Chieftain,500,23,flat,Rank Exp,Global,5,Rank Exp,Global,value-review,source/milestone-review/images/chieftain.png
+Chieftain,750,-39,percent,Skill Cooldown,Personal,14,Skill Cooldown,Personal,consistent,source/milestone-review/images/chieftain.png
+Chieftain,1000,42,percent,Range,Personal,15,Range,Personal,consistent,source/milestone-review/images/chieftain.png
+Chieftain,1500,23,percent,Super Gold Chance,Personal,8,Super Gold Chance,Personal,consistent,source/milestone-review/images/chieftain.png
+Chieftain,2000,20,flat,Skill Duration,Personal,7,Skill Duration,Personal,consistent,source/milestone-review/images/chieftain.png
+Chieftain,2500,45,percent,Super Crit Chance,Personal,16,Super Crit Chance,Personal,consistent,source/milestone-review/images/chieftain.png
+Chieftain,3000,101,percent,Damage,Global,36,Damage,Global,consistent,source/milestone-review/images/chieftain.png
+Chieftain,3500,118,percent,Ultra Gold Amount,Global,42,Ultra Gold Amount,Global,consistent,source/milestone-review/images/chieftain.png
+Chieftain,4000,56,percent,Ultra Exp Amount,Global,20,Ultra Exp Amount,Global,consistent,source/milestone-review/images/chieftain.png
+Chieftain,5000,34,percent,Super Exp Amount,Global,12,Super Exp Amount,Global,consistent,source/milestone-review/images/chieftain.png
+Chieftain,6000,281,percent,Damage,Global,100,Damage,Global,consistent,source/milestone-review/images/chieftain.png
+Chieftain,7500,28,flat,Energy Income,Global,10,Energy Income,Global,consistent,source/milestone-review/images/chieftain.png
+Chieftain,10000,84,percent,Ultra Energy Amount,Global,,,,new-level,source/milestone-review/images/chieftain.png
+Warlock,25,3,flat,Rank Exp,Global,1,Rank Exp,Global,consistent,source/milestone-review/images/warlock.png
+Warlock,75,56,percent,Damage,Personal,20,Damage,Personal,consistent,source/milestone-review/images/warlock.png
+Warlock,150,6,percent,Crit Chance,Global,2,Crit Chance,Global,consistent,source/milestone-review/images/warlock.png
+Warlock,250,23,percent,Attack Speed,Global,8,Attack Speed,Global,consistent,source/milestone-review/images/warlock.png
+Warlock,500,141,percent,Crit Damage,Personal,50,Crit Damage,Personal,consistent,source/milestone-review/images/warlock.png
+Warlock,750,11,flat,Skill Duration,Personal,4,Skill Duration,Personal,consistent,source/milestone-review/images/warlock.png
+Warlock,1000,42,percent,Range,Personal,15,Range,Personal,consistent,source/milestone-review/images/warlock.png
+Warlock,1500,-23,percent,Skill Cooldown,Global,8,Skill Cooldown,Global,consistent,source/milestone-review/images/warlock.png
+Warlock,2000,17,flat,Skill Power,Personal,4,Skill Power,Personal,value-review,source/milestone-review/images/warlock.png
+Warlock,2500,84,percent,Super Gold Amount,Global,30,Super Gold Amount,Global,consistent,source/milestone-review/images/warlock.png
+Warlock,3000,8,flat,Energy Income,Global,3,Energy Income,Global,consistent,source/milestone-review/images/warlock.png
+Warlock,3500,17,percent,Ultra Crit Chance,Personal,6,Ultra Crit Chance,Personal,consistent,source/milestone-review/images/warlock.png
+Warlock,4000,3,percent,Ultra Energy Chance,Global,20,Ultra Exp Amount,Global,type-change,source/milestone-review/images/warlock.png
+Warlock,5000,23,percent,Super Crit Chance,Global,8,Super Crit Chance,Global,consistent,source/milestone-review/images/warlock.png
+Warlock,6000,42,percent,Crit Chance,Global,15,Crit Chance,Global,consistent,source/milestone-review/images/warlock.png
+Warlock,7500,70,percent,Ultra Energy Amount,Global,25,Ultra Energy Amount,Global,consistent,source/milestone-review/images/warlock.png
+Warlock,10000,14,percent,Instant Accelerate,Global,,,,new-level,source/milestone-review/images/warlock.png
+Crusader,25,8,percent,Damage,Global,3,Damage,Global,consistent,source/milestone-review/images/crusader.png
+Crusader,75,3,flat,Skill Power,Personal,1,Skill Power,Personal,consistent,source/milestone-review/images/crusader.png
+Crusader,150,-8,percent,Skill Cooldown,Global,3,Skill Cooldown,Global,consistent,source/milestone-review/images/crusader.png
+Crusader,250,28,percent,Range,Personal,10,Range,Personal,consistent,source/milestone-review/images/crusader.png
+Crusader,500,34,percent,Crit Chance,Personal,12,Crit Chance,Personal,consistent,source/milestone-review/images/crusader.png
+Crusader,750,51,percent,Kill Gold,Global,18,Kill Gold,Global,consistent,source/milestone-review/images/crusader.png
+Crusader,1000,14,flat,Skill Duration,Personal,5,Skill Duration,Personal,consistent,source/milestone-review/images/crusader.png
+Crusader,1500,113,percent,Attack Speed,Personal,40,Attack Speed,Personal,consistent,source/milestone-review/images/crusader.png
+Crusader,2000,76,percent,Super Crit Damage,Global,27,Super Crit Damage,Global,consistent,source/milestone-review/images/crusader.png
+Crusader,2500,28,percent,Super Exp Amount,Global,10,Super Exp Amount,Global,consistent,source/milestone-review/images/crusader.png
+Crusader,3000,352,percent,Damage,Personal,125,Damage,Personal,consistent,source/milestone-review/images/crusader.png
+Crusader,3500,118,percent,Ultra Gold Amount,Global,42,Ultra Gold Amount,Global,consistent,source/milestone-review/images/crusader.png
+Crusader,4000,8,percent,Ultra Exp Chance,Global,3,Ultra Exp Chance,Global,consistent,source/milestone-review/images/crusader.png
+Crusader,5000,563,percent,Super Gold Amount,Personal,200,Super Gold Amount,Personal,consistent,source/milestone-review/images/crusader.png
+Crusader,6000,56,flat,Skill Power,Personal,20,Skill Power,Personal,consistent,source/milestone-review/images/crusader.png
+Crusader,7500,844,percent,Ultra Gold Amount,Personal,300,Ultra Gold Amount,Personal,consistent,source/milestone-review/images/crusader.png
+Crusader,10000,28,flat,Skill Duration,Personal,,,,new-level,source/milestone-review/images/crusader.png
+Champion,25,14,percent,Range,Personal,5,Range,Personal,consistent,source/milestone-review/images/champion.png
+Champion,75,3,flat,Skill Power,Personal,1,Skill Power,Personal,consistent,source/milestone-review/images/champion.png
+Champion,150,17,percent,Attack Speed,Global,6,Attack Speed,Global,consistent,source/milestone-review/images/champion.png
+Champion,250,-11,percent,Skill Cooldown,Global,4,Skill Cooldown,Global,consistent,source/milestone-review/images/champion.png
+Champion,500,141,percent,Crit Damage,Personal,50,Crit Damage,Personal,consistent,source/milestone-review/images/champion.png
+Champion,750,169,percent,Kill Gold,Personal,60,Kill Gold,Personal,consistent,source/milestone-review/images/champion.png
+Champion,1000,14,percent,Crit Chance,Global,5,Crit Chance,Global,consistent,source/milestone-review/images/champion.png
+Champion,1500,14,flat,Skill Power,Personal,3,Skill Power,Personal,value-review,source/milestone-review/images/champion.png
+Champion,2000,253,percent,Damage,Personal,90,Damage,Personal,consistent,source/milestone-review/images/champion.png
+Champion,2500,28,percent,Super Exp Amount,Global,10,Super Exp Amount,Global,consistent,source/milestone-review/images/champion.png
+Champion,3000,101,percent,Ultra Crit Damage,Global,36,Ultra Crit Damage,Global,consistent,source/milestone-review/images/champion.png
+Champion,3500,118,percent,Damage,Global,42,Damage,Global,consistent,source/milestone-review/images/champion.png
+Champion,4000,23,percent,Ultra Gold Chance,Personal,8,Ultra Gold Chance,Personal,consistent,source/milestone-review/images/champion.png
+Champion,5000,11,percent,Ultra Exp Chance,Global,4,Ultra Exp Chance,Global,consistent,source/milestone-review/images/champion.png
+Champion,6000,23,flat,Energy Income,Global,8,Energy Income,Global,consistent,source/milestone-review/images/champion.png
+Champion,7500,70,flat,Skill Power,Personal,25,Skill Power,Personal,consistent,source/milestone-review/images/champion.png
+Champion,10000,-70,percent,Skill Cooldown,Personal,,,,new-level,source/milestone-review/images/champion.png
+Templar,25,14,percent,Range,Personal,5,Range,Personal,consistent,source/milestone-review/images/templar.png
+Templar,75,28,percent,Attack Speed,Personal,10,Attack Speed,Personal,consistent,source/milestone-review/images/templar.png
+Templar,150,-23,percent,Skill Cooldown,Personal,8,Skill Cooldown,Personal,consistent,source/milestone-review/images/templar.png
+Templar,250,6,flat,Skill Power,Personal,1,Skill Power,Personal,value-review,source/milestone-review/images/templar.png
+Templar,500,23,flat,Rank Exp,Global,5,Rank Exp,Global,value-review,source/milestone-review/images/templar.png
+Templar,750,51,percent,Damage,Global,18,Damage,Global,consistent,source/milestone-review/images/templar.png
+Templar,1000,42,percent,Crit Chance,Personal,15,Crit Chance,Personal,consistent,source/milestone-review/images/templar.png
+Templar,1500,6,percent,Super Gold Chance,Global,2,Super Gold Chance,Global,consistent,source/milestone-review/images/templar.png
+Templar,2000,20,flat,Skill Duration,Personal,7,Skill Duration,Personal,consistent,source/milestone-review/images/templar.png
+Templar,2500,84,percent,Super Crit Damage,Global,30,Super Crit Damage,Global,consistent,source/milestone-review/images/templar.png
+Templar,3000,28,percent,Ultra Exp Amount,Global,10,Ultra Exp Amount,Global,consistent,source/milestone-review/images/templar.png
+Templar,3500,422,percent,Damage,Personal,150,Damage,Personal,consistent,source/milestone-review/images/templar.png
+Templar,4000,14,flat,Energy Income,Global,5,Energy Income,Global,consistent,source/milestone-review/images/templar.png
+Templar,5000,62,percent,Attack Speed,Global,22,Attack Speed,Global,consistent,source/milestone-review/images/templar.png
+Templar,6000,281,percent,Ultra Gold Amount,Global,100,Ultra Gold Amount,Global,consistent,source/milestone-review/images/templar.png
+Templar,7500,23,percent,Range,Global,8,Range,Global,consistent,source/milestone-review/images/templar.png
+Templar,10000,14,percent,Instant Agility,Global,,,,new-level,source/milestone-review/images/templar.png
+Captain,25,6,percent,Attack Speed,Global,2,Attack Speed,Global,consistent,source/milestone-review/images/captain.png
+Captain,75,3,percent,Crit Chance,Global,1,Crit Chance,Global,consistent,source/milestone-review/images/captain.png
+Captain,150,84,percent,Damage,Personal,30,Damage,Personal,consistent,source/milestone-review/images/captain.png
+Captain,250,34,percent,Kill Gold,Global,12,Kill Gold,Global,consistent,source/milestone-review/images/captain.png
+Captain,500,8,flat,Skill Power,Personal,2,Skill Power,Personal,value-review,source/milestone-review/images/captain.png
+Captain,750,169,percent,Crit Damage,Personal,60,Crit Damage,Personal,consistent,source/milestone-review/images/captain.png
+Captain,1000,42,flat,Rank Exp,Global,8,Rank Exp,Global,value-review,source/milestone-review/images/captain.png
+Captain,1500,48,percent,Range,Personal,17,Range,Personal,consistent,source/milestone-review/images/captain.png
+Captain,2000,20,flat,Skill Duration,Personal,7,Skill Duration,Personal,consistent,source/milestone-review/images/captain.png
+Captain,2500,-62,percent,Skill Cooldown,Personal,22,Skill Cooldown,Personal,consistent,source/milestone-review/images/captain.png
+Captain,3000,101,percent,Damage,Global,36,Damage,Global,consistent,source/milestone-review/images/captain.png
+Captain,3500,6,percent,Ultra Crit Chance,Global,2,Ultra Crit Chance,Global,consistent,source/milestone-review/images/captain.png
+Captain,4000,492,percent,Ultra Gold Amount,Personal,175,Ultra Gold Amount,Personal,consistent,source/milestone-review/images/captain.png
+Captain,5000,17,flat,Energy Income,Global,6,Energy Income,Global,consistent,source/milestone-review/images/captain.png
+Captain,6000,8,percent,Ultra Energy Chance,Global,20,Skill Power,Personal,type-change,source/milestone-review/images/captain.png
+Captain,7500,28,percent,Power Mage Energy,Global,15,Power Mage Energy,Global,value-review,source/milestone-review/images/captain.png
+Captain,10000,14,percent,Instant Time Warp,Global,,,,new-level,source/milestone-review/images/captain.png
+Warlord,25,-3,percent,Skill Cooldown,Global,1,Skill Cooldown,Global,consistent,source/milestone-review/images/warlord.png
+Warlord,75,20,percent,Range,Personal,7,Range,Personal,consistent,source/milestone-review/images/warlord.png
+Warlord,150,6,flat,Skill Duration,Personal,2,Skill Duration,Personal,consistent,source/milestone-review/images/warlord.png
+Warlord,250,34,percent,Damage,Global,12,Damage,Global,consistent,source/milestone-review/images/warlord.png
+Warlord,500,34,percent,Crit Chance,Personal,12,Crit Chance,Personal,consistent,source/milestone-review/images/warlord.png
+Warlord,750,84,percent,Attack Speed,Personal,30,Attack Speed,Personal,consistent,source/milestone-review/images/warlord.png
+Warlord,1000,42,flat,Rank Exp,Global,8,Rank Exp,Global,value-review,source/milestone-review/images/warlord.png
+Warlord,1500,14,flat,Skill Power,Personal,3,Skill Power,Personal,value-review,source/milestone-review/images/warlord.png
+Warlord,2000,76,percent,Super Gold Amount,Global,27,Super Gold Amount,Global,consistent,source/milestone-review/images/warlord.png
+Warlord,2500,84,percent,Super Crit Damage,Global,30,Super Crit Damage,Global,consistent,source/milestone-review/images/warlord.png
+Warlord,3000,352,percent,Damage,Personal,125,Damage,Personal,consistent,source/milestone-review/images/warlord.png
+Warlord,3500,11,flat,Energy Income,Global,4,Energy Income,Global,consistent,source/milestone-review/images/warlord.png
+Warlord,4000,8,percent,Ultra Exp Chance,Global,3,Super Exp Chance,Global,type-change,source/milestone-review/images/warlord.png
+Warlord,5000,70,percent,Ultra Exp Amount,Global,25,Ultra Exp Amount,Global,consistent,source/milestone-review/images/warlord.png
+Warlord,6000,70,percent,Attack Speed,Global,25,Attack Speed,Global,consistent,source/milestone-review/images/warlord.png
+Warlord,7500,84,percent,Super Crit Chance,Personal,30,Super Crit Chance,Personal,consistent,source/milestone-review/images/warlord.png
+Warlord,10000,984,percent,Ultra Crit Damage,Personal,,,,new-level,source/milestone-review/images/warlord.png
+Necromancer,25,28,percent,Crit Damage,Personal,10,Crit Damage,Personal,consistent,source/milestone-review/images/necromancer.png
+Necromancer,75,56,percent,Kill Gold,Personal,20,Kill Gold,Personal,consistent,source/milestone-review/images/necromancer.png
+Necromancer,150,23,percent,Range,Personal,8,Range,Personal,consistent,source/milestone-review/images/necromancer.png
+Necromancer,250,6,flat,Skill Duration,Personal,2,Skill Duration,Personal,consistent,source/milestone-review/images/necromancer.png
+Necromancer,500,28,percent,Attack Speed,Global,10,Attack Speed,Global,consistent,source/milestone-review/images/necromancer.png
+Necromancer,750,34,flat,Rank Exp,Global,6,Rank Exp,Global,value-review,source/milestone-review/images/necromancer.png
+Necromancer,1000,11,flat,Skill Power,Personal,2,Skill Power,Personal,value-review,source/milestone-review/images/necromancer.png
+Necromancer,1500,225,percent,Damage,Personal,80,Damage,Personal,consistent,source/milestone-review/images/necromancer.png
+Necromancer,2000,11,percent,Super Crit Chance,Global,4,Super Crit Chance,Global,consistent,source/milestone-review/images/necromancer.png
+Necromancer,2500,-62,percent,Skill Cooldown,Personal,22,Skill Cooldown,Personal,consistent,source/milestone-review/images/necromancer.png
+Necromancer,3000,101,percent,Damage,Global,36,Damage,Global,consistent,source/milestone-review/images/necromancer.png
+Necromancer,3500,6,percent,Ultra Gold Chance,Global,2,Ultra Gold Chance,Global,consistent,source/milestone-review/images/necromancer.png
+Necromancer,4000,20,percent,Super Exp Chance,Global,7,Super Exp Chance,Global,consistent,source/milestone-review/images/necromancer.png
+Necromancer,5000,211,percent,Ultra Gold Amount,Global,75,Ultra Gold Amount,Global,consistent,source/milestone-review/images/necromancer.png
+Necromancer,6000,14,percent,Ultra Exp Chance,Global,5,Ultra Exp Chance,Global,consistent,source/milestone-review/images/necromancer.png
+Necromancer,7500,23,flat,Skill Power,Global,8,Skill Power,Global,consistent,source/milestone-review/images/necromancer.png
+Necromancer,10000,422,percent,Damage,Global,,,,new-level,source/milestone-review/images/necromancer.png
+Warden,25,3,flat,Skill Power,Personal,1,Skill Power,Personal,consistent,source/milestone-review/images/warden.png
+Warden,75,3,flat,Skill Duration,Personal,1,Skill Duration,Personal,consistent,source/milestone-review/images/warden.png
+Warden,150,25,percent,Crit Damage,Global,9,Crit Damage,Global,consistent,source/milestone-review/images/warden.png
+Warden,250,-11,percent,Skill Cooldown,Global,4,Skill Cooldown,Global,consistent,source/milestone-review/images/warden.png
+Warden,500,70,percent,Attack Speed,Personal,25,Attack Speed,Personal,consistent,source/milestone-review/images/warden.png
+Warden,750,37,percent,Crit Chance,Personal,13,Crit Chance,Personal,consistent,source/milestone-review/images/warden.png
+Warden,1000,42,percent,Range,Personal,15,Range,Personal,consistent,source/milestone-review/images/warden.png
+Warden,1500,23,percent,Super Gold Chance,Personal,8,Super Gold Chance,Personal,consistent,source/milestone-review/images/warden.png
+Warden,2000,20,percent,Super Exp Amount,Global,7,Super Exp Amount,Global,consistent,source/milestone-review/images/warden.png
+Warden,2500,84,percent,Damage,Global,30,Damage,Global,consistent,source/milestone-review/images/warden.png
+Warden,3000,28,percent,Ultra Exp Amount,Global,10,Ultra Exp Amount,Global,consistent,source/milestone-review/images/warden.png
+Warden,3500,422,percent,Damage,Personal,150,Damage,Personal,consistent,source/milestone-review/images/warden.png
+Warden,4000,492,percent,Ultra Crit Damage,Personal,175,Ultra Crit Damage,Personal,consistent,source/milestone-review/images/warden.png
+Warden,5000,183,percent,Attack Speed,Personal,65,Attack Speed,Personal,consistent,source/milestone-review/images/warden.png
+Warden,6000,70,percent,Super Crit Chance,Personal,25,Super Crit Chance,Personal,consistent,source/milestone-review/images/warden.png
+Warden,7500,352,percent,Super Crit Damage,Global,125,Super Crit Damage,Global,consistent,source/milestone-review/images/warden.png
+Warden,10000,56,percent,Ultra Crit Chance,Personal,,,,new-level,source/milestone-review/images/warden.png
+Praetorian,25,8,percent,Damage,Global,3,Damage,Global,consistent,source/milestone-review/images/praetorian.png
+Praetorian,75,17,percent,Kill Gold,Global,6,Kill Gold,Global,consistent,source/milestone-review/images/praetorian.png
+Praetorian,150,25,percent,Crit Damage,Global,9,Crit Damage,Global,consistent,source/milestone-review/images/praetorian.png
+Praetorian,250,14,flat,Rank Exp,Global,4,Rank Exp,Global,value-review,source/milestone-review/images/praetorian.png
+Praetorian,500,34,percent,Range,Personal,12,Range,Personal,consistent,source/milestone-review/images/praetorian.png
+Praetorian,750,11,flat,Skill Duration,Personal,4,Skill Duration,Personal,consistent,source/milestone-review/images/praetorian.png
+Praetorian,1000,42,percent,Crit Chance,Personal,15,Crit Chance,Personal,consistent,source/milestone-review/images/praetorian.png
+Praetorian,1500,45,percent,Attack Speed,Global,16,Attack Speed,Global,consistent,source/milestone-review/images/praetorian.png
+Praetorian,2000,17,flat,Skill Power,Personal,4,Skill Power,Personal,value-review,source/milestone-review/images/praetorian.png
+Praetorian,2500,-62,percent,Skill Cooldown,Personal,22,Skill Cooldown,Personal,consistent,source/milestone-review/images/praetorian.png
+Praetorian,3000,352,percent,Damage,Personal,125,Damage,Personal,consistent,source/milestone-review/images/praetorian.png
+Praetorian,3500,17,percent,Ultra Crit Chance,Personal,6,Ultra Crit Chance,Personal,consistent,source/milestone-review/images/praetorian.png
+Praetorian,4000,14,flat,Energy Income,Global,5,Energy Income,Global,consistent,source/milestone-review/images/praetorian.png
+Praetorian,5000,42,flat,Skill Power,Personal,15,Skill Power,Personal,consistent,source/milestone-review/images/praetorian.png
+Praetorian,6000,703,percent,Ultra Crit Damage,Personal,250,Ultra Crit Damage,Personal,consistent,source/milestone-review/images/praetorian.png
+Praetorian,7500,84,percent,Super Crit Chance,Personal,30,Super Crit Chance,Personal,consistent,source/milestone-review/images/praetorian.png
+Praetorian,10000,984,percent,Damage,Personal,,,,new-level,source/milestone-review/images/praetorian.png
+Sovereign,25,3,flat,Skill Power,Personal,1,Skill Power,Personal,consistent,source/milestone-review/images/sovereign.png
+Sovereign,75,6,flat,Rank Exp,Global,2,Rank Exp,Global,consistent,source/milestone-review/images/sovereign.png
+Sovereign,150,25,percent,Crit Damage,Global,9,Crit Damage,Global,consistent,source/milestone-review/images/sovereign.png
+Sovereign,250,-28,percent,Skill Cooldown,Personal,10,Skill Cooldown,Personal,consistent,source/milestone-review/images/sovereign.png
+Sovereign,500,34,percent,Range,Personal,12,Range,Personal,consistent,source/milestone-review/images/sovereign.png
+Sovereign,750,34,percent,Attack Speed,Global,12,Attack Speed,Global,consistent,source/milestone-review/images/sovereign.png
+Sovereign,1000,59,percent,Kill Gold,Global,21,Kill Gold,Global,consistent,source/milestone-review/images/sovereign.png
+Sovereign,1500,23,percent,Super Crit Chance,Personal,8,Super Crit Chance,Personal,consistent,source/milestone-review/images/sovereign.png
+Sovereign,2000,253,percent,Damage,Personal,90,Damage,Personal,consistent,source/milestone-review/images/sovereign.png
+Sovereign,2500,84,percent,Damage,Global,30,Damage,Global,consistent,source/milestone-review/images/sovereign.png
+Sovereign,3000,28,percent,Ultra Exp Amount,Global,10,Ultra Exp,Global,type-change,source/milestone-review/images/sovereign.png
+Sovereign,3500,11,flat,Energy Income,Global,4,Energy Income,Global,consistent,source/milestone-review/images/sovereign.png
+Sovereign,4000,8,percent,Ultra Crit Chance,Global,3,Ultra Crit Chance,Global,consistent,source/milestone-review/images/sovereign.png
+Sovereign,5000,211,percent,Super Gold Amount,Global,75,Super Gold Amount,Global,consistent,source/milestone-review/images/sovereign.png
+Sovereign,6000,281,percent,Ultra Gold Amount,Global,100,Ultra Gold Amount,Global,consistent,source/milestone-review/images/sovereign.png
+Sovereign,7500,14,percent,Instant Rags to Riches,Global,5,Instant Rags to Riches,Global,consistent,source/milestone-review/images/sovereign.png
+Sovereign,10000,84,flat,Skill Power,Personal,,,,new-level,source/milestone-review/images/sovereign.png
+Deadeye,25,14,percent,Crit Chance,Personal,5,Crit Chance,Personal,consistent,source/milestone-review/images/deadeye.png
+Deadeye,75,11,percent,Attack Speed,Global,4,Attack Speed,Global,consistent,source/milestone-review/images/deadeye.png
+Deadeye,150,84,percent,Kill Gold,Personal,30,Kill Gold,Personal,consistent,source/milestone-review/images/deadeye.png
+Deadeye,250,6,flat,Skill Duration,Personal,2,Skill Duration,Personal,consistent,source/milestone-review/images/deadeye.png
+Deadeye,500,42,percent,Damage,Global,15,Damage,Global,consistent,source/milestone-review/images/deadeye.png
+Deadeye,750,-39,percent,Skill Cooldown,Personal,14,Skill Cooldown,Personal,consistent,source/milestone-review/images/deadeye.png
+Deadeye,1000,11,flat,Skill Power,Personal,3,Skill Power,Personal,value-review,source/milestone-review/images/deadeye.png
+Deadeye,1500,68,percent,Super Crit Damage,Global,24,Super Crit Damage,Global,consistent,source/milestone-review/images/deadeye.png
+Deadeye,2000,51,percent,Range,Personal,18,Range,Personal,consistent,source/milestone-review/images/deadeye.png
+Deadeye,2500,281,percent,Damage,Personal,100,Damage,Personal,consistent,source/milestone-review/images/deadeye.png
+Deadeye,3000,11,percent,Ultra Gold Chance,Personal,4,Ultra Gold Chance,Personal,consistent,source/milestone-review/images/deadeye.png
+Deadeye,3500,422,percent,Ultra Crit Damage,Personal,150,Ultra Crit Damage,Personal,consistent,source/milestone-review/images/deadeye.png
+Deadeye,4000,8,percent,Ultra Exp Chance,Global,3,Ultra Exp Chance,Global,consistent,source/milestone-review/images/deadeye.png
+Deadeye,5000,42,flat,Skill Power,Personal,15,Skill Power,Personal,consistent,source/milestone-review/images/deadeye.png
+Deadeye,6000,281,percent,Ultra Crit Damage,Global,100,Ultra Crit Damage,Global,consistent,source/milestone-review/images/deadeye.png
+Deadeye,7500,844,percent,Super Crit Damage,Personal,300,Super Crit Damage,Personal,consistent,source/milestone-review/images/deadeye.png
+Deadeye,10000,984,percent,Damage,Personal,,,,new-level,source/milestone-review/images/deadeye.png
+Titan,25,3,flat,Skill Duration,Personal,1,Skill Duration,Personal,consistent,source/milestone-review/images/titan.png
+Titan,75,20,percent,Crit Chance,Personal,7,Crit Chance,Personal,consistent,source/milestone-review/images/titan.png
+Titan,150,84,percent,Damage,Personal,30,Damage,Personal,consistent,source/milestone-review/images/titan.png
+Titan,250,113,percent,Kill Gold,Personal,40,Kill Gold,Personal,consistent,source/milestone-review/images/titan.png
+Titan,500,8,flat,Skill Power,Personal,2,Skill Power,Personal,value-review,source/milestone-review/images/titan.png
+Titan,750,51,percent,Crit Damage,Global,18,Crit Damage,Global,consistent,source/milestone-review/images/titan.png
+Titan,1000,-20,percent,Skill Cooldown,Global,7,Skill Cooldown,Global,consistent,source/milestone-review/images/titan.png
+Titan,1500,48,percent,Range,Personal,17,Range,Personal,consistent,source/milestone-review/images/titan.png
+Titan,2000,34,percent,Super Crit Chance,Personal,12,Super Crit Chance,Personal,consistent,source/milestone-review/images/titan.png
+Titan,2500,141,percent,Attack Speed,Personal,50,Attack Speed,Personal,consistent,source/milestone-review/images/titan.png
+Titan,3000,3,percent,Ultra Exp Chance,Global,1,Ultra Exp Chance,Global,consistent,source/milestone-review/images/titan.png
+Titan,3500,6,percent,Ultra Gold Chance,Global,2,Ultra Gold Chance,Global,consistent,source/milestone-review/images/titan.png
+Titan,4000,141,percent,Damage,Global,50,Damage,Global,consistent,source/milestone-review/images/titan.png
+Titan,5000,211,percent,Damage,Global,75,Damage,Global,consistent,source/milestone-review/images/titan.png
+Titan,6000,14,flat,Skill Power,Global,5,Skill Power,Global,consistent,source/milestone-review/images/titan.png
+Titan,7500,352,percent,Ultra Crit Damage,Global,125,Ultra Crit Damage,Global,consistent,source/milestone-review/images/titan.png
+Titan,10000,23,percent,Ultra Crit Chance,Global,,,,new-level,source/milestone-review/images/titan.png
+Dicemaster,25,28,percent,Kill Gold,Personal,10,Kill Gold,Personal,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,75,20,percent,Crit Chance,Personal,7,Crit Chance,Personal,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,150,8,flat,Rank Exp,Global,3,Rank Exp,Global,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,250,34,percent,Damage,Global,12,Damage,Global,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,500,8,flat,Skill Duration,Personal,3,Skill Duration,Personal,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,750,169,percent,Crit Damage,Personal,60,Crit Damage,Personal,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,1000,-20,percent,Skill Cooldown,Global,7,Skill Cooldown,Global,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,1500,48,percent,Range,Personal,17,Range,Personal,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,2000,127,percent,Attack Speed,Personal,45,Attack Speed,Personal,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,2500,23,flat,Skill Power,Personal,5,Skill Power,Personal,value-review,source/milestone-review/images/dicemaster.png
+Dicemaster,3000,101,percent,Ultra Crit Damage,Global,36,Ultra Crit Damage,Global,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,3500,17,percent,Ultra Gold Chance,Personal,6,Ultra Gold Chance,Personal,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,4000,492,percent,Damage,Personal,175,Damage,Personal,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,5000,563,percent,Super Crit Damage,Personal,200,Super Crit Damage,Personal,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,6000,281,percent,Ultra Crit Damage,Global,100,Ultra Crit Damage,Global,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,7500,23,flat,Skill Power,Global,8,Skill Power,Global,consistent,source/milestone-review/images/dicemaster.png
+Dicemaster,10000,42,percent,Super Crit Chance,Global,,,,new-level,source/milestone-review/images/dicemaster.png
+Veteran,25,14,percent,Range,Personal,5,Range,Personal,consistent,source/milestone-review/images/veteran.png
+Veteran,75,-6,percent,Skill Cooldown,Global,2,Skill Cooldown,Global,consistent,source/milestone-review/images/veteran.png
+Veteran,150,42,percent,Attack Speed,Personal,15,Attack Speed,Personal,consistent,source/milestone-review/images/veteran.png
+Veteran,250,6,percent,Crit Chance,Global,2,Crit Chance,Global,consistent,source/milestone-review/images/veteran.png
+Veteran,500,141,percent,Crit Damage,Personal,50,Crit Damage,Personal,consistent,source/milestone-review/images/veteran.png
+Veteran,750,169,percent,Damage,Personal,60,Damage,Personal,consistent,source/milestone-review/images/veteran.png
+Veteran,1000,14,flat,Skill Duration,Personal,5,Skill Duration,Personal,consistent,source/milestone-review/images/veteran.png
+Veteran,1500,14,flat,Skill Power,Personal,3,Skill Power,Personal,value-review,source/milestone-review/images/veteran.png
+Veteran,2000,76,percent,Damage,Global,27,Damage,Global,consistent,source/milestone-review/images/veteran.png
+Veteran,2500,17,percent,Super Crit Chance,Global,6,Super Crit Chance,Global,consistent,source/milestone-review/images/veteran.png
+Veteran,3000,28,percent,Ultra Exp Amount,Global,10,Ultra Exp Amount,Global,consistent,source/milestone-review/images/veteran.png
+Veteran,3500,11,flat,Energy Income,Global,4,Energy Income,Global,consistent,source/milestone-review/images/veteran.png
+Veteran,4000,23,percent,Ultra Gold Chance,Personal,8,Ultra Gold Chance,Personal,consistent,source/milestone-review/images/veteran.png
+Veteran,5000,11,flat,Skill Power,Global,4,Skill Power,Global,consistent,source/milestone-review/images/veteran.png
+Veteran,6000,42,percent,Super Exp Amount,Global,15,Super Exp Amount,Global,consistent,source/milestone-review/images/veteran.png
+Veteran,7500,14,percent,Instant Trainee,Global,5,Instant Trainee,Global,consistent,source/milestone-review/images/veteran.png
+Veteran,10000,23,percent,Ultra Exp Chance,Global,,,,new-level,source/milestone-review/images/veteran.png

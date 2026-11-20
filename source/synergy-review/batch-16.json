@@ -1,0 +1,925 @@
+{
+  "meta": {
+    "batch": "16",
+    "selectedHero": {
+      "id": "druid",
+      "name": "Druid"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "The user explicitly confirmed nine Grand Masters for these captures and subsequently confirmed the synergy event remained active (+25% milestone effects, +10% synergy effects).",
+      "Snow Fort, three global +5% synergy modifiers, early-tier multipliers and ordinary +25% owner bonuses continue the previously recorded account context by inference.",
+      "Crusader +25% was explicitly confirmed in the preceding capture; Warden remains assumed +0%.",
+      "Owner tiles are unspecified; the off-synergy-tile model is used and its consistency is checked.",
+      "Displayed values are transcribed directly; the event and Grand Master factors are recorded separately and never baked into source bases.",
+      "Tier I has no displayed rank requirement or per-hero rank badges. Later badges are transcribed independently, rather than copied from earlier screenshots.",
+      "Each effect belongs to the portrait above its downward arrow; required-hero order follows the screenshots.",
+      "Templar is rank 2227 in Druid tier III, distinct from rank 2220 visible in the Scout capture. These are account ranks, not run levels."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "druid-9gm-event-01",
+        "originalPath": "images/druid-9gm-event-01.png",
+        "archivePath": "images/druid-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "druid-9gm-event-02",
+        "originalPath": "images/druid-9gm-event-02.png",
+        "archivePath": "images/druid-9gm-event-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "druid-9gm-event-03",
+        "originalPath": "images/druid-9gm-event-03.png",
+        "archivePath": "images/druid-9gm-event-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "druid-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "druid-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": null
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 47,
+          "signedValue": 47,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+47 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+235% Attack Speed (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "druid-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": null
+        },
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": null
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 70,
+          "signedValue": 70,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+70 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 94,
+          "signedValue": -94,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-94% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 235,
+          "signedValue": -235,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-235% Skill Cooldown (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "druid-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+938% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "druid-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 4508
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 281,
+          "signedValue": 281,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+281% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "druid-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 1877,
+          "signedValue": 1877,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,877% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 328,
+          "signedValue": 328,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+328% Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "druid-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": 2227
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+938% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 281,
+          "signedValue": -281,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-281% Skill Cooldown (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "druid-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 2815,
+          "signedValue": 2815,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,815% Damage (personal effect)"
+        },
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+19% Super Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "druid-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4549
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": 4503
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+56% Super Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 4692,
+          "signedValue": 4692,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+4,692% Super Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 66,
+          "signedValue": 66,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+66% Super Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "druid-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4525
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 3228,
+          "signedValue": 3228,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,228% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 81,
+          "signedValue": 81,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+81% Super Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "druid-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 32,
+          "signedValue": 32,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+32 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 3631,
+          "signedValue": 3631,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,631% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 1614,
+          "signedValue": 1614,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,614% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "druid-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 16139,
+          "signedValue": 16139,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16,139% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 202,
+          "signedValue": 202,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+202% Ultra Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "druid-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 282,
+          "signedValue": 282,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+282% Ultra Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 18156,
+          "signedValue": 18156,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+18,156% Ultra Gold Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "druid-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 4627
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 1993,
+          "signedValue": 1993,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,993% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 5647,
+          "signedValue": 5647,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,647% Super Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "druid-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4525
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 53,
+          "signedValue": 53,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+53 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 53,
+          "signedValue": 53,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+53 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 40,
+          "signedValue": 40,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+40% Super Energy Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "druid-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5001
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5064
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 394,
+          "signedValue": 394,
+          "type": "Ultra Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+394% Ultra Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 1501,
+          "signedValue": 1501,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,501% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 113,
+          "signedValue": 113,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+113 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 26,
+          "signedValue": 26,
+          "type": "Ultra Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+26% Ultra Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "druid-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "druid-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        },
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 30,
+          "signedValue": 30,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+30% Ultra Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 75,
+          "signedValue": -75,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-75% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 30,
+          "signedValue": 30,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+30% Ultra Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 281,
+          "signedValue": 281,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+281% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "batch": "batch-22.json",
+  "status": "activated-in-confirmed-overrides",
+  "observedEffects": 14,
+  "matchedCurrentMagnitudeWithCaptureContext": 13,
+  "fullyMatchingCurrentFields": 13,
+  "overrides": [
+    {
+      "ownerId": "arbalest",
+      "index": 14,
+      "tier": 7,
+      "requires": [
+        "militia",
+        "spelldancer"
+      ],
+      "expectedOriginal": {
+        "type": "Power Mage Energy",
+        "value": 15,
+        "global": true,
+        "source": "Data!BI19:BM19"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-22.json",
+      "evidence": {
+        "groupId": "arbalest-s14",
+        "sourceImageId": "arbalest-9gm-event-01",
+        "displayedValue": 80,
+        "unit": "percent",
+        "global": true
+      },
+      "inferredBaseValue": 12,
+      "inferenceNote": "Unique integer base under the continuing nine-GM event profile and standard owner bonus. This is conditional inference, not direct observation of an unboosted base. Base 12 with the ordinary owner multiplier is equivalent to base 15 with no owner multiplier. These captures do not distinguish those mechanisms; base 12 is the equivalent parameterization used by the common engine model. Power Mage Energy contributes to the user-defined Energy + Power Mages objective; its base interpretation remains conditional."
+    }
+  ]
+}

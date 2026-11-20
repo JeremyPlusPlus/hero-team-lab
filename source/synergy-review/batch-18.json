@@ -1,0 +1,937 @@
+{
+  "meta": {
+    "batch": "18",
+    "selectedHero": {
+      "id": "ranger",
+      "name": "Ranger"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture set. They were not separately restated for this batch; overlapping displayed values support the continuation assumption.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the preceding account profile; they were not separately reconfirmed for this capture.",
+      "Crusader +25% was explicitly confirmed earlier by the user; Warden +0% follows the established account profile.",
+      "Owner tile placements are unspecified. Off-synergy-tile placement is inferred from repeated values and is not established by the screenshots.",
+      "Tier I shows no individual rank badges or rank requirement. Later rank badges are transcribed exactly and are not interpreted as run levels.",
+      "Each effect belongs to the portrait directly above its arrow. Required hero order and effect order follow the screenshot.",
+      "The right edge of Ballista's tier VII effect clips the end of Amount; the visible +166% Super Exp Amoun... and fully visible GLOBAL scope are unambiguous. The full stat is transcribed as Super Exp Amount."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "ranger-9gm-event-01",
+        "originalPath": "images/ranger-9gm-event-01.png",
+        "archivePath": "images/ranger-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ranger-9gm-event-02",
+        "originalPath": "images/ranger-9gm-event-02.png",
+        "archivePath": "images/ranger-9gm-event-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "ranger-9gm-event-03",
+        "originalPath": "images/ranger-9gm-event-03.png",
+        "archivePath": "images/ranger-9gm-event-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ],
+    "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+    "captureCompleteness": "full",
+    "capturedTiers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "groups": [
+    {
+      "id": "ranger-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "ranger-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": null
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 47,
+          "signedValue": 47,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+47 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "ranger-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": null
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": null
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 70,
+          "signedValue": 70,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+70 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 1173,
+          "signedValue": 1173,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,173% Damage (personal effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+235% Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "Rank 15+",
+      "sourceImageId": "ranger-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4549
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 117,
+          "signedValue": 117,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+117 Skill Duration (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "Rank 15+",
+      "sourceImageId": "ranger-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5002
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+235 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,407% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 141,
+          "signedValue": 141,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+141 Skill Duration (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "Rank 50+",
+      "sourceImageId": "ranger-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 1877,
+          "signedValue": 1877,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,877% Damage (personal effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 1877,
+          "signedValue": 1877,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,877% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "Rank 50+",
+      "sourceImageId": "ranger-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Damage (personal effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 469,
+          "signedValue": 469,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+469% Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "ranger-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+9 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 4222,
+          "signedValue": 4222,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+4,222% Super Gold Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "ranger-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5018
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 141,
+          "signedValue": 141,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+141% Super Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+19 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "ranger-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4527
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 65,
+          "signedValue": 65,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+65% Super Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+24 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "ranger-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 5043,
+          "signedValue": 5043,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,043% Super Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 3631,
+          "signedValue": 3631,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,631% Damage (personal effect)"
+        },
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 2905,
+          "signedValue": 2905,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,905% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "ranger-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 4684
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 202,
+          "signedValue": 202,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+202% Ultra Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "ranger-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5012
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 2219,
+          "signedValue": 2219,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,219% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "Rank 500+",
+      "sourceImageId": "ranger-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5064
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 47,
+          "signedValue": 47,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+47 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 133,
+          "signedValue": 133,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+133% Super Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "Rank 500+",
+      "sourceImageId": "ranger-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4549
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5018
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 66,
+          "signedValue": 66,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+66% Super Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 166,
+          "signedValue": 166,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+166% Super Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 166,
+          "signedValue": 166,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+166% Super Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "Rank 1000+",
+      "sourceImageId": "ranger-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 3003,
+          "signedValue": 3003,
+          "type": "Boss Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+3,003% Boss Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 45,
+          "signedValue": 45,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+45 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 1501,
+          "signedValue": 1501,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,501% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 11260,
+          "signedValue": 11260,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+11,260% Ultra Gold Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "ranger-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "Rank 1500+",
+      "sourceImageId": "ranger-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5014
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 281,
+          "signedValue": 281,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+281% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 75,
+          "signedValue": -75,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-75% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 30,
+          "signedValue": 30,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+30% Ultra Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 30,
+          "signedValue": 30,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+30% Ultra Energy Chance (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

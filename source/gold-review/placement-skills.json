@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-04",
+  "source": "User screenshots and explicit follow-up confirmations",
+  "killGoldPlacement": {
+    "level": 99,
+    "bonusPercent": 2475,
+    "scope": "personal",
+    "image": "images/kill-gold-tile.png"
+  },
+  "skills": {
+    "rogue": {
+      "name": "Gold Aura",
+      "killGoldPercent": 8070,
+      "cooldownSeconds": 28,
+      "durationSeconds": 25,
+      "image": "images/rogue-gold-aura.png"
+    },
+    "hunter": {
+      "name": "Gold Lust",
+      "killGoldPercent": 28720,
+      "cooldownSeconds": 20,
+      "image": "images/hunter-gold-lust.png"
+    },
+    "sovereign": {
+      "name": "Jackpot",
+      "superGoldChancePoints": 325.8,
+      "superGoldAmountPercent": 1629,
+      "cooldownSeconds": 28,
+      "durationSeconds": 25,
+      "image": "images/sovereign-jackpot.png"
+    }
+  },
+  "confirmed": {
+    "screenshotsHaveSkillTiles": false,
+    "skillTileBonusMultiplier": 1.2,
+    "allThreeSkillsActiveOnKill": true,
+    "eachNamedSkillAppliedOnceWithDuplicates": true
+  },
+  "model": {
+    "skillBaselines": "Captured totals, editable and held fixed when lineup changes; do not reapply raw Skill Power, milestone, synergy, GM or event boosts.",
+    "stacking": "Independent Kill Gold and Super Gold amount factors; Sovereign chance joins existing shared Gold overflow pool once.",
+    "tileInventory": "Up to three milestone, three synergy and three skill tiles, and one Kill Gold tile for a single killer; one tile per hero. Inventory count of Kill Gold tiles is a calculator assumption.",
+    "timing": "Conditional payout while all listed skills are active and in range; not uptime-averaged or gold per second."
+  }
+}

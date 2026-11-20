@@ -1,0 +1,371 @@
+{
+  "meta": {
+    "batch": "28",
+    "selectedHero": {
+      "id": "assassin",
+      "name": "Assassin"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the earlier user-confirmed capture set. They were not separately restated for this batch; overlapping displayed values support the continuation assumption.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the preceding account profile; they were not separately reconfirmed for this capture.",
+      "Crusader +25% was explicitly confirmed earlier by the user; Warden +0% follows the established account profile.",
+      "Owner tile placements are unspecified. Off-synergy-tile placement is inferred from repeated values and is not established by the screenshots.",
+      "All visible tier IV-VI portrait rank badges are transcribed exactly and are not interpreted as run levels.",
+      "Each effect belongs to the portrait directly above its arrow. Required hero order and effect order follow the screenshot.",
+      "This partial capture contains tiers IV-VI only. Missing tiers are not marked captured."
+    ],
+    "captureCompleteness": "partial",
+    "capturedTiers": [
+      4,
+      5,
+      6
+    ],
+    "groupsCount": 6,
+    "effectsCount": 15,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "assassin-9gm-event-01",
+        "originalPath": "images/assassin-9gm-event-01.png",
+        "archivePath": "images/assassin-9gm-event-01.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "assassin-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "assassin-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 1173,
+          "signedValue": 1173,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,173% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 2815,
+          "signedValue": 2815,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,815% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "assassin-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "assassin-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+19 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+19 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 19,
+          "signedValue": 19,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+19% Super Energy Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "assassin-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "assassin-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4549
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 1412,
+          "signedValue": 1412,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,412% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 1412,
+          "signedValue": 1412,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,412% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "assassin-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "assassin-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4525
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 5043,
+          "signedValue": 5043,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,043% Super Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 3631,
+          "signedValue": 3631,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,631% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 81,
+          "signedValue": 81,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+81% Super Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "assassin-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "assassin-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5001
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 16,
+          "signedValue": 16,
+          "type": "Ultra Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16% Ultra Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 16,
+          "signedValue": 16,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16% Ultra Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "assassin-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "assassin-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 4535
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+56% Ultra Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 34295,
+          "signedValue": 34295,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+34,295% Ultra Gold Amount (personal effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+56% Ultra Crit Chance (personal effect)"
+        }
+      ]
+    }
+  ]
+}

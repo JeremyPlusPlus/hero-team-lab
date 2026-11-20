@@ -1,0 +1,160 @@
+{
+  "date": "2026-11-10",
+  "source": "User confirmation in this chat",
+  "beforeDeployingHeroes": {
+    "gold": {
+      "superChance": 50,
+      "ultraChance": 50
+    },
+    "damage": {
+      "critChance": 135,
+      "superCritChance": 109,
+      "ultraCritChance": 48
+    }
+  },
+  "xpDeployedReference": {
+    "superChance": 260,
+    "ultraChance": 450,
+    "approximate": true,
+    "lineup": "Previous Wizard/Viking lineup and tiles",
+    "archerLevel": 5000,
+    "grandMasterCount": 10,
+    "rankBonus": 66000000
+  },
+  "assumptions": [
+    "XP support levels remain 15000, synergy event on and Veteran mastery100 stacks; these settings were not separately confirmed for the latest capture.",
+    "Rank EXP +66000000 remains the previously reported value.",
+    "Damage Buff swap uses the same undeployed account chances; its deployed reference is kept separate from ordinary Damage.",
+    "Standard Gold/Damage scores retain guaranteed payout-tier assumptions; below-cap totals are shown as conditional scores, not expected yield/DPS."
+  ],
+  "spilloverAtFivePercent": {
+    "goldBaseExcess": 0,
+    "goldBaseFactor": 1,
+    "damageBaseExcess": 44,
+    "damageBaseFactor": 3.2,
+    "ultraCritHeadroom": 52,
+    "xpRecordedExcess": 510,
+    "xpRecordedFactor": 26.5
+  },
+  "defaultChanceReferences": {
+    "gold": {
+      "mode": "preTeam",
+      "totals": [
+        50,
+        50
+      ],
+      "contributions": [
+        0,
+        0
+      ],
+      "extraOverflow": 0,
+      "label": "Account chances with no heroes deployed"
+    },
+    "damage": {
+      "mode": "preTeam",
+      "totals": [
+        135,
+        109,
+        48
+      ],
+      "contributions": [
+        0,
+        0,
+        0
+      ],
+      "extraOverflow": 0,
+      "label": "Account chances with no heroes deployed"
+    },
+    "damageBuffSwap": {
+      "mode": "preTeam",
+      "totals": [
+        135,
+        109,
+        48
+      ],
+      "contributions": [
+        0,
+        0,
+        0
+      ],
+      "extraOverflow": 0,
+      "label": "Account chances with no heroes deployed"
+    }
+  },
+  "defaultExperienceReference": {
+    "rankBonus": 66000000,
+    "superChance": 260,
+    "ultraChance": 450,
+    "rankFlat": 168.35401505320328,
+    "rankMultiplier": 1,
+    "modeledSuperChance": 218.67725167257814,
+    "modeledUltraChance": 487.46028596043004,
+    "label": "Archer 5,000 + Wizard/Viking · 10 Grand Masters · supports 15,000, event on, Veteran 100 stacks assumed",
+    "team": [
+      {
+        "id": "viking",
+        "level": 15000,
+        "locked": false,
+        "tile": "normal"
+      },
+      {
+        "id": "archer",
+        "level": 5000,
+        "locked": false,
+        "tile": "normal"
+      },
+      {
+        "id": "wizard",
+        "level": 15000,
+        "locked": false,
+        "tile": "synergy"
+      },
+      {
+        "id": "veteran",
+        "level": 15000,
+        "locked": false,
+        "tile": "skill"
+      },
+      {
+        "id": "ranger",
+        "level": 15000,
+        "locked": false,
+        "tile": "milestone"
+      },
+      {
+        "id": "ballista",
+        "level": 15000,
+        "locked": false,
+        "tile": "milestone"
+      },
+      {
+        "id": "ballista",
+        "level": 15000,
+        "locked": false,
+        "tile": "milestone"
+      },
+      {
+        "id": "veteran",
+        "level": 15000,
+        "locked": false,
+        "tile": "synergy"
+      },
+      {
+        "id": "templar",
+        "level": 15000,
+        "locked": false,
+        "tile": "normal"
+      },
+      {
+        "id": "veteran",
+        "level": 15000,
+        "locked": false,
+        "tile": "synergy"
+      }
+    ],
+    "levelerIndex": 1,
+    "attackerIndex": 1,
+    "styleId": "grandMaster",
+    "grandMasterCount": 10
+  }
+}

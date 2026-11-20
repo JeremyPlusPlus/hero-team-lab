@@ -1,0 +1,1545 @@
+{
+  "batch": "batch-13.json",
+  "status": "activated-in-confirmed-overrides",
+  "observedEffects": 43,
+  "frozenMagnitudeMatches": 38,
+  "currentMagnitudeMatches": 41,
+  "currentFullMatches": 41,
+  "newOverrideRecords": 2,
+  "overrides": [
+    {
+      "ownerId": "skymage",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "apprentice"
+      ],
+      "expectedOriginal": {
+        "type": "Kill Gold",
+        "value": 100,
+        "global": false,
+        "source": "Data!L27:O27"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-13.json",
+      "evidence": {
+        "groupId": "apprentice-s3",
+        "sourceImageId": "apprentice-9gm-event-01",
+        "displayedValue": 938,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 40,
+      "inferenceNote": "Unique integer base under the user-confirmed nine-Grand-Master active-event context and continuing account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 4,
+      "tier": 2,
+      "requires": [
+        "elementalist",
+        "sniper"
+      ],
+      "expectedOriginal": {
+        "type": "Damage",
+        "value": 150,
+        "global": false,
+        "source": "Data!P3:T3"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-13.json",
+      "evidence": {
+        "groupId": "apprentice-s4",
+        "sourceImageId": "apprentice-9gm-event-01",
+        "displayedValue": 1407,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 60,
+      "inferenceNote": "Unique integer base under the user-confirmed nine-Grand-Master active-event context and continuing account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    }
+  ],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "apprentice",
+      "index": 1,
+      "tier": 1,
+      "groupId": "apprentice-s1",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 70,
+        "signedValue": 70,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+70% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 3,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 70,
+      "frozenPredictedSignedValue": 70,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "militia",
+      "index": 1,
+      "tier": 1,
+      "groupId": "apprentice-s1",
+      "observed": {
+        "ownerId": "militia",
+        "ownerName": "Militia",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+235% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 10,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 2,
+      "tier": 1,
+      "groupId": "apprentice-s2",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 94,
+        "signedValue": -94,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "-94% Skill Cooldown (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": -4,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 4,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": -94,
+      "frozenPredictedSignedValue": 94,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "druid",
+      "index": 2,
+      "tier": 1,
+      "groupId": "apprentice-s2",
+      "observed": {
+        "ownerId": "druid",
+        "ownerName": "Druid",
+        "displayedValue": 70,
+        "signedValue": 70,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+70 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": false,
+        "unit": "flat"
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 70,
+      "frozenPredictedSignedValue": 47,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 2,
+      "tier": 1,
+      "groupId": "apprentice-s2",
+      "observed": {
+        "ownerId": "hunter",
+        "ownerName": "Hunter",
+        "displayedValue": 235,
+        "signedValue": -235,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "-235% Skill Cooldown (personal effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": -10,
+        "global": false,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": -235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 3,
+      "tier": 2,
+      "groupId": "apprentice-s3",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 40,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 40,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        40
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 3,
+      "tier": 2,
+      "groupId": "apprentice-s3",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 100,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 100,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 2346,
+      "frozenPredictedSignedValue": 2346,
+      "integerBaseCandidates": [
+        40
+      ],
+      "changedFields": [
+        "global",
+        "value"
+      ]
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 4,
+      "tier": 2,
+      "groupId": "apprentice-s4",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,407% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 150,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 150,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 3519,
+      "frozenPredictedSignedValue": 3519,
+      "integerBaseCandidates": [
+        60
+      ],
+      "changedFields": [
+        "global",
+        "value"
+      ]
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 4,
+      "tier": 2,
+      "groupId": "apprentice-s4",
+      "observed": {
+        "ownerId": "elementalist",
+        "ownerName": "Elementalist",
+        "displayedValue": 141,
+        "signedValue": 141,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+141 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 6,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 6,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 141,
+      "frozenPredictedSignedValue": 141,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sniper",
+      "index": 4,
+      "tier": 2,
+      "groupId": "apprentice-s4",
+      "observed": {
+        "ownerId": "sniper",
+        "ownerName": "Sniper",
+        "displayedValue": 352,
+        "signedValue": 352,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+352% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 15,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 15,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 352,
+      "frozenPredictedSignedValue": 352,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 5,
+      "tier": 3,
+      "groupId": "apprentice-s5",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 1877,
+        "signedValue": 1877,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,877% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 200,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 200,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1877,
+      "frozenPredictedSignedValue": 1877,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 5,
+      "tier": 3,
+      "groupId": "apprentice-s5",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 206,
+        "signedValue": 206,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+206% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 22,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 22,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 206,
+      "frozenPredictedSignedValue": 206,
+      "integerBaseCandidates": [
+        22
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 6,
+      "tier": 3,
+      "groupId": "apprentice-s6",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 188,
+        "signedValue": 188,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+188% Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 20,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 188,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 6,
+      "tier": 3,
+      "groupId": "apprentice-s6",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 2346,
+        "signedValue": 2346,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+2,346% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 2346,
+      "frozenPredictedSignedValue": 2346,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "spelldancer",
+      "index": 6,
+      "tier": 3,
+      "groupId": "apprentice-s6",
+      "observed": {
+        "ownerId": "spelldancer",
+        "ownerName": "Spelldancer",
+        "displayedValue": 113,
+        "signedValue": 113,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+113 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 12,
+        "global": false,
+        "unit": "flat"
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 10,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 113,
+      "frozenPredictedSignedValue": 94,
+      "integerBaseCandidates": [
+        12
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 7,
+      "tier": 4,
+      "groupId": "apprentice-s7",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Super Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+19% Super Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Exp Chance",
+        "value": 2,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "titan",
+      "index": 7,
+      "tier": 4,
+      "groupId": "apprentice-s7",
+      "observed": {
+        "ownerId": "titan",
+        "ownerName": "Titan",
+        "displayedValue": 7976,
+        "signedValue": 7976,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+7,976% Super Crit Damage (personal effect)"
+      },
+      "current": {
+        "type": "Super Crit Damage",
+        "value": 850,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Damage",
+        "value": 850,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 7976,
+      "frozenPredictedSignedValue": 7976,
+      "integerBaseCandidates": [
+        850
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 8,
+      "tier": 4,
+      "groupId": "apprentice-s8",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 38,
+        "signedValue": 38,
+        "type": "Super Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+38% Super Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Amount",
+        "value": 4,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Super Energy",
+        "value": 4,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 38,
+      "frozenPredictedSignedValue": 38,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "gladiator",
+      "index": 8,
+      "tier": 4,
+      "groupId": "apprentice-s8",
+      "observed": {
+        "ownerId": "gladiator",
+        "ownerName": "Gladiator",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,407% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 150,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 150,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1407,
+      "frozenPredictedSignedValue": 1407,
+      "integerBaseCandidates": [
+        150
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "archer",
+      "index": 8,
+      "tier": 4,
+      "groupId": "apprentice-s8",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 3284,
+        "signedValue": 3284,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,284% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 350,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 350,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 3284,
+      "frozenPredictedSignedValue": 3284,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 9,
+      "tier": 5,
+      "groupId": "apprentice-s9",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 8876,
+        "signedValue": 8876,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+8,876% Super Gold Amount (personal effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 1100,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 1100,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 8876,
+      "frozenPredictedSignedValue": 8876,
+      "integerBaseCandidates": [
+        1100
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 9,
+      "tier": 5,
+      "groupId": "apprentice-s9",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 3228,
+        "signedValue": 3228,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,228% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 400,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 400,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3228,
+      "frozenPredictedSignedValue": 3228,
+      "integerBaseCandidates": [
+        400
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 10,
+      "tier": 5,
+      "groupId": "apprentice-s10",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 1614,
+        "signedValue": 1614,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,614% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 200,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 200,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 1614,
+      "frozenPredictedSignedValue": 1614,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 10,
+      "tier": 5,
+      "groupId": "apprentice-s10",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 32,
+        "signedValue": 32,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+32 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 4,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 4,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 32,
+      "frozenPredictedSignedValue": 32,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 10,
+      "tier": 5,
+      "groupId": "apprentice-s10",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 202,
+        "signedValue": 202,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+202% Super Gold Chance (personal effect)"
+      },
+      "current": {
+        "type": "Super Gold Chance",
+        "value": 25,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 25,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 202,
+      "frozenPredictedSignedValue": 202,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 11,
+      "tier": 6,
+      "groupId": "apprentice-s11",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 40,
+        "signedValue": 40,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+40 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 5,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 5,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 40,
+      "frozenPredictedSignedValue": 40,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ninja",
+      "index": 11,
+      "tier": 6,
+      "groupId": "apprentice-s11",
+      "observed": {
+        "ownerId": "ninja",
+        "ownerName": "Ninja",
+        "displayedValue": 16,
+        "signedValue": 16,
+        "type": "Ultra Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+16% Ultra Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Chance",
+        "value": 2,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 16,
+      "frozenPredictedSignedValue": 16,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 12,
+      "tier": 6,
+      "groupId": "apprentice-s12",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 2219,
+        "signedValue": 2219,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2219,
+      "frozenPredictedSignedValue": 2219,
+      "integerBaseCandidates": [
+        275
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "praetorian",
+      "index": 12,
+      "tier": 6,
+      "groupId": "apprentice-s12",
+      "observed": {
+        "ownerId": "praetorian",
+        "ownerName": "Praetorian",
+        "displayedValue": 18156,
+        "signedValue": 18156,
+        "type": "Ultra Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+18,156% Ultra Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Damage",
+        "value": 2250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Damage",
+        "value": 2250,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 18156,
+      "frozenPredictedSignedValue": 18156,
+      "integerBaseCandidates": [
+        2250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sniper",
+      "index": 12,
+      "tier": 6,
+      "groupId": "apprentice-s12",
+      "observed": {
+        "ownerId": "sniper",
+        "ownerName": "Sniper",
+        "displayedValue": 34295,
+        "signedValue": 34295,
+        "type": "Ultra Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+34,295% Ultra Crit Damage (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Damage",
+        "value": 4250,
+        "global": false,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Ultra Gold Amount",
+        "value": 4250,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 34295,
+      "frozenPredictedSignedValue": 34295,
+      "integerBaseCandidates": [
+        4250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 13,
+      "tier": 7,
+      "groupId": "apprentice-s13",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 100,
+        "signedValue": 100,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+100 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": false
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 100,
+      "frozenPredictedSignedValue": 100,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 13,
+      "tier": 7,
+      "groupId": "apprentice-s13",
+      "observed": {
+        "ownerId": "dicemaster",
+        "ownerName": "Dicemaster",
+        "displayedValue": 4650,
+        "signedValue": 4650,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+4,650% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 700,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 700,
+        "global": false
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 4650,
+      "frozenPredictedSignedValue": 4650,
+      "integerBaseCandidates": [
+        700
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 14,
+      "tier": 7,
+      "groupId": "apprentice-s14",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 2325,
+        "signedValue": 2325,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,325% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 350,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 350,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 2325,
+      "frozenPredictedSignedValue": 2325,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "champion",
+      "index": 14,
+      "tier": 7,
+      "groupId": "apprentice-s14",
+      "observed": {
+        "ownerId": "champion",
+        "ownerName": "Champion",
+        "displayedValue": 53,
+        "signedValue": 53,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+53 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 8,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 53,
+      "frozenPredictedSignedValue": 53,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 14,
+      "tier": 7,
+      "groupId": "apprentice-s14",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 13286,
+        "signedValue": 13286,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+13,286% Super Crit Damage (personal effect)"
+      },
+      "current": {
+        "type": "Super Crit Damage",
+        "value": 2000,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Damage",
+        "value": 2000,
+        "global": false
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 13286,
+      "frozenPredictedSignedValue": 13286,
+      "integerBaseCandidates": [
+        2000
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 15,
+      "tier": 8,
+      "groupId": "apprentice-s15",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 3753,
+        "signedValue": 3753,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+3,753% Super Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Damage",
+        "value": 1000,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Damage",
+        "value": 1000,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 3753,
+      "frozenPredictedSignedValue": 3753,
+      "integerBaseCandidates": [
+        1000
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 15,
+      "tier": 8,
+      "groupId": "apprentice-s15",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 3753,
+        "signedValue": 3753,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,753% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 1000,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 1000,
+        "global": false
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 3753,
+      "frozenPredictedSignedValue": 3753,
+      "integerBaseCandidates": [
+        1000
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlord",
+      "index": 15,
+      "tier": 8,
+      "groupId": "apprentice-s15",
+      "observed": {
+        "ownerId": "warlord",
+        "ownerName": "Warlord",
+        "displayedValue": 38,
+        "signedValue": 38,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+38 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 10,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 38,
+      "frozenPredictedSignedValue": 38,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "arbalest",
+      "index": 15,
+      "tier": 8,
+      "groupId": "apprentice-s15",
+      "observed": {
+        "ownerId": "arbalest",
+        "ownerName": "Arbalest",
+        "displayedValue": 244,
+        "signedValue": 244,
+        "type": "Ultra Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+244% Ultra Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Energy Amount",
+        "value": 65,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Energy Amount",
+        "value": 65,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 244,
+      "frozenPredictedSignedValue": 244,
+      "integerBaseCandidates": [
+        65
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 16,
+      "tier": 9,
+      "groupId": "apprentice-s16",
+      "observed": {
+        "ownerId": "apprentice",
+        "ownerName": "Apprentice",
+        "displayedValue": 56,
+        "signedValue": 56,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+56 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 56,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 16,
+      "tier": 9,
+      "groupId": "apprentice-s16",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 12198,
+        "signedValue": 12198,
+        "type": "Ultra Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+12,198% Ultra Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Damage",
+        "value": 3250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Damage",
+        "value": 3250,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 12198,
+      "frozenPredictedSignedValue": 12198,
+      "integerBaseCandidates": [
+        3250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 16,
+      "tier": 9,
+      "groupId": "apprentice-s16",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 281,
+        "signedValue": 281,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+281% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 75,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 75,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 281,
+      "frozenPredictedSignedValue": 281,
+      "integerBaseCandidates": [
+        75
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 16,
+      "tier": 9,
+      "groupId": "apprentice-s16",
+      "observed": {
+        "ownerId": "dicemaster",
+        "ownerName": "Dicemaster",
+        "displayedValue": 24396,
+        "signedValue": 24396,
+        "type": "Ultra Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+24,396% Ultra Crit Damage (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Damage",
+        "value": 6500,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Damage",
+        "value": 6500,
+        "global": false
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 24396,
+      "frozenPredictedSignedValue": 24396,
+      "integerBaseCandidates": [
+        6500
+      ],
+      "changedFields": []
+    }
+  ],
+  "coverage": {
+    "uniqueEffects": 43,
+    "uniqueGroups": 16,
+    "newUniqueEffectsVsEarlierBatches": 22,
+    "newUniqueGroupsVsEarlierBatches": 8,
+    "overlappingEffectAppearances": 21,
+    "repeatedPortraitAppearances": 0
+  },
+  "labelNormalizations": [],
+  "comparisonBasis": "Pre-correction comparisons are retained for audit. The listed corrections are active, deduplicated by owner/index across the four new batches."
+}

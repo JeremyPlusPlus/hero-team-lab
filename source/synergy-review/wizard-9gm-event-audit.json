@@ -1,0 +1,1086 @@
+{
+  "batch": "batch-31.json",
+  "status": "audited-no-corrections-needed",
+  "observedEffects": 30,
+  "coverage": {
+    "uniqueEffects": 30,
+    "uniqueGroups": 12,
+    "newUniqueEffectsVsEarlierBatches": 6,
+    "newUniqueGroupsVsEarlierBatches": 3,
+    "overlappingEffectAppearances": 24,
+    "repeatedPortraitAppearances": 0
+  },
+  "frozenMagnitudeMatches": 29,
+  "currentMagnitudeMatches": 30,
+  "currentFullMatches": 30,
+  "newOverrideRecords": 0,
+  "overrides": [],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "wizard",
+      "index": 1,
+      "tier": 1,
+      "groupId": "wizard-s1",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+235% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 1,
+      "tier": 1,
+      "groupId": "wizard-s1",
+      "observed": {
+        "ownerId": "elementalist",
+        "ownerName": "Elementalist",
+        "displayedValue": 47,
+        "signedValue": 47,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+47% Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Crit Chance",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 47,
+      "frozenPredictedSignedValue": 47,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 2,
+      "tier": 1,
+      "groupId": "wizard-s2",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+469% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 20,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 20,
+        "global": true
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 2,
+      "tier": 1,
+      "groupId": "wizard-s2",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+469% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 20,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 20,
+        "global": true
+      },
+      "canonicalCurrentType": "Crit Damage",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 2,
+      "tier": 1,
+      "groupId": "wizard-s2",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+235% Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 10,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 10,
+        "global": false
+      },
+      "canonicalCurrentType": "Crit Chance",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 3,
+      "tier": 2,
+      "groupId": "wizard-s3",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 188,
+        "signedValue": 188,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+188% Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 8,
+        "global": true
+      },
+      "canonicalCurrentType": "Crit Chance",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 188,
+      "frozenPredictedSignedValue": 188,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "battlemage",
+      "index": 3,
+      "tier": 2,
+      "groupId": "wizard-s3",
+      "observed": {
+        "ownerId": "battlemage",
+        "ownerName": "Battlemage",
+        "displayedValue": 117,
+        "signedValue": 117,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+117 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 5,
+        "global": false,
+        "unit": "flat"
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 117,
+      "frozenPredictedSignedValue": 70,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 4,
+      "tier": 2,
+      "groupId": "wizard-s4",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 352,
+        "signedValue": 352,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+352% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 15,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 15,
+        "global": true
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 352,
+      "frozenPredictedSignedValue": 352,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "titan",
+      "index": 4,
+      "tier": 2,
+      "groupId": "wizard-s4",
+      "observed": {
+        "ownerId": "titan",
+        "ownerName": "Titan",
+        "displayedValue": 3519,
+        "signedValue": 3519,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,519% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 150,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 150,
+        "global": false
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 3519,
+      "frozenPredictedSignedValue": 3519,
+      "integerBaseCandidates": [
+        150
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 4,
+      "tier": 2,
+      "groupId": "wizard-s4",
+      "observed": {
+        "ownerId": "dicemaster",
+        "ownerName": "Dicemaster",
+        "displayedValue": 3519,
+        "signedValue": 3519,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,519% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 150,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 150,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 3519,
+      "frozenPredictedSignedValue": 3519,
+      "integerBaseCandidates": [
+        150
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 5,
+      "tier": 3,
+      "groupId": "wizard-s5",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 188,
+        "signedValue": 188,
+        "type": "Rank Exp",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+188 Rank Exp (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Rank Exp",
+        "value": 20,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Rank Exp",
+        "value": 20,
+        "global": true
+      },
+      "canonicalCurrentType": "Rank Exp",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 188,
+      "frozenPredictedSignedValue": 188,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ninja",
+      "index": 5,
+      "tier": 3,
+      "groupId": "wizard-s5",
+      "observed": {
+        "ownerId": "ninja",
+        "ownerName": "Ninja",
+        "displayedValue": 751,
+        "signedValue": 751,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+751% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 80,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 80,
+        "global": true
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 751,
+      "frozenPredictedSignedValue": 751,
+      "integerBaseCandidates": [
+        80
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 6,
+      "tier": 3,
+      "groupId": "wizard-s6",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 100,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 100,
+        "global": true
+      },
+      "canonicalCurrentType": "Crit Damage",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        100
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlord",
+      "index": 6,
+      "tier": 3,
+      "groupId": "wizard-s6",
+      "observed": {
+        "ownerId": "warlord",
+        "ownerName": "Warlord",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+469% Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false
+      },
+      "canonicalCurrentType": "Crit Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        50
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 6,
+      "tier": 3,
+      "groupId": "wizard-s6",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 100,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 100,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        100
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 9,
+      "tier": 5,
+      "groupId": "wizard-s9",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+24 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 3,
+        "global": true
+      },
+      "canonicalCurrentType": "Energy Income",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlock",
+      "index": 9,
+      "tier": 5,
+      "groupId": "wizard-s9",
+      "observed": {
+        "ownerId": "warlock",
+        "ownerName": "Warlock",
+        "displayedValue": 4438,
+        "signedValue": 4438,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+4,438% Super Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Damage",
+        "value": 550,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Damage",
+        "value": 550,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Crit Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 4438,
+      "frozenPredictedSignedValue": 4438,
+      "integerBaseCandidates": [
+        550
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 10,
+      "tier": 5,
+      "groupId": "wizard-s10",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 3631,
+        "signedValue": 3631,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,631% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 450,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 450,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3631,
+      "frozenPredictedSignedValue": 3631,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 10,
+      "tier": 5,
+      "groupId": "wizard-s10",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 3631,
+        "signedValue": 3631,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,631% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 450,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 450,
+        "global": false
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3631,
+      "frozenPredictedSignedValue": 3631,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "titan",
+      "index": 10,
+      "tier": 5,
+      "groupId": "wizard-s10",
+      "observed": {
+        "ownerId": "titan",
+        "ownerName": "Titan",
+        "displayedValue": 32,
+        "signedValue": 32,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+32 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 4,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 4,
+        "global": true
+      },
+      "canonicalCurrentType": "Energy Income",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 32,
+      "frozenPredictedSignedValue": 32,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 11,
+      "tier": 6,
+      "groupId": "wizard-s11",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 202,
+        "signedValue": 202,
+        "type": "Ultra Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+202% Ultra Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Energy Amount",
+        "value": 25,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Energy Amount",
+        "value": 25,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Energy Amount",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 202,
+      "frozenPredictedSignedValue": 202,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 11,
+      "tier": 6,
+      "groupId": "wizard-s11",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 2017,
+        "signedValue": 2017,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,017% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": true
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2017,
+      "frozenPredictedSignedValue": 2017,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 12,
+      "tier": 6,
+      "groupId": "wizard-s12",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 56,
+        "signedValue": 56,
+        "type": "Ultra Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+56% Ultra Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Chance",
+        "value": 7,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Chance",
+        "value": 7,
+        "global": false
+      },
+      "canonicalCurrentType": "Ultra Crit Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 56,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        7
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 12,
+      "tier": 6,
+      "groupId": "wizard-s12",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 56,
+        "signedValue": 56,
+        "type": "Ultra Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+56% Ultra Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Chance",
+        "value": 7,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Chance",
+        "value": 7,
+        "global": false
+      },
+      "canonicalCurrentType": "Ultra Crit Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 56,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        7
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlord",
+      "index": 12,
+      "tier": 6,
+      "groupId": "wizard-s12",
+      "observed": {
+        "ownerId": "warlord",
+        "ownerName": "Warlord",
+        "displayedValue": 34295,
+        "signedValue": 34295,
+        "type": "Ultra Gold Amount",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+34,295% Ultra Gold Amount (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Amount",
+        "value": 4250,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Amount",
+        "value": 4250,
+        "global": false
+      },
+      "canonicalCurrentType": "Ultra Gold Amount",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 34295,
+      "frozenPredictedSignedValue": 34295,
+      "integerBaseCandidates": [
+        4250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 13,
+      "tier": 7,
+      "groupId": "wizard-s13",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 266,
+        "signedValue": 266,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+266% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 40,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 40,
+        "global": true
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 266,
+      "frozenPredictedSignedValue": 266,
+      "integerBaseCandidates": [
+        40
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 13,
+      "tier": 7,
+      "groupId": "wizard-s13",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 100,
+        "signedValue": 100,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+100 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 100,
+      "frozenPredictedSignedValue": 100,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 14,
+      "tier": 7,
+      "groupId": "wizard-s14",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 2325,
+        "signedValue": 2325,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,325% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 350,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 350,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 2325,
+      "frozenPredictedSignedValue": 2325,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 14,
+      "tier": 7,
+      "groupId": "wizard-s14",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 2325,
+        "signedValue": 2325,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,325% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 350,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 350,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 2325,
+      "frozenPredictedSignedValue": 2325,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 14,
+      "tier": 7,
+      "groupId": "wizard-s14",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 2325,
+        "signedValue": 2325,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,325% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 350,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 350,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 2325,
+      "frozenPredictedSignedValue": 2325,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    }
+  ],
+  "labelNormalizations": [],
+  "archiveChecks": [
+    {
+      "archivePath": "images/wizard-9gm-event-01.png",
+      "sha256": "29318350bee12479733ace1fb0a96cf3d8a574af0b17065a91843e86b2992580",
+      "byteIdenticalToOriginal": true
+    },
+    {
+      "archivePath": "images/wizard-9gm-event-02.png",
+      "sha256": "d7b1c04ade8fe7818387ff972d6e0f7e2934c7a5836b659ed82d89afe79e647d",
+      "byteIdenticalToOriginal": true
+    }
+  ],
+  "comparisonBasis": "Current fields and predictions are the pre-application snapshot; no corrections were necessary for this batch.",
+  "matchesAfterCorrections": 30
+}

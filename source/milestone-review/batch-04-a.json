@@ -1,0 +1,505 @@
+{
+  "heroes": [
+    {
+      "id": "ballista",
+      "name": "Ballista",
+      "sourceImage": "source/milestone-review/images/ballista.png",
+      "imageSha256": "81b5861ef83b7edda644ab3a76dbc2ea8bce66ef9ffba98d7dea18b7c4b5e383",
+      "baseStats": {
+        "damage": 33,
+        "dps": 22,
+        "attackSpeed": 0.65,
+        "range": 5.18
+      },
+      "milestones": [
+        {
+          "level": 25,
+          "displayedValue": 3,
+          "signedValue": 3,
+          "type": "Skill Duration",
+          "global": false,
+          "unit": "flat",
+          "sourceText": "Level 25: +3 Skill Duration (personal effect)"
+        },
+        {
+          "level": 75,
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Crit Damage",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 75: +56% Crit Damage (personal effect)"
+        },
+        {
+          "level": 150,
+          "displayedValue": 8,
+          "signedValue": 8,
+          "type": "Rank Exp",
+          "global": true,
+          "unit": "flat",
+          "sourceText": "Level 150: +8 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "level": 250,
+          "displayedValue": 6,
+          "signedValue": 6,
+          "type": "Crit Chance",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 250: +6% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "level": 500,
+          "displayedValue": 34,
+          "signedValue": 34,
+          "type": "Range",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 500: +34% Range (personal effect)"
+        },
+        {
+          "level": 750,
+          "displayedValue": 39,
+          "signedValue": -39,
+          "type": "Skill Cooldown",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 750: -39% Skill Cooldown (personal effect)"
+        },
+        {
+          "level": 1000,
+          "displayedValue": 197,
+          "signedValue": 197,
+          "type": "Kill Gold",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 1000: +197% Kill Gold (personal effect)"
+        },
+        {
+          "level": 1500,
+          "displayedValue": 225,
+          "signedValue": 225,
+          "type": "Damage",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 1500: +225% Damage (personal effect)"
+        },
+        {
+          "level": 2000,
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Attack Speed",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 2000: +51% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "level": 2500,
+          "displayedValue": 23,
+          "signedValue": 23,
+          "type": "Skill Power",
+          "global": false,
+          "unit": "flat",
+          "sourceText": "Level 2500: +23 Skill Power (personal effect)"
+        },
+        {
+          "level": 3000,
+          "displayedValue": 8,
+          "signedValue": 8,
+          "type": "Energy Income",
+          "global": true,
+          "unit": "flat",
+          "sourceText": "Level 3000: +8 Energy Income (GLOBAL effect)"
+        },
+        {
+          "level": 3500,
+          "displayedValue": 6,
+          "signedValue": 6,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 3500: +6% Ultra Exp Chance (GLOBAL effect)"
+        },
+        {
+          "level": 4000,
+          "displayedValue": 141,
+          "signedValue": 141,
+          "type": "Ultra Crit Damage",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 4000: +141% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "level": 5000,
+          "displayedValue": 34,
+          "signedValue": 34,
+          "type": "Super Exp Amount",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 5000: +34% Super Exp Amount (GLOBAL effect)"
+        },
+        {
+          "level": 6000,
+          "displayedValue": 14,
+          "signedValue": 14,
+          "type": "Ultra Exp Chance",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 6000: +14% Ultra Exp Chance (GLOBAL effect)"
+        },
+        {
+          "level": 7500,
+          "displayedValue": 28,
+          "signedValue": 28,
+          "type": "Instant Skill Chance",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 7500: +28% Instant Skill Chance (personal effect)"
+        },
+        {
+          "level": 10000,
+          "displayedValue": 113,
+          "signedValue": 113,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 10000: +113% Ultra Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "chieftain",
+      "name": "Chieftain",
+      "sourceImage": "source/milestone-review/images/chieftain.png",
+      "imageSha256": "105a407b94607716cf3c4eae665c5a43acc0721ad405e78eed29e935e8e1c817",
+      "baseStats": {
+        "damage": 29,
+        "dps": 23,
+        "attackSpeed": 0.8,
+        "range": 4.32
+      },
+      "milestones": [
+        {
+          "level": 25,
+          "displayedValue": 6,
+          "signedValue": 6,
+          "type": "Attack Speed",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 25: +6% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "level": 75,
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Damage",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 75: +56% Damage (personal effect)"
+        },
+        {
+          "level": 150,
+          "displayedValue": 6,
+          "signedValue": 6,
+          "type": "Skill Power",
+          "global": false,
+          "unit": "flat",
+          "sourceText": "Level 150: +6 Skill Power (personal effect)"
+        },
+        {
+          "level": 250,
+          "displayedValue": 34,
+          "signedValue": 34,
+          "type": "Crit Damage",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 250: +34% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "level": 500,
+          "displayedValue": 23,
+          "signedValue": 23,
+          "type": "Rank Exp",
+          "global": true,
+          "unit": "flat",
+          "sourceText": "Level 500: +23 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "level": 750,
+          "displayedValue": 39,
+          "signedValue": -39,
+          "type": "Skill Cooldown",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 750: -39% Skill Cooldown (personal effect)"
+        },
+        {
+          "level": 1000,
+          "displayedValue": 42,
+          "signedValue": 42,
+          "type": "Range",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 1000: +42% Range (personal effect)"
+        },
+        {
+          "level": 1500,
+          "displayedValue": 23,
+          "signedValue": 23,
+          "type": "Super Gold Chance",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 1500: +23% Super Gold Chance (personal effect)"
+        },
+        {
+          "level": 2000,
+          "displayedValue": 20,
+          "signedValue": 20,
+          "type": "Skill Duration",
+          "global": false,
+          "unit": "flat",
+          "sourceText": "Level 2000: +20 Skill Duration (personal effect)"
+        },
+        {
+          "level": 2500,
+          "displayedValue": 45,
+          "signedValue": 45,
+          "type": "Super Crit Chance",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 2500: +45% Super Crit Chance (personal effect)"
+        },
+        {
+          "level": 3000,
+          "displayedValue": 101,
+          "signedValue": 101,
+          "type": "Damage",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 3000: +101% Damage (GLOBAL effect)"
+        },
+        {
+          "level": 3500,
+          "displayedValue": 118,
+          "signedValue": 118,
+          "type": "Ultra Gold Amount",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 3500: +118% Ultra Gold Amount (GLOBAL effect)"
+        },
+        {
+          "level": 4000,
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Ultra Exp Amount",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 4000: +56% Ultra Exp Amount (GLOBAL effect)"
+        },
+        {
+          "level": 5000,
+          "displayedValue": 34,
+          "signedValue": 34,
+          "type": "Super Exp Amount",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 5000: +34% Super Exp Amount (GLOBAL effect)"
+        },
+        {
+          "level": 6000,
+          "displayedValue": 281,
+          "signedValue": 281,
+          "type": "Damage",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 6000: +281% Damage (GLOBAL effect)"
+        },
+        {
+          "level": 7500,
+          "displayedValue": 28,
+          "signedValue": 28,
+          "type": "Energy Income",
+          "global": true,
+          "unit": "flat",
+          "sourceText": "Level 7500: +28 Energy Income (GLOBAL effect)"
+        },
+        {
+          "level": 10000,
+          "displayedValue": 84,
+          "signedValue": 84,
+          "type": "Ultra Energy Amount",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 10000: +84% Ultra Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warlock",
+      "name": "Warlock",
+      "sourceImage": "source/milestone-review/images/warlock.png",
+      "imageSha256": "02fbb4bbd750bfc706a277eaf559885ac981a6e7c6cd47f730037e790bd6a0d5",
+      "baseStats": {
+        "damage": 34,
+        "dps": 25,
+        "attackSpeed": 0.75,
+        "range": 4.32
+      },
+      "milestones": [
+        {
+          "level": 25,
+          "displayedValue": 3,
+          "signedValue": 3,
+          "type": "Rank Exp",
+          "global": true,
+          "unit": "flat",
+          "sourceText": "Level 25: +3 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "level": 75,
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Damage",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 75: +56% Damage (personal effect)"
+        },
+        {
+          "level": 150,
+          "displayedValue": 6,
+          "signedValue": 6,
+          "type": "Crit Chance",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 150: +6% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "level": 250,
+          "displayedValue": 23,
+          "signedValue": 23,
+          "type": "Attack Speed",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 250: +23% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "level": 500,
+          "displayedValue": 141,
+          "signedValue": 141,
+          "type": "Crit Damage",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 500: +141% Crit Damage (personal effect)"
+        },
+        {
+          "level": 750,
+          "displayedValue": 11,
+          "signedValue": 11,
+          "type": "Skill Duration",
+          "global": false,
+          "unit": "flat",
+          "sourceText": "Level 750: +11 Skill Duration (personal effect)"
+        },
+        {
+          "level": 1000,
+          "displayedValue": 42,
+          "signedValue": 42,
+          "type": "Range",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 1000: +42% Range (personal effect)"
+        },
+        {
+          "level": 1500,
+          "displayedValue": 23,
+          "signedValue": -23,
+          "type": "Skill Cooldown",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 1500: -23% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "level": 2000,
+          "displayedValue": 17,
+          "signedValue": 17,
+          "type": "Skill Power",
+          "global": false,
+          "unit": "flat",
+          "sourceText": "Level 2000: +17 Skill Power (personal effect)"
+        },
+        {
+          "level": 2500,
+          "displayedValue": 84,
+          "signedValue": 84,
+          "type": "Super Gold Amount",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 2500: +84% Super Gold Amount (GLOBAL effect)"
+        },
+        {
+          "level": 3000,
+          "displayedValue": 8,
+          "signedValue": 8,
+          "type": "Energy Income",
+          "global": true,
+          "unit": "flat",
+          "sourceText": "Level 3000: +8 Energy Income (GLOBAL effect)"
+        },
+        {
+          "level": 3500,
+          "displayedValue": 17,
+          "signedValue": 17,
+          "type": "Ultra Crit Chance",
+          "global": false,
+          "unit": "percent",
+          "sourceText": "Level 3500: +17% Ultra Crit Chance (personal effect)"
+        },
+        {
+          "level": 4000,
+          "displayedValue": 3,
+          "signedValue": 3,
+          "type": "Ultra Energy Chance",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 4000: +3% Ultra Energy Chance (GLOBAL effect)"
+        },
+        {
+          "level": 5000,
+          "displayedValue": 23,
+          "signedValue": 23,
+          "type": "Super Crit Chance",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 5000: +23% Super Crit Chance (GLOBAL effect)"
+        },
+        {
+          "level": 6000,
+          "displayedValue": 42,
+          "signedValue": 42,
+          "type": "Crit Chance",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 6000: +42% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "level": 7500,
+          "displayedValue": 70,
+          "signedValue": 70,
+          "type": "Ultra Energy Amount",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 7500: +70% Ultra Energy Amount (GLOBAL effect)"
+        },
+        {
+          "level": 10000,
+          "displayedValue": 14,
+          "signedValue": 14,
+          "type": "Instant Accelerate",
+          "global": true,
+          "unit": "percent",
+          "sourceText": "Level 10000: +14% Instant Accelerate (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,919 @@
+{
+  "meta": {
+    "batch": "10",
+    "selectedHero": {
+      "id": "warden",
+      "name": "Warden"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 15,
+          "warden": 0
+        }
+      }
+    },
+    "contextNotes": [
+      "The nine-Grand-Master count, Snow Fort map modifiers, and account synergy bonuses are inferred continuation of preceding captures; they were not re-confirmed for these screenshots.",
+      "Warden tile placement and all partner owner tile placements are unspecified.",
+      "The continuing owner-bonus assumption is 0% for Warden, +25% for ordinary owners, and +15% for Crusader. Warden does not inherit the ordinary +25% owner modifier.",
+      "Tier I shows no rank requirement or individual hero rank badges; those values are null.",
+      "Effects are assigned to the hero portrait directly above each downward arrow. Required hero order follows the screenshot.",
+      "Warden header and visible synergy-card rank badges consistently show 4523.",
+      "Partner rank badges are preserved independently of preceding captures, including Titan 4645, Battlemage 4508, Archer 5024, and Ninja 4682."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "warden-01",
+        "originalPath": "images/warden-01.png",
+        "archivePath": "images/warden-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "warden-02",
+        "originalPath": "images/warden-02.png",
+        "archivePath": "images/warden-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "warden-03",
+        "originalPath": "images/warden-03.png",
+        "archivePath": "images/warden-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "warden-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "warden-01",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": null
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 34,
+          "signedValue": 34,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+34% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 533,
+          "signedValue": 533,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+533% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "warden-01",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": null
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": null
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+51 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 128,
+          "signedValue": 128,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+128% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 1066,
+          "signedValue": 1066,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,066% Crit Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "warden-01",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 4645
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 682,
+          "signedValue": 682,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+682% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 213,
+          "signedValue": 213,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+213% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "warden-01",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5024
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 102,
+          "signedValue": 102,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+102 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 149,
+          "signedValue": -149,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-149% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "warden-01",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5024
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 1365,
+          "signedValue": 1365,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,365% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 188,
+          "signedValue": 188,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+188% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "warden-01",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 4508
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5003
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 68,
+          "signedValue": -68,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-68% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 256,
+          "signedValue": -256,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-256% Skill Cooldown (personal effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 853,
+          "signedValue": 853,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+853% Attack Speed (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "warden-02",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": 4515
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 5800,
+          "signedValue": 5800,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+5,800% Super Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 1066,
+          "signedValue": 1066,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,066% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "warden-02",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 14,
+          "signedValue": 14,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+14 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 8104,
+          "signedValue": 8104,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+8,104% Super Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "warden-02",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 2347,
+          "signedValue": 2347,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,347% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 73,
+          "signedValue": 73,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+73% Super Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "warden-02",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5004
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 2641,
+          "signedValue": 2641,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,641% Damage (personal effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 3301,
+          "signedValue": 3301,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,301% Damage (personal effect)"
+        },
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 4585,
+          "signedValue": 4585,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+4,585% Super Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "warden-02",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 29,
+          "signedValue": 29,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+29% Ultra Gold Chance (personal effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 3668,
+          "signedValue": 3668,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,668% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "warden-02",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4632
+        },
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 18,
+          "signedValue": 18,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+18% Ultra Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 22,
+          "signedValue": 22,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+22% Ultra Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 4402,
+          "signedValue": 4402,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,402% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "warden-03",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 4107,
+          "signedValue": 4107,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+4,107% Super Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 72,
+          "signedValue": 72,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+72% Super Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "warden-03",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 4538
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 725,
+          "signedValue": 725,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+725% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 91,
+          "signedValue": 91,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+91 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 121,
+          "signedValue": 121,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+121 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "warden-03",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 5000
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 33,
+          "signedValue": 33,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+33 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 7677,
+          "signedValue": 7677,
+          "type": "Boss Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+7,677% Boss Gold (personal effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 10236,
+          "signedValue": 10236,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+10,236% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 10236,
+          "signedValue": 10236,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+10,236% Ultra Gold Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "warden-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "warden-03",
+      "requiredHeroes": [
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4632
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 4508
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 8871,
+          "signedValue": 8871,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+8,871% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 10,
+          "signedValue": 10,
+          "type": "Alien Tech",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+10 Alien Tech (GLOBAL effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 27,
+          "signedValue": 27,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+27% Ultra Crit Chance (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

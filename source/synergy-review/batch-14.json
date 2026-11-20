@@ -1,0 +1,924 @@
+{
+  "meta": {
+    "batch": "14",
+    "selectedHero": {
+      "id": "scout",
+      "name": "Scout"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "The user explicitly confirmed nine deployed Grand Masters and confirmed the synergy event remains active for these screenshots (+25% milestones, +10% synergy effects).",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the preceding profile; they were not separately reconfirmed for this capture.",
+      "Crusader +25% and Warden +0% owner bonuses follow the established account profile. Crusader was explicitly confirmed at +25% immediately before this capture set.",
+      "Owner tile placements are unspecified. The off-synergy-tile model is inferred from the repeated values; the screenshots do not establish tile placement.",
+      "Tier I shows no individual rank badges or rank requirement. Later rank badges are transcribed exactly and are not interpreted as run levels.",
+      "Each effect belongs to the portrait directly above its arrow. Repeated portraits are preserved as separate required copies and separate visible effects.",
+      "The tier-IX label \"Battlepass Exp\" is normalized to the existing canonical stat name \"Battle Pass Exp\"; its exact wording is retained in sourceText. Both Templar portraits show rank 2220."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "scout-9gm-event-01",
+        "originalPath": "images/scout-9gm-event-01.png",
+        "archivePath": "images/scout-9gm-event-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "scout-9gm-event-02",
+        "originalPath": "images/scout-9gm-event-02.png",
+        "archivePath": "images/scout-9gm-event-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "scout-9gm-event-03",
+        "originalPath": "images/scout-9gm-event-03.png",
+        "archivePath": "images/scout-9gm-event-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "scout-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "scout-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": null
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 586,
+          "signedValue": 586,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+586% Damage (personal effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "scout-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": null
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": null
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 94,
+          "signedValue": 94,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+94% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 235,
+          "signedValue": -235,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-235% Skill Cooldown (personal effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 70,
+          "signedValue": 70,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+70 Rank Exp (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "Rank 15+",
+      "sourceImageId": "scout-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 235,
+          "signedValue": 235,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+235% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "Rank 15+",
+      "sourceImageId": "scout-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4527
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,407% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 141,
+          "signedValue": 141,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+141 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 141,
+          "signedValue": 141,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+141 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "Rank 50+",
+      "sourceImageId": "scout-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5018
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 751,
+          "signedValue": 751,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+751% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 75,
+          "signedValue": 75,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+75 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "Rank 50+",
+      "sourceImageId": "scout-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 4644
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": 2220
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 281,
+          "signedValue": -281,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-281% Skill Cooldown (personal effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 2346,
+          "signedValue": 2346,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,346% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 938,
+          "signedValue": 938,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+938% Attack Speed (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "scout-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 4222,
+          "signedValue": 4222,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+4,222% Super Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 2815,
+          "signedValue": 2815,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,815% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "Rank 100+",
+      "sourceImageId": "scout-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 1407,
+          "signedValue": 1407,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,407% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 8914,
+          "signedValue": 8914,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+8,914% Super Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 15,
+          "signedValue": 15,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+15 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "scout-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+24 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+24 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "Rank 150+",
+      "sourceImageId": "scout-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 4627
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5018
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 202,
+          "signedValue": 202,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+202% Super Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 32,
+          "signedValue": 32,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+32% Super Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 32,
+          "signedValue": 32,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+32 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "scout-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 16139,
+          "signedValue": 16139,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16,139% Ultra Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "Rank 250+",
+      "sourceImageId": "scout-9gm-event-02",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": 4549
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 484,
+          "signedValue": 484,
+          "type": "Ultra Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+484% Ultra Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "Rank 500+",
+      "sourceImageId": "scout-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 5647,
+          "signedValue": 5647,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,647% Super Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 133,
+          "signedValue": 133,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+133% Super Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "Rank 500+",
+      "sourceImageId": "scout-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": 5000
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 93,
+          "signedValue": 93,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+93% Super Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 53,
+          "signedValue": 53,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+53 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 13286,
+          "signedValue": 13286,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+13,286% Super Gold Amount (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "Rank 1000+",
+      "sourceImageId": "scout-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": 4503
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 26,
+          "signedValue": 26,
+          "type": "Ultra Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+26% Ultra Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 11260,
+          "signedValue": 11260,
+          "type": "Ultra Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+11,260% Ultra Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 113,
+          "signedValue": 113,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+113 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 3003,
+          "signedValue": 3003,
+          "type": "Boss Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+3,003% Boss Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "scout-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "Rank 1500+",
+      "sourceImageId": "scout-9gm-event-03",
+      "requiredHeroes": [
+        {
+          "id": "scout",
+          "name": "Scout",
+          "displayedRank": 4506
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": 2220
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": 2220
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "scout",
+          "ownerName": "Scout",
+          "displayedValue": 4,
+          "signedValue": 4,
+          "type": "Battle Pass Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+4 Battlepass Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+56 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+56 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 12198,
+          "signedValue": 12198,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+12,198% Ultra Crit Damage (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

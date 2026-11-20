@@ -1,0 +1,1035 @@
+{
+  "batch": "batch-33.json",
+  "status": "audited-no-corrections-needed",
+  "observedEffects": 29,
+  "coverage": {
+    "uniqueEffects": 29,
+    "uniqueGroups": 11,
+    "newUniqueEffectsVsEarlierBatches": 4,
+    "newUniqueGroupsVsEarlierBatches": 2,
+    "overlappingEffectAppearances": 25,
+    "repeatedPortraitAppearances": 0,
+    "note": "Coverage counts reflect the audit creation snapshot; aggregate coverage recomputes all available batches."
+  },
+  "frozenMagnitudeMatches": 26,
+  "currentMagnitudeMatches": 29,
+  "currentFullMatches": 29,
+  "newOverrideRecords": 0,
+  "overrides": [],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "necromancer",
+      "index": 1,
+      "tier": 1,
+      "groupId": "necromancer-s1",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 586,
+        "signedValue": 586,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+586% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 25,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 25,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 586,
+      "frozenPredictedSignedValue": 586,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warden",
+      "index": 1,
+      "tier": 1,
+      "groupId": "necromancer-s1",
+      "observed": {
+        "ownerId": "warden",
+        "ownerName": "Warden",
+        "displayedValue": 38,
+        "signedValue": 38,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+38% Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 2,
+        "global": true
+      },
+      "factor": 18.76613197108291,
+      "predictedSignedValue": 38,
+      "frozenPredictedSignedValue": 38,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 2,
+      "tier": 1,
+      "groupId": "necromancer-s2",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 70,
+        "signedValue": 70,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+70 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 3,
+        "global": false,
+        "unit": "flat"
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 2,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 70,
+      "frozenPredictedSignedValue": 47,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlord",
+      "index": 2,
+      "tier": 1,
+      "groupId": "necromancer-s2",
+      "observed": {
+        "ownerId": "warlord",
+        "ownerName": "Warlord",
+        "displayedValue": 70,
+        "signedValue": 70,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+70 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 3,
+        "global": false,
+        "unit": "flat"
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 2,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 70,
+      "frozenPredictedSignedValue": 47,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "captain",
+      "index": 2,
+      "tier": 1,
+      "groupId": "necromancer-s2",
+      "observed": {
+        "ownerId": "captain",
+        "ownerName": "Captain",
+        "displayedValue": 70,
+        "signedValue": 70,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+70 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": false,
+        "unit": "flat"
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 70,
+      "frozenPredictedSignedValue": 47,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 3,
+      "tier": 2,
+      "groupId": "necromancer-s3",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+235% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 10,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sniper",
+      "index": 3,
+      "tier": 2,
+      "groupId": "necromancer-s3",
+      "observed": {
+        "ownerId": "sniper",
+        "ownerName": "Sniper",
+        "displayedValue": 399,
+        "signedValue": 399,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+399% Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 17,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 17,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 399,
+      "frozenPredictedSignedValue": 399,
+      "integerBaseCandidates": [
+        17
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 4,
+      "tier": 2,
+      "groupId": "necromancer-s4",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 281,
+        "signedValue": 281,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+281% Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 12,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 12,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 281,
+      "frozenPredictedSignedValue": 281,
+      "integerBaseCandidates": [
+        12
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 4,
+      "tier": 2,
+      "groupId": "necromancer-s4",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Rank Exp",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+235 Rank Exp (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 4,
+      "tier": 2,
+      "groupId": "necromancer-s4",
+      "observed": {
+        "ownerId": "hunter",
+        "ownerName": "Hunter",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,407% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 60,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 60,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 1407,
+      "frozenPredictedSignedValue": 1407,
+      "integerBaseCandidates": [
+        60
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 5,
+      "tier": 3,
+      "groupId": "necromancer-s5",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 1877,
+        "signedValue": 1877,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,877% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 200,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 200,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1877,
+      "frozenPredictedSignedValue": 1877,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 5,
+      "tier": 3,
+      "groupId": "necromancer-s5",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 751,
+        "signedValue": 751,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+751% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 80,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 80,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 751,
+      "frozenPredictedSignedValue": 751,
+      "integerBaseCandidates": [
+        80
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 6,
+      "tier": 3,
+      "groupId": "necromancer-s6",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 100,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 100,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        100
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 6,
+      "tier": 3,
+      "groupId": "necromancer-s6",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+938% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 100,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 100,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        100
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 6,
+      "tier": 3,
+      "groupId": "necromancer-s6",
+      "observed": {
+        "ownerId": "hunter",
+        "ownerName": "Hunter",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+469% Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        50
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 11,
+      "tier": 6,
+      "groupId": "necromancer-s11",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 30260,
+        "signedValue": 30260,
+        "type": "Ultra Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+30,260% Ultra Crit Damage (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Damage",
+        "value": 3750,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Damage",
+        "value": 3750,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 30260,
+      "frozenPredictedSignedValue": 30260,
+      "integerBaseCandidates": [
+        3750
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 11,
+      "tier": 6,
+      "groupId": "necromancer-s11",
+      "observed": {
+        "ownerId": "elementalist",
+        "ownerName": "Elementalist",
+        "displayedValue": 30260,
+        "signedValue": 30260,
+        "type": "Ultra Gold Amount",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+30,260% Ultra Gold Amount (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Amount",
+        "value": 3750,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Amount",
+        "value": 3750,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 30260,
+      "frozenPredictedSignedValue": 30260,
+      "integerBaseCandidates": [
+        3750
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 12,
+      "tier": 6,
+      "groupId": "necromancer-s12",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 48,
+        "signedValue": 48,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+48 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 6,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 6,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 48,
+      "frozenPredictedSignedValue": 48,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "templar",
+      "index": 12,
+      "tier": 6,
+      "groupId": "necromancer-s12",
+      "observed": {
+        "ownerId": "templar",
+        "ownerName": "Templar",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Ultra Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+24% Ultra Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Chance",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Chance",
+        "value": 3,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 12,
+      "tier": 6,
+      "groupId": "necromancer-s12",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 4842,
+        "signedValue": 4842,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+4,842% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 600,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 600,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 4842,
+      "frozenPredictedSignedValue": 4842,
+      "integerBaseCandidates": [
+        600
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 13,
+      "tier": 7,
+      "groupId": "necromancer-s13",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 9300,
+        "signedValue": 9300,
+        "type": "Ultra Boss Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+9,300% Ultra Boss Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Boss Damage",
+        "value": 1400,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Boss Damage",
+        "value": 1400,
+        "global": true
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 9300,
+      "frozenPredictedSignedValue": 9300,
+      "integerBaseCandidates": [
+        1400
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "praetorian",
+      "index": 13,
+      "tier": 7,
+      "groupId": "necromancer-s13",
+      "observed": {
+        "ownerId": "praetorian",
+        "ownerName": "Praetorian",
+        "displayedValue": 830,
+        "signedValue": 830,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+830% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 125,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 125,
+        "global": false
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 830,
+      "frozenPredictedSignedValue": 830,
+      "integerBaseCandidates": [
+        125
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 14,
+      "tier": 7,
+      "groupId": "necromancer-s14",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 133,
+        "signedValue": 133,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+133 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 20,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 20,
+        "global": false
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 133,
+      "frozenPredictedSignedValue": 133,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 14,
+      "tier": 7,
+      "groupId": "necromancer-s14",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 100,
+        "signedValue": 100,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+100 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 15,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 15,
+        "global": false
+      },
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 100,
+      "frozenPredictedSignedValue": 100,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warden",
+      "index": 14,
+      "tier": 7,
+      "groupId": "necromancer-s14",
+      "observed": {
+        "ownerId": "warden",
+        "ownerName": "Warden",
+        "displayedValue": 797,
+        "signedValue": 797,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+797% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 150,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 150,
+        "global": false
+      },
+      "factor": 5.31456857421068,
+      "predictedSignedValue": 797,
+      "frozenPredictedSignedValue": 797,
+      "integerBaseCandidates": [
+        150
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 15,
+      "tier": 8,
+      "groupId": "necromancer-s15",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 3003,
+        "signedValue": 3003,
+        "type": "Boss Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+3,003% Boss Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Boss Damage",
+        "value": 800,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Boss Damage",
+        "value": 800,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 3003,
+      "frozenPredictedSignedValue": 3003,
+      "integerBaseCandidates": [
+        800
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "viking",
+      "index": 15,
+      "tier": 8,
+      "groupId": "necromancer-s15",
+      "observed": {
+        "ownerId": "viking",
+        "ownerName": "Viking",
+        "displayedValue": 150,
+        "signedValue": 150,
+        "type": "Boss Exp",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+150% Boss Exp (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Boss Exp",
+        "value": 40,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Boss Exp",
+        "value": 40,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 150,
+      "frozenPredictedSignedValue": 150,
+      "integerBaseCandidates": [
+        40
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 15,
+      "tier": 8,
+      "groupId": "necromancer-s15",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 394,
+        "signedValue": 394,
+        "type": "Ultra Exp Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+394% Ultra Exp Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Exp Amount",
+        "value": 105,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Exp Amount",
+        "value": 105,
+        "global": true
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 394,
+      "frozenPredictedSignedValue": 394,
+      "integerBaseCandidates": [
+        105
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ballista",
+      "index": 15,
+      "tier": 8,
+      "groupId": "necromancer-s15",
+      "observed": {
+        "ownerId": "ballista",
+        "ownerName": "Ballista",
+        "displayedValue": 113,
+        "signedValue": 113,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+113 Skill Power (personal effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 30,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 30,
+        "global": false
+      },
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 113,
+      "frozenPredictedSignedValue": 113,
+      "integerBaseCandidates": [
+        30
+      ],
+      "changedFields": []
+    }
+  ],
+  "captureContextNote": "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+  "afterProposedCorrectionsMatchingEffects": 29,
+  "verifiedImageHashes": [
+    {
+      "sourceImageId": "necromancer-9gm-event-01",
+      "sha256": "34697e716fb85e1d6796e55468f82c01991e5a96ef2659bceb0a095d0d14b2db"
+    },
+    {
+      "sourceImageId": "necromancer-9gm-event-02",
+      "sha256": "0d9a143b6686f6d9a855e126464637c029b273366957b186f863217a15feefd0"
+    }
+  ],
+  "labelNormalizations": [],
+  "comparisonBasis": "Current fields and predictions are the pre-application snapshot; no corrections were necessary for this batch.",
+  "matchesAfterCorrections": 29,
+  "archiveChecks": [
+    {
+      "archivePath": "images/necromancer-9gm-event-01.png",
+      "sha256": "34697e716fb85e1d6796e55468f82c01991e5a96ef2659bceb0a095d0d14b2db",
+      "byteIdenticalToOriginal": true
+    },
+    {
+      "archivePath": "images/necromancer-9gm-event-02.png",
+      "sha256": "0d9a143b6686f6d9a855e126464637c029b273366957b186f863217a15feefd0",
+      "byteIdenticalToOriginal": true
+    }
+  ]
+}

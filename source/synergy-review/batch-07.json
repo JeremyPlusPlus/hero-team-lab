@@ -1,0 +1,919 @@
+{
+  "meta": {
+    "batch": "07",
+    "selectedHero": {
+      "id": "battlemage",
+      "name": "Battlemage"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 15,
+          "warden": 0
+        }
+      }
+    },
+    "contextNotes": [
+      "The nine-Grand-Master count, Snow Fort map modifiers, and account synergy bonuses are inferred continuation of preceding captures; they were not re-confirmed for these screenshots.",
+      "Battlemage tile placement and all partner owner tile placements are unspecified.",
+      "The continuing owner-bonus assumption is +25% by default, +15% for Crusader, and 0% for Warden.",
+      "Tier I shows no rank requirement or individual hero rank badges; those values are null.",
+      "Effects are assigned to the hero portrait directly above each downward arrow. Required hero order follows the screenshot.",
+      "Battlemage synergy-card rank badges show 2942 throughout tiers II-IX. The header instead shows 2944 in battlemage-01, 2947 in battlemage-02, and 2948 in battlemage-03. Both observations are preserved; card badges have not been adjusted to match the changing header.",
+      "Partner rank badges are transcribed independently of preceding captures; Warden shows 4523, Chieftain 4632, and Deadeye 4528."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "battlemage-01",
+        "originalPath": "images/battlemage-01.png",
+        "archivePath": "images/battlemage-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "battlemage-02",
+        "originalPath": "images/battlemage-02.png",
+        "archivePath": "images/battlemage-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "battlemage-03",
+        "originalPath": "images/battlemage-03.png",
+        "archivePath": "images/battlemage-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "battlemage-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "battlemage-01",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": null
+        },
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 21,
+          "signedValue": 21,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+21 Rank Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 213,
+          "signedValue": 213,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+213% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "battlemage-01",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": null
+        },
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": null
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 533,
+          "signedValue": 533,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+533% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 1066,
+          "signedValue": 1066,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,066% Damage (personal effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 427,
+          "signedValue": 427,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+427% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "battlemage-01",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5003
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 107,
+          "signedValue": 107,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+107 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 171,
+          "signedValue": 171,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+171% Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "battlemage-01",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "druid",
+          "ownerName": "Druid",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "battlemage-01",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 682,
+          "signedValue": 682,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+682% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 682,
+          "signedValue": 682,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+682% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "battlemage-01",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5003
+        },
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 256,
+          "signedValue": -256,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-256% Skill Cooldown (personal effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 853,
+          "signedValue": 853,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+853% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 68,
+          "signedValue": -68,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-68% Skill Cooldown (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "battlemage-02",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5004
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 3839,
+          "signedValue": 3839,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+3,839% Super Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+9 Energy Income (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "battlemage-02",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": 4504
+        },
+        {
+          "id": "wizard",
+          "name": "Wizard",
+          "displayedRank": 5003
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 128,
+          "signedValue": 128,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+128% Super Crit Chance (personal effect)"
+        },
+        {
+          "ownerId": "wizard",
+          "ownerName": "Wizard",
+          "displayedValue": 341,
+          "signedValue": 341,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+341% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "battlemage-02",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 147,
+          "signedValue": 147,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+147% Super Gold Chance (personal effect)"
+        },
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 1284,
+          "signedValue": 1284,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,284% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "battlemage-02",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 4585,
+          "signedValue": 4585,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+4,585% Super Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 3301,
+          "signedValue": 3301,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,301% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 29,
+          "signedValue": 29,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+29 Energy Income (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "battlemage-02",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 1834,
+          "signedValue": 1834,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,834% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 3668,
+          "signedValue": 3668,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,668% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "battlemage-02",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        },
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 4528
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 44,
+          "signedValue": 44,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+44 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "battlemage-03",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 4508
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 242,
+          "signedValue": 242,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+242% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 1812,
+          "signedValue": 1812,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,812% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "battlemage-03",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": 4515
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 4505
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 2114,
+          "signedValue": 2114,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,114% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 9663,
+          "signedValue": 9663,
+          "type": "Ultra Boss Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+9,663% Ultra Boss Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 11112,
+          "signedValue": 11112,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+11,112% Super Gold Amount (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "battlemage-03",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "witch",
+          "name": "Witch",
+          "displayedRank": 5000
+        },
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": 5004
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 10236,
+          "signedValue": 10236,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+10,236% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "witch",
+          "ownerName": "Witch",
+          "displayedValue": 102,
+          "signedValue": 102,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+102 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 68,
+          "signedValue": 68,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+68 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 102,
+          "signedValue": 102,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+102 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "battlemage-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "battlemage-03",
+      "requiredHeroes": [
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2942
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 4502
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+51 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 11089,
+          "signedValue": 11089,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+11,089% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 7,
+          "signedValue": 7,
+          "type": "Shadow Runes",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+7 Shadow Runes (personal effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

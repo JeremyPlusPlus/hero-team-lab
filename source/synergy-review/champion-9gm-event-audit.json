@@ -1,0 +1,543 @@
+{
+  "batch": "batch-30.json",
+  "status": "audited-no-corrections-needed",
+  "observedEffects": 15,
+  "coverage": {
+    "uniqueEffects": 15,
+    "uniqueGroups": 6,
+    "newUniqueEffectsVsEarlierBatches": 4,
+    "newUniqueGroupsVsEarlierBatches": 2,
+    "overlappingEffectAppearances": 11,
+    "repeatedPortraitAppearances": 0,
+    "note": "Coverage counts reflect the audit creation snapshot; aggregate coverage recomputes all available batches."
+  },
+  "frozenMagnitudeMatches": 15,
+  "currentMagnitudeMatches": 15,
+  "currentFullMatches": 15,
+  "newOverrideRecords": 0,
+  "overrides": [],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "champion",
+      "index": 7,
+      "tier": 4,
+      "groupId": "champion-s7",
+      "observed": {
+        "ownerId": "champion",
+        "ownerName": "Champion",
+        "displayedValue": 38,
+        "signedValue": 38,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+38% Super Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Chance",
+        "value": 4,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 4,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 38,
+      "frozenPredictedSignedValue": 38,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 7,
+      "tier": 4,
+      "groupId": "champion-s7",
+      "observed": {
+        "ownerId": "hunter",
+        "ownerName": "Hunter",
+        "displayedValue": 1173,
+        "signedValue": 1173,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,173% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 125,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 125,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1173,
+      "frozenPredictedSignedValue": 1173,
+      "integerBaseCandidates": [
+        125
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "champion",
+      "index": 8,
+      "tier": 4,
+      "groupId": "champion-s8",
+      "observed": {
+        "ownerId": "champion",
+        "ownerName": "Champion",
+        "displayedValue": 3284,
+        "signedValue": 3284,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,284% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 350,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 350,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 3284,
+      "frozenPredictedSignedValue": 3284,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "militia",
+      "index": 8,
+      "tier": 4,
+      "groupId": "champion-s8",
+      "observed": {
+        "ownerId": "militia",
+        "ownerName": "Militia",
+        "displayedValue": 56,
+        "signedValue": 56,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+56% Super Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Chance",
+        "value": 6,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 6,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 56,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 8,
+      "tier": 4,
+      "groupId": "champion-s8",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 38,
+        "signedValue": 38,
+        "type": "Super Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+38% Super Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Amount",
+        "value": 4,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Super Energy",
+        "value": 4,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 38,
+      "frozenPredictedSignedValue": 38,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "champion",
+      "index": 9,
+      "tier": 5,
+      "groupId": "champion-s9",
+      "observed": {
+        "ownerId": "champion",
+        "ownerName": "Champion",
+        "displayedValue": 3228,
+        "signedValue": 3228,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,228% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 400,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 400,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3228,
+      "frozenPredictedSignedValue": 3228,
+      "integerBaseCandidates": [
+        400
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ballista",
+      "index": 9,
+      "tier": 5,
+      "groupId": "champion-s9",
+      "observed": {
+        "ownerId": "ballista",
+        "ownerName": "Ballista",
+        "displayedValue": 1412,
+        "signedValue": 1412,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,412% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 175,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 175,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 1412,
+      "frozenPredictedSignedValue": 1412,
+      "integerBaseCandidates": [
+        175
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "champion",
+      "index": 10,
+      "tier": 5,
+      "groupId": "champion-s10",
+      "observed": {
+        "ownerId": "champion",
+        "ownerName": "Champion",
+        "displayedValue": 81,
+        "signedValue": 81,
+        "type": "Super Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+81% Super Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Chance",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Chance",
+        "value": 10,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 81,
+      "frozenPredictedSignedValue": 81,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlock",
+      "index": 10,
+      "tier": 5,
+      "groupId": "champion-s10",
+      "observed": {
+        "ownerId": "warlock",
+        "ownerName": "Warlock",
+        "displayedValue": 3631,
+        "signedValue": 3631,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,631% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 450,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 450,
+        "global": false
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3631,
+      "frozenPredictedSignedValue": 3631,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "archer",
+      "index": 10,
+      "tier": 5,
+      "groupId": "champion-s10",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 5043,
+        "signedValue": 5043,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+5,043% Super Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 625,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 625,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 5043,
+      "frozenPredictedSignedValue": 5043,
+      "integerBaseCandidates": [
+        625
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "champion",
+      "index": 11,
+      "tier": 6,
+      "groupId": "champion-s11",
+      "observed": {
+        "ownerId": "champion",
+        "ownerName": "Champion",
+        "displayedValue": 40,
+        "signedValue": 40,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+40 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 5,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 5,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 40,
+      "frozenPredictedSignedValue": 40,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sniper",
+      "index": 11,
+      "tier": 6,
+      "groupId": "champion-s11",
+      "observed": {
+        "ownerId": "sniper",
+        "ownerName": "Sniper",
+        "displayedValue": 16,
+        "signedValue": 16,
+        "type": "Ultra Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+16% Ultra Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Chance",
+        "value": 2,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 16,
+      "frozenPredictedSignedValue": 16,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "champion",
+      "index": 12,
+      "tier": 6,
+      "groupId": "champion-s12",
+      "observed": {
+        "ownerId": "champion",
+        "ownerName": "Champion",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Ultra Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+24% Ultra Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Exp Chance",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Exp Chance",
+        "value": 3,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 12,
+      "tier": 6,
+      "groupId": "champion-s12",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 2219,
+        "signedValue": 2219,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2219,
+      "frozenPredictedSignedValue": 2219,
+      "integerBaseCandidates": [
+        275
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "paladin",
+      "index": 12,
+      "tier": 6,
+      "groupId": "champion-s12",
+      "observed": {
+        "ownerId": "paladin",
+        "ownerName": "Paladin",
+        "displayedValue": 48,
+        "signedValue": 48,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+48 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 6,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 6,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 48,
+      "frozenPredictedSignedValue": 48,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    }
+  ],
+  "captureContextNote": "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+  "afterProposedCorrectionsMatchingEffects": 15,
+  "verifiedImageHashes": [
+    {
+      "sourceImageId": "champion-9gm-event-01",
+      "sha256": "15c8cfefd4f88e2dc8adbe43410b82436dd56508b1d8eda3287566429149695b"
+    }
+  ],
+  "labelNormalizations": [],
+  "comparisonBasis": "Current magnitude/field match counts describe active data before this batch was applied.",
+  "matchesAfterCorrections": 15
+}

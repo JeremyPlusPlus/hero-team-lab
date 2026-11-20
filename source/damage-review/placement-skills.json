@@ -1,0 +1,114 @@
+{
+  "source": "User screenshots and explicit confirmations in this chat, 2026-11-04",
+  "confirmed": {
+    "screenshotsHaveSkillTile": false,
+    "damageTilePercent": 2475,
+    "skillTileActiveMultiplier": 1.2,
+    "skillTileMasteryMultiplier": 1.2,
+    "scoring": "while active",
+    "wardenReference": {
+      "distanceMeters": 10.7,
+      "masteryDamagePercent": 180249
+    }
+  },
+  "profiles": {
+    "praetorian": {
+      "skill": "Ion Blades",
+      "duration": 20,
+      "cooldown": 28,
+      "active": {
+        "Super Crit Chance": 1436,
+        "Super Crit Damage": 7180
+      },
+      "mastery": {
+        "Ultra Crit Chance": 124,
+        "Ultra Crit Damage": 6179
+      }
+    },
+    "deadeye": {
+      "skill": "Divine Aim",
+      "duration": 25,
+      "cooldown": 28,
+      "active": {
+        "Damage": 24210,
+        "Attack Speed": 16115,
+        "Ultra Crit Chance": 484.2
+      },
+      "mastery": {
+        "Super Crit Damage": 2060
+      },
+      "unscored": {
+        "Additional Targets": 41
+      }
+    },
+    "dicemaster": {
+      "skill": "Feeling Lucky",
+      "duration": 20,
+      "cooldown": 32,
+      "ranges": {
+        "Crit Chance": [
+          5,
+          2867
+        ],
+        "Super Crit Chance": [
+          3,
+          1436
+        ],
+        "Ultra Crit Chance": [
+          1,
+          718
+        ]
+      },
+      "masteryMaximumRollChance": 41.2
+    },
+    "warden": {
+      "skill": "Gatling Gun",
+      "duration": 25,
+      "cooldown": 24,
+      "active": {
+        "Attack Speed": 16140,
+        "Damage": 8070
+      },
+      "masteryDamagePerStep": 1236,
+      "distanceStepMeters": 0.07,
+      "unscored": {
+        "Range": 3233
+      },
+      "defaultDistanceMeters": 10.7,
+      "referenceDistanceMeters": 10.7,
+      "referenceMasteryDamage": 180249
+    },
+    "warlord": {
+      "skill": "Avatar",
+      "duration": 20,
+      "cooldown": 24,
+      "active": {
+        "Damage": 14360,
+        "Attack Speed": 7180,
+        "Splash Damage": 1436
+      },
+      "mastery": {
+        "Super Crit Chance": 206,
+        "Super Crit Damage": 4119
+      }
+    }
+  },
+  "assumptions": [
+    "Captured account and lineup modifiers are already included; values stay fixed as the roster changes.",
+    "No additional GM, event, raw Skill Power or map mastery scaling is applied to the captured skill bonuses.",
+    "One Damage tile is modeled, and a hero occupies one tile.",
+    "Warden uses the observed +180,249% mastery damage at 10.7m. Other distances scale proportionally; rounded per-step and distance labels do not reconstruct the current-bonus display exactly.",
+    "Dicemaster non-maximum rolls are assumed uniform within the displayed ranges; expected chances are exact for the current linear chance spillover formula.",
+    "Mastery maximum-roll probability is capped at 100%.",
+    "Single-target index includes splash as an additional multiplier; excludes extra multishot targets, range, base attack speed, attack speed caps, base damage and skill uptime."
+  ],
+  "images": {
+    "praetorian": "images/praetorian.png",
+    "deadeye": "images/deadeye.png",
+    "dicemaster": "images/dicemaster.png",
+    "warden": "images/warden.png",
+    "warlord": "images/warlord.png",
+    "warden-distance": "images/warden-distance.png"
+  },
+  "supportUpdate": "See support-skills.json: the later user instruction includes splash as an additional single-target multiplier, including Warlord."
+}

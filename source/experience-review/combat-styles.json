@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-11",
+  "source": "User screenshots and clarification to compare both the leveler and maxed supports",
+  "tycoon": {
+    "image": "tycoon-style.png",
+    "unlockRank": 1250,
+    "global": {"killGoldPercent": 35, "rankExpPercent": 5, "synergyBonusPercent": 5, "energyIncomeFlat": 5, "rangePercent": 3},
+    "personal": {"damagePercent": -95}
+  },
+  "magnate": {
+    "image": "magnate-style.png",
+    "unlockRank": 4000,
+    "global": {"killGoldPercent": 75, "rankExpPercent": 12, "energyIncomePercent": 5, "instantSpellPercent": 2, "synergyBonusPercent": 8},
+    "personal": {"damagePercent": -99}
+  },
+  "rules": [
+    "The leveler compares all unlocked existing styles plus Magnate at rank 4000. Tycoon remains available from rank 1250.",
+    "Support styles compare inherited or explicit Grand Master, Tycoon and Magnate. An explicit Tycoon/Magnate works when the account GM toggle is off; Grand Master follows that toggle.",
+    "Duplicate copies share their hero's combat style. Every changed copy leaves the GM count. If entered duplicate levels differ, the lowest copy level gates the shared style.",
+    "Only actual Grand Masters contribute to GM milestone strength. Synergy strength includes GM, Tycoon and Magnate under the configured additive or multiplicative stacking rule.",
+    "Global Rank EXP percentage factors apply once per deployed copy. They remain distinct from additive Rank EXP and from XP active-skill reward factors.",
+    "Tycoon adds 5 flat Energy Income. Magnate multiplies the base-plus-flat Energy Income pool by 1.05, before amount and spillover factors.",
+    "Instant Spell is recorded but not scored as a payout multiplier or chance spillover. Skill uptime and kill rate are not simulated; captured ability profiles stay fixed as combat styles change.",
+    "Current lineups retain their assigned or inherited styles. The per-team optimization option enables style changes during XP team, tile and leveling-plan searches. Disabling it retains manual choices.",
+    "Locks protect hero identity and level; styles may move like tiles when support-style optimization is enabled.",
+    "For fixed rosters and tiles, XP support effects depend on style counts. The exact count search groups duplicate hero IDs. Overall roster/style/tile search remains heuristic.",
+    "Recorded references freeze their actual style assignments. The all-GM capture option overrides mixed support assignments without changing the current lineup.",
+    "Support combat styles apply only to Experience lineups; other focus requirements remain unchanged."
+  ]
+}

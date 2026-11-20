@@ -1,0 +1,541 @@
+{
+  "batch": "batch-35.json",
+  "status": "audited-no-corrections-needed",
+  "observedEffects": 15,
+  "coverage": {
+    "uniqueEffects": 15,
+    "uniqueGroups": 6,
+    "newUniqueEffectsVsEarlierBatches": 2,
+    "newUniqueGroupsVsEarlierBatches": 1,
+    "overlappingEffectAppearances": 13,
+    "repeatedPortraitAppearances": 0
+  },
+  "frozenMagnitudeMatches": 14,
+  "currentMagnitudeMatches": 15,
+  "currentFullMatches": 15,
+  "newOverrideRecords": 0,
+  "overrides": [],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "skymage",
+      "index": 7,
+      "tier": 4,
+      "groupId": "skymage-s7",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 38,
+        "signedValue": 38,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+38% Super Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Chance",
+        "value": 4,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 4,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 38,
+      "frozenPredictedSignedValue": 38,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 7,
+      "tier": 4,
+      "groupId": "skymage-s7",
+      "observed": {
+        "ownerId": "dicemaster",
+        "ownerName": "Dicemaster",
+        "displayedValue": 9,
+        "signedValue": 9,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+9 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 1,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 1,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 9,
+      "frozenPredictedSignedValue": 9,
+      "integerBaseCandidates": [
+        1
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 8,
+      "tier": 4,
+      "groupId": "skymage-s8",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+19 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlord",
+      "index": 8,
+      "tier": 4,
+      "groupId": "skymage-s8",
+      "observed": {
+        "ownerId": "warlord",
+        "ownerName": "Warlord",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+19 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "veteran",
+      "index": 8,
+      "tier": 4,
+      "groupId": "skymage-s8",
+      "observed": {
+        "ownerId": "veteran",
+        "ownerName": "Veteran",
+        "displayedValue": 66,
+        "signedValue": 66,
+        "type": "Super Exp Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+66% Super Exp Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Amount",
+        "value": 7,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 6,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 66,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        7
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 9,
+      "tier": 5,
+      "groupId": "skymage-s9",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 1412,
+        "signedValue": 1412,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,412% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 175,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 175,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 1412,
+      "frozenPredictedSignedValue": 1412,
+      "integerBaseCandidates": [
+        175
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 9,
+      "tier": 5,
+      "groupId": "skymage-s9",
+      "observed": {
+        "ownerId": "hunter",
+        "ownerName": "Hunter",
+        "displayedValue": 65,
+        "signedValue": 65,
+        "type": "Super Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+65% Super Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Chance",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Chance",
+        "value": 8,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 65,
+      "frozenPredictedSignedValue": 65,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 10,
+      "tier": 5,
+      "groupId": "skymage-s10",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 65,
+        "signedValue": 65,
+        "type": "Super Energy Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+65% Super Energy Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Energy Amount",
+        "value": 8,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Super Energy",
+        "value": 8,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 65,
+      "frozenPredictedSignedValue": 65,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "gladiator",
+      "index": 10,
+      "tier": 5,
+      "groupId": "skymage-s10",
+      "observed": {
+        "ownerId": "gladiator",
+        "ownerName": "Gladiator",
+        "displayedValue": 5043,
+        "signedValue": 5043,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+5,043% Super Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 625,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 625,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 5043,
+      "frozenPredictedSignedValue": 5043,
+      "integerBaseCandidates": [
+        625
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 10,
+      "tier": 5,
+      "groupId": "skymage-s10",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 81,
+        "signedValue": 81,
+        "type": "Super Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+81% Super Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Chance",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Chance",
+        "value": 10,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 81,
+      "frozenPredictedSignedValue": 81,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 11,
+      "tier": 6,
+      "groupId": "skymage-s11",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 16,
+        "signedValue": 16,
+        "type": "Ultra Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+16% Ultra Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Chance",
+        "value": 2,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 16,
+      "frozenPredictedSignedValue": 16,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "assassin",
+      "index": 11,
+      "tier": 6,
+      "groupId": "skymage-s11",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 16,
+        "signedValue": 16,
+        "type": "Ultra Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+16% Ultra Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Exp Chance",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Exp Chance",
+        "value": 2,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 16,
+      "frozenPredictedSignedValue": 16,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 12,
+      "tier": 6,
+      "groupId": "skymage-s12",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 2219,
+        "signedValue": 2219,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2219,
+      "frozenPredictedSignedValue": 2219,
+      "integerBaseCandidates": [
+        275
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 12,
+      "tier": 6,
+      "groupId": "skymage-s12",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Ultra Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+24% Ultra Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Exp Chance",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Exp Chance",
+        "value": 3,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ballista",
+      "index": 12,
+      "tier": 6,
+      "groupId": "skymage-s12",
+      "observed": {
+        "ownerId": "ballista",
+        "ownerName": "Ballista",
+        "displayedValue": 24,
+        "signedValue": 24,
+        "type": "Ultra Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+24% Ultra Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Chance",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Chance",
+        "value": 3,
+        "global": true
+      },
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 24,
+      "frozenPredictedSignedValue": 24,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    }
+  ],
+  "captureContextNote": "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+  "comparisonBasis": "Current fields and predictions are the pre-application snapshot; no corrections were necessary for this batch.",
+  "matchesAfterCorrections": 15,
+  "archiveChecks": [
+    {
+      "archivePath": "images/skymage-9gm-event-01.png",
+      "sha256": "63385e2028b1182e122f0e99af795f8aa0b63cefd41e73ca6ed8bf7970c20be3",
+      "byteIdenticalToOriginal": true
+    }
+  ]
+}

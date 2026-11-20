@@ -1,0 +1,161 @@
+{
+  "date": "2026-11-10",
+  "confirmedByUser": {
+    "rankExpIs": "Displayed additive Rank EXP bonus, not XP earned per kill",
+    "rankBonus": 66000000,
+    "superChance": 300,
+    "ultraChance": 300,
+    "chanceContext": "Approximate deployed totals on the previous Archer/Wizard/Viking team",
+    "allLevelerCopiesShareLevelAndStyle": true
+  },
+  "reference": {
+    "rankBonus": 66000000,
+    "superChance": 300,
+    "ultraChance": 300,
+    "rankFlat": 153.4326273210939,
+    "rankMultiplier": 1,
+    "modeledSuperChance": 220.01931970234375,
+    "modeledUltraChance": 448.81474860039094,
+    "label": "Archer 1,500 + Wizard/Viking · supports 15,000 · Exp Factory · event on · Veteran 100 stacks",
+    "team": [
+      {
+        "id": "viking",
+        "level": 15000,
+        "locked": false,
+        "tile": "normal"
+      },
+      {
+        "id": "archer",
+        "level": 1500,
+        "locked": false,
+        "tile": "normal"
+      },
+      {
+        "id": "wizard",
+        "level": 15000,
+        "locked": false,
+        "tile": "synergy"
+      },
+      {
+        "id": "veteran",
+        "level": 15000,
+        "locked": false,
+        "tile": "skill"
+      },
+      {
+        "id": "ranger",
+        "level": 15000,
+        "locked": false,
+        "tile": "milestone"
+      },
+      {
+        "id": "ballista",
+        "level": 15000,
+        "locked": false,
+        "tile": "milestone"
+      },
+      {
+        "id": "ballista",
+        "level": 15000,
+        "locked": false,
+        "tile": "milestone"
+      },
+      {
+        "id": "veteran",
+        "level": 15000,
+        "locked": false,
+        "tile": "synergy"
+      },
+      {
+        "id": "templar",
+        "level": 15000,
+        "locked": false,
+        "tile": "normal"
+      },
+      {
+        "id": "veteran",
+        "level": 15000,
+        "locked": false,
+        "tile": "synergy"
+      }
+    ],
+    "levelerIndex": 1,
+    "attackerIndex": 1,
+    "styleId": "expFactory"
+  },
+  "oldSuggestion": [
+    {
+      "id": "veteran",
+      "tile": "skill",
+      "level": 15000
+    },
+    {
+      "id": "archer",
+      "tile": "synergy",
+      "level": 1500
+    },
+    {
+      "id": "ranger",
+      "tile": "milestone",
+      "level": 15000
+    },
+    {
+      "id": "forester",
+      "tile": "normal",
+      "level": 15000
+    },
+    {
+      "id": "ballista",
+      "tile": "normal",
+      "level": 15000
+    },
+    {
+      "id": "ballista",
+      "tile": "milestone",
+      "level": 15000
+    },
+    {
+      "id": "ballista",
+      "tile": "milestone",
+      "level": 15000
+    },
+    {
+      "id": "veteran",
+      "tile": "synergy",
+      "level": 15000
+    },
+    {
+      "id": "templar",
+      "tile": "normal",
+      "level": 15000
+    },
+    {
+      "id": "veteran",
+      "tile": "synergy",
+      "level": 15000
+    }
+  ],
+  "assumptions": [
+    "Archer level 1500; supports level 15000 (calculator defaults, not confirmed capture levels).",
+    "Exp Factory; nine Grand Masters; Snow Fort; synergy event enabled; default account boosts; 100 Veteran mastery stacks.",
+    "Model Ultra chance contribution exceeds observed total. This reference anchors candidate differences; it does not establish a physical undeployed baseline.",
+    "Payout index assumes guaranteed Super and Ultra reward tiers. Scores below the chance cap are not expected-XP estimates."
+  ],
+  "comparison": {
+    "previousScore": 25031256835513544,
+    "suggestedScore": 15940924312324750,
+    "previousOverSuggested": 1.570251281863285,
+    "netFlatRank": 316.28965985117185,
+    "netUltraChance": 129.18625836289067
+  },
+  "foresterScreenshot": {
+    "image": "forester-milestones.png",
+    "superChanceAt1500": 15,
+    "ultraChanceAt5000": 29,
+    "note": "Displayed deployed values; capture GM/event/tile context not specified. Existing inferred base values 2/4 retained, not replaced by boosted display values."
+  },
+  "supersededBy": {
+    "source": "source/chance-review/observations.json",
+    "note": "User corrected approximate XP totals to260/450 and clarified that the observed team had Archer5000 and ten Grand Masters. The earlier1500/ExpFactory/300/300 comparison remains a historical conditional calculation."
+  }
+}

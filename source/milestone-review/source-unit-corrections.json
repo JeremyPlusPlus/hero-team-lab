@@ -1,0 +1,13 @@
+{
+  "corrections": [
+    {
+      "heroId": "veteran",
+      "level": 7500,
+      "storedValue": 0.05,
+      "value": 5,
+      "numberFormat": "0%",
+      "source": "Data!DS43",
+      "note": "Verified in hero-source.xlsx: Excel stores 5% as 0.05. Convert to percentage points before comparing with screenshot bonuses."
+    }
+  ]
+}

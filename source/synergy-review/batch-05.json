@@ -1,0 +1,919 @@
+{
+  "meta": {
+    "batch": "05",
+    "selectedHero": {
+      "id": "veteran",
+      "name": "Veteran"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 15,
+          "warden": 0
+        }
+      }
+    },
+    "contextNotes": [
+      "The nine-Grand-Master count, Snow Fort map modifiers, and account synergy bonuses are inferred continuation of the preceding captures; they were not re-confirmed for these screenshots.",
+      "Veteran tile placement and all partner owner tile placements are unspecified.",
+      "The continuing owner-bonus assumption is +25% by default, +15% for Crusader, and 0% for Warden.",
+      "Tier I shows no rank requirement or individual hero rank badges; those values are null.",
+      "Effects are assigned to the hero portrait directly above each downward arrow. Required hero order follows the screenshot.",
+      "Displayed rank badges are transcribed independently for this capture and are not copied from prior batches.",
+      "Battlemage is displayed at Rank 2917 in Tier III."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "veteran-01",
+        "originalPath": "images/veteran-01.png",
+        "archivePath": "images/veteran-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "veteran-02",
+        "originalPath": "images/veteran-02.png",
+        "archivePath": "images/veteran-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "veteran-03",
+        "originalPath": "images/veteran-03.png",
+        "archivePath": "images/veteran-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "veteran-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "veteran-01",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": null
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 43,
+          "signedValue": 43,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+43 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 43,
+          "signedValue": 43,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+43 Skill Duration (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "veteran-01",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": null
+        },
+        {
+          "id": "sovereign",
+          "name": "Sovereign",
+          "displayedRank": null
+        },
+        {
+          "id": "dicemaster",
+          "name": "Dicemaster",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 1066,
+          "signedValue": 1066,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,066% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "sovereign",
+          "ownerName": "Sovereign",
+          "displayedValue": 427,
+          "signedValue": 427,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+427% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "dicemaster",
+          "ownerName": "Dicemaster",
+          "displayedValue": 85,
+          "signedValue": -85,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-85% Skill Cooldown (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "veteran-01",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 4508
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 107,
+          "signedValue": 107,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+107 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 21,
+          "signedValue": 21,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+21% Super Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "veteran-01",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5000
+        },
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 4528
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 3199,
+          "signedValue": 3199,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,199% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 533,
+          "signedValue": 533,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+533% Crit Chance (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "veteran-01",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": 2917
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 682,
+          "signedValue": 682,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+682% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 682,
+          "signedValue": 682,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+682% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "veteran-01",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        },
+        {
+          "id": "praetorian",
+          "name": "Praetorian",
+          "displayedRank": 4504
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 85,
+          "signedValue": -85,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-85% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 2133,
+          "signedValue": 2133,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,133% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "praetorian",
+          "ownerName": "Praetorian",
+          "displayedValue": 256,
+          "signedValue": -256,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "-256% Skill Cooldown (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "veteran-02",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "necromancer",
+          "name": "Necromancer",
+          "displayedRank": 4538
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 2559,
+          "signedValue": 2559,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,559% Damage (personal effect)"
+        },
+        {
+          "ownerId": "necromancer",
+          "ownerName": "Necromancer",
+          "displayedValue": 9,
+          "signedValue": 9,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+9% Super Energy Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "veteran-02",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 60,
+          "signedValue": 60,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+60% Super Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 17,
+          "signedValue": 17,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+17 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 17,
+          "signedValue": 17,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+17 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "veteran-02",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": 4503
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 8069,
+          "signedValue": 8069,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+8,069% Super Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 22,
+          "signedValue": 22,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+22% Super Energy Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "veteran-02",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "chieftain",
+          "name": "Chieftain",
+          "displayedRank": 4632
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+51% Super Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 29,
+          "signedValue": 29,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+29% Super Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "chieftain",
+          "ownerName": "Chieftain",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Super Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+51% Super Exp Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "veteran-02",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 3668,
+          "signedValue": 3668,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,668% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 37,
+          "signedValue": 37,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+37 Skill Power (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "veteran-02",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 4527
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4511
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 44,
+          "signedValue": 44,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+44 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 44,
+          "signedValue": 44,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+44 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 4402,
+          "signedValue": 4402,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,402% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "veteran-03",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": 5004
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 121,
+          "signedValue": 121,
+          "type": "Boss Exp",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+121% Boss Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 121,
+          "signedValue": 121,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+121% Super Exp Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "veteran-03",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5002
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 151,
+          "signedValue": 151,
+          "type": "Super Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+151% Super Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 2114,
+          "signedValue": 2114,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,114% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "veteran-03",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 4502
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": 4515
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 41,
+          "signedValue": 41,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+41 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 136,
+          "signedValue": 136,
+          "type": "Boss Exp",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+136% Boss Exp (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 358,
+          "signedValue": 358,
+          "type": "Ultra Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+358% Ultra Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 597,
+          "signedValue": 597,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+597% Attack Speed (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "veteran-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "veteran-03",
+      "requiredHeroes": [
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5061
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5002
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5024
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5003
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 427,
+          "signedValue": 427,
+          "type": "Ultra Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+427% Ultra Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 51,
+          "signedValue": 51,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+51 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 136,
+          "signedValue": 136,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+136 Skill Power (personal effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 34,
+          "signedValue": 34,
+          "type": "Ultra Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+34% Ultra Exp Chance (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

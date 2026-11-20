@@ -1,0 +1,1714 @@
+{
+  "batch": "batch-23.json",
+  "status": "activated-in-confirmed-overrides",
+  "observedEffects": 43,
+  "coverage": {
+    "uniqueEffects": 43,
+    "uniqueGroups": 16,
+    "newUniqueEffectsVsEarlierBatches": 15,
+    "newUniqueGroupsVsEarlierBatches": 7,
+    "overlappingEffectAppearances": 28,
+    "repeatedPortraitAppearances": 0
+  },
+  "frozenMagnitudeMatches": 38,
+  "currentMagnitudeMatches": 40,
+  "currentFullMatches": 37,
+  "newOverrideRecords": 6,
+  "overrides": [
+    {
+      "ownerId": "forester",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "witch"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false,
+        "source": "Data!C10:F10"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-23.json",
+      "evidence": {
+        "groupId": "forester-s1",
+        "sourceImageId": "forester-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "witch",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "forester"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false,
+        "source": "Data!C12:F12"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-23.json",
+      "evidence": {
+        "groupId": "forester-s1",
+        "sourceImageId": "forester-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "forester",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "assassin",
+        "archer"
+      ],
+      "expectedOriginal": {
+        "type": "Attack Speed",
+        "value": 24,
+        "global": false,
+        "source": "Data!G10:K10"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-23.json",
+      "evidence": {
+        "groupId": "forester-s2",
+        "sourceImageId": "forester-9gm-event-01",
+        "displayedValue": 586,
+        "unit": "percent",
+        "global": false
+      },
+      "inferredBaseValue": 25,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the earlier user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "assassin",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "forester",
+        "archer"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": false,
+        "source": "Data!G11:K11"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-23.json",
+      "evidence": {
+        "groupId": "forester-s2",
+        "sourceImageId": "forester-9gm-event-01",
+        "displayedValue": 235,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "captain",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "forester"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 4,
+        "global": false,
+        "source": "Data!L34:O34"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-23.json",
+      "evidence": {
+        "groupId": "forester-s3",
+        "sourceImageId": "forester-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 5,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the earlier user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "warlock",
+      "index": 11,
+      "tier": 6,
+      "requires": [
+        "forester"
+      ],
+      "expectedOriginal": {
+        "type": "Ultra Energy Chance",
+        "value": 1,
+        "global": true,
+        "source": "Data!AV30:AY30"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-23.json",
+      "evidence": {
+        "groupId": "forester-s11",
+        "sourceImageId": "forester-9gm-event-02",
+        "displayedValue": 242,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedType": "Skill Cooldown",
+      "confirmedGlobal": false,
+      "confirmedSign": -1,
+      "inferredBaseValue": 30,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the earlier user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    }
+  ],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "forester",
+      "index": 1,
+      "tier": 1,
+      "groupId": "forester-s1",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 117,
+        "signedValue": -117,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "-117% Skill Cooldown (personal effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Cooldown",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 117,
+      "frozenPredictedSignedValue": 117,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": [
+        "sign"
+      ]
+    },
+    {
+      "ownerId": "witch",
+      "index": 1,
+      "tier": 1,
+      "groupId": "forester-s1",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 117,
+        "signedValue": -117,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "-117% Skill Cooldown (personal effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Cooldown",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 117,
+      "frozenPredictedSignedValue": 117,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": [
+        "sign"
+      ]
+    },
+    {
+      "ownerId": "forester",
+      "index": 2,
+      "tier": 1,
+      "groupId": "forester-s2",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 586,
+        "signedValue": 586,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+586% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 24,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 24,
+        "global": false
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 563,
+      "frozenPredictedSignedValue": 563,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": [
+        "value"
+      ]
+    },
+    {
+      "ownerId": "assassin",
+      "index": 2,
+      "tier": 1,
+      "groupId": "forester-s2",
+      "observed": {
+        "ownerId": "assassin",
+        "ownerName": "Assassin",
+        "displayedValue": 235,
+        "signedValue": -235,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "-235% Skill Cooldown (personal effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Cooldown",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": [
+        "sign"
+      ]
+    },
+    {
+      "ownerId": "archer",
+      "index": 2,
+      "tier": 1,
+      "groupId": "forester-s2",
+      "observed": {
+        "ownerId": "archer",
+        "ownerName": "Archer",
+        "displayedValue": 70,
+        "signedValue": 70,
+        "type": "Rank Exp",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+70 Rank Exp (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Rank Exp",
+        "value": 3,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Rank Exp",
+        "value": 3,
+        "global": true
+      },
+      "canonicalCurrentType": "Rank Exp",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 70,
+      "frozenPredictedSignedValue": 70,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 3,
+      "tier": 2,
+      "groupId": "forester-s3",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 40,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 40,
+        "global": true
+      },
+      "canonicalCurrentType": "Crit Damage",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        40
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "captain",
+      "index": 3,
+      "tier": 2,
+      "groupId": "forester-s3",
+      "observed": {
+        "ownerId": "captain",
+        "ownerName": "Captain",
+        "displayedValue": 117,
+        "signedValue": 117,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+117 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 4,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 4,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Duration",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 94,
+      "frozenPredictedSignedValue": 94,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": [
+        "value"
+      ]
+    },
+    {
+      "ownerId": "forester",
+      "index": 4,
+      "tier": 2,
+      "groupId": "forester-s4",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 141,
+        "signedValue": 141,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+141 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 6,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 6,
+        "global": false
+      },
+      "canonicalCurrentType": "Skill Duration",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 141,
+      "frozenPredictedSignedValue": 141,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "gladiator",
+      "index": 4,
+      "tier": 2,
+      "groupId": "forester-s4",
+      "observed": {
+        "ownerId": "gladiator",
+        "ownerName": "Gladiator",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,407% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 60,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 60,
+        "global": false
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 1407,
+      "frozenPredictedSignedValue": 1407,
+      "integerBaseCandidates": [
+        60
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 4,
+      "tier": 2,
+      "groupId": "forester-s4",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Rank Exp",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+235 Rank Exp (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Rank Exp",
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 5,
+      "tier": 3,
+      "groupId": "forester-s5",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 1877,
+        "signedValue": 1877,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,877% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 200,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 200,
+        "global": false
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1877,
+      "frozenPredictedSignedValue": 1877,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 5,
+      "tier": 3,
+      "groupId": "forester-s5",
+      "observed": {
+        "ownerId": "elementalist",
+        "ownerName": "Elementalist",
+        "displayedValue": 206,
+        "signedValue": 206,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+206% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 22,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 22,
+        "global": true
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 206,
+      "frozenPredictedSignedValue": 206,
+      "integerBaseCandidates": [
+        22
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 6,
+      "tier": 3,
+      "groupId": "forester-s6",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 28,
+        "signedValue": 28,
+        "type": "Super Exp Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+28% Super Exp Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Amount",
+        "value": 3,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 100,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Exp Amount",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 28,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        3
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 6,
+      "tier": 3,
+      "groupId": "forester-s6",
+      "observed": {
+        "ownerId": "peacekeeper",
+        "ownerName": "Peacekeeper",
+        "displayedValue": 9,
+        "signedValue": 9,
+        "type": "Super Exp Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+9% Super Exp Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Chance",
+        "value": 1,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 10,
+        "global": false
+      },
+      "canonicalCurrentType": "Super Exp Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 9,
+      "frozenPredictedSignedValue": 94,
+      "integerBaseCandidates": [
+        1
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 6,
+      "tier": 3,
+      "groupId": "forester-s6",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 328,
+        "signedValue": 328,
+        "type": "Rank Exp",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+328 Rank Exp (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Rank Exp",
+        "value": 35,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Rank Exp",
+        "value": 35,
+        "global": true
+      },
+      "canonicalCurrentType": "Rank Exp",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 328,
+      "frozenPredictedSignedValue": 328,
+      "integerBaseCandidates": [
+        35
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 7,
+      "tier": 4,
+      "groupId": "forester-s7",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 4222,
+        "signedValue": 4222,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+4,222% Super Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Damage",
+        "value": 450,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Damage",
+        "value": 450,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Crit Damage",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 4222,
+      "frozenPredictedSignedValue": 4222,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "rogue",
+      "index": 7,
+      "tier": 4,
+      "groupId": "forester-s7",
+      "observed": {
+        "ownerId": "rogue",
+        "ownerName": "Rogue",
+        "displayedValue": 9,
+        "signedValue": 9,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+9 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 1,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 1,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 9,
+      "frozenPredictedSignedValue": 9,
+      "integerBaseCandidates": [
+        1
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 8,
+      "tier": 4,
+      "groupId": "forester-s8",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 19,
+        "signedValue": 19,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+19 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 19,
+      "frozenPredictedSignedValue": 19,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "templar",
+      "index": 8,
+      "tier": 4,
+      "groupId": "forester-s8",
+      "observed": {
+        "ownerId": "templar",
+        "ownerName": "Templar",
+        "displayedValue": 141,
+        "signedValue": 141,
+        "type": "Super Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+141% Super Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Super Crit Chance",
+        "value": 15,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Chance",
+        "value": 15,
+        "global": false
+      },
+      "canonicalCurrentType": "Super Crit Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 141,
+      "frozenPredictedSignedValue": 141,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sovereign",
+      "index": 8,
+      "tier": 4,
+      "groupId": "forester-s8",
+      "observed": {
+        "ownerId": "sovereign",
+        "ownerName": "Sovereign",
+        "displayedValue": 56,
+        "signedValue": 56,
+        "type": "Super Gold Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+56% Super Gold Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Chance",
+        "value": 6,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Chance",
+        "value": 6,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Gold Chance",
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 56,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 9,
+      "tier": 5,
+      "groupId": "forester-s9",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 81,
+        "signedValue": 81,
+        "type": "Super Exp Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+81% Super Exp Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Amount",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Exp Amount",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Exp Amount",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 81,
+      "frozenPredictedSignedValue": 81,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "paladin",
+      "index": 9,
+      "tier": 5,
+      "groupId": "forester-s9",
+      "observed": {
+        "ownerId": "paladin",
+        "ownerName": "Paladin",
+        "displayedValue": 81,
+        "signedValue": 81,
+        "type": "Super Exp Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+81% Super Exp Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Amount",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Exp Amount",
+        "value": 10,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Exp Amount",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 81,
+      "frozenPredictedSignedValue": 81,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 10,
+      "tier": 5,
+      "groupId": "forester-s10",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 3631,
+        "signedValue": 3631,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,631% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 450,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 450,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 3631,
+      "frozenPredictedSignedValue": 3631,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 10,
+      "tier": 5,
+      "groupId": "forester-s10",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 5043,
+        "signedValue": 5043,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+5,043% Super Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Damage",
+        "value": 625,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Damage",
+        "value": 625,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Crit Damage",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 5043,
+      "frozenPredictedSignedValue": 5043,
+      "integerBaseCandidates": [
+        625
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warden",
+      "index": 10,
+      "tier": 5,
+      "groupId": "forester-s10",
+      "observed": {
+        "ownerId": "warden",
+        "ownerName": "Warden",
+        "displayedValue": 2905,
+        "signedValue": 2905,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+2,905% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 450,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 450,
+        "global": false
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 6.45554939805252,
+      "predictedSignedValue": 2905,
+      "frozenPredictedSignedValue": 2905,
+      "integerBaseCandidates": [
+        450
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 11,
+      "tier": 6,
+      "groupId": "forester-s11",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 30260,
+        "signedValue": 30260,
+        "type": "Ultra Gold Amount",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+30,260% Ultra Gold Amount (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Amount",
+        "value": 3750,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Amount",
+        "value": 3750,
+        "global": false
+      },
+      "canonicalCurrentType": "Ultra Gold Amount",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 30260,
+      "frozenPredictedSignedValue": 30260,
+      "integerBaseCandidates": [
+        3750
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlock",
+      "index": 11,
+      "tier": 6,
+      "groupId": "forester-s11",
+      "observed": {
+        "ownerId": "warlock",
+        "ownerName": "Warlock",
+        "displayedValue": 242,
+        "signedValue": -242,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "-242% Skill Cooldown (personal effect)"
+      },
+      "current": {
+        "type": "Ultra Energy Chance",
+        "value": 1,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Energy Chance",
+        "value": 1,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Energy Chance",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 8,
+      "frozenPredictedSignedValue": 8,
+      "integerBaseCandidates": [
+        30
+      ],
+      "changedFields": [
+        "type",
+        "global",
+        "sign",
+        "value"
+      ]
+    },
+    {
+      "ownerId": "forester",
+      "index": 12,
+      "tier": 6,
+      "groupId": "forester-s12",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 2219,
+        "signedValue": 2219,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2219,
+      "frozenPredictedSignedValue": 2219,
+      "integerBaseCandidates": [
+        275
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "battlemage",
+      "index": 12,
+      "tier": 6,
+      "groupId": "forester-s12",
+      "observed": {
+        "ownerId": "battlemage",
+        "ownerName": "Battlemage",
+        "displayedValue": 48,
+        "signedValue": 48,
+        "type": "Energy Income",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+48 Energy Income (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Energy Income",
+        "value": 6,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Energy Income",
+        "value": 6,
+        "global": true
+      },
+      "canonicalCurrentType": "Energy Income",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 48,
+      "frozenPredictedSignedValue": 48,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 12,
+      "tier": 6,
+      "groupId": "forester-s12",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 2219,
+        "signedValue": 2219,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 275,
+        "global": true
+      },
+      "canonicalCurrentType": "Kill Gold",
+      "factor": 8.069436747565652,
+      "predictedSignedValue": 2219,
+      "frozenPredictedSignedValue": 2219,
+      "integerBaseCandidates": [
+        275
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 13,
+      "tier": 7,
+      "groupId": "forester-s13",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 5647,
+        "signedValue": 5647,
+        "type": "Super Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+5,647% Super Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Crit Damage",
+        "value": 850,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Crit Damage",
+        "value": 850,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Crit Damage",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 5647,
+      "frozenPredictedSignedValue": 5647,
+      "integerBaseCandidates": [
+        850
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 13,
+      "tier": 7,
+      "groupId": "forester-s13",
+      "observed": {
+        "ownerId": "chieftain",
+        "ownerName": "Chieftain",
+        "displayedValue": 5647,
+        "signedValue": 5647,
+        "type": "Super Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+5,647% Super Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Gold Amount",
+        "value": 850,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Gold Amount",
+        "value": 850,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Gold Amount",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 5647,
+      "frozenPredictedSignedValue": 5647,
+      "integerBaseCandidates": [
+        850
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 14,
+      "tier": 7,
+      "groupId": "forester-s14",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 2325,
+        "signedValue": 2325,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+2,325% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 350,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 350,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 2325,
+      "frozenPredictedSignedValue": 2325,
+      "integerBaseCandidates": [
+        350
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "viking",
+      "index": 14,
+      "tier": 7,
+      "groupId": "forester-s14",
+      "observed": {
+        "ownerId": "viking",
+        "ownerName": "Viking",
+        "displayedValue": 53,
+        "signedValue": 53,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+53 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 8,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 53,
+      "frozenPredictedSignedValue": 53,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "veteran",
+      "index": 14,
+      "tier": 7,
+      "groupId": "forester-s14",
+      "observed": {
+        "ownerId": "veteran",
+        "ownerName": "Veteran",
+        "displayedValue": 166,
+        "signedValue": 166,
+        "type": "Super Exp Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+166% Super Exp Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Super Exp Amount",
+        "value": 25,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Super Exp Amount",
+        "value": 25,
+        "global": true
+      },
+      "canonicalCurrentType": "Super Exp Amount",
+      "factor": 6.643210717763351,
+      "predictedSignedValue": 166,
+      "frozenPredictedSignedValue": 166,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 15,
+      "tier": 8,
+      "groupId": "forester-s15",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 11260,
+        "signedValue": 11260,
+        "type": "Ultra Gold Amount",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+11,260% Ultra Gold Amount (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Gold Amount",
+        "value": 3000,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Gold Amount",
+        "value": 3000,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Gold Amount",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 11260,
+      "frozenPredictedSignedValue": 11260,
+      "integerBaseCandidates": [
+        3000
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 15,
+      "tier": 8,
+      "groupId": "forester-s15",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 45,
+        "signedValue": 45,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+45 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 12,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 12,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 45,
+      "frozenPredictedSignedValue": 45,
+      "integerBaseCandidates": [
+        12
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "berserker",
+      "index": 15,
+      "tier": 8,
+      "groupId": "forester-s15",
+      "observed": {
+        "ownerId": "berserker",
+        "ownerName": "Berserker",
+        "displayedValue": 1501,
+        "signedValue": 1501,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,501% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 400,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 400,
+        "global": true
+      },
+      "canonicalCurrentType": "Damage",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 1501,
+      "frozenPredictedSignedValue": 1501,
+      "integerBaseCandidates": [
+        400
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 15,
+      "tier": 8,
+      "groupId": "forester-s15",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 3003,
+        "signedValue": 3003,
+        "type": "Boss Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+3,003% Boss Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Boss Gold",
+        "value": 800,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Boss Gold",
+        "value": 800,
+        "global": true
+      },
+      "canonicalCurrentType": "Boss Gold",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 3003,
+      "frozenPredictedSignedValue": 3003,
+      "integerBaseCandidates": [
+        800
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 16,
+      "tier": 9,
+      "groupId": "forester-s16",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 30,
+        "signedValue": 30,
+        "type": "Ultra Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+30% Ultra Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Chance",
+        "value": 8,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Chance",
+        "value": 8,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Crit Chance",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 30,
+      "frozenPredictedSignedValue": 30,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 16,
+      "tier": 9,
+      "groupId": "forester-s16",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 56,
+        "signedValue": 56,
+        "type": "Skill Power",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+56 Skill Power (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Power",
+        "value": 15,
+        "global": true
+      },
+      "canonicalCurrentType": "Skill Power",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 56,
+      "frozenPredictedSignedValue": 56,
+      "integerBaseCandidates": [
+        15
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 16,
+      "tier": 9,
+      "groupId": "forester-s16",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 12198,
+        "signedValue": 12198,
+        "type": "Ultra Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+12,198% Ultra Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Ultra Crit Damage",
+        "value": 3250,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Ultra Crit Damage",
+        "value": 3250,
+        "global": true
+      },
+      "canonicalCurrentType": "Ultra Crit Damage",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 12198,
+      "frozenPredictedSignedValue": 12198,
+      "integerBaseCandidates": [
+        3250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 16,
+      "tier": 9,
+      "groupId": "forester-s16",
+      "observed": {
+        "ownerId": "deadeye",
+        "ownerName": "Deadeye",
+        "displayedValue": 751,
+        "signedValue": 751,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+751% Attack Speed (personal effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 200,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 200,
+        "global": false
+      },
+      "canonicalCurrentType": "Attack Speed",
+      "factor": 3.753226394216582,
+      "predictedSignedValue": 751,
+      "frozenPredictedSignedValue": 751,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    }
+  ],
+  "labelNormalizations": [],
+  "archiveChecks": [
+    {
+      "archivePath": "images/forester-9gm-event-01.png",
+      "sha256": "57bc07861b6c26be15ca357ff1d8e6b87d2259cd9694e2aef51e811c936eaadc",
+      "byteIdenticalToOriginal": true
+    },
+    {
+      "archivePath": "images/forester-9gm-event-02.png",
+      "sha256": "afcdede846e8e33e1add1270b395b5f166889111c3f474298d232addc2a9b096",
+      "byteIdenticalToOriginal": true
+    },
+    {
+      "archivePath": "images/forester-9gm-event-03.png",
+      "sha256": "ee2215764a26307fbbf46f47c6ec566adef2be9bdad64137f109ac93ba006641",
+      "byteIdenticalToOriginal": true
+    }
+  ],
+  "comparisonBasis": "The currentMagnitudeMatches/currentFullMatches fields record the active data before this capture set was applied.",
+  "matchesAfterCorrections": 43
+}

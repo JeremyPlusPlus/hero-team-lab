@@ -1,0 +1,720 @@
+{
+  "status": "component-calibration-supported",
+  "grandMasterCount": 9,
+  "grandMasterSynergyBonusPercent": 10,
+  "grandMasterStacking": "multiply",
+  "grandMasterStackingEvidence": "Inferred for synergy strength from the screenshot fit and user-confirmed bonus components; not directly confirmed as a stacking rule by the user.",
+  "grandMasterMilestoneStacking": "multiply",
+  "grandMasterMilestoneStackingEvidence": "Updated by a later, separate Militia milestone capture with nine Grand Masters: all 17 displayed values match 2.8125 * 1.1^9. This evidence is archived under milestone-review and is not inferred from the synergy screenshots.",
+  "globalSynergyBonusesPercent": [
+    5,
+    5,
+    5
+  ],
+  "globalSynergyBonusesEvidence": "User confirmed three independent global synergy bonuses of +5% each.",
+  "militiaOnSynergyTile": false,
+  "otherOwnerTiles": null,
+  "synergyTileBonusPercent": 10,
+  "synergyTileModel": "Add 0.10 to the deployed Grand Master synergy-strength factor, then multiply the independent global, owner, and tier factors.",
+  "synergyTileEvidence": "The +10% tile bonus and prior additive interpretation are explicit. Its interaction with compounded Grand Master synergy strength is unverified by this capture because Militia was off a synergy tile.",
+  "tier1And2BonusesPercent": [
+    25,
+    400
+  ],
+  "tier3And4BonusPercent": 150,
+  "snowFortTier5And6BonusPercent": 115,
+  "snowFortTier7BonusPercent": 77,
+  "ownerSynergyBonusPercent": {
+    "default": 25,
+    "crusader": 15,
+    "warden": 0
+  },
+  "provenance": "User supplied screenshot context and follow-up answers in this chat, November 2, 2026.",
+  "note": "Historical default profile: ordinary-owner scale 1.05^3 * 1.25 * 1.1^9 = 3.412023994742347 reproduces 41/43 first-capture frozen-sheet magnitudes before corrections. Defaults remain historical; later capture contexts override GM/event/Crusader settings individually. Batches21-22 support conditional Peacekeeper base5 and equivalent Arbalest base12 under the common owner model, which also reproduce all earlier appearances. Arbalest base15 without owner amplification is observationally equivalent and not distinguished by these screenshots.",
+  "additionalCaptures": [
+    {
+      "batch": "batch-02.json",
+      "selectedHero": "Ninja",
+      "contextStatus": "inferred-continuation",
+      "ownerTileStatus": "unspecified; all 16 Ninja effects fit no additional tile factor",
+      "sourceMagnitudeMatches": 37,
+      "observedEffects": 43,
+      "inferredBaseCorrections": 6,
+      "correctedMagnitudeMatches": 43,
+      "overlappingEffects": 4
+    },
+    {
+      "batch": "batch-03.json",
+      "selectedHero": "Spelldancer",
+      "contextStatus": "inferred-continuation",
+      "ownerTileStatus": "unspecified; unchanged effects and overlaps fit no additional tile factor",
+      "sourceMagnitudeMatches": 33,
+      "observedEffects": 43,
+      "inferredBaseCorrections": 8,
+      "correctedMagnitudeMatches": 42,
+      "overlappingEffects": 6,
+      "unresolvedEffects": [
+        "Arbalest tier VII Power Mage Energy: repeat of batch-01 discrepancy"
+      ]
+    },
+    {
+      "batch": "batch-04.json",
+      "selectedHero": "Gladiator",
+      "contextStatus": "inferred-continuation",
+      "ownerTileStatus": "unspecified; all 16 Gladiator magnitudes fit no additional tile factor",
+      "sourceMagnitudeMatches": 39,
+      "observedEffects": 43,
+      "inferredBaseCorrections": 3,
+      "correctedMagnitudeMatches": 43,
+      "overlappingEffects": 9
+    },
+    {
+      "batch": "batch-05.json",
+      "selectedHero": "Veteran",
+      "contextStatus": "inferred-continuation",
+      "ownerTileStatus": "unspecified; unchanged effects and overlaps fit no additional tile factor",
+      "sourceMagnitudeMatches": 38,
+      "observedEffects": 43,
+      "inferredBaseCorrections": 5,
+      "correctedMagnitudeMatches": 43,
+      "overlappingEffects": 5,
+      "overlapCountingNote": "Effects already seen in preceding numbered batches."
+    },
+    {
+      "batch": "batch-06.json",
+      "selectedHero": "Praetorian",
+      "contextStatus": "inferred-continuation",
+      "ownerTileStatus": "unspecified; unchanged effects and overlaps fit no additional tile factor",
+      "sourceMagnitudeMatches": 40,
+      "observedEffects": 43,
+      "inferredBaseCorrections": 3,
+      "correctedMagnitudeMatches": 43,
+      "overlappingEffects": 11,
+      "overlapCountingNote": "Effects already seen in preceding numbered batches."
+    },
+    {
+      "batch": "batch-07.json",
+      "selectedHero": "Battlemage",
+      "contextStatus": "inferred-continuation",
+      "ownerTileStatus": "unspecified; unchanged effects and overlaps fit no additional tile factor",
+      "sourceMagnitudeMatches": 39,
+      "observedEffects": 43,
+      "inferredBaseCorrections": 1,
+      "correctedMagnitudeMatches": 43,
+      "overlappingEffects": 17,
+      "overlapCountingNote": "Effects already seen in preceding numbered batches."
+    },
+    {
+      "batch": "batch-08.json",
+      "selectedHero": "Titan",
+      "contextStatus": "inferred-continuation",
+      "ownerTileStatus": "unspecified; unchanged effects and overlaps fit no additional tile factor",
+      "sourceMagnitudeMatches": 36,
+      "observedEffects": 43,
+      "inferredBaseCorrections": 5,
+      "correctedMagnitudeMatches": 43,
+      "overlappingEffects": 12,
+      "withinBatchRepeatedPortraits": 1,
+      "overlapCountingNote": "Appearances whose effect was already seen in preceding numbered batches; within-batch repeated portraits are listed separately."
+    },
+    {
+      "batch": "batch-09.json",
+      "selectedHero": "Sovereign",
+      "contextStatus": "inferred-continuation",
+      "ownerTileStatus": "unspecified; unchanged effects and overlaps fit no additional tile factor",
+      "sourceMagnitudeMatches": 39,
+      "observedEffects": 43,
+      "inferredBaseCorrections": 3,
+      "correctedMagnitudeMatches": 43,
+      "overlappingEffects": 11,
+      "withinBatchRepeatedPortraits": 2,
+      "overlapCountingNote": "Appearances whose effect was already seen in preceding numbered batches; within-batch repeated portraits are listed separately."
+    },
+    {
+      "batch": "batch-10.json",
+      "selectedHero": "Warden",
+      "contextStatus": "inferred-continuation",
+      "ownerTileStatus": "unspecified; unchanged effects and overlaps fit no additional tile factor",
+      "sourceMagnitudeMatches": 41,
+      "observedEffects": 43,
+      "inferredBaseCorrections": 0,
+      "correctedMagnitudeMatches": 43,
+      "overlappingEffects": 21,
+      "withinBatchRepeatedPortraits": 0,
+      "overlapCountingNote": "Appearances whose effect was already seen in preceding numbered batches; within-batch repeated portraits are listed separately."
+    },
+    {
+      "batch": "batch-11.json",
+      "selectedHero": "Rogue",
+      "contextStatus": "user-confirmed-ten-grand-masters-event-and-crusader-upgrade",
+      "grandMasterCount": 10,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model fits all corrected effects",
+      "sourceMagnitudeMatches": 41,
+      "observedEffects": 43,
+      "correctedMagnitudeMatches": 43,
+      "newCorrectedRecords": 0,
+      "note": "Account/map factors other than the event and Crusader upgrade continue the previous profile by inference. Historical capture defaults remain unchanged; these overrides apply only to this capture."
+    },
+    {
+      "batch": "batch-12.json",
+      "selectedHero": "Hunter",
+      "contextStatus": "user-confirmed-ten-grand-masters-event-and-crusader-upgrade",
+      "grandMasterCount": 10,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model fits all corrected effects",
+      "sourceMagnitudeMatches": 39,
+      "observedEffects": 43,
+      "correctedMagnitudeMatches": 43,
+      "newCorrectedRecords": 7,
+      "note": "Account/map factors other than the event and Crusader upgrade continue the previous profile by inference. Historical capture defaults remain unchanged; these overrides apply only to this capture."
+    },
+    {
+      "batch": "batch-13.json",
+      "selectedHero": "Apprentice",
+      "contextStatus": "user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "observedEffects": 43,
+      "currentMagnitudeMatchesBeforeCorrections": 41,
+      "correctedMagnitudeMatches": 43,
+      "proposedRecordsInCapture": 2,
+      "note": "Proposals shared by captures are applied only once per owner/index. Other account/map factors continue the recorded profile; all historical contexts remain unchanged."
+    },
+    {
+      "batch": "batch-14.json",
+      "selectedHero": "Scout",
+      "contextStatus": "user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "observedEffects": 43,
+      "currentMagnitudeMatchesBeforeCorrections": 42,
+      "correctedMagnitudeMatches": 43,
+      "proposedRecordsInCapture": 3,
+      "note": "Proposals shared by captures are applied only once per owner/index. Other account/map factors continue the recorded profile; all historical contexts remain unchanged."
+    },
+    {
+      "batch": "batch-15.json",
+      "selectedHero": "Viking",
+      "contextStatus": "user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "observedEffects": 43,
+      "currentMagnitudeMatchesBeforeCorrections": 41,
+      "correctedMagnitudeMatches": 43,
+      "proposedRecordsInCapture": 3,
+      "note": "Proposals shared by captures are applied only once per owner/index. Other account/map factors continue the recorded profile; all historical contexts remain unchanged."
+    },
+    {
+      "batch": "batch-16.json",
+      "selectedHero": "Druid",
+      "contextStatus": "user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "observedEffects": 43,
+      "currentMagnitudeMatchesBeforeCorrections": 42,
+      "correctedMagnitudeMatches": 43,
+      "proposedRecordsInCapture": 5,
+      "note": "Proposals shared by captures are applied only once per owner/index. Other account/map factors continue the recorded profile; all historical contexts remain unchanged."
+    },
+    {
+      "batch": "batch-17.json",
+      "selectedHero": "Sorcerer",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "full",
+      "observedEffects": 43,
+      "currentMagnitudeMatchesBeforeCorrections": 42,
+      "correctedMagnitudeMatches": 43,
+      "proposedRecordsInCapture": 3,
+      "note": "The preceding GM/event settings are continued by inference and checked against overlapping values, not newly confirmed. Partial screenshots do not certify uncaptured tiers. Duplicated proposals are applied once per owner/index."
+    },
+    {
+      "batch": "batch-18.json",
+      "selectedHero": "Ranger",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "full",
+      "observedEffects": 43,
+      "currentMagnitudeMatchesBeforeCorrections": 40,
+      "correctedMagnitudeMatches": 43,
+      "proposedRecordsInCapture": 3,
+      "note": "The preceding GM/event settings are continued by inference and checked against overlapping values, not newly confirmed. Partial screenshots do not certify uncaptured tiers. Duplicated proposals are applied once per owner/index."
+    },
+    {
+      "batch": "batch-19.json",
+      "selectedHero": "Warlord",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "full",
+      "observedEffects": 43,
+      "currentMagnitudeMatchesBeforeCorrections": 39,
+      "correctedMagnitudeMatches": 43,
+      "proposedRecordsInCapture": 5,
+      "note": "The preceding GM/event settings are continued by inference and checked against overlapping values, not newly confirmed. Partial screenshots do not certify uncaptured tiers. Duplicated proposals are applied once per owner/index."
+    },
+    {
+      "batch": "batch-20.json",
+      "selectedHero": "Samurai",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "full",
+      "observedEffects": 43,
+      "currentMagnitudeMatchesBeforeCorrections": 41,
+      "correctedMagnitudeMatches": 43,
+      "proposedRecordsInCapture": 3,
+      "note": "The preceding GM/event settings are continued by inference and checked against overlapping values, not newly confirmed. Partial screenshots do not certify uncaptured tiers. Duplicated proposals are applied once per owner/index."
+    },
+    {
+      "batch": "batch-21.json",
+      "selectedHero": "Peacekeeper",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "partial",
+      "observedEffects": 15,
+      "currentMagnitudeMatchesBeforeCorrections": 11,
+      "correctedMagnitudeMatches": 15,
+      "proposedRecordsInCapture": 5,
+      "note": "The preceding GM/event settings are continued by inference and checked against overlapping values, not newly confirmed. Partial screenshots do not certify uncaptured tiers. Duplicated proposals are applied once per owner/index."
+    },
+    {
+      "batch": "batch-22.json",
+      "selectedHero": "Arbalest",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "partial",
+      "observedEffects": 14,
+      "currentMagnitudeMatchesBeforeCorrections": 13,
+      "correctedMagnitudeMatches": 14,
+      "proposedRecordsInCapture": 1,
+      "note": "The preceding GM/event settings are continued by inference and checked against overlapping values, not newly confirmed. Partial screenshots do not certify uncaptured tiers. Duplicated proposals are applied once per owner/index."
+    },
+    {
+      "batch": "batch-23.json",
+      "selectedHero": "Forester",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "full",
+      "observedEffects": 43,
+      "currentMagnitudeMatchesBeforeCorrections": 40,
+      "correctedMagnitudeMatches": 43,
+      "proposedRecordsInCapture": 6,
+      "note": "The preceding GM/event settings continue by inference, supported by overlapping values. Shared proposals are applied once per owner/index; two Templar portraits remain separate observations."
+    },
+    {
+      "batch": "batch-24.json",
+      "selectedHero": "Templar",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "full",
+      "observedEffects": 43,
+      "currentMagnitudeMatchesBeforeCorrections": 41,
+      "correctedMagnitudeMatches": 43,
+      "proposedRecordsInCapture": 3,
+      "note": "The preceding GM/event settings continue by inference, supported by overlapping values. Shared proposals are applied once per owner/index; two Templar portraits remain separate observations."
+    },
+    {
+      "batch": "batch-25.json",
+      "selectedHero": "Chieftain",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "full",
+      "observedEffects": 43,
+      "currentMagnitudeMatchesBeforeCorrections": 42,
+      "correctedMagnitudeMatches": 43,
+      "proposedRecordsInCapture": 4,
+      "note": "The preceding GM/event settings continue by inference, supported by overlapping values. Shared proposals are applied once per owner/index; two Templar portraits remain separate observations."
+    },
+    {
+      "batch": "batch-26.json",
+      "selectedHero": "Deadeye",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "full",
+      "observedEffects": 43,
+      "currentMagnitudeMatchesBeforeCorrections": 41,
+      "correctedMagnitudeMatches": 43,
+      "proposedRecordsInCapture": 3,
+      "note": "The preceding GM/event settings continue by inference, supported by overlapping values. Shared proposals are applied once per owner/index; two Templar portraits remain separate observations."
+    },
+    {
+      "batch": "batch-27.json",
+      "selectedHero": "Archer",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "partial",
+      "capturedTiers": [
+        4,
+        5,
+        6
+      ],
+      "observedEffects": 15,
+      "currentMagnitudeMatchesBeforeCorrections": 15,
+      "correctedMagnitudeMatches": 15,
+      "proposedRecordsInCapture": 0,
+      "note": "Nine-GM event context continues by inference, supported by overlapping values. Only the displayed six groups are captured; other selected-hero tiers remain incomplete."
+    },
+    {
+      "batch": "batch-28.json",
+      "selectedHero": "Assassin",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "partial",
+      "capturedTiers": [
+        4,
+        5,
+        6
+      ],
+      "observedEffects": 15,
+      "currentMagnitudeMatchesBeforeCorrections": 15,
+      "correctedMagnitudeMatches": 15,
+      "proposedRecordsInCapture": 0,
+      "note": "Nine-GM event context continues by inference, supported by overlapping values. Only the displayed six groups are captured; other selected-hero tiers remain incomplete."
+    },
+    {
+      "batch": "batch-29.json",
+      "selectedHero": "Crusader",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "partial",
+      "capturedTiers": [
+        1,
+        2,
+        3
+      ],
+      "observedEffects": 15,
+      "currentMagnitudeMatchesBeforeCorrections": 15,
+      "correctedMagnitudeMatches": 15,
+      "proposedRecordsInCapture": 2,
+      "note": "Nine-GM event context continues by inference, supported by overlapping values. Only the displayed six groups are captured; other selected-hero tiers remain incomplete."
+    },
+    {
+      "batch": "batch-30.json",
+      "selectedHero": "Champion",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces corrected effects",
+      "captureCompleteness": "partial",
+      "capturedTiers": [
+        4,
+        5,
+        6
+      ],
+      "observedEffects": 15,
+      "currentMagnitudeMatchesBeforeCorrections": 15,
+      "correctedMagnitudeMatches": 15,
+      "proposedRecordsInCapture": 0,
+      "note": "Nine-GM event context continues by inference, supported by overlapping values. Only the displayed six groups are captured; other selected-hero tiers remain incomplete."
+    },
+    {
+      "batch": "batch-31.json",
+      "selectedHero": "Wizard",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces captured effects",
+      "captureCompleteness": "partial",
+      "capturedTiers": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "observedEffects": 30,
+      "currentMagnitudeMatchesBeforeCorrections": 30,
+      "correctedMagnitudeMatches": 30,
+      "proposedRecordsInCapture": 0,
+      "note": "Nine-GM event context continues by inference, supported by overlapping values. Only visible groups count as selected-page captures. All displayed fields already matched; no corrections applied."
+    },
+    {
+      "batch": "batch-32.json",
+      "selectedHero": "Berserker",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces captured effects",
+      "captureCompleteness": "partial",
+      "capturedTiers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "observedEffects": 30,
+      "currentMagnitudeMatchesBeforeCorrections": 30,
+      "correctedMagnitudeMatches": 30,
+      "proposedRecordsInCapture": 0,
+      "note": "Nine-GM event context continues by inference, supported by overlapping values. Only visible groups count as selected-page captures. All displayed fields already matched; no corrections applied."
+    },
+    {
+      "batch": "batch-33.json",
+      "selectedHero": "Necromancer",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces captured effects",
+      "captureCompleteness": "partial",
+      "capturedTiers": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8
+      ],
+      "observedEffects": 29,
+      "currentMagnitudeMatchesBeforeCorrections": 29,
+      "correctedMagnitudeMatches": 29,
+      "proposedRecordsInCapture": 0,
+      "note": "Nine-GM event context continues by inference, supported by overlapping values. Only visible groups count as selected-page captures. All displayed fields already matched; no corrections applied."
+    },
+    {
+      "batch": "batch-34.json",
+      "selectedHero": "Peacekeeper",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces captured effects",
+      "captureCompleteness": "partial",
+      "capturedTiers": [
+        5,
+        6,
+        7
+      ],
+      "observedEffects": 15,
+      "currentMagnitudeMatchesBeforeCorrections": 15,
+      "correctedMagnitudeMatches": 15,
+      "proposedRecordsInCapture": 0,
+      "note": "Nine-GM event context continues by inference, supported by overlapping values. Only visible groups count as selected-page captures. All displayed fields already matched; no corrections applied."
+    },
+    {
+      "batch": "batch-35.json",
+      "selectedHero": "Skymage",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces captured effects",
+      "captureCompleteness": "partial",
+      "capturedTiers": [
+        4,
+        5,
+        6
+      ],
+      "observedEffects": 15,
+      "currentMagnitudeMatchesBeforeCorrections": 15,
+      "correctedMagnitudeMatches": 15,
+      "proposedRecordsInCapture": 0,
+      "note": "Nine-GM event context continues by inference, supported by overlapping values. Only visible groups count as selected-page captures. All displayed fields already matched; no corrections applied."
+    },
+    {
+      "batch": "batch-36.json",
+      "selectedHero": "Witch",
+      "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+      "grandMasterCount": 9,
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      },
+      "ownerSynergyCrusaderPercent": 25,
+      "ownerTileStatus": "unspecified; off-synergy-tile model reproduces captured effects",
+      "captureCompleteness": "partial",
+      "capturedTiers": [
+        1,
+        2,
+        3
+      ],
+      "observedEffects": 15,
+      "currentMagnitudeMatchesBeforeCorrections": 15,
+      "correctedMagnitudeMatches": 15,
+      "proposedRecordsInCapture": 0,
+      "note": "Nine-GM event context continues by inference, supported by overlapping values. Only visible groups count as selected-page captures. All displayed fields already matched; no corrections applied."
+    }
+  ],
+  "currentAccountChanges": {
+    "asOf": "2026-11-04",
+    "ownerSynergyCrusaderPercent": 25,
+    "evidence": "User confirmed Crusader increased from +15% to +25%. Both new tier IX captures show +826% from base200 under ten Grand Masters and the event.",
+    "synergyEvent": {
+      "milestoneBonusPercent": 25,
+      "synergyBonusPercent": 10,
+      "evidence": "User confirmed active event for batches11-16. Batches17-36 continue the nine-GM event context of batches13-16 by inference, supported by overlapping values. Engine applies event factors separately from source bases."
+    }
+  },
+  "conditionalExceptionResolutions": [
+    {
+      "ownerId": "peacekeeper",
+      "index": 3,
+      "evidenceBatch": "batch-21.json",
+      "inferredBaseValue": 5,
+      "note": "Standard calibrated model reproduces old +107 and new +117 personal Skill Power."
+    },
+    {
+      "ownerId": "arbalest",
+      "index": 14,
+      "evidenceBatch": "batch-22.json",
+      "inferredBaseValue": 12,
+      "note": "Equivalent common-model parameterization reproduces earlier +72% and new +80% global Power Mage Energy. Base15 with no owner multiplier yields identical values, so the mechanism is not identified. The effect now contributes to the user-defined Energy + Power Mages objective without resolving the base interpretation."
+    }
+  ]
+}

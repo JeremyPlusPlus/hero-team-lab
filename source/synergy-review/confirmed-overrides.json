@@ -1,0 +1,2866 @@
+{
+  "status": "fields-confirmed-bases-inferred",
+  "evidenceBatch": "batch-01.json",
+  "overrides": [
+    {
+      "ownerId": "crusader",
+      "index": 8,
+      "tier": 4,
+      "requires": [
+        "militia",
+        "champion"
+      ],
+      "expectedOriginal": {
+        "type": "Super Energy",
+        "value": 4,
+        "global": true,
+        "source": "Data!AH31:AL31"
+      },
+      "confirmedType": "Super Energy Amount",
+      "confirmedUnit": "percent",
+      "evidence": {
+        "groupId": "militia-s8",
+        "sourceImageId": "militia-02",
+        "displayedValue": 31,
+        "unit": "percent",
+        "global": true
+      }
+    },
+    {
+      "ownerId": "arbalest",
+      "index": 10,
+      "tier": 5,
+      "requires": [
+        "militia",
+        "necromancer"
+      ],
+      "expectedOriginal": {
+        "type": "Super Energy",
+        "value": 8,
+        "global": true,
+        "source": "Data!AQ19:AU19"
+      },
+      "confirmedType": "Super Energy Amount",
+      "confirmedUnit": "percent",
+      "evidence": {
+        "groupId": "militia-s10",
+        "sourceImageId": "militia-02",
+        "displayedValue": 59,
+        "unit": "percent",
+        "global": true
+      }
+    },
+    {
+      "ownerId": "militia",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "viking",
+        "scout"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": false,
+        "source": "Data!G2:K2"
+      },
+      "confirmedSign": -1,
+      "confirmedUnit": "percent",
+      "evidence": {
+        "groupId": "militia-s2",
+        "sourceImageId": "militia-01",
+        "displayedValue": 213,
+        "unit": "percent",
+        "global": false
+      }
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "ninja",
+        "witch"
+      ],
+      "expectedOriginal": {
+        "type": "Crit Chance",
+        "value": 10,
+        "global": false,
+        "source": "Data!G9:K9"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-02.json",
+      "evidence": {
+        "groupId": "ninja-s2",
+        "sourceImageId": "ninja-01",
+        "displayedValue": 85,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 4,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the prior nine-Grand-Master account/map context. Continuing context and no synergy tile are inferred from the 16 matching Ninja effects; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "witch",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "ninja",
+        "sorcerer"
+      ],
+      "expectedOriginal": {
+        "type": "Crit Damage",
+        "value": 50,
+        "global": false,
+        "source": "Data!G12:K12"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-02.json",
+      "evidence": {
+        "groupId": "ninja-s2",
+        "sourceImageId": "ninja-01",
+        "displayedValue": 427,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 20,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the prior nine-Grand-Master account/map context. Continuing context and no synergy tile are inferred from the 16 matching Ninja effects; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "berserker",
+      "index": 4,
+      "tier": 2,
+      "requires": [
+        "ninja",
+        "scout"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 5,
+        "global": false,
+        "source": "Data!P26:T26"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-02.json",
+      "evidence": {
+        "groupId": "ninja-s4",
+        "sourceImageId": "ninja-01",
+        "displayedValue": 128,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 6,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the prior nine-Grand-Master account/map context. Continuing context and no synergy tile are inferred from the 16 matching Ninja effects; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "rogue",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "ninja",
+        "archer"
+      ],
+      "expectedOriginal": {
+        "type": "Rank Exp",
+        "value": 25,
+        "global": true,
+        "source": "Data!Y25:AC25"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-02.json",
+      "evidence": {
+        "groupId": "ninja-s6",
+        "sourceImageId": "ninja-01",
+        "displayedValue": 299,
+        "unit": "flat",
+        "global": true
+      },
+      "inferredBaseValue": 35,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the prior nine-Grand-Master account/map context. Continuing context and no synergy tile are inferred from the 16 matching Ninja effects; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 8,
+      "tier": 4,
+      "requires": [
+        "ninja",
+        "spelldancer"
+      ],
+      "expectedOriginal": {
+        "type": "Super Gold Amount",
+        "value": 500,
+        "global": true,
+        "source": "Data!AH14:AL14"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-02.json",
+      "evidence": {
+        "groupId": "ninja-s8",
+        "sourceImageId": "ninja-02",
+        "displayedValue": 60,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Exp Amount",
+      "inferredBaseValue": 7,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the prior nine-Grand-Master account/map context. Continuing context and no synergy tile are inferred from the 16 matching Ninja effects; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "warlock",
+      "index": 12,
+      "tier": 6,
+      "requires": [
+        "ninja",
+        "gladiator"
+      ],
+      "expectedOriginal": {
+        "type": "Kill Gold",
+        "value": 600,
+        "global": false,
+        "source": "Data!AZ30:BD30"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-02.json",
+      "evidence": {
+        "groupId": "ninja-s12",
+        "sourceImageId": "ninja-02",
+        "displayedValue": 2017,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 275,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the prior nine-Grand-Master account/map context. Continuing context and no synergy tile are inferred from the 16 matching Ninja effects; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "rogue",
+      "index": 14,
+      "tier": 7,
+      "requires": [
+        "ninja",
+        "assassin"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 20,
+        "global": false,
+        "source": "Data!BI25:BM25"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-02.json",
+      "evidence": {
+        "groupId": "ninja-s14",
+        "sourceImageId": "ninja-03",
+        "displayedValue": 121,
+        "unit": "flat",
+        "global": false
+      },
+      "confirmedType": "Skill Power"
+    },
+    {
+      "ownerId": "rogue",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "ninja"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 15,
+        "global": false,
+        "source": "Data!L25:O25"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-02.json",
+      "evidence": {
+        "groupId": "ninja-s3",
+        "sourceImageId": "ninja-01",
+        "displayedValue": 320,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "spelldancer",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "viking"
+      ],
+      "expectedOriginal": {
+        "type": "Crit Damage",
+        "value": 100,
+        "global": false,
+        "source": "Data!L24:O24"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-03.json",
+      "evidence": {
+        "groupId": "spelldancer-s3",
+        "sourceImageId": "spelldancer-01",
+        "displayedValue": 853,
+        "signedValue": 853,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 40,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. This capture context and off-synergy-tile model are inferred from matching effects and overlapping captures, not separately confirmed; the base is not directly observed unboosted."
+    },
+    {
+      "ownerId": "spelldancer",
+      "index": 4,
+      "tier": 2,
+      "requires": [
+        "archer",
+        "warden"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 7,
+        "global": true,
+        "source": "Data!P24:T24"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-03.json",
+      "evidence": {
+        "groupId": "spelldancer-s4",
+        "sourceImageId": "spelldancer-01",
+        "displayedValue": 149,
+        "signedValue": -149,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "warden",
+      "index": 4,
+      "tier": 2,
+      "requires": [
+        "spelldancer",
+        "archer"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 5,
+        "global": false,
+        "source": "Data!P37:T37"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-03.json",
+      "evidence": {
+        "groupId": "spelldancer-s4",
+        "sourceImageId": "spelldancer-01",
+        "displayedValue": 102,
+        "signedValue": 102,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 6,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. This capture context and off-synergy-tile model are inferred from matching effects and overlapping captures, not separately confirmed; the base is not directly observed unboosted."
+    },
+    {
+      "ownerId": "spelldancer",
+      "index": 5,
+      "tier": 3,
+      "requires": [
+        "champion"
+      ],
+      "expectedOriginal": {
+        "type": "Damage",
+        "value": 200,
+        "global": false,
+        "source": "Data!U24:X24"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-03.json",
+      "evidence": {
+        "groupId": "spelldancer-s5",
+        "sourceImageId": "spelldancer-01",
+        "displayedValue": 682,
+        "signedValue": 682,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 80,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. This capture context and off-synergy-tile model are inferred from matching effects and overlapping captures, not separately confirmed; the base is not directly observed unboosted."
+    },
+    {
+      "ownerId": "spelldancer",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "assassin",
+        "apprentice"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 10,
+        "global": false,
+        "source": "Data!Y24:AC24"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-03.json",
+      "evidence": {
+        "groupId": "spelldancer-s6",
+        "sourceImageId": "spelldancer-01",
+        "displayedValue": 102,
+        "signedValue": 102,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 12,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. This capture context and off-synergy-tile model are inferred from matching effects and overlapping captures, not separately confirmed; the base is not directly observed unboosted."
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "assassin",
+        "spelldancer"
+      ],
+      "expectedOriginal": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false,
+        "source": "Data!Y3:AC3"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-03.json",
+      "evidence": {
+        "groupId": "spelldancer-s6",
+        "sourceImageId": "spelldancer-01",
+        "displayedValue": 171,
+        "signedValue": 171,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 20,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. This capture context and off-synergy-tile model are inferred from matching effects and overlapping captures, not separately confirmed; the base is not directly observed unboosted."
+    },
+    {
+      "ownerId": "spelldancer",
+      "index": 7,
+      "tier": 4,
+      "requires": [
+        "warlock"
+      ],
+      "expectedOriginal": {
+        "type": "Super Crit Damage",
+        "value": 850,
+        "global": false,
+        "source": "Data!AD24:AG24"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-03.json",
+      "evidence": {
+        "groupId": "spelldancer-s7",
+        "sourceImageId": "spelldancer-02",
+        "displayedValue": 3839,
+        "signedValue": 3839,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 450,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. This capture context and off-synergy-tile model are inferred from matching effects and overlapping captures, not separately confirmed; the base is not directly observed unboosted."
+    },
+    {
+      "ownerId": "spelldancer",
+      "index": 9,
+      "tier": 5,
+      "requires": [
+        "sniper"
+      ],
+      "expectedOriginal": {
+        "type": "Kill Gold",
+        "value": 400,
+        "global": false,
+        "source": "Data!AM24:AP24"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-03.json",
+      "evidence": {
+        "groupId": "spelldancer-s9",
+        "sourceImageId": "spelldancer-02",
+        "displayedValue": 22,
+        "signedValue": 22,
+        "unit": "flat",
+        "global": true
+      },
+      "confirmedType": "Skill Power",
+      "confirmedGlobal": true,
+      "inferredBaseValue": 3,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. This capture context and off-synergy-tile model are inferred from matching effects and overlapping captures, not separately confirmed; the base is not directly observed unboosted."
+    },
+    {
+      "ownerId": "sniper",
+      "index": 9,
+      "tier": 5,
+      "requires": [
+        "spelldancer"
+      ],
+      "expectedOriginal": {
+        "type": "Energy Income",
+        "value": 3,
+        "global": true,
+        "source": "Data!AM22:AP22"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-03.json",
+      "evidence": {
+        "groupId": "spelldancer-s9",
+        "sourceImageId": "spelldancer-02",
+        "displayedValue": 2934,
+        "signedValue": 2934,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedType": "Damage",
+      "confirmedGlobal": false,
+      "inferredBaseValue": 400,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. This capture context and off-synergy-tile model are inferred from matching effects and overlapping captures, not separately confirmed; the base is not directly observed unboosted."
+    },
+    {
+      "ownerId": "paladin",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "gladiator"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 1,
+        "global": false,
+        "source": "Data!C20:F20"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-04.json",
+      "evidence": {
+        "groupId": "gladiator-s1",
+        "sourceImageId": "gladiator-01",
+        "displayedValue": 43,
+        "signedValue": 43,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 2,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. This capture context and off-synergy-tile model are inferred from matching effects and overlapping captures, not separately confirmed; the base is not directly observed unboosted."
+    },
+    {
+      "ownerId": "battlemage",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "gladiator",
+        "rogue"
+      ],
+      "expectedOriginal": {
+        "type": "Attack Speed",
+        "value": 24,
+        "global": false,
+        "source": "Data!G21:K21"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-04.json",
+      "evidence": {
+        "groupId": "gladiator-s2",
+        "sourceImageId": "gladiator-01",
+        "displayedValue": 533,
+        "signedValue": 533,
+        "unit": "percent",
+        "global": false
+      },
+      "inferredBaseValue": 25,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. This capture context and off-synergy-tile model are inferred from matching effects and overlapping captures, not separately confirmed; the base is not directly observed unboosted."
+    },
+    {
+      "ownerId": "gladiator",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "assassin"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": true,
+        "source": "Data!L23:O23"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-04.json",
+      "evidence": {
+        "groupId": "gladiator-s3",
+        "sourceImageId": "gladiator-01",
+        "displayedValue": 107,
+        "signedValue": -107,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "gladiator",
+        "champion"
+      ],
+      "expectedOriginal": {
+        "type": "Crit Damage",
+        "value": 250,
+        "global": false,
+        "source": "Data!Y18:AC18"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-04.json",
+      "evidence": {
+        "groupId": "gladiator-s6",
+        "sourceImageId": "gladiator-01",
+        "displayedValue": 853,
+        "signedValue": 853,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 100,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. This capture context and off-synergy-tile model are inferred from matching effects and overlapping captures, not separately confirmed; the base is not directly observed unboosted."
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 8,
+      "tier": 4,
+      "requires": [
+        "gladiator",
+        "archer"
+      ],
+      "expectedOriginal": {
+        "type": "Super Energy",
+        "value": 4,
+        "global": true,
+        "source": "Data!AH3:AL3"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-04.json",
+      "evidence": {
+        "groupId": "gladiator-s8",
+        "sourceImageId": "gladiator-02",
+        "displayedValue": 34,
+        "signedValue": 34,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Energy Amount"
+    },
+    {
+      "ownerId": "skymage",
+      "index": 10,
+      "tier": 5,
+      "requires": [
+        "gladiator",
+        "deadeye"
+      ],
+      "expectedOriginal": {
+        "type": "Super Energy",
+        "value": 8,
+        "global": true,
+        "source": "Data!AQ27:AU27"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-04.json",
+      "evidence": {
+        "groupId": "gladiator-s10",
+        "sourceImageId": "gladiator-02",
+        "displayedValue": 59,
+        "signedValue": 59,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Energy Amount"
+    },
+    {
+      "ownerId": "veteran",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "titan"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 1,
+        "global": false,
+        "source": "Data!C43:F43"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-05.json",
+      "evidence": {
+        "groupId": "veteran-s1",
+        "sourceImageId": "veteran-01",
+        "displayedValue": 43,
+        "signedValue": 43,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 2,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. Context continuation and an off-synergy-tile owner are inferred, not re-confirmed; this is not a directly observed unboosted base."
+    },
+    {
+      "ownerId": "titan",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "veteran"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 1,
+        "global": false,
+        "source": "Data!C41:F41"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-05.json",
+      "evidence": {
+        "groupId": "veteran-s1",
+        "sourceImageId": "veteran-01",
+        "displayedValue": 43,
+        "signedValue": 43,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 2,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. Context continuation and an off-synergy-tile owner are inferred, not re-confirmed; this is not a directly observed unboosted base."
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "sovereign",
+        "veteran"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 4,
+        "global": true,
+        "source": "Data!G42:K42"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-05.json",
+      "evidence": {
+        "groupId": "veteran-s2",
+        "sourceImageId": "veteran-01",
+        "displayedValue": 85,
+        "signedValue": -85,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "veteran",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "berserker"
+      ],
+      "expectedOriginal": {
+        "type": "Attack Speed",
+        "value": 40,
+        "global": false,
+        "source": "Data!L43:O43"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-05.json",
+      "evidence": {
+        "groupId": "veteran-s3",
+        "sourceImageId": "veteran-01",
+        "displayedValue": 107,
+        "signedValue": 107,
+        "unit": "flat",
+        "global": false
+      },
+      "confirmedType": "Skill Power",
+      "inferredBaseValue": 5,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. Context continuation and an off-synergy-tile owner are inferred, not re-confirmed; this is not a directly observed unboosted base."
+    },
+    {
+      "ownerId": "berserker",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "veteran"
+      ],
+      "expectedOriginal": {
+        "type": "Kill Gold",
+        "value": 40,
+        "global": true,
+        "source": "Data!L26:O26"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-05.json",
+      "evidence": {
+        "groupId": "veteran-s3",
+        "sourceImageId": "veteran-01",
+        "displayedValue": 21,
+        "signedValue": 21,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Exp Chance",
+      "inferredBaseValue": 1,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. Context continuation and an off-synergy-tile owner are inferred, not re-confirmed; this is not a directly observed unboosted base."
+    },
+    {
+      "ownerId": "veteran",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "paladin",
+        "praetorian"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": true,
+        "source": "Data!Y43:AC43"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-05.json",
+      "evidence": {
+        "groupId": "veteran-s6",
+        "sourceImageId": "veteran-01",
+        "displayedValue": 85,
+        "signedValue": -85,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "praetorian",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "paladin",
+        "veteran"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 30,
+        "global": false,
+        "source": "Data!Y38:AC38"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-05.json",
+      "evidence": {
+        "groupId": "veteran-s6",
+        "sourceImageId": "veteran-01",
+        "displayedValue": 256,
+        "signedValue": -256,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "veteran",
+      "index": 8,
+      "tier": 4,
+      "requires": [
+        "warlord",
+        "skymage"
+      ],
+      "expectedOriginal": {
+        "type": "Super Gold Chance",
+        "value": 6,
+        "global": true,
+        "source": "Data!AH43:AL43"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-05.json",
+      "evidence": {
+        "groupId": "veteran-s8",
+        "sourceImageId": "veteran-02",
+        "displayedValue": 60,
+        "signedValue": 60,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Exp Amount",
+      "inferredBaseValue": 7,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. Context continuation and an off-synergy-tile owner are inferred, not re-confirmed; this is not a directly observed unboosted base."
+    },
+    {
+      "ownerId": "sovereign",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "praetorian"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false,
+        "source": "Data!C39:F39"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-06.json",
+      "evidence": {
+        "groupId": "praetorian-s1",
+        "sourceImageId": "praetorian-01",
+        "displayedValue": 107,
+        "signedValue": -107,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "titan",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "praetorian",
+        "deadeye"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 4,
+        "global": true,
+        "source": "Data!G41:K41"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-06.json",
+      "evidence": {
+        "groupId": "praetorian-s2",
+        "sourceImageId": "praetorian-01",
+        "displayedValue": 85,
+        "signedValue": -85,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "warlock",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "praetorian"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": true,
+        "source": "Data!L30:O30"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-06.json",
+      "evidence": {
+        "groupId": "praetorian-s3",
+        "sourceImageId": "praetorian-01",
+        "displayedValue": 107,
+        "signedValue": -107,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "champion",
+      "index": 4,
+      "tier": 2,
+      "requires": [
+        "praetorian",
+        "rogue"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 20,
+        "global": false,
+        "source": "Data!P32:T32"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-06.json",
+      "evidence": {
+        "groupId": "praetorian-s4",
+        "sourceImageId": "praetorian-01",
+        "displayedValue": 427,
+        "signedValue": -427,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "praetorian",
+      "index": 5,
+      "tier": 3,
+      "requires": [
+        "dicemaster"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 7,
+        "global": false,
+        "source": "Data!U38:X38"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-06.json",
+      "evidence": {
+        "groupId": "praetorian-s5",
+        "sourceImageId": "praetorian-01",
+        "displayedValue": 68,
+        "signedValue": 68,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 8,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. Context continuation and an off-synergy-tile owner are inferred, not re-confirmed; this is not a directly observed unboosted base."
+    },
+    {
+      "ownerId": "wizard",
+      "index": 8,
+      "tier": 4,
+      "requires": [
+        "praetorian",
+        "battlemage"
+      ],
+      "expectedOriginal": {
+        "type": "Super Gold Amount",
+        "value": 950,
+        "global": false,
+        "source": "Data!AH15:AL15"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-06.json",
+      "evidence": {
+        "groupId": "praetorian-s8",
+        "sourceImageId": "praetorian-02",
+        "displayedValue": 341,
+        "signedValue": 341,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Attack Speed",
+      "confirmedGlobal": true,
+      "inferredBaseValue": 40,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. Context continuation and an off-synergy-tile owner are inferred, not re-confirmed; this is not a directly observed unboosted base."
+    },
+    {
+      "ownerId": "battlemage",
+      "index": 8,
+      "tier": 4,
+      "requires": [
+        "praetorian",
+        "wizard"
+      ],
+      "expectedOriginal": {
+        "type": "Damage",
+        "value": 350,
+        "global": false,
+        "source": "Data!AH21:AL21"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-06.json",
+      "evidence": {
+        "groupId": "praetorian-s8",
+        "sourceImageId": "praetorian-02",
+        "displayedValue": 1280,
+        "signedValue": 1280,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 150,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. Context continuation and an off-synergy-tile owner are inferred, not re-confirmed; this is not a directly observed unboosted base."
+    },
+    {
+      "ownerId": "sniper",
+      "index": 12,
+      "tier": 6,
+      "requires": [
+        "praetorian",
+        "apprentice"
+      ],
+      "expectedOriginal": {
+        "type": "Ultra Gold Amount",
+        "value": 4250,
+        "global": false,
+        "source": "Data!AZ22:BD22"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-06.json",
+      "evidence": {
+        "groupId": "praetorian-s12",
+        "sourceImageId": "praetorian-02",
+        "displayedValue": 31177,
+        "signedValue": 31177,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedType": "Ultra Crit Damage"
+    },
+    {
+      "ownerId": "battlemage",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "wizard"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": false,
+        "source": "Data!L21:O21"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-07.json",
+      "evidence": {
+        "groupId": "battlemage-s3",
+        "sourceImageId": "battlemage-01",
+        "displayedValue": 107,
+        "signedValue": 107,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 5,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under the continuing nine-Grand-Master account/map profile. Context continuation and an off-synergy-tile owner are inferred, not re-confirmed; this is not a directly observed unboosted base."
+    },
+    {
+      "ownerId": "battlemage",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "ballista",
+        "warden"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 30,
+        "global": false,
+        "source": "Data!Y21:AC21"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-07.json",
+      "evidence": {
+        "groupId": "battlemage-s6",
+        "sourceImageId": "battlemage-01",
+        "displayedValue": 256,
+        "signedValue": -256,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "warden",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "battlemage",
+        "ballista"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": true,
+        "source": "Data!Y37:AC37"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-07.json",
+      "evidence": {
+        "groupId": "battlemage-s6",
+        "sourceImageId": "battlemage-01",
+        "displayedValue": 68,
+        "signedValue": -68,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "paladin",
+      "index": 16,
+      "tier": 9,
+      "requires": [
+        "samurai",
+        "champion",
+        "battlemage"
+      ],
+      "expectedOriginal": {
+        "type": "Shadow Runes",
+        "value": 2,
+        "global": false,
+        "source": "Data!BT20:BY20"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-07.json",
+      "evidence": {
+        "groupId": "battlemage-s16",
+        "sourceImageId": "battlemage-03",
+        "displayedValue": 7,
+        "signedValue": 7,
+        "unit": "flat",
+        "global": false
+      },
+      "note": "Unit-only confirmation: Shadow Runes are flat and personal. The existing base magnitude, stat type, and scope remain unchanged."
+    },
+    {
+      "ownerId": "titan",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "warden"
+      ],
+      "expectedOriginal": {
+        "type": "Attack Speed",
+        "value": 40,
+        "global": false,
+        "source": "Data!L41:O41"
+      },
+      "confirmedUnit": "percent",
+      "inferredBaseValue": 10,
+      "evidenceBatch": "batch-08.json",
+      "evidence": {
+        "groupId": "titan-s3",
+        "sourceImageId": "titan-01",
+        "displayedValue": 213,
+        "signedValue": 213,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true
+    },
+    {
+      "ownerId": "sovereign",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "titan",
+        "deadeye"
+      ],
+      "expectedOriginal": {
+        "type": "Rank Exp",
+        "value": 25,
+        "global": true,
+        "source": "Data!Y39:AC39"
+      },
+      "confirmedUnit": "flat",
+      "inferredBaseValue": 1,
+      "evidenceBatch": "batch-08.json",
+      "evidence": {
+        "groupId": "titan-s6",
+        "sourceImageId": "titan-01",
+        "displayedValue": 9,
+        "signedValue": 9,
+        "unit": "flat",
+        "global": true
+      },
+      "confirmedType": "Skill Power"
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 8,
+      "tier": 4,
+      "requires": [
+        "viking",
+        "titan"
+      ],
+      "expectedOriginal": {
+        "type": "Damage",
+        "value": 175,
+        "global": true,
+        "source": "Data!AH36:AL36"
+      },
+      "confirmedUnit": "percent",
+      "inferredBaseValue": 150,
+      "evidenceBatch": "batch-08.json",
+      "evidence": {
+        "groupId": "titan-s8",
+        "sourceImageId": "titan-02",
+        "displayedValue": 1280,
+        "signedValue": 1280,
+        "unit": "percent",
+        "global": true
+      }
+    },
+    {
+      "ownerId": "titan",
+      "index": 9,
+      "tier": 5,
+      "requires": [
+        "warlord"
+      ],
+      "expectedOriginal": {
+        "type": "Super Gold Chance",
+        "value": 20,
+        "global": false,
+        "source": "Data!AM41:AP41"
+      },
+      "confirmedUnit": "flat",
+      "inferredBaseValue": 12,
+      "evidenceBatch": "batch-08.json",
+      "evidence": {
+        "groupId": "titan-s9",
+        "sourceImageId": "titan-02",
+        "displayedValue": 88,
+        "signedValue": 88,
+        "unit": "flat",
+        "global": false
+      },
+      "confirmedType": "Skill Power"
+    },
+    {
+      "ownerId": "warlord",
+      "index": 9,
+      "tier": 5,
+      "requires": [
+        "titan"
+      ],
+      "expectedOriginal": {
+        "type": "Super Energy Chance",
+        "value": 3,
+        "global": true,
+        "source": "Data!AM35:AP35"
+      },
+      "confirmedUnit": "percent",
+      "inferredBaseValue": 8,
+      "evidenceBatch": "batch-08.json",
+      "evidence": {
+        "groupId": "titan-s9",
+        "sourceImageId": "titan-02",
+        "displayedValue": 59,
+        "signedValue": 59,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Crit Chance"
+    },
+    {
+      "ownerId": "sovereign",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "ballista"
+      ],
+      "expectedOriginal": {
+        "type": "Crit Damage",
+        "value": 50,
+        "global": true,
+        "source": "Data!L39:O39"
+      },
+      "confirmedUnit": "percent",
+      "inferredBaseValue": 40,
+      "evidenceBatch": "batch-09.json",
+      "evidence": {
+        "groupId": "sovereign-s3",
+        "sourceImageId": "sovereign-01",
+        "displayedValue": 853,
+        "signedValue": 853,
+        "unit": "percent",
+        "global": true
+      }
+    },
+    {
+      "ownerId": "sovereign",
+      "index": 5,
+      "tier": 3,
+      "requires": [
+        "warlock"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 7,
+        "global": false,
+        "source": "Data!U39:X39"
+      },
+      "confirmedUnit": "flat",
+      "inferredBaseValue": 8,
+      "evidenceBatch": "batch-09.json",
+      "evidence": {
+        "groupId": "sovereign-s5",
+        "sourceImageId": "sovereign-01",
+        "displayedValue": 68,
+        "signedValue": 68,
+        "unit": "flat",
+        "global": false
+      }
+    },
+    {
+      "ownerId": "crusader",
+      "index": 7,
+      "tier": 4,
+      "requires": [
+        "sovereign"
+      ],
+      "expectedOriginal": {
+        "type": "Super Crit Chance",
+        "value": 10,
+        "global": false,
+        "source": "Data!AD31:AG31"
+      },
+      "confirmedUnit": "flat",
+      "inferredBaseValue": 12,
+      "evidenceBatch": "batch-09.json",
+      "evidence": {
+        "groupId": "sovereign-s7",
+        "sourceImageId": "sovereign-02",
+        "displayedValue": 94,
+        "signedValue": 94,
+        "unit": "flat",
+        "global": false
+      },
+      "confirmedType": "Skill Power"
+    },
+    {
+      "ownerId": "hunter",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "apprentice",
+        "druid"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": false,
+        "source": "Data!G7:K7"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s2",
+        "sourceImageId": "hunter-event-01",
+        "displayedValue": 258,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "druid",
+        "hunter"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 4,
+        "global": true,
+        "source": "Data!G3:K3"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s2",
+        "sourceImageId": "hunter-event-01",
+        "displayedValue": 103,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "druid",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "apprentice",
+        "hunter"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": false,
+        "source": "Data!G6:K6"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s2",
+        "sourceImageId": "hunter-event-01",
+        "displayedValue": 77,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 3,
+      "inferenceNote": "Unique whole-number base reproducing the rounded display under ten Grand Masters, the active +10% synergy event, and the recorded account/map context. Off-synergy-tile placement is inferred. Crusader uses a user-confirmed +25% owner bonus, supported by its unchanged tier IX value; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "hunter",
+      "index": 5,
+      "tier": 3,
+      "requires": [
+        "viking"
+      ],
+      "expectedOriginal": {
+        "type": "Attack Speed",
+        "value": 80,
+        "global": false,
+        "source": "Data!U7:X7"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s5",
+        "sourceImageId": "hunter-event-01",
+        "displayedValue": 83,
+        "unit": "flat",
+        "global": false
+      },
+      "confirmedType": "Skill Power",
+      "inferredBaseValue": 8,
+      "inferenceNote": "Unique whole-number base reproducing the rounded display under ten Grand Masters, the active +10% synergy event, and the recorded account/map context. Off-synergy-tile placement is inferred. Crusader uses a user-confirmed +25% owner bonus, supported by its unchanged tier IX value; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "viking",
+      "index": 5,
+      "tier": 3,
+      "requires": [
+        "hunter"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 7,
+        "global": false,
+        "source": "Data!U5:X5"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s5",
+        "sourceImageId": "hunter-event-01",
+        "displayedValue": 10,
+        "unit": "flat",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 1,
+      "inferenceNote": "Unique whole-number base reproducing the rounded display under ten Grand Masters, the active +10% synergy event, and the recorded account/map context. Off-synergy-tile placement is inferred. Crusader uses a user-confirmed +25% owner bonus, supported by its unchanged tier IX value; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "hunter",
+      "index": 11,
+      "tier": 6,
+      "requires": [
+        "crusader"
+      ],
+      "expectedOriginal": {
+        "type": "Energy Income",
+        "value": 5,
+        "global": true,
+        "source": "Data!AV7:AY7"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s11",
+        "sourceImageId": "hunter-event-02",
+        "displayedValue": 44,
+        "unit": "flat",
+        "global": true
+      },
+      "confirmedType": "Skill Power"
+    },
+    {
+      "ownerId": "crusader",
+      "index": 11,
+      "tier": 6,
+      "requires": [
+        "hunter"
+      ],
+      "expectedOriginal": {
+        "type": "Damage",
+        "value": 250,
+        "global": true,
+        "source": "Data!AV31:AY31"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-12.json",
+      "evidence": {
+        "groupId": "hunter-s11",
+        "sourceImageId": "hunter-event-02",
+        "displayedValue": 89,
+        "unit": "flat",
+        "global": false
+      },
+      "confirmedType": "Skill Duration",
+      "confirmedGlobal": false,
+      "inferredBaseValue": 10,
+      "inferenceNote": "Unique whole-number base reproducing the rounded display under ten Grand Masters, the active +10% synergy event, and the recorded account/map context. Off-synergy-tile placement is inferred. Crusader uses a user-confirmed +25% owner bonus, supported by its unchanged tier IX value; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "skymage",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "apprentice"
+      ],
+      "expectedOriginal": {
+        "type": "Kill Gold",
+        "value": 100,
+        "global": false,
+        "source": "Data!L27:O27"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-13.json",
+      "evidence": {
+        "groupId": "apprentice-s3",
+        "sourceImageId": "apprentice-9gm-event-01",
+        "displayedValue": 938,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 40,
+      "inferenceNote": "Unique integer base under the user-confirmed nine-Grand-Master active-event context and continuing account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "apprentice",
+      "index": 4,
+      "tier": 2,
+      "requires": [
+        "elementalist",
+        "sniper"
+      ],
+      "expectedOriginal": {
+        "type": "Damage",
+        "value": 150,
+        "global": false,
+        "source": "Data!P3:T3"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-13.json",
+      "evidence": {
+        "groupId": "apprentice-s4",
+        "sourceImageId": "apprentice-9gm-event-01",
+        "displayedValue": 1407,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 60,
+      "inferenceNote": "Unique integer base under the user-confirmed nine-Grand-Master active-event context and continuing account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "ballista",
+      "index": 5,
+      "tier": 3,
+      "requires": [
+        "scout"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 7,
+        "global": false,
+        "source": "Data!U28:X28"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-14.json",
+      "evidence": {
+        "groupId": "scout-s5",
+        "sourceImageId": "scout-9gm-event-01",
+        "displayedValue": 75,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 8,
+      "inferenceNote": "Unique integer base under the user-confirmed nine-Grand-Master active-event context and continuing account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "scout",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "druid",
+        "templar"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 30,
+        "global": false,
+        "source": "Data!Y4:AC4"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-14.json",
+      "evidence": {
+        "groupId": "scout-s6",
+        "sourceImageId": "scout-9gm-event-01",
+        "displayedValue": 281,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1,
+      "corroboratingEvidence": [
+        {
+          "evidenceBatch": "batch-16.json",
+          "groupId": "druid-s6",
+          "sourceImageId": "druid-9gm-event-01",
+          "displayedValue": 281,
+          "unit": "percent",
+          "global": false
+        }
+      ]
+    },
+    {
+      "ownerId": "scout",
+      "index": 16,
+      "tier": 9,
+      "requires": [
+        "templar",
+        "templar",
+        "sniper"
+      ],
+      "expectedOriginal": {
+        "type": "Bp Exp",
+        "value": 1,
+        "global": true,
+        "source": "Data!BT4:BY4"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-14.json",
+      "evidence": {
+        "groupId": "scout-s16",
+        "sourceImageId": "scout-9gm-event-03",
+        "displayedValue": 4,
+        "unit": "flat",
+        "global": true
+      },
+      "confirmedType": "Battle Pass Exp"
+    },
+    {
+      "ownerId": "druid",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "viking"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 1,
+        "global": false,
+        "source": "Data!C6:F6"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-15.json",
+      "evidence": {
+        "groupId": "viking-s1",
+        "sourceImageId": "viking-9gm-event-01",
+        "displayedValue": 47,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 2,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under nine Grand Masters, the confirmed active +10% synergy event, and the recorded account/map profile. The owner is assumed off a synergy tile; this is an inferred base, not a directly observed unboosted value.",
+      "corroboratingEvidence": [
+        {
+          "evidenceBatch": "batch-16.json",
+          "groupId": "druid-s1",
+          "sourceImageId": "druid-9gm-event-01",
+          "displayedValue": 47,
+          "unit": "flat",
+          "global": false
+        }
+      ]
+    },
+    {
+      "ownerId": "viking",
+      "index": 4,
+      "tier": 2,
+      "requires": [
+        "assassin",
+        "arbalest"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 7,
+        "global": true,
+        "source": "Data!P5:T5"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-15.json",
+      "evidence": {
+        "groupId": "viking-s4",
+        "sourceImageId": "viking-9gm-event-01",
+        "displayedValue": 164,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "arbalest",
+      "index": 4,
+      "tier": 2,
+      "requires": [
+        "viking",
+        "assassin"
+      ],
+      "expectedOriginal": {
+        "type": "Crit Damage",
+        "value": 150,
+        "global": false,
+        "source": "Data!P19:T19"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-15.json",
+      "evidence": {
+        "groupId": "viking-s4",
+        "sourceImageId": "viking-9gm-event-01",
+        "displayedValue": 23,
+        "unit": "flat",
+        "global": true
+      },
+      "confirmedType": "Energy Income",
+      "confirmedGlobal": true,
+      "inferredBaseValue": 1,
+      "inferenceNote": "Unique whole-number base reproducing the rounded screenshot under nine Grand Masters, the confirmed active +10% synergy event, and the recorded account/map profile. The owner is assumed off a synergy tile; this is an inferred base, not a directly observed unboosted value."
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 7,
+      "tier": 4,
+      "requires": [
+        "druid"
+      ],
+      "expectedOriginal": {
+        "type": "Super Energy",
+        "value": 2,
+        "global": true,
+        "source": "Data!AD29:AG29"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-16.json",
+      "evidence": {
+        "groupId": "druid-s7",
+        "sourceImageId": "druid-9gm-event-02",
+        "displayedValue": 19,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Energy Amount"
+    },
+    {
+      "ownerId": "druid",
+      "index": 16,
+      "tier": 9,
+      "requires": [
+        "chieftain",
+        "elementalist",
+        "ranger"
+      ],
+      "expectedOriginal": {
+        "type": "Ultra Energe Chance",
+        "value": 8,
+        "global": true,
+        "source": "Data!BT6:BY6"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-16.json",
+      "evidence": {
+        "groupId": "druid-s16",
+        "sourceImageId": "druid-9gm-event-03",
+        "displayedValue": 30,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Ultra Energy Chance",
+      "correctionNote": "Spelling normalization only: the existing engine alias already treats Ultra Energe Chance as Ultra Energy Chance. This does not change scoring."
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 16,
+      "tier": 9,
+      "requires": [
+        "druid",
+        "elementalist",
+        "ranger"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 20,
+        "global": true,
+        "source": "Data!BT29:BY29"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-16.json",
+      "evidence": {
+        "groupId": "druid-s16",
+        "sourceImageId": "druid-9gm-event-03",
+        "displayedValue": 75,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "champion"
+      ],
+      "expectedOriginal": {
+        "type": "Damage",
+        "value": 100,
+        "global": false,
+        "source": "Data!L9:O9"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-17.json",
+      "evidence": {
+        "groupId": "sorcerer-s3",
+        "sourceImageId": "sorcerer-9gm-event-01",
+        "displayedValue": 938,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 40,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the immediately prior user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 4,
+      "tier": 2,
+      "requires": [
+        "paladin",
+        "crusader"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 20,
+        "global": false,
+        "source": "Data!P9:T9"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-17.json",
+      "evidence": {
+        "groupId": "sorcerer-s4",
+        "sourceImageId": "sorcerer-9gm-event-01",
+        "displayedValue": 469,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "elementalist",
+      "index": 7,
+      "tier": 4,
+      "requires": [
+        "sorcerer"
+      ],
+      "expectedOriginal": {
+        "type": "Super Energy",
+        "value": 2,
+        "global": true,
+        "source": "Data!AD18:AG18"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-17.json",
+      "evidence": {
+        "groupId": "sorcerer-s7",
+        "sourceImageId": "sorcerer-9gm-event-02",
+        "displayedValue": 19,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Energy Amount"
+    },
+    {
+      "ownerId": "ranger",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "peacekeeper"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 1,
+        "global": false,
+        "source": "Data!C16:F16"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-18.json",
+      "evidence": {
+        "groupId": "ranger-s1",
+        "sourceImageId": "ranger-9gm-event-01",
+        "displayedValue": 47,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 2,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the immediately prior user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation.",
+      "corroboratingEvidence": [
+        {
+          "evidenceBatch": "batch-21.json",
+          "groupId": "peacekeeper-s1",
+          "sourceImageId": "peacekeeper-9gm-event-01",
+          "displayedValue": 47,
+          "unit": "flat",
+          "global": false
+        }
+      ]
+    },
+    {
+      "ownerId": "ranger",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "elementalist",
+        "arbalest"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 2,
+        "global": false,
+        "source": "Data!G16:K16"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-18.json",
+      "evidence": {
+        "groupId": "ranger-s2",
+        "sourceImageId": "ranger-9gm-event-01",
+        "displayedValue": 70,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 3,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the immediately prior user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "dicemaster",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "ranger"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 4,
+        "global": false,
+        "source": "Data!L42:O42"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-18.json",
+      "evidence": {
+        "groupId": "ranger-s3",
+        "sourceImageId": "ranger-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 5,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the immediately prior user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "warlord",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "necromancer",
+        "captain"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 2,
+        "global": false,
+        "source": "Data!G35:K35"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-19.json",
+      "evidence": {
+        "groupId": "warlord-s2",
+        "sourceImageId": "warlord-9gm-event-01",
+        "displayedValue": 70,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 3,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master active-event capture context and account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "warlord",
+        "captain"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 2,
+        "global": false,
+        "source": "Data!G36:K36"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-19.json",
+      "evidence": {
+        "groupId": "warlord-s2",
+        "sourceImageId": "warlord-9gm-event-01",
+        "displayedValue": 70,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 3,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master active-event capture context and account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "captain",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "warlord",
+        "necromancer"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 2,
+        "global": false,
+        "source": "Data!G34:K34"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-19.json",
+      "evidence": {
+        "groupId": "warlord-s2",
+        "sourceImageId": "warlord-9gm-event-01",
+        "displayedValue": 70,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 3,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master active-event capture context and account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "warlord",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "crusader"
+      ],
+      "expectedOriginal": {
+        "type": "Rank Exp",
+        "value": 6,
+        "global": true,
+        "source": "Data!L35:O35"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-19.json",
+      "evidence": {
+        "groupId": "warlord-s3",
+        "sourceImageId": "warlord-9gm-event-01",
+        "displayedValue": 235,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Attack Speed",
+      "inferredBaseValue": 10,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master active-event capture context and account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "sniper",
+      "index": 5,
+      "tier": 3,
+      "requires": [
+        "warlord"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 25,
+        "global": false,
+        "source": "Data!U22:X22"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-19.json",
+      "evidence": {
+        "groupId": "warlord-s5",
+        "sourceImageId": "warlord-9gm-event-01",
+        "displayedValue": 235,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "arbalest",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "samurai"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 2,
+        "global": true,
+        "source": "Data!C19:F19"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-20.json",
+      "evidence": {
+        "groupId": "samurai-s1",
+        "sourceImageId": "samurai-9gm-event-01",
+        "displayedValue": 47,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "samurai",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "witch"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 4,
+        "global": false,
+        "source": "Data!L17:O17"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-20.json",
+      "evidence": {
+        "groupId": "samurai-s3",
+        "sourceImageId": "samurai-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 5,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master active-event capture context and account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "witch",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "samurai"
+      ],
+      "expectedOriginal": {
+        "type": "Attack Speed",
+        "value": 40,
+        "global": false,
+        "source": "Data!L12:O12"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-20.json",
+      "evidence": {
+        "groupId": "samurai-s3",
+        "sourceImageId": "samurai-9gm-event-01",
+        "displayedValue": 235,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedGlobal": true,
+      "inferredBaseValue": 10,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master active-event capture context and account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "militia"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": false,
+        "source": "Data!L14:O14"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-21.json",
+      "evidence": {
+        "groupId": "peacekeeper-s3",
+        "sourceImageId": "peacekeeper-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 5,
+      "inferenceNote": "Unique integer base under the continuing nine-GM event profile and standard owner bonus. This is conditional inference, not direct observation of an unboosted base.",
+      "corroboratingEvidence": [
+        {
+          "evidenceBatch": "batch-01.json",
+          "groupId": "militia-s3",
+          "sourceImageId": "militia-01",
+          "displayedValue": 107,
+          "unit": "flat",
+          "global": false
+        }
+      ]
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 5,
+      "tier": 3,
+      "requires": [
+        "chieftain"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 8,
+        "global": true,
+        "source": "Data!U14:X14"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-21.json",
+      "evidence": {
+        "groupId": "peacekeeper-s5",
+        "sourceImageId": "peacekeeper-9gm-event-01",
+        "displayedValue": 75,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "peacekeeper",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "berserker",
+        "forester"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 10,
+        "global": false,
+        "source": "Data!Y14:AC14"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-21.json",
+      "evidence": {
+        "groupId": "peacekeeper-s6",
+        "sourceImageId": "peacekeeper-9gm-event-01",
+        "displayedValue": 9,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Exp Chance",
+      "confirmedGlobal": true,
+      "inferredBaseValue": 1,
+      "inferenceNote": "Unique integer base under the continuing nine-GM event profile and standard owner bonus. This is conditional inference, not direct observation of an unboosted base."
+    },
+    {
+      "ownerId": "forester",
+      "index": 6,
+      "tier": 3,
+      "requires": [
+        "peacekeeper",
+        "berserker"
+      ],
+      "expectedOriginal": {
+        "type": "Damage",
+        "value": 100,
+        "global": true,
+        "source": "Data!Y10:AC10"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-21.json",
+      "evidence": {
+        "groupId": "peacekeeper-s6",
+        "sourceImageId": "peacekeeper-9gm-event-01",
+        "displayedValue": 28,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Exp Amount",
+      "inferredBaseValue": 3,
+      "inferenceNote": "Unique integer base under the continuing nine-GM event profile and standard owner bonus. This is conditional inference, not direct observation of an unboosted base."
+    },
+    {
+      "ownerId": "arbalest",
+      "index": 14,
+      "tier": 7,
+      "requires": [
+        "militia",
+        "spelldancer"
+      ],
+      "expectedOriginal": {
+        "type": "Power Mage Energy",
+        "value": 15,
+        "global": true,
+        "source": "Data!BI19:BM19"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-22.json",
+      "evidence": {
+        "groupId": "arbalest-s14",
+        "sourceImageId": "arbalest-9gm-event-01",
+        "displayedValue": 80,
+        "unit": "percent",
+        "global": true
+      },
+      "inferredBaseValue": 12,
+      "inferenceNote": "Unique integer base under the continuing nine-GM event profile and standard owner bonus. This is conditional inference, not direct observation of an unboosted base. Base 12 with the ordinary owner multiplier is equivalent to base 15 with no owner multiplier. These captures do not distinguish those mechanisms; base 12 is the equivalent parameterization used by the common engine model. Power Mage Energy contributes to the user-defined Energy + Power Mages objective; its base interpretation remains conditional.",
+      "corroboratingEvidence": [
+        {
+          "evidenceBatch": "batch-01.json",
+          "groupId": "militia-s14",
+          "sourceImageId": "militia-03",
+          "displayedValue": 72,
+          "unit": "percent",
+          "global": true
+        },
+        {
+          "evidenceBatch": "batch-03.json",
+          "groupId": "spelldancer-s14",
+          "sourceImageId": "spelldancer-03",
+          "displayedValue": 72,
+          "unit": "percent",
+          "global": true
+        }
+      ]
+    },
+    {
+      "ownerId": "forester",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "witch"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false,
+        "source": "Data!C10:F10"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-23.json",
+      "evidence": {
+        "groupId": "forester-s1",
+        "sourceImageId": "forester-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "witch",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "forester"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false,
+        "source": "Data!C12:F12"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-23.json",
+      "evidence": {
+        "groupId": "forester-s1",
+        "sourceImageId": "forester-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "forester",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "assassin",
+        "archer"
+      ],
+      "expectedOriginal": {
+        "type": "Attack Speed",
+        "value": 24,
+        "global": false,
+        "source": "Data!G10:K10"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-23.json",
+      "evidence": {
+        "groupId": "forester-s2",
+        "sourceImageId": "forester-9gm-event-01",
+        "displayedValue": 586,
+        "unit": "percent",
+        "global": false
+      },
+      "inferredBaseValue": 25,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the earlier user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "assassin",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "forester",
+        "archer"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": false,
+        "source": "Data!G11:K11"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-23.json",
+      "evidence": {
+        "groupId": "forester-s2",
+        "sourceImageId": "forester-9gm-event-01",
+        "displayedValue": 235,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "captain",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "forester"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Duration",
+        "value": 4,
+        "global": false,
+        "source": "Data!L34:O34"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-23.json",
+      "evidence": {
+        "groupId": "forester-s3",
+        "sourceImageId": "forester-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 5,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the earlier user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "warlock",
+      "index": 11,
+      "tier": 6,
+      "requires": [
+        "forester"
+      ],
+      "expectedOriginal": {
+        "type": "Ultra Energy Chance",
+        "value": 1,
+        "global": true,
+        "source": "Data!AV30:AY30"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-23.json",
+      "evidence": {
+        "groupId": "forester-s11",
+        "sourceImageId": "forester-9gm-event-02",
+        "displayedValue": 242,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedType": "Skill Cooldown",
+      "confirmedGlobal": false,
+      "confirmedSign": -1,
+      "inferredBaseValue": 30,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the earlier user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "templar",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "captain"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 1,
+        "global": false,
+        "source": "Data!C33:F33"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-24.json",
+      "evidence": {
+        "groupId": "templar-s1",
+        "sourceImageId": "templar-9gm-event-01",
+        "displayedValue": 47,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 2,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the earlier user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 3,
+      "tier": 2,
+      "requires": [
+        "templar"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Power",
+        "value": 3,
+        "global": false,
+        "source": "Data!L40:O40"
+      },
+      "confirmedUnit": "flat",
+      "evidenceBatch": "batch-24.json",
+      "evidence": {
+        "groupId": "templar-s3",
+        "sourceImageId": "templar-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "flat",
+        "global": false
+      },
+      "inferredBaseValue": 5,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master event capture model, supported by overlapping values from the earlier user-confirmed set. Account/map settings and off-synergy-tile placement remain assumptions; this is not a direct unboosted base observation.",
+      "corroboratingEvidence": [
+        {
+          "evidenceBatch": "batch-26.json",
+          "groupId": "deadeye-s3",
+          "sourceImageId": "deadeye-9gm-event-01",
+          "displayedValue": 117,
+          "unit": "flat",
+          "global": false
+        }
+      ]
+    },
+    {
+      "ownerId": "templar",
+      "index": 5,
+      "tier": 3,
+      "requires": [
+        "arbalest"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 8,
+        "global": true,
+        "source": "Data!U33:X33"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-24.json",
+      "evidence": {
+        "groupId": "templar-s5",
+        "sourceImageId": "templar-9gm-event-01",
+        "displayedValue": 75,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "warlock"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 2,
+        "global": true,
+        "source": "Data!C29:F29"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-25.json",
+      "evidence": {
+        "groupId": "chieftain-s1",
+        "sourceImageId": "chieftain-9gm-event-01",
+        "displayedValue": 47,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "chieftain",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "berserker",
+        "ballista"
+      ],
+      "expectedOriginal": {
+        "type": "Attack Speed",
+        "value": 24,
+        "global": false,
+        "source": "Data!G29:K29"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-25.json",
+      "evidence": {
+        "groupId": "chieftain-s2",
+        "sourceImageId": "chieftain-9gm-event-01",
+        "displayedValue": 586,
+        "unit": "percent",
+        "global": false
+      },
+      "inferredBaseValue": 25,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master active-event capture context and account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "ballista",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "berserker",
+        "chieftain"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 4,
+        "global": true,
+        "source": "Data!G28:K28"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-25.json",
+      "evidence": {
+        "groupId": "chieftain-s2",
+        "sourceImageId": "chieftain-9gm-event-01",
+        "displayedValue": 94,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "paladin",
+      "index": 8,
+      "tier": 4,
+      "requires": [
+        "chieftain",
+        "sniper"
+      ],
+      "expectedOriginal": {
+        "type": "Super Energy",
+        "value": 4,
+        "global": true,
+        "source": "Data!AH20:AL20"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-25.json",
+      "evidence": {
+        "groupId": "chieftain-s8",
+        "sourceImageId": "chieftain-9gm-event-02",
+        "displayedValue": 38,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Super Energy Amount"
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "dicemaster"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false,
+        "source": "Data!C40:F40"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-26.json",
+      "evidence": {
+        "groupId": "deadeye-s1",
+        "sourceImageId": "deadeye-9gm-event-01",
+        "displayedValue": 117,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "deadeye",
+      "index": 7,
+      "tier": 4,
+      "requires": [
+        "wizard"
+      ],
+      "expectedOriginal": {
+        "type": "Energy Income",
+        "value": 1,
+        "global": true,
+        "source": "Data!AD40:AG40"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-26.json",
+      "evidence": {
+        "groupId": "deadeye-s7",
+        "sourceImageId": "deadeye-9gm-event-02",
+        "displayedValue": 1173,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedType": "Damage",
+      "inferredBaseValue": 125,
+      "inferenceNote": "Unique integer base under the continuing nine-Grand-Master active-event capture context and account/map assumptions. Owner off-synergy-tile placement is inferred; this is not a direct unboosted base observation."
+    },
+    {
+      "ownerId": "crusader",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "ballista"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 2,
+        "global": true,
+        "source": "Data!C31:F31"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-29.json",
+      "evidence": {
+        "groupId": "crusader-s1",
+        "sourceImageId": "crusader-9gm-event-01",
+        "displayedValue": 47,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "skymage",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "crusader",
+        "warlock"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": false,
+        "source": "Data!G27:K27"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-29.json",
+      "evidence": {
+        "groupId": "crusader-s2",
+        "sourceImageId": "crusader-9gm-event-01",
+        "displayedValue": 235,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    }
+  ],
+  "note": "Screenshot-confirmed fields and 64 conditional integer bases across 36 capture batches. Batches17-36 continue the preceding user-confirmed nine-GM active-event profile by inference. Peacekeeper tierII Skill Power now uses conditional base5; Arbalest tierVII Power Mage Energy uses equivalent base12 under the standard owner multiplier. Arbalest base15 without that owner multiplier remains observationally equivalent; this effect contributes to the user-defined Energy + Power Mages objective without resolving the base interpretation. Partial pages in batches21-22 and27-36 are not treated as full captures. Batches31-36 add 134 matching observations without further corrections and complete screenshot coverage of all 672 source owner effects."
+}

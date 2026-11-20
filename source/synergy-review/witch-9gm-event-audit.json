@@ -1,0 +1,541 @@
+{
+  "batch": "batch-36.json",
+  "status": "audited-no-corrections-needed",
+  "observedEffects": 15,
+  "coverage": {
+    "uniqueEffects": 15,
+    "uniqueGroups": 6,
+    "newUniqueEffectsVsEarlierBatches": 2,
+    "newUniqueGroupsVsEarlierBatches": 1,
+    "overlappingEffectAppearances": 13,
+    "repeatedPortraitAppearances": 0
+  },
+  "frozenMagnitudeMatches": 11,
+  "currentMagnitudeMatches": 15,
+  "currentFullMatches": 15,
+  "newOverrideRecords": 0,
+  "overrides": [],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "witch",
+      "index": 1,
+      "tier": 1,
+      "groupId": "witch-s1",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 117,
+        "signedValue": -117,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "-117% Skill Cooldown (personal effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": -5,
+        "global": false,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": -117,
+      "frozenPredictedSignedValue": 117,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "forester",
+      "index": 1,
+      "tier": 1,
+      "groupId": "witch-s1",
+      "observed": {
+        "ownerId": "forester",
+        "ownerName": "Forester",
+        "displayedValue": 117,
+        "signedValue": -117,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "-117% Skill Cooldown (personal effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": -5,
+        "global": false,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 5,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": -117,
+      "frozenPredictedSignedValue": 117,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 2,
+      "tier": 1,
+      "groupId": "witch-s2",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+469% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 20,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 50,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 1173,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ninja",
+      "index": 2,
+      "tier": 1,
+      "groupId": "witch-s2",
+      "observed": {
+        "ownerId": "ninja",
+        "ownerName": "Ninja",
+        "displayedValue": 1173,
+        "signedValue": 1173,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,173% Crit Damage (personal effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 50,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 50,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 1173,
+      "frozenPredictedSignedValue": 1173,
+      "integerBaseCandidates": [
+        50
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 2,
+      "tier": 1,
+      "groupId": "witch-s2",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 94,
+        "signedValue": 94,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+94% Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 4,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 10,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 94,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        4
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 3,
+      "tier": 2,
+      "groupId": "witch-s3",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+235% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 10,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 40,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "samurai",
+      "index": 3,
+      "tier": 2,
+      "groupId": "witch-s3",
+      "observed": {
+        "ownerId": "samurai",
+        "ownerName": "Samurai",
+        "displayedValue": 117,
+        "signedValue": 117,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+117 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 5,
+        "global": false,
+        "unit": "flat"
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 4,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 117,
+      "frozenPredictedSignedValue": 94,
+      "integerBaseCandidates": [
+        5
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 4,
+      "tier": 2,
+      "groupId": "witch-s4",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Rank Exp",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+235 Rank Exp (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "necromancer",
+      "index": 4,
+      "tier": 2,
+      "groupId": "witch-s4",
+      "observed": {
+        "ownerId": "necromancer",
+        "ownerName": "Necromancer",
+        "displayedValue": 281,
+        "signedValue": 281,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+281% Crit Chance (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 12,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 12,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 281,
+      "frozenPredictedSignedValue": 281,
+      "integerBaseCandidates": [
+        12
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "hunter",
+      "index": 4,
+      "tier": 2,
+      "groupId": "witch-s4",
+      "observed": {
+        "ownerId": "hunter",
+        "ownerName": "Hunter",
+        "displayedValue": 1407,
+        "signedValue": 1407,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+1,407% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 60,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 60,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 1407,
+      "frozenPredictedSignedValue": 1407,
+      "integerBaseCandidates": [
+        60
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 5,
+      "tier": 3,
+      "groupId": "witch-s5",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 751,
+        "signedValue": 751,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+751% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 80,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 80,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 751,
+      "frozenPredictedSignedValue": 751,
+      "integerBaseCandidates": [
+        80
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "paladin",
+      "index": 5,
+      "tier": 3,
+      "groupId": "witch-s5",
+      "observed": {
+        "ownerId": "paladin",
+        "ownerName": "Paladin",
+        "displayedValue": 75,
+        "signedValue": 75,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+75 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 8,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 8,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 75,
+      "frozenPredictedSignedValue": 75,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "witch",
+      "index": 6,
+      "tier": 3,
+      "groupId": "witch-s6",
+      "observed": {
+        "ownerId": "witch",
+        "ownerName": "Witch",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 100,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 100,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        100
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlord",
+      "index": 6,
+      "tier": 3,
+      "groupId": "witch-s6",
+      "observed": {
+        "ownerId": "warlord",
+        "ownerName": "Warlord",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+469% Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        50
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "wizard",
+      "index": 6,
+      "tier": 3,
+      "groupId": "witch-s6",
+      "observed": {
+        "ownerId": "wizard",
+        "ownerName": "Wizard",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Crit Damage (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 100,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 100,
+        "global": true
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        100
+      ],
+      "changedFields": []
+    }
+  ],
+  "captureContextNote": "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+  "comparisonBasis": "Current fields and predictions are the pre-application snapshot; no corrections were necessary for this batch.",
+  "matchesAfterCorrections": 15,
+  "archiveChecks": [
+    {
+      "archivePath": "images/witch-9gm-event-01.png",
+      "sha256": "1c4424c86f1c21679f3e4d17849816c1a900c2540a077ffeebd38b4fa99ea627",
+      "byteIdenticalToOriginal": true
+    }
+  ]
+}

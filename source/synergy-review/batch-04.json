@@ -1,0 +1,918 @@
+{
+  "meta": {
+    "batch": "04",
+    "selectedHero": {
+      "id": "gladiator",
+      "name": "Gladiator"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 15,
+          "warden": 0
+        }
+      }
+    },
+    "contextNotes": [
+      "The nine-Grand-Master count, Snow Fort map modifiers, and account synergy bonuses are inferred continuation of the preceding captures; they were not re-confirmed for these screenshots.",
+      "Gladiator tile placement and all partner owner tile placements are unspecified.",
+      "The continuing owner-bonus assumption is +25% by default, +15% for Crusader, and 0% for Warden.",
+      "Tier I shows no rank requirement or individual hero rank badges; those values are null.",
+      "Effects are assigned to the hero portrait directly above each downward arrow. Required hero order follows the screenshot.",
+      "All displayed rank badges are preserved independently of preceding captures, including Warden at Rank 4523."
+    ],
+    "groupsCount": 16,
+    "effectsCount": 43,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "gladiator-01",
+        "originalPath": "images/gladiator-01.png",
+        "archivePath": "images/gladiator-01.png",
+        "tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "gladiator-02",
+        "originalPath": "images/gladiator-02.png",
+        "archivePath": "images/gladiator-02.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": "gladiator-03",
+        "originalPath": "images/gladiator-03.png",
+        "archivePath": "images/gladiator-03.png",
+        "tiers": [
+          7,
+          8,
+          9
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "gladiator-s1",
+      "index": 1,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "gladiator-01",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": null
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 533,
+          "signedValue": 533,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+533% Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 43,
+          "signedValue": 43,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+43 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s2",
+      "index": 2,
+      "tier": 1,
+      "rankRequirement": null,
+      "rankRequirementText": null,
+      "sourceImageId": "gladiator-01",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": null
+        },
+        {
+          "id": "battlemage",
+          "name": "Battlemage",
+          "displayedRank": null
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "displayedRank": null
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 1066,
+          "signedValue": 1066,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,066% Damage (personal effect)"
+        },
+        {
+          "ownerId": "battlemage",
+          "ownerName": "Battlemage",
+          "displayedValue": 533,
+          "signedValue": 533,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+533% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "rogue",
+          "ownerName": "Rogue",
+          "displayedValue": 427,
+          "signedValue": 427,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+427% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s3",
+      "index": 3,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "gladiator-01",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "assassin",
+          "name": "Assassin",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 107,
+          "signedValue": -107,
+          "type": "Skill Cooldown",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "-107% Skill Cooldown (GLOBAL effect)"
+        },
+        {
+          "ownerId": "assassin",
+          "ownerName": "Assassin",
+          "displayedValue": 213,
+          "signedValue": 213,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+213% Attack Speed (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s4",
+      "index": 4,
+      "tier": 2,
+      "rankRequirement": 15,
+      "rankRequirementText": "The following heroes must be Rank 15+ to activate these synergies.",
+      "sourceImageId": "gladiator-01",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "forester",
+          "name": "Forester",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ranger",
+          "name": "Ranger",
+          "displayedRank": 5004
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,280% Attack Speed (personal effect)"
+        },
+        {
+          "ownerId": "forester",
+          "ownerName": "Forester",
+          "displayedValue": 128,
+          "signedValue": 128,
+          "type": "Skill Duration",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+128 Skill Duration (personal effect)"
+        },
+        {
+          "ownerId": "ranger",
+          "ownerName": "Ranger",
+          "displayedValue": 213,
+          "signedValue": 213,
+          "type": "Rank Exp",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+213 Rank Exp (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s5",
+      "index": 5,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "gladiator-01",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 1706,
+          "signedValue": 1706,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+1,706% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 136,
+          "signedValue": 136,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+136% Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s6",
+      "index": 6,
+      "tier": 3,
+      "rankRequirement": 50,
+      "rankRequirementText": "The following heroes must be Rank 50+ to activate these synergies.",
+      "sourceImageId": "gladiator-01",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 4502
+        },
+        {
+          "id": "elementalist",
+          "name": "Elementalist",
+          "displayedRank": 4506
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 171,
+          "signedValue": 171,
+          "type": "Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+171% Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 853,
+          "signedValue": 853,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+853% Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "elementalist",
+          "ownerName": "Elementalist",
+          "displayedValue": 853,
+          "signedValue": 853,
+          "type": "Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+853% Crit Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "gladiator-02",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "viking",
+          "name": "Viking",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 1066,
+          "signedValue": 1066,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,066% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "viking",
+          "ownerName": "Viking",
+          "displayedValue": 7251,
+          "signedValue": 7251,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+7,251% Super Crit Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "gladiator-02",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 5000
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5024
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 1280,
+          "signedValue": 1280,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,280% Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 34,
+          "signedValue": 34,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+34% Super Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 2986,
+          "signedValue": 2986,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+2,986% Kill Gold (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "gladiator-02",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "templar",
+          "name": "Templar",
+          "displayedRank": 5004
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 22,
+          "signedValue": 22,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+22 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "templar",
+          "ownerName": "Templar",
+          "displayedValue": 22,
+          "signedValue": 22,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+22 Energy Income (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "gladiator-02",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "skymage",
+          "name": "Skymage",
+          "displayedRank": 5000
+        },
+        {
+          "id": "deadeye",
+          "name": "Deadeye",
+          "displayedRank": 4528
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 4585,
+          "signedValue": 4585,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+4,585% Super Gold Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "skymage",
+          "ownerName": "Skymage",
+          "displayedValue": 59,
+          "signedValue": 59,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+59% Super Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "deadeye",
+          "ownerName": "Deadeye",
+          "displayedValue": 73,
+          "signedValue": 73,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+73% Super Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "gladiator-02",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5003
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 330,
+          "signedValue": 330,
+          "type": "Ultra Exp Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+330% Ultra Exp Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 183,
+          "signedValue": 183,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+183% Ultra Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "gladiator-02",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4682
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 31177,
+          "signedValue": 31177,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+31,177% Ultra Crit Damage (personal effect)"
+        },
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 4402,
+          "signedValue": 4402,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,402% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 2017,
+          "signedValue": 2017,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,017% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "gladiator-03",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 91,
+          "signedValue": 91,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+91% Super Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 30,
+          "signedValue": 30,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+30% Super Energy Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "gladiator-03",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4632
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 121,
+          "signedValue": 121,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+121% Super Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 9663,
+          "signedValue": 9663,
+          "type": "Ultra Boss Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+9,663% Ultra Boss Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "gladiator-03",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "sorcerer",
+          "name": "Sorcerer",
+          "displayedRank": 5000
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4511
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Energy Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 34,
+          "signedValue": 34,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+34 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sorcerer",
+          "ownerName": "Sorcerer",
+          "displayedValue": 10236,
+          "signedValue": 10236,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+10,236% Ultra Crit Damage (GLOBAL effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 102,
+          "signedValue": 102,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": false,
+          "sourceText": "+102 Skill Power (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "gladiator-s16",
+      "index": 16,
+      "tier": 9,
+      "rankRequirement": 1500,
+      "rankRequirementText": "The following heroes must be Rank 1500+ to activate this synergy.",
+      "sourceImageId": "gladiator-03",
+      "requiredHeroes": [
+        {
+          "id": "gladiator",
+          "name": "Gladiator",
+          "displayedRank": 5000
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4632
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "displayedRank": 4508
+        },
+        {
+          "id": "warden",
+          "name": "Warden",
+          "displayedRank": 4523
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "gladiator",
+          "ownerName": "Gladiator",
+          "displayedValue": 256,
+          "signedValue": 256,
+          "type": "Attack Speed",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+256% Attack Speed (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 10,
+          "signedValue": 10,
+          "type": "Alien Tech",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+10 Alien Tech (GLOBAL effect)"
+        },
+        {
+          "ownerId": "berserker",
+          "ownerName": "Berserker",
+          "displayedValue": 27,
+          "signedValue": 27,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+27% Ultra Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warden",
+          "ownerName": "Warden",
+          "displayedValue": 8871,
+          "signedValue": 8871,
+          "type": "Ultra Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+8,871% Ultra Crit Damage (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

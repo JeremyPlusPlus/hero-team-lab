@@ -1,0 +1,212 @@
+{
+  "capturedOn": "2026-11-04",
+  "source": "User supplied skill screenshots and explicit scoring instructions",
+  "context": {
+    "seconds": 20,
+    "killStacks": 0,
+    "killStackRevision": "2026-11-05 user requested zero kills for high-level pushing. This replaces the earlier 100-kill default; elapsed seconds and teleport counts remain independent.",
+    "stackCap": 200,
+    "skymageTeleports": 3,
+    "necromancerRoll": "midpoint",
+    "wizardTripleShotChanceCap": 100,
+    "duplicateOwner": "First deployed copy only; later copies cannot add or replace the buff.",
+    "scope": "Global effects benefit the selected single attacker once; do not multiply by team size.",
+    "skillTiles": "Active and mastery bonuses each multiply by 1.20, using the first owner tile.",
+    "capturedBaseline": "Retains the established no-skill-tile screenshot convention. Captured bonuses include account context and are not rescaled by generic Skill Power, GM, synergy event or map mastery.",
+    "splash": "User requested an additional single-target multiplier, without an enemy-count factor. Applies to Templar and Warlord.",
+    "masteryModel": "Additive time/kill/teleport stacks within each mastery bonus. Active and accumulated mastery bonuses are separate factors for Druid, Witch, Spelldancer and Templar. Templar separate mastery factor is the retained modeling interpretation of more splash damage.",
+    "randomModel": "Midpoint of each Necromancer range per explicit user answer. This is not an exact expected product of correlated random rolls."
+  },
+  "heroes": [
+    {
+      "id": "apprentice",
+      "image": "images/support-apprentice.png",
+      "original": "images/support-apprentice.png"
+    },
+    {
+      "id": "druid",
+      "image": "images/support-druid.png",
+      "original": "images/support-druid.png"
+    },
+    {
+      "id": "witch",
+      "image": "images/support-witch.png",
+      "original": "images/support-witch.png"
+    },
+    {
+      "id": "wizard",
+      "image": "images/support-wizard.png",
+      "original": "images/support-wizard.png"
+    },
+    {
+      "id": "battlemage",
+      "image": "images/support-battlemage.png",
+      "original": "images/support-battlemage.png"
+    },
+    {
+      "id": "spelldancer",
+      "image": "images/support-spelldancer.png",
+      "original": "images/support-spelldancer.png"
+    },
+    {
+      "id": "skymage",
+      "image": "images/support-skymage.png",
+      "original": "images/support-skymage.png"
+    },
+    {
+      "id": "templar",
+      "image": "images/support-templar.png",
+      "original": "images/support-templar.png"
+    },
+    {
+      "id": "necromancer",
+      "image": "images/support-necromancer.png",
+      "original": "images/support-necromancer.png"
+    },
+    {
+      "id": "titan",
+      "image": "images/support-titan.png",
+      "original": "images/support-titan.png"
+    }
+  ],
+  "screenshots": [
+    {
+      "id": "apprentice",
+      "active": {
+        "movementSlow": 90,
+        "duration": 20,
+        "cooldown": 24
+      },
+      "mastery": {
+        "damageTakenPerSecond": 41.2
+      }
+    },
+    {
+      "id": "druid",
+      "active": {
+        "damage": 7180,
+        "duration": 20,
+        "cooldown": 28
+      },
+      "mastery": {
+        "secondDamageMultiplierPerSecond": 82.4
+      }
+    },
+    {
+      "id": "witch",
+      "active": {
+        "damageTaken": 7180,
+        "duration": 20,
+        "cooldown": 28
+      },
+      "mastery": {
+        "secondCurseMultiplierPerSecond": 82.4
+      }
+    },
+    {
+      "id": "wizard",
+      "active": {
+        "attackSpeed": 7180,
+        "duration": 20,
+        "cooldown": 28
+      },
+      "mastery": {
+        "tripleShotChance": 206
+      }
+    },
+    {
+      "id": "battlemage",
+      "active": {
+        "critChance": 1619,
+        "duration": 25,
+        "cooldown": 28
+      },
+      "mastery": {
+        "ultraCritChancePerKill": 8.2,
+        "maxStacks": 200
+      }
+    },
+    {
+      "id": "spelldancer",
+      "active": {
+        "critDamage": 8070,
+        "duration": 25,
+        "cooldown": 28
+      },
+      "mastery": {
+        "additionalCritDamageMultiplierPerKill": 123.6,
+        "maxStacks": 200
+      }
+    },
+    {
+      "id": "skymage",
+      "active": {
+        "teleportedTargets": 429.8,
+        "roundedTargets": 430,
+        "cooldown": 32
+      },
+      "mastery": {
+        "damageTakenPerTeleport": 1236
+      }
+    },
+    {
+      "id": "templar",
+      "active": {
+        "splashDamage": 1436,
+        "duration": 20,
+        "cooldown": 28
+      },
+      "mastery": {
+        "splashDamagePerSecond": 41.2
+      }
+    },
+    {
+      "id": "necromancer",
+      "active": {
+        "damage": [
+          25,
+          8070
+        ],
+        "attackSpeed": [
+          25,
+          8070
+        ],
+        "skillCooldown": [
+          25,
+          8070
+        ],
+        "duration": 25,
+        "cooldown": 32
+      },
+      "mastery": {
+        "critDamage": [
+          5,
+          1030
+        ],
+        "superCritDamage": [
+          3,
+          618
+        ],
+        "ultraCritDamage": [
+          1,
+          206
+        ]
+      }
+    },
+    {
+      "id": "titan",
+      "active": {
+        "superCritChance": 290.2,
+        "superCritDamage": 1451,
+        "duration": 20,
+        "cooldown": 32
+      },
+      "mastery": {
+        "ultraCritChance": 82,
+        "ultraCritDamage": 2060
+      }
+    }
+  ],
+  "excluded": "Movement slow amount, teleport target count and cooldown bonuses do not directly multiply damage; no multi-target or cooldown averaging.",
+  "duplicateCapture": "Templar screenshot 00cd750a-98ec-412e-bd96-5d00e5086ff1 duplicates 059139b5-a21b-40fb-a91b-ebe506862423; one skill record."
+}

@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "batch": "22",
+    "selectedHero": {
+      "id": "arbalest",
+      "name": "Arbalest"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+    "contextNotes": [
+      "Nine Grand Masters and the active synergy event continue the preceding user-confirmed capture context; these settings were not restated for this batch. Overlapping values support this continuation.",
+      "Snow Fort, three global +5% modifiers, early-tier multipliers and owner modifiers continue the recorded profile by inference. Crusader +25% was previously confirmed; Warden remains +0%.",
+      "Owner tiles are unspecified; comparison assumes owners off synergy tiles.",
+      "This is a partial selected-hero page. Missing tiers are not marked captured.",
+      "Exact displayed values, labels, scopes, and ranks are transcribed from the screenshot."
+    ],
+    "captureCompleteness": "partial",
+    "capturedTiers": [
+      6,
+      7,
+      8
+    ],
+    "groupsCount": 5,
+    "effectsCount": 14,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "arbalest-9gm-event-01",
+        "originalPath": "images/arbalest-9gm-event-01.png",
+        "archivePath": "images/arbalest-9gm-event-01.png",
+        "tiers": [
+          6,
+          7,
+          8
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "arbalest-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "arbalest-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 5000
+        },
+        {
+          "id": "titan",
+          "name": "Titan",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 16,
+          "signedValue": 16,
+          "type": "Ultra Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16% Ultra Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "titan",
+          "ownerName": "Titan",
+          "displayedValue": 4035,
+          "signedValue": 4035,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,035% Damage (personal effect)"
+        }
+      ]
+    },
+    {
+      "id": "arbalest-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "arbalest-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 5000
+        },
+        {
+          "id": "captain",
+          "name": "Captain",
+          "displayedRank": 4525
+        },
+        {
+          "id": "veteran",
+          "name": "Veteran",
+          "displayedRank": 5110
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Skill Power (GLOBAL effect)"
+        },
+        {
+          "ownerId": "captain",
+          "ownerName": "Captain",
+          "displayedValue": 4842,
+          "signedValue": 4842,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+4,842% Damage (personal effect)"
+        },
+        {
+          "ownerId": "veteran",
+          "ownerName": "Veteran",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Energy Income (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "arbalest-s13",
+      "index": 13,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "arbalest-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 5000
+        },
+        {
+          "id": "ninja",
+          "name": "Ninja",
+          "displayedRank": 4527
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 100,
+          "signedValue": 100,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+100% Super Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "ninja",
+          "ownerName": "Ninja",
+          "displayedValue": 33,
+          "signedValue": 33,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+33% Super Energy Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "arbalest-s14",
+      "index": 14,
+      "tier": 7,
+      "rankRequirement": 500,
+      "rankRequirementText": "The following heroes must be Rank 500+ to activate these synergies.",
+      "sourceImageId": "arbalest-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 5000
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "spelldancer",
+          "name": "Spelldancer",
+          "displayedRank": 4627
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 80,
+          "signedValue": 80,
+          "type": "Power Mage Energy",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+80% Power Mage Energy (GLOBAL effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 53,
+          "signedValue": 53,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+53 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "spelldancer",
+          "ownerName": "Spelldancer",
+          "displayedValue": 40,
+          "signedValue": 40,
+          "type": "Super Energy Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+40% Super Energy Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "arbalest-s15",
+      "index": 15,
+      "tier": 8,
+      "rankRequirement": 1000,
+      "rankRequirementText": "The following heroes must be Rank 1000+ to activate this synergy.",
+      "sourceImageId": "arbalest-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "arbalest",
+          "name": "Arbalest",
+          "displayedRank": 5000
+        },
+        {
+          "id": "peacekeeper",
+          "name": "Peacekeeper",
+          "displayedRank": 4518
+        },
+        {
+          "id": "warlord",
+          "name": "Warlord",
+          "displayedRank": 5000
+        },
+        {
+          "id": "apprentice",
+          "name": "Apprentice",
+          "displayedRank": 4529
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "arbalest",
+          "ownerName": "Arbalest",
+          "displayedValue": 244,
+          "signedValue": 244,
+          "type": "Ultra Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+244% Ultra Energy Amount (GLOBAL effect)"
+        },
+        {
+          "ownerId": "peacekeeper",
+          "ownerName": "Peacekeeper",
+          "displayedValue": 3753,
+          "signedValue": 3753,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,753% Damage (personal effect)"
+        },
+        {
+          "ownerId": "warlord",
+          "ownerName": "Warlord",
+          "displayedValue": 38,
+          "signedValue": 38,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+38 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "apprentice",
+          "ownerName": "Apprentice",
+          "displayedValue": 3753,
+          "signedValue": 3753,
+          "type": "Super Crit Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+3,753% Super Crit Damage (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

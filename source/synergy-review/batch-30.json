@@ -1,0 +1,372 @@
+{
+  "meta": {
+    "batch": "30",
+    "selectedHero": {
+      "id": "champion",
+      "name": "Champion"
+    },
+    "valueBasis": "Exact displayed screenshot values; no normalization applied.",
+    "context": {
+      "grandMasterCount": 9,
+      "map": {
+        "name": "Snow Fort",
+        "tier5And6SynergyBonusPercent": 115,
+        "tier7SynergyBonusPercent": 77
+      },
+      "ownerTiles": null,
+      "otherSynergyModifiers": {
+        "globalSynergyBonusesPercent": [
+          5,
+          5,
+          5
+        ],
+        "tier1And2BonusesPercent": [
+          25,
+          400
+        ],
+        "tier3And4BonusPercent": 150,
+        "ownerSynergyBonusPercent": {
+          "default": 25,
+          "crusader": 25,
+          "warden": 0
+        }
+      },
+      "synergyEvent": {
+        "enabled": true,
+        "milestoneBonusPercent": 25,
+        "synergyBonusPercent": 10
+      }
+    },
+    "contextNotes": [
+      "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+      "Snow Fort tier modifiers, three global +5% synergy bonuses, early-tier bonuses and ordinary-owner +25% bonuses continue the recorded profile by inference.",
+      "Crusader +25% was explicitly confirmed in the preceding capture set; Warden remains assumed +0%.",
+      "Owner tile placements are unspecified. The off-synergy-tile model is inferred from the repeated values, not directly established by these screenshots.",
+      "Tier I has no rank requirement or individual rank badges. Later badges are transcribed independently from this batch.",
+      "Each effect belongs to the portrait directly above its arrow. Repeated portraits are preserved as separate required copies and effects.",
+      "This is a partial selected-hero page; missing tiers are not marked captured.",
+      "Ballista shows rank 5021 in this capture, rather than the earlier 5018 badge."
+    ],
+    "contextStatus": "inferred-continuation-of-user-confirmed-nine-grand-masters-and-active-event",
+    "captureCompleteness": "partial",
+    "capturedTiers": [
+      4,
+      5,
+      6
+    ],
+    "groupsCount": 6,
+    "effectsCount": 15,
+    "ambiguities": [],
+    "sourceImages": [
+      {
+        "id": "champion-9gm-event-01",
+        "originalPath": "images/champion-9gm-event-01.png",
+        "archivePath": "images/champion-9gm-event-01.png",
+        "tiers": [
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "champion-s7",
+      "index": 7,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "champion-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "displayedRank": 4661
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 38,
+          "signedValue": 38,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+38% Super Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "hunter",
+          "ownerName": "Hunter",
+          "displayedValue": 1173,
+          "signedValue": 1173,
+          "type": "Damage",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,173% Damage (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "champion-s8",
+      "index": 8,
+      "tier": 4,
+      "rankRequirement": 100,
+      "rankRequirementText": "The following heroes must be Rank 100+ to activate these synergies.",
+      "sourceImageId": "champion-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        },
+        {
+          "id": "militia",
+          "name": "Militia",
+          "displayedRank": 5000
+        },
+        {
+          "id": "crusader",
+          "name": "Crusader",
+          "displayedRank": 5002
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 3284,
+          "signedValue": 3284,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,284% Damage (personal effect)"
+        },
+        {
+          "ownerId": "militia",
+          "ownerName": "Militia",
+          "displayedValue": 56,
+          "signedValue": 56,
+          "type": "Super Gold Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+56% Super Gold Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "crusader",
+          "ownerName": "Crusader",
+          "displayedValue": 38,
+          "signedValue": 38,
+          "type": "Super Energy Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+38% Super Energy Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "champion-s9",
+      "index": 9,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "champion-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        },
+        {
+          "id": "ballista",
+          "name": "Ballista",
+          "displayedRank": 5021
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 3228,
+          "signedValue": 3228,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,228% Kill Gold (personal effect)"
+        },
+        {
+          "ownerId": "ballista",
+          "ownerName": "Ballista",
+          "displayedValue": 1412,
+          "signedValue": 1412,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+1,412% Kill Gold (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "champion-s10",
+      "index": 10,
+      "tier": 5,
+      "rankRequirement": 150,
+      "rankRequirementText": "The following heroes must be Rank 150+ to activate these synergies.",
+      "sourceImageId": "champion-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        },
+        {
+          "id": "warlock",
+          "name": "Warlock",
+          "displayedRank": 5001
+        },
+        {
+          "id": "archer",
+          "name": "Archer",
+          "displayedRank": 5072
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 81,
+          "signedValue": 81,
+          "type": "Super Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+81% Super Crit Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "warlock",
+          "ownerName": "Warlock",
+          "displayedValue": 3631,
+          "signedValue": 3631,
+          "type": "Damage",
+          "unit": "percent",
+          "global": false,
+          "sourceText": "+3,631% Damage (personal effect)"
+        },
+        {
+          "ownerId": "archer",
+          "ownerName": "Archer",
+          "displayedValue": 5043,
+          "signedValue": 5043,
+          "type": "Super Gold Amount",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+5,043% Super Gold Amount (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "champion-s11",
+      "index": 11,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "champion-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "displayedRank": 5000
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 40,
+          "signedValue": 40,
+          "type": "Energy Income",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+40 Energy Income (GLOBAL effect)"
+        },
+        {
+          "ownerId": "sniper",
+          "ownerName": "Sniper",
+          "displayedValue": 16,
+          "signedValue": 16,
+          "type": "Ultra Crit Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+16% Ultra Crit Chance (GLOBAL effect)"
+        }
+      ]
+    },
+    {
+      "id": "champion-s12",
+      "index": 12,
+      "tier": 6,
+      "rankRequirement": 250,
+      "rankRequirementText": "The following heroes must be Rank 250+ to activate these synergies.",
+      "sourceImageId": "champion-9gm-event-01",
+      "requiredHeroes": [
+        {
+          "id": "champion",
+          "name": "Champion",
+          "displayedRank": 5009
+        },
+        {
+          "id": "samurai",
+          "name": "Samurai",
+          "displayedRank": 5000
+        },
+        {
+          "id": "paladin",
+          "name": "Paladin",
+          "displayedRank": 4502
+        }
+      ],
+      "effects": [
+        {
+          "ownerId": "champion",
+          "ownerName": "Champion",
+          "displayedValue": 24,
+          "signedValue": 24,
+          "type": "Ultra Exp Chance",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+24% Ultra Exp Chance (GLOBAL effect)"
+        },
+        {
+          "ownerId": "samurai",
+          "ownerName": "Samurai",
+          "displayedValue": 2219,
+          "signedValue": 2219,
+          "type": "Kill Gold",
+          "unit": "percent",
+          "global": true,
+          "sourceText": "+2,219% Kill Gold (GLOBAL effect)"
+        },
+        {
+          "ownerId": "paladin",
+          "ownerName": "Paladin",
+          "displayedValue": 48,
+          "signedValue": 48,
+          "type": "Skill Power",
+          "unit": "flat",
+          "global": true,
+          "sourceText": "+48 Skill Power (GLOBAL effect)"
+        }
+      ]
+    }
+  ]
+}

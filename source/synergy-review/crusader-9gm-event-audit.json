@@ -1,0 +1,597 @@
+{
+  "batch": "batch-29.json",
+  "status": "activated-in-confirmed-overrides",
+  "observedEffects": 15,
+  "coverage": {
+    "uniqueEffects": 15,
+    "uniqueGroups": 6,
+    "newUniqueEffectsVsEarlierBatches": 5,
+    "newUniqueGroupsVsEarlierBatches": 2,
+    "overlappingEffectAppearances": 10,
+    "repeatedPortraitAppearances": 0,
+    "note": "Coverage counts reflect the audit creation snapshot; aggregate coverage recomputes all available batches."
+  },
+  "frozenMagnitudeMatches": 14,
+  "currentMagnitudeMatches": 15,
+  "currentFullMatches": 13,
+  "newOverrideRecords": 2,
+  "overrides": [
+    {
+      "ownerId": "crusader",
+      "index": 1,
+      "tier": 1,
+      "requires": [
+        "ballista"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 2,
+        "global": true,
+        "source": "Data!C31:F31"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-29.json",
+      "evidence": {
+        "groupId": "crusader-s1",
+        "sourceImageId": "crusader-9gm-event-01",
+        "displayedValue": 47,
+        "unit": "percent",
+        "global": true
+      },
+      "confirmedSign": -1
+    },
+    {
+      "ownerId": "skymage",
+      "index": 2,
+      "tier": 1,
+      "requires": [
+        "crusader",
+        "warlock"
+      ],
+      "expectedOriginal": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": false,
+        "source": "Data!G27:K27"
+      },
+      "confirmedUnit": "percent",
+      "evidenceBatch": "batch-29.json",
+      "evidence": {
+        "groupId": "crusader-s2",
+        "sourceImageId": "crusader-9gm-event-01",
+        "displayedValue": 235,
+        "unit": "percent",
+        "global": false
+      },
+      "confirmedSign": -1
+    }
+  ],
+  "conflicts": [],
+  "observations": [
+    {
+      "ownerId": "crusader",
+      "index": 1,
+      "tier": 1,
+      "groupId": "crusader-s1",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 47,
+        "signedValue": -47,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "-47% Skill Cooldown (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": 2,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 2,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 47,
+      "frozenPredictedSignedValue": 47,
+      "integerBaseCandidates": [
+        2
+      ],
+      "changedFields": [
+        "sign"
+      ]
+    },
+    {
+      "ownerId": "ballista",
+      "index": 1,
+      "tier": 1,
+      "groupId": "crusader-s1",
+      "observed": {
+        "ownerId": "ballista",
+        "ownerName": "Ballista",
+        "displayedValue": 586,
+        "signedValue": 586,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+586% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 25,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 25,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 586,
+      "frozenPredictedSignedValue": 586,
+      "integerBaseCandidates": [
+        25
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 2,
+      "tier": 1,
+      "groupId": "crusader-s2",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 141,
+        "signedValue": 141,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+141% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 6,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Attack Speed",
+        "value": 6,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 141,
+      "frozenPredictedSignedValue": 141,
+      "integerBaseCandidates": [
+        6
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 2,
+      "tier": 1,
+      "groupId": "crusader-s2",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 235,
+        "signedValue": -235,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "-235% Skill Cooldown (personal effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 10,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": [
+        "sign"
+      ]
+    },
+    {
+      "ownerId": "warlock",
+      "index": 2,
+      "tier": 1,
+      "groupId": "crusader-s2",
+      "observed": {
+        "ownerId": "warlock",
+        "ownerName": "Warlock",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+469% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 20,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 20,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 3,
+      "tier": 2,
+      "groupId": "crusader-s3",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 938,
+        "signedValue": 938,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+938% Kill Gold (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 40,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 40,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 938,
+      "frozenPredictedSignedValue": 938,
+      "integerBaseCandidates": [
+        40
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "warlord",
+      "index": 3,
+      "tier": 2,
+      "groupId": "crusader-s3",
+      "observed": {
+        "ownerId": "warlord",
+        "ownerName": "Warlord",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Attack Speed",
+        "unit": "percent",
+        "global": true,
+        "sourceText": "+235% Attack Speed (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Attack Speed",
+        "value": 10,
+        "global": true,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Rank Exp",
+        "value": 6,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 141,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 4,
+      "tier": 2,
+      "groupId": "crusader-s4",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 3519,
+        "signedValue": 3519,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+3,519% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 150,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 150,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 3519,
+      "frozenPredictedSignedValue": 3519,
+      "integerBaseCandidates": [
+        150
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "paladin",
+      "index": 4,
+      "tier": 2,
+      "groupId": "crusader-s4",
+      "observed": {
+        "ownerId": "paladin",
+        "ownerName": "Paladin",
+        "displayedValue": 235,
+        "signedValue": 235,
+        "type": "Rank Exp",
+        "unit": "flat",
+        "global": true,
+        "sourceText": "+235 Rank Exp (GLOBAL effect)"
+      },
+      "current": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Rank Exp",
+        "value": 10,
+        "global": true
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": 235,
+      "frozenPredictedSignedValue": 235,
+      "integerBaseCandidates": [
+        10
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "sorcerer",
+      "index": 4,
+      "tier": 2,
+      "groupId": "crusader-s4",
+      "observed": {
+        "ownerId": "sorcerer",
+        "ownerName": "Sorcerer",
+        "displayedValue": 469,
+        "signedValue": -469,
+        "type": "Skill Cooldown",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "-469% Skill Cooldown (personal effect)"
+      },
+      "current": {
+        "type": "Skill Cooldown",
+        "value": -20,
+        "global": false,
+        "unit": "percent"
+      },
+      "frozen": {
+        "type": "Skill Cooldown",
+        "value": 20,
+        "global": false
+      },
+      "factor": 23.457664963853638,
+      "predictedSignedValue": -469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        20
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 5,
+      "tier": 3,
+      "groupId": "crusader-s5",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 75,
+        "signedValue": 75,
+        "type": "Skill Duration",
+        "unit": "flat",
+        "global": false,
+        "sourceText": "+75 Skill Duration (personal effect)"
+      },
+      "current": {
+        "type": "Skill Duration",
+        "value": 8,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Skill Duration",
+        "value": 8,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 75,
+      "frozenPredictedSignedValue": 75,
+      "integerBaseCandidates": [
+        8
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "titan",
+      "index": 5,
+      "tier": 3,
+      "groupId": "crusader-s5",
+      "observed": {
+        "ownerId": "titan",
+        "ownerName": "Titan",
+        "displayedValue": 1877,
+        "signedValue": 1877,
+        "type": "Crit Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+1,877% Crit Damage (personal effect)"
+      },
+      "current": {
+        "type": "Crit Damage",
+        "value": 200,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Damage",
+        "value": 200,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 1877,
+      "frozenPredictedSignedValue": 1877,
+      "integerBaseCandidates": [
+        200
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "crusader",
+      "index": 6,
+      "tier": 3,
+      "groupId": "crusader-s6",
+      "observed": {
+        "ownerId": "crusader",
+        "ownerName": "Crusader",
+        "displayedValue": 469,
+        "signedValue": 469,
+        "type": "Crit Chance",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+469% Crit Chance (personal effect)"
+      },
+      "current": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Crit Chance",
+        "value": 50,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 469,
+      "frozenPredictedSignedValue": 469,
+      "integerBaseCandidates": [
+        50
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "skymage",
+      "index": 6,
+      "tier": 3,
+      "groupId": "crusader-s6",
+      "observed": {
+        "ownerId": "skymage",
+        "ownerName": "Skymage",
+        "displayedValue": 2346,
+        "signedValue": 2346,
+        "type": "Damage",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+2,346% Damage (personal effect)"
+      },
+      "current": {
+        "type": "Damage",
+        "value": 250,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Damage",
+        "value": 250,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 2346,
+      "frozenPredictedSignedValue": 2346,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    },
+    {
+      "ownerId": "ranger",
+      "index": 6,
+      "tier": 3,
+      "groupId": "crusader-s6",
+      "observed": {
+        "ownerId": "ranger",
+        "ownerName": "Ranger",
+        "displayedValue": 2346,
+        "signedValue": 2346,
+        "type": "Kill Gold",
+        "unit": "percent",
+        "global": false,
+        "sourceText": "+2,346% Kill Gold (personal effect)"
+      },
+      "current": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": false,
+        "unit": null
+      },
+      "frozen": {
+        "type": "Kill Gold",
+        "value": 250,
+        "global": false
+      },
+      "factor": 9.383065985541455,
+      "predictedSignedValue": 2346,
+      "frozenPredictedSignedValue": 2346,
+      "integerBaseCandidates": [
+        250
+      ],
+      "changedFields": []
+    }
+  ],
+  "captureContextNote": "Nine deployed Grand Masters and the active synergy event (+25% milestones, +10% synergy effects) continue the immediately preceding user-confirmed capture context. These settings were not separately restated for this batch; the overlapping displayed values support them.",
+  "afterProposedCorrectionsMatchingEffects": 15,
+  "verifiedImageHashes": [
+    {
+      "sourceImageId": "crusader-9gm-event-01",
+      "sha256": "8e2f4ac1e0e24cc19acc82da84529106414fc3c6f1082dc21fe47eb1b655f63f"
+    }
+  ],
+  "labelNormalizations": [],
+  "comparisonBasis": "Current magnitude/field match counts describe active data before this batch was applied.",
+  "matchesAfterCorrections": 15
+}

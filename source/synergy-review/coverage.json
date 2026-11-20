@@ -1,0 +1,1353 @@
+{
+  "summary": {
+    "availableHeroes": 42,
+    "sourceEffects": 672,
+    "captureBatches": 36,
+    "observedEffects": 1255,
+    "observedUniqueEffects": 672,
+    "unobservedEffects": 0,
+    "observedUniqueGroups": 267,
+    "selectedHeroesObserved": 35,
+    "selectedHeroPagesCaptured": 24,
+    "partialSelectedHeroPages": 11,
+    "unresolvedUniqueEffects": 0,
+    "captureBasis": "A full selected-hero page requires all sixteen source groups, tiers I through IX. Partial batches contribute only their actual groups; partner effects count as observations."
+  },
+  "rankingMethod": "Greedy coverage of previously unobserved owner effects. After each proposed hero, remove the effects its full page would cover before choosing the next hero. Repeated partner portraits and overlaps count once. This is a practical priority list, not a proof of the minimum possible number of captures.",
+  "heroes": [
+    {
+      "heroId": "apprentice",
+      "hero": "Apprentice",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "arbalest",
+      "hero": "Arbalest",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 5,
+      "missingSelectedGroups": [
+        {
+          "index": 1,
+          "tier": 1
+        },
+        {
+          "index": 2,
+          "tier": 1
+        },
+        {
+          "index": 3,
+          "tier": 2
+        },
+        {
+          "index": 4,
+          "tier": 2
+        },
+        {
+          "index": 5,
+          "tier": 3
+        },
+        {
+          "index": 6,
+          "tier": 3
+        },
+        {
+          "index": 7,
+          "tier": 4
+        },
+        {
+          "index": 8,
+          "tier": 4
+        },
+        {
+          "index": 9,
+          "tier": 5
+        },
+        {
+          "index": 10,
+          "tier": 5
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "archer",
+      "hero": "Archer",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 6,
+      "missingSelectedGroups": [
+        {
+          "index": 1,
+          "tier": 1
+        },
+        {
+          "index": 2,
+          "tier": 1
+        },
+        {
+          "index": 3,
+          "tier": 2
+        },
+        {
+          "index": 4,
+          "tier": 2
+        },
+        {
+          "index": 5,
+          "tier": 3
+        },
+        {
+          "index": 6,
+          "tier": 3
+        },
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "assassin",
+      "hero": "Assassin",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 6,
+      "missingSelectedGroups": [
+        {
+          "index": 1,
+          "tier": 1
+        },
+        {
+          "index": 2,
+          "tier": 1
+        },
+        {
+          "index": 3,
+          "tier": 2
+        },
+        {
+          "index": 4,
+          "tier": 2
+        },
+        {
+          "index": 5,
+          "tier": 3
+        },
+        {
+          "index": 6,
+          "tier": 3
+        },
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "ballista",
+      "hero": "Ballista",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": false,
+      "selectedGroupsCaptured": 0,
+      "missingSelectedGroups": [
+        {
+          "index": 1,
+          "tier": 1
+        },
+        {
+          "index": 2,
+          "tier": 1
+        },
+        {
+          "index": 3,
+          "tier": 2
+        },
+        {
+          "index": 4,
+          "tier": 2
+        },
+        {
+          "index": 5,
+          "tier": 3
+        },
+        {
+          "index": 6,
+          "tier": 3
+        },
+        {
+          "index": 7,
+          "tier": 4
+        },
+        {
+          "index": 8,
+          "tier": 4
+        },
+        {
+          "index": 9,
+          "tier": 5
+        },
+        {
+          "index": 10,
+          "tier": 5
+        },
+        {
+          "index": 11,
+          "tier": 6
+        },
+        {
+          "index": 12,
+          "tier": 6
+        },
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "battlemage",
+      "hero": "Battlemage",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "berserker",
+      "hero": "Berserker",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 12,
+      "missingSelectedGroups": [
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "captain",
+      "hero": "Captain",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": false,
+      "selectedGroupsCaptured": 0,
+      "missingSelectedGroups": [
+        {
+          "index": 1,
+          "tier": 1
+        },
+        {
+          "index": 2,
+          "tier": 1
+        },
+        {
+          "index": 3,
+          "tier": 2
+        },
+        {
+          "index": 4,
+          "tier": 2
+        },
+        {
+          "index": 5,
+          "tier": 3
+        },
+        {
+          "index": 6,
+          "tier": 3
+        },
+        {
+          "index": 7,
+          "tier": 4
+        },
+        {
+          "index": 8,
+          "tier": 4
+        },
+        {
+          "index": 9,
+          "tier": 5
+        },
+        {
+          "index": 10,
+          "tier": 5
+        },
+        {
+          "index": 11,
+          "tier": 6
+        },
+        {
+          "index": 12,
+          "tier": 6
+        },
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "champion",
+      "hero": "Champion",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 6,
+      "missingSelectedGroups": [
+        {
+          "index": 1,
+          "tier": 1
+        },
+        {
+          "index": 2,
+          "tier": 1
+        },
+        {
+          "index": 3,
+          "tier": 2
+        },
+        {
+          "index": 4,
+          "tier": 2
+        },
+        {
+          "index": 5,
+          "tier": 3
+        },
+        {
+          "index": 6,
+          "tier": 3
+        },
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "chieftain",
+      "hero": "Chieftain",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "crusader",
+      "hero": "Crusader",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 6,
+      "missingSelectedGroups": [
+        {
+          "index": 7,
+          "tier": 4
+        },
+        {
+          "index": 8,
+          "tier": 4
+        },
+        {
+          "index": 9,
+          "tier": 5
+        },
+        {
+          "index": 10,
+          "tier": 5
+        },
+        {
+          "index": 11,
+          "tier": 6
+        },
+        {
+          "index": 12,
+          "tier": 6
+        },
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "deadeye",
+      "hero": "Deadeye",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "dicemaster",
+      "hero": "Dicemaster",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": false,
+      "selectedGroupsCaptured": 0,
+      "missingSelectedGroups": [
+        {
+          "index": 1,
+          "tier": 1
+        },
+        {
+          "index": 2,
+          "tier": 1
+        },
+        {
+          "index": 3,
+          "tier": 2
+        },
+        {
+          "index": 4,
+          "tier": 2
+        },
+        {
+          "index": 5,
+          "tier": 3
+        },
+        {
+          "index": 6,
+          "tier": 3
+        },
+        {
+          "index": 7,
+          "tier": 4
+        },
+        {
+          "index": 8,
+          "tier": 4
+        },
+        {
+          "index": 9,
+          "tier": 5
+        },
+        {
+          "index": 10,
+          "tier": 5
+        },
+        {
+          "index": 11,
+          "tier": 6
+        },
+        {
+          "index": 12,
+          "tier": 6
+        },
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "druid",
+      "hero": "Druid",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "elementalist",
+      "hero": "Elementalist",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": false,
+      "selectedGroupsCaptured": 0,
+      "missingSelectedGroups": [
+        {
+          "index": 1,
+          "tier": 1
+        },
+        {
+          "index": 2,
+          "tier": 1
+        },
+        {
+          "index": 3,
+          "tier": 2
+        },
+        {
+          "index": 4,
+          "tier": 2
+        },
+        {
+          "index": 5,
+          "tier": 3
+        },
+        {
+          "index": 6,
+          "tier": 3
+        },
+        {
+          "index": 7,
+          "tier": 4
+        },
+        {
+          "index": 8,
+          "tier": 4
+        },
+        {
+          "index": 9,
+          "tier": 5
+        },
+        {
+          "index": 10,
+          "tier": 5
+        },
+        {
+          "index": 11,
+          "tier": 6
+        },
+        {
+          "index": 12,
+          "tier": 6
+        },
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "forester",
+      "hero": "Forester",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "gladiator",
+      "hero": "Gladiator",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "hunter",
+      "hero": "Hunter",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "militia",
+      "hero": "Militia",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "necromancer",
+      "hero": "Necromancer",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 11,
+      "missingSelectedGroups": [
+        {
+          "index": 7,
+          "tier": 4
+        },
+        {
+          "index": 8,
+          "tier": 4
+        },
+        {
+          "index": 9,
+          "tier": 5
+        },
+        {
+          "index": 10,
+          "tier": 5
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "ninja",
+      "hero": "Ninja",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "paladin",
+      "hero": "Paladin",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": false,
+      "selectedGroupsCaptured": 0,
+      "missingSelectedGroups": [
+        {
+          "index": 1,
+          "tier": 1
+        },
+        {
+          "index": 2,
+          "tier": 1
+        },
+        {
+          "index": 3,
+          "tier": 2
+        },
+        {
+          "index": 4,
+          "tier": 2
+        },
+        {
+          "index": 5,
+          "tier": 3
+        },
+        {
+          "index": 6,
+          "tier": 3
+        },
+        {
+          "index": 7,
+          "tier": 4
+        },
+        {
+          "index": 8,
+          "tier": 4
+        },
+        {
+          "index": 9,
+          "tier": 5
+        },
+        {
+          "index": 10,
+          "tier": 5
+        },
+        {
+          "index": 11,
+          "tier": 6
+        },
+        {
+          "index": 12,
+          "tier": 6
+        },
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "peacekeeper",
+      "hero": "Peacekeeper",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 12,
+      "missingSelectedGroups": [
+        {
+          "index": 7,
+          "tier": 4
+        },
+        {
+          "index": 8,
+          "tier": 4
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "praetorian",
+      "hero": "Praetorian",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "ranger",
+      "hero": "Ranger",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "rogue",
+      "hero": "Rogue",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "samurai",
+      "hero": "Samurai",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "scout",
+      "hero": "Scout",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "skymage",
+      "hero": "Skymage",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 6,
+      "missingSelectedGroups": [
+        {
+          "index": 1,
+          "tier": 1
+        },
+        {
+          "index": 2,
+          "tier": 1
+        },
+        {
+          "index": 3,
+          "tier": 2
+        },
+        {
+          "index": 4,
+          "tier": 2
+        },
+        {
+          "index": 5,
+          "tier": 3
+        },
+        {
+          "index": 6,
+          "tier": 3
+        },
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "sniper",
+      "hero": "Sniper",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": false,
+      "selectedGroupsCaptured": 0,
+      "missingSelectedGroups": [
+        {
+          "index": 1,
+          "tier": 1
+        },
+        {
+          "index": 2,
+          "tier": 1
+        },
+        {
+          "index": 3,
+          "tier": 2
+        },
+        {
+          "index": 4,
+          "tier": 2
+        },
+        {
+          "index": 5,
+          "tier": 3
+        },
+        {
+          "index": 6,
+          "tier": 3
+        },
+        {
+          "index": 7,
+          "tier": 4
+        },
+        {
+          "index": 8,
+          "tier": 4
+        },
+        {
+          "index": 9,
+          "tier": 5
+        },
+        {
+          "index": 10,
+          "tier": 5
+        },
+        {
+          "index": 11,
+          "tier": 6
+        },
+        {
+          "index": 12,
+          "tier": 6
+        },
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "sorcerer",
+      "hero": "Sorcerer",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "sovereign",
+      "hero": "Sovereign",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "spelldancer",
+      "hero": "Spelldancer",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "templar",
+      "hero": "Templar",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "titan",
+      "hero": "Titan",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "veteran",
+      "hero": "Veteran",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "viking",
+      "hero": "Viking",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "warden",
+      "hero": "Warden",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "warlock",
+      "hero": "Warlock",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": false,
+      "selectedGroupsCaptured": 0,
+      "missingSelectedGroups": [
+        {
+          "index": 1,
+          "tier": 1
+        },
+        {
+          "index": 2,
+          "tier": 1
+        },
+        {
+          "index": 3,
+          "tier": 2
+        },
+        {
+          "index": 4,
+          "tier": 2
+        },
+        {
+          "index": 5,
+          "tier": 3
+        },
+        {
+          "index": 6,
+          "tier": 3
+        },
+        {
+          "index": 7,
+          "tier": 4
+        },
+        {
+          "index": 8,
+          "tier": 4
+        },
+        {
+          "index": 9,
+          "tier": 5
+        },
+        {
+          "index": 10,
+          "tier": 5
+        },
+        {
+          "index": 11,
+          "tier": 6
+        },
+        {
+          "index": 12,
+          "tier": 6
+        },
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "warlord",
+      "hero": "Warlord",
+      "selectedHeroAlreadyCaptured": true,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 16,
+      "missingSelectedGroups": [],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "witch",
+      "hero": "Witch",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 6,
+      "missingSelectedGroups": [
+        {
+          "index": 7,
+          "tier": 4
+        },
+        {
+          "index": 8,
+          "tier": 4
+        },
+        {
+          "index": 9,
+          "tier": 5
+        },
+        {
+          "index": 10,
+          "tier": 5
+        },
+        {
+          "index": 11,
+          "tier": 6
+        },
+        {
+          "index": 12,
+          "tier": 6
+        },
+        {
+          "index": 13,
+          "tier": 7
+        },
+        {
+          "index": 14,
+          "tier": 7
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    },
+    {
+      "heroId": "wizard",
+      "hero": "Wizard",
+      "selectedHeroAlreadyCaptured": false,
+      "selectedHeroObserved": true,
+      "selectedGroupsCaptured": 12,
+      "missingSelectedGroups": [
+        {
+          "index": 7,
+          "tier": 4
+        },
+        {
+          "index": 8,
+          "tier": 4
+        },
+        {
+          "index": 15,
+          "tier": 8
+        },
+        {
+          "index": 16,
+          "tier": 9
+        }
+      ],
+      "unobservedOwnerEffects": 0,
+      "newUniqueEffectsInFullPage": 0,
+      "newUniqueGroupsInFullPage": 0,
+      "unresolvedEffectsInPage": []
+    }
+  ],
+  "suggestedNextFive": [],
+  "greedyFullCoverageOrder": [],
+  "unobservedGroups": [],
+  "greedyScreenshotPlan": [],
+  "screenshotPlanMethod": "Greedy coverage using the usual I–III, IV–VI and VII–IX screenshot windows. Needed tiers and exact groups identify the useful part of each suggested capture. This reduces repeated screenshots but is not guaranteed to minimize captures.",
+  "unresolvedEffects": [],
+  "notes": [
+    "Coverage counts observations rather than declaring every captured value verified.",
+    "Current mismatches are recomputed from every archived observation, so resolved earlier discrepancies do not remain hardcoded as unresolved.",
+    "Arbalest Power Mage Energy base 12 under the common owner multiplier is observationally equivalent to base 15 without that multiplier. Matching captures do not identify the mechanic; the effect contributes to the user-defined Energy + Power Mages objective without resolving the base interpretation.",
+    "Heroes outside the 42-record source roster cannot be prioritized by missing synergy effects yet."
+  ]
+}

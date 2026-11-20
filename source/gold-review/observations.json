@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-04",
+  "purpose": "Gold boss-payout comparison; preserve observations without fitting unknown multipliers",
+  "sameWave": true,
+  "activeSkillStateSame": null,
+  "requiredGoldHeroes": [
+    "hunter",
+    "rogue",
+    "sovereign"
+  ],
+  "singleAttackerForKills": true,
+  "energySource": "wave income",
+  "teamA": {
+    "attacker": "hunter",
+    "roster": null,
+    "payoutImage": "images/hunter-team-a-payout.png",
+    "displayed": {
+      "Boss Gold": "3.29co",
+      "Super Gold Amount": "25.65cv",
+      "Ultra Gold Amount": "5.86df"
+    }
+  },
+  "teamB": {
+    "attacker": "crusader",
+    "attackerCopyIndex": null,
+    "visibleCounts": {
+      "sovereign": 3,
+      "rogue": 3,
+      "crusader": 2,
+      "praetorian": 1,
+      "elementalist": 1
+    },
+    "levels": null,
+    "tiles": null,
+    "payoutImage": "images/challenger-b-payout.png",
+    "rosterImage": "images/challenger-b-lineup.png",
+    "displayed": {
+      "Boss Gold": "108.57cn",
+      "Super Gold Amount": "8.42cu",
+      "Ultra Gold Amount": "63.93dd"
+    }
+  },
+  "userContext": [
+    "Same wave in both screenshots.",
+    "Gold Amount support multipliers differ slightly for each hero based on levels.",
+    "Only the designated attacker makes kills; all other heroes are supports."
+  ],
+  "findings": [
+    "Boss Gold existed in source data but was omitted from multiplicative stat classification and Gold scoring.",
+    "Visible Challenger B roster contains no Hunter.",
+    "Visible Challenger B activates no recorded Boss Gold synergy. Rogue tier VIII needs at least two of Hunter/Scout/Paladin with minus-one requirement; none are present."
+  ],
+  "limits": [
+    "No exact screenshot reproduction claimed.",
+    "Per-hero levels, individual support multipliers, tile assignments, active skill states and full A roster are missing.",
+    "No source base values changed or arbitrary screenshot-calibration factors introduced."
+  ],
+  "additionalComparisons": [
+    {
+      "id": "updated-suggestion-synergy-event",
+      "date": "2026-11-04",
+      "purpose": "Compare updated suggested B with current Hunter A during the active synergy event",
+      "sameWave": null,
+      "activeSkillStateSame": null,
+      "context": {
+        "grandMasterCount": 10,
+        "synergyEvent": {
+          "enabled": true,
+          "milestoneBonusPercent": 25,
+          "synergyBonusPercent": 10
+        },
+        "crusaderOwnerSynergyBonusPercent": 25
+      },
+      "contextNotes": [
+        "User supplied these payouts alongside synergy screenshots and confirmed the active event and ten Grand Masters.",
+        "User subsequently confirmed Crusader owner synergy bonus is now +25%.",
+        "The same-wave statement belongs to the earlier comparison and was not independently reconfirmed for this new pair."
+      ],
+      "teamA": {
+        "attacker": "hunter",
+        "roster": null,
+        "levels": null,
+        "tiles": null,
+        "payoutImage": "images/hunter-team-a-event-payout.png",
+        "displayed": {
+          "Boss Gold": "7.76co",
+          "Super Gold Amount": "60.63cv",
+          "Ultra Gold Amount": "13.85df"
+        }
+      },
+      "teamB": {
+        "attacker": "crusader",
+        "roster": null,
+        "attackerCopyIndex": null,
+        "levels": null,
+        "tiles": null,
+        "payoutImage": "images/challenger-b-event-payout.png",
+        "displayed": {
+          "Boss Gold": "352.94co",
+          "Super Gold Amount": "283.51cv",
+          "Ultra Gold Amount": "4.69df"
+        }
+      },
+      "relativePayouts": {
+        "basis": "Ratios of rounded displayed values. Matching suffixes cancel across teams; no suffix exponent sizes are assumed.",
+        "teamBOverA": {
+          "Boss Gold": 45.4819587628866,
+          "Super Gold Amount": 4.676067953158502,
+          "Ultra Gold Amount": 0.3386281588447654
+        },
+        "teamAOverBUltraGold": 2.9530916844349675
+      },
+      "relativeTierFactors": {
+        "basis": "Compare within-team Super/Boss and Ultra/Super ratios between teams; both the numerator and denominator suffix scales cancel. These observations do not identify the underlying source bonuses.",
+        "teamAOverBSuperToBoss": 9.72653931005543,
+        "teamAOverBUltraToSuper": 13.80885738832521,
+        "formulas": {
+          "teamAOverBSuperToBoss": "(60.63 / 7.76) / (283.51 / 352.94)",
+          "teamAOverBUltraToSuper": "(13.85 / 60.63) / (4.69 / 283.51)"
+        }
+      },
+      "findings": [
+        "B shows about 45.48 times A Boss Gold and 4.676 times A Super Gold, while A shows about 2.953 times B Ultra Gold.",
+        "The displayed Super/Boss factor is about 9.727 times larger for A, and its Ultra/Super factor is about 13.809 times larger. A strong Boss Gold result alone therefore does not establish the best Ultra Gold payout.",
+        "The inspected Rogue and Hunter gold synergy values match existing bases after applying the event and capture-specific owner modifiers; the seven newly proposed Hunter-related field/base corrections concern cooldown, skill, damage or energy effects, not gold effects."
+      ],
+      "limits": [
+        "The latest B roster is unknown; the earlier visible B roster must not be reused for this updated suggestion.",
+        "Both full rosters, per-hero run levels, individual support multipliers, tile assignments and active skill states are unknown.",
+        "Ratios describe the displayed captures only. They do not reproduce either team, establish its expected payout rate, or justify fitting arbitrary calibration factors."
+      ]
+    }
+  ]
+}
