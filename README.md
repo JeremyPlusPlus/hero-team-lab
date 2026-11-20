@@ -1,8 +1,14 @@
 # Hero Team Lab
 
-Hero Team Lab is an offline team calculator for **Idle Hero TD**. Use it to ask questions like “Would a different Hunter ascension earn more gold from Mimics?” or “Who should kill bosses while I level Veteran?” It compares two ten-slot lineups using your heroes, tile placements and account bonuses.
+Hero Team Lab is a browser-based team calculator for **Idle Hero TD**. Use it to ask questions like “Would a different Hunter ascension earn more gold from Mimics?” or “Who should kill bosses while I level Veteran?” It compares two ten-slot lineups using your heroes, tile placements and account bonuses.
 
 ## Open the calculator
+
+[Launch Hero Team Lab in your browser](https://jeremyplusplus.github.io/hero-team-lab/).
+
+If you already use the downloaded calculator, choose **Export setup** in that copy, then **Import** on the website to bring over your teams and ascension ranks.
+
+### Use the offline copy
 
 1. [Download the Hero Team Lab ZIP](outputs/Hero-Team-Lab.zip?raw=true).
 2. Extract the ZIP and open `hero-team-lab.html` in a desktop browser. The file includes the calculator and all 42 supported heroes.
