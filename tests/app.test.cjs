@@ -18,22 +18,27 @@ class Element {
   constructor(tag = 'div', dataset = {}) {
     this.tagName = tag.toUpperCase(); this.dataset = dataset; this.listeners = new Map();
     this.value = ''; this.checked = false; this.disabled = false; this.hidden = false;
-    this.innerHTML = ''; this.textContent = ''; this.children = []; this.attributes = {};
+    this.innerHTML = ''; this.textContent = ''; this.children = []; this.attributes = {}; this.style = {};
     this.classList = {toggle() {}, add() {}, remove() {}};
   }
   addEventListener(type, fn) { this.listeners.set(type, [...(this.listeners.get(type) || []), fn]); }
   setAttribute(name, value) { this.attributes[name] = String(value); }
   getAttribute(name) { return this.attributes[name]; }
+  removeAttribute(name) { delete this.attributes[name]; }
   closest(selector) {
     if (selector === 'button') return this.tagName === 'BUTTON' ? this : null;
+    if (selector === '.hero-picker-field' && this.dataset.heroSearch) return this;
     const match = selector.match(/^\[data-([\w-]+)\]$/);
     const key = match?.[1].replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
     return key && Object.hasOwn(this.dataset, key) ? this : null;
   }
   focus() {}
+  select() {}
+  getBoundingClientRect() { return {left:0,top:0,bottom:36,width:140}; }
+  scrollIntoView() {}
   click() { return this.dispatch('click'); }
-  async dispatch(type, target = this) {
-    for (const listener of this.listeners.get(type) || []) await listener({target});
+  async dispatch(type, target = this, event = {}) {
+    for (const listener of this.listeners.get(type) || []) await listener({target, preventDefault() {}, ...event});
   }
 }
 
@@ -47,6 +52,7 @@ function load(candidate) {
   const timers = [], downloads = [], evaluationCalls = [], optimizationCalls = [], immortalOptimizationCalls = [];
   let exportBlob, nextSuggestion;
   const document = {
+    documentElement: {clientWidth:1200,clientHeight:900},
     getElementById(id) { assert.ok(elements.has(id), `Unknown template element #${id}`); return elements.get(id); },
     querySelectorAll(selector) {
       if (selector === '[data-detail-team]') return detailButtons;
@@ -59,7 +65,9 @@ function load(candidate) {
       return element;
     }
   };
-  const window = {setTimeout(fn) { timers.push(fn); }};
+  const list = elements.get('hero-picker-list');
+  list.querySelector = selector => selector.startsWith('#') && list.innerHTML.includes('id="' + selector.slice(1) + '"') ? new Element() : null;
+  const window = {setTimeout(fn) { timers.push(fn); }, addEventListener() {}};
   const context = vm.createContext({window, document, Blob,
     URL: {createObjectURL(blob) { exportBlob = blob; return 'blob:test'; }, revokeObjectURL() {}},
     localStorage: {getItem(key) { return stored.get(key) ?? null; }, setItem(key, value) { stored.set(key, value); }}
@@ -95,6 +103,21 @@ function load(candidate) {
     async flush() { while (timers.length) await timers.shift()(); },
     async click(id, dataset) { await document.getElementById(id).dispatch('click', dataset ? new Element('button', dataset) : undefined); },
     async change(id, dataset, value) { const target = dataset ? new Element('select', dataset) : document.getElementById(id); target.value = String(value); await document.getElementById(id).dispatch('change', target); },
+    async searchHero(address, text) {
+      const input = new Element('input',{heroSearch:address});
+      input.id = 'hero-picker-' + address.replace(':','-');
+      const tagged = elements.get('teams').innerHTML.match(new RegExp('<input[^>]*id="' + input.id + '"[^>]+>'));
+      assert.ok(tagged, 'visible hero search field ' + address);
+      input.defaultValue = tagged[0].match(/ value="([^"]+)"/)[1];
+      elements.set(input.id,input);
+      input.value=text;
+      await elements.get('teams').dispatch('input',input);
+      return input;
+    },
+    async pickHero(address, id) {
+      await this.searchHero(address,id);
+      await this.click('hero-picker-popup',{heroId:id});
+    },
     async check(id, checked, dataset) { const target = dataset ? new Element('input',dataset) : document.getElementById(id); target.checked = checked; await document.getElementById(id).dispatch('change',target); },
     async focus(focus) { await this.click('focus-controls', {focus}); },
     async import(candidate) {
@@ -128,6 +151,10 @@ function fixture() {
   return saved;
 }
 
+function legacySettingsAfterMigration(settings) {
+  return {...settings, milestoneScale: settings.milestoneScale / 1.5, defaultMilestoneLevel: 5};
+}
+
 function migratedFocusTeams(candidate) {
   const teams = clone(candidate.focusTeams);
   if (candidate.version < 11) teams.damageBuffSwap = clone(teams.damage);
@@ -149,9 +176,91 @@ function assertSingleAttacker(call, index) {
 const tests = [];
 const test = (name, run) => tests.push({name, run});
 
+test('the phone focus menu uses the same saved lineups and focus as the desktop buttons', async () => {
+  const app = load(fixture());
+  const menu = app.elements.get('phone-focus');
+  for (const focus of [...focuses, 'immortal']) assert.ok(menu.innerHTML.includes(`value="${focus}"`));
+  await app.change('phone-focus', null, 'gold');
+  assert.equal(app.state().focus, 'gold');
+  await app.change('teams', {level:'b:0'}, 777);
+  await app.focus('damage');
+  assert.equal(menu.value, 'damage');
+  await app.change('phone-focus', null, 'gold');
+  assert.equal(app.state().focusTeams.gold.teams.b[0].level, 777);
+  const reopened = load(app.state());
+  assert.equal(reopened.elements.get('phone-focus').value, 'gold');
+  assert.equal(reopened.state().focusTeams.gold.teams.b[0].level, 777);
+});
+
+test('mobile lineup shortcuts change editors without changing teams and reveal the copied challenger', async () => {
+  const app = load(fixture()), saved = app.state();
+  await app.click('teams', {openEditor:'b'});
+  assert.equal(app.elements.get('mobile-editor-b').checked, true);
+  assert.deepEqual(app.state(), saved);
+  await app.change('teams', {name:'b'}, 'Hunter trial');
+  assert.equal(app.elements.get('mobile-team-name-b').textContent, 'Hunter trial');
+  app.elements.get('mobile-editor-b').checked = false;
+  await app.click('copy-team');
+  assert.equal(app.elements.get('mobile-editor-b').checked, true);
+  assert.deepEqual(app.state().focusTeams.energy.teams.b, saved.focusTeams.energy.teams.a);
+});
+
+test('hero search previews substring matches on either team and commits only the chosen hero', async () => {
+  const initial = fixture();
+  initial.focusTeams.energy.teams.b[0] = slot('apprentice', 213, true, 'synergy');
+  const app = load(initial), teams = app.elements.get('teams'), popup = app.elements.get('hero-picker-popup');
+  const list = app.elements.get('hero-picker-list'), before = app.state().focusTeams.energy;
+  const input = await app.searchHero('b:0', 'bAl');
+  assert.equal(popup.hidden, false);
+  assert.match(list.innerHTML, />Ballista</);
+  assert.match(list.innerHTML, />Arbalest</);
+  assert.doesNotMatch(list.innerHTML, />Hunter</);
+  assert.equal(input.getAttribute('aria-activedescendant'), 'hero-option-ballista');
+  assert.deepEqual(app.state().focusTeams.energy, before);
+  await teams.dispatch('keydown', input, {key:'ArrowDown'});
+  assert.equal(input.getAttribute('aria-activedescendant'), 'hero-option-arbalest');
+  await teams.dispatch('keydown', input, {key:'ArrowUp'});
+  await teams.dispatch('keydown', input, {key:'Enter'});
+  assert.equal(popup.hidden, true);
+  assert.equal(input.getAttribute('aria-expanded'), 'false');
+  assert.deepEqual(app.state().focusTeams.energy.teams.b[0], {...before.teams.b[0], id:'ballista'});
+  assert.deepEqual(app.state().focusTeams.energy.teams.a, before.teams.a);
+
+  const invalid = await app.searchHero('a:0', 'no such hero');
+  assert.equal(list.innerHTML, '');
+  assert.match(app.elements.get('hero-picker-status').textContent, /No heroes match/);
+  await teams.dispatch('keydown', invalid, {key:'Enter'});
+  await teams.dispatch('keydown', invalid, {key:'Escape'});
+  assert.equal(popup.hidden, true);
+  assert.equal(invalid.value, 'Militia');
+  const partial = await app.searchHero('a:0', 'ter');
+  assert.match(list.innerHTML, />Hunter</);
+  await teams.dispatch('focusout', partial);
+  assert.equal(partial.value, 'Militia');
+  assert.deepEqual(app.state().focusTeams.energy.teams.a, before.teams.a);
+});
+
+test('hero search shows the three-copy limit and preserves an existing third copy', async () => {
+  const initial = fixture();
+  initial.focusTeams.energy.teams.a = ['ballista','ballista','ballista','apprentice'].map(id => slot(id,25));
+  const app = load(initial), list = app.elements.get('hero-picker-list');
+  assert.match(app.elements.get('teams').innerHTML, /id="hero-picker-a-0-class">Ranged</);
+  assert.match(app.elements.get('teams').innerHTML, /id="hero-picker-a-3-class">Mage</);
+  const input = await app.searchHero('a:3', 'bal');
+  assert.match(list.innerHTML, /data-hero-id="ballista"[^>]+aria-disabled="true"/);
+  assert.match(list.innerHTML, /Ranged · 3 in team/);
+  assert.equal(input.getAttribute('aria-activedescendant'), 'hero-option-arbalest');
+  await app.click('hero-picker-popup',{heroId:'ballista'});
+  assert.equal(app.state().focusTeams.energy.teams.a[3].id, 'apprentice');
+  await app.click('hero-picker-popup',{heroId:'arbalest'});
+  assert.equal(app.state().focusTeams.energy.teams.a[3].id, 'arbalest');
+  await app.searchHero('a:0', 'bal');
+  assert.match(list.innerHTML, /data-hero-id="ballista"[^>]+aria-selected="true" aria-disabled="false"/);
+});
+
 test('new setups keep independent teams for each standard focus and default to 10,000 base energy', async () => {
   const app = load(), state = app.state();
-  assert.equal(state.version, 20);
+  assert.equal(state.version, 21);
   assert.equal(state.settings.baseEnergy, 10000);
   assert.equal(app.engine.defaults.baseEnergy, 10000);
   assert.deepEqual(Object.keys(state.focusTeams).sort(), [...focuses].sort());
@@ -211,7 +320,7 @@ test('actual Experience suggestions include XP heroes outside the roster and kee
   assert.ok(team.some(hero => hero.id === 'veteran'));
   assert.equal(app.state().focusTeams.experience.attackers.b, 0);
   const veteran = team.findIndex(hero => hero.id === 'veteran');
-  await app.change('teams', {hero:'b:' + veteran}, 'scout');
+  await app.pickHero('b:' + veteran, 'scout');
   for (let i=2;i<4;i++) await app.click('teams', {lock:'b:' + i});
   const before = app.state();
   await app.click('optimize'); await app.flush();
@@ -241,7 +350,7 @@ test('switching focuses and reloading preserve each lineup, name, level, tile an
   for (const [index, focus] of focuses.entries()) {
     await app.focus(focus);
     await app.change('teams', {name: 'a'}, `Saved ${focus}`);
-    await app.change('teams', {hero: 'a:0'}, ['titan', 'ninja', 'ballista', 'samurai', 'captain', 'warden'][index]);
+    await app.pickHero('a:0', ['titan', 'ninja', 'ballista', 'samurai', 'captain', 'warden'][index]);
     await app.change('teams', {level: 'a:0'}, 1000 + index);
     await app.change('teams', {tile: 'a:0'}, ['normal', 'milestone', 'synergy', 'skill', 'normal', 'damage'][index]);
     await app.click('teams', {lock: 'a:0'});
@@ -363,7 +472,7 @@ test('version 12 setups migrate to eight independent Immortal lineups on load an
   await imported.import(old);
   for (const app of [load(old),imported]) {
     const saved = app.state();
-    assert.equal(saved.version, 20);
+    assert.equal(saved.version, 21);
     assert.deepEqual(saved.focusTeams,old.focusTeams);
     assert.deepEqual(saved.allowed,old.allowed);
     assert.deepEqual(Object.keys(saved.immortal.teams).sort(),[...immortalModes].sort());
@@ -519,7 +628,7 @@ test('version 1 and 2 setups migrate old teams into all focuses without shared r
     const old = {version, focus: 'gold', teams: {a: [slot('militia', 4321, true)], b: [slot('scout', 1234)]},
       names: {a: 'Old A', b: 'Old B'}, settings: {baseEnergy: 1, damageHero: 0, grandMasterStacking: 'add'}};
     const app = load(old), migrated = app.state();
-    assert.equal(migrated.version, 20);
+    assert.equal(migrated.version, 21);
     assert.equal(migrated.focus, 'gold');
     assert.equal(migrated.settings.baseEnergy, 10000);
     assert.equal(migrated.settings.grandMasterStacking, version === 1 ? 'multiply' : 'add');
@@ -615,7 +724,7 @@ test('export and import round-trip all six focus pairs including inactive attack
   const original = fixture(); original.focus = 'experience'; original.focusTeams.damage.attackers = {a: 1, b: 1};
   const source = load(original), exported = await source.export();
   assert.equal(source.downloads[0].name, 'hero-team-lab-setup.json');
-  assert.equal(exported.version, 20);
+  assert.equal(exported.version, 21);
   const target = load(); await target.import(exported);
   assert.deepEqual(target.state(), exported);
   assert.equal(target.elements.get('alert').hidden, true);
@@ -637,7 +746,7 @@ test('import validates inactive focus teams before replacing a working setup', a
     state => { delete state.immortal.teams.mage; },
     state => { state.immortal.teams.ranged.teams.a[0].id = 'unknown-hero'; },
     state => { state.immortal.teams.skill.teams.b = Array.from({length:4},()=>slot('champion')); },
-    state => { state.version = 21; }
+    state => { state.version++; }
   ]) {
     const app = load(fixture()), before = app.state(), invalid = clone(before); corrupt(invalid);
     await app.import(invalid);
@@ -778,9 +887,9 @@ test('duplicate leveler edits, replacements, bulk support levels and persistence
   await app.click('apply-level');
   assert.deepEqual(app.state().focusTeams.experience.teams.b.map(hero => hero.level), [2500, 2500, 9000]);
   assert.equal(app.evaluationCalls.at(-1).settings.experienceSupportLevel, 9000);
-  await app.change('teams', {hero:'b:2'}, 'militia');
+  await app.pickHero('b:2', 'militia');
   assert.deepEqual(app.state().focusTeams.experience.teams.b.map(hero => hero.level), [2500, 2500, 2500]);
-  await app.change('teams', {hero:'b:2'}, 'scout');
+  await app.pickHero('b:2', 'scout');
   assert.equal(app.state().focusTeams.experience.teams.b[2].level, 9000, 'a former duplicate returns to the support level');
   for (const restored of [load(app.state()), load(await app.export())]) {
     const restoredPanel = restored.state().focusTeams.experience;
@@ -803,8 +912,8 @@ test('removing the selected duplicate preserves the remaining leveling hero and 
   assert.equal(updated.teams.b[0].id, 'militia');
   assert.equal(updated.teams.b[0].level, 1500);
   assert.equal(updated.experienceOptions.b.style, 'tycoon');
-  await app.change('teams', {hero:'b:1'}, 'militia');
-  await app.change('teams', {hero:'b:0'}, 'scout');
+  await app.pickHero('b:1', 'militia');
+  await app.pickHero('b:0', 'scout');
   updated = app.state().focusTeams.experience;
   assert.deepEqual(updated.teams.b.map(hero => [hero.id,hero.level]), [['scout',1],['militia',15000]]);
 });
@@ -991,14 +1100,14 @@ test('the XP tile stays in its slot through save, copy, swap, leveler changes an
   await app.change('teams',{tile:'a:0'},'experience'); await app.click('copy-team');
   await app.click('swap-teams');
   const exported=await app.export(), imported=load(); await imported.import(exported);
-  assert.equal(exported.version,20);
+  assert.equal(exported.version,21);
   for (const restored of [load(exported),imported]) for (const key of ['a','b']) assert.equal(restored.state().focusTeams.experience.teams[key][0].tile,'experience');
   await app.change('teams',{levelingTarget:'b'},'1');
   assert.equal(app.state().focusTeams.experience.teams.b[0].tile,'experience');
   assert.equal(app.state().focusTeams.experience.teams.b[1].tile,'normal');
   await app.change('teams',{tile:'b:0'},'normal');
   await app.change('teams',{tile:'b:1'},'experience');
-  await app.change('teams',{hero:'b:1'},'scout');
+  await app.pickHero('b:1','scout');
   assert.equal(app.state().focusTeams.experience.teams.b[1].tile,'experience');
   const duplicate=xpTileFixture(); duplicate.focusTeams.experience.teams.b.push(slot('militia',1));
   const copies=load(duplicate); await copies.change('teams',{tile:'b:0'},'experience');
@@ -1025,7 +1134,7 @@ test('XP tile imports preserve a support placement and reject duplicate and inac
   }
   const old=clone(before);old.version=16;delete old.settings.experienceTile;
   const migrated=load(old).state();
-  assert.equal(migrated.version,20);assert.equal(migrated.settings.experienceTile,20);
+  assert.equal(migrated.version,21);assert.equal(migrated.settings.experienceTile,20);
   assert.deepEqual(migrated.focusTeams,old.focusTeams);assert.deepEqual(migrated.immortal.teams,old.immortal.teams);
 });
 
@@ -1033,7 +1142,7 @@ test('version 18 adds support-style search without changing current saved lineup
   const old=levelingFixture();old.version=17;
   for(const key of ['a','b']) delete old.focusTeams.experience.experienceOptions[key].optimizeSupportStyles;
   const app=load(old),state=app.state();
-  assert.equal(state.version,20);
+  assert.equal(state.version,21);
   assert.deepEqual(state.focusTeams.experience.teams,old.focusTeams.experience.teams);
   for(const key of ['a','b']) assert.equal(state.focusTeams.experience.experienceOptions[key].optimizeSupportStyles,true);
   assert.ok(state.focusTeams.experience.teams.b.every(slot=>!slot.combatStyle));
@@ -1056,9 +1165,9 @@ test('manual support styles synchronize duplicate heroes and enforce the lowest 
   assert.deepEqual(app.state(),before);assert.match(app.elements.get('alert').textContent,/not unlocked on every copy/);
   await app.change('teams',{xpSupportStyle:'b:1'},'tycoon');
   assert.ok(team().filter(slot=>slot.id==='archer').every(slot=>slot.combatStyle==='tycoon'));
-  await app.change('teams',{hero:'b:1'},'scout');
+  await app.pickHero('b:1','scout');
   assert.equal(team()[1].combatStyle,undefined);assert.equal(team()[2].combatStyle,'tycoon');
-  await app.change('teams',{hero:'b:1'},'archer');
+  await app.pickHero('b:1','archer');
   assert.equal(team()[1].combatStyle,'tycoon');
   await app.change('teams',{xpSupportStyle:'b:1'},'');
   assert.ok(team().filter(slot=>slot.id==='archer').every(slot=>!slot.combatStyle));
@@ -1118,7 +1227,7 @@ test('XP profiles default to the captured bonuses and migrate missing inputs wit
   const old = fixture(); old.version = 15;
   for (const key of Object.keys(xpProfileDefaults)) delete old.settings[key];
   const upgraded = load(old).state();
-  assert.equal(upgraded.version, 20);
+  assert.equal(upgraded.version, 21);
   for (const [key,value] of Object.entries(xpProfileDefaults)) assert.equal(upgraded.settings[key], value, key);
   assert.deepEqual(upgraded.focusTeams, old.focusTeams);
   assert.deepEqual(upgraded.immortal.teams, old.immortal.teams);
@@ -1251,7 +1360,7 @@ test('Magnate unlocks at 4000 and pinned styles persist in exported setups', asy
     await app.flush(); assert.equal(app.optimizationCalls.at(-1).settings.experienceStyle,'magnate');
   }
   const exported=await app.export(),imported=load();await imported.import(exported);
-  assert.equal(exported.version,20);
+  assert.equal(exported.version,21);
   for(const restored of [load(exported),imported]) {
     assert.equal(restored.state().focusTeams.experience.experienceOptions.b.style,'magnate');
     assert.equal(restored.evaluationCalls.at(-1).result.experiencePlan.styleId,'magnate');
@@ -1303,7 +1412,7 @@ test('v11 imports keep the selected leveler and current level and introduce auto
   await imported.import(old);
   for (const restored of [load(old), imported]) {
     const state = restored.state(), panel = state.focusTeams.experience;
-    assert.equal(state.version, 20);
+    assert.equal(state.version, 21);
     assert.deepEqual(panel.teams, old.focusTeams.experience.teams);
     assert.deepEqual(panel.levelingTargets, old.focusTeams.experience.levelingTargets);
     assert.deepEqual(panel.experienceOptions.b, {style: 'auto', attacker: 'best', supportLevel: 1499, optimizeSupportStyles:true});
@@ -1328,7 +1437,7 @@ test('Experience defaults and old default saves use captured account totals whil
     delete old.settings.experienceReference;
     if (base === undefined) delete old.settings.experienceBaseRankXp; else old.settings.experienceBaseRankXp = base;
     const migrated = load(old).state();
-    assert.equal(migrated.version, 20);
+    assert.equal(migrated.version, 21);
     assert.equal(!!migrated.settings.experienceReference, base !== 66000000);
     assert.deepEqual(migrated.focusTeams, old.focusTeams);
   }
@@ -1560,7 +1669,7 @@ test('only the original default XP capture upgrades to the confirmed Archer 5000
     ['ranger','milestone'],['ballista','milestone'],['ballista','milestone'],['veteran','synergy'],
     ['templar','normal'],['veteran','synergy']].map(([id,tile]) => slot(id,id === 'archer' ? 1500 : 15000,false,tile));
   const original = clone(seed.engine.captureExperienceReference(team,
-    {experienceLeveler:1,experienceAttacker:'self',experienceStyle:'expFactory',synergyEvent:true,experienceVeteranSuperChance:106.2,experienceVeteranShareChance:258,experienceVeteranSuperAmountPerStack:16.3},
+    {defaultMilestoneLevel:5,heroSynergyDefault:25,heroSynergyCrusader:25,requirementReduction:1,experienceLeveler:1,experienceAttacker:'self',experienceStyle:'expFactory',synergyEvent:true,experienceVeteranSuperChance:106.2,experienceVeteranShareChance:258,experienceVeteranSuperAmountPerStack:16.3},
     {rankBonus:66000000,superChance:300,ultraChance:300},
     'Archer 1,500 + Wizard/Viking · supports 15,000 · Exp Factory · event on · Veteran 100 stacks'));
   original.modeledSuperChance = 220.01931970234375;
@@ -1750,7 +1859,7 @@ test('version 3 Gold migration chooses the strongest Hunter copy for A and best 
   };
   old.focusTeams.gold.attackers = {a: 1, b: 1}; old.focusTeams.gold.chooseAttacker = true;
   const app = load(old), saved = app.state(), gold = saved.focusTeams.gold;
-  assert.equal(saved.version, 20);
+  assert.equal(saved.version, 21);
   assert.equal(saved.settings.baseEnergy, 1, 'version 3 explicit base energy must survive Gold migration');
   assert.equal(gold.attackers.a, 2, 'Hunter is preferred and the copy with unlocked personal Gold milestone wins');
   assert.equal(gold.attackers.b, 0, 'B selects highest Gold index, not its previously unused damage-based slot');
@@ -1888,7 +1997,7 @@ test('Gold attacker selections and automatic search survive focus changes, reloa
   await app.check('choose-attacker', true);
   await app.focus('experience');
   const exported = await app.export();
-  assert.equal(exported.version, 20);
+  assert.equal(exported.version, 21);
   const reloaded = load(exported), imported = load(); await imported.import(exported);
   for (const saved of [reloaded, imported]) {
     assert.deepEqual(saved.state(), exported);
@@ -1901,7 +2010,7 @@ test('Gold attacker selections and automatic search survive focus changes, reloa
 });
 
 test('Gold comparison explains selected attacker factors and hides outside the Gold focus', async () => {
-  const initial = fixture(); initial.focus = 'gold'; initial.settings.maxTier = 9;
+  const initial = fixture(); initial.focus = 'gold'; initial.settings.maxTier = 9; initial.settings.requirementReduction = 1;
   initial.focusTeams.gold.teams = {
     a: [slot('hunter', 10000), slot('rogue', 10000), slot('scout', 10000)],
     b: [slot('paladin', 10000), slot('hunter', 10000), slot('rogue', 10000)]
@@ -1977,7 +2086,7 @@ test('version 4 Experience targets become attackers while explicit Gold choices 
   initial.focusTeams.gold.attackers.a = 1;
   initial.focusTeams.gold.chooseAttacker = true;
   const app = load(initial), migrated = app.state();
-  assert.equal(migrated.version, 20);
+  assert.equal(migrated.version, 21);
   assert.deepEqual(migrated.focusTeams.experience.attackers, {a: 2, b: 1});
   assert.deepEqual(migrated.focusTeams.experience.levelingTargets, {a: 2, b: 1});
   assert.equal(migrated.focusTeams.gold.attackers.a, 1, 'v4 Gold selections must not be reset by Hunter migration');
@@ -2031,12 +2140,47 @@ test('Gold suggestions require Hunter Rogue and Sovereign even when optional sup
   for (const other of app.evaluationCalls.slice(-2)) assert.deepEqual(other.settings.requiredHeroes, []);
 });
 
+test('new accounts inherit zero ascensions while a legacy build retains its effective ranks through reload', async () => {
+  const fresh = load(), defaults = fresh.state().settings;
+  const inherited = ['defaultMilestoneLevel','heroSynergyDefault','heroSynergyCrusader','heroSynergyWarden','requirementReduction'];
+  assert.deepEqual(inherited.map(key => defaults[key]), [0,0,0,0,0]);
+  assert.equal(defaults.milestoneScale, 1.875);
+  assert.deepEqual(defaults.heroAscensions, {});
+  assert.match(fresh.elements.get('ascension-milestone').innerHTML, /Inherit · \+0%/);
+  assert.match(fresh.elements.get('ascension-synergy').innerHTML, /Inherit · \+0%/);
+  assert.equal(fresh.elements.get('ascension-zero-defaults').hidden, true);
+
+  const old = fixture();
+  old.version = 20;
+  const savedRanks = {militia:{milestoneLevel:0,synergyLevel:0}, crusader:{synergyLevel:3}};
+  Object.assign(old.settings, {milestoneScale:3, heroSynergyCrusader:15, heroSynergyWarden:0, heroAscensions:savedRanks});
+  for (const key of ['defaultMilestoneLevel','heroSynergyDefault','requirementReduction']) delete old.settings[key];
+  old.focusTeams.energy.ascensionOverrides = {a:{}, b:{militia:{milestoneLevel:2}}};
+  const app = load(old), migrated = app.state();
+  assert.deepEqual(inherited.map(key => migrated.settings[key]), [5,25,15,0,1]);
+  assert.equal(migrated.settings.milestoneScale, 2);
+  assert.deepEqual(migrated.settings.heroAscensions, savedRanks);
+  assert.equal(app.elements.get('ascension-zero-defaults').hidden, false);
+  const scales = () => app.evaluationCalls.slice(-2).map(call =>
+    Array.from(call.result.heroes, hero => hero.effectiveScales.milestone));
+  assert.deepEqual(scales(), [[2,3,3],[3,2.4]]);
+  assert.deepEqual(load(await app.export()).state(), migrated);
+
+  await app.click('ascension-zero-defaults');
+  const cleared = await app.export();
+  assert.deepEqual(inherited.map(key => cleared.settings[key]), [0,0,0,0,0]);
+  assert.deepEqual(cleared.settings.heroAscensions, savedRanks);
+  assert.deepEqual(cleared.focusTeams, migrated.focusTeams);
+  assert.deepEqual(scales(), [[2,2,2],[2,2.4]]);
+  assert.deepEqual(load(cleared).state(), cleared);
+});
+
 test('event defaults and Crusader upgrade migrate older setups without changing saved teams', async () => {
   const fresh = load();
   assert.equal(fresh.state().settings.synergyEvent, true);
-  assert.equal(fresh.state().settings.heroSynergyCrusader, 25);
+  assert.equal(fresh.state().settings.heroSynergyCrusader, 0);
   assert.equal(fresh.elements.get('synergy-event').checked, true);
-  const old = fixture(); delete old.settings.synergyEvent; old.settings.heroSynergyCrusader = 15;
+  const old = fixture(); old.version = 20; delete old.settings.synergyEvent; old.settings.heroSynergyCrusader = 15;
   const migrated = load(old).state();
   assert.equal(migrated.settings.synergyEvent, true);
   assert.equal(migrated.settings.heroSynergyCrusader, 25);
@@ -2108,7 +2252,7 @@ test('versions 3–5 independently copy Energy A/B into Power Mage focus without
     old.focusTeams.energy.names = {a: 'My wave A', b: 'My wave B'};
     old.focusTeams.energy.attackers = {a: 1, b: 0};
     const app = load(old), saved = app.state();
-    assert.equal(saved.version, 20);
+    assert.equal(saved.version, 21);
     assert.deepEqual(saved.focusTeams.powerMageEnergy, saved.focusTeams.energy);
     for (const focus of focuses.filter(key => !['powerMageEnergy', 'damageBuffSwap'].includes(key))) {
       assert.deepEqual(saved.focusTeams[focus].teams, old.focusTeams[focus].teams);
@@ -2540,7 +2684,7 @@ test('v18 saves inherit ascensions and both Hunter presets persist through searc
   saved.version = 18;
   delete saved.settings.heroAscensions;
   const app = load(saved);
-  assert.equal(app.state().version,20);
+  assert.equal(app.state().version,21);
   assert.deepEqual(app.state().settings.heroAscensions,{});
   assert.deepEqual(app.state().focusTeams.gold,saved.focusTeams.gold);
   const hunterScore = () => app.evaluationCalls.at(-1).result.metrics.gold;
@@ -2791,7 +2935,7 @@ test('version 7 migration adds Damage skill settings while preserving every save
   initial.focusTeams.damage.teams.a[0].locked = true;
   initial.focusTeams.damage.teams.a[0].level = 4321;
   const app = load(initial), migrated = app.state();
-  assert.equal(migrated.version, 20);
+  assert.equal(migrated.version, 21);
   assert.deepEqual(migrated.focusTeams, migratedFocusTeams(initial));
   assert.equal(migrated.settings.damageSkills, true);
   assert.equal(migrated.settings.damageTile, 2475);
@@ -3003,9 +3147,9 @@ test('version 10 adds independent buff-swap copies of Damage A/B and preserves e
   initial.focusTeams.damage.teams.a[0] = slot('warden', 12000, true, 'damage');
   initial.focusTeams.damage.teams.b[0] = slot('praetorian', 14000, false, 'skill');
   const app = load(initial), migrated = app.state();
-  assert.equal(migrated.version, 20);
+  assert.equal(migrated.version, 21);
   assert.equal(migrated.settings.damageSupportStacks, 37);
-  assert.deepEqual(migrated.settings, {...initial.settings, chanceReferences:clone(app.engine.defaultChanceReferences())});
+  assert.deepEqual(migrated.settings, {...legacySettingsAfterMigration(initial.settings), chanceReferences:clone(app.engine.defaultChanceReferences())});
   assert.deepEqual(migrated.focusTeams, migratedFocusTeams(initial));
   assert.deepEqual(migrated.focusTeams.damageBuffSwap, migrated.focusTeams.damage);
   assert.equal(app.elements.get('migration-notice').hidden, false);
@@ -3152,9 +3296,9 @@ test('version 8 migration adds Damage support profiles without changing teams or
   initial.settings.damagePraetorianSuperCritDamage = 9000;
   initial.focusTeams.damage.teams.a[0] = slot('warden', 4321, true, 'damage');
   const app = load(initial), migrated = app.state();
-  assert.equal(migrated.version, 20);
+  assert.equal(migrated.version, 21);
   assert.deepEqual(migrated.focusTeams, migratedFocusTeams(initial));
-  for (const [key, value] of Object.entries(initial.settings)) assert.deepEqual(migrated.settings[key], key === 'chanceReferences' ? clone(app.engine.defaultChanceReferences()) : value, `Existing setting ${key} should survive migration`);
+  for (const [key, value] of Object.entries(legacySettingsAfterMigration(initial.settings))) assert.deepEqual(migrated.settings[key], key === 'chanceReferences' ? clone(app.engine.defaultChanceReferences()) : value, `Existing setting ${key} should survive migration`);
   for (const [key, value] of Object.entries({damageSupportSkills: true, damageSupportSeconds: 20, damageSupportStacks: 0,
     damageSupportTeleports: 3, damageNecromancerRoll: 'midpoint', damageSupportDruidDamage: 7180,
     damageSupportDruidDamagePerSecond: 82.4, damageSupportWizardTripleShotChance: 206, damageSupportNecromancerDamageMax: 8070}))
@@ -3204,11 +3348,11 @@ test('pre-10 saves adopt zero kill stacks once while keeping time, teleports, pr
     initial.settings.damageSupportTeleports = 5;
     initial.settings.damageSupportSpelldancerCritDamagePerStack = 150;
     const app = load(initial), migrated = app.state();
-    assert.equal(migrated.version, 20);
+    assert.equal(migrated.version, 21);
     assert.equal(migrated.settings.damageSupportStacks, 0);
     assert.deepEqual(migrated.focusTeams, migratedFocusTeams(initial));
     assert.deepEqual(migrated.supportRanking, initial.supportRanking);
-    for (const [key, value] of Object.entries(initial.settings)) if (key !== 'damageSupportStacks')
+    for (const [key, value] of Object.entries(legacySettingsAfterMigration(initial.settings))) if (key !== 'damageSupportStacks')
       assert.deepEqual(migrated.settings[key], key === 'chanceReferences' ? clone(app.engine.defaultChanceReferences()) : value, `${key} survives the zero-kill migration`);
     assert.equal(Number(app.elements.get('damage-support-stacks').value), 0);
     assert.equal(app.elements.get('migration-notice').hidden, false);
@@ -3217,7 +3361,7 @@ test('pre-10 saves adopt zero kill stacks once while keeping time, teleports, pr
     assert.deepEqual(imported.state(), migrated, 'Import uses the same one-time migration as local saves');
     await app.change('damage-support-stacks', null, 25);
     const exported = await app.export();
-    assert.equal(exported.version, 20);
+    assert.equal(exported.version, 21);
     assert.equal(exported.settings.damageSupportStacks, 25);
     const reloaded = load(exported); await imported.import(exported);
     for (const restored of [reloaded, imported]) {
@@ -3364,7 +3508,7 @@ test('current saves receive missing Crusader Gold defaults without changing any 
   initial.focusTeams.gold.teams.a[0] = slot('crusader', 4321, true, 'skill');
   initial.settings.damageWardenDistance = 5.35;
   const app = load(initial), restored = app.state();
-  assert.equal(restored.version, 20);
+  assert.equal(restored.version, 21);
   assert.deepEqual(restored.focusTeams, initial.focusTeams);
   assert.equal(restored.settings.damageWardenDistance, 5.35);
   for (const [id, key, value] of [['gold-crusader-bonus', 'goldCrusaderBonus', 6420], ['gold-crusader-mastery', 'goldCrusaderMastery', 20.6], ['gold-crusader-attacks', 'goldCrusaderAttacks', 1]]) {

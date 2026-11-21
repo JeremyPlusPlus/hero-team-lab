@@ -89,7 +89,7 @@ test('milestone level thresholds are inclusive and respect individual hero level
 test('tier settings gate synergy unlocks independently from milestone levels', () => {
   const members = team('militia', 'druid');
   assert.equal(contains(baseline(E, members, {maxTier: 1}), 'militia', 4), false);
-  assert.equal(contains(baseline(E, members, {maxTier: 2}), 'militia', 4), true);
+  assert.equal(contains(baseline(E, members, {maxTier: 2, requirementReduction: 1}), 'militia', 4), true);
   assert.equal(contains(baseline(E, members, {maxTier: 2, requirementReduction: 0}), 'militia', 4), false);
   assert.equal(contains(baseline(E, team('militia', 'druid', 'battlemage'),
     {maxTier: 2, requirementReduction: 0}), 'militia', 4), true);
@@ -108,8 +108,8 @@ test('reduced four-hero synergy counts repeated partner copies separately', () =
   assert.equal(E.synergyActive('sovereign', s, {sovereign: 1, crusader: 2}, 1), true);
   assert.equal(E.synergyActive('sovereign', s, {sovereign: 1, crusader: 2}, 0), false);
   assert.equal(E.synergyActive('sovereign', s, {sovereign: 1, crusader: 3}, 0), true);
-  assert.equal(contains(baseline(E, team('sovereign', 'crusader', 'crusader'), {maxTier: 7}), 'sovereign', 15), false);
-  assert.equal(contains(baseline(E, team('sovereign', 'crusader', 'crusader'), {maxTier: 8}), 'sovereign', 15), true);
+  assert.equal(contains(baseline(E, team('sovereign', 'crusader', 'crusader'), {maxTier: 7, requirementReduction: 1}), 'sovereign', 15), false);
+  assert.equal(contains(baseline(E, team('sovereign', 'crusader', 'crusader'), {maxTier: 8, requirementReduction: 1}), 'sovereign', 15), true);
 });
 
 test('owner copy cannot double as its own required partner', () => {
@@ -531,7 +531,7 @@ test('Gold attacker receives its own personal milestones and synergies plus glob
 test('Hunter Gold score includes its level-6000 milestone and personal partner synergies without averaging', () => {
   const members = [slot('hunter', 6000), slot('captain'), slot('scout')];
   const settings = {milestoneScale: 1, accountSynergyBoosts: false, grandMaster: false, snowFort: false,
-    goldHero: 0, maxTier: 5, goldSkills: false};
+    goldHero: 0, requirementReduction: 1, maxTier: 5, goldSkills: false};
   const result = E.evaluate(members, settings);
   // Hunter + Scout and Captain + Hunter give global Kill Gold 1.1 * 2.5.
   // Captain satisfies Hunter's reduced T4 and T5 links: +15 personal chance and x5.5 Kill Gold.
@@ -712,7 +712,7 @@ test('Boss Gold scoring matches placement and compiled objectives with mixed per
   const members = ['hunter','rogue','scout','ninja','assassin','elementalist','ranger','samurai','berserker'].map((id,i)=>
     tiled(id, ['milestone','synergy','normal','skill'][i%4], 15000, i===0));
   for (const grandMaster of [false,true]) for (const snowFort of [false,true]) for (const goldHero of [0,3,'best']) {
-    const settings = {grandMaster, snowFort, goldHero, baseOverflow: 225};
+    const settings = {requirementReduction: 1, grandMaster, snowFort, goldHero, baseOverflow: 225};
     const result = E.evaluate(members, settings);
     assert.ok(result.effects.some(effect=>effect.type==='Boss Gold' && effect.global));
     assert.ok(result.effects.some(effect=>effect.type==='Boss Gold' && !effect.global));
@@ -809,7 +809,7 @@ test('confirmed account tier boosts are independent of the map and disabling the
   near(S.defaults.synergyScale, 1);
   assert.equal(S.defaults.accountSynergyBoosts, true);
   const members = team('militia', 'b');
-  const tierOnly = {grandMaster: false, synergyGlobalBonus1: 0, synergyGlobalBonus2: 0, synergyGlobalBonus3: 0};
+  const tierOnly = {heroSynergyDefault: 25, grandMaster: false, synergyGlobalBonus1: 0, synergyGlobalBonus2: 0, synergyGlobalBonus3: 0};
   const offMap = S.evaluate(members, {...tierOnly, snowFort: false});
   const onMap = S.evaluate(members, {...tierOnly, snowFort: true});
   const expectedOffMap = [78, 78, 31, 31, 13, 13, 13, 13, 13];
@@ -834,7 +834,7 @@ test('hero synergy boosts modify each emitter once and do not boost recipients o
     ]}));
   const S = synthetic([...records, {id: 'b'}, {id: 'c'}]);
   const members = ['militia', 'crusader', 'warden', 'b'].map(id => slot(id, 25));
-  const settings = {grandMaster: false, snowFort: false, damageSkills: false, heroSynergyCrusader: 15, synergyGlobalBonus1: 0, synergyGlobalBonus2: 0, synergyGlobalBonus3: 0};
+  const settings = {grandMaster: false, snowFort: false, damageSkills: false, heroSynergyDefault: 25, heroSynergyCrusader: 15, synergyGlobalBonus1: 0, synergyGlobalBonus2: 0, synergyGlobalBonus3: 0};
   const result = S.evaluate(members, settings);
   near(result.global.synergy['Energy Income'], 340); // 125 + 115 + 100, once per emitter.
   result.heroes.forEach(h => near(h.metrics.energy, 10340));
@@ -846,7 +846,7 @@ test('hero synergy boosts modify each emitter once and do not boost recipients o
   near(S.evaluate([...members, slot('c')], settings).global.synergy['Energy Income'], 340);
   const disabled = S.evaluate(members, {...settings, accountSynergyBoosts: false});
   near(disabled.global.synergy['Energy Income'], 300);
-  near(result.global.milestone['Skill Power'], 33.75);
+  near(result.global.milestone['Skill Power'], 22.5);
   near(result.global.milestone['Skill Power'], disabled.global.milestone['Skill Power']);
   near(S.makeScorer(settings, 'energy', members)(members), 10340);
 });
@@ -857,7 +857,7 @@ test('explicit additive synergy GM mode combines owner and tier factors before o
   ]}, {id: 'b'}, ...Array.from({length: 7}, (_, i) => ({id: 'c' + i}))];
   const S = synthetic(records);
   const members = records.map(h => tiled(h.id, 'normal'));
-  const settings = {grandMaster: true, snowFort: true, grandMasterStacking: 'add', synergyGrandMasterStacking: 'add',
+  const settings = {heroSynergyDefault: 25, grandMaster: true, snowFort: true, grandMasterStacking: 'add', synergyGrandMasterStacking: 'add',
     synergyGlobalBonus1: 0, synergyGlobalBonus2: 0, synergyGlobalBonus3: 0};
   const result = S.evaluate(members, settings);
   near(result.style.bonusScale, 1.9);
@@ -876,7 +876,8 @@ test('nine compounding Grand Masters plus confirmed account factors reproduce Mi
     {id: 'b'}, ...Array.from({length: 7}, (_, i) => ({id: 'c' + i}))];
   const S = synthetic(records);
   const members = records.map(h => tiled(h.id, 'normal'));
-  const result = S.evaluate(members);
+  const settings = {heroAscensions: {militia: {synergyLevel: 5}}};
+  const result = S.evaluate(members, settings);
   assert.equal(S.defaults.synergyGrandMasterStacking, 'multiply');
   near(result.style.bonusScale, 1.1 ** 9);
   near(result.style.synergyBonusScale, 1.1 ** 9);
@@ -888,7 +889,7 @@ test('nine compounding Grand Masters plus confirmed account factors reproduce Mi
     near(effect.value, captured[effect.index], `Militia captured synergy ${effect.index}`);
   }
   for (const focus of ['energy', 'gold', 'experience', 'damage']) {
-    near(S.makeScorer({}, focus, members)(members), result.metrics[focus], `capture ${focus} scorer`);
+    near(S.makeScorer(settings, focus, members)(members), result.metrics[focus], `capture ${focus} scorer`);
   }
 });
 
@@ -1236,7 +1237,7 @@ test('Power Mage energy respects nine-GM event and owner tiles in both scoring p
   const members = [tiled('captain', 'milestone', 7500), tiled('arbalest', 'synergy'),
     ...team('militia', 'spelldancer', 'a', 'b', 'c', 'd', 'e')];
   for (const grandMasterStacking of ['add', 'multiply']) for (const synergyGrandMasterStacking of ['add', 'multiply']) {
-    const settings = {synergyEvent: true, requirementReduction: 0, grandMasterStacking, synergyGrandMasterStacking};
+    const settings = {defaultMilestoneLevel: 5, heroSynergyDefault: 25, synergyEvent: true, requirementReduction: 0, grandMasterStacking, synergyGrandMasterStacking};
     const milestonePool = grandMasterStacking === 'multiply' ? 1.1 ** 9 : 1.9;
     const synergyPool = synergyGrandMasterStacking === 'multiply' ? 1.1 ** 9 : 1.9;
     const milestoneValue = 10 * 2.8125 * (milestonePool + 0.2) * 1.25;
@@ -1394,10 +1395,10 @@ test('synergy GM compounding is independent of milestone stacking and the accoun
   const result = S.evaluate(members, {snowFort: false, grandMasterStacking: 'add'});
   near(result.style.bonusScale, 2);
   near(result.style.synergyBonusScale, 2.5937424601);
-  near(result.style.effectiveMilestoneScale, 5.625);
+  near(result.style.effectiveMilestoneScale, 3.75);
   near(result.global.style['Milestone Bonus'], 2);
   near(result.global.style['Synergy Bonus'], 2.5937424601);
-  near(result.heroes[0].effectiveScales.synergy, 2.5937424601 * 1.25 * 1.157625);
+  near(result.heroes[0].effectiveScales.synergy, 2.5937424601 * 1.157625);
 
   const withoutProfile = S.evaluate(members, {snowFort: false, accountSynergyBoosts: false, grandMasterStacking: 'add'});
   near(withoutProfile.style.synergyBonusScale, 2.5937424601);
@@ -1415,7 +1416,7 @@ test('synergy GM compounding is independent of milestone stacking and the accoun
   near(gmDisabled.style.count, 0);
   near(gmDisabled.style.bonusScale, 1);
   near(gmDisabled.style.synergyBonusScale, 1);
-  near(gmDisabled.heroes[0].effectiveScales.synergy, 1.25 * 1.157625);
+  near(gmDisabled.heroes[0].effectiveScales.synergy, 1.157625);
   const empty = S.evaluate([], {snowFort: false});
   near(empty.style.count, 0);
   near(empty.style.bonusScale, 1);
@@ -1427,7 +1428,7 @@ test('the three global synergy bonuses multiply once and remain separate from ma
     {index: 1, tier: 8, requires: ['b'], type: 'Energy Income', value: 100, global: true}
   ]}, {id: 'b'}, {id: 'c'}]);
   const members = [slot('militia', 25), slot('b')];
-  const settings = {grandMaster: false, snowFort: false, milestoneScale: 1};
+  const settings = {heroSynergyDefault: 25, grandMaster: false, snowFort: false, milestoneScale: 1};
   const result = S.evaluate(members, settings);
   near(result.global.synergy['Energy Income'], 145); // ROUND(100 × 1.25 × 1.05³).
   near(result.global.milestone['Energy Income'], 2);
@@ -1504,22 +1505,22 @@ test('confirmed permanent account factors scale milestone values once without ro
   const S = synthetic(records);
   const members = [slot('a', 25), slot('b')];
   const settings = {accountSynergyBoosts: false, grandMaster: false, snowFort: false};
-  near(S.defaults.milestoneScale, 1.5 * 1.25 * 1.5);
+  near(S.defaults.milestoneScale, 1.5 * 1.25);
   const result = S.evaluate(members, settings);
-  near(result.style.milestoneScale, 2.8125);
-  near(result.style.effectiveMilestoneScale, 2.8125);
-  near(result.heroes[0].effectiveScales.milestone, 2.8125);
-  near(result.effects.find(e => e.kind === 'milestone' && e.type === 'Damage').value, 28.125);
-  near(result.heroes[0].local.milestone['Skill Cooldown'], -5.625);
-  near(result.global.milestone['Energy Income'], 5.625);
-  near(result.metrics.energy, 10005.625);
+  near(result.style.milestoneScale, 1.875);
+  near(result.style.effectiveMilestoneScale, 1.875);
+  near(result.heroes[0].effectiveScales.milestone, 1.875);
+  near(result.effects.find(e => e.kind === 'milestone' && e.type === 'Damage').value, 18.75);
+  near(result.heroes[0].local.milestone['Skill Cooldown'], -3.75);
+  near(result.global.milestone['Energy Income'], 3.75);
+  near(result.metrics.energy, 10003.75);
   near(result.global.synergy.Damage, 1.1);
-  near(result.heroes[0].metrics.damage, 1.1 * 1.28125);
+  near(result.heroes[0].metrics.damage, 1.1 * 1.1875);
   near(result.heroes[1].metrics.damage, 1.1);
   // Repeated evaluations and independent compiled scorers must not mutate/re-scale source data.
   for (let i = 0; i < 3; i++) {
-    near(S.evaluate(members, settings).metrics.energy, 10005.625);
-    near(S.makeScorer(settings, 'energy', members)(members), 10005.625);
+    near(S.evaluate(members, settings).metrics.energy, 10003.75);
+    near(S.makeScorer(settings, 'energy', members)(members), 10003.75);
   }
   assert.equal(JSON.stringify(records), originalRecords);
   const raw = S.evaluate(members, {...settings, milestoneScale: 1});
@@ -1529,12 +1530,12 @@ test('confirmed permanent account factors scale milestone values once without ro
 
 test('default nine-GM milestone compounding reproduces all seventeen Militia screenshot values', () => {
   const members = D.heroes.slice(0, 9).map(h => tiled(h.id, 'normal', h.id === 'militia' ? 10000 : 0));
-  const settings = {maxTier: 0};
+  const settings = {maxTier: 0, heroAscensions: {militia: {milestoneLevel: 5}}};
   const result = E.evaluate(members, settings);
   const scale = 6.631727880937506; // 2.8125 permanent × 1.1^9 Grand Masters.
   near(result.style.count, 9);
   near(result.style.bonusScale, 1.1 ** 9);
-  near(result.style.effectiveMilestoneScale, scale);
+  near(result.style.effectiveMilestoneScale, scale / 1.5);
   near(result.heroes[0].effectiveScales.milestone, scale);
   const milestones = result.effects.filter(e => e.kind === 'milestone' && e.ownerId === 'militia');
   const displayed = [66, 7, 199, 66, 53, 20, -106, 106, 27, 199, 239, 99, 33, 13, 166, 1990, 2321];
@@ -1561,20 +1562,20 @@ test('milestone GM defaults compound for ten owners, preserve explicit add mode,
   const settings = {maxTier: 0};
   const compound = E.evaluate(members, settings);
   near(compound.style.bonusScale, 2.5937424601);
-  near(compound.style.effectiveMilestoneScale, 7.294900669031256);
-  near(compound.heroes[0].effectiveScales.milestone, 7.294900669031256);
+  near(compound.style.effectiveMilestoneScale, 1.875 * 1.1 ** 10);
+  near(compound.heroes[0].effectiveScales.milestone, 1.875 * 1.1 ** 10);
   const additive = E.evaluate(members, {...settings, grandMasterStacking: 'add'});
   near(additive.style.bonusScale, 2);
-  near(additive.style.effectiveMilestoneScale, 5.625);
+  near(additive.style.effectiveMilestoneScale, 3.75);
   near(additive.style.synergyBonusScale, compound.style.synergyBonusScale);
   const disabled = E.evaluate(members, {...settings, grandMaster: false});
   near(disabled.style.count, 0);
   near(disabled.style.bonusScale, 1);
-  near(disabled.style.effectiveMilestoneScale, 2.8125);
-  near(disabled.effects.find(e => e.kind === 'milestone' && e.level === 25).value, 28.125);
+  near(disabled.style.effectiveMilestoneScale, 1.875);
+  near(disabled.effects.find(e => e.kind === 'milestone' && e.level === 25).value, 18.75);
   const empty = E.evaluate([], settings);
   near(empty.style.count, 0);
-  near(empty.style.effectiveMilestoneScale, 2.8125);
+  near(empty.style.effectiveMilestoneScale, 1.875);
   const noPermanent = E.evaluate(members, {...settings, milestoneScale: 1});
   near(noPermanent.style.effectiveMilestoneScale, 2.5937424601);
 });
@@ -1587,16 +1588,16 @@ test('permanent boosts multiply an explicit additive ten-GM pool plus owner tile
   const settings = {grandMaster: true, snowFort: true, grandMasterStacking: 'add'};
   const result = S.evaluate(members, settings);
   near(result.style.bonusScale, 2);
-  near(result.style.effectiveMilestoneScale, 5.625);
-  near(result.heroes[0].effectiveScales.milestone, 6.1875);
-  near(result.heroes[1].effectiveScales.milestone, 5.625);
-  near(result.global.milestone['Energy Income'], 61.875);
-  result.heroes.forEach(h => near(h.metrics.energy, 10061.875));
+  near(result.style.effectiveMilestoneScale, 3.75);
+  near(result.heroes[0].effectiveScales.milestone, 4.125);
+  near(result.heroes[1].effectiveScales.milestone, 3.75);
+  near(result.global.milestone['Energy Income'], 41.25);
+  result.heroes.forEach(h => near(h.metrics.energy, 10041.25));
   near(result.global.style['Skill Power'], 50);
   near(result.global.style.Damage, 2.5 ** 10);
-  near(S.makeScorer(settings, 'energy', members)(members), 10061.875);
+  near(S.makeScorer(settings, 'energy', members)(members), 10041.25);
   const receiverTile = members.map((s, i) => ({...s, tile: i === 1 ? 'milestone' : 'normal'}));
-  near(S.evaluate(receiverTile, settings).global.milestone['Energy Income'], 56.25);
+  near(S.evaluate(receiverTile, settings).global.milestone['Energy Income'], 37.5);
 });
 
 test('verified level-10000 milestones unlock inclusively and preserve personal versus global scope', () => {
@@ -1785,8 +1786,8 @@ test('optimizer respects locks, allowed candidates, slot levels and current elig
   }
 });
 
-test('milestone support defaults include every hero once and reproduce independent global-only leaders', () => {
-  const result = E.rankMilestoneSupport();
+test('milestone support includes every hero once and reproduces the captured rank-five global leaders', () => {
+  const result = E.rankMilestoneSupport({defaultMilestoneLevel: 5});
   assert.equal(result.level, 15000);
   assert.equal(result.grandMasterCount, 10);
   assert.equal(result.tile, 'normal');
@@ -1917,7 +1918,7 @@ test('XP support ranks Apprentice and Necromancer against the captured Rank XP a
     near(r.baseline.experience, 35.75);
     near(r.xpReference.spilloverFactor, 35.75);
 
-    const scale = 2.8125 * 1.1 ** 10 * (synergyEvent ? 1.25 : 1);
+    const scale = 1.875 * 1.1 ** 10 * (synergyEvent ? 1.25 : 1);
     const apprentice = r.heroes.find(h => h.id === 'apprentice');
     const necromancer = r.heroes.find(h => h.id === 'necromancer');
     // These are projected gains on the captured reference, not measured swaps.
@@ -2129,10 +2130,10 @@ test('event factors multiply outside the Grand Master and owner tile pools once'
     const settings = {synergyEvent: true, grandMasterStacking: stacking, synergyGrandMasterStacking: stacking};
     const result = S.evaluate(members, settings);
     const pool = stacking === 'multiply' ? Math.pow(1.1, 10) : 2;
-    const milestoneScale = 2.8125 * 1.25 * (pool + .2);
-    const synergyScale = 1.1 * (pool + .1) * 1.25 * Math.pow(1.05, 3);
-    near(result.style.milestoneScale, 2.8125, 'permanent milestone scale is preserved');
-    near(result.style.effectiveMilestoneScale, 2.8125 * pool * 1.25);
+    const milestoneScale = 1.875 * 1.25 * (pool + .2);
+    const synergyScale = 1.1 * (pool + .1) * Math.pow(1.05, 3);
+    near(result.style.milestoneScale, 1.875, 'permanent milestone scale is preserved');
+    near(result.style.effectiveMilestoneScale, 1.875 * pool * 1.25);
     near(result.style.effectiveSynergyScale, pool * 1.1);
     near(result.heroes[0].effectiveScales.milestone, milestoneScale);
     near(result.heroes[1].effectiveScales.synergy, synergyScale);
@@ -2150,7 +2151,7 @@ test('event strength combines with owner and all tier factors before synergy rou
     ({index: i + 1, tier: i + 1, requires: ['partner'], type: 'Energy Income', value: 13, global: true}))}));
   const S = synthetic([...records, {id: 'partner'}]);
   const members = [...records.map(h => tiled(h.id, 'synergy')), slot('partner')];
-  const settings = {synergyEvent: true, synergyScale: 1.17, heroSynergyCrusader: 15};
+  const settings = {synergyEvent: true, synergyScale: 1.17, heroSynergyDefault: 25, heroSynergyCrusader: 15};
   const result = S.evaluate(members, settings);
   for (const effect of result.effects.filter(e => e.kind === 'synergy')) {
     const owner = effect.ownerId === 'crusader' ? 1.15 : effect.ownerId === 'warden' ? 1 : 1.25;
@@ -2227,28 +2228,28 @@ test('event team search can change the best gold attacker and returns the same e
   near(placements.score, 2.25 * 2.25 * 25.75);
 });
 
-test('Crusader defaults to its current 25 percent owner bonus and honors older capture overrides', () => {
+test('Crusader and Hunter start at zero and honor explicit account bonus overrides', () => {
   const records = ['crusader', 'hunter'].map(id => ({id, synergies: [
     {index: 1, tier: 8, requires: ['partner'], type: 'Energy Income', value: 100, global: true}]}));
   const S = synthetic([...records, {id: 'partner'}]);
   const members = team('crusader', 'hunter', 'partner');
   const settings = {snowFort: false, grandMaster: false, synergyGlobalBonus1: 0, synergyGlobalBonus2: 0, synergyGlobalBonus3: 0};
-  assert.equal(S.defaults.heroSynergyCrusader, 25);
+  assert.equal(S.defaults.heroSynergyCrusader, 0);
   const current = S.evaluate(members, settings);
-  near(current.heroes[0].effectiveScales.ownerSynergy, 1.25);
-  near(current.heroes[1].effectiveScales.ownerSynergy, 1.25);
-  near(current.global.synergy['Energy Income'], 250);
+  near(current.heroes[0].effectiveScales.ownerSynergy, 1);
+  near(current.heroes[1].effectiveScales.ownerSynergy, 1);
+  near(current.global.synergy['Energy Income'], 200);
   const historical = S.evaluate(members, {...settings, heroSynergyCrusader: 15});
   near(historical.heroes[0].effectiveScales.ownerSynergy, 1.15);
-  near(historical.global.synergy['Energy Income'], 240);
+  near(historical.global.synergy['Energy Income'], 215);
   const event = S.evaluate(members, {...settings, synergyEvent: true});
-  near(event.heroes[0].effectiveScales.synergy, 1.25 * 1.1);
-  near(event.global.synergy['Energy Income'], 276);
+  near(event.heroes[0].effectiveScales.synergy, 1.1);
+  near(event.global.synergy['Energy Income'], 220);
 });
 
 test('ten-GM event reproduces the new Hunter and Rogue gold screenshot values', () => {
   const members = team('hunter', 'rogue', 'praetorian', 'scout', 'paladin', 'sovereign', 'crusader', 'elementalist', 'militia', 'sniper');
-  const result = E.evaluate(members, {synergyEvent: true, requirementReduction: 0, goldHero: 0});
+  const result = E.evaluate(members, {heroSynergyDefault: 25, heroSynergyCrusader: 25, synergyEvent: true, requirementReduction: 0, goldHero: 0});
   for (const [id, index, value, global] of [
     ['hunter', 14, 14615, false], ['rogue', 15, 3303, true],
     ['hunter', 16, 13418, true], ['rogue', 16, 13418, true], ['crusader', 16, 826, false]
@@ -2258,7 +2259,7 @@ test('ten-GM event reproduces the new Hunter and Rogue gold screenshot values', 
     assert.equal(effect.value, value, `${id} ${index} displayed magnitude`);
     assert.equal(effect.global, global, `${id} ${index} scope`);
   }
-  near(E.makeScorer({synergyEvent: true, requirementReduction: 0, goldHero: 0}, 'gold', members)(members), result.metrics.gold);
+  near(E.makeScorer({heroSynergyDefault: 25, heroSynergyCrusader: 25, synergyEvent: true, requirementReduction: 0, goldHero: 0}, 'gold', members)(members), result.metrics.gold);
 });
 
 test('all archived capture effects match their recorded contexts including partial pages and repeated portraits', () => {

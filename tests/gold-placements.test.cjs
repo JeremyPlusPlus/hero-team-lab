@@ -226,7 +226,7 @@ test('ascension grades scale the ownerâ€™s emitted bonuses and only the killerâ€
     {id:'rogue', milestones:[milestone('Kill Gold',100)], synergies:[synergy('Boss Gold',9,'hunter')]}
   ]);
   const team = ['hunter','hunter','rogue'].map(id => slot(id));
-  const settings = {...plain, goldSkills:false, accountSynergyBoosts:true, milestoneScale:1.5,
+  const settings = {...plain, goldSkills:false, accountSynergyBoosts:true, milestoneScale:1, defaultMilestoneLevel:5, heroSynergyDefault:25,
     tier12Scale:1, synergyGlobalBonus1:0, synergyGlobalBonus2:0, synergyGlobalBonus3:0};
   function verify(config, hunterMilestone, hunterSynergy, personal) {
     // Each Hunter emits one global Ultra milestone and one Kill Gold synergy. Rogue's

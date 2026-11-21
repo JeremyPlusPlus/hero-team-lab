@@ -17,14 +17,16 @@ If you already use the downloaded calculator, choose **Export setup** in that co
 ## Compare your first build
 
 1. **Choose a focus in the top bar.** The support rankings and Team A/B comparison both follow that choice. Each focus remembers its own lineups.
-2. **Set up your account.** Check **Calculation settings**, the synergy event, Snow Fort and the skill values for your focus. The starting values come from one recorded account. Under **My ascensions → My ascensions · account baseline**, enter the ranks where your heroes differ from the defaults. Enter each hero once, even if you deploy several copies.
-3. **Put your current lineup in Team A.** Match the heroes, levels, tiles and attacker you use in game. In Experience, choose the **Hero to level** and the **Boss attacker** separately. Use **Copy A → B** to start with equal teams.
+2. **Set up your account.** New setups start every hero’s ascension ranks at zero. Enter purchased ranks under **My ascensions → My ascensions · account baseline**. Each hero’s ranks apply to all its copies. Review Calculation settings, the synergy event, Snow Fort and skill values separately. Those start from one recorded account.
+3. **Put your current lineup in Team A.** Click a hero name and type part of the name, such as `bal` for Ballista. Click a match or use the arrow keys and Enter. Portraits and class labels identify Ranged heroes in green, Melee in blue and Mages in red. Match the levels, tiles and attacker you use in game. In Experience, choose the **Hero to level** and **Boss attacker** separately. Use **Copy A → B** to start with equal teams.
 4. **Change one thing in Team B.** Try a tile, a hero or an ascension. For an ascension trial, select **Team B build** in **My ascensions**. Blank fields inherit your account ranks. An explicit zero tests an unpurchased upgrade.
 5. **Search the alternatives.** Use **Suggest tiles** for the current roster or **Suggest team B** to search across the enabled heroes in **Suggestion roster**. Lock heroes whose slots and levels you want to keep. Tiles can still move. Gold and Damage keep your chosen attacker by default. Turn on **Choose the best attacker too** to let the search replace it.
 
 **Example — Hunter Gold build.** In Gold, select Hunter as Team A’s attacker and copy A to B. Under **My ascensions → Team B build**, select Hunter and choose **Use Gold 14 · zero both bonuses**. Compare Gold per Mimic on the identical lineup first. Then run **Suggest team B** to see if the new build favors different supports. Global ascension ranks and any other fields you left blank still come from your baseline.
 
 On desktop, progression and account settings are on the left, **Global support rankings** are in the middle, and **Team A/B** is on the right. The rankings start with all candidates for your focus. Select Team A or B and enable the lineup filter to see only heroes deployed on that team. Selecting a ranked hero shows its contribution.
+
+On a phone, use **Choose your focus** at the top, then tap **Teams**, **Rankings** or **Progression**. Teams opens first with both scores. Select **Team A** or **Team B** above the lineup to edit it. To try a new Hunter ascension, enter the trial under **Progression → My ascensions → Team B build**, then tap **Teams** to see the comparison.
 
 ## Pick a focus and read its score
 
@@ -44,8 +46,12 @@ Check the account and skill assumptions beside each result. Gold and XP indexes 
 
 Team Lab saves your changes in the current browser when local storage is available. Use **Export setup** before moving the HTML file or switching browsers. To reproduce a comparison, send the exported JSON along with the calculator. The other player can choose **Import** to load your teams, account baseline and trial ranks.
 
+Opening an older setup keeps its previous ascension assumptions. To use the new defaults, go to **My ascensions → Start unentered ascensions at zero**. Your recorded ranks and team-specific builds carry over.
+
 ## Contribute and learn more
 
 For a correction, include your game version, focus, hero levels, tiles, relevant account settings, and the value you observed. An exported setup makes a discrepancy easier to reproduce. For local build and test instructions, read the [contributor guide](CONTRIBUTING.md).
 
 The roster and initial synergy records were adapted from the community spreadsheet credited to Mana, Osto and devilkk. Player observations and game builds informed later corrections. [Community spreadsheet](https://docs.google.com/spreadsheets/d/1fhCvf0yoFYqoTic86KpcjGmAFDYv-RHGCAas8sG1B6U/edit?gid=63100333#gid=63100333) · [Calculation details and historical notes](docs/calculator-reference.md)
+
+The hero portraits come from player-provided Idle Hero TD screenshots. Original game artwork by Swell Games LLC.

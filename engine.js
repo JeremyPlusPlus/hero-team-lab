@@ -65,13 +65,13 @@
     skillName:{apprentice:'Slow',druid:'Damage Boost',witch:'Curse',wizard:'Speed Boost',battlemage:'Critical Boost',spelldancer:'Power Boost',skymage:'Teleport',templar:'Splash Boost',necromancer:'Chaos',titan:'Super Aura'}[def.id],
     fields:def.fields.map(([suffix,label,value,stage])=>({key:'damageSupport'+def.id[0].toUpperCase()+def.id.slice(1)+suffix,label,value,stage,type:label}))}));
   const damageSupportDefinitionMap=new Map(damageSupportDefinitions.map(def=>[def.id,def]));
-  const defaults = {maxTier: 9, synergyScale: 1, milestoneScale: 2.8125, overflowRate: 5, baseOverflow: 0, baseEnergy: 10000,
-    requirementReduction: 1, damageHero: null, goldHero: null, experienceHero: null, experienceVeteranStacks: 100, experienceBaseRankXp: 100, experienceSupportLevel: 15000, experienceReference: null, chanceReferences: null, requiredHeroes: [], ultraExpMode: 'exclude', grandMaster: true, grandMasterStacking: 'multiply', synergyGrandMasterStacking: 'multiply',
+  const defaults = {maxTier: 9, synergyScale: 1, milestoneScale: 1.875, defaultMilestoneLevel: 0, overflowRate: 5, baseOverflow: 0, baseEnergy: 10000,
+    requirementReduction: 0, damageHero: null, goldHero: null, experienceHero: null, experienceVeteranStacks: 100, experienceBaseRankXp: 100, experienceSupportLevel: 15000, experienceReference: null, chanceReferences: null, requiredHeroes: [], ultraExpMode: 'exclude', grandMaster: true, grandMasterStacking: 'multiply', synergyGrandMasterStacking: 'multiply',
     experienceOptimizeSupportStyles:false, experienceTile:20, experienceSkills:true, experienceArcherBonus:13240, experienceArcherMasteryPerWave:0.65, experienceWave:75000, experienceArcherCoverage:100,
     experienceBallistaBonus:3865, experienceBallistaMasteryPerStack:6.5, experienceBallistaStacks:100,
     experienceVeteranSuperChance:149.2, experienceVeteranShareChance:365.5, experienceVeteranSuperAmountPerStack:16.26,
     accountSynergyBoosts: true, synergyEvent: false, tier12Scale: 6.25, tier34Scale: 2.5,
-    heroSynergyDefault: 25, heroSynergyCrusader: 25, heroSynergyWarden: 0, heroAscensions: {},
+    heroSynergyDefault: 0, heroSynergyCrusader: 0, heroSynergyWarden: 0, heroAscensions: {},
     synergyGlobalBonus1: 5, synergyGlobalBonus2: 5, synergyGlobalBonus3: 5,
     snowFort: true, mapT56:115, mapT7:77, mapMastery:33, mapAttackSpeed:-20,
     goldSkills:true, goldKillGoldTile:2475, goldRogueBonus:8070, goldHunterBonus:28720,
@@ -167,8 +167,8 @@
   function scalesFor(slot, style, map, settings) {
     // Account and event boosts multiply the shared Grand Master + owner tile pool.
     const ascension = settings.heroAscensions?.[slot.id];
-    // The captured account scale already includes the owner's rank-five +50%.
-    const milestoneRatio = (10 + (ascension?.milestoneLevel ?? 5)) / 15;
+    const milestoneLevel = ascension?.milestoneLevel ?? settings.defaultMilestoneLevel;
+    const milestoneRatio = 1 + milestoneLevel / 10;
     const milestone=style.milestoneScale*style.eventMilestoneScale
       *(style.bonusScale+(map.enabled && slot.tile==='milestone'?0.2:0))*milestoneRatio;
     const inheritedBonus=slot.id==='crusader'?settings.heroSynergyCrusader
@@ -246,7 +246,7 @@
   function settingsFor(input = {}) {
     const s = {...defaults, ...input};
     s.heroAscensions = normalizeHeroAscensions(s.heroAscensions);
-    for (const [key, lo, hi] of [['maxTier',0,9], ['synergyScale',0,100], ['milestoneScale',0,100], ['overflowRate',0,100],
+    for (const [key, lo, hi] of [['maxTier',0,9], ['synergyScale',0,100], ['milestoneScale',0,100], ['defaultMilestoneLevel',0,5], ['overflowRate',0,100],
       ['tier12Scale',0,100], ['tier34Scale',0,100], ['heroSynergyDefault',0,10000], ['heroSynergyCrusader',0,10000], ['heroSynergyWarden',0,10000],
       ['synergyGlobalBonus1',0,10000], ['synergyGlobalBonus2',0,10000], ['synergyGlobalBonus3',0,10000],
       ['baseOverflow',0,1e9], ['baseEnergy',0,1e9], ['mapT56',0,10000], ['mapT7',0,10000], ['mapMastery',0,10000], ['mapAttackSpeed',-99,10000],
@@ -263,6 +263,7 @@
       s[key] = Number.isFinite(Number(s[key])) ? Math.max(lo, Math.min(hi, Number(s[key]))) : defaults[key];
     }
     s.maxTier = Math.floor(s.maxTier);
+    s.defaultMilestoneLevel = Math.round(s.defaultMilestoneLevel);
     s.requirementReduction = s.requirementReduction ? 1 : 0;
     s.grandMaster = s.grandMaster !== false;
     s.snowFort = s.snowFort !== false;
@@ -312,13 +313,13 @@
     return c;
   }
   // Reserve the owner first. Each remaining copy can satisfy one listed partner only.
-  function synergyPartnersNeeded(ownerId, synergy, settings = 1) {
+  function synergyPartnersNeeded(ownerId, synergy, settings = defaults.requirementReduction) {
     const reduction = typeof settings === 'object'
       ? settings.heroAscensions?.[ownerId]?.synergyReductionLevel ?? settings.requirementReduction
       : settings;
     return synergy.requires.length - (synergy.requires.length >= 2 && reduction ? 1 : 0);
   }
-  function synergyActive(ownerId, synergy, counts, settings = 1) {
+  function synergyActive(ownerId, synergy, counts, settings = defaults.requirementReduction) {
     if (!counts[ownerId]) return false;
     const used = Object.create(null);
     used[ownerId] = 1;
@@ -863,7 +864,9 @@
     const team = [['viking','normal'],['archer','normal'],['wizard','synergy'],['veteran','skill'],
       ['ranger','milestone'],['ballista','milestone'],['ballista','milestone'],['veteran','synergy'],
       ['templar','normal'],['veteran','synergy']].map(([id,tile]) => ({id,tile,level:id==='archer'?5000:15000}));
-    return captureExperienceReference(team,{experienceLeveler:1,experienceAttacker:'self',experienceCaptureGrandMaster:true,synergyEvent:true},
+    // Freeze the account ranks used for this in-game measurement independently of new setup defaults.
+    return captureExperienceReference(team,{experienceLeveler:1,experienceAttacker:'self',experienceCaptureGrandMaster:true,synergyEvent:true,
+      milestoneScale:1.875,defaultMilestoneLevel:5,heroSynergyDefault:25,heroSynergyCrusader:25,heroSynergyWarden:0,requirementReduction:1},
       {rankBonus:66000000,superChance:260,ultraChance:450},
       'Archer 5,000 + Wizard/Viking · 10 Grand Masters · supports 15,000, event on, Veteran 100 stacks assumed');
   }

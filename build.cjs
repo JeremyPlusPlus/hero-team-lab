@@ -5,7 +5,7 @@ const readSource = file => fs.readFileSync(path.join(root, file), 'utf8').replac
 let html = readSource('index.template.html');
 html = html.replace(/<link\s+rel="stylesheet"\s+href="styles.css"\s*\/?\s*>/, () =>
   `<style>\n${readSource('styles.css')}\n</style>`);
-for (const file of ['data.js', 'engine.js', 'immortal-data.js', 'immortal.js', 'immortal-search.js', 'app.js']) {
+for (const file of ['data.js', 'engine.js', 'immortal-data.js', 'immortal.js', 'immortal-search.js', 'hero-portraits.js', 'app.js']) {
   let source = readSource(file);
   if (file === 'app.js') {
     const reviewPath = path.join(root, 'source', 'milestone-review', 'review.json');

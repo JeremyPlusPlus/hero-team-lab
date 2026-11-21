@@ -14,6 +14,7 @@ function load(heroes) {
 }
 const slot = (id, level = 500, tile = 'normal') => ({id, level, tile});
 const milestone = (type, value, global = true) => ({type, value, global, level: 1});
+const capturedAscensions = {defaultMilestoneLevel:5,heroSynergyDefault:25,heroSynergyCrusader:25,requirementReduction:1};
 const legacyExperienceSkills = {experienceVeteranSuperChance:106.2,experienceVeteranShareChance:258,
   experienceVeteranSuperAmountPerStack:16.3,experienceArcherBonus:0,experienceBallistaBonus:0,experienceBallistaMasteryPerStack:0};
 const neutral = {experienceLeveler: 0, experienceStyle: 'none', experienceAttacker: 'self',
@@ -209,18 +210,18 @@ test('the confirmed default XP reference captures Archer at 5000 with all ten Gr
   assert.equal(reference.team[1].id,'archer');
   assert.equal(reference.team[1].level,5000);
   assert.ok(reference.team.every((hero,index)=>index===1||hero.level===15000));
-  const normal=E.evaluate(reference.team,{synergyEvent:true,grandMaster:true});
+  const normal=E.evaluate(reference.team,{...capturedAscensions,synergyEvent:true,grandMaster:true});
   assert.equal(normal.style.count,10);
   const bonuses=normal.heroes[1].bonuses;
   near(reference.rankFlat,bonuses['Rank Exp']||0,'normal ten-GM flat Rank XP');
   near(reference.rankMultiplier,bonuses['Rank Exp Multiplier']??1,'normal ten-GM Rank XP multiplier');
   near(reference.modeledSuperChance,bonuses['Super Exp Chance']||0,'ordinary team XP includes the same Veteran skill once');
-  const skillsOff=E.evaluate(reference.team,{synergyEvent:true,grandMaster:true,experienceSkills:false});
+  const skillsOff=E.evaluate(reference.team,{...capturedAscensions,synergyEvent:true,grandMaster:true,experienceSkills:false});
   near(reference.modeledSuperChance-(skillsOff.heroes[1].bonuses['Super Exp Chance']||0),178,
     'Veteran contributes the rounded chance from 865 Skill Power');
   near(reference.modeledUltraChance,bonuses['Ultra Exp Chance']||0,'GM reference has no Factory personal Ultra chance');
   const captured=E.captureExperienceReference(reference.team,
-    {synergyEvent:true,experienceLeveler:1,experienceAttacker:'self',experienceCaptureGrandMaster:true},
+    {...capturedAscensions,synergyEvent:true,experienceLeveler:1,experienceAttacker:'self',experienceCaptureGrandMaster:true},
     {rankBonus:66000000,superChance:260,ultraChance:450},reference.label);
   assert.equal(JSON.stringify(captured),JSON.stringify(reference));
   const current=E.evaluate(reference.team,{synergyEvent:true,experienceLeveler:1,experienceStyle:'expFactory',
@@ -234,7 +235,7 @@ test('only the exact old built-in XP reference upgrades to the confirmed ten-GM 
   const oldLabel='Archer 1,500 + Wizard/Viking · supports 15,000 · Exp Factory · event on · Veteran 100 stacks';
   // Replay the stored measurement from the previous release.
   const old={...E.captureExperienceReference(previous,
-    {...legacyExperienceSkills,experienceLeveler:1,experienceStyle:'expFactory',experienceAttacker:'self',synergyEvent:true},observed,oldLabel),
+    {...capturedAscensions,...legacyExperienceSkills,experienceLeveler:1,experienceStyle:'expFactory',experienceAttacker:'self',synergyEvent:true},observed,oldLabel),
     modeledSuperChance:220.01931970234375};
   const upgraded=E.upgradeExperienceReference(old);
   assert.equal(JSON.stringify(upgraded),JSON.stringify(E.defaultExperienceReference()));
@@ -266,7 +267,7 @@ test('the earlier ten-GM built-in reference upgrades Veteran contributions witho
 
 test('the earlier level-1500 Archer comparison remains reproducible with its explicitly captured reference', () => {
   const E = load(), {previous,suggested} = archerTeams();
-  const config = {...legacyExperienceSkills,experienceLeveler:1,experienceStyle:'auto',experienceAttacker:'best',synergyEvent:true};
+  const config = {...capturedAscensions,...legacyExperienceSkills,experienceLeveler:1,experienceStyle:'auto',experienceAttacker:'best',synergyEvent:true};
   const reference = E.captureExperienceReference(previous,config,observed,'Previous Archer team');
   const settings = {...config,experienceReference:reference};
   const before = E.evaluate(previous,settings), after = E.evaluate(suggested,settings);

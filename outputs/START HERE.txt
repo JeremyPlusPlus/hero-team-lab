@@ -1,5 +1,5 @@
 HERO TEAM LAB - QUICK START
-Updated November 20, 2026
+Updated November 21, 2026
 
 1. Extract this ZIP to a folder.
 2. Open hero-team-lab.html in your desktop web browser.
@@ -7,11 +7,20 @@ Updated November 20, 2026
    global support rankings are in the middle, and Team A/B is on the right.
 4. Use Suggest team B or Suggest tiles to compare alternatives.
 
+On a phone, choose a focus from the menu at the top. Teams shows both
+scores. Tap Team A or Team B above the lineup to edit one at a time.
+Tap Rankings for supports or Progression for account settings and ascensions.
+
 The calculator runs offline. No installation, account or server is needed.
 All required code, styling and hero data are inside the HTML file.
 
 The middle column ranks all candidates for the selected focus. Choose
 Team A or B and turn on the lineup filter to see only that team's heroes.
+
+In either lineup, click a hero name and type part of the name to find a
+replacement. For example, type bal and press Enter to choose Ballista.
+Ranged heroes are green, Melee are blue, and Mages are red. Each picker
+also shows the hero's portrait and class name.
 
 INCLUDED MODES
 Energy, Energy + Power Mages, Gold, Experience, Damage, Damage - Buff swap,
@@ -69,8 +78,9 @@ SET THE CALCULATOR TO YOUR ACCOUNT
 Included defaults reflect one account, not universal game values. Review
 hero levels, account bonuses, event/map options and active skill settings.
 
-Open My ascensions and select the account baseline to enter your current
-12 ranks for each hero. They save automatically and apply to every focus.
+New setups start all 12 ascension ranks at zero for every hero. Open My
+ascensions and select the account baseline to enter the ranks you bought.
+They save automatically and apply to every focus.
 Global Damage, Kill Gold, Rank EXP and Energy Income apply per deployed copy.
 To compare Hunter builds, copy A to B, select Team B build in My ascensions,
 then try Kill Gold 14, Milestone 0 and Synergy 0. Team A keeps the baseline.
@@ -116,10 +126,12 @@ uses XP. Veteran shares their combined reward.
 Tile predictions start from the no-tile skill values in the XP panel. Update
 those values if your in-game abilities change with the lineup or level.
 
-LEVELING RESULTS FOR THE INCLUDED XP PROFILE
+LEVELING RESULTS FROM THE RECORDED ACCOUNT
 These comparisons used all 42 heroes, level-15,000 supports, wave 75,000,
 the synergy event, fully tagged bosses, guaranteed in-range Veteran sharing
-and equal boss kill rates. The killer stands on the XP tile in every row.
+and equal boss kill rates. They used the previous account's ascension
+assumptions. Run Plan levels 1-4,500 with your own ranks to compare.
+The killer stands on the XP tile in every row.
 
 Hero to level   Levels                    Boss killer    Leveler's tile
 Archer          1-999                     Templar        Skill Power
@@ -147,6 +159,7 @@ Then reopen or reload the file and rerun suggestions or Rebuild plan.
 
 Browser saves are NOT inside this ZIP. To share a particular lineup, send
 its exported setup JSON along with the ZIP. The recipient can click Import
-and choose that JSON. Version-20 setups include your account ascension ranks
-and each team's trial builds. Ranks from version 19 become the account
-baseline when you update. Use the latest HTML to import a version-20 setup.
+and choose that JSON. Version 21 keeps the previous ascension assumptions
+when you open an older setup. Under My ascensions, choose Start unentered
+ascensions at zero to switch to the new defaults. Your recorded ranks and
+team trials carry over.
