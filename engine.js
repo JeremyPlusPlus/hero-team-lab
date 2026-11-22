@@ -15,12 +15,18 @@
     experience: ['Super Exp Chance', 'Ultra Exp Chance']
   };
   const damageFactors = ['Damage','Attack Speed','Crit Damage','Super Crit Damage','Ultra Crit Damage','Damage Taken','Splash Damage','Triple Shot Damage'];
+  const tagFocuses = Object.freeze({
+    archerExperienceTag: {heroId:'archer', name:'Archer Experience Tag', baseSetting:'archerTagBasePower'},
+    hunterGoldTag: {heroId:'hunter', name:'Hunter Gold Tag', baseSetting:'hunterTagBasePower'}
+  });
   const focusStats = {
     damage: [...damageFactors,...chances.damage],
     gold: ['Kill Gold','Super Gold Amount','Ultra Gold Amount','Boss Gold',...chances.gold],
     experience: ['Rank Exp','Super Exp Amount','Ultra Exp Amount',...chances.experience],
     energy: ['Energy Income','Super Energy Amount','Ultra Energy Amount',...chances.energy],
-    powerMageEnergy: ['Energy Income','Super Energy Amount','Ultra Energy Amount','Power Mage Energy',...chances.energy]
+    powerMageEnergy: ['Energy Income','Super Energy Amount','Ultra Energy Amount','Power Mage Energy',...chances.energy],
+    archerExperienceTag: ['Skill Power'],
+    hunterGoldTag: ['Skill Power']
   };
   // Captured active-window bonuses already include the account context.
   // Keep them editable and never apply milestone, synergy, event or map boosts again.
@@ -71,6 +77,7 @@
     experienceBallistaBonus:3865, experienceBallistaMasteryPerStack:6.5, experienceBallistaStacks:100,
     experienceVeteranSuperChance:149.2, experienceVeteranShareChance:365.5, experienceVeteranSuperAmountPerStack:16.26,
     accountSynergyBoosts: true, synergyEvent: false, tier12Scale: 6.25, tier34Scale: 2.5,
+    archerTagBasePower:0, hunterTagBasePower:0,
     heroSynergyDefault: 0, heroSynergyCrusader: 0, heroSynergyWarden: 0, heroAscensions: {},
     synergyGlobalBonus1: 5, synergyGlobalBonus2: 5, synergyGlobalBonus3: 5,
     snowFort: true, mapT56:115, mapT7:77, mapMastery:33, mapAttackSpeed:-20,
@@ -250,6 +257,7 @@
       ['tier12Scale',0,100], ['tier34Scale',0,100], ['heroSynergyDefault',0,10000], ['heroSynergyCrusader',0,10000], ['heroSynergyWarden',0,10000],
       ['synergyGlobalBonus1',0,10000], ['synergyGlobalBonus2',0,10000], ['synergyGlobalBonus3',0,10000],
       ['baseOverflow',0,1e9], ['baseEnergy',0,1e9], ['mapT56',0,10000], ['mapT7',0,10000], ['mapMastery',0,10000], ['mapAttackSpeed',-99,10000],
+      ['archerTagBasePower',0,1e9], ['hunterTagBasePower',0,1e9],
       ['damageTile',0,1e9],['damageSkillTileBoost',0,10000],['damageMasteryTileBoost',0,10000],['damageWardenDistance',0,1e6],
       ['damageSupportSeconds',0,1e6],['damageSupportStacks',0,200],['damageSupportTeleports',0,1e6],['experienceVeteranStacks',0,100],['experienceBaseRankXp',1,1e100],['experienceSupportLevel',0,1e6],
       ...['experienceArcherBonus','experienceArcherMasteryPerWave','experienceWave','experienceBallistaBonus','experienceBallistaMasteryPerStack',
@@ -465,6 +473,31 @@
   }
   const focusTarget = (settings, focus) => focus === 'damage' ? settings.damageHero
     : focus === 'gold' ? settings.goldHero : focus === 'experience' ? settings.experienceHero : null;
+  function effectiveSkillPower(basePower,flatPower,grandMasterFactor,tileFactor) {
+    return Math.max(0,Math.round((basePower+flatPower)*(grandMasterFactor*tileFactor)));
+  }
+  function strongestTagCaster(heroes,tag,s,global,style) {
+    const id=tag.heroId,basePower=s[tag.baseSetting],grandMasterFactor=1.05**style.count;
+    // Grand Masters' raw +5 entries in the bonus table represent percentages.
+    // Account for them only through their compounded multiplier.
+    const globalMilestones=global.milestone['Skill Power']??0;
+    const globalSynergies=global.synergy['Skill Power']??0;
+    const globalPower=globalSynergies+globalMilestones+((global.style['Skill Power']??0)-5*style.count);
+    let strongest=null;
+    for(const hero of heroes) {
+      if(hero.id!==id) continue;
+      const personalMilestones=hero.local.milestone['Skill Power']??0;
+      const personalSynergies=hero.local.synergy['Skill Power']??0;
+      const personalPower=personalMilestones+personalSynergies;
+      const tileFactor=hero.local.placement['Skill Power (tile)']??1;
+      const score=effectiveSkillPower(basePower,globalPower+personalPower,grandMasterFactor,tileFactor);
+      if(!strongest || score>strongest.score) {
+        strongest={index:hero.index,id,basePower,globalPower,personalPower,globalMilestones,globalSynergies,
+          personalMilestones,personalSynergies,grandMasterFactor,tileFactor,score};
+      }
+    }
+    return strongest;
+  }
   // These are the user's captured active bonuses without a skill-power tile.
   // Their unknown account/lineup context is already included: do not multiply
   // them again by Grand Masters, milestones, synergies or the event.
@@ -667,7 +700,8 @@
     const style = styleFor({...s, grandMaster: true}, grandMasterCount), map = mapFor({...s, snowFort: true});
     const milestoneScale = scalesFor({tile}, style, map, s).milestone;
     const baseline = metricsFor({}, s, overflowFor({}, s));
-    const focuses = Object.keys(focusStats), warnings = [];
+    const focuses = Object.keys(baseline), warnings = [];
+    const allFocuses = Object.keys(focusStats);
     const rankingFocuses = [...focuses,'damageWithSupport'];
     const xpReference = withRankingSpillover(xpRankingReference(options.xpReference), ['superChance', 'ultraChance'], s.overflowRate);
     const damageReference = withRankingSpillover(damageRankingReference(options.damageReference), ['critChance', 'superChance', 'ultraChance'], s.overflowRate);
@@ -688,7 +722,7 @@
       const ownerMilestoneScale = scalesFor({id:hero.id,tile},style,map,s).milestone;
       for (const m of hero.milestones) if (m.global && m.level <= level) {
         const type = canonicalType(m.type, s), value = m.value * ownerMilestoneScale;
-        const related = focuses.filter(focus => focusStats[focus].includes(type));
+        const related = allFocuses.filter(focus => focusStats[focus].includes(type));
         apply(bonuses, type, value);
         effects.push({...m, ownerId: hero.id, ownerIndex: 0, ownerName: hero.name,
           kind: 'milestone', type, rawType: m.type, baseValue: m.value, value,
@@ -697,7 +731,7 @@
       if (includeGlobalAscensions) for (const effect of ascensionEffectsFor(hero.id,s,true)) {
         const {type,value,multiplier}=effect;
         const related=type==='Rank Exp Multiplier'?['experience']:type==='Energy Income Multiplier'?['energy','powerMageEnergy']
-          :focuses.filter(focus=>focusStats[focus].includes(type));
+          :allFocuses.filter(focus=>focusStats[focus].includes(type));
         apply(bonuses,type,value,multiplier);
         effects.push({...effect,ownerId:hero.id,ownerIndex:0,ownerName:hero.name,
           kind:'ascension',rawType:type,unit:'percent',scored:true,focuses:related});
@@ -731,12 +765,13 @@
       return {id: hero.id, name: hero.name, milestoneScale:ownerMilestoneScale, bonuses, effects, overflow, metrics, multipliers, ranks: {},xpFactors,
         damageSupportSkill,damageWithSupportBonuses,damageWithSupportOverflow,damageSpilloverGain,damageWithSupportSpilloverGain};
     });
-    for (const focus of rankingFocuses) {
-      const sorted = heroes.filter(hero => hero.multipliers[focus] !== null)
-        .sort((a,b) => b.multipliers[focus] - a.multipliers[focus]);
+    for (const focus of [...rankingFocuses, 'skillPower']) {
+      const score = hero => focus === 'skillPower' ? (hero.bonuses['Skill Power'] ?? 0) : hero.multipliers[focus];
+      const sorted = heroes.filter(hero => score(hero) !== null)
+        .sort((a,b) => score(b) - score(a));
       let anchor = null, rank = 0;
       sorted.forEach((hero, index) => {
-        const value = hero.multipliers[focus];
+        const value = score(hero);
         // Compare with the start of a tie group to avoid chained near-equalities.
         if (anchor === null || Math.abs(value - anchor) > 1e-10 * Math.max(1, Math.abs(value), Math.abs(anchor))) {
           anchor = value; rank = index + 1;
@@ -1059,7 +1094,12 @@
     if (attackerIndex !== null) metrics.damage = heroes[attackerIndex].metrics.damage;
     if (goldIndex !== null) metrics.gold = heroes[goldIndex].metrics.gold;
     if (experienceIndex !== null) metrics.experience = experiencePlan?.score ?? heroes[experienceIndex].metrics.experience;
-    return {metrics, global, heroes, effects, counts, style, map, goldSkills, experienceSkills, damageSupportSkills, damageSkills:heroes.map(hero=>hero.damageSkill), attackerIndex, goldIndex, experienceIndex, experiencePlan, overflow: overflowFor(global.total, s, leveler !== null)};
+    const tagCasters={};
+    for(const [focus,tag] of Object.entries(tagFocuses)) {
+      tagCasters[focus]=strongestTagCaster(heroes,tag,s,global,style);
+      metrics[focus]=tagCasters[focus]?.score??0;
+    }
+    return {metrics, global, heroes, effects, counts, style, map, tagCasters, goldSkills, experienceSkills, damageSupportSkills, damageSkills:heroes.map(hero=>hero.damageSkill), attackerIndex, goldIndex, experienceIndex, experiencePlan, overflow: overflowFor(global.total, s, leveler !== null)};
   }
 
   // Compare kills on the same boss with the evaluated lineup, placements and
@@ -1223,12 +1263,14 @@
     if (leveler !== null) return focus === 'experience' ? makeLevelingScorer(s,leveler) : team => evaluate(team,s,true).metrics[focus];
     const style = styleFor(s, template.length), map=mapFor(s);
     const names = focusStats[focus];
+    const tag=tagFocuses[focus],tagId=tag?.heroId,basePower=tag?s[tag.baseSetting]:0;
+    const grandMasterPower=tagId?1.05**style.count:1;
     const modes = names.map(n => statMode(n) === 'multiply');
     const base = modes.map(m => m ? 1 : 0);
     const globalFactorKey={damage:'globalDamage',gold:'globalKillGold',experience:'globalRankExp',energy:'globalEnergyIncome',powerMageEnergy:'globalEnergyIncome'}[focus];
     const prepared = DATA.heroes.map(hero => {
       const ascension=ascensionFactors(hero.id,s);
-      return {id:hero.id, globalFactor:ascension[globalFactorKey], personalFactor:focus==='gold'?ascension.killGold:focus==='damage'?ascension.damage:1,
+      return {id:hero.id, globalFactor:ascension[globalFactorKey]??1, personalFactor:focus==='gold'?ascension.killGold:focus==='damage'?ascension.damage:1,
         milestones:hero.milestones.map(m => ({...m,stat:names.indexOf(canonicalType(m.type,s))})).filter(m => m.stat>=0),
         synergies:hero.synergies.filter(e => e.tier<=s.maxTier).map(e => ({...e,stat:names.indexOf(canonicalType(e.type,s))})).filter(e => e.stat>=0)
       };
@@ -1286,6 +1328,14 @@
         const scales=scalesFor(team[i],style,map,s);
         for (const m of hero.milestones) if (m.level <= team[i].level) applyFast(m, i, m.value*scales.milestone);
         for (const e of hero.synergies) if (synergyActive(hero.id, e, count, s)) applyFast(e, i,Math.round(e.value*tierScale(e.tier,scales)));
+      }
+      if(tagId) {
+        let strongest=0;
+        for(const [i,slot] of team.entries()) if(slot.id===tagId) {
+          const tileFactor=map.enabled&&slot.tile==='skill'?1.2:1;
+          strongest=Math.max(strongest,effectiveSkillPower(basePower,globals[0]+locals[i][0],grandMasterPower,tileFactor));
+        }
+        return strongest;
       }
       let sum = 0, best = -Infinity, tileGain = 0;
       const chooseAttacker = (focus === 'damage' || focus === 'gold') && focusTarget(s, focus) === 'best';
@@ -1365,6 +1415,10 @@
     return s.goldMimicFarming
       ? 'Gold tiles maximize expected gold per Mimic encounter, including the kill drop and any configured Crusader attack gold.'
       : 'Gold tiles compare attacker Kill Gold, milestone and synergy benefits, enabled support skills, and Crusader’s separate instant attack payout. Each deployed named support skill is counted once; a skill tile multiplies captured active and mastery bonuses by 1.20.';
+  }
+  function tagSkillMethod(focus) {
+    const name=heroMap.get(tagFocuses[focus].heroId).name;
+    return `The score is the highest Skill Power on a deployed ${name}. Placements compare the caster’s Skill Power tile with milestone and synergy boosts across the team.`;
   }
   // Fixed-roster placement searches reuse per-owner contributions. Rechecking
   // every synergy for every assignment would make the exact Gold search slow.
@@ -1658,6 +1712,8 @@
     const team=cleanTeam(rawTeam), s=settingsFor(settings);
     if(!team.length) throw new Error('Add at least one hero before suggesting tiles.');
     const experience = focus==='experience';
+    const tagId=tagFocuses[focus]?.heroId;
+    if(tagId && !team.some(slot=>slot.id===tagId)) throw new Error(`Add ${heroMap.get(tagId).name} to this team before suggesting Tag tiles.`);
     if(!s.snowFort) return suggestionResult(team,s,focus,1,'Map disabled');
     if(focus==='gold') return optimizeGoldPlacements(team,s);
     if(focus==='damage') return optimizeDamagePlacements(team,s);
@@ -1666,6 +1722,9 @@
     // The three named XP skills each supply once; enumerate which copy, if any,
     // receives a skill tile jointly with all milestone/synergy assignments.
     let skillChoices=[[]];
+    // Only the strongest copy casts the tag, so at most one Skill Power tile
+    // is needed. Any copy can be the best after all placements are applied.
+    if(tagId) skillChoices.push(...indexes.filter(i=>team[i].id===tagId).map(i=>[i]));
     if(experience && s.experienceSkills) for(const id of ['archer','ballista','veteran']) {
       const owners=indexes.filter(i=>team[i].id===id);
       skillChoices=skillChoices.flatMap(chosen=>[chosen,...owners.map(i=>[...chosen,i])]);
@@ -1695,6 +1754,7 @@
       }
     }
     if(experience) return suggestionResult(best,s,focus,evaluated,'The killer’s XP tile was compared with milestone, synergy and skill tiles. Veteran shares the boosted kill reward with the team. Each named ability counts once.');
+    if(tagId) return suggestionResult(best,s,focus,evaluated,tagSkillMethod(focus));
     best=assignSkillTiles(best,s);
     return suggestionResult(best,s,focus,evaluated,
       'Remaining skill tiles favor XP abilities, then Skill Power and damage; one copy per hero. Skill DPS is not simulated.');
@@ -1730,6 +1790,8 @@
     const fixedKiller = leveler===null ? null : selectedIndex(original,s.experienceAttacker);
     const isFixed = (slot, index) => slot.locked || index === target || index === fixedKiller;
     const requiredHeroes = [...new Set(Array.isArray(s.requiredHeroes) ? s.requiredHeroes : [])];
+    const tagId=tagFocuses[focus]?.heroId;
+    if(tagId && !requiredHeroes.includes(tagId)) requiredHeroes.push(tagId);
     // Explicitly required heroes remain eligible even if the optional roster excludes them.
     const allowed = [...new Set([...allowedIds, ...requiredHeroes])].filter(id => heroMap.has(id));
     if(fixedKiller!==null && fixedKiller!==leveler && !requiredHeroes.includes('veteran')) {
@@ -1811,7 +1873,7 @@
       const team=seedTeam(order);return {team,score:run(team)};
     }).sort((a,b)=>b.score-a.score);
     seeds.push(...rankedSeeds.slice(0,3).map(x=>x.team));
-    if (focus === 'powerMageEnergy' || focus === 'damage' && s.damageHero === 'best' || focus === 'gold' && (s.goldHero === 'best' || target !== null) || focus === 'experience' && target !== null) {
+    if (tagId || focus === 'powerMageEnergy' || focus === 'damage' && s.damageHero === 'best' || focus === 'gold' && (s.goldHero === 'best' || target !== null) || focus === 'experience' && target !== null) {
       // A strong synergy may need several simultaneous roster changes.
       // Seed its required copies before climbing so a weaker solo attacker or an
       // XP target or Power Mage energy link is not screened out by standalone scores.
@@ -1822,6 +1884,7 @@
       if(leveler!==null) linkStats.add('Boss Exp');
       for (const id of availableOwners) for (const effect of heroMap.get(id).synergies) {
         if (effect.tier > s.maxTier || !linkStats.has(canonicalType(effect.type,s))) continue;
+        if (tagId && !effect.global && id!==tagId) continue;
         const needed = synergyPartnersNeeded(id,effect,s);
         for (const partners of combinations(effect.requires, needed)) links.push([id,...partners]);
       }
@@ -1927,7 +1990,7 @@
       if (leveler !== null) best.forEach((slot,i) => { slot.level = original[i].level; });
       if(n===0) climb(best);
     }
-    return suggestionResult(best,s,focus,evaluated,focus==='gold'?goldSkillMethod(s):focus==='damage'?damageSkillMethod:leveler!==null?
+    return suggestionResult(best,s,focus,evaluated,tagId?tagSkillMethod(focus):focus==='gold'?goldSkillMethod(s):focus==='damage'?damageSkillMethod:leveler!==null?
       'Boss XP received by the leveler, including Veteran’s Exp Share when active.':
       'Remaining skill tiles favor XP abilities, then Skill Power and damage; one copy per hero. Skill DPS is not simulated.');
   }
@@ -1993,5 +2056,5 @@
     }
     return groups;
   }
-  root.HeroEngine = {evaluate,rankMilestoneSupport,xpRankingReference,damageRankingReference,optimizeTeam,optimizePlacements,optimizeExperienceSupportStyles,experienceRanges,suggestExperienceRange,groupExperienceRanges,experienceStyles,experienceTierLevels,experienceSkillsFor,compareExperienceAttackers,compareExperienceAttackerTiles,compareExperienceLevelerTiles:compareExperienceAttackerTiles,normalizeExperienceReference,captureExperienceReference,defaultExperienceReference,upgradeExperienceReference,normalizeChanceReference,defaultChanceReferences,captureChanceReference,chanceDetailsFor,compareGoldAttackerTiles,compareDamageAttackerTiles,damageSkillDefinitions,damageSupportDefinitions,statMode,canonicalType,synergyActive,synergyPartnersNeeded,cleanTeam,settingsFor,normalizeHeroAscensions,ascensionLevelCaps,ascensionFactors,makeScorer,defaults,merge,styleFor,mapFor,scalesFor,tierScale,damageSkillFor,damageSupportFor};
+  root.HeroEngine = {evaluate,rankMilestoneSupport,xpRankingReference,damageRankingReference,optimizeTeam,optimizePlacements,optimizeExperienceSupportStyles,experienceRanges,suggestExperienceRange,groupExperienceRanges,experienceStyles,experienceTierLevels,experienceSkillsFor,compareExperienceAttackers,compareExperienceAttackerTiles,compareExperienceLevelerTiles:compareExperienceAttackerTiles,normalizeExperienceReference,captureExperienceReference,defaultExperienceReference,upgradeExperienceReference,normalizeChanceReference,defaultChanceReferences,captureChanceReference,chanceDetailsFor,compareGoldAttackerTiles,compareDamageAttackerTiles,damageSkillDefinitions,damageSupportDefinitions,statMode,canonicalType,synergyActive,synergyPartnersNeeded,cleanTeam,settingsFor,normalizeHeroAscensions,ascensionLevelCaps,ascensionFactors,makeScorer,defaults,merge,styleFor,mapFor,scalesFor,tierScale,damageSkillFor,damageSupportFor,tagFocuses,effectiveSkillPower};
 })(typeof window !== 'undefined' ? window : globalThis);

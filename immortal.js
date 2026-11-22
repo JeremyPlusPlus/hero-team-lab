@@ -219,12 +219,11 @@
       const cooldown=cooldownFor(slot.id,champion?24:(root.IMMORTAL_BASE_COOLDOWN?.[slot.id]??24),teamEffects.reducedCooldown);
       const window=activeWindow(c.fightSeconds,activeSeconds,cooldown);
       const tile=s.snowFort && slot.tile==='skill' ? skillTile : 1;
-      const powerFactor=stylePower*tile;
       // GM's +5% skill power compounds. The generic bonus table also
       // reports these style entries as +5 raw per copy; remove those there.
       const additional=b[power]-(s.grandMaster?5*size:0);
       const baseline=champion?(c.championDamagePercent-100)/10:c.otherBasePower;
-      const effectiveSkillPower=Math.max(0,Math.round((baseline+additional)*powerFactor));
+      const effectiveSkillPower=E.effectiveSkillPower(baseline,additional,stylePower,tile);
       const frenzy=slot.id==='viking'?2+0.10*effectiveSkillPower:1;
       const speedCap=10+(s.heroAscensions?.[slot.id]?.maxAttackSpeedLevel??0);
       const rankSpeedFactor=1+0.03*(c.heroSpeedRanks[slot.id]??0);
@@ -282,7 +281,7 @@
       if (!eligible) {skillAttackRate=0;skillAttackDps=0;}
       let skillHits=0,skillPercent=0,damagePerCast=0;
       if (cast && champion) {
-        const strikePower=Math.max(0,Math.round((2*(c.championStrikes-8)+additional)*powerFactor));
+        const strikePower=E.effectiveSkillPower(2*(c.championStrikes-8),additional,stylePower,tile);
         skillHits=Math.round(8+strikePower*0.5);
         teamEffects.championHitsPerSecond+=skillHits*castRate;
         skillPercent=100+effectiveSkillPower*10;

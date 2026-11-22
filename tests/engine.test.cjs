@@ -1827,9 +1827,11 @@ test('milestone support unlocks global effects inclusively and excludes personal
     near(h.multipliers.experience, 1);
     assert.ok(h.effects.every(e => e.global && e.kind === 'milestone'));
     if (count) {
-      assert.equal(h.effects.filter(e => e.scored).length, level >= 75 ? 2 : 1);
+      assert.equal(h.effects.filter(e => e.scored).length, level >= 75 ? 3 : 2);
       assert.equal(h.effects.find(e => e.type === 'Damage').focuses.join(','), 'damage');
-      assert.equal(h.effects.find(e => e.type === 'Skill Power').scored, false);
+      const power = h.effects.find(e => e.type === 'Skill Power');
+      assert.equal(power.scored, true);
+      assert.deepEqual(Array.from(power.focuses), ['archerExperienceTag', 'hunterGoldTag']);
       assert.equal(h.effects.find(e => e.type === 'Skill Cooldown').focuses.length, 0);
       near(h.bonuses['Skill Power'], 50);
       near(h.bonuses['Skill Cooldown'], -10);

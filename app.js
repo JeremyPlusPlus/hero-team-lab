@@ -6,7 +6,10 @@
   const ENGINE = window.HeroEngine;
   const byId = new Map(DATA.heroes.map(hero => [hero.id, hero]));
   const byName = new Map(DATA.heroes.map(hero => [hero.name.toLowerCase(), hero]));
-  const standardFocusNames = { energy: 'Energy', gold: 'Gold', experience: 'Experience', damage: 'Damage', powerMageEnergy: 'Energy + Power Mages', damageBuffSwap: 'Damage · Buff swap' };
+  const tagFocuses = ENGINE.tagFocuses;
+  const tagFor = focus => Object.hasOwn(tagFocuses, focus) ? tagFocuses[focus] : null;
+  const standardFocusNames = { energy: 'Energy', gold: 'Gold', experience: 'Experience', damage: 'Damage', powerMageEnergy: 'Energy + Power Mages', damageBuffSwap: 'Damage · Buff swap',
+    ...Object.fromEntries(Object.entries(tagFocuses).map(([focus, tag]) => [focus, tag.name])) };
   const focusNames = {...standardFocusNames, immortal: 'Immortal Boss Damage'};
   const immortalModes = {skill:'Skill damage', melee:'Melee', mage:'Mage', ranged:'Ranged'};
   const usesAttackPriority = mode => mode === 'mage' || mode === 'ranged';
@@ -42,12 +45,12 @@
     level: 15000, grandMasterCount: 10, tile: 'normal', team: 'a', lineupOnly: false, slot: 0, selectedHero: null,
     xpReference: ENGINE.xpRankingReference(), damageReference: ENGINE.damageRankingReference()
   };
-  const symbols = { energy: 'ϟ', gold: '◉', experience: '✧', damage: '⟐', powerMageEnergy: 'ϟ✦', damageBuffSwap: '⟐↔', immortal: '✴' };
+  const symbols = { energy: 'ϟ', gold: '◉', experience: '✧', damage: '⟐', powerMageEnergy: 'ϟ✦', damageBuffSwap: '⟐↔', archerExperienceTag: '✧', hunterGoldTag: '◉', immortal: '✴' };
   const storageKey = 'hero-team-lab-v1';
   const experienceRequiredHeroes = ['archer', 'ballista', 'veteran'];
   const focusRequiredHeroes = { gold: ['hunter', 'rogue', 'sovereign'], powerMageEnergy: ['captain'] };
   const requiredHeroesByFocus = Object.fromEntries(Object.keys(focusNames).map(focus =>
-    [focus, focus === 'experience' ? [...experienceRequiredHeroes] : [...(focusRequiredHeroes[focus] || [])]]));
+    [focus, tagFor(focus) ? [tagFor(focus).heroId] : focus === 'experience' ? [...experienceRequiredHeroes] : [...(focusRequiredHeroes[focus] || [])]]));
   const xpOptions = (supportLevel = 15000) => ({style: 'auto', attacker: 'best', supportLevel, optimizeSupportStyles: true});
   const supportStyleLevels = {grandMaster:0,tycoon:1250,magnate:4000};
   const supportStyleNames = {grandMaster:'Grand Master',tycoon:'Tycoon',magnate:'Magnate'};
@@ -101,12 +104,20 @@
     const candidates = preferred.length ? preferred : heroes;
     return candidates.length ? candidates.reduce((best, hero) => hero.metrics[metric] > best.metrics[metric] ? hero : best).index : null;
   }
+  function defaultTeamName(focus, key) {
+    const tag = tagFor(focus);
+    return tag ? tag.name + ' ' + key.toUpperCase() : key === 'a' ? 'Baseline' : 'Challenger';
+  }
   function newComparison(focus) {
     const ids = [...new Set([...requiredHeroesByFocus[focus], ...seed.map(slot => slot.id)])].slice(0, 10);
     const base = ids.map((id, index) => ({id,level:15000,locked:false,tile:defaultTile(index)}));
+    const tag = tagFor(focus);
+    const skillSlot = tag && base.find(slot => slot.tile === 'skill');
+    if (skillSlot) [base[0].tile, skillSlot.tile] = [skillSlot.tile, base[0].tile];
     const teams = { a: base.map(slot => ({ ...slot })), b: base.map(slot => ({ ...slot })) };
-    const attackers = { a: bestAttacker(teams.a, defaults, focus), b: bestAttacker(teams.b, defaults, focus) };
-    const panel = { teams, names: { a: 'Baseline', b: 'Challenger' }, attackers, chooseAttacker: false, levelingTargets: focus === 'experience' ? { ...attackers } : { a: null, b: null } };
+    const attackers = tag ? {a: 0, b: 0} : { a: bestAttacker(teams.a, defaults, focus), b: bestAttacker(teams.b, defaults, focus) };
+    const names = {a: defaultTeamName(focus, 'a'), b: defaultTeamName(focus, 'b')};
+    const panel = { teams, names, attackers, teamAReady: false, showTeamB: false, chooseAttacker: false, levelingTargets: focus === 'experience' ? { ...attackers } : { a: null, b: null } };
     if (focus === 'experience') {
       panel.experienceOptions = {a: xpOptions(), b: xpOptions()};
       for (const key of ['a', 'b']) teams[key][attackers[key]].level = 1;
@@ -119,7 +130,7 @@
     const ids = [...new Set([...first, ...eligible])].slice(0, 10);
     const team = ids.map((id, i) => ({id, level: 15000, locked: false, tile: defaultTile(i)}));
     return {teams: {a:team, b:team.map(slot => ({...slot}))}, names:{a:'Baseline',b:'Challenger'},
-      attackers:{a:null,b:null}, levelingTargets:{a:null,b:null}, chooseAttacker:false};
+      attackers:{a:null,b:null}, levelingTargets:{a:null,b:null}, teamAReady:false, showTeamB:false, chooseAttacker:false};
   }
   function newImmortalSetup() {
     return {config:immortalEngine.normalize({mode:'skill',buffTeam:'deploy'}), buffTeams:{...buffPresets}, meleePriority:'strikes', priorities:{mage:'hits',ranged:'hits'},
@@ -156,6 +167,7 @@
   defaults.experienceReference = ENGINE.defaultExperienceReference();
   defaults.chanceReferences = ENGINE.defaultChanceReferences();
   defaults.heroAscensions = {};
+  for (const {baseSetting} of Object.values(tagFocuses)) defaults[baseSetting] = ENGINE.defaults[baseSetting];
   Object.assign(defaults, {goldMimicFarming: true, goldMimicGoldBonus: 340, goldWaveBossGoldBonus: 0,
     goldEnemiesPerMimicEncounter: 20, goldDoubleMimicPercent: 0});
   const mimicFields = [
@@ -189,8 +201,20 @@
     ['ascension-global-energy-income', 'globalEnergyIncomeLevel']
   ];
   let state = { version: setupVersion, immortal: newImmortalSetup(), focus: 'energy', settings: { ...defaults }, supportRanking: { ...supportDefaults }, focusTeams: Object.fromEntries(Object.keys(standardFocusNames).map(focus => [focus, newComparison(focus)])), allowed: DATA.heroes.map(hero => hero.id) };
+  // Older saves include two sample lineups even if the player never built Team B.
+  // An Experience attacker's computed slot can change just by opening that focus.
+  function lineupSignature(panel, key) {
+    return JSON.stringify([panel.teams[key], panel.names[key], panel.experienceOptions ? null : panel.attackers[key],
+      panel.levelingTargets[key], panel.experienceOptions?.[key], panel.ascensionOverrides?.[key],
+      ...rateFields.map(([, field]) => panel[field]?.[key] ?? null)]);
+  }
+  const sampleLineups = Object.fromEntries(Object.entries({...state.focusTeams, ...state.immortal.teams})
+    .map(([focus, panel]) => [focus, {a:lineupSignature(panel, 'a'), b:lineupSignature(panel, 'b')}]));
   const isImmortal = () => state.focus === 'immortal';
   const comparison = () => isImmortal() ? state.immortal.teams[state.immortal.config.mode] : state.focusTeams[state.focus];
+  const comparingTeams = () => comparison().showTeamB === true;
+  const visibleTeamKeys = () => comparingTeams() ? ['a', 'b'] : ['a'];
+  const rankingTeam = () => comparingTeams() ? state.supportRanking.team : 'a';
   const isDamageFocus = () => objectiveFor(state.focus) === 'damage';
   const hasAttacker = () => isDamageFocus() || state.focus === 'gold';
   function settingsForLineup(settings, panel, key) {
@@ -242,6 +266,7 @@
     const legacyAscensions = (candidate.version ?? 1) < 21;
     const clean = { version: setupVersion, immortal: newImmortalSetup(), focus: Object.hasOwn(focusNames, candidate.focus) ? candidate.focus : 'energy', settings: { ...defaults }, supportRanking: { ...supportDefaults }, focusTeams: {}, allowed: [] };
     const s = candidate.settings || {};
+    for (const tag of Object.values(tagFocuses)) clean.settings[tag.baseSetting] = clamp(s[tag.baseSetting] ?? 0, 0, 1e9, 0);
     clean.settings.heroAscensions = ENGINE.normalizeHeroAscensions(s.heroAscensions);
     clean.settings.goldMimicFarming = s.goldMimicFarming !== false;
     for (const [, key, min, max] of mimicFields) clean.settings[key] = clamp(s[key] ?? defaults[key], min, max, defaults[key]);
@@ -311,10 +336,14 @@
       clean.immortal.config = immortalConfig(clean.immortal, clean.immortal.config.mode);
     }
     for (const focus of [...Object.keys(standardFocusNames), ...Object.keys(immortalModes)]) {
+      if (tagFor(focus) && !Object.hasOwn(candidate.focusTeams || {}, focus)) {
+        clean.focusTeams[focus] = newComparison(focus);
+        continue;
+      }
       const boss = Object.hasOwn(immortalModes, focus);
       if (boss && !candidate.immortal?.teams && (candidate.version === undefined || candidate.version < 13)) continue;
       const sourceFocus = focus === 'damageBuffSwap' && candidate.version < 11 ? 'damage' : focus === 'powerMageEnergy' && candidate.version < 6 ? 'energy' : focus;
-      const source = boss ? candidate.immortal?.teams?.[focus] : previousVersion ? candidate : candidate.focusTeams?.[sourceFocus];
+      const source = boss ? candidate.immortal?.teams?.[focus] : previousVersion && !tagFor(focus) ? candidate : candidate.focusTeams?.[sourceFocus];
       if (!source?.teams) throw new Error(`The setup is missing its ${focusNames[focus] || immortalModes[focus] + ' Immortal'} teams.`);
       const panel = { teams: {}, names: {}, attackers: {}, chooseAttacker: source.chooseAttacker === true, levelingTargets: {} };
       if (focus === 'gold') for (const [, field] of rateFields) {
@@ -334,7 +363,7 @@
         for (const tile of ['milestone', 'synergy', 'skill', 'killGold', 'damage', 'experience']) if (team.filter(slot => slot.tile === tile).length > tileLimit(tile)) throw new Error(`Team ${key.toUpperCase()} uses more than ${tileLimit(tile)} ${tileNames[tile]} tiles.`);
         if (focus !== 'experience' && team.some(slot => slot.tile === 'experience')) throw new Error('The XP +20% tile is available in the Experience focus.');
         panel.teams[key] = team;
-        panel.names[key] = typeof source.names?.[key] === 'string' ? source.names[key].slice(0, 40) : key === 'a' ? 'Baseline' : 'Challenger';
+        panel.names[key] = typeof source.names?.[key] === 'string' ? source.names[key].slice(0, 40) : defaultTeamName(focus, key);
         if (boss) { panel.attackers[key] = null; panel.levelingTargets[key] = null; continue; }
         const attacker = previousVersion ? s.damageHero : source.attackers?.[key];
         const lineupSettings = settingsForLineup(clean.settings, panel, key);
@@ -356,6 +385,10 @@
           if (candidate.version < 12) panel.attackers[key] = panel.levelingTargets[key];
         }
       }
+      panel.showTeamB = typeof source.showTeamB === 'boolean' ? source.showTeamB
+        : panel.chooseAttacker || lineupSignature(panel, 'b') !== sampleLineups[focus].b;
+      panel.teamAReady = panel.teams.a.length > 0 && (panel.showTeamB || (typeof source.teamAReady === 'boolean'
+        ? source.teamAReady : lineupSignature(panel, 'a') !== sampleLineups[focus].a));
       if (boss) clean.immortal.teams[focus] = panel;
       else clean.focusTeams[focus] = panel;
     }
@@ -430,6 +463,7 @@
   function related(type) {
     if (isImmortal()) return /Skill Power|Mastery Power|Damage|Attack Speed|Crit|Milestone Bonus|Synergy/.test(type);
     if (/Milestone Bonus|Synergy/.test(type)) return true;
+    if (tagFor(state.focus)) return type === 'Skill Power' || type === 'Skill Power (tile)';
     if (state.focus === 'energy') return /Energy/.test(type) && type !== 'Power Mage Energy';
     if (state.focus === 'powerMageEnergy') return /Energy/.test(type);
     if (state.focus === 'gold') return /Gold/.test(type);
@@ -437,11 +471,10 @@
     return /Damage|Crit|Attack Speed/.test(type);
   }
   const immortalStats = new Set(['Damage','Damage Taken','Ultra Boss Damage','Attack Speed','Triple Shot Damage','Splash Damage','Crit Damage','Super Crit Damage','Ultra Crit Damage','Crit Chance','Super Crit Chance','Ultra Crit Chance','Skill Power','Mastery Power','Mastery Skill Power','Skill Power (tile)','Skill Duration']);
-  const isScoredStat = type => isImmortal() ? immortalStats.has(type) : scoredStats.has(type) || state.focus === 'experience' && ['Boss Exp', 'Rank Exp Multiplier'].includes(type);
+  const isScoredStat = type => isImmortal() ? immortalStats.has(type) : scoredStats.has(type) || tagFor(state.focus) && ['Skill Power', 'Skill Power (tile)'].includes(type) || state.focus === 'experience' && ['Boss Exp', 'Rank Exp Multiplier'].includes(type);
   function bonusFormat(type, value) { if (ENGINE.statMode(type) === 'multiply') return '×' + number(value ?? 1); const total = value ?? 0; return (total >= 0 ? '+' : '') + number(total) + (/Chance/.test(type) ? ' pp' : !isScoredStat(type) ? ' raw' : ''); }
   function effectFormat(effect) { const unit = effect.unit ? effect.unit === 'percent' ? /Chance/.test(effect.type) ? ' pp' : '%' : '' : /Chance/.test(effect.type) ? ' pp' : ['style', 'map', 'placement'].includes(effect.kind) || ENGINE.statMode(effect.type) === 'multiply' ? '%' : ['Energy Income', 'Rank Exp'].includes(effect.type) ? '' : ' raw'; return (effect.value >= 0 ? '+' : '') + number(effect.value) + unit; }
   function supportMultiplier(value) { return Number.isFinite(value) ? `×${scoreFormat(value)}` : '—'; }
-  function supportOrder(key) { return (a, b) => (Number.isFinite(b.multipliers[key]) ? b.multipliers[key] : -Infinity) - (Number.isFinite(a.multipliers[key]) ? a.multipliers[key] : -Infinity) || a.name.localeCompare(b.name); }
   function parseRankXp(text) {
     const match = String(text).trim().match(/^(\d+(?:\.\d*)?|\.\d+)(?:e([+-]?\d+)|([kmbt]))?$/i);
     if (!match) return NaN;
@@ -476,12 +509,13 @@
   }
   function renderSupportTable(rows, label, formatValue) {
     const options = state.supportRanking;
-    const deployed = new Set(comparison().teams[options.team].map(slot => slot.id));
+    const key = rankingTeam();
+    const deployed = new Set(comparison().teams[key].map(slot => slot.id));
     const pool = options.lineupOnly ? rows.filter(row => deployed.has(row.id)) : rows;
     const query = $('support-search').value.trim().toLowerCase();
     const visible = pool.filter(row => row.name.toLowerCase().includes(query));
     const selected = visible.find(row => row.id === options.selectedHero) || visible[0];
-    const scope = options.lineupOnly ? `Team ${options.team.toUpperCase()} lineup` : 'Full roster';
+    const scope = options.lineupOnly ? `Team ${key.toUpperCase()} lineup` : 'Full roster';
     $('support-roster-count').textContent = `${number(visible.length)} of ${number(pool.length)} heroes · ${scope} · ${label}`;
     const body = visible.map(row => `<tr class="${row === selected ? 'support-selected-row' : ''}">
       <td class="numeric support-rank">${row.rank ?? '—'}</td><th scope="row"><button class="support-hero-button" data-support-hero="${esc(row.id)}" data-hero-class="${immortalEngine.typeOf(row.id)}" aria-pressed="${row === selected}" title="${esc(immortalModes[immortalEngine.typeOf(row.id)])}">${heroPortrait(row.id)}<span>${esc(row.name)}</span></button></th>
@@ -555,9 +589,10 @@
   }
 
   function renderSupportRankings() {
-    const options = state.supportRanking, key = options.team;
+    const options = state.supportRanking, key = rankingTeam();
     const team = comparison().teams[key], immortal = isImmortal();
-    const scoreKey = isDamageFocus() ? 'damageWithSupport' : state.focus;
+    const tag = tagFor(state.focus);
+    const scoreKey = tag ? 'skillPower' : isDamageFocus() ? 'damageWithSupport' : state.focus;
     const slotIndex = Math.min(options.slot, team.length - 1);
     $('support-team').value = key;
     $('support-lineup-only').checked = options.lineupOnly;
@@ -581,9 +616,9 @@
       options.xpReference,options.damageReference,options.includeGlobalAscensions !== false]);
     if (cacheKey !== supportCacheKey) { supportResult = ENGINE.rankMilestoneSupport(settings, options); supportCacheKey = cacheKey; }
     const report = supportResult;
-    const heroes = [...report.heroes].sort(supportOrder(scoreKey)).map(hero => ({
-      id:hero.id,name:hero.name,hero,rank:hero.ranks[scoreKey],value:hero.multipliers[scoreKey]
-    }));
+    const heroes = report.heroes.map(hero => ({
+      id:hero.id,name:hero.name,hero,rank:hero.ranks[scoreKey],value:tag ? (hero.bonuses['Skill Power'] ?? 0) : hero.multipliers[scoreKey]
+    })).sort((a,b) => (b.value ?? -Infinity) - (a.value ?? -Infinity) || a.name.localeCompare(b.name));
     const damage = report.damageReference, xp = report.xpReference;
     $('support-crit-chance').value = damage.critChance;
     $('support-super-crit-chance').value = damage.superChance;
@@ -597,13 +632,15 @@
     let scenario = '';
     if (isDamageFocus()) scenario = !skillContext.enabled ? ' Support skills are off.'
       : state.focus === 'damageBuffSwap' ? ' Includes Witch and Apprentice debuffs.' : ' Includes active global support skills.';
-    const multiplierLabel = state.focus === 'damageBuffSwap' ? 'Buff-swap Damage multiplier'
+    const multiplierLabel = tag ? 'Global Skill Power' : state.focus === 'damageBuffSwap' ? 'Buff-swap Damage multiplier'
       : `Global ${state.focus === 'experience' ? 'XP' : focusNames[state.focus]} multiplier`;
     $('support-context').textContent = `One copy at level ${number(report.level)} · ${number(report.grandMasterCount)} Grand Masters · ${tileNames[report.tile]} tile · reference milestone strength ×${precise(report.milestoneScale)}. Uses Team ${key.toUpperCase()} ascension ranks. Compares global bonuses before lineup synergies.${scenario}`;
     const undefinedBaseline = heroes.length > 0 && heroes[0].value === null;
     $('support-warnings').textContent = undefinedBaseline ? `The ${focusNames[state.focus]} reference is zero. A support multiplier cannot be calculated.` : '';
     $('support-warnings').hidden = !undefinedBaseline;
-    const selected = renderSupportTable(heroes, multiplierLabel, supportMultiplier)?.hero;
+    const format = tag ? value => '+' + number(value) : supportMultiplier;
+    const row = renderSupportTable(heroes, multiplierLabel, format);
+    const selected = row?.hero;
     if (!selected) return;
     const effectKey = objectiveFor(state.focus);
     const effects = selected.effects.filter(effect => effect.focuses?.includes(effectKey));
@@ -621,7 +658,7 @@
     }
     const rows = milestones.map(effect => `<tr><td>${number(effect.level)}</td><td>${esc(statName(effect.type))}</td><td class="numeric">${effectFormat(effect)}</td></tr>`).join('');
     const ascensionRows = ascensions.map(effect => `<tr><td>${esc(effect.source)}</td><td class="numeric">${effect.level}</td><td class="numeric">×${precise(effect.multiplier)}</td></tr>`).join('');
-    $('support-hero-details').innerHTML = `<div class="support-detail-heading"><h3>${esc(selected.name)}</h3><p>${esc(focusNames[state.focus])} support · ${supportMultiplier(selected.multipliers[scoreKey])}</p></div>${detail}
+    $('support-hero-details').innerHTML = `<div class="support-detail-heading"><h3>${esc(selected.name)}</h3><p>${esc(focusNames[state.focus])} support · ${format(row.value)}${tag ? ' Skill Power' : ''}</p></div>${detail}
       ${ascensionRows ? `<p class="support-detail-label">Global ascensions</p><div class="support-effect-scroll"><table><thead><tr><th>Upgrade</th><th class="numeric">Rank</th><th class="numeric">Multiplier</th></tr></thead><tbody>${ascensionRows}</tbody></table></div>` : ''}
       <p class="support-detail-label">Global milestones for ${esc(focusNames[state.focus])}</p>${rows ? `<div class="support-effect-scroll"><table><thead><tr><th>Level</th><th>Bonus</th><th class="numeric">Amount</th></tr></thead><tbody>${rows}</tbody></table></div>` : '<p class="support-empty">No contributing global milestones at this level.</p>'}`;
   }
@@ -646,6 +683,7 @@
     return ascensionScope === 'account' ? state.settings.heroAscensions : comparison().ascensionOverrides?.[ascensionScope] || {};
   }
   function renderAscensionControls() {
+    if (!comparingTeams() && ascensionScope === 'b') ascensionScope = 'a';
     const account = ascensionScope === 'account', profiles = editingAscensions(), profile = profiles[ascensionHero] || {};
     const baseline = state.settings.heroAscensions[ascensionHero] || {};
     const inherited = account ? {} : baseline;
@@ -693,7 +731,7 @@
     $('ascension-impact').textContent = '';
   }
   function setAscensionProfile(profile) {
-    const teams = ['a', 'b'];
+    const teams = visibleTeamKeys();
     const previousGold = state.focus === 'gold' ? teams.map(key => results[key].metrics.gold) : [];
     const profiles = {...editingAscensions(), [ascensionHero]: profile};
     if (ascensionScope === 'account') state.settings.heroAscensions = ENGINE.normalizeHeroAscensions(profiles);
@@ -706,6 +744,14 @@
     }
   }
   function renderControls() {
+    const tag = tagFor(state.focus);
+    const compare = comparingTeams();
+    for (const id of ['copy-team', 'swap-teams', 'mobile-team-switch', 'detail-team-switch', 'support-team-field', 'ascension-scope-b', 'ascension-trial-hint', 'xp-reference-b', 'gold-enemies-b-field', 'gold-rate-b-field', 'comparison-description']) $(id).hidden = !compare;
+    $('ascension-scope-b').disabled = !compare;
+    $('lab-workspace').classList.toggle('single-team', !compare);
+    if (!compare) $('mobile-editor-a').checked = true;
+    $('comparison-heading').textContent = compare ? 'Team A/B comparison' : 'Team A';
+    $('all-level-label').textContent = compare ? 'Apply hero level to both teams' : 'Apply hero level to Team A';
     const focusBar = $('focus-controls');
     if (!focusBar.children.length) {
       focusBar.innerHTML = Object.entries(focusNames).map(([key, name]) =>
@@ -726,6 +772,11 @@
     renderAscensionControls();
     renderDamageControls();
     renderExperienceSkillControls();
+    $('tag-settings').hidden = !tag;
+    if (tag) {
+      $('tag-base-label').textContent = byId.get(tag.heroId).name + ' pre-team Skill Power';
+      $('tag-base-power').value = state.settings[tag.baseSetting];
+    }
     $('gold-settings').hidden = state.focus !== 'gold';
     $('gold-mimic-farming').checked = state.settings.goldMimicFarming;
     $('gold-mimic-settings').hidden = !state.settings.goldMimicFarming;
@@ -756,33 +807,39 @@
     $('snow-fort').checked = state.settings.snowFort;
     for (const [id, key] of [['map-t56', 'mapT56'], ['map-t7', 'mapT7'], ['map-mastery', 'mapMastery'], ['map-attack-speed', 'mapAttackSpeed']]) { $(id).value = state.settings[key]; $(id).disabled = !state.settings.snowFort; }
     if (state.focus === 'experience') $('placement-note').textContent = 'Experience suggestions compare XP +20% on the boss attacker with milestone, synergy and skill placements. Veteran shares the attacker’s boosted kill reward. All copies of the leveling hero share its level and combat style. Support styles are shown per hero; suggestions can compare Grand Master, Tycoon and Magnate when enabled.';
-    $('suggestion-title').textContent = `Find a stronger ${focusNames[state.focus]} team`;
+    $('suggestion-help').textContent = suggestionHelp();
+    $('immortal-all').textContent = compare ? 'Suggest all four B teams' : 'Suggest all four A teams';
     $('attacker-search-option').hidden = !hasAttacker();
     $('choose-attacker').checked = comparison().chooseAttacker;
-    $('lineups-title').textContent = `${focusNames[state.focus]} lineups`;
-    $('lineups-context').textContent = isImmortal() ? 'Every eligible hero contributes to boss damage. Other heroes can supply team buffs and synergies.' : 'Team A and B save separately for each focus, including names, levels, tiles and locks.';
+    const lineupTitle = compare ? 'lineups' : 'lineup';
+    $('lineups-title').textContent = `${focusNames[state.focus]} ${lineupTitle}`;
+    $('lineups-context').textContent = isImmortal() ? 'Every eligible hero contributes to boss damage. Other heroes can supply team buffs and synergies.' : compare ? 'Team A and B save separately for each focus, including names, levels, tiles and locks.' : 'Heroes, levels, tiles and locks are saved for this focus.';
+    if (tag) {
+      const name = byId.get(tag.heroId).name;
+      $('placement-note').textContent = `A Snow Fort Skill Power tile gives its occupant ×1.20 power. Suggestions also compare milestone and synergy tiles on heroes who supply power to ${name}.`;
+      $('lineups-context').textContent = `Deploy ${name} to score this tag. With multiple copies, the team uses the one with the highest Skill Power.`;
+    }
     if (isImmortal()) {
-      $('lineups-title').textContent = immortalModes[state.immortal.config.mode] + ' Immortal lineups';
-      $('suggestion-title').textContent = 'Find a stronger Immortal team';
+      $('lineups-title').textContent = immortalModes[state.immortal.config.mode] + ' Immortal ' + lineupTitle;
       $('placement-note').textContent = 'Suggestions compare milestone, synergy, skill-power and damage tiles for the whole team.';
     }
     $('gold-required-roster').hidden = state.focus !== 'gold';
     $('power-mage-required-roster').hidden = state.focus !== 'powerMageEnergy';
     $('damage-buff-swap-note').hidden = state.focus !== 'damageBuffSwap';
     $('universal-required-roster').hidden = state.focus !== 'experience';
-    const experienceStatus = ['a', 'b'].map(key => {
+    const experienceStatus = visibleTeamKeys().map(key => {
       const missing = experienceRequiredHeroes.filter(id => !comparison().teams[key].some(slot => slot.id === id));
       return `Team ${key.toUpperCase()}: ${missing.length ? 'missing ' + missing.map(id => byId.get(id).name).join(', ') : 'all three present'}`;
     }).join(' · ');
     $('universal-required-roster').textContent = `Required for Experience only: at least one Archer, Ballista and Veteran for their XP abilities. ${experienceStatus}. Required heroes remain eligible outside the optional roster; additional copies are allowed. Saved lineups stay unchanged until a suggestion is applied; locked heroes and the selected attacker are preserved. One copy of each hero supplies its XP ability when enabled; duplicate copies remain supports.`;
     const required = focusRequiredHeroes[state.focus];
     if (required) {
-      const status = ['a', 'b'].map(key => {
+      const status = visibleTeamKeys().map(key => {
         const missing = required.filter(id => !comparison().teams[key].some(slot => slot.id === id));
         return `Team ${key.toUpperCase()}: ${missing.length ? 'missing ' + missing.map(id => byId.get(id).name).join(', ') : state.focus === 'gold' ? 'all three present' : 'Captain present'}`;
       }).join(' · ');
-      if (state.focus === 'gold') $('gold-required-roster').textContent = `Required for Gold: at least one Hunter, Rogue and Sovereign for their skills. ${status}. Suggest team B includes these heroes even when excluded from the optional roster. Locks and the selected attacker remain protected. ${state.settings.goldSkills ? 'All three skills are scored as active on the kill, once per named skill.' : 'Active skill payouts are switched off in Gold settings.'}`;
-      else $('power-mage-required-roster').textContent = `Required for Energy + Power Mages: at least one Captain for his Power Mage mastery skill. ${status}. Suggest team B includes Captain even when excluded from the optional roster. Locks and levels are preserved. The mastery skill's stacking bonus is not included in the payout index.`;
+      if (state.focus === 'gold') $('gold-required-roster').textContent = `Required for Gold: at least one Hunter, Rogue and Sovereign for their skills. ${status}. Suggestions include these heroes even when excluded from the optional roster. Locks and the selected attacker remain protected. ${state.settings.goldSkills ? 'All three skills are scored as active on the kill, once per named skill.' : 'Active skill payouts are switched off in Gold settings.'}`;
+      else $('power-mage-required-roster').textContent = `Required for Energy + Power Mages: at least one Captain for his Power Mage mastery skill. ${status}. Suggestions include Captain even when excluded from the optional roster. Locks and levels are preserved. The mastery skill's stacking bonus is not included in the payout index.`;
     }
   }
   function renderRoster() {
@@ -994,9 +1051,10 @@
     const visible = state.focus === 'experience';
     $('experience-roadmap').hidden = $('xp-plan-link').hidden = !visible;
     if (!visible) return;
-    const panel = comparison(), leveler = panel.levelingTargets.b, slot = panel.teams.b[leveler];
+    const panel = comparison(), key = panel.showTeamB ? 'b' : 'a';
+    const leveler = panel.levelingTargets[key], slot = panel.teams[key][leveler];
     $('xp-plan-title').textContent = slot ? byId.get(slot.id).name + ' leveling plan' : 'Leveling plan';
-    $('xp-plan-intro').textContent = 'Each row shows when to change combat style, attacker, lineup, or tiles. The plan compares boss kills and Veteran’s Exp Share using Team B’s roster and locks.';
+    $('xp-plan-intro').textContent = `Each row shows when to change combat style, attacker, lineup, or tiles. The plan compares boss kills and Veteran’s Exp Share using Team ${key.toUpperCase()}’s roster and locks.`;
     $('xp-veteran-stacks').value = state.settings.experienceVeteranStacks;
     $('xp-plan-assumptions').textContent = state.settings.experienceSkills
       ? `XP auras and EXP Share are active and all heroes are in range. Veteran’s base share chance is ${number(state.settings.experienceVeteranShareChance)}% before tiles. A successful share awards the attacker’s XP once.`
@@ -1008,7 +1066,7 @@
     const groups = roadmap?.groups || [];
     $('xp-plan-status').textContent = roadmap?.error || (roadmap?.running ? `Checking unlock ${Math.min(roadmap.rows.length + 1, roadmap.total)} of ${roadmap.total}…`
       : groups.length ? `${groups.length} recommendation${groups.length === 1 ? '' : 's'} · Relative XP received per boss at the same kill rate.`
-      : slot ? '' : 'Choose a hero to level in Team B.');
+      : slot ? '' : `Choose a hero to level in Team ${key.toUpperCase()}.`);
     if (!roadmap?.rows.length || !slot) { $('xp-plan-results').innerHTML = ''; return; }
     const container = $('xp-plan-results');
     const openLineups = new Set(Array.from(container.querySelectorAll?.('details[open]') || [], details => Number(details.dataset.range)));
@@ -1028,7 +1086,7 @@
       return `<tr role="row"${current ? ' class="xp-current" aria-current="step"' : ''}><th role="rowheader" scope="row"><span class="xp-range-label" aria-hidden="true">Levels </span>${number(group.from)}–${number(group.to)}${changes ? `<span class="subline">Changed · ${changes}</span>` : ''}</th>
         <td><span class="xp-range-label" aria-hidden="true">Leveler style</span>${esc(styleName(row.style))}</td><td><span class="xp-range-label" aria-hidden="true">Boss attacker</span>${name(row.attackerIndex)}<span class="subline">${row.attackerIndex === leveler ? 'Leveler attacks' : 'Via Veteran’s Exp Share'}</span></td>
         <td class="numeric"><span class="xp-range-label" aria-hidden="true">XP / boss</span>${payout}<button class="text-button xp-compare-button" data-xp-compare="${index}" aria-expanded="${expanded}"${expanded ? ` aria-controls="xp-payout-${index}"` : ''}>Compare payouts</button></td><td><details data-range="${group.from}" ${openLineups.has(group.from) ? 'open' : ''}><summary>View lineup</summary><ol>${lineup}</ol></details></td>
-        <td><button class="button ghost small" data-xp-apply="${index}" aria-label="Use levels ${group.from} to ${group.to} lineup for Team B">Use in B</button></td></tr>${expanded ? renderBossComparison(row, index, group, level) : ''}`;
+        <td><button class="button ghost small" data-xp-apply="${index}" aria-label="Use levels ${group.from} to ${group.to} lineup for Team ${key.toUpperCase()}">Use in ${key.toUpperCase()}</button></td></tr>${expanded ? renderBossComparison(row, index, group, level) : ''}`;
     }).join('');
     container.innerHTML = `<div class="table-scroll"><table class="xp-ranges" role="table" aria-label="Leveling recommendations"><thead role="rowgroup"><tr><th>Level range</th><th>Leveler style</th><th>Boss attacker</th><th class="numeric">XP / boss</th><th>Team &amp; tiles</th><th>Apply</th></tr></thead><tbody role="rowgroup">${rows}</tbody></table></div>`;
     if (scrollLeft) container.firstElementChild.scrollLeft = scrollLeft;
@@ -1037,7 +1095,8 @@
   // The source template and environments without workers yield between ranges.
   function startRoadmap() {
     if (roadmap?.running) { clearRoadmap(); renderRoadmap(); return; }
-    const panel = comparison(), team = panel.teams.b.map(slot => ({...slot})), settings = teamSettings('b');
+    const panel = comparison(), key = panel.showTeamB ? 'b' : 'a';
+    const team = panel.teams[key].map(slot => ({...slot})), settings = teamSettings(key);
     const allowed = [...state.allowed], ranges = ENGINE.experienceRanges(team, settings);
     const active = {rows: [], groups: [], total: ranges.length, running: true};
     roadmap = active;
@@ -1207,26 +1266,34 @@
     edited();
     if (keepTypingFocus) $(input.id).focus({preventScroll:true});
   }
+  function suggestButton(key, firstChallenger = false) {
+    const label = 'Team ' + key.toUpperCase();
+    const title = firstChallenger ? 'Start a comparison using Team A’s settings, levels and locks.' : `Search using ${label}’s settings.`;
+    const hidden = firstChallenger && !(comparison().teamAReady && comparison().teams.a.length);
+    return `<button type="button" id="${key === 'a' ? 'optimize-a' : 'optimize'}" data-suggest-team="${key}" class="button small${firstChallenger ? '' : ' primary'}" title="${title}"${hidden ? ' hidden' : ''}>Suggest team ${key.toUpperCase()}</button>`;
+  }
   function renderTeams() {
     closeHeroPicker();
-    $('teams').innerHTML = ['a', 'b'].map(key => {
+    const tag = tagFor(state.focus);
+    $('teams').innerHTML = visibleTeamKeys().map(key => {
       const team = comparison().teams[key], result = results[key];
       $('mobile-team-name-' + key).textContent = comparison().names[key];
       const attacker = isImmortal() ? null : result?.experiencePlan?.attackerIndex ?? comparison().attackers[key];
-      const attackerControl = !isImmortal() && state.focus !== 'experience' && state.focus !== 'powerMageEnergy' ? `<div class="attacker-control"><label class="field">Team ${key.toUpperCase()} attacker<select data-attacker="${key}" aria-label="Team ${key.toUpperCase()} attacker" ${team.length ? '' : 'disabled'}>${team.length ? team.map((slot, index) => `<option value="${index}" ${attacker === index ? 'selected' : ''}>Slot ${index + 1} · ${esc(byId.get(slot.id).name)}</option>`).join('') : '<option value="">Add a hero to choose an attacker</option>'}</select></label><p class="hint">${state.focus === 'energy' ? 'Energy uses wave income. This attacker controls only the Damage, Gold and XP cards; Energy suggestions may replace it.' : 'Damage, Gold and XP use only this attacker’s personal bonuses plus team globals. ' + (key === 'b' && comparison().chooseAttacker ? 'Suggest team B can choose a new attacker; locked heroes stay.' : 'Suggestions keep this attacker and its level; tiles may change.')}</p></div>` : '';
+      const attackerControl = !tag && !isImmortal() && state.focus !== 'experience' && state.focus !== 'powerMageEnergy' ? `<div class="attacker-control"><label class="field">Team ${key.toUpperCase()} attacker<select data-attacker="${key}" aria-label="Team ${key.toUpperCase()} attacker" ${team.length ? '' : 'disabled'}>${team.length ? team.map((slot, index) => `<option value="${index}" ${attacker === index ? 'selected' : ''}>Slot ${index + 1} · ${esc(byId.get(slot.id).name)}</option>`).join('') : '<option value="">Add a hero to choose an attacker</option>'}</select></label><p class="hint">${state.focus === 'energy' ? 'Energy uses wave income. This attacker controls only the Damage, Gold and XP cards; Energy suggestions may replace it.' : 'Damage, Gold and XP use only this attacker’s personal bonuses plus team globals. ' + (comparison().chooseAttacker ? 'Suggestions can choose a new attacker. Locked heroes stay.' : 'Suggestions keep this attacker and its level; tiles may change.')}</p></div>` : '';
       const levelingTarget = comparison().levelingTargets[key];
       const levelingControl = state.focus === 'experience' ? renderLevelingControl(key) : '';
       const rows = team.map((slot, index) => {
         const address = `${key}:${index}`, label = `Team ${key.toUpperCase()}, slot ${index + 1}`;
-        const isAttacker = state.focus !== 'powerMageEnergy' && attacker === index;
+        const isAttacker = !tag && state.focus !== 'powerMageEnergy' && attacker === index;
+        const isCaster = tag && result.tagCasters[state.focus]?.index === index;
         const isLeveler = state.focus === 'experience' && slot.id === team[levelingTarget]?.id;
         const tiles = Object.entries(tileNames).filter(([id]) => id !== 'experience' || state.focus === 'experience').map(([id, name]) => {
           const full = id !== 'normal' && id !== slot.tile && team.filter(other => other.tile === id).length >= tileLimit(id);
           return `<option value="${id}" ${id === slot.tile ? 'selected' : ''} ${full ? 'disabled' : ''}>${name}</option>`;
         }).join('');
-        return `<div data-hero-class="${immortalEngine.typeOf(slot.id)}" class="hero-row ${isLeveler ? 'leveling-row' : isAttacker ? 'attacker-row' : ''}">
+        return `<div data-hero-class="${immortalEngine.typeOf(slot.id)}" class="hero-row ${isLeveler ? 'leveling-row' : isAttacker || isCaster ? 'attacker-row' : ''}">
           <div class="slot-heading">
-            <span class="hero-number" title="Slot ${index + 1}${isAttacker ? ' · Attacker' : ''}">${String(index + 1).padStart(2, '0')}</span>
+            <span class="hero-number" title="Slot ${index + 1}${isCaster ? ' · Tag caster' : isAttacker ? ' · Attacker' : ''}">${String(index + 1).padStart(2, '0')}</span>
             <div class="hero-identity">${renderHeroPicker(key,index,byId.get(slot.id))}${renderSupportStyle(key,index)}</div>
           </div>
           <label class="slot-field slot-level-field"><span>Level</span><input class="hero-level" data-level="${address}" type="number" inputmode="numeric" min="0" max="1000000" step="1" value="${slot.level}" aria-label="${label} hero level"></label>
@@ -1236,30 +1303,65 @@
         </div>`;
       }).join('');
       const tileCounts = ['milestone', 'synergy', 'skill', 'killGold', 'damage', ...(state.focus === 'experience' ? ['experience'] : [])].map(tile => `<span>${tileNames[tile]} <strong>${team.filter(slot => slot.tile === tile).length}/${tileLimit(tile)}</strong></span>`).join('');
-      return `<article id="lineup-editor-${key}" class="team-card team-${key}"><div class="team-heading"><div class="team-title-group"><span class="team-letter">${key.toUpperCase()}</span><div><input class="team-name" data-name="${key}" value="${esc(comparison().names[key])}" maxlength="40" aria-label="Team ${key.toUpperCase()} name"><small>${Object.keys(comparison().ascensionOverrides?.[key] || {}).length ? 'TEAM ASCENSION BUILD' : 'MY ASCENSIONS'}</small></div></div><span class="team-count">${team.length} / 10 heroes</span></div>${attackerControl}${levelingControl}<div class="team-labels"><span></span><span>Hero</span><span>Level</span><span class="tile-heading">Tile</span><span>Lock</span><span></span></div><div class="hero-rows">${rows || '<p class="empty-team">Add a hero to begin this lineup.</p>'}</div><div class="tile-counts">${tileCounts}</div><div class="team-footer"><button class="text-button" data-add="${key}" ${team.length >= 10 ? 'disabled' : ''}>＋ Add hero</button><button class="text-button" data-suggest-tiles="${key}" title="${isImmortal() ? 'Compare placements for total Immortal damage.' : state.focus === 'gold' ? 'Compare Kill Gold, milestone, synergy and active skill placements for this attacker.' : isDamageFocus() ? 'Compare Damage, milestone, synergy and skill placements for this attacker.' : state.focus === 'experience' ? 'Compare the boss attacker’s XP tile with milestone, synergy and skill placements.' : 'Optimize milestone and synergy placements; remaining skill tiles favor XP abilities, then Skill Power and Damage.'}">Suggest tiles ↗</button><span>${result?.counts?.synergies ?? 0} synergies</span></div><button type="button" class="mobile-team-jump text-button" data-open-editor="${key === 'a' ? 'b' : 'a'}">Edit Team ${key === 'a' ? 'B' : 'A'} ↑</button></article>`;
+      return `<article id="lineup-editor-${key}" class="team-card team-${key}">
+        <header class="team-heading">
+          <div class="team-title-group"><span class="team-letter">${key.toUpperCase()}</span><div class="team-identity">
+            <input class="team-name" data-name="${key}" value="${esc(comparison().names[key])}" maxlength="40" aria-label="Team ${key.toUpperCase()} name">
+            <small>${Object.keys(comparison().ascensionOverrides?.[key] || {}).length ? 'TEAM ASCENSION BUILD' : 'MY ASCENSIONS'} <span class="team-count">· ${team.length} / 10 heroes</span></small>
+          </div></div>
+          <div class="team-suggest-actions">${suggestButton(key)}${key === 'a' && !comparingTeams() ? suggestButton('b', true) : ''}</div>
+        </header>${attackerControl}${levelingControl}<div class="team-labels"><span></span><span>Hero</span><span>Level</span><span class="tile-heading">Tile</span><span>Lock</span><span></span></div><div class="hero-rows">${rows || '<p class="empty-team">Add a hero to begin this lineup.</p>'}</div><div class="tile-counts">${tileCounts}</div><div class="team-footer"><button class="text-button" data-add="${key}" ${team.length >= 10 ? 'disabled' : ''}>＋ Add hero</button><button class="text-button" data-suggest-tiles="${key}" title="${tag ? 'Compare placements for ' + byId.get(tag.heroId).name + '’s Skill Power.' : isImmortal() ? 'Compare placements for total Immortal damage.' : state.focus === 'gold' ? 'Compare Kill Gold, milestone, synergy and active skill placements for this attacker.' : isDamageFocus() ? 'Compare Damage, milestone, synergy and skill placements for this attacker.' : state.focus === 'experience' ? 'Compare the boss attacker’s XP tile with milestone, synergy and skill placements.' : 'Optimize milestone and synergy placements; remaining skill tiles favor XP abilities, then Skill Power and Damage.'}">Suggest tiles ↗</button><span>${result?.counts?.synergies ?? 0} synergies</span></div>${comparingTeams() ? `<button type="button" class="mobile-team-jump text-button" data-open-editor="${key === 'a' ? 'b' : 'a'}">Edit Team ${key === 'a' ? 'B' : 'A'} ↑</button>` : ''}</article>`;
     }).join('');
   }
   function renderStandardMetrics() {
-    $('metrics').innerHTML = metricKeys.map(key => {
-      const a = results.a.metrics[key], b = results.b.metrics[key];
+    const tag = tagFor(state.focus);
+    const teams = visibleTeamKeys();
+    const keys = tag ? [state.focus, ...metricKeys] : metricKeys;
+    const score = (result, key) => {
+      if (tag && ['damage', 'gold', 'experience'].includes(key)) {
+        const caster = result.tagCasters[state.focus];
+        return caster ? result.heroes[caster.index].metrics[key] : 0;
+      }
+      return result.metrics[key];
+    };
+    $('metrics').innerHTML = keys.map(key => {
       const labelKey = key === 'damage' && state.focus === 'damageBuffSwap' ? 'damageBuffSwap' : key;
-      const delta = a > 0 ? (b / a - 1) * 100 : b > 0 ? Infinity : 0;
-      const deltaText = !Number.isFinite(delta) ? 'Team B adds output' : Math.abs(delta) < 0.005 ? 'Even with team A' : delta < -99.99 && b > 0 ? 'Over 99.99% lower than team A' : `${delta > 0 ? '+' : ''}${number(delta)}% vs team A`;
-      return `<article class="metric-card ${objectiveFor(state.focus) === key ? 'focused' : ''}"><div class="metric-top"><span class="metric-name">${key === 'experience' && state.focus === 'experience' ? 'Leveler XP / boss' : key === 'gold' && state.settings.goldMimicFarming ? 'Gold / Mimic' : focusNames[labelKey]}</span><span class="metric-symbol" aria-hidden="true">${symbols[labelKey]}</span></div><div class="metric-values"><div class="metric-value"><span>TEAM A</span><strong title="${precise(a)}">${scoreFormat(a)}</strong></div><div class="metric-value"><span>TEAM B</span><strong title="${precise(b)}">${scoreFormat(b)}</strong></div></div><div class="metric-delta ${delta > .005 ? 'positive' : delta < -.005 ? 'negative' : ''}">${deltaText}</div></article>`;
+      const label = tag && key === state.focus ? byId.get(tag.heroId).name + ' Skill Power'
+        : key === 'experience' && state.focus === 'experience' ? 'Leveler XP / boss'
+        : key === 'gold' && state.settings.goldMimicFarming ? 'Gold / Mimic' : focusNames[labelKey];
+      const values = teams.map(team => score(results[team], key));
+      const cells = values.map((value, i) => `<div class="metric-value"><span>TEAM ${teams[i].toUpperCase()}</span><strong title="${precise(value)}">${scoreFormat(value)}</strong></div>`).join('');
+      let change = '';
+      if (comparingTeams()) {
+        const [a, b] = values;
+        const delta = a > 0 ? (b / a - 1) * 100 : b > 0 ? Infinity : 0;
+        const deltaText = !Number.isFinite(delta) ? 'Team B adds output' : Math.abs(delta) < 0.005 ? 'Even with team A' : delta < -99.99 && b > 0 ? 'Over 99.99% lower than team A' : `${delta > 0 ? '+' : ''}${number(delta)}% vs team A`;
+        change = `<div class="metric-delta ${delta > .005 ? 'positive' : delta < -.005 ? 'negative' : ''}">${deltaText}</div>`;
+      }
+      return `<article class="metric-card ${objectiveFor(state.focus) === key ? 'focused' : ''}"><div class="metric-top"><span class="metric-name">${label}</span><span class="metric-symbol" aria-hidden="true">${symbols[labelKey]}</span></div><div class="metric-values">${cells}</div>${change}</article>`;
     }).join('');
-    const a = results.a.metrics[objectiveFor(state.focus)], b = results.b.metrics[objectiveFor(state.focus)];
-    $('damage-context').textContent = (state.focus === 'powerMageEnergy' ? 'Energy + Power Mages uses team globals and is independent of the attacker. Side-card attackers — ' : '') + ['a', 'b'].map(key => {
+    const [a, b] = teams.map(team => results[team].metrics[objectiveFor(state.focus)]);
+    if (tag) {
+      const name = byId.get(tag.heroId).name;
+      $('damage-context').textContent = visibleTeamKeys().map(key => {
+        const caster = results[key].tagCasters[state.focus];
+        return caster ? `Team ${key.toUpperCase()} tags with ${name} in slot ${caster.index + 1}.` : `Team ${key.toUpperCase()} needs ${name} to tag.`;
+      }).join(' ');
+      $('comparison-description').textContent = !comparingTeams() ? '' : a === b ? `Both teams give ${name} the same Skill Power.` : `Team ${b > a ? 'B' : 'A'} gives ${name} ${number(Math.abs(a - b))} more Skill Power.`;
+      return;
+    }
+    $('damage-context').textContent = (state.focus === 'powerMageEnergy' ? 'Energy + Power Mages uses team globals and is independent of the attacker. Side-card attackers — ' : '') + visibleTeamKeys().map(key => {
       const attacker = comparison().attackers[key], slot = comparison().teams[key][attacker];
       return `Team ${key.toUpperCase()}: ${slot ? `${byId.get(slot.id).name} in slot ${attacker + 1}` : 'no attacker'}`;
     }).join(' · ') + '. Damage, Gold and XP use only this attacker; supports contribute global bonuses. Energy remains wave income.' + (state.focus === 'damageBuffSwap' ? ' Buff-swap Damage includes only Witch / Apprentice support debuffs; external buff-team skills are omitted.' : '');
     if (state.focus === 'gold' && state.settings.goldMimicFarming) $('damage-context').textContent += ' The Gold index is the expected payout per Mimic.';
-    if (state.focus === 'experience') $('damage-context').textContent = ['a', 'b'].map(key => {
+    if (state.focus === 'experience') $('damage-context').textContent = visibleTeamKeys().map(key => {
       const plan = results[key].experiencePlan, team = comparison().teams[key];
       if (!plan) return `Team ${key.toUpperCase()} has no leveler`;
       const leveler = byId.get(team[plan.levelerIndex].id).name, attacker = byId.get(team[plan.attackerIndex].id).name;
       return `Team ${key.toUpperCase()} · ${leveler} ${plan.attackerIndex === plan.levelerIndex ? 'earns XP directly' : plan.veteranIndex == null ? 'needs Veteran for shared XP' : 'receives XP from ' + attacker + ' through Veteran'}`;
     }).join('  /  ');
-    $('comparison-description').textContent = Math.abs(a - b) < 1e-10 ? `Both teams have the same ${focusNames[state.focus].toLowerCase()} index. Change a hero or explore a suggested lineup.` : `Team ${b > a ? 'B' : 'A'} leads for ${focusNames[state.focus].toLowerCase()}. Inspect the bonuses below to see why.`;
+    $('comparison-description').textContent = !comparingTeams() ? '' : Math.abs(a - b) < 1e-10 ? `Both teams have the same ${focusNames[state.focus].toLowerCase()} index. Change a hero or explore a suggested lineup.` : `Team ${b > a ? 'B' : 'A'} leads for ${focusNames[state.focus].toLowerCase()}. Inspect the bonuses below to see why.`;
   }
   function renderImmortal() {
     const config = state.immortal.config, mode = config.mode;
@@ -1291,7 +1393,7 @@
       : config.buffTeam === 'swap' ? 'The swap assumes attackers received Warlock, Wizard and Titan buffs. Apprentice’s debuff requires a deployed Apprentice who can target the boss.'
       : 'Warlock supplies the shortened cast interval from the swap team. Other support bonuses come from the deployed lineup.';
     const breakdown = [];
-    $('immortal-totals').innerHTML = ['a','b'].map(key => {
+    $('immortal-totals').innerHTML = visibleTeamKeys().map(key => {
       const result = results[key].immortal;
       const missing = config.buffTeam === 'deploy' ? buffTeamIds.filter(id => !result.heroes.some(hero => hero.id === id)) : [];
       const eligible = classSpeed ? result.heroes.filter(hero => hero.eligible) : [];
@@ -1324,6 +1426,7 @@
     $('immortal-speed-hero').value = immortalAttributeHero;
     renderImmortalAttributes(config);
     $('immortal-calibration').textContent = 'Champion’s defaults use the no-heroes screenshot on the Snow Fort profile. Other heroes share the pre-team Skill Power and mastery estimates above. Account damage scales the level-based hit by a power of ten (0 gives ×1, 60 gives ×10⁶⁰).';
+    if (!comparingTeams()) { $('comparison-description').textContent = ''; return; }
     const a = results.a.immortal, b = results.b.immortal;
     const lead = immortalEngine.compareResults(a,b,config.priority);
     const criterion = immortalEngine.comparisonCriterion(a,b,config.priority);
@@ -1336,11 +1439,82 @@
     else if (config.priority !== 'damage') description += classSpeed ? 'Ultra tiebreakers and boss DPS are also tied.' : 'Boss DPS is also tied.';
     $('comparison-description').textContent = description;
   }
+  function renderTagPower() {
+    const section = $('tag-power-report'), tag = tagFor(state.focus);
+    section.hidden = !tag;
+    if (!tag) return;
+    const name = byId.get(tag.heroId).name;
+    const casters = visibleTeamKeys().map(key => results[key].tagCasters[state.focus]);
+    const rows = [
+      ['Pre-team Skill Power', 'basePower', number],
+      [name + '’s personal milestones', 'personalMilestones', number],
+      ['Team-wide milestones', 'globalMilestones', number],
+      [name + '’s personal synergies', 'personalSynergies', number],
+      ['Team-wide synergies', 'globalSynergies', number],
+      ['Grand Master multiplier', 'grandMasterFactor', supportMultiplier],
+      ['Caster’s tile multiplier', 'tileFactor', supportMultiplier],
+      ['Effective Skill Power', 'score', number]
+    ];
+    const headings = casters.map((caster, i) => `<th class="numeric">Team ${i ? 'B' : 'A'} · ${caster ? 'slot ' + (caster.index + 1) : 'missing ' + name}</th>`).join('');
+    section.innerHTML = `<h3>${name}’s tag Skill Power</h3><p>Add the pre-team, global and personal power. Multiply by the Grand Master and tile bonuses, then round to the nearest whole point.</p><div class="table-scroll"><table><thead><tr><th>Source</th>${headings}</tr></thead><tbody>${rows.map(([label, field, format]) => `<tr><th scope="row">${label}</th>${casters.map(caster => `<td class="numeric">${caster ? format(caster[field]) : '—'}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  }
+  // Renderers set each report's eligibility. Tabs control which eligible report is on screen.
+  const selectedReportIds = new Map();
+  const reportTabs = Array.from(document.querySelectorAll('#focus-analysis > [data-report-tab]'), panel => {
+    const tab = document.createElement('button');
+    tab.type = 'button';
+    tab.id = 'tab-' + panel.id;
+    tab.textContent = panel.dataset.reportTab;
+    tab.setAttribute('role', 'tab');
+    tab.setAttribute('aria-controls', panel.id);
+    panel.setAttribute('aria-labelledby', tab.id);
+    tab.addEventListener('click', () => selectFocusReport(panel));
+    $('focus-report-tabs').appendChild(tab);
+    return {tab, panel};
+  });
+  function selectFocusReport(panel) {
+    selectedReportIds.set(state.focus, panel.id);
+    renderFocusReports();
+  }
+  function renderFocusReports() {
+    const available = reportTabs.filter(({panel}) => !panel.hidden);
+    const selected = available.find(({panel}) => panel.id === selectedReportIds.get(state.focus)) || available[0];
+    $('focus-analysis').hidden = !selected;
+    $('focus-report-tabs').hidden = available.length < 2;
+    $('focus-explanations-heading').textContent = focusNames[state.focus] + ' explanations';
+    for (const entry of reportTabs) {
+      const {tab, panel} = entry;
+      const active = entry === selected;
+      tab.hidden = panel.hidden;
+      tab.tabIndex = active ? 0 : -1;
+      tab.setAttribute('aria-selected', String(active));
+      if (active) panel.removeAttribute('data-inactive');
+      else panel.setAttribute('data-inactive', '');
+    }
+  }
+  $('focus-report-tabs').addEventListener('keydown', event => {
+    const available = reportTabs.filter(({panel}) => !panel.hidden);
+    const current = available.findIndex(({tab}) => tab === event.target);
+    if (current < 0) return;
+    let next;
+    switch (event.key) {
+      case 'ArrowRight': next = (current + 1) % available.length; break;
+      case 'ArrowLeft': next = (current + available.length - 1) % available.length; break;
+      case 'Home': next = 0; break;
+      case 'End': next = available.length - 1; break;
+      default: return;
+    }
+    event.preventDefault();
+    selectFocusReport(available[next].panel);
+    available[next].tab.focus();
+  });
   function renderMetrics() {
     const immortal = isImmortal();
     $('immortal-panel').hidden = !immortal;
+    $('immortal-hero-report').hidden = $('immortal-settings-report').hidden = !immortal;
     for (const id of ['metrics','damage-context','standard-model-note']) $(id).hidden = immortal;
     if (immortal) renderImmortal(); else renderStandardMetrics();
+    renderTagPower();
     renderExperienceSkillSummary();
     renderChanceReference();
     renderMimicFarming();
@@ -1352,6 +1526,7 @@
     renderGoldPlacements();
     renderGoldSkills();
     renderGoldAttackerSkill();
+    renderWaveEnergy();
     renderPowerMageComparison();
   }
   function renderExperienceSkillControls() {
@@ -1360,7 +1535,7 @@
   }
   function renderExperienceSkillSummary() {
     if (!state.settings.experienceSkills) { $('xp-skill-summary').textContent = 'XP skills are disabled. Archer, Ballista and Veteran remain required for Experience suggestions only.'; return; }
-    $('xp-skill-summary').textContent = ['a','b'].map(key => {
+    $('xp-skill-summary').textContent = visibleTeamKeys().map(key => {
       const profile = results[key].experienceSkills || ENGINE.experienceSkillsFor?.(comparison().teams[key], teamSettings(key));
       const skills = (profile?.skills || []).map(skill => `${byId.get(skill.id)?.name || skill.id} (ability: slot ${skill.ownerIndex + 1}): ${skill.effects.map(effect => effect.type === 'Exp Reward Multiplier' ? 'XP reward ×' + precise(1 + effect.value / 100) : `${statName(effect.type)} +${number(effect.value)}${/Chance/.test(effect.type) ? ' pp' : '%'}`).join(', ')}`);
       return `Team ${key.toUpperCase()} · ${skills.length ? skills.join(' · ') : 'No configured XP skill owners deployed'}`;
@@ -1384,7 +1559,7 @@
     const draft = chanceDraft(focus), reference = state.settings.chanceReferences[focus], gold = focus === 'gold';
     $('chance-reference-title').textContent = `${focusNames[focus]} chance reference`;
     $('chance-reference-intro').textContent = `Spillover uses only the chance above each 100% cap. ${gold ? 'Super and Ultra Gold' : 'Crit, Super Crit and Ultra Crit'} chance share one pool. This reference is independent of the other focuses and the standalone support rankings.`;
-    if (gold && state.settings.goldMimicFarming) $('chance-reference-intro').textContent = 'Super Gold rolls first. A Super drop can roll Ultra. Chance above 100% increases that tier’s amount. See Mimic farming for the payout and probability of each outcome.';
+    if (gold && state.settings.goldMimicFarming) $('chance-reference-intro').textContent = 'Super Gold rolls first. A Super drop can roll Ultra. Chance above 100% increases that tier’s amount. See the Mimic income tab for the payout and probability of each outcome.';
     $('chance-reference-mode').value = draft.mode;
     $('chance-reference-fields').hidden = draft.mode === 'legacy';
     $('chance-reference-crit-field').hidden = gold;
@@ -1394,11 +1569,11 @@
     $('chance-reference-extra').value = draft.extraOverflow;
     $('chance-reference-input-help').textContent = draft.mode === 'preTeam'
       ? 'Enter totals with no team contributions included. Zero is valid. Apply these totals to add each candidate’s bonuses before checking each cap. Input changes take effect only when applied.'
-      : 'Enter displayed totals with the reference team deployed, using the same attacker, skills, levels and tiles. Capture Team A or B so only candidate changes are added. Apply totals updates an existing capture without changing its recorded team.';
+      : 'Enter displayed totals with the reference team deployed, using the same attacker, skills, levels and tiles. Capture the matching team so only candidate changes are added. Apply totals updates an existing capture without changing its recorded team.';
     $('chance-reference-apply').textContent = draft.mode === 'preTeam' ? 'Apply pre-team totals' : 'Apply totals to recorded team';
     $('chance-reference-apply').disabled = busy || draft.mode === 'recorded' && draft.reference?.mode !== 'recorded';
     for (const key of ['a', 'b']) {
-      $('chance-reference-' + key).hidden = draft.mode !== 'recorded';
+      $('chance-reference-' + key).hidden = draft.mode !== 'recorded' || key === 'b' && !comparingTeams();
       $('chance-reference-' + key).disabled = busy || !comparison().teams[key].length;
     }
     let context = reference
@@ -1409,7 +1584,7 @@
     if (reference && draft.mode !== reference.mode) context += ` Current ${reference.mode === 'preTeam' ? 'pre-team' : 'recorded team'} reference remains active until you apply or capture the new reference.`;
     if (reference && (draft.values.some((value, i) => value.trim() === '' || Number(value) !== reference.totals[i]) || Number(draft.extraOverflow) !== (reference.extraOverflow ?? 0))) context += ' Input changes are not applied yet.';
     $('chance-reference-context').textContent = context;
-    const columns = ['a', 'b'].map(key => {
+    const columns = visibleTeamKeys().map(key => {
       const result = results[key], index = gold ? result.goldIndex : result.attackerIndex, hero = result.heroes[index];
       return {key, hero, details: hero ? ENGINE.chanceDetailsFor(hero.bonuses, teamSettings(key), focus, gold ? null : hero.damageSkill?.chanceRolls) : null};
     });
@@ -1463,7 +1638,7 @@
     section.hidden = !isDamageFocus();
     if (section.hidden) return;
     const effects = list => list?.length ? list.map(effect => `<span class="subline">${effect.type === 'Triple Shot Damage' ? `×${number(1 + effect.value / 100)} attacks` : `+${number(effect.value)}${/Chance/.test(effect.type) ? ' pp' : '%'} ${esc(effect.type)}`}</span>`).join('') : '—';
-    const rows = ['a', 'b'].map(key => {
+    const rows = visibleTeamKeys().map(key => {
       const skills = results[key].damageSupportSkills?.skills || [];
       return skills.length ? skills.map(skill => `<tr data-damage-support="${key}:${skill.id}"><th scope="row">Team ${key.toUpperCase()} · ${esc(skill.name)}<span class="subline">${esc(skill.skillName)} · Slot ${skill.ownerIndex + 1} · first copy</span></th><td>${effects(skill.activeEffects)}</td><td>${effects(skill.masteryEffects)}</td><td>×${number(skill.tileBoost)} active / ×${number(skill.masteryTileBoost)} mastery<span class="subline">${(skill.notes || []).map(esc).join(' ')}</span></td></tr>`).join('') : `<tr><th>Team ${key.toUpperCase()}</th><td colspan="3">${state.settings.damageSupportSkills ? 'No captured support skills in this lineup.' : 'Support skills off.'}</td></tr>`;
     }).join('');
@@ -1478,7 +1653,7 @@
     if (section.hidden) return;
     if (!state.settings.snowFort) { section.innerHTML = '<h3>Boss attacker tile comparison</h3><p>Enable Snow Fort to compare placement bonuses.</p>'; return; }
     const tiles = ['normal', 'experience', 'milestone', 'synergy', 'skill'];
-    const rows = ['a', 'b'].map(key => {
+    const rows = visibleTeamKeys().map(key => {
       const report = ENGINE.compareExperienceAttackerTiles?.(comparison().teams[key], teamSettings(key));
       if (!report) return `<tr><th>Team ${key.toUpperCase()}</th><td colspan="6">Choose a hero to level to compare boss attacker tiles.</td></tr>`;
       const slot = comparison().teams[key][report.attackerIndex], winner = report.preferred;
@@ -1495,7 +1670,7 @@
     if (section.hidden) return;
     if (!state.settings.snowFort) { section.innerHTML = '<h3>Attacker tile comparison</h3><p>Enable Snow Fort to compare placement bonuses. Your tile assignments are retained while map bonuses are off.</p>'; return; }
     const tiles = ['normal', 'milestone', 'synergy', 'skill', 'damage'];
-    const rows = ['a', 'b'].map(key => {
+    const rows = visibleTeamKeys().map(key => {
       const report = ENGINE.compareDamageAttackerTiles(comparison().teams[key], teamSettings(key));
       if (!report) return `<tr><th>Team ${key.toUpperCase()}</th><td colspan="6">Choose an attacker to compare its tiles.</td></tr>`;
       const slot = comparison().teams[key][report.attackerIndex], winner = report.preferred;
@@ -1511,7 +1686,7 @@
     section.hidden = !isDamageFocus();
     if (section.hidden) return;
     const effects = list => list?.length ? list.map(effect => `<span class="subline">+${number(effect.value)}${/Chance/.test(effect.type) ? ' pp' : '%'} ${esc(effect.type)}</span>`).join('') : '—';
-    const rows = ['a', 'b'].map(key => {
+    const rows = visibleTeamKeys().map(key => {
       const hero = results[key].heroes[comparison().attackers[key]], skill = hero?.damageSkill;
       if (!hero) return `<tr><th>Team ${key.toUpperCase()}</th><td colspan="4">Choose an attacker.</td></tr>`;
       const known = skill?.known;
@@ -1525,7 +1700,7 @@
     section.hidden = state.focus !== 'gold';
     if (section.hidden) return;
     if (!state.settings.snowFort) { section.innerHTML = '<h3>Attacker tile comparison</h3><p>Enable Snow Fort to compare placement bonuses. Your tile assignments are retained while map bonuses are off.</p>'; return; }
-    const rows = ['a', 'b'].map(key => {
+    const rows = visibleTeamKeys().map(key => {
       const report = ENGINE.compareGoldAttackerTiles?.(comparison().teams[key], teamSettings(key));
       if (!report) return `<tr><th>Team ${key.toUpperCase()}</th><td colspan="4">Choose an attacker to compare its tiles.</td></tr>`;
       const slot = comparison().teams[key][report.attackerIndex];
@@ -1540,7 +1715,7 @@
     const section = $('gold-attacker-skill-breakdown');
     section.hidden = state.focus !== 'gold';
     if (section.hidden) return;
-    const rows = ['a','b'].map(key => {
+    const rows = visibleTeamKeys().map(key => {
       const hero = results[key].heroes[results[key].goldIndex];
       const skill = hero?.goldSkill;
       if (!hero || hero.id !== 'crusader') return `<tr><th scope="row">Team ${key.toUpperCase()} · ${esc(hero?.name || 'No attacker')}</th><td colspan="4">Golden Arrows only applies when Crusader is the attacker.</td></tr>`;
@@ -1558,11 +1733,39 @@
       {id:'sovereign', name:'Sovereign · Jackpot chance', key:'goldSovereignChance', stat:'superGoldChance', unit:' pp Super Gold chance'},
       {id:'sovereign', name:'Sovereign · Jackpot amount', key:'goldSovereignAmount', stat:'superGoldAmount', unit:'% Super Gold amount'}
     ];
-    const rows = definitions.map(def => `<tr><th scope="row">${def.name}</th><td class="numeric">+${number(state.settings[def.key])}${def.unit}</td><td class="numeric">+${number(state.settings[def.key] * 1.2)}${def.unit}</td>${['a','b'].map(key => {
+    const rows = definitions.map(def => `<tr><th scope="row">${def.name}</th><td class="numeric">+${number(state.settings[def.key])}${def.unit}</td><td class="numeric">+${number(state.settings[def.key] * 1.2)}${def.unit}</td>${visibleTeamKeys().map(key => {
       const skill = results[key].goldSkills?.skills.find(skill => skill.id === def.id);
       return `<td class="numeric" data-gold-skill="${key}:${def.id}:${def.stat}">${skill ? `<strong>+${number(skill[def.stat])}${def.unit}</strong><span class="subline">Slot ${skill.ownerIndex + 1} · ${skill.tileBoost > 1 ? 'skill tile ×1.20' : 'no skill tile boost'}</span>` : state.settings.goldSkills ? 'Hero absent' : 'Skills off'}</td>`;
     }).join('')}</tr>`).join('');
-    section.innerHTML = `<h3>Gold from active support skills</h3><p>${state.settings.goldSkills ? 'Gold Aura, Jackpot and Gold Lust count once each when their hero is present. All three are assumed active on the kill and in range.' : 'Active skills are switched off. Enable them in Gold skills &amp; killer tile settings.'}</p><div class="table-scroll"><table><thead><tr><th>Skill bonus</th><th class="numeric">Without skill tile</th><th class="numeric">With +20% tile</th><th class="numeric">Team A uses</th><th class="numeric">Team B uses</th></tr></thead><tbody>${rows}</tbody></table></div><p class="gold-formula-note">Rogue and Hunter each add a separate Kill Gold factor of 1 + bonus / 100. Sovereign increases Super Gold amount and adds her Super Gold chance once. Duplicate heroes do not multiply a named skill; the skill-tiled copy is used if present. These are captured no-tile skill values, held fixed as the lineup changes. Edit the baselines if your in-game skill values change; additional milestone or synergy Skill Power is not applied again.</p>`;
+    section.innerHTML = `<h3>Gold from active support skills</h3><p>${state.settings.goldSkills ? 'Gold Aura, Jackpot and Gold Lust count once each when their hero is present. All three are assumed active on the kill and in range.' : 'Active skills are switched off. Enable them in Gold skills &amp; killer tile settings.'}</p><div class="table-scroll"><table><thead><tr><th>Skill bonus</th><th class="numeric">Without skill tile</th><th class="numeric">With +20% tile</th>${visibleTeamKeys().map(key => `<th class="numeric">Team ${key.toUpperCase()} uses</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div><p class="gold-formula-note">Rogue and Hunter each add a separate Kill Gold factor of 1 + bonus / 100. Sovereign increases Super Gold amount and adds her Super Gold chance once. Duplicate heroes do not multiply a named skill; the skill-tiled copy is used if present. These are captured no-tile skill values, held fixed as the lineup changes. Edit the baselines if your in-game skill values change; additional milestone or synergy Skill Power is not applied again.</p>`;
+  }
+  function energyFactorTable(rows, dataAttribute) {
+    const teams = visibleTeamKeys();
+    const headings = teams.map(key => `<th class="numeric">Team ${key.toUpperCase()}</th>`).join('');
+    const body = rows.map(([label, getValue, multiplier], row) => {
+      const cells = teams.map(key => {
+        const value = getValue(key);
+        return `<td class="numeric" ${dataAttribute}="${key}:${row}" title="${precise(value)}"><strong>${multiplier ? '×' : ''}${scoreFormat(value)}</strong></td>`;
+      }).join('');
+      return `<tr><th scope="row">${label}</th>${cells}</tr>`;
+    }).join('');
+    return `<div class="table-scroll"><table><thead><tr><th>Component</th>${headings}</tr></thead><tbody>${body}</tbody></table></div>`;
+  }
+  function renderWaveEnergy() {
+    const section = $('wave-energy-report');
+    section.hidden = state.focus !== 'energy' && state.focus !== 'powerMageEnergy';
+    if (section.hidden) return;
+    const rows = [
+      ['Base energy per wave', () => state.settings.baseEnergy],
+      ['Team Energy Income', key => results[key].global.total['Energy Income'] ?? 0],
+      ['Energy Income multiplier', key => results[key].global.total['Energy Income Multiplier'] ?? 1, true],
+      ['Super Energy Amount', key => results[key].global.total['Super Energy Amount'] ?? 1, true],
+      ['Ultra Energy Amount', key => results[key].global.total['Ultra Energy Amount'] ?? 1, true],
+      ['Energy chance spillover', key => results[key].overflow.energy, true],
+      ['Wave energy index', key => results[key].metrics.energy]
+    ];
+    const emptyNote = visibleTeamKeys().some(key => !results[key].heroes.length) ? ' An empty lineup scores zero.' : '';
+    section.innerHTML = `<h3>Wave energy income</h3><p>Add base energy and team Energy Income, then multiply by the income, Super Energy, Ultra Energy and chance spillover factors.${emptyNote}</p>${energyFactorTable(rows, 'data-wave-energy-factor')}`;
   }
   function renderPowerMageComparison() {
     const section = $('power-mage-comparison');
@@ -1573,7 +1776,7 @@
       ['Power Mage Energy factor', key => results[key].global.total['Power Mage Energy'] ?? 1, true],
       ['Energy per Power Mage kill index', key => results[key].metrics.powerMageEnergy, false]
     ];
-    section.innerHTML = `<h3>Energy per Power Mage kill</h3><p>Wave energy index × Power Mage Energy factor. The wave index already includes Super and Ultra Energy amounts and the shared energy chance spillover.</p><div class="table-scroll"><table><thead><tr><th>Component</th><th class="numeric">Team A</th><th class="numeric">Team B</th></tr></thead><tbody>${rows.map(([label, getValue, multiplier], row) => `<tr><th scope="row">${label}</th>${['a', 'b'].map(key => { const value = getValue(key); return `<td class="numeric" data-power-mage-factor="${key}:${row}" title="${precise(value)}"><strong>${multiplier ? '×' : ''}${scoreFormat(value)}</strong></td>`; }).join('')}</tr>`).join('')}</tbody></table></div><p class="power-mage-formula-note">Global Power Mage Energy percentages multiply after the wave-energy calculation. This is a relative index for each Power Mage kill, not an absolute payout or energy per second. Power Mage spawn frequency and kill rate are not included. Ordinary Energy continues to compare wave income.</p>`;
+    section.innerHTML = `<h3>Energy per Power Mage kill</h3><p>Wave energy index × Power Mage Energy factor. The wave index already includes Super and Ultra Energy amounts and the shared energy chance spillover.</p>${energyFactorTable(rows, 'data-power-mage-factor')}<p class="power-mage-formula-note">Global Power Mage Energy percentages multiply after the wave-energy calculation. This is a relative index for each Power Mage kill, not an absolute payout or energy per second. Power Mage spawn frequency and kill rate are not included. Ordinary Energy continues to compare wave income.</p>`;
   }
   function renderMimicFarming() {
     const section = $('gold-mimic-report');
@@ -1581,7 +1784,7 @@
     if (section.hidden) return;
     const panel = state.focusTeams.gold;
     const {goldDoubleMimicPercent, goldEnemiesPerMimicEncounter} = state.settings;
-    const columns = ['a','b'].map(key => {
+    const columns = visibleTeamKeys().map(key => {
       for (const [id, field] of rateFields) $(id + '-' + key).value = panel[field]?.[key] ?? '';
       const enemies = panel.enemiesPerHour?.[key], observed = panel.mimicKillsPerHour?.[key];
       const rate = observed ?? (enemies == null ? null : enemies * (1 + goldDoubleMimicPercent / 100) / goldEnemiesPerMimicEncounter);
@@ -1617,7 +1820,7 @@
     const section = $('gold-comparison');
     section.hidden = state.focus !== 'gold' || state.settings.goldMimicFarming;
     if (section.hidden) return;
-    const keys = ['a', 'b'];
+    const keys = visibleTeamKeys();
     const attackers = Object.fromEntries(keys.map(key => [key, results[key].heroes[comparison().attackers[key]]]));
     const personal = Object.fromEntries(keys.map(key => [key, Object.values(attackers[key]?.local || {}).reduce(mergeBuckets, {})]));
     const cell = (key, type) => {
@@ -1642,7 +1845,7 @@
       ['attacks', 'Crusader generated gold index · without Boss Gold', key => attackers[key]?.goldSkill?.attackGold ?? 0],
       ['total', 'Combined Gold index · used for suggestions', key => results[key].metrics.gold]
     ].map(([id, label, valueFor]) => `<tr><th scope="row">${label}</th>${keys.map(key => { const value = valueFor(key); return `<td class="numeric" data-gold-total="${key}:${id}" title="${precise(value)}"><strong>${scoreFormat(value)}</strong></td>`; }).join('')}</tr>`).join('');
-    section.innerHTML = `<h3>Why the Gold scores differ</h3><p>Every killed enemy is assumed to be a boss and receives the full Boss Gold multiplier. Final boss-kill index = Kill Gold × Boss Gold × Super Gold Amount × Ultra Gold Amount × shared chance spillover. Golden Arrows adds a separate generated-gold payout when Crusader is the attacker. Each column uses its attacker’s personal bonuses and all team globals. A support’s personal gold bonuses only help when it is the attacker.</p><div class="table-scroll"><table><thead><tr><th>Factor</th>${keys.map(key => `<th class="numeric">Team ${key.toUpperCase()} · ${esc(attackers[key]?.name || 'No attacker')}</th>`).join('')}</tr></thead><tbody>${rows}<tr class="gold-payout-heading"><th colspan="3">Payout progression before chance spillover · relative indexes</th></tr>${payoutRows}${totalRows}</tbody></table></div><p class="gold-formula-note">Each kill-payout tier includes the previous tier: Ultra includes Boss Gold and Super Gold. Spillover uses one pool: 1 + (${number(state.settings.chanceReferences.gold?.extraOverflow ?? state.settings.baseOverflow)} + ${number(state.settings.overflowRate)} × ${state.settings.chanceReferences.gold ? 'the sum of Super and Ultra Gold chance above their separate 100% caps' : 'total added gold chance points, assuming both tiers were already capped'}) / 100. See Chance reference for each attacker’s totals and excess points. These are relative bonus indexes on a shared base-gold scale, not the screenshot’s currency amounts. Absolute base payouts, hero-specific support multipliers beyond the configured account bonuses, and kill rate are not modeled. Configured active Gold skill bonuses are included once; their no-tile baselines can be updated in Gold settings. Generated gold and the final kill are shown separately so unconfirmed interactions remain visible.</p>`;
+    section.innerHTML = `<h3>Gold payout factors</h3><p>Every killed enemy is assumed to be a boss and receives the full Boss Gold multiplier. Final boss-kill index = Kill Gold × Boss Gold × Super Gold Amount × Ultra Gold Amount × shared chance spillover. Golden Arrows adds a separate generated-gold payout when Crusader is the attacker. Each column uses its attacker’s personal bonuses and all team globals. A support’s personal gold bonuses only help when it is the attacker.</p><div class="table-scroll"><table><thead><tr><th>Factor</th>${keys.map(key => `<th class="numeric">Team ${key.toUpperCase()} · ${esc(attackers[key]?.name || 'No attacker')}</th>`).join('')}</tr></thead><tbody>${rows}<tr class="gold-payout-heading"><th colspan="${keys.length + 1}">Payout progression before chance spillover · relative indexes</th></tr>${payoutRows}${totalRows}</tbody></table></div><p class="gold-formula-note">Each kill-payout tier includes the previous tier: Ultra includes Boss Gold and Super Gold. Spillover uses one pool: 1 + (${number(state.settings.chanceReferences.gold?.extraOverflow ?? state.settings.baseOverflow)} + ${number(state.settings.overflowRate)} × ${state.settings.chanceReferences.gold ? 'the sum of Super and Ultra Gold chance above their separate 100% caps' : 'total added gold chance points, assuming both tiers were already capped'}) / 100. See Chance reference for each attacker’s totals and excess points. These are relative bonus indexes on a shared base-gold scale, not the screenshot’s currency amounts. Absolute base payouts, hero-specific support multipliers beyond the configured account bonuses, and kill rate are not modeled. Configured active Gold skill bonuses are included once; their no-tile baselines can be updated in Gold settings. Generated gold and the final kill are shown separately so unconfirmed interactions remain visible.</p>`;
   }
   function localBucket(effects, kind, index) {
     const bucket = {};
@@ -1651,6 +1854,7 @@
   }
   function mergeBuckets(a = {}, b = {}) { const output = { ...a }; for (const [type, value] of Object.entries(b)) output[type] = ENGINE.statMode(type) === 'multiply' ? (output[type] ?? 1) * value : (output[type] ?? 0) + value; return output; }
   function renderDetails() {
+    if (!comparingTeams()) detailTeam = 'a';
     const result = results[detailTeam], team = comparison().teams[detailTeam];
     if (detailScope !== 'global' && Number(detailScope) >= team.length) detailScope = 'global';
     $('detail-scope').innerHTML = '<option value="global">Global team bonuses</option>' + team.map((slot, index) => `<option value="${index}" ${detailScope === String(index) ? 'selected' : ''}>Slot ${index + 1} · ${esc(byId.get(slot.id).name)} (personal)</option>`).join('');
@@ -1681,7 +1885,9 @@
       const index = Number(detailScope), global = detailScope === 'global';
       const milestone = global ? result.global.milestone : result.heroes[index]?.local?.milestone || localBucket(result.effects, 'milestone', index);
       const synergy = global ? result.global.synergy : result.heroes[index]?.local?.synergy || localBucket(result.effects, 'synergy', index);
-      const combatStyle = (global ? result.global.style : result.heroes[index]?.local?.style) || {};
+      const combatStyle = {...(global ? result.global.style : result.heroes[index]?.local?.style)};
+      // Grand Master's Skill Power percentages appear in the tag multiplier, separately from flat points.
+      if (global && tagFor(state.focus)) delete combatStyle['Skill Power'];
       const mapTiles = mergeBuckets(global ? result.global.map : result.heroes[index]?.local?.map, global ? result.global.placement : result.heroes[index]?.local?.placement);
       const skills = (global ? result.global.skill : result.heroes[index]?.local?.skill) || {};
       const ascension = (global ? result.global.ascension : result.heroes[index]?.local?.ascension) || {};
@@ -1702,7 +1908,12 @@
     }
   }
   function update(renderAll = true) {
-    if (state.focus === 'gold') for (const key of ['a','b']) {
+    const active = comparison();
+    const focus = isImmortal() ? state.immortal.config.mode : state.focus;
+    const teams = visibleTeamKeys();
+    if (!active.teams.a.length) active.teamAReady = false;
+    else if (!active.teamAReady && lineupSignature(active, 'a') !== sampleLineups[focus].a) active.teamAReady = true;
+    if (state.focus === 'gold') for (const key of teams) {
       const panel = comparison();
       const signature = JSON.stringify([panel.attackers[key], panel.teams[key].map(s => [s.id,s.level,s.tile])]);
       if (goldRateTeamSignatures[key] && goldRateTeamSignatures[key] !== signature) {
@@ -1710,7 +1921,7 @@
       }
       goldRateTeamSignatures[key] = signature;
     }
-    for (const key of ['a', 'b']) {
+    for (const key of teams) {
       const team = comparison().teams[key], attacker = comparison().attackers[key];
       if (isImmortal()) continue;
       if (!Number.isInteger(attacker) || attacker < 0 || attacker >= team.length) comparison().attackers[key] = bestAttacker(team, settingsForLineup(state.settings, comparison(), key), state.focus);
@@ -1724,16 +1935,26 @@
       }
       if (state.focus === 'experience') syncLevelingCopies(comparison(), key);
     }
-    results = { a: ENGINE.evaluate(comparison().teams.a, teamSettings('a')), b: ENGINE.evaluate(comparison().teams.b, teamSettings('b')) };
-    if (isImmortal()) for (const key of ['a','b']) {
-      results[key].immortal = immortalEngine.evaluate(comparison().teams[key], teamSettings(key), state.immortal.config);
-      results[key].metrics.immortal = results[key].immortal[immortalObjectives[state.immortal.config.priority].key];
+    results = {};
+    for (const key of teams) {
+      const settings = teamSettings(key);
+      const result = ENGINE.evaluate(active.teams[key], settings);
+      if (isImmortal()) {
+        result.immortal = immortalEngine.evaluate(active.teams[key], settings, state.immortal.config);
+        result.metrics.immortal = result.immortal[immortalObjectives[state.immortal.config.priority].key];
+      }
+      if (state.focus === 'experience') active.attackers[key] = result.experiencePlan?.attackerIndex ?? null;
+      results[key] = result;
     }
-    if (state.focus === 'experience') for (const key of ['a', 'b']) comparison().attackers[key] = results[key].experiencePlan?.attackerIndex ?? null;
     if (renderAll) { renderControls(); renderTeams(); }
-    renderMetrics(); renderDetails(); renderRoadmap(); renderSupportRankings(); save();
+    renderMetrics(); renderDetails(); renderRoadmap(); renderFocusReports(); renderSupportRankings(); save();
   }
   function suggestionHelp() {
+    const tag = tagFor(state.focus);
+    if (tag) {
+      const name = byId.get(tag.heroId).name;
+      return `Find supports and tiles for ${name}’s highest Skill Power. Suggestions include ${name} even when excluded from the optional roster. Locked heroes keep their slots and levels.`;
+    }
     if (isImmortal() && ['hits','attacks'].includes(state.immortal.config.priority)) {
       const primary = state.immortal.config.priority === 'hits' ? 'scoring hits/s, including extra projectiles, skill hits and damage ticks' : 'team attacks per second against the boss';
       return `Search heroes and tiles for the most ${primary}. If rates tie, compare the lowest effective Ultra chance on each team. Remaining ties use expected Ultra hits/s, then boss DPS.`;
@@ -1744,17 +1965,13 @@
     if (state.focus === 'damageBuffSwap') return `Search ${comparison().chooseAttacker ? 'the attacker and supports together' : 'supports for the selected attacker'} for the team deployed after buffing. Score only the attacker’s damage, personal skill, milestones and synergies plus team globals and deployed Witch / Apprentice debuffs. Other support skills are excluded. Compare Damage, milestone, synergy and skill tiles; locks preserve heroes and levels.`;
     if (state.focus === 'damage') return `Search ${comparison().chooseAttacker ? 'the attacker and supports together' : 'supports for the selected attacker'}, using personal milestones, synergies and enabled active/mastery skill bonuses. Compare Damage, milestone, synergy and skill-power tiles. Locks preserve heroes and levels; tiles may move.`;
     if (state.focus === 'gold') return `Search ${comparison().chooseAttacker ? 'the attacker and supports together' : 'supports for the selected attacker'}, comparing ${state.settings.goldMimicFarming ? 'expected Gold per Mimic at equal kill rates' : 'the legacy boss Gold index'} with Kill Gold, milestone, synergy and enabled Gold skills. Hunter, Rogue and Sovereign are required. Locks preserve heroes and levels; tiles may move.`;
-    if (hasAttacker()) return comparison().chooseAttacker ? `Choose team B’s attacker and supports together for ${state.focus === 'gold' ? 'gold from its kills' : 'damage'}, using personal milestones and active synergies. Locked heroes and slot levels stay fixed; tiles may move.` : `Search supports and placements for team B’s selected attacker’s ${focusNames[state.focus].toLowerCase()} bonuses. The attacker and locked heroes keep their levels; tiles may move.`;
-    if (state.focus === 'experience' && comparison().levelingTargets.b !== null) {
-      const slot = comparison().teams.b[comparison().levelingTargets.b];
-      return `Optimize boss XP for ${byId.get(slot.id).name} at level ${number(slot.level)} using the style and attacker choices above. All copies share its level and style. Locked heroes and other support levels stay in place. ${comparison().experienceOptions.b.optimizeSupportStyles ? 'Suggestions also compare support combat styles.' : 'Manual support combat styles are retained.'}`;
-    }
+    if (state.focus === 'experience') return 'Search for the highest XP per boss using the chosen team’s leveling hero, attacker and combat style settings. Locked heroes keep their slots and levels.';
     if (state.focus === 'powerMageEnergy') return 'Search global energy and Power Mage Energy bonuses for energy per Power Mage kill, with at least one Captain for his mastery skill. Locks preserve heroes and levels; tiles may move.';
-    return 'Search heroes and placements for team B. Locks preserve heroes and levels; tiles may move.';
+    return 'Search heroes and placements for the selected team. Locked heroes keep their slots and levels.';
   }
-  function edited(keepRoadmap = false) { if (!keepRoadmap) clearRoadmap(); $('immortal-search-status').textContent = ''; $('suggestion-note').textContent = suggestionHelp(); alert(''); update(); }
+  function edited(keepRoadmap = false) { if (!keepRoadmap) clearRoadmap(); $('immortal-search-status').textContent = ''; $('suggestion-note').textContent = ''; alert(''); update(); }
   $('xp-plan-build').addEventListener('click', () => {
-    if (state.focus !== 'experience' || !comparison().teams.b.length) return;
+    if (state.focus !== 'experience' || !comparison().teams[comparison().showTeamB ? 'b' : 'a'].length) return;
     startRoadmap();
   });
   $('xp-plan-results').addEventListener('change', event => {
@@ -1780,17 +1997,19 @@
     if (!button || !roadmap || busy) return;
     const group = roadmap.groups[Number(button.dataset.xpApply)];
     if (!group) return;
-    const panel = comparison(), leveler = panel.levelingTargets.b, level = panel.teams.b[leveler].level;
+    const panel = comparison(), key = panel.showTeamB ? 'b' : 'a';
+    const leveler = panel.levelingTargets[key], level = panel.teams[key][leveler].level;
     const applyLevel = level >= group.from && level <= group.to ? level : group.from;
     const row = stageAtLevel(group, applyLevel);
-    panel.teams.b = row.team.map(slot => ({...slot}));
-    $('mobile-editor-b').checked = true;
-    panel.teams.b[leveler].level = applyLevel;
-    panel.experienceOptions.b.style = row.style;
-    panel.experienceOptions.b.attacker = row.attackerIndex === leveler ? 'self' : row.attackerIndex;
+    panel.teams[key] = row.team.map(slot => ({...slot}));
+    $('mobile-editor-' + key).checked = true;
+    panel.teams[key][leveler].level = applyLevel;
+    panel.experienceOptions[key].style = row.style;
+    panel.experienceOptions[key].attacker = row.attackerIndex === leveler ? 'self' : row.attackerIndex;
+    if (key === 'a') panel.teamAReady = true;
     roadmap.previewLevel = null;
     edited(true);
-    $('suggestion-note').textContent = `Applied the level ${number(group.from)}–${number(group.to)} lineup to Team B.`;
+    $('suggestion-note').textContent = `Applied the level ${number(group.from)}–${number(group.to)} lineup to Team ${key.toUpperCase()}.`;
   });
   $('xp-veteran-stacks').addEventListener('change', event => {
     state.settings.experienceVeteranStacks = Math.round(clamp(event.target.value, 0, 100, 100));
@@ -1899,6 +2118,7 @@
   });
   $('immortal-all').addEventListener('click', () => {
     if (!isImmortal() || busy) return;
+    const key = comparison().showTeamB ? 'b' : 'a';
     busy = true; $('immortal-all').disabled = true; alert('');
     $('immortal-search-status').textContent = 'Searching all four lineups…';
     window.setTimeout(() => {
@@ -1908,17 +2128,26 @@
       try {
         for (const mode of Object.keys(immortalModes)) {
           searching = mode;
-          const team = state.immortal.teams[mode].teams.b;
+          const panel = state.immortal.teams[mode];
+          const source = key === 'b' && !panel.showTeamB ? 'a' : key;
           const config = immortalConfig(state.immortal,mode);
-          const result = ENGINE.optimizeImmortalTeam(team, {...settingsForLineup(state.settings, state.immortal.teams[mode], 'b'),requiredHeroes:[]}, config, state.allowed);
+          const result = ENGINE.optimizeImmortalTeam(panel.teams[source], {...settingsForLineup(state.settings, panel, source),requiredHeroes:[]}, config, state.allowed);
           pending[mode] = result.team;
           totals.push(`${immortalModes[mode]} · ${immortalTotal(result,config.priority)}`);
         }
-        for (const [mode, team] of Object.entries(pending)) state.immortal.teams[mode].teams.b = team;
-        $('mobile-editor-b').checked = true;
+        for (const [mode, team] of Object.entries(pending)) {
+          const panel = state.immortal.teams[mode];
+          if (key === 'b' && !panel.showTeamB) {
+            copyASettingsToB(panel);
+            panel.showTeamB = true;
+          }
+          panel.teams[key] = team;
+          if (key === 'a') panel.teamAReady = true;
+        }
+        $('mobile-editor-' + key).checked = true;
         update();
-        $('immortal-search-status').textContent = 'Updated all four Team B lineups. ' + totals.join(' / ');
-        $('suggestion-note').textContent = suggestionHelp();
+        $('immortal-search-status').textContent = `Updated all four Team ${key.toUpperCase()} lineups. ` + totals.join(' / ');
+        $('suggestion-note').textContent = '';
       } catch (error) {
         $('immortal-search-status').textContent = '';
         alert(`Could not suggest all four teams. ${immortalModes[searching]} Immortal: ${error.message}`);
@@ -2086,6 +2315,7 @@
       const key = event.target.dataset.name;
       comparison().names[key] = event.target.value.slice(0, 40);
       $('mobile-team-name-' + key).textContent = comparison().names[key];
+      if (key === 'a' && !comparison().teamAReady) { update(); return; }
       save(); return;
     }
     const target = event.target.dataset.level || event.target.dataset.tile;
@@ -2108,6 +2338,10 @@
       return;
     }
     const button = event.target.closest('button'); if (!button) return;
+    if (button.dataset.suggestTeam) {
+      suggestTeam(button);
+      return;
+    }
     if (button.dataset.openEditor) {
       const editor = $('mobile-editor-' + button.dataset.openEditor);
       editor.checked = true;
@@ -2118,6 +2352,10 @@
     if (button.dataset.suggestTiles) {
       const key = button.dataset.suggestTiles;
       if (!comparison().teams[key].length) { alert('Add at least one hero before suggesting tiles.'); return; }
+      const tag = tagFor(state.focus);
+      if (tag && !results[key].tagCasters[state.focus]) {
+        alert(`Add ${byId.get(tag.heroId).name} to team ${key.toUpperCase()} before suggesting tag tiles.`); return;
+      }
       busy = true; button.disabled = true; button.textContent = 'Finding tiles…'; alert('');
       window.setTimeout(() => {
         try {
@@ -2126,8 +2364,10 @@
             : ENGINE.optimizePlacements(comparison().teams[key], teamSettings(key), objectiveFor(state.focus));
           clearRoadmap();
           comparison().teams[key] = suggestion.team;
+          if (key === 'a') comparison().teamAReady = true;
           update();
-          const outcome = isImmortal() ? immortalTotal(results[key].immortal,state.immortal.config.priority) + '.'
+          const outcome = tag ? `${byId.get(tag.heroId).name} has ${number(results[key].metrics[state.focus])} Skill Power.`
+            : isImmortal() ? immortalTotal(results[key].immortal,state.immortal.config.priority) + '.'
             : state.focus === 'gold' ? 'Kill Gold, milestone, synergy and any enabled Gold skills were compared.' : isDamageFocus() ? 'Damage, milestone, synergy and skill tiles were compared using enabled attacker skills and this focus’s support rules.' : state.focus === 'experience' ? 'The search compared the attacker’s XP +20% tile, skill tiles on Archer, Ballista and Veteran, and milestone and synergy placements.' : 'Remaining skill tiles favor XP abilities, then Skill Power and Damage; one copy per hero. Skill DPS is not modeled.';
           $('suggestion-note').textContent = `Team ${key.toUpperCase()} tiles updated · ${number(suggestion.evaluated || 0)} placements evaluated. ${outcome}`;
         }
@@ -2211,7 +2451,7 @@
   });
   $('tier').addEventListener('change', event => { state.settings.maxTier = Number(event.target.value); edited(); });
   $('choose-attacker').addEventListener('change', event => { if (busy) return; comparison().chooseAttacker = event.target.checked; edited(); });
-  $('apply-level').addEventListener('click', () => { const level = Math.round(clamp($('all-level').value, 0, 1000000, 15000)); $('all-level').value = level; for (const key of ['a', 'b']) comparison().teams[key].forEach((slot, i) => {
+  $('apply-level').addEventListener('click', () => { const level = Math.round(clamp($('all-level').value, 0, 1000000, 15000)); $('all-level').value = level; for (const key of visibleTeamKeys()) comparison().teams[key].forEach((slot, i) => {
     if (state.focus === 'experience' && slot.id === comparison().teams[key][comparison().levelingTargets[key]]?.id) comparison().experienceOptions[key].supportLevel = level;
     else slot.level = level;
   }); edited(); });
@@ -2266,6 +2506,10 @@
       globalKillGoldLevel:1, globalDamageLevel:0, globalRankExpLevel:0, globalEnergyIncomeLevel:0});
   });
   $('synergy-event').addEventListener('change', event => { state.settings.synergyEvent = event.target.checked; edited(); });
+  $('tag-base-power').addEventListener('change', event => {
+    const tag = tagFor(state.focus);
+    if (tag) { state.settings[tag.baseSetting] = clamp(event.target.value, 0, 1e9, 0); edited(); }
+  });
   $('gold-skills').addEventListener('change', event => { state.settings.goldSkills = event.target.checked; edited(); });
   $('gold-mimic-farming').addEventListener('change', event => { state.settings.goldMimicFarming = event.target.checked; edited(); });
   for (const [id, key, min, max] of mimicFields) $(id).addEventListener('change', event => {
@@ -2292,14 +2536,24 @@
   $('review-hero').addEventListener('change', renderMilestoneReview);
   $('roster-all').addEventListener('click', () => { state.allowed = DATA.heroes.map(hero => hero.id); clearRoadmap(); renderRoadmap(); renderRoster(); save(); });
   $('roster-none').addEventListener('click', () => { state.allowed = []; clearRoadmap(); renderRoadmap(); renderRoster(); save(); });
-  $('copy-team').addEventListener('click', () => { comparison().teams.b = comparison().teams.a.map(slot => ({ ...slot })); comparison().attackers.b = comparison().attackers.a; comparison().levelingTargets.b = comparison().levelingTargets.a;
-    $('mobile-editor-b').checked = true;
-    setLineupAscensions(comparison(), 'b', comparison().ascensionOverrides?.a);
-    if (state.focus === 'gold') {
-      for (const [,field] of rateFields) if (comparison()[field]) comparison()[field].b = comparison()[field].a;
-      goldRateTeamSignatures = {};
+  function copyASettingsToB(panel) {
+    panel.attackers.b = panel.attackers.a;
+    panel.levelingTargets.b = panel.levelingTargets.a;
+    setLineupAscensions(panel, 'b', panel.ascensionOverrides?.a);
+    if (panel.experienceOptions) panel.experienceOptions.b = {...panel.experienceOptions.a};
+    for (const [,field] of rateFields) if (panel[field]) {
+      panel[field].b = panel[field].a;
+      goldRateTeamSignatures.b = goldRateTeamSignatures.a;
     }
-    if (state.focus === 'experience') comparison().experienceOptions.b = {...comparison().experienceOptions.a}; edited(); });
+  }
+  $('copy-team').addEventListener('click', () => {
+    const panel = comparison();
+    if (busy || !panel.showTeamB) return;
+    panel.teams.b = panel.teams.a.map(slot => ({ ...slot }));
+    copyASettingsToB(panel);
+    $('mobile-editor-b').checked = true;
+    edited();
+  });
   $('swap-teams').addEventListener('click', () => { [comparison().teams.a, comparison().teams.b] = [comparison().teams.b, comparison().teams.a]; [comparison().names.a, comparison().names.b] = [comparison().names.b, comparison().names.a]; [comparison().attackers.a, comparison().attackers.b] = [comparison().attackers.b, comparison().attackers.a]; [comparison().levelingTargets.a, comparison().levelingTargets.b] = [comparison().levelingTargets.b, comparison().levelingTargets.a];
     const builds = comparison().ascensionOverrides;
     if (builds) comparison().ascensionOverrides = {...(builds.a && {b:builds.a}), ...(builds.b && {a:builds.b})};
@@ -2311,43 +2565,75 @@
       goldRateTeamSignatures = {};
     }
     if (state.focus === 'experience') [comparison().experienceOptions.a, comparison().experienceOptions.b] = [comparison().experienceOptions.b, comparison().experienceOptions.a]; edited(); });
-  $('optimize').addEventListener('click', () => {
-    if (busy) return;
-    if (!comparison().teams.b.length) { alert('Add at least one hero to team B before searching. The search preserves the number of slots.'); return; }
-    const fixedTarget = hasAttacker() && !comparison().chooseAttacker ? comparison().attackers.b : state.focus === 'experience' ? comparison().levelingTargets.b : null;
-    const fixedKiller = state.focus === 'experience' ? comparison().experienceOptions.b.attacker : null;
-    if (!isImmortal() && !requiredHeroesByFocus[state.focus]?.length && !state.allowed.length && comparison().teams.b.some((slot, index) => !slot.locked && index !== fixedTarget && index !== fixedKiller)) { alert('Select at least one hero in the suggestion roster.'); return; }
-    busy = true; $('optimize').disabled = true; $('optimize').textContent = 'Searching lineups…'; alert('');
+  function suggestTeam(button) {
+    const key = button.dataset.suggestTeam;
+    const panel = comparison();
+    const firstChallenger = key === 'b' && !panel.showTeamB;
+    if (busy || (firstChallenger && !(panel.teamAReady && panel.teams.a.length))) return;
+    const source = firstChallenger ? 'a' : key;
+    const label = 'Team ' + key.toUpperCase();
+    if (!panel.teams[source].length) { alert(`Add at least one hero to ${label} before searching. The search preserves the number of slots.`); return; }
+    const chooseAttacker = hasAttacker() && panel.chooseAttacker;
+    const fixedTarget = hasAttacker() && !chooseAttacker ? panel.attackers[source] : state.focus === 'experience' ? panel.levelingTargets[source] : null;
+    const fixedKiller = state.focus === 'experience' ? panel.experienceOptions[source].attacker : null;
+    if (!isImmortal() && !requiredHeroesByFocus[state.focus]?.length && !state.allowed.length && panel.teams[source].some((slot, index) => !slot.locked && index !== fixedTarget && index !== fixedKiller)) { alert('Select at least one hero in the suggestion roster.'); return; }
+    const restoreFocus = document.activeElement === button;
+    busy = true;
+    $('optimize-a').disabled = $('optimize').disabled = true;
+    button.textContent = 'Searching lineups…';
+    alert('');
     window.setTimeout(() => {
       try {
-        const before = results.b.metrics[objectiveFor(state.focus)];
-        const chooseAttacker = hasAttacker() && comparison().chooseAttacker;
-        const settings = teamSettings('b');
+        if (panel !== comparison()) return;
+        const before = results[source].metrics[objectiveFor(state.focus)];
+        const settings = teamSettings(source);
         if (chooseAttacker) settings[state.focus === 'gold' ? 'goldHero' : 'damageHero'] = 'best';
         const suggestion = isImmortal()
-          ? ENGINE.optimizeImmortalTeam(comparison().teams.b, settings, state.immortal.config, state.allowed)
-          : ENGINE.optimizeTeam(comparison().teams.b, settings, objectiveFor(state.focus), state.allowed);
+          ? ENGINE.optimizeImmortalTeam(panel.teams[source], settings, state.immortal.config, state.allowed)
+          : ENGINE.optimizeTeam(panel.teams[source], settings, objectiveFor(state.focus), state.allowed);
+        const attacker = chooseAttacker ? bestAttacker(suggestion.team, settings, state.focus) : panel.attackers[source];
         clearRoadmap();
-        comparison().teams.b = suggestion.team;
-        $('mobile-editor-b').checked = true;
-        if (chooseAttacker) comparison().attackers.b = bestAttacker(suggestion.team, settings, state.focus);
+        if (firstChallenger) {
+          copyASettingsToB(panel);
+          panel.showTeamB = true;
+        }
+        panel.teams[key] = suggestion.team;
+        panel.attackers[key] = attacker;
+        if (key === 'a') panel.teamAReady = true;
+        $('mobile-editor-' + key).checked = true;
         update();
-        const after = results.b.metrics[objectiveFor(state.focus)], delta = before > 0 ? (after / before - 1) * 100 : 0;
+        const after = results[key].metrics[objectiveFor(state.focus)], delta = before > 0 ? (after / before - 1) * 100 : 0;
+        const baseline = firstChallenger ? 'Team A' : 'previous ' + key.toUpperCase();
+        const tag = tagFor(state.focus);
+        if (tag) {
+          const change = after - before;
+          $('suggestion-note').textContent = `${label} · ${byId.get(tag.heroId).name} has ${number(after)} Skill Power (${change >= 0 ? '+' : ''}${number(change)} vs ${baseline}). ${number(suggestion.evaluated)} lineups compared.`;
+          return;
+        }
         if (isImmortal()) {
           const config = state.immortal.config, objective = immortalObjectives[config.priority];
           const gain = before > 0 ? ` (${delta >= 0 ? '+' : ''}${number(delta)}%)` : '';
-          const damage = config.priority === 'damage' ? '' : ` · ${number(results.b.immortal.score)} boss damage/s`;
-          $('suggestion-note').textContent = `${immortalModes[config.mode]} Immortal · Team B reached ${number(after)} ${objective.label}${gain}${damage}. ${number(suggestion.evaluated)} candidates compared.`;
+          const damage = config.priority === 'damage' ? '' : ` · ${number(results[key].immortal.score)} boss damage/s`;
+          $('suggestion-note').textContent = `${immortalModes[config.mode]} Immortal · ${label} reached ${number(after)} ${objective.label}${gain}${damage}. ${number(suggestion.evaluated)} candidates compared.`;
           return;
         }
-        const selected = hasAttacker() ? comparison().attackers.b : state.focus === 'experience' ? comparison().levelingTargets.b : null;
-        const hero = comparison().teams.b[selected];
-        const outcome = chooseAttacker ? `Selected ${byId.get(hero.id).name} in slot ${selected + 1} as attacker; locked heroes preserved` : hasAttacker() ? 'Attacker and locked heroes preserved' : state.focus === 'experience' && hero ? `${byId.get(hero.id).name} retained as the leveling target; locked heroes preserved` : 'Locked heroes preserved';
-        $('suggestion-note').textContent = `${number(suggestion.evaluated || 0)} lineups evaluated · ${delta > .005 ? '+' + number(delta) + '% ' + focusNames[state.focus].toLowerCase() + ' vs previous B' : 'No stronger lineup found in this search'}. ${outcome}; tiles optimized.${state.focus === 'gold' ? ' Hunter, Rogue and Sovereign included; Kill Gold versus milestone and active skill tiles compared.' : isDamageFocus() ? ' Attacker skills and Damage versus milestone, synergy and skill tiles compared using this focus’s support rules.' : state.focus === 'powerMageEnergy' ? ' Captain included.' : ''}`;
+        const selected = hasAttacker() ? panel.attackers[key] : state.focus === 'experience' ? panel.levelingTargets[key] : null;
+        const hero = panel.teams[key][selected];
+        const outcome = chooseAttacker ? `Selected ${byId.get(hero.id).name} in slot ${selected + 1} as attacker.` : hasAttacker() ? 'Kept the selected attacker.' : state.focus === 'experience' && hero ? `Kept ${byId.get(hero.id).name} as the leveling target.` : '';
+        const gain = delta > .005 ? '+' + number(delta) + '% ' + focusNames[state.focus].toLowerCase() + ' vs ' + baseline : 'No stronger lineup found in this search';
+        $('suggestion-note').textContent = `${label} · ${number(suggestion.evaluated || 0)} lineups evaluated. ${gain}. ${outcome}${state.focus === 'gold' ? ' Hunter, Rogue and Sovereign included.' : state.focus === 'powerMageEnergy' ? ' Captain included.' : ''}`;
       } catch (error) { alert(`The suggestion could not be completed: ${error.message}`); }
-      finally { busy = false; $('optimize').disabled = false; $('optimize').innerHTML = 'Suggest team B <span aria-hidden="true">↗</span>'; }
+      finally {
+        busy = false;
+        $('optimize-a').disabled = $('optimize').disabled = false;
+        const currentButton = $(button.id);
+        currentButton.textContent = 'Suggest team ' + key.toUpperCase();
+        if (restoreFocus && panel === comparison() && (document.activeElement === document.body || document.activeElement === button)) {
+          currentButton.focus({preventScroll: !firstChallenger});
+        }
+      }
     }, 35);
-  });
+  }
   document.querySelectorAll('[data-detail-team]').forEach(button => button.addEventListener('click', () => { detailTeam = button.dataset.detailTeam; renderDetails(); }));
   document.querySelectorAll('[data-tab]').forEach(button => button.addEventListener('click', () => { detailTab = button.dataset.tab; renderDetails(); }));
   $('detail-scope').addEventListener('change', event => { detailScope = event.target.value; renderDetails(); });
@@ -2420,14 +2706,13 @@
   $('dismiss-migration').addEventListener('click', () => { $('migration-notice').hidden = true; });
   $('import-file').addEventListener('change', async event => {
     const file = event.target.files[0]; if (!file) return;
-    try { if (file.size > 1000000) throw new Error('This setup is too large. Choose a JSON setup under 1 MB.'); applySetup(JSON.parse(await file.text())); clearRoadmap(); alert(''); detailScope = 'global'; $('suggestion-note').textContent = suggestionHelp(); renderRoster(); update(); }
+    try { if (file.size > 1000000) throw new Error('This setup is too large. Choose a JSON setup under 1 MB.'); applySetup(JSON.parse(await file.text())); clearRoadmap(); alert(''); detailScope = 'global'; $('suggestion-note').textContent = ''; renderRoster(); update(); }
     catch (error) { alert(`Could not import setup: ${error.message}`); }
     finally { event.target.value = ''; }
   });
   $('source-description').textContent = `${DATA.heroes.length} heroes use synergy records from the community spreadsheet by Mana, Osto and devilkk (${DATA.meta.gameVersion}, updated ${DATA.meta.sourceUpdated}; imported ${DATA.meta.importedAt}). These synergy records have not yet been fully verified against current screenshots.${REVIEW?.status === 'active-calibrated' ? ` Milestones for ${activeMilestoneHeroes} of the ${REVIEW.expectedHeroes} planned heroes are active through level 10,000 from your screenshots; ${REVIEW.capturedHeroes} heroes have been captured in total. Base values are inferred from rounded account displays using the confirmed ×2.8125 multiplier; the original sheet remains available for comparison.${activeMilestoneHeroes < REVIEW.expectedHeroes ? ` The remaining ${REVIEW.expectedHeroes - activeMilestoneHeroes} heroes require complete milestone and synergy records before they can enter the comparison.` : ''}` : REVIEW?.heroes?.length ? ` Screenshot review: ${REVIEW.capturedHeroes} of ${REVIEW.expectedHeroes} heroes captured with zero heroes deployed. Base-value scaling remains unresolved; scores use spreadsheet milestones through level 7,500.` : ''}`;
   $('source-link').href = DATA.meta.sourceURL;
   $('data-badge').textContent = REVIEW?.status === 'active-calibrated' ? `${activeMilestoneHeroes}/${REVIEW.expectedHeroes} heroes · milestones active` : `${DATA.heroes.length} heroes · ${DATA.meta.gameVersion}`;
-  $('suggestion-note').textContent = suggestionHelp();
   renderMilestoneReview(); renderRoster(); update();
 
   // Resolve section links before their destination is scrolled into view on a phone.
@@ -2437,6 +2722,9 @@
     const links = Array.from(document.querySelectorAll('[data-workspace-link]'));
     function showLinkedSection(hash, scroll = false) {
       const target = hash ? document.getElementById(hash.slice(1)) : null;
+      const report = target?.closest('#focus-analysis > [data-report-tab]');
+      const openReport = report && !report.hidden && report.hasAttribute('data-inactive');
+      if (openReport) selectFocusReport(report);
       const section = target?.closest('.workspace-columns > [id]')?.id ?? 'comparison';
       const changed = workspace.dataset.phoneSection !== section;
       workspace.dataset.phoneSection = section;
@@ -2444,12 +2732,12 @@
         if (phoneLayout.matches && link.hash === '#' + section) link.setAttribute('aria-current', 'location');
         else link.removeAttribute('aria-current');
       }
-      if (scroll && changed && phoneLayout.matches) target?.scrollIntoView({block:'start'});
+      if (scroll && (openReport || (changed && phoneLayout.matches))) target?.scrollIntoView({block:'start'});
     }
     const syncLocation = () => showLinkedSection(window.location.hash, true);
     window.addEventListener('hashchange', syncLocation);
     window.addEventListener('click', event => {
-      if (!phoneLayout.matches || event.defaultPrevented || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
       const link = event.target.closest?.('a[href^="#"]');
       if (link) showLinkedSection(link.hash);
     });

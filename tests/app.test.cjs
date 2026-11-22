@@ -6,6 +6,11 @@ const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const storageKey = 'hero-team-lab-v1';
 const focuses = ['energy', 'gold', 'experience', 'damage', 'powerMageEnergy', 'damageBuffSwap'];
+const tagCases = [
+  {focus:'archerExperienceTag', name:'Archer Experience Tag', hero:'archer'},
+  {focus:'hunterGoldTag', name:'Hunter Gold Tag', hero:'hunter'}
+];
+const allFocuses = [...focuses, ...tagCases.map(tag => tag.focus)];
 const immortalModes = ['skill','melee','mage','ranged'];
 const experienceRequired = ['archer','ballista','veteran'];
 const requiredByFocus = {experience:experienceRequired,gold:['hunter','rogue','sovereign'],powerMageEnergy:['captain']};
@@ -24,6 +29,7 @@ class Element {
   addEventListener(type, fn) { this.listeners.set(type, [...(this.listeners.get(type) || []), fn]); }
   setAttribute(name, value) { this.attributes[name] = String(value); }
   getAttribute(name) { return this.attributes[name]; }
+  hasAttribute(name) { return Object.hasOwn(this.attributes, name); }
   removeAttribute(name) { delete this.attributes[name]; }
   closest(selector) {
     if (selector === 'button') return this.tagName === 'BUTTON' ? this : null;
@@ -48,15 +54,55 @@ function load(candidate) {
   elements.get('all-level').value = '15000';
   const detailButtons = ['a', 'b'].map(detailTeam => new Element('button', {detailTeam}));
   const tabButtons = ['bonuses', 'synergies', 'milestones', 'styles', 'map'].map(tab => new Element('button', {tab}));
+  const reportPanels = [...template.matchAll(/<section\b[^>]*\bdata-report-tab="([^"]+)"[^>]*>/g)].map(([tag, label]) => {
+    const id = tag.match(/\bid="([^"]+)"/)[1];
+    const panel = elements.get(id);
+    panel.id = id;
+    panel.dataset.reportTab = label;
+    panel.hidden = /\shidden\b/.test(tag);
+    return panel;
+  });
+  const reportTabs = elements.get('focus-report-tabs');
+  reportTabs.appendChild = button => {
+    reportTabs.children.push(button);
+    elements.set(button.id, button);
+    return button;
+  };
+  const teams = elements.get('teams');
+  let teamMarkup = '';
+  Object.defineProperty(teams, 'innerHTML', {
+    get() { return teamMarkup; },
+    set(markup) {
+      teamMarkup = markup;
+      elements.delete('optimize-a');
+      elements.delete('optimize');
+      for (const [tag, key] of markup.matchAll(/<button\b[^>]*\bdata-suggest-team="([ab])"[^>]*>/g)) {
+        const button = new Element('button', {suggestTeam:key});
+        button.id = tag.match(/\bid="([^"]+)"/)[1];
+        button.hidden = /\shidden\b/.test(tag);
+        button.disabled = /\sdisabled\b/.test(tag);
+        button.addEventListener('click', () => {
+          assert.ok(!button.hidden && !button.disabled, `Suggest team ${key.toUpperCase()} must be available to click`);
+          return teams.dispatch('click', button);
+        });
+        elements.set(button.id, button);
+      }
+    }
+  });
   const stored = new Map(candidate === undefined ? [] : [[storageKey, JSON.stringify(candidate)]]);
   const timers = [], downloads = [], evaluationCalls = [], optimizationCalls = [], immortalOptimizationCalls = [];
   let exportBlob, nextSuggestion;
   const document = {
     documentElement: {clientWidth:1200,clientHeight:900},
-    getElementById(id) { assert.ok(elements.has(id), `Unknown template element #${id}`); return elements.get(id); },
+    getElementById(id) {
+      if (id === 'optimize' || id === 'optimize-a') return elements.get(id) || null;
+      assert.ok(elements.has(id), `Unknown template element #${id}`);
+      return elements.get(id);
+    },
     querySelectorAll(selector) {
       if (selector === '[data-detail-team]') return detailButtons;
       if (selector === '[data-tab]') return tabButtons;
+      if (selector === '#focus-analysis > [data-report-tab]') return reportPanels;
       return [];
     },
     createElement(tag) {
@@ -148,6 +194,10 @@ function fixture() {
   };
   saved.focusTeams.gold.enemiesPerHour = {a:null,b:null};
   saved.focusTeams.gold.mimicKillsPerHour = {a:null,b:null};
+  for (const panel of [...Object.values(saved.focusTeams), ...Object.values(saved.immortal.teams)]) {
+    panel.teamAReady = true;
+    panel.showTeamB = true;
+  }
   return saved;
 }
 
@@ -176,10 +226,232 @@ function assertSingleAttacker(call, index) {
 const tests = [];
 const test = (name, run) => tests.push({name, run});
 
+function assertFocusReports(app, reportIds, selectedId = reportIds[0]) {
+  const tabs = app.elements.get('focus-report-tabs');
+  assert.equal(app.elements.get('focus-analysis').hidden, false);
+  assert.equal(tabs.hidden, reportIds.length === 1);
+  assert.deepEqual(tabs.children.filter(tab => !tab.hidden).map(tab => tab.getAttribute('aria-controls')), reportIds);
+  for (const tab of tabs.children) {
+    const panel = app.elements.get(tab.getAttribute('aria-controls'));
+    const selected = panel.id === selectedId;
+    assert.equal(panel.getAttribute('aria-labelledby'), tab.id);
+    assert.equal(tab.hidden, panel.hidden);
+    assert.equal(tab.getAttribute('aria-selected'), String(selected));
+    assert.equal(tab.tabIndex, selected ? 0 : -1);
+    assert.equal(!panel.hidden && !panel.hasAttribute('data-inactive'), selected);
+  }
+}
+
+test('focus explanations offer only the applicable reports and show one pane at a time', async () => {
+  const app = load();
+  const damage = ['damage-skill-breakdown','damage-support-breakdown','damage-placement-comparison','chance-reference'];
+  const immortal = ['immortal-hero-report','immortal-settings-report'];
+  for (const [focus, reports] of [
+    ['energy', ['wave-energy-report']],
+    ['powerMageEnergy', ['power-mage-comparison','wave-energy-report']],
+    ['experience', ['experience-placement-comparison','experience-roadmap']],
+    ['damage', damage], ['damageBuffSwap', damage],
+    ...tagCases.map(({focus}) => [focus, ['tag-power-report']]),
+    ['immortal', immortal]
+  ]) {
+    await app.focus(focus);
+    assertFocusReports(app, reports);
+    assert.match(app.elements.get('focus-explanations-heading').textContent, /explanations/i);
+  }
+  await app.click('tab-immortal-settings-report');
+  for (const mode of immortalModes) {
+    await app.click('immortal-modes', {immortalMode:mode});
+    assertFocusReports(app, immortal, 'immortal-settings-report');
+  }
+  await app.focus('experience');
+  await app.click('tab-experience-roadmap');
+  await app.change('xp-veteran-stacks', null, 7);
+  assertFocusReports(app, ['experience-placement-comparison','experience-roadmap'], 'experience-roadmap');
+  await app.focus('immortal');
+  assertFocusReports(app, immortal, 'immortal-settings-report');
+});
+
+test('Gold explanations handle keyboard navigation, payout mode changes, and separate focus selections', async () => {
+  const app = load();
+  await app.focus('gold');
+  const gold = ['gold-mimic-report','gold-skill-breakdown','gold-attacker-skill-breakdown','gold-placement-comparison','chance-reference'];
+  assertFocusReports(app, gold);
+  const tabs = app.elements.get('focus-report-tabs');
+  let focused;
+  for (const tab of tabs.children) tab.focus = () => { focused = tab; };
+  async function press(from, key, to) {
+    await tabs.dispatch('keydown', app.elements.get('tab-' + from), {key});
+    assertFocusReports(app, gold, to);
+    assert.equal(focused, app.elements.get('tab-' + to));
+  }
+  await press(gold[0], 'ArrowLeft', gold.at(-1));
+  await press(gold.at(-1), 'ArrowRight', gold[0]);
+  await press(gold[0], 'End', gold.at(-1));
+  await press(gold.at(-1), 'Home', gold[0]);
+
+  await app.check('gold-mimic-farming', false);
+  const boss = ['gold-comparison', ...gold.slice(1)];
+  assertFocusReports(app, boss);
+  await app.click('tab-chance-reference');
+  await app.focus('damage');
+  await app.click('tab-damage-support-breakdown');
+  await app.focus('gold');
+  assertFocusReports(app, boss, 'chance-reference');
+  await app.check('gold-mimic-farming', true);
+  assertFocusReports(app, gold, 'chance-reference');
+});
+
+function assertComparisonView(app, open) {
+  const elements = app.elements;
+  const editors = elements.get('teams').innerHTML;
+  assert.match(editors, /id="lineup-editor-a"/);
+  assert.equal(editors.includes('id="lineup-editor-b"'), open);
+  const headers = [...editors.matchAll(/<article\b[^>]*id="lineup-editor-([ab])"[^>]*>\s*<header\b[^>]*>([\s\S]*?)<\/header>/g)];
+  const actions = Object.fromEntries(headers.map(([, key, header]) => [
+    key, [...header.matchAll(/\bdata-suggest-team="([ab])"/g)].map(match => match[1])
+  ]));
+  assert.deepEqual(actions, open ? {a:['a'], b:['b']} : {a:['a', 'b']});
+  assert.equal((editors.match(/\bdata-suggest-team=/g) || []).length, 2);
+  assert.equal(elements.get('mobile-team-switch').hidden, !open);
+  assert.equal(elements.get('copy-team').hidden, !open);
+  assert.equal(elements.get('swap-teams').hidden, !open);
+}
+
+test('Tag teams start with A and open a separate challenger only when Suggest team B succeeds', async () => {
+  const app = load();
+  const focus = 'archerExperienceTag';
+  await app.change('phone-focus', null, focus);
+  const original = app.state().focusTeams[focus];
+  assertComparisonView(app, false);
+  assert.equal(app.elements.get('optimize-a').hidden, false);
+  assert.equal(app.elements.get('optimize').hidden, true);
+  assert.doesNotMatch(app.elements.get('tag-power-report').innerHTML, /Team B/);
+  const nextA = clone(original.teams.a);
+  nextA[1].id = 'viking';
+  app.suggest(nextA);
+  await app.click('optimize-a'); await app.flush();
+  const a = app.state().focusTeams[focus], call = app.optimizationCalls.at(-1);
+  assert.deepEqual(call.team, original.teams.a);
+  assert.equal(call.focus, focus);
+  assert.deepEqual(call.settings.requiredHeroes, ['archer']);
+  assert.deepEqual(a.teams, {a:nextA, b:original.teams.b});
+  assert.equal(a.teamAReady, true);
+  assert.equal(app.elements.get('optimize').hidden, false);
+  assertComparisonView(app, false);
+  const reopened = load(await app.export());
+  assertComparisonView(reopened, false);
+  assert.equal(reopened.elements.get('optimize').hidden, false);
+
+  const nextB = clone(nextA);
+  nextB[2].id = 'wizard';
+  reopened.suggest(nextB);
+  await reopened.click('optimize');
+  assert.equal(reopened.elements.get('optimize-a').disabled, true);
+  assert.equal(reopened.elements.get('optimize').disabled, true);
+  await reopened.flush();
+  assert.deepEqual(reopened.optimizationCalls.at(-1).team, nextA);
+  assert.deepEqual(reopened.state().focusTeams[focus].teams, {a:nextA, b:nextB});
+  assertComparisonView(reopened, true);
+  assert.equal(reopened.elements.get('optimize-a').disabled, false);
+  assert.equal(reopened.elements.get('optimize').disabled, false);
+  assert.match(reopened.elements.get('tag-power-report').innerHTML, /Team B/);
+  assert.equal(reopened.elements.get('mobile-editor-b').checked, true);
+  await reopened.click('optimize-a'); await reopened.flush();
+  assert.deepEqual(reopened.optimizationCalls.at(-1).team, nextA);
+  assert.deepEqual(reopened.state().focusTeams[focus].teams.b, nextB);
+  await reopened.click('optimize'); await reopened.flush();
+  assert.deepEqual(reopened.optimizationCalls.at(-1).team, nextB);
+
+  await reopened.focus('hunterGoldTag');
+  assertComparisonView(reopened, false);
+  assert.equal(reopened.elements.get('optimize').hidden, true);
+  await reopened.change('phone-focus', null, focus);
+  assertComparisonView(reopened, true);
+  const imported = load(); await imported.import(await reopened.export());
+  assertComparisonView(imported, true);
+  assert.deepEqual(imported.state().focusTeams[focus].teams, {a:nextA, b:nextB});
+});
+
+test('manual A edits unlock the B search and a failed first B suggestion preserves single-team mode', async () => {
+  const app = load();
+  const hiddenB = app.state().focusTeams.energy.teams.b;
+  await app.change('teams', {level:'a:0'}, 8777);
+  await app.click('teams', {lock:'a:0'});
+  const edited = app.state();
+  assert.equal(edited.focusTeams.energy.teamAReady, true);
+  assertComparisonView(app, false);
+  assert.equal(app.elements.get('optimize').hidden, false);
+  const optimize = app.engine.optimizeTeam;
+  app.engine.optimizeTeam = () => { throw new Error('No legal lineup'); };
+  await app.click('optimize'); await app.flush();
+  assert.match(app.elements.get('alert').textContent, /No legal lineup/);
+  assertComparisonView(app, false);
+  assert.equal(app.elements.get('optimize').disabled, false);
+  assert.deepEqual(app.state(), edited);
+  app.engine.optimizeTeam = optimize;
+  const reopened = load(app.state());
+  await reopened.click('optimize'); await reopened.flush();
+  assert.deepEqual(reopened.optimizationCalls.at(-1).team, edited.focusTeams.energy.teams.a);
+  assert.deepEqual(reopened.state().focusTeams.energy.teams.a, edited.focusTeams.energy.teams.a);
+  assert.notDeepEqual(reopened.state().focusTeams.energy.teams.b, hiddenB);
+  assertComparisonView(reopened, true);
+});
+
+test('legacy lineups reopen a customized B and an A-only build offers a challenger', async () => {
+  const legacy = load().state();
+  for (const panel of [...Object.values(legacy.focusTeams), ...Object.values(legacy.immortal.teams)]) {
+    delete panel.showTeamB;
+    delete panel.teamAReady;
+  }
+  legacy.focusTeams.energy.teams.a[0].level = 8765;
+  legacy.focusTeams.gold.names.b = 'My saved gold challenger';
+  legacy.immortal.teams.ranged.teams.b[0].locked = true;
+  const app = load(legacy);
+  assertComparisonView(app, false);
+  assert.equal(app.elements.get('optimize').hidden, false);
+  await app.focus('gold');
+  assertComparisonView(app, true);
+  assert.equal(app.state().focusTeams.gold.names.b, 'My saved gold challenger');
+  await app.focus('damage');
+  assertComparisonView(app, false);
+  assert.equal(app.elements.get('optimize').hidden, true);
+  await app.focus('immortal');
+  await app.click('immortal-modes', {immortalMode:'ranged'});
+  assertComparisonView(app, true);
+  assert.deepEqual(app.state().immortal.teams.ranged.teams, legacy.immortal.teams.ranged.teams);
+});
+
+test('the first Experience challenger inherits A’s leveler, support choices and ascension trial', async () => {
+  const saved = fixture(), xp = saved.focusTeams.experience;
+  saved.focus = 'experience';
+  xp.showTeamB = false;
+  xp.teams.a = [slot('archer',500,true), slot('ballista',8000), slot('veteran',9000)];
+  xp.levelingTargets.a = xp.attackers.a = 0;
+  xp.experienceOptions.a = {style:'expFactory',attacker:'self',supportLevel:8000,optimizeSupportStyles:false};
+  xp.ascensionOverrides = {a:{archer:{milestoneLevel:4}}};
+  const app = load(saved);
+  const before = app.state().focusTeams.experience;
+  await app.click('optimize'); await app.flush();
+  const call = app.optimizationCalls.at(-1), after = app.state().focusTeams.experience;
+  assert.equal(call.focus, 'experience');
+  assert.deepEqual(call.team, before.teams.a);
+  assert.equal(call.settings.experienceLeveler, 0);
+  assert.equal(call.settings.experienceStyle, 'expFactory');
+  assert.equal(call.settings.experienceAttacker, 'self');
+  assert.equal(call.settings.experienceSupportLevel, 8000);
+  assert.equal(call.settings.experienceOptimizeSupportStyles, false);
+  assert.equal(call.settings.heroAscensions.archer.milestoneLevel, 4);
+  assert.deepEqual(after.teams.a, before.teams.a);
+  assert.deepEqual(after.ascensionOverrides.b, before.ascensionOverrides.a);
+  assert.deepEqual(after.experienceOptions.b, before.experienceOptions.a);
+  assert.equal(after.levelingTargets.b, before.levelingTargets.a);
+  assertComparisonView(app, true);
+});
+
 test('the phone focus menu uses the same saved lineups and focus as the desktop buttons', async () => {
   const app = load(fixture());
   const menu = app.elements.get('phone-focus');
-  for (const focus of [...focuses, 'immortal']) assert.ok(menu.innerHTML.includes(`value="${focus}"`));
+  for (const focus of [...allFocuses, 'immortal']) assert.ok(menu.innerHTML.includes(`value="${focus}"`));
   await app.change('phone-focus', null, 'gold');
   assert.equal(app.state().focus, 'gold');
   await app.change('teams', {level:'b:0'}, 777);
@@ -263,7 +535,7 @@ test('new setups keep independent teams for each standard focus and default to 1
   assert.equal(state.version, 21);
   assert.equal(state.settings.baseEnergy, 10000);
   assert.equal(app.engine.defaults.baseEnergy, 10000);
-  assert.deepEqual(Object.keys(state.focusTeams).sort(), [...focuses].sort());
+  assert.deepEqual(Object.keys(state.focusTeams).sort(), [...allFocuses].sort());
   for (const focus of focuses) for (const key of ['a', 'b']) {
     assert.equal(state.focusTeams[focus].teams[key].length, 10);
     assert.ok(Number.isInteger(state.focusTeams[focus].attackers[key]));
@@ -347,24 +619,123 @@ test('actual Gold search uses only its Gold roster and does not insert the XP tr
 
 test('switching focuses and reloading preserve each lineup, name, level, tile and lock', async () => {
   const app = load(fixture()), expected = {};
-  for (const [index, focus] of focuses.entries()) {
+  for (const [index, focus] of allFocuses.entries()) {
     await app.focus(focus);
     await app.change('teams', {name: 'a'}, `Saved ${focus}`);
-    await app.pickHero('a:0', ['titan', 'ninja', 'ballista', 'samurai', 'captain', 'warden'][index]);
+    await app.pickHero('a:0', ['titan', 'ninja', 'ballista', 'samurai', 'captain', 'warden', 'archer', 'hunter'][index]);
     await app.change('teams', {level: 'a:0'}, 1000 + index);
-    await app.change('teams', {tile: 'a:0'}, ['normal', 'milestone', 'synergy', 'skill', 'normal', 'damage'][index]);
+    await app.change('teams', {tile: 'a:0'}, ['normal', 'milestone', 'synergy', 'skill', 'normal', 'damage', 'normal', 'normal'][index]);
     await app.click('teams', {lock: 'a:0'});
     if (focus === 'damage' || focus === 'damageBuffSwap') await app.change('teams', {attacker: 'a'}, 1);
     expected[focus] = app.state().focusTeams[focus];
   }
-  for (const focus of focuses) {
+  for (const focus of allFocuses) {
     await app.focus(focus);
     assert.deepEqual(app.state().focusTeams[focus], expected[focus]);
     assert.match(app.elements.get('teams').innerHTML, new RegExp(`Saved ${focus}`));
   }
   const reloaded = load(app.state());
   assert.deepEqual(reloaded.state().focusTeams, expected);
-  assert.equal(reloaded.state().focus, 'damageBuffSwap');
+  assert.equal(reloaded.state().focus, 'hunterGoldTag');
+});
+
+test('pre-Tag saves and imports gain named Tag teams while preserving every existing comparison', async () => {
+  const previous = fixture();
+  previous.focus = 'gold';
+  for (const {focus, hero} of tagCases) {
+    delete previous.focusTeams[focus];
+    delete previous.settings[hero + 'TagBasePower'];
+  }
+  const imported = load();
+  await imported.import(previous);
+  for (const app of [load(previous), imported]) {
+    const saved = app.state();
+    assert.equal(saved.focus, 'gold');
+    assert.deepEqual(saved.immortal, previous.immortal);
+    for (const focus of focuses) assert.deepEqual(saved.focusTeams[focus], previous.focusTeams[focus]);
+    for (const {focus, name, hero} of tagCases) {
+      assert.ok(app.elements.get('focus-controls').innerHTML.includes(name));
+      assert.ok(app.elements.get('phone-focus').innerHTML.includes(name));
+      assert.equal(saved.settings[hero + 'TagBasePower'], 0);
+      for (const key of ['a', 'b']) {
+        assert.ok(saved.focusTeams[focus].names[key].includes(name));
+        assert.ok(saved.focusTeams[focus].teams[key].some(slot => slot.id === hero));
+      }
+    }
+  }
+});
+
+test('the Tag breakdown shows each caster’s own unlocked milestones for Team A and Team B', async () => {
+  const initial = fixture();
+  for (const {focus, hero} of tagCases) {
+    initial.focusTeams[focus].teams = {a:[slot(hero,4999)], b:[slot(hero,5000)]};
+  }
+  const app = load(initial);
+  for (const {focus, hero} of tagCases) {
+    await app.focus(focus);
+    const total = hero === 'archer' ? 22 : 25;
+    const report = app.elements.get('tag-power-report');
+    const milestoneRow = (a, b) => new RegExp(hero + '’s personal milestones</th><td class="numeric">' + a + '</td><td class="numeric">' + b + '</td>', 'i');
+    assert.match(report.innerHTML, milestoneRow(total - 15, total));
+    await app.change('teams', {level:'a:0'}, 5000);
+    assert.match(report.innerHTML, milestoneRow(total, total));
+  }
+});
+
+test('Tag scores, settings and suggestions follow the chosen caster on desktop and phone', async () => {
+  const initial = fixture();
+  initial.settings.snowFort = true;
+  initial.allowed = ['viking'];
+  for (const {focus, hero} of tagCases) {
+    initial.focusTeams[focus].teams = {
+      a: [slot(hero, 0), slot(hero, 0, false, 'skill')],
+      b: [slot('scout', 20, true), slot('militia', 25), slot('apprentice', 50)]
+    };
+    initial.focusTeams[focus].attackers = {a:0, b:1};
+  }
+  const app = load(initial);
+  for (const [i, {focus, hero}] of tagCases.entries()) {
+    if (i) await app.change('phone-focus', null, focus);
+    else await app.focus(focus);
+    const before = app.state(), base = 100 + i * 50;
+    await app.change('tag-base-power', null, base);
+    assert.equal(app.state().settings[hero + 'TagBasePower'], base);
+    const [a, b] = app.evaluationCalls.slice(-2).map(call => call.result);
+    assert.equal(a.metrics[focus], Math.round(base * 1.2));
+    assert.equal(a.tagCasters[focus].index, 1);
+    assert.equal(b.metrics[focus], 0);
+    assert.equal(b.tagCasters[focus], null);
+    assert.match(app.elements.get('tag-power-report').innerHTML, /Slot 2/i);
+    assert.match(app.elements.get('metrics').innerHTML, /Skill Power/i);
+    assert.doesNotMatch(app.elements.get('teams').innerHTML, /data-attacker="/);
+    assert.equal(app.elements.get('attacker-search-option').hidden, true);
+    const rows = supportRankingRows(app);
+    assert.equal(rows.length, 42);
+    assert.equal(rows[0].rank, 1);
+    assert.ok(rows[0].score > rows.at(-1).score);
+    await app.click('teams', {suggestTiles:'a'}); await app.flush();
+    assert.equal(app.optimizationCalls.at(-1).focus, focus);
+    assert.deepEqual(app.optimizationCalls.at(-1).settings.requiredHeroes, [hero]);
+    app.engine.optimizeTeam = app.realOptimizeTeam;
+    await app.click('optimize'); await app.flush();
+    assert.equal(app.elements.get('alert').hidden, true);
+    const after = app.state();
+    const team = after.focusTeams[focus].teams.b;
+    assert.equal(team[0].id, 'scout');
+    assert.equal(team[0].locked, true);
+    assert.deepEqual(team.map(slot => slot.level), [20, 25, 50]);
+    assert.ok(team.some(slot => slot.id === hero));
+    assert.ok(team.slice(1).every(slot => [hero,'viking'].includes(slot.id)));
+    assert.ok(app.evaluationCalls.at(-1).result.metrics[focus] >= base);
+    assert.deepEqual(after.focusTeams[focus].teams.a, before.focusTeams[focus].teams.a);
+    for (const other of allFocuses.filter(f => f !== focus)) assert.deepEqual(after.focusTeams[other], before.focusTeams[other]);
+  }
+  const exported = await app.export(), imported = load();
+  await imported.import(exported);
+  assert.deepEqual(imported.state(), exported);
+  assert.deepEqual(load(exported).state(), exported);
+  assert.equal(imported.state().settings.archerTagBasePower, 100);
+  assert.equal(imported.state().settings.hunterTagBasePower, 150);
 });
 
 function immortalFixture() {
@@ -463,6 +834,27 @@ test('Immortal suggestions use the active boss and allowed heroes and improve ti
   assert.equal(app.state().immortal.teams.skill.teams.b[0].id,'champion');
   assert.equal(app.state().immortal.teams.skill.teams.b[1].locked,true);
   assert.equal(app.elements.get('alert').hidden,true);
+});
+
+test('Suggest team A uses the Immortal roster and keeps the second boss team closed', async () => {
+  const saved = immortalFixture(), panel = saved.immortal.teams.skill;
+  panel.teamAReady = false;
+  panel.showTeamB = false;
+  saved.allowed = ['champion','ranger'];
+  panel.teams.a = [slot('ranger',700),slot('witch',6000,true)];
+  const app = load(saved);
+  assertComparisonView(app, false);
+  assert.doesNotMatch(app.elements.get('immortal-totals').innerHTML, /Team B/);
+  await app.click('optimize-a'); await app.flush();
+  const state = app.state().immortal.teams.skill;
+  assert.deepEqual(app.immortalOptimizationCalls.at(-1).team, panel.teams.a);
+  assert.deepEqual(state.teams.a.map(s => s.id), ['champion','witch']);
+  assert.deepEqual(state.teams.b, panel.teams.b);
+  assertComparisonView(app, false);
+  await app.click('optimize'); await app.flush();
+  assert.deepEqual(app.immortalOptimizationCalls.at(-1).team, state.teams.a);
+  assertComparisonView(app, true);
+  assert.match(app.elements.get('immortal-totals').innerHTML, /Team B/);
 });
 
 test('version 12 setups migrate to eight independent Immortal lineups on load and import', async () => {
@@ -743,6 +1135,8 @@ test('import validates inactive focus teams before replacing a working setup', a
     state => { state.focusTeams.powerMageEnergy.teams.b[0].id = 'unknown-hero'; },
     state => { delete state.focusTeams.damageBuffSwap; },
     state => { state.focusTeams.damageBuffSwap.teams.a[0].id = 'unknown-hero'; },
+    state => { state.focusTeams.archerExperienceTag.teams.a[0].id = 'unknown-hero'; },
+    state => { state.focusTeams.hunterGoldTag = null; },
     state => { delete state.immortal.teams.mage; },
     state => { state.immortal.teams.ranged.teams.a[0].id = 'unknown-hero'; },
     state => { state.immortal.teams.skill.teams.b = Array.from({length:4},()=>slot('champion')); },
@@ -920,6 +1314,7 @@ test('removing the selected duplicate preserves the remaining leveling hero and 
 
 test('a new leveling hero replaces the last unlocked full-team slot and retains its tile', async () => {
   const initial = load().state(); initial.focus = 'experience';
+  initial.focusTeams.experience.showTeamB = true;
   const team = initial.focusTeams.experience.teams.b;
   team.forEach((hero, index) => { hero.locked = ![2, 7].includes(index); });
   const before = clone(team), app = load(initial);
@@ -936,6 +1331,7 @@ test('a new leveling hero replaces the last unlocked full-team slot and retains 
 
 test('full locked teams and unknown heroes cannot be changed by a leveling target choice', async () => {
   const initial = load().state(); initial.focus = 'experience';
+  initial.focusTeams.experience.showTeamB = true;
   initial.focusTeams.experience.teams.b.forEach(hero => { hero.locked = true; });
   const app = load(initial), before = app.state();
   for (const value of ['hero:ninja', 'hero:unknown-hero']) {
@@ -2274,6 +2670,27 @@ test('versions 3–5 independently copy Energy A/B into Power Mage focus without
     assert.deepEqual(imported.state(), exported);
     assert.equal(reloaded.elements.get('migration-notice').hidden, true);
   }
+});
+
+test('wave income shows the factors behind an Energy score and handles an empty comparison lineup', () => {
+  const initial = fixture();
+  initial.focus = 'energy';
+  initial.settings.baseEnergy = 250;
+  initial.settings.baseOverflow = 20;
+  initial.focusTeams.energy.teams = {a:[slot('ninja'), slot('arbalest'), slot('militia')], b:[]};
+  const app = load(initial);
+  const wave = app.elements.get('wave-energy-report').innerHTML;
+  const cells = [...wave.matchAll(/data-wave-energy-factor="a:\d+" title="([^"]+)"/g)]
+    .map(([, value]) => Number(value.replaceAll(',', '')));
+  const [base, income, incomeFactor, superAmount, ultraAmount, spillover, score] = cells;
+  assert.equal(cells.length, 7);
+  assert.equal(base, 250);
+  assert.ok(income > 0 && superAmount > 1 && ultraAmount > 1 && spillover > 1);
+  const expected = app.evaluationCalls.at(-2).result.metrics.energy;
+  assert.ok(Math.abs(score - expected) < expected * 1e-6);
+  assert.ok(Math.abs((base + income) * incomeFactor * superAmount * ultraAmount * spillover - expected) < expected * 1e-5);
+  assert.match(wave, /data-wave-energy-factor="b:6" title="0"/);
+  assert.match(wave, /empty lineup scores zero/i);
 });
 
 test('Power Mage focus shows global factors and routes team and tile suggestions without attacker search', async () => {

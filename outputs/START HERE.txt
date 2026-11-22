@@ -4,12 +4,19 @@ Updated November 21, 2026
 1. Extract this ZIP to a folder.
 2. Open hero-team-lab.html in your desktop web browser.
 3. Choose a focus in the top bar. On desktop, progression is on the left,
-   global support rankings are in the middle, and Team A/B is on the right.
-4. Use Suggest team B or Suggest tiles to compare alternatives.
+   global support rankings are in the middle, and Team A is on the right.
+   Bonus breakdown sits directly below progression and rankings.
+4. Choose Suggest team A in the lineup header or enter your heroes. Use
+   Suggest tiles to find placements. After you build Team A, its header
+   offers Suggest team B. Choose it to build the challenger. Each team
+   then has a suggestion button in its own header.
+5. Choose Focus explanations under the score. Use the tabs to inspect one
+   report at a time, such as attacker skills or tile placements for Damage.
 
-On a phone, choose a focus from the menu at the top. Teams shows both
-scores. Tap Team A or Team B above the lineup to edit one at a time.
+On a phone, choose a focus from the menu at the top. Teams opens with A.
+After adding Team B, tap either team above the lineup to edit it.
 Tap Rankings for supports or Progression for account settings and ascensions.
+Tap Bonuses to see the bonus breakdown for your team.
 
 The calculator runs offline. No installation, account or server is needed.
 All required code, styling and hero data are inside the HTML file.
@@ -24,13 +31,19 @@ also shows the hero's portrait and class name.
 
 INCLUDED MODES
 Energy, Energy + Power Mages, Gold, Experience, Damage, Damage - Buff swap,
-and Immortal Boss Damage each keep their own team comparisons.
+Archer Experience Tag, Hunter Gold Tag and Immortal Boss Damage each keep
+their own team comparisons.
 Gold and Damage use the selected attacker. Choose the best attacker too
 lets suggestions search for the attacker as well as supports.
 
+Choose Archer Experience Tag to strengthen Archer's XP mark or Hunter Gold
+Tag to strengthen Hunter's Gold Lust. Enter the hero's Skill Power with no
+team deployed if you know it. Team suggestions search supports and tiles
+for the highest Skill Power on one copy of the tagging hero.
+
 For Experience, select the hero to level. All copies of that hero share its
 level and combat style. Plan levels 1-4,500 compares teams, styles, attackers
-and tiles across the climb. Use in B loads a recommended range.
+and tiles across the climb. Load a range into A, or B during a comparison.
 Best available compares Tycoon from level 1,250 and Magnate from 4,000,
 including their global Rank EXP and synergy boosts when another hero attacks.
 The plan checks Magnate for levels 4,000-4,500. You can also pin it manually.
@@ -53,10 +66,11 @@ Mage and Ranged searches default to the most scoring hits per second.
 Equal hit rates favor the team whose weakest attacker has the higher chance
 to Ultra Crit, followed by expected Ultra hits per second and boss DPS.
 Choose team attacks per second to compare each hero's firing rate.
-Suggest all four B teams uses each boss's saved priority and buff preset.
-Open Attacks and damage by hero to inspect speed, caps, hits and Ultra chance.
+Suggest all four A teams uses each boss's saved priority and buff preset.
+In comparison view, the bulk search builds the four B teams.
+Open Focus explanations and choose Hero damage for speed, caps and Ultra chance.
 Under My ascensions, Max Attack Speed raises a hero's 10/s cap to at most
-15/s. Under Boss and skill settings, enter its separate Attack Speed rank
+15/s. In the Boss settings tab, enter its separate Attack Speed rank
 (+3% per rank) and any additional account speed to model reaching the cap.
 For Ultra, check your pre-team Crit, Super and Ultra values and each hero's
 active crit attribute ranks. All three rolls must pass for a hit to be Ultra.
@@ -64,6 +78,7 @@ active crit attribute ranks. All three rolls must pass for a hit to be Ultra.
 Required heroes depend on the focus:
 - Experience: at least one Archer, Ballista and Veteran.
 - Gold: at least one Hunter, Rogue and Sovereign.
+- Archer Experience Tag requires Archer. Hunter Gold Tag requires Hunter.
 - Energy + Power Mages: at least one Captain.
 Energy, Damage, Buff swap and all four Immortal modes have no XP-hero minimum.
 Immortal still keeps the supports required by its selected buff preset.
