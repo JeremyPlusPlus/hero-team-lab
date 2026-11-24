@@ -126,7 +126,80 @@ test('Dicemaster’s varying rolls can leave its effective Ultra below 100% even
   assert.ok(result.lowestUltraProbability>0 && result.lowestUltraProbability<1);
   assert.equal(result.guaranteedUltraHeroes,0);
   near(result.ultraHitsPerSecond,result.totalHitRate*result.lowestUltraProbability,'expected hits');
-  assert.equal(I.evaluate(team,{...s,damageDicemasterMaxRollChance:100},c).guaranteedUltraHeroes,1);
+  const forced=I.evaluate(team,{...s,damageDicemasterMaxRollChance:100},c);
+  assert.equal(forced.guaranteedUltraHeroes,1);
+  assert.equal(forced.guaranteedPassiveUltraHeroes,0);
+  assert.deepEqual(Array.from(forced.heroes[0].passiveCritChances),[5,0,0]);
+});
+
+test('Sniper sheet chances stay at 343/572/48 while a deployed or swapped Titan buffs combat Ultra',()=>{
+  const I=load([{id:'sniper',milestones:[bonus('Crit Chance',205),bonus('Super Crit Chance',463)]},{id:'titan'}]);
+  const s={...neutral,damageSupportSkills:true};
+  const cfg={mode:'ranged',baseCritChance:135,baseSuperChance:109,baseUltraChance:48};
+  for(const [team,buffTeam] of [[[slot('sniper',14493),slot('titan')],'deploy'],[[slot('sniper',14493)],'swap']]) {
+    const c={...cfg,buffTeam},result=I.evaluate(team,s,c),sniper=result.heroes[0];
+    assert.deepEqual(Array.from(sniper.passiveCritChances),[343,572,48]);
+    near(sniper.passiveUltraProbability,.48,'tier chances are individually capped before their product');
+    assert.equal(sniper.ultraProbability,1,'Titan’s active buff is sufficient for combat Ultra');
+    for (const summary of [result,I.makeScorer(s,c).details(team)]) {
+      assert.equal(summary.mode,'ranged');
+      assert.equal(summary.attackingHeroes,1,'the off-class support gets no vote');
+      assert.equal(summary.lowestPassiveUltraProbability,.48);
+      assert.equal(summary.guaranteedPassiveUltraHeroes,0);
+      assert.equal(summary.guaranteedUltraHeroes,1);
+    }
+  }
+});
+
+test('permanent synergy and milestone chances count for every linked copy while self skill chances stay temporary',()=>{
+  const I=load([{id:'deadeye',synergies:[{tier:1,requires:['scout'],type:'Ultra Crit Chance',value:32,global:false}]},
+    {id:'scout',milestones:[bonus('Ultra Crit Chance',10,true)]}]);
+  const team=['deadeye','deadeye','scout'].map(id=>slot(id));
+  const c={mode:'ranged',baseCritChance:95,baseSuperChance:90,baseUltraChance:48,
+    heroCritRanks:{deadeye:{super:10,ultra:10}}};
+  const s={...neutral,damageSkills:true};
+  const withSupport=I.evaluate(team,s,c);
+  assert.equal(withSupport.guaranteedPassiveUltraHeroes,2);
+  for(const hero of withSupport.heroes.slice(0,2)) {
+    assert.deepEqual(Array.from(hero.passiveCritChances),[100,100,100]);
+    assert.equal(hero.passiveUltraProbability,1);
+  }
+  const solo=I.evaluate([slot('deadeye')],s,c).heroes[0];
+  assert.equal(solo.passiveCritChances[2],58);
+  assert.equal(solo.ultraProbability,1,'Deadeye skill only guarantees combat Ultra');
+  near(withSupport.lowestPassiveUltraProbability,.98*.9*.58,'weakest attacking hero must pass all three checks');
+  const empty=I.evaluate([slot('scout')],s,{...c,mode:'mage'});
+  assert.equal(empty.lowestPassiveUltraProbability,0);
+  assert.equal(empty.guaranteedPassiveUltraHeroes,0);
+});
+
+test('sheet coverage counts each Skill, Melee and Mage attacker that can roll and skips support-only actions',()=>{
+  const I=load([{id:'samurai'},{id:'forester'},{id:'militia'},{id:'titan'},
+    {id:'wizard'},{id:'skymage'},{id:'warlock'}]);
+  const c={baseCritChance:100,baseSuperChance:100,baseUltraChance:95,
+    heroCritRanks:{militia:{ultra:5},forester:{ultra:5},warlock:{ultra:5}}};
+  const s={...neutral,damageSupportSkills:true};
+  const cases=[
+    ['skill','deploy',['samurai','forester','militia','titan'],3,2],
+    ['melee','swap',['militia','samurai','wizard'],2,1],
+    ['mage','warlock',['warlock','skymage','forester'],1,1]
+  ];
+  for(const [mode,buffTeam,ids,attackers,guaranteed] of cases) {
+    const team=ids.map(id=>slot(id)),cfg={...c,mode,buffTeam},result=I.evaluate(team,s,cfg);
+    for(const summary of [result,I.makeScorer(s,cfg).details(team)]) {
+      assert.equal(summary.attackingHeroes,attackers,mode);
+      assert.equal(summary.guaranteedPassiveUltraHeroes,guaranteed,mode);
+      assert.equal(summary.lowestPassiveUltraProbability,guaranteed===attackers?1:.95,mode);
+    }
+    if (mode==='skill') {
+      const [samurai,forester,militia,titan]=result.heroes;
+      assert.equal(samurai.hitRate,0);
+      assert.ok(samurai.tickRate>0 && samurai.critEligibleHitsPerSecond===samurai.tickRate);
+      assert.ok(forester.tickRate>0 && forester.critEligibleHitsPerSecond===forester.totalHitRate);
+      assert.ok(militia.tickRate>0 && militia.critEligibleHitsPerSecond<militia.totalHitRate);
+      assert.equal(titan.critEligibleHitsPerSecond,0);
+    }
+  }
 });
 
 test('Ranged and Mage sum boss-directed attacks, with separate personal speed ranks and ascension caps',()=>{

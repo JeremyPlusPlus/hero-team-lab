@@ -763,6 +763,9 @@ test('Immortal mode totals sum eligible damage and keep off-type global support 
     assert.doesNotMatch(app.elements.get('teams').innerHTML,/data-attacker=/);
     const team = state.immortal.teams[mode].teams.b;
     const report = model.evaluate(team,state.settings,config);
+    assert.match(app.elements.get('immortal-breakdown').innerHTML,/Hero Stats<br>Crit \/ Super \/ Ultra/);
+    assert.ok(app.elements.get('immortal-totals').innerHTML.includes(
+      `${report.guaranteedPassiveUltraHeroes}/${report.attackingHeroes} attackers at 100% Ultra without temporary buffs`), mode);
     const rows = [...app.elements.get('immortal-breakdown').innerHTML.matchAll(/<tr><td>B · (\d+)<\/td>([\s\S]*?)<\/tr>/g)];
     assert.equal(rows.length,team.length);
     for (const [i,hero] of report.heroes.entries()) {
@@ -947,6 +950,29 @@ test('Mage and Ranged keep custom crit inputs and import an undeployed Damage re
   assert.equal(noReference.elements.get('immortal-use-damage-chances').hidden,true);
 });
 
+test('Ranged shows the Sniper lineup’s passive Ultra shortfall even when swapped buffs cap combat Ultra', async () => {
+  const saved = load().state();
+  saved.focus = 'immortal';
+  saved.immortal.config.mode = 'ranged';
+  saved.immortal.buffTeams.ranged = 'swap';
+  const panel = saved.immortal.teams.ranged;
+  const ids = ['sniper','sniper','sniper','forester','forester','warden','wizard','warden','warden','forester'];
+  const tiles = ['milestone','milestone','milestone','synergy','synergy','synergy','skill','skill','skill','damage'];
+  panel.teams.a = ids.map((id,i) => slot(id,15000,i !== 0,tiles[i]));
+  panel.showTeamB = false;
+  saved.allowed = ['sniper','titan'];
+  const app = load(saved);
+  const totals = () => app.elements.get('immortal-totals').innerHTML;
+  const sniperRow = () => app.elements.get('immortal-breakdown').innerHTML.match(/<tr><td>A · 1<\/td>([\s\S]*?)<\/tr>/)[1];
+  assert.match(totals(), /3\/9 attackers at 100% Ultra without temporary buffs · lowest 48%/);
+  assert.match(sniperRow(), /Sniper[\s\S]*48% effective Ultra[\s\S]*<td>100%/);
+  await app.click('optimize-a');
+  await app.flush();
+  assert.equal(app.state().immortal.teams.ranged.teams.a[0].id, 'titan');
+  assert.match(totals(), /8\/8 attackers at 100% Ultra without temporary buffs/);
+  assert.match(app.elements.get('suggestion-note').textContent, /8\/8 attackers at 100%/);
+});
+
 test('a locked Champion can be joined by only the required buff heroes with an empty optional roster', async () => {
   const saved=immortalFixture(), team=saved.immortal.teams.skill;
   saved.immortal.buffTeams.skill='deploy';
@@ -981,6 +1007,7 @@ test('Suggest all four searches each mode with its own locked slots and levels a
   await app.click('immortal-all'); await app.flush();
   assert.equal(app.elements.get('alert').hidden,true);
   assert.equal(app.immortalOptimizationCalls.length,4);
+  assert.equal(app.elements.get('immortal-search-status').textContent.match(/attackers at 100% Ultra without temporary buffs/g)?.length,4);
   assert.ok(app.immortalOptimizationCalls.every(call=>call.settings.requiredHeroes.length===0));
   assert.deepEqual(app.state(),expected);
   for (const id of ['warlock','wizard','titan','apprentice']) {

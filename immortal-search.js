@@ -16,6 +16,9 @@
     strikes:['championHitsPerSecond','score'],damage:['score']
   };
   function comparisonCriterion(a,b,priority) {
+    if ((a.attackingHeroes>0)!==(b.attackingHeroes>0)) return 'attackingHeroes';
+    const left=a.lowestPassiveUltraProbability,right=b.lowestPassiveUltraProbability;
+    if ((left===1)!==(right===1) || compareRates(left,right)) return 'lowestPassiveUltraProbability';
     for (const field of priorityFields[priority]??priorityFields.damage) {
       if (field==='lowestUltraProbability' && (a[field]===1)!==(b[field]===1)) return field;
       if (field==='championHitsPerSecond' ? a[field]!==b[field] : compareRates(a[field],b[field])) return field;
@@ -220,8 +223,8 @@
       return search.result(best,true);
     }
     const seeds = [], seen = new Set();
-    function addSeed(required) {
-      const candidate = seedTeam(required);
+    function addSeed(required,fillOrder) {
+      const candidate = seedTeam(required,fillOrder);
       if (!candidate) return;
       const key = candidate.map(slot=>slot.id).join('|');
       if (seen.has(key)) return;
@@ -234,14 +237,27 @@
       if (id==='champion') addSeed([id,id]);
       addSeed([id,id,id]);
     }
-    // Retain opportunities with several cooperating heroes even when the
-    // individual substitutions would not yet activate the bonus.
+    // Pair global crit sources and their synergy partners with eligible dealers.
+    // On a support-heavy starting team the same seeds can otherwise contain
+    // no attacker, leaving a multi-hero guarantee invisible to the search.
+    const dealers=allowed.filter(id=>engine.immortal.canDamage(id,config));
+    const supportIds=allowed.filter(id=>!dealers.includes(id));
+    const dealerOrder=[...dealers,...supportIds];
+    const critChances=new Set(['Crit Chance','Super Crit Chance','Ultra Crit Chance']);
+    const addsCrit=effect=>critChances.has(engine.canonicalType(effect.type,settings));
     for (const id of new Set([...allowed,...fixed.map(slot=>slot.id)])) {
-      for (const effect of heroById.get(id).synergies) {
+      const hero=heroById.get(id);
+      if (hero.milestones.some(effect=>effect.global && addsCrit(effect))) {
+        for (let copies=1;copies<=3;copies++) addSeed(Array(copies).fill(id),dealerOrder);
+      }
+      for (const effect of hero.synergies) {
         if (effect.tier > settings.maxTier) continue;
-        if (engine.synergyPartnersNeeded(id,effect,settings) < effect.requires.length) {
-          effect.requires.forEach((_,skip)=>addSeed([id,...effect.requires.filter((_,i)=>i!==skip)]));
-        } else addSeed([id,...effect.requires]);
+        const groups=engine.synergyPartnersNeeded(id,effect,settings)<effect.requires.length
+          ? effect.requires.map((_,skip)=>effect.requires.filter((_,i)=>i!==skip)) : [effect.requires];
+        for (const partners of groups) {
+          addSeed([id,...partners]);
+          if (addsCrit(effect)) addSeed([id,...partners],dealerOrder);
+        }
       }
     }
     const bestSeedFirst=(a,b)=>search.compare(b.score,a.score);
@@ -265,18 +281,20 @@
       diverse.push({team:candidate,score:search.score(candidate)});
     }
     diverse.sort(bestSeedFirst);
-    function climb(seed) {
+    function climb(seed,onlyDealers=false) {
       let trial = copy(seed);
+      const movable=onlyDealers ? open.filter(i=>engine.immortal.canDamage(trial[i].id,config)) : open;
+      const choices=onlyDealers ? dealers : allowed;
       for (let pass=0; pass<6; pass++) {
         const before = search.score(trial);
         let current = before;
         const counts = countsFor(trial);
-        for (const i of open) {
+        for (const i of movable) {
           const old = trial[i].id;
           if (counts[old]===1 && requiredHeroes.includes(old)) continue;
           counts[old]--;
           let winner = old;
-          for (const id of allowed) {
+          for (const id of choices) {
             if (id===old || counts[id]>=3) continue;
             trial[i].id = id;
             const value = search.score(trial);
@@ -287,8 +305,8 @@
         }
         // Swapping IDs accesses different slot levels and placements even if
         // both heroes are already at the copy limit.
-        for (let x=0; x<open.length; x++) for (let y=x+1; y<open.length; y++) {
-          const a = trial[open[x]], b = trial[open[y]];
+        for (let x=0; x<movable.length; x++) for (let y=x+1; y<movable.length; y++) {
+          const a = trial[movable[x]], b = trial[movable[y]];
           if (a.id===b.id) continue;
           [a.id,b.id] = [b.id,a.id];
           const value = search.score(trial);
@@ -300,22 +318,28 @@
         accept(trial,current);
         if (search.compare(current,before)<=0) break;
       }
+      return trial;
     }
     const finalists=[...seeds.slice(0,4),...diverse.slice(0,3)].map(seed=>seed.team);
-    if (config.priority==='attacks' || config.priority==='hits') {
+    if (config.mode==='ranged' || config.mode==='mage') {
       // A full group of high-cap dealers can need a speed support before
       // any single substitution in the starting lineup looks worthwhile.
       const capRanks=settings.heroAscensions;
       const baseSpeed=id=>(heroById.get(id).observedBaseStats?.attackSpeed??1)*(1+0.03*(config.heroSpeedRanks?.[id]??0));
-      const dealers=allowed.filter(id=>engine.immortal.canDamage(id,config)).sort((a,b)=>
+      const speedOrder=dealers.slice().sort((a,b)=>
         (capRanks[b]?.maxAttackSpeedLevel??0)-(capRanks[a]?.maxAttackSpeedLevel??0) || baseSpeed(b)-baseSpeed(a));
-      const fillOrder=[...dealers,...allowed.filter(id=>!dealers.includes(id))];
-      finalists.push(seedTeam([],fillOrder));
-      for (const id of ['wizard','necromancer']) if (allowed.includes(id)) {
-        const candidate=seedTeam([id],fillOrder);
-        if (candidate) finalists.push(candidate);
+      const fillOrder=[...speedOrder,...supportIds];
+      for (const support of [null,'wizard','necromancer']) {
+        if (support && !allowed.includes(support)) continue;
+        const candidate=seedTeam(support?[support]:[],fillOrder);
+        if (!candidate) continue;
+        finalists.push(candidate);
+        // Keep these dealer slots while finding coverage from within the
+        // class. A larger immediate crit buff from an off-class support can
+        // otherwise cost an attacker even when several dealers cover the gap.
+        finalists.push(climb(candidate,true));
       }
-    }
+    } else finalists.push(climb(seedTeam([],dealerOrder),true));
     if (allowed.includes('champion') && (config.mode==='skill' || config.mode==='melee')) {
       const copies=Math.min(3,(fixedCounts.champion||0)+open.length-missing.length);
       if (copies>0) finalists.push(seedTeam(Array(copies).fill('champion')));

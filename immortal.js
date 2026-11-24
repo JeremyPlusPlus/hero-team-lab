@@ -67,7 +67,10 @@
   const [damage,taken,bossDamage,speed,shots,critDamage,superDamage,ultraDamage,crit,superCrit,ultraCrit,power,duration,splash] = stats.map((_,i)=>i);
   const indexByStat = new Map(stats.map((stat,i)=>[stat,i]));
   const multiplicative = stats.map(stat=>E.statMode(stat)==='multiply');
-  const neutral = multiplicative.map(mult=>mult?1:0);
+  // Keep temporary skill chances in their own three additive columns.
+  // The hero sheet includes the ordinary chance columns only.
+  const skillCrit=stats.length,skillSuperCrit=skillCrit+1,skillUltraCrit=skillCrit+2;
+  const neutral = [...multiplicative.map(mult=>mult?1:0),0,0,0];
   const probability = percent => Math.max(0,Math.min(1,percent/100));
   const safeLog = value => value>0 ? Math.log10(value) : -Infinity;
   // The client rounds each upgrade to even using its float32 growth
@@ -93,8 +96,10 @@
   }
   function critProfile(b,c,s,id,diceRolls) {
     const ranks=c.heroCritRanks[id];
-    const chances=[Math.round(c.baseCritChance)+(root.IMMORTAL_BASE_CRIT_CHANCE?.[id]??0)+b[crit]+(ranks?.normal??0),
+    const passiveChances=[Math.round(c.baseCritChance)+(root.IMMORTAL_BASE_CRIT_CHANCE?.[id]??0)+b[crit]+(ranks?.normal??0),
       Math.round(c.baseSuperChance)+b[superCrit]+(ranks?.super??0),Math.round(c.baseUltraChance)+b[ultraCrit]+(ranks?.ultra??0)];
+    const passiveUltraProbability=probability(passiveChances[0])*probability(passiveChances[1])*probability(passiveChances[2]);
+    const chances=[passiveChances[0]+b[skillCrit],passiveChances[1]+b[skillSuperCrit],passiveChances[2]+b[skillUltraCrit]];
     let weights,excess;
     if (!diceRolls) {
       weights=tierWeights(...chances.map(probability));
@@ -123,7 +128,7 @@
     damageLogs[3]=damageLogs[2]+safeLog(3*b[ultraDamage]);
     const eventFactors=[1,tierBonus.normal,tierBonus.super,tierBonus.ultra];
     const weighted=weights.map((p,i)=>p*eventFactors[i]);
-    return {weights,weighted,damageLogs,overflow:1+(s.baseOverflow+s.overflowRate*excess)/100};
+    return {weights,weighted,damageLogs,passiveChances,passiveUltraProbability,overflow:1+(s.baseOverflow+s.overflowRate*excess)/100};
   }
   function expectedHit(baseLog,profile) {
     let sum=0;
@@ -168,7 +173,9 @@
     return !targetDebuffs.has(id) || c.mode==='skill' || c.mode===typeOf(id);
   }
   function skillStat(type) {
-    return type==='Splash Damage' ? splash : indexByStat.get(type);
+    if(type==='Splash Damage') return splash;
+    const index=indexByStat.get(type);
+    return index>=crit && index<=ultraCrit ? skillCrit+(index-crit) : index;
   }
   function activeWindow(seconds,active,cooldown) {
     const cycle=active+cooldown,complete=Math.floor(seconds/cycle),last=Math.min(active,seconds%cycle);
@@ -326,10 +333,11 @@
       const ultraHitsPerSecond=totalHitRate*ultraProbability;
       teamEffects.critEligibleHitsPerSecond+=totalHitRate;
       teamEffects.ultraHitsPerSecond+=ultraHitsPerSecond;
-      if (totalHitRate>0) countCritAttacker(teamEffects,ultraProbability);
+      if (totalHitRate>0) countCritAttacker(teamEffects,ultraProbability,profile.passiveUltraProbability);
       if (!detailed) return score;
       return {index,id:slot.id,type,eligible,score,attackDps,skillDps,hitRate,aps,speedCap,uncappedAttackSpeed,speedOverflowDamage,attacksPerSecond,totalHitRate,tickRate,tickDps,
         ultraProbability,ultraHitsPerSecond,critEligibleHitsPerSecond:totalHitRate,
+        passiveCritChances:profile.passiveChances,passiveUltraProbability:profile.passiveUltraProbability,
         rawHitLog:Number.isFinite(rawHitLog)?rawHitLog:null,perHit,skill:cast?.name??null,skillTaggedAttacks:skillAttackRate>0,
         skillPower:additional,effectiveSkillPower,masteryPercent,skillHits,skillPercent,castRate,
         skillCooldown:cast?cooldown:0,damagePerCast,critProbabilities:profile.weights};
@@ -366,12 +374,15 @@
   }
   function teamContext(ids,c) {
     return {ticks:{},championHitsPerSecond:0,attacksPerSecond:0,totalHitRate:0,critEligibleHitsPerSecond:0,ultraHitsPerSecond:0,
-      lowestUltraProbability:0,attackingHeroes:0,guaranteedUltraHeroes:0,statusLog:0,reducedCooldown:c.buffTeam!=='deploy'||ids.has('warlock')};
+      lowestUltraProbability:0,attackingHeroes:0,guaranteedUltraHeroes:0,lowestPassiveUltraProbability:0,guaranteedPassiveUltraHeroes:0,
+      statusLog:0,reducedCooldown:c.buffTeam!=='deploy'||ids.has('warlock')};
   }
-  function countCritAttacker(context,probability) {
+  function countCritAttacker(context,probability,passiveProbability) {
     context.lowestUltraProbability=context.attackingHeroes ? Math.min(context.lowestUltraProbability,probability) : probability;
+    context.lowestPassiveUltraProbability=context.attackingHeroes ? Math.min(context.lowestPassiveUltraProbability,passiveProbability) : passiveProbability;
     context.attackingHeroes++;
     if (probability===1) context.guaranteedUltraHeroes++;
+    if (passiveProbability===1) context.guaranteedPassiveUltraHeroes++;
   }
   function applySharedTicks(context,rows) {
     let damage=0;
@@ -395,21 +406,21 @@
   }
   function teamRates(context) {
     const {championHitsPerSecond,attacksPerSecond,totalHitRate,critEligibleHitsPerSecond,ultraHitsPerSecond,
-      lowestUltraProbability,attackingHeroes,guaranteedUltraHeroes}=context;
+      lowestUltraProbability,attackingHeroes,guaranteedUltraHeroes,lowestPassiveUltraProbability,guaranteedPassiveUltraHeroes}=context;
     return {championHitsPerSecond,attacksPerSecond,totalHitRate,critEligibleHitsPerSecond,ultraHitsPerSecond,
-      lowestUltraProbability,attackingHeroes,guaranteedUltraHeroes};
+      lowestUltraProbability,attackingHeroes,guaranteedUltraHeroes,lowestPassiveUltraProbability,guaranteedPassiveUltraHeroes};
   }
   function evaluate(team,settings={},config={}) {
     return makeScorer(settings,config).evaluate(E.cleanTeam(team));
   }
   function mergeBucket(out,bucket) {
-    for (let i=0;i<stats.length;i++) {
+    for (let i=0;i<out.length;i++) {
       if (multiplicative[i]) out[i]*=bucket[i]; else out[i]+=bucket[i];
     }
   }
   function addEffect(bucket,index,value) {
     if (multiplicative[index]) bucket[index]*=1+value/100;
-    else bucket[index]+=(index===crit || index===superCrit || index===ultraCrit) ? Math.round(value) : value;
+    else bucket[index]+=((index>=crit && index<=ultraCrit) || index>=skillCrit) ? Math.round(value) : value;
   }
   function makeScorer(settings={},config={}) {
     const s=E.settingsFor({...settings,experienceLeveler:null,damageSupportMode:'all'}),c=normalize(config);
@@ -486,7 +497,7 @@
       }
       for(let i=0;i<size;i++) score+=model(team[i],locals[i],i,false,context,rolls[i]);
       score+=applySharedTicks(context);
-      return {score,...teamRates(context)};
+      return {mode:c.mode,score,...teamRates(context)};
     }
     const score=team=>measure(team).score;
     score.details=measure;

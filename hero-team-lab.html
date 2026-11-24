@@ -1131,7 +1131,7 @@
         </div>
         <p id="immortal-preset-note" class="immortal-rule"></p>
         <div class="immortal-totals" id="immortal-totals" aria-live="polite"></div>
-        <p id="immortal-ultra-note" class="immortal-rule" hidden></p>
+        <p id="immortal-ultra-note" class="immortal-rule"></p>
         <div class="immortal-actions"><button id="immortal-use-damage-chances" class="text-button" hidden>Use Damage pre-team chances</button><button id="immortal-all" class="button primary">Suggest all four A teams</button><span id="immortal-search-status" role="status"></span></div>
       </section>
       <section class="metric-grid" id="metrics" aria-label="Team results"></section>
@@ -3409,7 +3409,10 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
   const [damage,taken,bossDamage,speed,shots,critDamage,superDamage,ultraDamage,crit,superCrit,ultraCrit,power,duration,splash] = stats.map((_,i)=>i);
   const indexByStat = new Map(stats.map((stat,i)=>[stat,i]));
   const multiplicative = stats.map(stat=>E.statMode(stat)==='multiply');
-  const neutral = multiplicative.map(mult=>mult?1:0);
+  // Keep temporary skill chances in their own three additive columns.
+  // The hero sheet includes the ordinary chance columns only.
+  const skillCrit=stats.length,skillSuperCrit=skillCrit+1,skillUltraCrit=skillCrit+2;
+  const neutral = [...multiplicative.map(mult=>mult?1:0),0,0,0];
   const probability = percent => Math.max(0,Math.min(1,percent/100));
   const safeLog = value => value>0 ? Math.log10(value) : -Infinity;
   // The client rounds each upgrade to even using its float32 growth
@@ -3435,8 +3438,10 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
   }
   function critProfile(b,c,s,id,diceRolls) {
     const ranks=c.heroCritRanks[id];
-    const chances=[Math.round(c.baseCritChance)+(root.IMMORTAL_BASE_CRIT_CHANCE?.[id]??0)+b[crit]+(ranks?.normal??0),
+    const passiveChances=[Math.round(c.baseCritChance)+(root.IMMORTAL_BASE_CRIT_CHANCE?.[id]??0)+b[crit]+(ranks?.normal??0),
       Math.round(c.baseSuperChance)+b[superCrit]+(ranks?.super??0),Math.round(c.baseUltraChance)+b[ultraCrit]+(ranks?.ultra??0)];
+    const passiveUltraProbability=probability(passiveChances[0])*probability(passiveChances[1])*probability(passiveChances[2]);
+    const chances=[passiveChances[0]+b[skillCrit],passiveChances[1]+b[skillSuperCrit],passiveChances[2]+b[skillUltraCrit]];
     let weights,excess;
     if (!diceRolls) {
       weights=tierWeights(...chances.map(probability));
@@ -3465,7 +3470,7 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     damageLogs[3]=damageLogs[2]+safeLog(3*b[ultraDamage]);
     const eventFactors=[1,tierBonus.normal,tierBonus.super,tierBonus.ultra];
     const weighted=weights.map((p,i)=>p*eventFactors[i]);
-    return {weights,weighted,damageLogs,overflow:1+(s.baseOverflow+s.overflowRate*excess)/100};
+    return {weights,weighted,damageLogs,passiveChances,passiveUltraProbability,overflow:1+(s.baseOverflow+s.overflowRate*excess)/100};
   }
   function expectedHit(baseLog,profile) {
     let sum=0;
@@ -3510,7 +3515,9 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     return !targetDebuffs.has(id) || c.mode==='skill' || c.mode===typeOf(id);
   }
   function skillStat(type) {
-    return type==='Splash Damage' ? splash : indexByStat.get(type);
+    if(type==='Splash Damage') return splash;
+    const index=indexByStat.get(type);
+    return index>=crit && index<=ultraCrit ? skillCrit+(index-crit) : index;
   }
   function activeWindow(seconds,active,cooldown) {
     const cycle=active+cooldown,complete=Math.floor(seconds/cycle),last=Math.min(active,seconds%cycle);
@@ -3668,10 +3675,11 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
       const ultraHitsPerSecond=totalHitRate*ultraProbability;
       teamEffects.critEligibleHitsPerSecond+=totalHitRate;
       teamEffects.ultraHitsPerSecond+=ultraHitsPerSecond;
-      if (totalHitRate>0) countCritAttacker(teamEffects,ultraProbability);
+      if (totalHitRate>0) countCritAttacker(teamEffects,ultraProbability,profile.passiveUltraProbability);
       if (!detailed) return score;
       return {index,id:slot.id,type,eligible,score,attackDps,skillDps,hitRate,aps,speedCap,uncappedAttackSpeed,speedOverflowDamage,attacksPerSecond,totalHitRate,tickRate,tickDps,
         ultraProbability,ultraHitsPerSecond,critEligibleHitsPerSecond:totalHitRate,
+        passiveCritChances:profile.passiveChances,passiveUltraProbability:profile.passiveUltraProbability,
         rawHitLog:Number.isFinite(rawHitLog)?rawHitLog:null,perHit,skill:cast?.name??null,skillTaggedAttacks:skillAttackRate>0,
         skillPower:additional,effectiveSkillPower,masteryPercent,skillHits,skillPercent,castRate,
         skillCooldown:cast?cooldown:0,damagePerCast,critProbabilities:profile.weights};
@@ -3708,12 +3716,15 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
   }
   function teamContext(ids,c) {
     return {ticks:{},championHitsPerSecond:0,attacksPerSecond:0,totalHitRate:0,critEligibleHitsPerSecond:0,ultraHitsPerSecond:0,
-      lowestUltraProbability:0,attackingHeroes:0,guaranteedUltraHeroes:0,statusLog:0,reducedCooldown:c.buffTeam!=='deploy'||ids.has('warlock')};
+      lowestUltraProbability:0,attackingHeroes:0,guaranteedUltraHeroes:0,lowestPassiveUltraProbability:0,guaranteedPassiveUltraHeroes:0,
+      statusLog:0,reducedCooldown:c.buffTeam!=='deploy'||ids.has('warlock')};
   }
-  function countCritAttacker(context,probability) {
+  function countCritAttacker(context,probability,passiveProbability) {
     context.lowestUltraProbability=context.attackingHeroes ? Math.min(context.lowestUltraProbability,probability) : probability;
+    context.lowestPassiveUltraProbability=context.attackingHeroes ? Math.min(context.lowestPassiveUltraProbability,passiveProbability) : passiveProbability;
     context.attackingHeroes++;
     if (probability===1) context.guaranteedUltraHeroes++;
+    if (passiveProbability===1) context.guaranteedPassiveUltraHeroes++;
   }
   function applySharedTicks(context,rows) {
     let damage=0;
@@ -3737,21 +3748,21 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
   }
   function teamRates(context) {
     const {championHitsPerSecond,attacksPerSecond,totalHitRate,critEligibleHitsPerSecond,ultraHitsPerSecond,
-      lowestUltraProbability,attackingHeroes,guaranteedUltraHeroes}=context;
+      lowestUltraProbability,attackingHeroes,guaranteedUltraHeroes,lowestPassiveUltraProbability,guaranteedPassiveUltraHeroes}=context;
     return {championHitsPerSecond,attacksPerSecond,totalHitRate,critEligibleHitsPerSecond,ultraHitsPerSecond,
-      lowestUltraProbability,attackingHeroes,guaranteedUltraHeroes};
+      lowestUltraProbability,attackingHeroes,guaranteedUltraHeroes,lowestPassiveUltraProbability,guaranteedPassiveUltraHeroes};
   }
   function evaluate(team,settings={},config={}) {
     return makeScorer(settings,config).evaluate(E.cleanTeam(team));
   }
   function mergeBucket(out,bucket) {
-    for (let i=0;i<stats.length;i++) {
+    for (let i=0;i<out.length;i++) {
       if (multiplicative[i]) out[i]*=bucket[i]; else out[i]+=bucket[i];
     }
   }
   function addEffect(bucket,index,value) {
     if (multiplicative[index]) bucket[index]*=1+value/100;
-    else bucket[index]+=(index===crit || index===superCrit || index===ultraCrit) ? Math.round(value) : value;
+    else bucket[index]+=((index>=crit && index<=ultraCrit) || index>=skillCrit) ? Math.round(value) : value;
   }
   function makeScorer(settings={},config={}) {
     const s=E.settingsFor({...settings,experienceLeveler:null,damageSupportMode:'all'}),c=normalize(config);
@@ -3828,7 +3839,7 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
       }
       for(let i=0;i<size;i++) score+=model(team[i],locals[i],i,false,context,rolls[i]);
       score+=applySharedTicks(context);
-      return {score,...teamRates(context)};
+      return {mode:c.mode,score,...teamRates(context)};
     }
     const score=team=>measure(team).score;
     score.details=measure;
@@ -3858,6 +3869,9 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     strikes:['championHitsPerSecond','score'],damage:['score']
   };
   function comparisonCriterion(a,b,priority) {
+    if ((a.attackingHeroes>0)!==(b.attackingHeroes>0)) return 'attackingHeroes';
+    const left=a.lowestPassiveUltraProbability,right=b.lowestPassiveUltraProbability;
+    if ((left===1)!==(right===1) || compareRates(left,right)) return 'lowestPassiveUltraProbability';
     for (const field of priorityFields[priority]??priorityFields.damage) {
       if (field==='lowestUltraProbability' && (a[field]===1)!==(b[field]===1)) return field;
       if (field==='championHitsPerSecond' ? a[field]!==b[field] : compareRates(a[field],b[field])) return field;
@@ -4062,8 +4076,8 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
       return search.result(best,true);
     }
     const seeds = [], seen = new Set();
-    function addSeed(required) {
-      const candidate = seedTeam(required);
+    function addSeed(required,fillOrder) {
+      const candidate = seedTeam(required,fillOrder);
       if (!candidate) return;
       const key = candidate.map(slot=>slot.id).join('|');
       if (seen.has(key)) return;
@@ -4076,14 +4090,27 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
       if (id==='champion') addSeed([id,id]);
       addSeed([id,id,id]);
     }
-    // Retain opportunities with several cooperating heroes even when the
-    // individual substitutions would not yet activate the bonus.
+    // Pair global crit sources and their synergy partners with eligible dealers.
+    // On a support-heavy starting team the same seeds can otherwise contain
+    // no attacker, leaving a multi-hero guarantee invisible to the search.
+    const dealers=allowed.filter(id=>engine.immortal.canDamage(id,config));
+    const supportIds=allowed.filter(id=>!dealers.includes(id));
+    const dealerOrder=[...dealers,...supportIds];
+    const critChances=new Set(['Crit Chance','Super Crit Chance','Ultra Crit Chance']);
+    const addsCrit=effect=>critChances.has(engine.canonicalType(effect.type,settings));
     for (const id of new Set([...allowed,...fixed.map(slot=>slot.id)])) {
-      for (const effect of heroById.get(id).synergies) {
+      const hero=heroById.get(id);
+      if (hero.milestones.some(effect=>effect.global && addsCrit(effect))) {
+        for (let copies=1;copies<=3;copies++) addSeed(Array(copies).fill(id),dealerOrder);
+      }
+      for (const effect of hero.synergies) {
         if (effect.tier > settings.maxTier) continue;
-        if (engine.synergyPartnersNeeded(id,effect,settings) < effect.requires.length) {
-          effect.requires.forEach((_,skip)=>addSeed([id,...effect.requires.filter((_,i)=>i!==skip)]));
-        } else addSeed([id,...effect.requires]);
+        const groups=engine.synergyPartnersNeeded(id,effect,settings)<effect.requires.length
+          ? effect.requires.map((_,skip)=>effect.requires.filter((_,i)=>i!==skip)) : [effect.requires];
+        for (const partners of groups) {
+          addSeed([id,...partners]);
+          if (addsCrit(effect)) addSeed([id,...partners],dealerOrder);
+        }
       }
     }
     const bestSeedFirst=(a,b)=>search.compare(b.score,a.score);
@@ -4107,18 +4134,20 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
       diverse.push({team:candidate,score:search.score(candidate)});
     }
     diverse.sort(bestSeedFirst);
-    function climb(seed) {
+    function climb(seed,onlyDealers=false) {
       let trial = copy(seed);
+      const movable=onlyDealers ? open.filter(i=>engine.immortal.canDamage(trial[i].id,config)) : open;
+      const choices=onlyDealers ? dealers : allowed;
       for (let pass=0; pass<6; pass++) {
         const before = search.score(trial);
         let current = before;
         const counts = countsFor(trial);
-        for (const i of open) {
+        for (const i of movable) {
           const old = trial[i].id;
           if (counts[old]===1 && requiredHeroes.includes(old)) continue;
           counts[old]--;
           let winner = old;
-          for (const id of allowed) {
+          for (const id of choices) {
             if (id===old || counts[id]>=3) continue;
             trial[i].id = id;
             const value = search.score(trial);
@@ -4129,8 +4158,8 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
         }
         // Swapping IDs accesses different slot levels and placements even if
         // both heroes are already at the copy limit.
-        for (let x=0; x<open.length; x++) for (let y=x+1; y<open.length; y++) {
-          const a = trial[open[x]], b = trial[open[y]];
+        for (let x=0; x<movable.length; x++) for (let y=x+1; y<movable.length; y++) {
+          const a = trial[movable[x]], b = trial[movable[y]];
           if (a.id===b.id) continue;
           [a.id,b.id] = [b.id,a.id];
           const value = search.score(trial);
@@ -4142,22 +4171,28 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
         accept(trial,current);
         if (search.compare(current,before)<=0) break;
       }
+      return trial;
     }
     const finalists=[...seeds.slice(0,4),...diverse.slice(0,3)].map(seed=>seed.team);
-    if (config.priority==='attacks' || config.priority==='hits') {
+    if (config.mode==='ranged' || config.mode==='mage') {
       // A full group of high-cap dealers can need a speed support before
       // any single substitution in the starting lineup looks worthwhile.
       const capRanks=settings.heroAscensions;
       const baseSpeed=id=>(heroById.get(id).observedBaseStats?.attackSpeed??1)*(1+0.03*(config.heroSpeedRanks?.[id]??0));
-      const dealers=allowed.filter(id=>engine.immortal.canDamage(id,config)).sort((a,b)=>
+      const speedOrder=dealers.slice().sort((a,b)=>
         (capRanks[b]?.maxAttackSpeedLevel??0)-(capRanks[a]?.maxAttackSpeedLevel??0) || baseSpeed(b)-baseSpeed(a));
-      const fillOrder=[...dealers,...allowed.filter(id=>!dealers.includes(id))];
-      finalists.push(seedTeam([],fillOrder));
-      for (const id of ['wizard','necromancer']) if (allowed.includes(id)) {
-        const candidate=seedTeam([id],fillOrder);
-        if (candidate) finalists.push(candidate);
+      const fillOrder=[...speedOrder,...supportIds];
+      for (const support of [null,'wizard','necromancer']) {
+        if (support && !allowed.includes(support)) continue;
+        const candidate=seedTeam(support?[support]:[],fillOrder);
+        if (!candidate) continue;
+        finalists.push(candidate);
+        // Keep these dealer slots while finding coverage from within the
+        // class. A larger immediate crit buff from an off-class support can
+        // otherwise cost an attacker even when several dealers cover the gap.
+        finalists.push(climb(candidate,true));
       }
-    }
+    } else finalists.push(climb(seedTeam([],dealerOrder),true));
     if (allowed.includes('champion') && (config.mode==='skill' || config.mode==='melee')) {
       const copies=Math.min(3,(fixedCounts.champion||0)+open.length-missing.length);
       if (copies>0) finalists.push(seedTeam(Array(copies).fill('champion')));
@@ -4417,6 +4452,12 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
   function immortalTotal(result, priority) {
     const objective = immortalObjectives[priority];
     return `${number(result[objective.key])} ${objective.label}`;
+  }
+  function immortalUltraSummary(result) {
+    if (!result.attackingHeroes) return 'No attackers with crit-eligible hits';
+    const coverage = `${result.guaranteedPassiveUltraHeroes}/${result.attackingHeroes} attackers at 100% Ultra without temporary buffs`;
+    return result.lowestPassiveUltraProbability === 1 ? coverage
+      : `${coverage} · lowest ${ultraPercent(result.lowestPassiveUltraProbability)}`;
   }
   function ultraPercent(probability) {
     const percent = probability * 100, rounded = number(percent);
@@ -4790,12 +4831,15 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
     const visible = pool.filter(row => row.name.toLowerCase().includes(query));
     const selected = visible.find(row => row.id === options.selectedHero) || visible[0];
     const scope = options.lineupOnly ? `Team ${key.toUpperCase()} lineup` : 'Full roster';
+    const immortal = isImmortal();
     $('support-roster-count').textContent = `${number(visible.length)} of ${number(pool.length)} heroes · ${scope} · ${label}`;
     const body = visible.map(row => `<tr class="${row === selected ? 'support-selected-row' : ''}">
       <td class="numeric support-rank">${row.rank ?? '—'}</td><th scope="row"><button class="support-hero-button" data-support-hero="${esc(row.id)}" data-hero-class="${immortalEngine.typeOf(row.id)}" aria-pressed="${row === selected}" title="${esc(immortalModes[immortalEngine.typeOf(row.id)])}">${heroPortrait(row.id)}<span>${esc(row.name)}</span></button></th>
+      ${immortal ? `<td class="numeric">${row.result?.attackingHeroes ? ultraPercent(row.result.lowestPassiveUltraProbability) : '—'}</td>` : ''}
       <td class="numeric support-sorted-value" title="${esc(row.reason || precise(row.value))}">${row.reason ? '—' : formatValue(row.value)}</td></tr>`).join('');
     const empty = query ? 'No heroes match this search.' : 'No heroes to rank in this lineup.';
-    $('support-table').innerHTML = `<table><caption class="sr-only">${esc(label)} rankings</caption><thead><tr><th class="numeric">Rank</th><th>Hero</th><th class="numeric" aria-sort="descending">${esc(label)}</th></tr></thead><tbody>${body || `<tr><td colspan="3" class="table-empty">${empty}</td></tr>`}</tbody></table>`;
+    const heading = immortal ? `<th class="numeric" aria-sort="descending">Lowest passive Ultra</th><th class="numeric">${esc(label)}</th>` : `<th class="numeric" aria-sort="descending">${esc(label)}</th>`;
+    $('support-table').innerHTML = `<table><caption class="sr-only">${esc(label)} rankings</caption><thead><tr><th class="numeric">Rank</th><th>Hero</th>${heading}</tr></thead><tbody>${body || `<tr><td colspan="${immortal ? 4 : 3}" class="table-empty">${empty}</td></tr>`}</tbody></table>`;
     if (!selected) $('support-hero-details').innerHTML = '';
     return selected;
   }
@@ -4850,12 +4894,12 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
     const title = `<div class="support-detail-heading"><h3>${esc(row.name)}</h3></div>`;
     if (row.reason) { $('support-hero-details').innerHTML = `${title}<p>${esc(row.reason)}</p>`; return; }
     const baseline = results[key].immortal, projected = row.result;
-    const measures = [objective];
+    const measures = [{key:'lowestPassiveUltraProbability',label:'Lowest Ultra chance without temporary buffs'}, objective];
     if (usesAttackPriority(config.mode) && config.priority !== 'damage') {
       measures.push({key:'lowestUltraProbability', label:'Lowest effective Ultra chance'}, {key:'ultraHitsPerSecond', label:'Expected Ultra hits/s'});
     }
     if (config.priority !== 'damage') measures.push(immortalObjectives.damage);
-    const valueFor = (result, m) => m.key === 'lowestUltraProbability'
+    const valueFor = (result, m) => ['lowestUltraProbability','lowestPassiveUltraProbability'].includes(m.key)
       ? result.attackingHeroes ? ultraPercent(result[m.key]) : '—' : number(result[m.key]);
     const lines = measures.map(m => `<tr><th scope="row">${esc(m.label)}</th><td class="numeric">${valueFor(baseline,m)}</td><td class="numeric">${valueFor(projected,m)}</td></tr>`).join('');
     $('support-hero-details').innerHTML = `${title}<p class="support-detail-label">${esc(byId.get(slot.id).name)} → ${esc(row.name)} · Slot ${slotIndex + 1}</p>
@@ -5651,17 +5695,14 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
     const priorities = classSpeed ? ['hits','attacks','damage'] : mode === 'melee' ? ['strikes','damage'] : ['damage'];
     $('immortal-priority').innerHTML = priorities.map(id => `<option value="${id}">${immortalObjectives[id].option}</option>`).join('');
     $('immortal-priority').value = config.priority;
-    $('immortal-ultra-note').hidden = !classSpeed;
     const damageChances = damagePreTeamChances();
-    $('immortal-use-damage-chances').hidden = !classSpeed || !damageChances;
-    if (classSpeed) {
-      const current = [config.baseCritChance,config.baseSuperChance,config.baseUltraChance];
-      const matchesTemplate = defaults.chanceReferences.damage.totals.every((value,i) => value === current[i]);
-      const context = current.every(value => value >= 100) ? ' These inputs already guarantee all three rolls before hero bonuses.'
-        : matchesTemplate ? ' These inputs match the recorded pre-team Damage defaults.' : '';
-      $('immortal-ultra-note').textContent = `Effective Ultra chance is the probability of passing the Crit, Super and Ultra rolls with active buffs. Immortal uses +${number(config.baseCritChance)} Crit Chance points, ${number(config.baseSuperChance)}% Super and ${number(config.baseUltraChance)}% Ultra before hero bonuses.${context} You can edit these values under Boss and skill settings.`;
-      if (damageChances) $('immortal-use-damage-chances').title = `Apply the saved Damage reference of ${number(damageChances[0])}% Crit, ${number(damageChances[1])}% Super and ${number(damageChances[2])}% Ultra to all Immortals.`;
-    }
+    $('immortal-use-damage-chances').hidden = !damageChances;
+    const current = [config.baseCritChance,config.baseSuperChance,config.baseUltraChance];
+    const matchesTemplate = defaults.chanceReferences.damage.totals.every((value,i) => value === current[i]);
+    const context = current.every(value => value >= 100) ? ' These inputs already guarantee all three rolls before hero bonuses.'
+      : matchesTemplate ? ' These inputs match the recorded pre-team Damage defaults.' : '';
+    $('immortal-ultra-note').textContent = `Suggestions maximize the weakest attacker’s Ultra chance using the Crit, Super and Ultra rolls shown in Hero Stats. At equal coverage, teams compete on ${objective.label}. Boss settings start this comparison at +${number(config.baseCritChance)} Crit Chance points, ${number(config.baseSuperChance)}% Super and ${number(config.baseUltraChance)}% Ultra before hero bonuses.${context}`;
+    if (damageChances) $('immortal-use-damage-chances').title = `Apply the saved Damage reference of ${number(damageChances[0])}% Crit, ${number(damageChances[1])}% Super and ${number(damageChances[2])}% Ultra to all Immortals.`;
     $('immortal-preset-note').textContent = config.buffTeam === 'deploy'
       ? 'Team suggestions include all four supports, even when they are outside the optional roster. Warlock supplies the shortened cast interval.'
       : config.buffTeam === 'swap' ? 'The swap assumes attackers received Warlock, Wizard and Titan buffs. Apprentice’s debuff requires a deployed Apprentice who can target the boss.'
@@ -5678,21 +5719,22 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
         const power = hero.id === 'champion' && hero.skillHits > 0
           ? `<span class="subline">${number(hero.effectiveSkillPower)} Skill Power · ${number(hero.skillPercent)}% per strike · +${number(hero.masteryPercent)}% per repeat</span>` : '';
         const speedCells = classSpeed ? `<td>${number(hero.attacksPerSecond)}</td><td>${number(hero.aps)} / ${number(hero.speedCap)}<span class="subline">${number(hero.uncappedAttackSpeed)} before cap</span></td>` : '';
-        const ultraCell = classSpeed ? hero.critEligibleHitsPerSecond > 0
-          ? `<td>${ultraPercent(hero.ultraProbability)}<span class="subline">${hero.ultraProbability < 1 ? 'Below 100%' : 'Guaranteed'} · ${number(hero.ultraHitsPerSecond)} Ultra hits/s</span></td>` : '<td>—</td>' : '';
+        const ultraCell = hero.critEligibleHitsPerSecond > 0
+          ? `<td>${hero.passiveCritChances.map(value => number(value) + '%').join(' / ')}<span class="subline">${ultraPercent(hero.passiveUltraProbability)} effective Ultra</span></td><td>${ultraPercent(hero.ultraProbability)}<span class="subline">${number(hero.ultraHitsPerSecond)} expected Ultra hits/s</span></td>`
+          : '<td>—</td><td>—</td>';
         breakdown.push(`<tr><td>${key.toUpperCase()} · ${hero.index + 1}</td><th scope="row">${esc(byId.get(hero.id).name)}<span class="subline">${esc(immortalModes[hero.type] || hero.type)}</span></th>
           ${speedCells}<td>${hero.eligible ? number(hero.totalHitRate) : 'Support'}</td>${ultraCell}<td>${skill}${power}</td><td class="numeric">${number(hero.attackDps)}</td><td class="numeric">${number(hero.skillDps)}</td><td class="numeric">${number(hero.score)}</td></tr>`);
       }
       return `<article><span class="immortal-team-id">Team ${key.toUpperCase()} · ${esc(comparison().names[key])}</span><strong>${number(result[objective.key])} <small>${objective.label}</small></strong>
         ${config.priority !== 'damage' ? `<p>${number(result.score)} boss damage/s</p>` : ''}
         ${classSpeed && config.priority !== 'attacks' ? `<p>${number(result.attacksPerSecond)} boss attacks/s</p>` : ''}
-        ${classSpeed ? result.attackingHeroes ? `<p>${result.guaranteedUltraHeroes}/${result.attackingHeroes} attackers guaranteed Ultra · ${ultraPercent(result.lowestUltraProbability)} lowest effective Ultra chance · ${number(result.ultraHitsPerSecond)} expected Ultra hits/s</p>` : '<p>Ultra chance n/a · No attacking heroes</p>' : ''}
+        <p>${immortalUltraSummary(result)}</p>
         ${classSpeed && eligible.length ? `<p>${eligible.filter(hero => hero.attacksPerSecond >= 15).length} of ${eligible.length} eligible heroes reach 15 boss attacks/s</p>` : ''}
         <p>${config.priority === 'hits' ? '' : number(result.totalHitRate) + ' scoring hits/s · '}${number(result.attackDps)} attack DPS · ${number(result.skillDps)} skill DPS</p>
         ${(mode === 'skill' || mode === 'melee') && config.priority !== 'strikes' ? `<p class="immortal-strikes">${number(result.championHitsPerSecond)} Champion strikes/s</p>` : ''}
         ${missing.length ? `<p class="immortal-missing">Missing preset supports · ${missing.map(id=>esc(byId.get(id).name)).join(', ')}</p>` : ''}</article>`;
     }).join('');
-    $('immortal-breakdown').innerHTML = `<div class="table-scroll" role="region" tabindex="0" aria-label="Attacks and damage by hero"><table><thead><tr><th>Team / slot</th><th>Hero</th>${classSpeed ? '<th>Boss attacks/s</th><th>Attack speed / cap (per s)</th>' : ''}<th>Scoring hits/s</th>${classSpeed ? '<th>Effective Ultra chance</th>' : ''}<th>Damage skill</th><th>Attack DPS</th><th>Skill DPS</th><th>Total DPS</th></tr></thead><tbody>${breakdown.join('')}</tbody></table></div>`;
+    $('immortal-breakdown').innerHTML = `<div class="table-scroll" role="region" tabindex="0" aria-label="Attacks and damage by hero"><table><thead><tr><th>Team / slot</th><th>Hero</th>${classSpeed ? '<th>Boss attacks/s</th><th>Attack speed / cap (per s)</th>' : ''}<th>Scoring hits/s</th><th>Hero Stats<br>Crit / Super / Ultra</th><th>Effective Ultra with buffs</th><th>Damage skill</th><th>Attack DPS</th><th>Skill DPS</th><th>Total DPS</th></tr></thead><tbody>${breakdown.join('')}</tbody></table></div>`;
     $('immortal-fields').innerHTML = immortalFields.map(([key,label,min,max]) =>
       `<label class="field">${label}<input type="number" step="any" min="${min}" max="${max}" value="${config[key]}" data-immortal-field="${key}"></label>`).join('');
     $('immortal-account-speed').value = config.accountAttackSpeedBonus;
@@ -5706,7 +5748,9 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
     const criterion = immortalEngine.comparisonCriterion(a,b,config.priority);
     const winner = lead > 0 ? 'Team A' : 'Team B';
     let description = `Both teams average ${immortalTotal(a,config.priority)}.`;
-    if (criterion === objective.key) description = `${winner} leads for ${objective.label} against the ${immortalModes[mode]} Immortal.`;
+    if (criterion === 'lowestPassiveUltraProbability') description = `${winner} leads on the weakest attacker’s Ultra chance without temporary buffs (A ${ultraPercent(a.lowestPassiveUltraProbability)}, B ${ultraPercent(b.lowestPassiveUltraProbability)}).`;
+    else if (criterion === 'attackingHeroes') description = `${winner} has an attacker with crit-eligible hits against the ${immortalModes[mode]} Immortal.`;
+    else if (criterion === objective.key) description = `${winner} leads for ${objective.label} against the ${immortalModes[mode]} Immortal.`;
     else if (criterion === 'lowestUltraProbability') description += ` ${winner} wins with a higher effective Ultra chance on its lowest-chance attacker.`;
     else if (criterion === 'ultraHitsPerSecond') description += ` The lowest Ultra chances tie. ${winner} delivers more expected Ultra hits/s.`;
     else if (criterion === 'score') description += ` ${winner} wins the boss DPS tiebreaker.`;
@@ -6224,18 +6268,12 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
     renderMetrics(); renderDetails(); renderRoadmap(); renderFocusReports(); renderSupportRankings(); save();
   }
   function suggestionHelp() {
+    if (isImmortal()) return `Find a lineup where every attacker who can roll a crit reaches 100% Ultra before temporary buffs. At equal lowest Ultra chance, maximize ${immortalObjectives[state.immortal.config.priority].label}.`;
     const tag = tagFor(state.focus);
     if (tag) {
       const name = byId.get(tag.heroId).name;
       return `Find supports and tiles for ${name}’s highest Skill Power. Suggestions include ${name} even when excluded from the optional roster. Locked heroes keep their slots and levels.`;
     }
-    if (isImmortal() && ['hits','attacks'].includes(state.immortal.config.priority)) {
-      const primary = state.immortal.config.priority === 'hits' ? 'scoring hits/s, including extra projectiles, skill hits and damage ticks' : 'team attacks per second against the boss';
-      return `Search heroes and tiles for the most ${primary}. If rates tie, compare the lowest effective Ultra chance on each team. Remaining ties use expected Ultra hits/s, then boss DPS.`;
-    }
-    if (isImmortal()) return state.immortal.config.priority === 'strikes'
-      ? 'Search supports and tiles for the most Champion strikes per second. Compare total boss damage when strike rates tie.'
-      : 'Search the allowed roster and placements for the highest combined boss damage per second. Locked slots keep their heroes and levels.';
     if (state.focus === 'damageBuffSwap') return `Search ${comparison().chooseAttacker ? 'the attacker and supports together' : 'supports for the selected attacker'} for the team deployed after buffing. Score only the attacker’s damage, personal skill, milestones and synergies plus team globals and deployed Witch / Apprentice debuffs. Other support skills are excluded. Compare Damage, milestone, synergy and skill tiles; locks preserve heroes and levels.`;
     if (state.focus === 'damage') return `Search ${comparison().chooseAttacker ? 'the attacker and supports together' : 'supports for the selected attacker'}, using personal milestones, synergies and enabled active/mastery skill bonuses. Compare Damage, milestone, synergy and skill-power tiles. Locks preserve heroes and levels; tiles may move.`;
     if (state.focus === 'gold') return `Search ${comparison().chooseAttacker ? 'the attacker and supports together' : 'supports for the selected attacker'}, comparing ${state.settings.goldMimicFarming ? 'expected Gold per Mimic at equal kill rates' : 'the legacy boss Gold index'} with Kill Gold, milestone, synergy and enabled Gold skills. Hunter, Rogue and Sovereign are required. Locks preserve heroes and levels; tiles may move.`;
@@ -6407,7 +6445,7 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
           const config = immortalConfig(state.immortal,mode);
           const result = ENGINE.optimizeImmortalTeam(panel.teams[source], {...settingsForLineup(state.settings, panel, source),requiredHeroes:[]}, config, state.allowed);
           pending[mode] = result.team;
-          totals.push(`${immortalModes[mode]} · ${immortalTotal(result,config.priority)}`);
+          totals.push(`${immortalModes[mode]} · ${immortalTotal(result,config.priority)} · ${immortalUltraSummary(result)}`);
         }
         for (const [mode, team] of Object.entries(pending)) {
           const panel = state.immortal.teams[mode];
@@ -6451,7 +6489,7 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
     edited();
   });
   $('immortal-use-damage-chances').addEventListener('click', () => {
-    if (!isImmortal() || busy || !usesAttackPriority(state.immortal.config.mode)) return;
+    if (!isImmortal() || busy) return;
     const chances = damagePreTeamChances();
     if (!chances) return;
     const [baseCritChance,baseSuperChance,baseUltraChance] = chances;
@@ -6641,7 +6679,7 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
           if (key === 'a') comparison().teamAReady = true;
           update();
           const outcome = tag ? `${byId.get(tag.heroId).name} has ${number(results[key].metrics[state.focus])} Skill Power.`
-            : isImmortal() ? immortalTotal(results[key].immortal,state.immortal.config.priority) + '.'
+            : isImmortal() ? `${immortalTotal(results[key].immortal,state.immortal.config.priority)} · ${immortalUltraSummary(results[key].immortal)}.`
             : state.focus === 'gold' ? 'Kill Gold, milestone, synergy and any enabled Gold skills were compared.' : isDamageFocus() ? 'Damage, milestone, synergy and skill tiles were compared using enabled attacker skills and this focus’s support rules.' : state.focus === 'experience' ? 'The search compared the attacker’s XP +20% tile, skill tiles on Archer, Ballista and Veteran, and milestone and synergy placements.' : 'Remaining skill tiles favor XP abilities, then Skill Power and Damage; one copy per hero. Skill DPS is not modeled.';
           $('suggestion-note').textContent = `Team ${key.toUpperCase()} tiles updated · ${number(suggestion.evaluated || 0)} placements evaluated. ${outcome}`;
         }
@@ -6888,7 +6926,8 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
           const config = state.immortal.config, objective = immortalObjectives[config.priority];
           const gain = before > 0 ? ` (${delta >= 0 ? '+' : ''}${number(delta)}%)` : '';
           const damage = config.priority === 'damage' ? '' : ` · ${number(results[key].immortal.score)} boss damage/s`;
-          $('suggestion-note').textContent = `${immortalModes[config.mode]} Immortal · ${label} reached ${number(after)} ${objective.label}${gain}${damage}. ${number(suggestion.evaluated)} candidates compared.`;
+          const coverage = immortalUltraSummary(results[key].immortal);
+          $('suggestion-note').textContent = `${immortalModes[config.mode]} Immortal · ${label} reached ${number(after)} ${objective.label}${gain}${damage} · ${coverage}. ${number(suggestion.evaluated)} candidates compared.`;
           return;
         }
         const selected = hasAttacker() ? panel.attackers[key] : state.focus === 'experience' ? panel.levelingTargets[key] : null;

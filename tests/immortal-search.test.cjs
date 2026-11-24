@@ -110,7 +110,7 @@ test('suggestions for real heroes agree with the full Immortal evaluator in ever
     .map((id,i)=>slot(id,10000+i*50,i===0,i<3?'milestone':i<6?'synergy':'skill'));
   const allowed = ['champion','wizard','witch','druid','ranger','deadeye'];
   for (const mode of modes) {
-    const config = damageConfig(mode);
+    const config = {...damageConfig(mode),baseCritChance:100,baseSuperChance:100,baseUltraChance:100};
     const result = E.optimizeImmortalTeam(team,settings,config,allowed);
     const replay = E.immortal.evaluate(result.team,settings,config);
     const previous = E.immortal.evaluate(team,settings,config);
@@ -298,7 +298,7 @@ test('a Wizard can win the Ranged hit-rate search even when its slot costs attac
   assert.equal(E.immortal.evaluate(hits.team,s,cfg).totalHitRate,hits.totalHitRate);
 });
 
-test('the search prefers hits first, then the weakest attacker’s Ultra chance, then Ultra hits and DPS',()=>{
+test('each Ranged priority seeks guaranteed passive Ultra, then its chosen objective, with a best-chance fallback',()=>{
   const window={HERO_DATA:{meta:{statAliases:{}},heroes:[
     ['hunter',2,1,100],['archer',2,1e10,80],['ballista',3,100,0]
   ].map(([id,attackSpeed,damage,ultra])=>({id,name:id,synergies:[],
@@ -310,16 +310,90 @@ test('the search prefers hits first, then the weakest attacker’s Ultra chance,
   const E=window.HeroEngine, team=[slot('archer',1)], s={grandMaster:false,snowFort:false,
     synergyEvent:false,milestoneScale:1,damageSkills:false,damageSupportSkills:false};
   const cfg={mode:'ranged',buffTeam:'warlock',baseCritChance:100,baseSuperChance:100,baseUltraChance:0};
-  const all=E.optimizeImmortalTeam(team,s,cfg);
-  assert.equal(all.team[0].id,'ballista','extra hit wins despite zero Ultra chance');
-  const tied=E.optimizeImmortalTeam(team,s,cfg,['hunter','archer']);
-  assert.equal(tied.team[0].id,'hunter','guaranteed Ultra beats larger damage at equal hit rates');
-  assert.equal(tied.lowestUltraProbability,1);
-  assert.equal(tied.ultraHitsPerSecond,2);
-  assert.equal(E.optimizeImmortalTeam(team,s,{...cfg,priority:'damage'},['hunter','archer']).team[0].id,'archer');
+  for (const priority of ['hits','attacks','damage']) {
+    const all=E.optimizeImmortalTeam(team,s,{...cfg,priority});
+    assert.equal(all.team[0].id,'hunter','guarantee precedes '+priority);
+    assert.equal(all.lowestPassiveUltraProbability,1);
+    assert.equal(all.ultraHitsPerSecond,2);
+    const fallback=E.optimizeImmortalTeam(team,s,{...cfg,priority},['ballista','archer']);
+    assert.equal(fallback.team[0].id,'archer');
+    assert.equal(fallback.lowestPassiveUltraProbability,.8);
+    const capped=E.optimizeImmortalTeam(team,s,{...cfg,priority,baseUltraChance:100});
+    assert.equal(capped.team[0].id,priority==='damage'?'archer':'ballista','capped teams compare '+priority);
+  }
+  const capped={mode:'ranged',attackingHeroes:1,lowestPassiveUltraProbability:1,lowestUltraProbability:1,totalHitRate:1,ultraHitsPerSecond:1,score:1};
+  const almost={...capped,lowestPassiveUltraProbability:1-1e-15,totalHitRate:2,ultraHitsPerSecond:2,score:2};
+  assert.ok(E.immortal.compareResults(capped,almost,'hits')>0,'even a near-guarantee loses to a genuine guarantee');
+  const zero={...capped,lowestPassiveUltraProbability:0};
+  assert.ok(E.immortal.compareResults(zero,{...zero,attackingHeroes:0,score:100},'damage')>0,'a dealer at zero chance beats an empty attacking group');
   const a={totalHitRate:20,lowestUltraProbability:.75,ultraHitsPerSecond:17,score:100};
   const compare=(b)=>E.immortal.compareResults(a,{...a,...b},'hits');
   assert.ok(compare({lowestUltraProbability:.5,ultraHitsPerSecond:19})>0);
   assert.ok(compare({ultraHitsPerSecond:18,score:1})<0);
   assert.ok(compare({score:101})<0);
+});
+
+test('Ranged suggestions can cover a locked weak attacker by recruiting off-class synergy partners',()=>{
+  const hero=id=>({id,name:id,synergies:[],milestones:[],observedBaseStats:{attackSpeed:5,damage:100}});
+  const heroes=['sniper','hunter','sorcerer','druid','wizard','witch','skymage'].map(hero);
+  heroes.find(h=>h.id==='sorcerer').synergies.push({tier:1,type:'Ultra Crit Chance',value:52,global:true,requires:['druid','skymage']});
+  const window={HERO_DATA:{meta:{statAliases:{}},heroes}},ctx=vm.createContext({window});
+  for (const file of ['engine.js','immortal-data.js','immortal.js','immortal-search.js']) {
+    vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx);
+  }
+  const E=window.HeroEngine,team=['sniper','hunter','hunter','hunter','witch','witch'].map((id,i)=>slot(id,1000,i===0));
+  const settings={snowFort:false,grandMaster:false,accountSynergyBoosts:false,damageSupportSkills:false,damageSkills:false};
+  const cfg={mode:'ranged',buffTeam:'warlock',baseCritChance:100,baseSuperChance:100,baseUltraChance:48};
+  const before=E.immortal.evaluate(team,settings,cfg);
+  assert.equal(before.lowestPassiveUltraProbability,.48);
+  const result=E.optimizeImmortalTeam(team,settings,cfg);
+  assert.equal(result.exact,false);
+  assert.equal(result.team[0].id,'sniper');
+  for (const id of ['sorcerer','druid','skymage']) assert.ok(result.team.some(h=>h.id===id));
+  assert.equal(result.lowestPassiveUltraProbability,1);
+  assert.ok(result.totalHitRate<before.totalHitRate);
+  assert.equal(E.immortal.evaluate(result.team,settings,cfg).lowestPassiveUltraProbability,1);
+});
+
+test('Skill, Melee and Mage suggestions preserve a locked attacker and seek its full passive Ultra before each objective',()=>{
+  const ids=['champion','wizard','witch'];
+  const window={HERO_DATA:{meta:{statAliases:{}},heroes:ids.map(id=>({id,name:id,synergies:[],
+    milestones:id==='witch'?[{level:1,type:'Ultra Crit Chance',value:52,global:true}]:[],
+    observedBaseStats:{attackSpeed:id==='witch'?1:10,damage:id==='witch'?1:1e8}}))}};
+  const ctx=vm.createContext({window});
+  for (const file of ['engine.js','immortal-data.js','immortal.js','immortal-search.js']) {
+    vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx);
+  }
+  const E=window.HeroEngine,settings={snowFort:false,grandMaster:false,milestoneScale:1,damageSupportSkills:false,damageSkills:false};
+  for (const [mode,attacker,priorities] of [
+    ['skill','champion',['damage']],['melee','champion',['strikes','damage']],['mage','wizard',['attacks','hits','damage']]
+  ]) {
+    const team=[slot(attacker,100,true),slot(attacker,100)];
+    for (const priority of priorities) for (const baseUltraChance of [47,48,100]) {
+      const cfg={mode,priority,buffTeam:'warlock',baseCritChance:100,baseSuperChance:100,baseUltraChance};
+      const result=E.optimizeImmortalTeam(team,settings,cfg,[attacker,'witch']);
+      assert.equal(result.team[0].id,attacker);
+      assert.equal(result.team[1].id,baseUltraChance===100?attacker:'witch',mode+' / '+priority);
+      const replay=E.immortal.evaluate(result.team,settings,cfg);
+      assert.equal(result.lowestPassiveUltraProbability,baseUltraChance===47?.99:1);
+      assert.equal(replay.lowestPassiveUltraProbability,result.lowestPassiveUltraProbability);
+    }
+  }
+});
+
+test('Ranged search keeps nine scoring attackers when class milestones can cover their full Ultra gap',()=>{
+  const window={},ctx=vm.createContext({window});
+  for (const file of ['data.js','engine.js','immortal-data.js','immortal.js','immortal-search.js']) {
+    vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx);
+  }
+  const E=window.HeroEngine,settings={synergyEvent:true},cfg={mode:'ranged',buffTeam:'warlock',priority:'hits'};
+  const team=['sniper','sniper','sniper','forester','forester','warden','wizard','warden','warden','forester']
+    .map((id,i)=>slot(id,15000,false,i<3?'milestone':i<6?'synergy':i<9?'skill':'damage'));
+  const before=E.immortal.evaluate(team,settings,cfg);
+  assert.equal(before.lowestPassiveUltraProbability,.48);
+  const result=E.optimizeImmortalTeam(team,settings,cfg);
+  const replay=E.immortal.evaluate(result.team,settings,cfg);
+  assert.equal(replay.lowestPassiveUltraProbability,1);
+  assert.ok(replay.attackingHeroes>=9);
+  assert.ok(replay.totalHitRate>=before.totalHitRate-1e-9,'the guarantee can preserve the original scoring rate');
 });

@@ -39,7 +39,7 @@ Choose **Focus explanations** beneath the score to jump to the reports for your 
 | Archer Experience Tag / Hunter Gold Tag | Compare Skill Power on the Archer casting the XP mark or the Hunter casting Gold Lust. Team suggestions include the named hero and search for supports and tiles that strengthen its tag. |
 | Energy / Energy + Power Mages | Use Energy for wave income. Choose Energy + Power Mages to include the extra energy factors that apply to a Power Mage kill. |
 | Damage / Damage · Buff swap | Compare attackers and supports on the same target. Use Buff swap for the replacement lineup that takes the field after a separate team supplies buffs. |
-| Immortal Boss Damage | Mage and Ranged prioritize scoring hits/s. Tied teams compare the Ultra Crit chance of their weakest attacker. **Attacks and damage by hero** shows each hero’s attack rate, speed cap and effective Ultra chance. |
+| Immortal Boss Damage | All four bosses prioritize 100% passive Ultra Crit on every attacker whose hits roll crits. If the search falls short, it returns the highest chance it found for the weakest attacker. Ties use the selected boss objective. Compare each hero’s Crit, Super and Ultra chances with its in-game sheet. |
 
 With Snow Fort active, **the XP tile belongs on the hero making the kill** to earn its +20% bonus. Veteran’s Exp Share passes that boosted kill reward to eligible heroes. A Skill Power tile on Archer, Ballista or Veteran strengthens its active ability. Its mastery uses account Mastery Power. For example, while leveling Ballista, you can compare a Skill Power Ballista receiving Viking’s XP-tile kills against an XP-tile Ballista doing the killing.
 

@@ -62,10 +62,15 @@ power. Suggest tiles and the leveling plan also compare other placements.
 Changing the leveling target keeps the tile on its current occupant.
 
 For Immortal Boss Damage, choose Skill damage, Melee, Mage, or Ranged.
-Mage and Ranged searches default to the most scoring hits per second.
-Equal hit rates favor the team whose weakest attacker has the higher chance
-to Ultra Crit, followed by expected Ultra hits per second and boss DPS.
-Choose team attacks per second to compare each hero's firing rate.
+All four bosses prioritize 100% passive Ultra Crit on every attacker whose
+hits can roll crits. If the search falls short, it reports the best chance
+it found on the weakest attacker and the shortfall. Ties use your selected
+boss objective. The defaults are boss DPS for Skill damage, Champion
+strikes/s for Melee, and scoring hits/s for Mage and Ranged.
+Check each attacker's three passive chances against the in-game hero sheet.
+At 343% Crit, 572% Super and 48% Ultra, Sniper has a 48% passive chance of
+an Ultra hit. Temporary buffs such as Titan's aura count toward combat
+damage. Militia's wound inherits its original hit and has no new crit roll.
 Suggest all four A teams uses each boss's saved priority and buff preset.
 In comparison view, the bulk search builds the four B teams.
 Open Focus explanations and choose Hero damage for speed, caps and Ultra chance.
