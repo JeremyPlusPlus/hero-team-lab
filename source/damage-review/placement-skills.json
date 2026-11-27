@@ -100,7 +100,7 @@
     "Warden uses the observed +180,249% mastery damage at 10.7m. Other distances scale proportionally; rounded per-step and distance labels do not reconstruct the current-bonus display exactly.",
     "Dicemaster non-maximum rolls are assumed uniform within the displayed ranges; expected chances are exact for the current linear chance spillover formula.",
     "Mastery maximum-roll probability is capped at 100%.",
-    "Single-target index includes splash as an additional multiplier; excludes extra multishot targets, range, base attack speed, attack speed caps, base damage and skill uptime."
+    "At the time of this capture, the single-target index used an additional splash multiplier and excluded extra multishot targets, range, base attack speed, attack speed caps, base damage and skill uptime."
   ],
   "images": {
     "praetorian": "images/praetorian.png",
@@ -110,5 +110,5 @@
     "warlord": "images/warlord.png",
     "warden-distance": "images/warden-distance.png"
   },
-  "supportUpdate": "See support-skills.json: the later user instruction includes splash as an additional single-target multiplier, including Warlord."
+  "supportUpdate": "See support-skills.json and melee-9gm.json for the revised single-target splash rule. Templar’s active splash, stacked splash and Warlord’s personal splash add to one total for ordinary attacks."
 }

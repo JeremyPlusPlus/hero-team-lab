@@ -37,7 +37,7 @@ function captured(id, active = 1, mastery = 1, seconds = 20, stacks = 0, telepor
     case 'battlemage': chance = 1619 * active + 8.2 * stacks * mastery; break;
     case 'spelldancer': factor = f(8070 * active) * f(123.6 * stacks * mastery); break;
     case 'skymage': factor = f(1236 * teleports * mastery); break;
-    case 'templar': factor = f(1436 * active) * f(41.2 * seconds * mastery); break;
+    case 'templar': factor = Math.max(1,(1436 * active + 41.2 * seconds * mastery)/100); break;
     case 'necromancer': {
       const values = roll === 'maximum' ? [8070, 1030, 618, 206] : [4047.5, 517.5, 310.5, 103.5];
       factor = f(values[0] * active) ** 2 * f(values[1] * mastery) * f(values[2] * mastery) * f(values[3] * mastery);
@@ -197,14 +197,21 @@ test('attacker skills remain personal and combine with shared support chance exa
   parity(E, members, {...config, damageSupportSkills: false}, f(7180) * f(6179) * 25.75 * (1 + (1436 + 124) * .05));
 });
 
-test('Templar global Splash and Warlord personal Splash each multiply single-target damage', () => {
-  assert.equal(E.statMode('Splash Damage'), 'multiply');
+test('Templar and Warlord pool splash on ordinary single-target attacks before applying the 100% floor', () => {
+  assert.equal(E.statMode('Splash Damage'), 'add');
   const members = [slot('warlord'), slot('templar'), slot('other')];
-  const globalFactor = f(1436) * f(41.2 * 20);
-  const warlord = f(14360) * f(7180) * f(1436) * f(4119) * (1 + 206 * .05);
-  const result = parity(E, members, {...plain, damageSkills: true}, globalFactor * warlord);
-  near(result.heroes[2].metrics.damage, globalFactor);
-  parity(E, members, {...plain, damageSkills: true, damageWarlordSplashDamage: 0}, globalFactor * warlord / f(1436));
+  const config = {...plain, damageSkills:true};
+  const warlord = f(4660) * f(2330) * f(3097) * (1 + 155 * .05);
+  const result = parity(E, members, config, 27.26 * warlord);
+  near(result.heroes[2].metrics.damage, 22.6);
+  near(result.heroes[0].bonuses['Splash Damage'], 2726);
+  near(result.heroes[2].bonuses['Splash Damage'], 2260);
+  parity(E, members, {...config, damageWarlordSplashDamage:0}, 22.6 * warlord);
+  const small = {...config,damageSupportTemplarSplashDamage:50,damageSupportTemplarSplashDamagePerSecond:1,damageWarlordSplashDamage:35};
+  const crossing = parity(E,members,small,1.05*warlord);
+  near(crossing.heroes[2].metrics.damage,1,'70% splash retains the full ordinary hit');
+  const placement=E.optimizePlacements(members,config,'damage');
+  near(placement.score,E.evaluate(placement.team,config).metrics.damage,'Warlord + Templar placement scorer');
 });
 
 test('Damage support toggles never alter Gold, XP, Energy or Power Mage Energy', () => {

@@ -36,6 +36,21 @@ their own team comparisons.
 Gold and Damage use the selected attacker. Choose the best attacker too
 lets suggestions search for the attacker as well as supports.
 
+In Damage, open Damage skills & attacker tile and choose Use nine-GM
+attacker profiles to load all nine measured skills. The preset enables
+Grand Master and switches off the synergy event and Snow Fort. To compare
+on Snow, enable Apply Snow Fort map bonuses after loading the preset.
+Its +33% mastery perk then applies to the off-map attacker masteries.
+Set Warden's distance to the boss, Gladiator kills during Killjoy (starts
+at 20) and Assassin executions during Execute (starts at 0) for your fight.
+Open Focus explanations > Attacker skills > Attackers compared with Deadeye.
+Each attacker takes the same slot and level with the same supports.
+The ratios show the single-target Damage index relative to Deadeye.
+Templar and Warlord add their splash percentages on ordinary attacks.
+Champion's Lightning Storm counts each strike against a single surviving
+boss. With the captured 236 strikes and one cast per second from Warlock,
+successive storms sustain 236 strikes per second.
+
 Choose Archer Experience Tag to strengthen Archer's XP mark or Hunter Gold
 Tag to strengthen Hunter's Gold Lust. Enter the hero's Skill Power with no
 team deployed if you know it. Team suggestions search supports and tiles

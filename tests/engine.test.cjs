@@ -754,7 +754,7 @@ test('Grand Master applies one global damage/gold multiplier per owner and one p
 
 test('Grand Master milestone and synergy amplification adds across two heroes', () => {
   const result = E.evaluate([slot('militia', 25), slot('apprentice', 25)],
-    {milestoneScale: 1, accountSynergyBoosts: false, grandMasterStacking: 'add', synergyGrandMasterStacking: 'add', snowFort: false, grandMaster: true, maxTier: 1, damageSupportSkills: false});
+    {milestoneScale: 1, accountSynergyBoosts: false, grandMasterStacking: 'add', synergyGrandMasterStacking: 'add', snowFort: false, grandMaster: true, maxTier: 1, damageSkills: false, damageSupportSkills: false});
   // +20% to each raw bonus: synergy 10 -> 12; 3 -> ROUND(3.6)=4.
   // Personal milestone bonuses become 12% damage and 6% attack speed.
   near(result.global.synergy.Damage, 1.12);
@@ -784,7 +784,7 @@ test('Grand Master preserves fractional milestone bonuses and does not amplify i
 
 test('manual synergy scaling compounds with Grand Master but does not scale milestones', () => {
   const result = E.evaluate([slot('militia', 25), slot('apprentice', 25)],
-    {milestoneScale: 1, accountSynergyBoosts: false, grandMasterStacking: 'add', synergyGrandMasterStacking: 'add', snowFort: false, grandMaster: true, maxTier: 1, synergyScale: 2, damageSupportSkills: false});
+    {milestoneScale: 1, accountSynergyBoosts: false, grandMasterStacking: 'add', synergyGrandMasterStacking: 'add', snowFort: false, grandMaster: true, maxTier: 1, synergyScale: 2, damageSkills: false, damageSupportSkills: false});
   near(result.global.synergy.Damage, 1.24);
   near(result.global.synergy['Attack Speed'], 1.07);
   near(result.heroes[0].metrics.damage, 0.625 * 1.24 * 1.07 * 1.12);
@@ -1168,7 +1168,7 @@ test('the conditionally inferred Arbalest Power Mage Energy value scores only th
   assert.equal(effect.verification.baseValueStatus, 'integer-base-inferred-from-calibrated-display');
   const S = synthetic([{id: 'arbalest', synergies: [effect]}, {id: 'militia'}, {id: 'spelldancer'}]);
   const members = team('arbalest', 'militia', 'spelldancer');
-  const settings = {accountSynergyBoosts: false, grandMaster: false, snowFort: false, requirementReduction: 0, damageSupportSkills: false};
+  const settings = {accountSynergyBoosts: false, grandMaster: false, snowFort: false, requirementReduction: 0, damageSkills: false, damageSupportSkills: false};
   const result = S.evaluate(members, settings);
   assert.equal(result.counts.synergies, 1);
   assert.equal(result.effects[0].type, 'Power Mage Energy');

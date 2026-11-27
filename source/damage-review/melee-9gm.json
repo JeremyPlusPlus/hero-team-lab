@@ -1,0 +1,93 @@
+{
+  "source": "Nine player-supplied hero information screens, 2026-11-26. The player confirmed nine Grand Masters on the field with the synergy event and Snow Fort bonuses off.",
+  "grandMasters": 9,
+  "synergyEvent": false,
+  "snowFort": false,
+  "masteryLevel": 10,
+  "captureTile": null,
+  "profiles": {
+    "champion": {
+      "screenshotSha256": "4123b3d4744847a8839f8dbc75d7d5066862b77837c1d833675c030e930c73c8",
+      "rank": 5000, "skill": "Lightning Storm",
+      "cooldownSeconds": 24, "strikes": 236, "damagePerStrikePercent": 4660,
+      "stunSeconds": 1, "damagePerPriorStrikeOnSameTargetPercent": 774, "maxPriorStrikes": 100
+    },
+    "gladiator": {
+      "screenshotSha256": "4733e767ff4f9fd1696ee844a23c8cae53737b7e59ee53f8d9b7af4e938f3a5c",
+      "rank": 5000, "skill": "Killjoy",
+      "durationSeconds": 20, "cooldownSeconds": 24,
+      "damagePerOwnKillPercent": 1864, "superCritDamagePerOwnKillPercent": 1084
+    },
+    "assassin": {
+      "screenshotSha256": "1b2031eafbefb200257a1084fc7822afaaf0657063068d9e562a89c0036adef7",
+      "rank": 5000, "skill": "Execute",
+      "durationSeconds": 20, "cooldownSeconds": 32,
+      "displayedBaseExecuteThresholdPercent": 60, "masteryThresholdPoints": 10, "bossThresholdFactor": 0.5,
+      "damagePerPriorExecutionPercent": 1549, "attackSpeedPerPriorExecutionPercent": 50
+    },
+    "militia": {
+      "screenshotSha256": "98cd2fd6361353de22aea2df8b2a03f764a009c8ec85808adcb718676366e8fa",
+      "rank": 5000, "skill": "Spin Attack",
+      "cooldownSeconds": 24, "spinDamagePercent": 13980,
+      "woundSeconds": 3, "woundDamagePerSecondAsPercentOfSpin": 6194
+    },
+    "warlord": {
+      "screenshotSha256": "da9b957e04f1f0ecfe2e821446c6e1758f2315d10545719ba41503940e7efaff",
+      "rank": 4662, "skill": "Avatar",
+      "durationSeconds": 74, "cooldownSeconds": 24,
+      "damagePercent": 4660, "attackSpeedPercent": 2330, "splashDamagePercent": 466,
+      "superCritChancePoints": 155, "superCritDamagePercent": 3097
+    },
+    "deadeye": {
+      "screenshotSha256": "72878e265d4e110d88fe4e679c1e9b0d40376c3c9b33f237d960dfe5195bf8f3",
+      "rank": 4817, "skill": "Divine Aim",
+      "durationSeconds": 20, "cooldownSeconds": 28,
+      "damagePercent": 6990, "attackSpeedPercent": 4635, "ultraCritChancePoints": 139.8,
+      "superCritDamagePercent": 1549, "additionalTargets": 31
+    },
+    "dicemaster": {
+      "screenshotSha256": "c17cb93d279b4b9011ef3ea5b0050e22f7ba7e1cc9ea355a8d0c958c0a5aebad",
+      "rank": 5000, "skill": "Feeling Lucky",
+      "durationSeconds": 20, "cooldownSeconds": 32,
+      "critChancePoints": [5, 927], "superCritChancePoints": [3, 466], "ultraCritChancePoints": [1, 233],
+      "maximumRollChancePercent": 31.0
+    },
+    "praetorian": {
+      "screenshotSha256": "48583e26dfbc144aecfc7c11523ed3465ebbcc0c5ee28c9cabeba6cadd5e45bd",
+      "rank": 5000, "skill": "Ion Blades",
+      "durationSeconds": 20, "cooldownSeconds": 28,
+      "superCritChancePoints": 466, "superCritDamagePercent": 2330,
+      "ultraCritChancePoints": 93, "ultraCritDamagePercent": 4646
+    },
+    "warden": {
+      "screenshotSha256": "e967c355940c5cbb217fa2158fe46bc8c511b08e162f045be03df20bba2b2594",
+      "rank": 5000, "skill": "Gatling Gun",
+      "durationSeconds": 20, "cooldownSeconds": 24,
+      "attackSpeedPercent": 4660, "damagePercent": 2330, "rangePercent": 937,
+      "damagePerDistanceStepPercent": 929, "distanceStepMeters": 0.30,
+      "observedDistanceMeters": null, "observedDistanceBonusPercent": null
+    }
+  },
+  "calibration": {
+    "comparableSkillPower": 456,
+    "approximateMasteryPower": 3.097,
+    "basis": "Champion's strike count and damage, Gladiator's damage per kill, Militia's spin and Warlord's three active bonuses independently imply effective Skill Power 456. The second capture set agrees: Deadeye damage is 150 + 15 × 456, Dicemaster maximum Crit Chance is 15 + 2 × 456, Praetorian Super Crit Chance is 10 + 456 and Warden attack speed is 100 + 10 × 456. Mastery Power is inferred from the rounded tooltips at mastery level 10.",
+    "windowsBuild": "26703178",
+    "snowProjection": "The nine screenshots were taken off Snow Fort. A matching personal profile on a map with +33% Mastery Skill Power uses approximately 3.097 × 1.33 = 4.11901 Mastery Power for the effects that scale with mastery. The recorded support skills retain their own capture context.",
+    "stormRate": "With one surviving target, 236 strikes produce 18,550 total prior-hit stacks across a cast after the 100-stack limit. At the captured +774% repeat bonus and 4,660% strike damage, a cast deals 46.6 × (236 + 18,550 × 7.74) = 6,701,685.8 underlying-hit equivalents. At one cast per second this is also the sustained skill damage per second in those units. Ordinary volleys occupy the remaining attack actions.",
+    "ordinarySplash": "Single-target ordinary hits use max(1, summed splash percentage / 100). At the support capture's 20-second default, Templar supplies 1,436% + 824% = 2,260%, or ×22.60. The nine-GM Warlord adds 466% to the same total for ×27.26. Native ordinary splash does not apply to Champion's lightning strikes or Militia's spin and wound.",
+    "wardenDistance": "At mastery level 10, the hit calculation uses continuous distance times 300M percent per (1 - 0.225M) meters, where M is global Mastery Power. The rounded Praetorian and Militia tooltips constrain M to about 3.097. Using 3.097 gives 929.1% per 0.303175 m, displayed as 929% per 0.30 m. No target position was recorded.",
+    "derivedDeadeye": {
+      "source": "The earlier estimate used Windows Assembly-CSharp.dll, cq.bne and cq.bng with the first five captures. The subsequent Deadeye screenshot directly confirms all four predicted combat bonuses at the displayed precision. See profiles.deadeye for the measured duration, cooldown and extra targets.",
+      "activeFormulas": "With effective Skill Power P, bonus damage percent is 150 + 15P, bonus attack speed percent is 75 + 10P, and Ultra Crit Chance points are 3 + 0.3P.",
+      "masteryFormula": "With mastery level L and Mastery Power M, bonus Super Crit Damage percent is round(50 × L × M).",
+      "damagePercent": 6990, "attackSpeedPercent": 4635, "ultraCritChancePoints": 139.8,
+      "approximateSuperCritDamagePercent": 1549,
+      "historicalMeasuredProfile": "placement-skills.json, profiles.deadeye",
+      "historicalDamagePercent": 24210, "historicalAttackSpeedPercent": 16115,
+      "historicalUltraCritChancePoints": 484.2, "historicalSuperCritDamagePercent": 2060
+    },
+    "runtime": "cl.blz caps Assassin's base threshold at 60%, adds one percentage point per mastery level, then halves it for ordinary bosses. This gives 70% on normal enemies and 35% on ordinary bosses. PvP bosses have a further factor of 0.001.",
+    "gladiatorStacks": "Own kills during the current active window. The 20-kill comparison is a user-selected scenario, independent of the global support kill-stack setting."
+  }
+}

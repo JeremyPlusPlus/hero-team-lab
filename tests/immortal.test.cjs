@@ -78,6 +78,74 @@ test('off-type heroes buff the attacking class; attack frequency multiplies afte
   near(I.evaluate(team,neutral,{...cfg,baseDamageExponent:500}).score,(perHit+500*(.95+.05*1.1))*2,'account damage over 1e308');
 });
 
+test('fresh Immortals provide no Killjoy or Execute stacks from the ordinary farming profile',()=>{
+  const I=load([{id:'gladiator'},{id:'assassin'}]),team=[slot('gladiator'),slot('assassin')];
+  const s={...neutral,damageSkills:true};
+  const farming={...s,damageAttackerKills:20,damageAssassinExecutions:20,damageSupportStacks:50};
+  for(const mode of ['melee','skill']) {
+    const c={...noCrit,mode,buffTeam:'warlock'};
+    const base=I.evaluate(team,{...s,damageAttackerKills:0,damageAssassinExecutions:0},c);
+    const boss=I.evaluate(team,farming,c);
+    near(boss.score,base.score,'no kills during either fresh-boss window');
+    near(I.makeScorer(farming,c).details(team).score,base.score,'search uses the same skill counters');
+    if(mode==='melee') {
+      for(const hero of boss.heroes) {
+        assert.equal(hero.aps,1);
+        assert.equal(hero.rawHitLog,2);
+        assert.ok(hero.attackDps>0);
+      }
+    } else assert.equal(boss.totalHitRate,0);
+  }
+});
+
+test('nine-GM Champion and Militia cast tooltips use the same 456 effective Skill Power once',()=>{
+  const ids=['champion','militia','archer','wizard','rogue','veteran','scout','templar','skymage'];
+  const I=load(ids.map(id=>({id}))),team=ids.map(id=>slot(id));
+  // Both skills imply a combined pre-GM power of 294 in this capture.
+  // The individual account and lineup contributions were not recorded.
+  // The event's pre-team mastery input is expressed on its historical +33% Snow Fort reference.
+  const championMasteryPercent=250*3.097*1.33/1.05**9;
+  const c={...noCrit,mode:'skill',buffTeam:'warlock',otherBasePower:294,championStrikes:8+294/2,championDamagePercent:100+294*10,championMasteryPercent};
+  const s={...neutral,grandMaster:true,synergyEvent:false,snowFort:false,damageSkills:true};
+  const report=I.evaluate(team,s,c),[champion,militia]=report.heroes;
+  assert.equal(champion.effectiveSkillPower,456);
+  assert.equal(militia.effectiveSkillPower,456);
+  assert.equal(champion.skillHits,236);
+  assert.equal(champion.skillPercent,4660);
+  assert.equal(Math.round(champion.masteryPercent),774);
+  near(militia.skillPercent,13980,'Spin Attack applies its multiplier to one cast packet');
+  assert.ok(militia.tickRate>0);
+  assert.ok(Math.abs(8*champion.masteryPercent-6194)<1.5,'reported integer mastery effects use rounded capture values');
+  near(I.makeScorer(s,c).details(team).score,report.score,'Immortal per-hit and cast probabilities replay');
+});
+
+test('Skill Immortal uses the selected Deadeye and Warden profile durations',()=>{
+  const I=load([{id:'deadeye'},{id:'warden'}]);
+  const cfg={...noCrit,mode:'skill',buffTeam:'deploy',fightSeconds:30};
+  for (const [id,key] of [['deadeye','damageDeadeyeDuration'],['warden','damageWardenDuration']]) {
+    const team=[slot(id)];
+    const measured={...neutral,[key]:20};
+    near(I.evaluate(team,neutral,cfg).heroes[0].totalHitRate,25/30,'historical duration');
+    near(I.evaluate(team,measured,cfg).heroes[0].totalHitRate,20/30,'measured duration');
+    near(I.makeScorer(measured,cfg)(team),I.evaluate(team,measured,cfg).score,'search parity');
+  }
+});
+
+test('Warlord uses the 74-second Avatar window and its captured buffs once',()=>{
+  const I=load([{id:'warlord',observedBaseStats:{damage:100,attackSpeed:.2}}]),team=[slot('warlord')];
+  const c={...noCrit,mode:'skill',buffTeam:'deploy',fightSeconds:60};
+  const s={...neutral,damageSkills:true};
+  const active=I.evaluate(team,s,c).heroes[0];
+  near(active.aps,.2*(1+2330/100),'attack speed in Avatar');
+  near(active.rawHitLog,Math.log10(100*(1+4660/100)),'raw hit before splash');
+  near(active.totalHitRate,active.aps,'Avatar covers the full 60-second fight');
+  const long=I.evaluate(team,s,{...c,fightSeconds:98}).heroes[0];
+  near(long.totalHitRate,active.aps*74/98,'only hits in Avatar are eligible on Skill without a cooldown buff');
+  const off=I.evaluate(team,neutral,c).heroes[0];
+  near(off.rawHitLog,2,'disabling captured personal buffs removes Avatar damage');
+  near(off.aps,.2,'disabling captured personal buffs removes Avatar speed');
+});
+
 test('compiled Immortal score matches detailed team bonuses across levels, modes and changing placements',()=>{
   const I=load(),team=['champion','wizard','ranger','champion','templar','druid','warlord','witch','titan','deadeye']
     .map((id,i)=>slot(id,15000,i===0?'skill':i===4?'synergy':i===5?'milestone':'normal'));

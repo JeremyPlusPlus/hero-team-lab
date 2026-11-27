@@ -47,7 +47,7 @@ test('all ten captured global support profiles have independently calculated ran
     battlemage: 1 + 1619 * .05,
     spelldancer: f(8070),
     skymage: f(1236 * 3),
-    templar: f(1436) * f(41.2 * 20),
+    templar: (1436 + 41.2 * 20) / 100,
     necromancer: f(4047.5) ** 2 * f(517.5) * f(310.5) * f(103.5),
     titan: f(1451) * f(2060) * (1 + (290.2 + 82) * .05)
   };

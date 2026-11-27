@@ -27,8 +27,14 @@ const factor = value => 1 + value / 100;
 function expected(id, boost = 1, distance = 10.7, rate = 5, baseOverflow = 0) {
   const overflow = chance => 1 + (baseOverflow + rate * chance) / 100;
   if (id === 'praetorian') return factor(7180 * boost) * factor(6179 * boost) * overflow((1436 + 124) * boost);
-  if (id === 'deadeye') return factor(24210 * boost) * factor(16115 * boost) * factor(2060 * boost) * overflow(484.2 * boost);
-  if (id === 'warlord') return factor(14360 * boost) * factor(7180 * boost) * factor(1436 * boost) * factor(4119 * boost) * overflow(206 * boost);
+  if (id === 'deadeye') {
+    const power = Math.round(1604 * boost);
+    return factor(150 + 15 * power) * factor(75 + 10 * power) * factor(2060 * boost) * overflow(3 + 0.3 * power);
+  }
+  if (id === 'warlord') {
+    const power=Math.round(456*boost);
+    return factor(100+10*power)*factor(50+5*power)*Math.max(1,(10+power)/100)*factor(3097*boost)*overflow(155*boost);
+  }
   if (id === 'warden') return factor(8070 * boost) * factor(16140 * boost) * factor(180249 * distance / 10.7 * boost) * overflow(0);
   if (id === 'dicemaster') {
     const probability = Math.min(1, .412 * boost);
@@ -49,7 +55,7 @@ test('five captured active and mastery profiles independently reproduce their si
   }
 });
 
-test('skill tiles multiply active and mastery percentages by 1.20 once instead of multiplying the final score', () => {
+test('skill tiles boost captured active and mastery effects once, with Warlord’s fixed bases preserved', () => {
   for (const id of ids.slice(0, 5)) {
     const members = [slot(id, 'skill')];
     const config = {...plain, damageWardenDistance: 3};
@@ -104,6 +110,30 @@ test('Warden mastery uses the observed 180249 percent at 10.7m with proportional
   near(E.evaluate([slot('warden', 'skill')], calibrated).metrics.damage, factor(8070 * 1.2) * factor(16140 * 1.2) * factor(600));
 });
 
+test('nine-GM off-event and off-map tooltips reproduce the observed attacker bonuses', () => {
+  const nineGm = Object.fromEntries(E.damageSkillDefinitions.flatMap(d => d.fields.map(f => [f.key,f.nineGmValue])));
+  const config = {...plain,...nineGm,grandMaster:true,synergyEvent:false,snowFort:false,damageWardenDistance:.5};
+  const profile = id => E.evaluate([slot(id,'skill')],config).heroes[0].damageSkill;
+  const bonuses = skill => [...skill.activeEffects,...skill.masteryEffects].map(e=>e.value).join(',');
+  const deadeye = profile('deadeye');
+  assert.equal(bonuses(deadeye), '6990,4635,139.8,1549');
+  assert.equal(deadeye.duration, 20);
+  assert.match(deadeye.notes.join(' '), /31 additional targets/);
+  assert.equal(bonuses(profile('praetorian')), '466,2330,93,4646');
+  const dice = profile('dicemaster');
+  assert.equal(dice.maxRollChance, 31);
+  for (const [tier,min,max] of [['Crit Chance',5,927],['Super Crit Chance',3,466],['Ultra Crit Chance',1,233]]) {
+    assert.equal(dice.chanceRolls[tier].min, min);
+    assert.equal(dice.chanceRolls[tier].max, max);
+    near(dice.chanceByType[tier], .31*max + .69*(min+max)/2);
+  }
+  const warden = profile('warden');
+  assert.equal(warden.duration, 20);
+  assert.equal(warden.activeEffects.map(e=>e.value).join(','), '4660,2330');
+  near(warden.masteryEffects[0].value, .5*(300*3.097)/(1-.225*3.097), 'continuous distance');
+  assert.match(warden.notes.join(' '), /937% range/);
+});
+
 test('Dicemaster averages the non-max rolls and mastery max-roll branch before linear chance spillover', () => {
   for (const tile of ['normal', 'skill']) for (const rate of [0, 3, 5]) {
     const boost = tile === 'skill' ? 1.2 : 1;
@@ -129,9 +159,9 @@ test('editable profiles update skill and mastery factors, with Dicemaster max-ro
   near(E.makeScorer(guaranteed, 'damage', [slot('dicemaster', 'skill')])([slot('dicemaster', 'skill')]), result.metrics.damage);
 });
 
-test('captured skill baselines are not multiplied again by GM, the event, mastery map or raw skill-power sources', () => {
+test('historical profiles keep their captured strength under GM, the event and Snow Fort', () => {
   const S = load(ids.map(id => ({id, milestones: [milestone('Skill Power', 9000), milestone('Mastery Power', 9000)]})));
-  const members = ids.slice(0, 5).map(id => slot(id));
+  const members = ['praetorian', 'deadeye', 'dicemaster', 'warden'].map(id => slot(id));
   for (const grandMaster of [false, true]) for (const synergyEvent of [false, true]) {
     const config = {...plain, grandMaster, synergyEvent, milestoneScale: 9, mapMastery: 9999};
     const on = S.evaluate(members, config), off = S.evaluate(members, {...config, damageSkills: false});
@@ -236,6 +266,70 @@ test('placement suggestions preserve or improve an already configured Damage lin
     const result = R.optimizePlacements(members, config, 'damage');
     assert.ok(result.score >= before * (1 - 1e-10));
     near(result.score, R.evaluate(result.team, config).metrics.damage);
+  }
+});
+
+test('Killjoy uses personal kills and Execute uses independent successful executions with a fixed boss HP threshold',()=>{
+  const R=load([{id:'gladiator'},{id:'assassin'}]);
+  const team=[slot('gladiator'),slot('assassin')];
+  const baseline=R.evaluate(team,plain);
+  near(baseline.heroes[0].metrics.damage,factor(20*1864)*factor(20*1084));
+  near(baseline.heroes[1].metrics.damage,1);
+  for(const mode of ['all','debuffs']) for(const tile of ['normal','skill']) {
+    const members=team.map(member=>({...member,tile}));
+    const settings={...plain,damageSupportMode:mode,damageAttackerKills:3.8,damageAssassinExecutions:2.9,
+      damageSupportStacks:99,damageSkillTileBoost:20,damageMasteryTileBoost:10};
+    const result=R.evaluate(members,settings),boost=tile==='skill'?1.1:1;
+    const gl=result.heroes[0],as=result.heroes[1];
+    near(gl.metrics.damage,factor(3*(tile==='skill'?2228:1864))*factor(3*1084*boost));
+    near(as.metrics.damage,factor(2*1549*boost)*factor(2*50));
+    near(as.damageSkill.executeThreshold,70);
+    near(as.damageSkill.bossExecuteThreshold,35);
+    for(const i of [0,1]) near(R.makeScorer({...settings,damageHero:i},'damage',members)(members),result.heroes[i].metrics.damage);
+  }
+  const none=R.evaluate(team,{...plain,damageAttackerKills:0,damageAssassinExecutions:0});
+  near(none.heroes[0].metrics.damage,1);
+  near(none.heroes[1].metrics.damage,1);
+});
+
+test('Champion and Militia replace normal volleys at their cast cadence and count only their own same-target packets',()=>{
+  const ids=['champion','militia','wizard','warlock','templar'];
+  const R=load(ids.map(id=>({id,observedBaseStats:{attackSpeed:4,damage:10}})));
+  const basic=[slot('champion'),slot('militia')];
+  const championPacket=(strikes,damage,repeat)=>Array.from({length:strikes},(_,i)=>damage/100*(1+Math.min(i,100)*repeat/100)).reduce((a,b)=>a+b);
+  for(const tile of ['normal','skill']) {
+    const members=basic.map(s=>({...s,tile})),boost=tile==='skill'?1.2:1;
+    const result=R.evaluate(members,plain);
+    const c=result.heroes[0].damageSkill,m=result.heroes[1].damageSkill;
+    const packet=championPacket(tile==='skill'?282:236,tile==='skill'?5570:4660,774*boost);
+    near(c.castFactor,packet);
+    near(c.activeScore,(95+packet)/96);
+    near(m.woundTicks,3);
+    const spin=tile==='skill'?167.1:139.8;
+    near(m.castFactor,spin);
+    near(m.activeScore,(95+spin*(1+3*61.94*boost))/96);
+    for(const i of [0,1]) {
+      near(R.makeScorer({...plain,damageHero:i},'damage',members)(members),result.heroes[i].metrics.damage);
+      near(R.evaluate(members,{...plain,damageHero:i,damageSkills:false}).metrics.damage,1);
+    }
+  }
+  const buffed=[...basic,slot('wizard'),slot('warlock'),slot('templar')];
+  const settings={...plain,damageSupportSkills:true,damageSupportWizardAttackSpeed:200,damageSupportWizardTripleShotChance:100,
+    damageSupportTemplarSplashDamage:150,damageSupportTemplarSplashDamagePerSecond:2.5};
+  const result=R.evaluate(buffed,settings);
+  for(const i of [0,1]) {
+    const hero=result.heroes[i],skill=hero.damageSkill;
+    near(skill.attacksPerSecond,10,'physical action cap');
+    near(skill.castInterval,1,'deployed Warlock');
+    const packet=skill.castFactor*(i?1+61.94:1);
+    near(skill.activeScore,3*(9*6+packet)/10,'normal volleys retain triple shot and splash; casts replace both');
+    near(R.makeScorer({...settings,damageHero:i},'damage',buffed)(buffed),hero.metrics.damage);
+    const placement=R.optimizePlacements(buffed,{...settings,damageHero:i},'damage');
+    near(R.evaluate(placement.team,{...settings,damageHero:i}).metrics.damage,placement.score);
+    const swapped=R.evaluate(buffed,{...settings,damageSupportMode:'debuffs'}).heroes[i].damageSkill;
+    near(swapped.attacksPerSecond,4);
+    near(swapped.castInterval,24);
+    if(i) {near(skill.woundTicks,1);near(swapped.woundTicks,3);}
   }
 });
 

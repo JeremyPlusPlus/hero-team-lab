@@ -40,6 +40,9 @@
 .gold-recommendation{min-width:210px}.gold-recommendation strong{display:block;color:var(--accent)}.gold-recommendation .text-button{display:block;margin-top:8px;white-space:normal;text-align:left}.tile-counts{flex-wrap:wrap}#gold-skill-breakdown td{white-space:normal;min-width:140px}#gold-skill-breakdown th:first-child{min-width:180px}
 
 #damage-profile-fields h4{font-size:11px;color:var(--teal);margin:16px 0 10px}#damage-skill-breakdown td{white-space:normal;min-width:145px}#damage-skill-breakdown th:first-child{min-width:170px}#damage-skill-breakdown .subline{line-height:1.65}
+.attacker-kill-inputs { display: grid; grid-template-columns: minmax(0, 1fr) 5rem; align-items: center; gap: .65rem; margin-bottom: .65rem; }
+.attacker-kill-inputs input { min-width: 0; width: 100%; }
+.attacker-kill-inputs input[type="range"] { padding: 0; accent-color: var(--accent); }
 
 #damage-support-profile-fields h4{font-size:11px;color:var(--teal);margin:16px 0 10px}#damage-support-breakdown td{white-space:normal;min-width:155px}#damage-support-breakdown th:first-child{min-width:180px}#damage-support-breakdown .subline{line-height:1.65}
 .xp-roadmap {

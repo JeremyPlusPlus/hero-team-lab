@@ -52,7 +52,6 @@
   // These self-buffs flag their ordinary attack packets as skill damage
   // during the active window. Off-type heroes can still supply buffs.
   const skillAttacks = new Set(['viking','peacekeeper','paladin','warlord','ranger','praetorian','dicemaster','warden','deadeye']);
-  const capturedDurations=new Map(E.damageSkillDefinitions.map(skill=>[skill.id,skill.duration]));
   const castSkills = {...root.IMMORTAL_CAST_SKILLS,champion:{name:'Lightning Storm',replacesVolley:true},
     forester:{name:'Bleed',base:1,perPower:0,replacesVolley:false}};
   function canDamage(id,config=defaults) {
@@ -202,6 +201,7 @@
     };
   }
   function makeDamageModel(s,c,size) {
+    const capturedDurations=new Map(E.damageSkillDefinitions.map(skill=>[skill.id,s[skill.durationKey]??skill.duration]));
     const skillTile = s.snowFort ? 1+s.damageSkillTileBoost/100 : 1;
     const accountSpeedFactor=1+c.accountAttackSpeedBonus/100;
     const stylePower = s.grandMaster ? 1.05**size : 1;
@@ -423,7 +423,9 @@
     else bucket[index]+=((index>=crit && index<=ultraCrit) || index>=skillCrit) ? Math.round(value) : value;
   }
   function makeScorer(settings={},config={}) {
-    const s=E.settingsFor({...settings,experienceLeveler:null,damageSupportMode:'all'}),c=normalize(config);
+    // A fresh single Immortal provides no prior kills or executions.
+    // Those counters belong to the attacker and reset when its skill expires.
+    const s=E.settingsFor({...settings,experienceLeveler:null,damageSupportMode:'all',damageAttackerKills:0,damageAssassinExecutions:0}),c=normalize(config);
     const map=E.mapFor(s),swap=swappedBuffs(s,c);
     const records=new Map(heroes.map(hero=>{
       const prepare=effects=>effects.map(effect=>({...effect,stat:indexByStat.get(E.canonicalType(effect.type,s))}))

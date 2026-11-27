@@ -49,6 +49,9 @@
 .gold-recommendation{min-width:210px}.gold-recommendation strong{display:block;color:var(--accent)}.gold-recommendation .text-button{display:block;margin-top:8px;white-space:normal;text-align:left}.tile-counts{flex-wrap:wrap}#gold-skill-breakdown td{white-space:normal;min-width:140px}#gold-skill-breakdown th:first-child{min-width:180px}
 
 #damage-profile-fields h4{font-size:11px;color:var(--teal);margin:16px 0 10px}#damage-skill-breakdown td{white-space:normal;min-width:145px}#damage-skill-breakdown th:first-child{min-width:170px}#damage-skill-breakdown .subline{line-height:1.65}
+.attacker-kill-inputs { display: grid; grid-template-columns: minmax(0, 1fr) 5rem; align-items: center; gap: .65rem; margin-bottom: .65rem; }
+.attacker-kill-inputs input { min-width: 0; width: 100%; }
+.attacker-kill-inputs input[type="range"] { padding: 0; accent-color: var(--accent); }
 
 #damage-support-profile-fields h4{font-size:11px;color:var(--teal);margin:16px 0 10px}#damage-support-breakdown td{white-space:normal;min-width:155px}#damage-support-breakdown th:first-child{min-width:180px}#damage-support-breakdown .subline{line-height:1.65}
 .xp-roadmap {
@@ -1024,7 +1027,7 @@
         <p id="damage-support-stacks-help" class="hint">Defaults to 0 kills for pushing high levels. Kill-based mastery adds no bonus until kills accumulate. Elapsed time and teleports are separate settings.</p>
         <label class="field">Skymage teleports on the target<input id="damage-support-teleports" type="number" min="0" max="1000000" step="1" value="3"></label>
         <label class="field">Necromancer random buffs<select id="damage-necromancer-roll"><option value="midpoint">Midpoint of each range</option><option value="maximum">Maximum of each range</option></select></label>
-        <p class="hint">Wizard’s triple-shot chance caps at 100% for ×3 attacks. Splash counts as an extra single-target damage multiplier. Timed bonuses use the selected elapsed time while active; cooldowns are not averaged.</p>
+        <p class="hint">Wizard’s triple-shot chance caps at 100% for ×3 attacks. Templar’s active and timed splash bonuses add to the attacker’s own splash on ordinary volleys. Timed bonuses use the selected elapsed time while active; cooldowns are not averaged.</p>
         </div>
         <label class="field">Edit captured support profile<select id="damage-support-profile-hero"></select></label>
         <div id="damage-support-profile-fields"></div>
@@ -1033,13 +1036,21 @@
       <details id="damage-settings" class="sidebar-section" hidden><summary>Damage skills &amp; attacker tile</summary><div class="details-content">
         <label class="check-label setting-check"><input id="damage-skills" type="checkbox" checked> Include captured personal damage buffs and mastery</label>
         <p class="hint">Compare single-target damage while the attacker’s skill is active. Its personal active and mastery bonuses count once.</p>
+        <div id="attacker-kill-settings">
+          <label class="field" for="damage-attacker-kills-value">Gladiator kills during Killjoy</label>
+          <div class="attacker-kill-inputs"><input id="damage-attacker-kills" aria-label="Gladiator kills during Killjoy" type="range" min="0" max="200" step="1" value="20"><input id="damage-attacker-kills-value" type="number" min="0" max="1000000" step="1" value="20"></div>
+          <label class="field" for="damage-assassin-executions-value">Assassin executions during Execute</label>
+          <div class="attacker-kill-inputs"><input id="damage-assassin-executions" aria-label="Assassin executions during Execute" type="range" min="0" max="200" step="1" value="0"><input id="damage-assassin-executions-value" type="number" min="0" max="1000000" step="1" value="0"></div>
+          <p class="hint">Set the stacks this attacker has when it reaches the boss. Both heroes lose their stacks when their skill expires.</p>
+        </div>
         <label class="field">Damage tile bonus (%)<input id="damage-tile" type="number" min="0" max="1000000000" step="1" value="2475"></label>
         <p class="hint setting-help">+2,475% gives the placed hero ×25.75 Damage. One Damage tile is modeled. A hero can use only one placement at a time.</p>
         <label class="field">Warden distance to enemy (m)<input id="damage-warden-distance" type="number" min="0" max="1000000" step="0.01" value="10.7"></label>
-        <p class="hint setting-help">Defaults to your observed 10.7m and +180,249% mastery damage. Other distances scale proportionally from that captured point; the reference bonus and distance are editable below.</p>
+        <p class="hint setting-help">Enter the distance from Warden to the boss. The nine-GM tooltip shows +929% Damage per 0.30 m. The starting distance of 10.7 m comes from an earlier fight.</p>
         <label class="field">Edit captured skill profile<select id="damage-profile-hero"></select></label>
         <div id="damage-profile-fields"></div>
-        <p class="hint">Values are from your screenshots without skill tiles. A +20% skill tile multiplies both active and mastery bonuses by 1.20. Captured bonuses stay fixed as the team changes; additional Skill Power is not applied again. Change these values when your in-game bonuses change.</p>
+        <button id="damage-nine-gm-profiles" type="button" class="text-button">Use nine-GM attacker profiles</button>
+        <p class="hint" id="damage-nine-gm-help">Loads all nine measured attacker profiles, enables Grand Master for deployed heroes, and turns off the synergy event and Snow Fort. Each deployed hero counts as one GM. Enable Snow Fort after loading this preset to compare the same profiles with its mastery perk.</p>
       </div></details>
       <details id="tag-settings" class="sidebar-section" hidden><summary>Tag Skill Power</summary><div class="details-content">
         <label class="field"><span id="tag-base-label">Pre-team Skill Power</span><input id="tag-base-power" type="number" min="0" max="1000000000" step="any" value="0"></label>
@@ -1224,7 +1235,7 @@
       <details id="milestone-review" class="milestone-review" hidden><summary><span><strong>Milestone screenshot review</strong><small id="review-summary">Screenshot milestones are active through level 10,000.</small></span><span id="review-progress"></span></summary><div class="review-body"><p id="review-status-message" class="review-pending">Captured milestones are active with the confirmed account multiplier.</p><p id="review-changes" class="review-changes"></p><div class="review-toolbar"><label class="field compact">Review hero<select id="review-hero"></select></label><span id="review-context" class="hint">Captured with zero heroes deployed. The permanent multiplier is applied separately from inferred base values.</span></div><div id="review-table"></div><p id="review-caption" class="detail-caption">Screenshot signs, units and scopes are preserved. Active bases are inferred from rounded account displays.</p></div></details>
       <details class="methods"><summary>How the comparison works <span>Formulas & source</span></summary>
         <p id="standard-model-note" class="model-note">Experience compares boss XP received by the leveler, including XP shared by Veteran. Damage and Gold compare the attacker’s bonuses. Energy compares wave income, and Energy + Power Mages compares energy per Power Mage kill. These relative scores include configured styles, milestones, synergies, map, tiles and captured skills. Mimic farming weights Normal, Super and Ultra Gold by their chances. The legacy Gold index and other resource scores use guaranteed tiers. Chance references supply the chances for the selected attacker.</p>
-        <div class="method-grid"><div><h3>Milestones and synergies</h3><p>Active heroes have updated milestones through level 10,000, unlocked at or below each hero’s level. Integer bases are inferred from rounded screenshot displays. Permanent milestone strength defaults to talent ×1.5 × global ×1.25 = ×1.875. Each owner gains 10% of that strength per Milestone Bonus level, up to +50%. A synergy activates when enough listed teammate copies are deployed and its tier is unlocked. Buying Synergy Heroes Required reduces the partner count by one for 3- and 4-hero synergies. The owner is always required. Independent percentage effects multiply; additive effects stay in a shared total. Synergy values are rounded to whole numbers after strength boosts; milestone values retain fractional precision. Style bonuses do not amplify themselves.</p></div><div><h3>Account synergy bonuses</h3><p>The enabled account profile multiplies three independent +5% global bonuses to ×1.157625, then applies ×6.25 to tiers 1–2 and ×2.5 to tiers 3–4 independently of map boosts. Each owner starts with a 0% Synergy Bonus. Each purchased level adds 5%, up to +25%. It scales effects emitted by that owner, including global effects, without stacking the owners into another global pool. An off-tile owner with a purchased +25% bonus and nine Grand Masters has 1.05³ × 1.25 × 1.1⁹ = 3.412023994742347 before tier factors. No extra calibration multiplier is applied.</p><p id="synergy-method-summary"></p></div><div><h3>Chance spillover</h3><p>Mimic Gold checks Super first and then rolls Ultra on Super drops. Super overflow boosts both Super and Ultra amounts. Ultra overflow boosts Ultra amounts. The other objectives add each tier’s excess above 100% to its outcome’s shared spillover pool. Gold defaults to 50% Super and 50% Ultra before heroes; Damage defaults to 135% Crit, 109% Super and 48% Ultra before heroes. Pre-team mode adds candidate bonuses before checking the caps. Recorded-team mode uses observed total + candidate contribution − captured contribution. Each reference has its own Additional spillover value, replacing the shared existing-overflow input. At 5% per point, 20 excess points give one ×2 factor, not twenty separate ×1.05 multipliers. The already-capped assumption mode retains the earlier calculation explicitly. Mimic farming weights the three payout tiers by their probabilities. The legacy Gold index and Damage index assume guaranteed tiers.</p></div><div><h3>Comparing the indexes</h3><p>Each hero receives global bonuses plus its own personal bonuses. The standard comparison cards use one attacker. Damage, Gold and XP scores all use that same attacker’s personal bonuses plus team globals. Support heroes’ personal kill bonuses are excluded. Energy remains wave income and is independent of the attacker. Damage includes uncapped attack-speed and crit-damage bonus factors; hero base attack speeds and the 10 APS cap are not modeled. In the Damage focus, each team has its own selected attacker. Its damage index includes its personal milestones, active personal synergies and configured active/mastery skills along with all global bonuses; teammates’ personal bonuses do not transfer to it. The strongest current damage index is selected initially; choose another attacker in either team editor. Suggestions preserve that attacker and its level by default. Enable “Choose the best attacker too” to search attacker and support combinations together, scoring the strongest attacker in each candidate lineup with its personal milestones and active synergies. User locks still preserve heroes and levels; unlocked slots may change heroes. Suggest tiles retains the selected attacker. The same attacker also supplies the Gold and XP scores in every focus, including the side cards on Energy. Gold also has a separate attacker per team: only that attacker’s personal gold milestones and synergies combine with all global Gold bonuses. Gold suggestions preserve the chosen attacker by default, or search attackers and supports together when “Choose the best attacker too” is enabled. Mimic farming values the expected Normal, Super and Ultra Gold drops on a killed Mimic. Account and team Boss Gold scale the wave-boss reward, and the Mimic chest adds its own multiplier. Suggestions assume equal farming speed. Enter an observed Mimic rate or an enemy clear rate to estimate each team’s Gold index per hour. The legacy Gold index multiplies Kill Gold, Boss Gold, Super Gold Amount, Ultra Gold Amount and shared spillover. Each mode adds Golden Arrows once when Crusader is the attacker. Golden Arrows defaults to one attack on a wave boss at 50% efficiency, with zero prior-hit mastery stacks. Its separate payout uses passive Kill Gold and excludes Boss Gold; unconfirmed Super/Ultra and on-kill support interactions are excluded from that component. Its attack count and captured active/mastery bonuses are editable, and a skill tile boosts both bonuses by 1.20. The payout progression rows show cumulative Boss, Super and Ultra amounts as relative indexes. Configured active Rogue, Hunter and Sovereign skills apply once each when present; their captured no-tile bonuses are editable. +20% skill tiles multiply those bonuses by 1.20. Sovereign’s skill increases Super Gold chance. Farming estimates use the configured skill window and a relative base payout. Gold suggestions require at least one Hunter, Rogue and Sovereign for their skills, even if excluded from the optional roster; locks and a fixed attacker remain protected. A lineup with too few slots or conflicting locks receives an explanation instead of an invalid suggestion. Energy defaults to (10,000 base income + added Energy Income) × percentage Energy Income multiplier × super energy amount × ultra energy amount × shared energy spillover. The base income is editable in Calculation settings. Energy + Power Mages multiplies that complete wave-energy index by the product of global Power Mage Energy bonuses. It compares relative energy per Power Mage kill and is independent of the attacker. It does not include Power Mage spawn frequency or kill rate. Its A/B teams are saved separately, and both team and tile suggestions optimize this combined score. Team suggestions require at least one Captain for his Power Mage mastery skill, even when excluded from the optional roster. Saved teams missing Captain are flagged without changing their lineups. The mastery skill’s additive stack bonus is not included in the payout index. Experience scores boss XP received by the leveler. The attacker’s personal bonuses and all team globals determine the payout for both direct kills and Veteran’s Exp Share. Recorded team totals compare changes from the captured lineup, with +66M Rank EXP and approximately 260% Super / 450% Ultra EXP chance as the Wizard/Viking reference, with Archer at level 5,000 and all ten heroes on Grand Master. These displayed totals already include that team. Only the candidate’s change in modeled Rank EXP and chance is applied. Chance above each 100% cap contributes to spillover. The reference settings show its assumptions and any mismatch between modeled contributions and recorded totals. Manual pre-team baseline mode retains (base Rank XP + flat bonuses) / base Rank XP with a default of 100. Boss EXP, Super and Ultra EXP amounts, configured XP skill rewards and chance spillover multiply the Rank EXP factor. Level 1,000 grants the attacker a personal ×2 Boss EXP bonus. The plan searches teams across levels 1–4,500 when style unlocks, synergy eligibility or XP milestones change. The index compares payouts per kill. Timing the climb would also require kill speed and XP costs.</p></div><div><h3>Grand Master and the leveling hero</h3><p>In Experience the leveler starts without a style. Commander unlocks at 300, Exp Factory at 500, Tycoon at 1,250, Industrialist at 2,500 and Magnate at 4,000. Tycoon adds 5% global Rank EXP and synergy strength; Magnate adds 12% global Rank EXP and 8% synergy strength, so both can benefit Veteran-shared kills. Best available and the leveling plan compare them with the other unlocked styles. All copies of the leveling hero share its level and combat style. The Grand Master setting applies to unassigned support heroes. Experience supports can instead use Tycoon or Magnate, sharing their choice across copies. The style-search checkbox allows suggestions to compare those support styles; disabling it retains manual assignments. Locks protect heroes and levels while styles can change like tiles. The current comparison uses the displayed assignments. Two leveling copies leave at most eight Grand Masters on a full team and three leave at most seven; the bonus uses the actual count. Each Grand Master gives +150% global Damage, +150% global Kill Gold, +5% global Skill Power, +5% global Mastery Power, +10% global Milestone Bonus and +10% global Synergy Bonus. Each owner also gets −90% Attack Speed (×0.1 once). Damage and Kill Gold factors multiply per copy. Both milestone and synergy strength compound by default as 1.1ⁿ. The captured Militia has Milestone Bonus level 5 and nine Grand Masters. Its 17 milestone displays match ×2.8125 × 1.1⁹ = ×6.631727880937506. Ten Grand Masters give ×2.5937424601 for each style factor, giving ×7.294900669031256 before tiles for a hero with Milestone Bonus level 5. Synergies separately receive account, owner, tier and map bonuses. The two stacking controls can be changed independently. Immortal Boss Damage compounds each Grand Master’s Skill Power and mastery power by ×1.05. The ordinary bonus table displays the raw style entries.</p></div><div><h3>Snow Fort and tile placements</h3><p>Snow Fort applies +115% to tier 5–6 synergy effects, +77% to tier 7, +33% Mastery Skill Power, and −20% Attack Speed once. Milestone tiles add 0.2 to the milestone Grand Master factor and synergy tiles add 0.1 to the separate, compounded synergy factor. This preserves your selected additive tile rule; the captured off-tile effects do not verify tile interaction. Final milestone strength is permanent multiplier × (Grand Master factor + milestone tile). With ten Grand Masters, the factor is 2.5937424601 + 0.2 = 2.7937424601, giving ×7.857400669031256 under the retained, unverified tile rule. Synergies receive the three global account modifiers, the owner bonus and the separate manual, account-tier and map-tier multipliers. The placed owner emits the boosted effects, including global effects, before synergy rounding. These boosts are not applied a second time to recipients. There are up to three milestone, three synergy and three skill-power tiles, plus one personal Kill Gold tile, one personal Damage tile and one XP +20% tile in Experience. Each hero occupies one tile; all heroes are assumed in range.</p><p>Gold tile suggestions compare the attacker’s Kill Gold tile with milestone and synergy boosts and the captured active support skill payouts. Duplicate heroes provide each named skill only once. Damage suggestions compare Damage, milestone, synergy and skill-power placements using the selected attacker’s captured active/mastery bonuses and each unique support hero’s global buffs. Praetorian, Deadeye, Dicemaster, Warden and Warlord are supported. Skill tiles multiply both their active and mastery bonuses by 1.20. Warden’s distance defaults to 10.7m and +180,249% mastery damage from the current-bonus screenshot; edited distances scale proportionally from that reference; Dicemaster uses an expected roll with his mastery maximum-roll chance and a uniform remaining roll. Splash is an additional single-target damage multiplier; Deadeye’s extra targets and Warden’s range remain unscored. Support skills use only the first deployed copy of each hero, including its tile. Default mastery timing is 20 seconds, kill stacks are 100, and Skymage applies three teleports. Druid, Witch, Spelldancer and Templar active and accumulated mastery bonuses form separate multipliers. Wizard’s triple-shot chance caps at 100% for ×3 attacks without spillover. Necromancer uses the midpoint of each range by default; this is a scenario, not an exact expected product of random rolls. Captured skill values stay fixed as the roster changes; generic Skill Power, Grand Master, event and map mastery are not applied to them again. Cooldown averaging is off. Experience compares XP +20% on the killer, skill tiles on Archer, Ballista and Veteran, and milestone and synergy placements. With Snow Fort enabled, a hero on the XP tile earns 20% more XP when it lands the kill. Veteran’s Exp Share passes the boosted reward to every hero in range on a successful share. The Energy focuses retain their primary milestone and synergy score. Remaining skill tiles favor XP abilities, then Skill Power and Damage; one copy per hero. Skill DPS is not modeled. Hero locks retain identity and level, while tiles remain movable.</p></div><div><h3>Suggestions are a search</h3><p>Suggest team A searches the allowed roster while respecting locked slots. Once Team A is built, Suggest team B opens a second lineup for comparison. Damage and Gold suggestions preserve the selected attacker unless “Choose the best attacker too” is enabled. Experience suggestions require at least one Archer, Ballista and Veteran; extra copies are allowed. Gold requires Hunter, Rogue and Sovereign, and Energy + Power Mages requires Captain. Energy, Damage, Buff swap and all four Immortal modes have no XP-hero minimum. Immortal keeps the supports required by its selected buff preset. Run a suggestion on either lineup to apply its focus-specific requirements. Experience suggestions keep the leveler. At its current level you can pin a style or an attacker. The leveling plan searches all eligible styles and attackers for each range. Fixed targets remain even when outside the support roster; automatically chosen attackers use eligible team members from the allowed roster or locked slots. This is a heuristic search, not a proof of the globally best lineup. Review the active bonuses before adopting a team.</p></div><div class="source-info"><h3>Source & limitations</h3><p id="source-description"></p><p>The source simulator contains broken references. This tool calculates from the underlying hero records, preserving the bonus stacking rules and applying the late-game assumptions above. Screenshot-confirmed type, scope and sign corrections, plus bases inferred under recorded capture profiles, are included in the audit summary. The updated Sovereign screenshot identifies its level 3,000 bonus as Ultra Exp Amount, now included in the experience index. Milestone updates do not verify the older synergy records. Heroes without complete milestone and synergy records remain outside the comparison.</p><a id="source-link" target="_blank" rel="noopener noreferrer">Open the original spreadsheet ↗</a></div></div></details>
+        <div class="method-grid"><div><h3>Milestones and synergies</h3><p>Active heroes have updated milestones through level 10,000, unlocked at or below each hero’s level. Integer bases are inferred from rounded screenshot displays. Permanent milestone strength defaults to talent ×1.5 × global ×1.25 = ×1.875. Each owner gains 10% of that strength per Milestone Bonus level, up to +50%. A synergy activates when enough listed teammate copies are deployed and its tier is unlocked. Buying Synergy Heroes Required reduces the partner count by one for 3- and 4-hero synergies. The owner is always required. Independent percentage effects multiply; additive effects stay in a shared total. Synergy values are rounded to whole numbers after strength boosts; milestone values retain fractional precision. Style bonuses do not amplify themselves.</p></div><div><h3>Account synergy bonuses</h3><p>The enabled account profile multiplies three independent +5% global bonuses to ×1.157625, then applies ×6.25 to tiers 1–2 and ×2.5 to tiers 3–4 independently of map boosts. Each owner starts with a 0% Synergy Bonus. Each purchased level adds 5%, up to +25%. It scales effects emitted by that owner, including global effects, without stacking the owners into another global pool. An off-tile owner with a purchased +25% bonus and nine Grand Masters has 1.05³ × 1.25 × 1.1⁹ = 3.412023994742347 before tier factors. No extra calibration multiplier is applied.</p><p id="synergy-method-summary"></p></div><div><h3>Chance spillover</h3><p>Mimic Gold checks Super first and then rolls Ultra on Super drops. Super overflow boosts both Super and Ultra amounts. Ultra overflow boosts Ultra amounts. The other objectives add each tier’s excess above 100% to its outcome’s shared spillover pool. Gold defaults to 50% Super and 50% Ultra before heroes; Damage defaults to 135% Crit, 109% Super and 48% Ultra before heroes. Pre-team mode adds candidate bonuses before checking the caps. Recorded-team mode uses observed total + candidate contribution − captured contribution. Each reference has its own Additional spillover value, replacing the shared existing-overflow input. At 5% per point, 20 excess points give one ×2 factor, not twenty separate ×1.05 multipliers. The already-capped assumption mode retains the earlier calculation explicitly. Mimic farming weights the three payout tiers by their probabilities. The legacy Gold index and Damage index assume guaranteed tiers.</p></div><div><h3>Comparing the indexes</h3><p>Each hero receives global bonuses plus its own personal bonuses. The standard comparison cards use one attacker. Damage, Gold and XP scores all use that same attacker’s personal bonuses plus team globals. Support heroes’ personal kill bonuses are excluded. Energy remains wave income and is independent of the attacker. Damage includes uncapped attack-speed and crit-damage bonus factors; hero base attack speeds and the 10 APS cap are not modeled. In the Damage focus, each team has its own selected attacker. Its damage index includes its personal milestones, active personal synergies and configured active/mastery skills along with all global bonuses; teammates’ personal bonuses do not transfer to it. The strongest current damage index is selected initially; choose another attacker in either team editor. Suggestions preserve that attacker and its level by default. Enable “Choose the best attacker too” to search attacker and support combinations together, scoring the strongest attacker in each candidate lineup with its personal milestones and active synergies. User locks still preserve heroes and levels; unlocked slots may change heroes. Suggest tiles retains the selected attacker. The same attacker also supplies the Gold and XP scores in every focus, including the side cards on Energy. Gold also has a separate attacker per team: only that attacker’s personal gold milestones and synergies combine with all global Gold bonuses. Gold suggestions preserve the chosen attacker by default, or search attackers and supports together when “Choose the best attacker too” is enabled. Mimic farming values the expected Normal, Super and Ultra Gold drops on a killed Mimic. Account and team Boss Gold scale the wave-boss reward, and the Mimic chest adds its own multiplier. Suggestions assume equal farming speed. Enter an observed Mimic rate or an enemy clear rate to estimate each team’s Gold index per hour. The legacy Gold index multiplies Kill Gold, Boss Gold, Super Gold Amount, Ultra Gold Amount and shared spillover. Each mode adds Golden Arrows once when Crusader is the attacker. Golden Arrows defaults to one attack on a wave boss at 50% efficiency, with zero prior-hit mastery stacks. Its separate payout uses passive Kill Gold and excludes Boss Gold; unconfirmed Super/Ultra and on-kill support interactions are excluded from that component. Its attack count and captured active/mastery bonuses are editable, and a skill tile boosts both bonuses by 1.20. The payout progression rows show cumulative Boss, Super and Ultra amounts as relative indexes. Configured active Rogue, Hunter and Sovereign skills apply once each when present; their captured no-tile bonuses are editable. +20% skill tiles multiply those bonuses by 1.20. Sovereign’s skill increases Super Gold chance. Farming estimates use the configured skill window and a relative base payout. Gold suggestions require at least one Hunter, Rogue and Sovereign for their skills, even if excluded from the optional roster; locks and a fixed attacker remain protected. A lineup with too few slots or conflicting locks receives an explanation instead of an invalid suggestion. Energy defaults to (10,000 base income + added Energy Income) × percentage Energy Income multiplier × super energy amount × ultra energy amount × shared energy spillover. The base income is editable in Calculation settings. Energy + Power Mages multiplies that complete wave-energy index by the product of global Power Mage Energy bonuses. It compares relative energy per Power Mage kill and is independent of the attacker. It does not include Power Mage spawn frequency or kill rate. Its A/B teams are saved separately, and both team and tile suggestions optimize this combined score. Team suggestions require at least one Captain for his Power Mage mastery skill, even when excluded from the optional roster. Saved teams missing Captain are flagged without changing their lineups. The mastery skill’s additive stack bonus is not included in the payout index. Experience scores boss XP received by the leveler. The attacker’s personal bonuses and all team globals determine the payout for both direct kills and Veteran’s Exp Share. Recorded team totals compare changes from the captured lineup, with +66M Rank EXP and approximately 260% Super / 450% Ultra EXP chance as the Wizard/Viking reference, with Archer at level 5,000 and all ten heroes on Grand Master. These displayed totals already include that team. Only the candidate’s change in modeled Rank EXP and chance is applied. Chance above each 100% cap contributes to spillover. The reference settings show its assumptions and any mismatch between modeled contributions and recorded totals. Manual pre-team baseline mode retains (base Rank XP + flat bonuses) / base Rank XP with a default of 100. Boss EXP, Super and Ultra EXP amounts, configured XP skill rewards and chance spillover multiply the Rank EXP factor. Level 1,000 grants the attacker a personal ×2 Boss EXP bonus. The plan searches teams across levels 1–4,500 when style unlocks, synergy eligibility or XP milestones change. The index compares payouts per kill. Timing the climb would also require kill speed and XP costs.</p></div><div><h3>Grand Master and the leveling hero</h3><p>In Experience the leveler starts without a style. Commander unlocks at 300, Exp Factory at 500, Tycoon at 1,250, Industrialist at 2,500 and Magnate at 4,000. Tycoon adds 5% global Rank EXP and synergy strength; Magnate adds 12% global Rank EXP and 8% synergy strength, so both can benefit Veteran-shared kills. Best available and the leveling plan compare them with the other unlocked styles. All copies of the leveling hero share its level and combat style. The Grand Master setting applies to unassigned support heroes. Experience supports can instead use Tycoon or Magnate, sharing their choice across copies. The style-search checkbox allows suggestions to compare those support styles; disabling it retains manual assignments. Locks protect heroes and levels while styles can change like tiles. The current comparison uses the displayed assignments. Two leveling copies leave at most eight Grand Masters on a full team and three leave at most seven; the bonus uses the actual count. Each Grand Master gives +150% global Damage, +150% global Kill Gold, +5% global Skill Power, +5% global Mastery Power, +10% global Milestone Bonus and +10% global Synergy Bonus. Each owner also gets −90% Attack Speed (×0.1 once). Damage and Kill Gold factors multiply per copy. Both milestone and synergy strength compound by default as 1.1ⁿ. The captured Militia has Milestone Bonus level 5 and nine Grand Masters. Its 17 milestone displays match ×2.8125 × 1.1⁹ = ×6.631727880937506. Ten Grand Masters give ×2.5937424601 for each style factor, giving ×7.294900669031256 before tiles for a hero with Milestone Bonus level 5. Synergies separately receive account, owner, tier and map bonuses. The two stacking controls can be changed independently. Immortal Boss Damage compounds each Grand Master’s Skill Power and mastery power by ×1.05. The ordinary bonus table displays the raw style entries.</p></div><div><h3>Snow Fort and tile placements</h3><p>Snow Fort applies +115% to tier 5–6 synergy effects, +77% to tier 7, +33% Mastery Skill Power, and −20% Attack Speed once. Milestone tiles add 0.2 to the milestone Grand Master factor and synergy tiles add 0.1 to the separate, compounded synergy factor. This preserves your selected additive tile rule; the captured off-tile effects do not verify tile interaction. Final milestone strength is permanent multiplier × (Grand Master factor + milestone tile). With ten Grand Masters, the factor is 2.5937424601 + 0.2 = 2.7937424601, giving ×7.857400669031256 under the retained, unverified tile rule. Synergies receive the three global account modifiers, the owner bonus and the separate manual, account-tier and map-tier multipliers. The placed owner emits the boosted effects, including global effects, before synergy rounding. These boosts are not applied a second time to recipients. There are up to three milestone, three synergy and three skill-power tiles, plus one personal Kill Gold tile, one personal Damage tile and one XP +20% tile in Experience. Each hero occupies one tile; all heroes are assumed in range.</p><p>Gold tile suggestions compare the attacker’s Kill Gold tile with milestone and synergy boosts and the captured active support skill payouts. Duplicate heroes provide each named skill only once. Damage suggestions compare Damage, milestone, synergy and skill-power placements using the selected attacker’s captured active/mastery bonuses and each unique support hero’s global buffs. The nine-GM preset loads the nine measured attacker profiles and compares all nine with the synergy event and Snow Fort off. Skill tiles strengthen the parts of each skill that scale with Skill Power or Mastery Power. Warden’s matchup uses the selected target distance. Her nine-GM tooltip shows +929% damage per 0.30 m. The earlier +180,249% reading at 10.7 m belongs to a different profile; Dicemaster uses an expected roll with his mastery maximum-roll chance and a uniform remaining roll. Ordinary volleys use the greater of 100% and all splash percentages added together. Deadeye’s extra targets apply to other enemies. Warden’s range controls which targets she can reach. Support skills use only the first deployed copy of each hero, including its tile. Default support mastery timing is 20 seconds with zero support kill stacks and three Skymage teleports. Gladiator starts at 20 personal kills and Assassin at zero executions. Their sliders set stacks during the current skill. Druid, Witch, Spelldancer and Templar active and accumulated mastery bonuses form separate multipliers. Wizard’s triple-shot chance caps at 100% for ×3 attacks without spillover. Necromancer uses the midpoint of each range by default; this is a scenario, not an exact expected product of random rolls. Captured skill values include their account and roster bonuses. Snow Fort adjusts eligible mastery effects on matching nine-GM personal profiles. Other attacker and support captures use their entered mastery values. Personal buffs use their active-window bonuses. Champion and Militia each replace a normal attack when their skill fires. The comparison models their casts against one enemy and counts wound ticks until the next refresh. Experience compares XP +20% on the killer, skill tiles on Archer, Ballista and Veteran, and milestone and synergy placements. With Snow Fort enabled, a hero on the XP tile earns 20% more XP when it lands the kill. Veteran’s Exp Share passes the boosted reward to every hero in range on a successful share. The Energy focuses retain their primary milestone and synergy score. Remaining skill tiles favor XP abilities, then Skill Power and Damage; one copy per hero. Skill DPS is not modeled. Hero locks retain identity and level, while tiles remain movable.</p></div><div><h3>Suggestions are a search</h3><p>Suggest team A searches the allowed roster while respecting locked slots. Once Team A is built, Suggest team B opens a second lineup for comparison. Damage and Gold suggestions preserve the selected attacker unless “Choose the best attacker too” is enabled. Experience suggestions require at least one Archer, Ballista and Veteran; extra copies are allowed. Gold requires Hunter, Rogue and Sovereign, and Energy + Power Mages requires Captain. Energy, Damage, Buff swap and all four Immortal modes have no XP-hero minimum. Immortal keeps the supports required by its selected buff preset. Run a suggestion on either lineup to apply its focus-specific requirements. Experience suggestions keep the leveler. At its current level you can pin a style or an attacker. The leveling plan searches all eligible styles and attackers for each range. Fixed targets remain even when outside the support roster; automatically chosen attackers use eligible team members from the allowed roster or locked slots. This is a heuristic search, not a proof of the globally best lineup. Review the active bonuses before adopting a team.</p></div><div class="source-info"><h3>Source & limitations</h3><p id="source-description"></p><p>The source simulator contains broken references. This tool calculates from the underlying hero records, preserving the bonus stacking rules and applying the late-game assumptions above. Screenshot-confirmed type, scope and sign corrections, plus bases inferred under recorded capture profiles, are included in the audit summary. The updated Sovereign screenshot identifies its level 3,000 bonus as Ultra Exp Amount, now included in the experience index. Milestone updates do not verify the older synergy records. Heroes without complete milestone and synergy records remain outside the comparison.</p><a id="source-link" target="_blank" rel="noopener noreferrer">Open the original spreadsheet ↗</a></div></div></details>
     </section>
     <footer><span id="data-badge"></span><span>Works offline</span></footer>
   </main>
@@ -1247,20 +1258,22 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     'Kill Gold', 'Boss Gold', 'Super Gold Amount', 'Ultra Gold Amount', 'Super Energy Amount', 'Ultra Energy Amount', 'Power Mage Energy',
     'Super Exp Amount', 'Ultra Exp Amount', 'Boss Damage', 'Boss Exp', 'Ultra Boss Damage', 'Goblin Gold', 'Range', 'Milestone Bonus', 'Synergy Bonus',
     'Tier 5 + 6 Synergy', 'Tier 7 Synergy', 'Mastery Skill Power', 'Skill Power (tile)',
-    'Damage Taken', 'Splash Damage', 'Triple Shot Damage', 'Rank Exp Multiplier', 'Exp Reward Multiplier', 'Own Kill Exp Multiplier', 'Energy Income Multiplier', 'Skill Duration Multiplier']);
+    'Damage Taken', 'Triple Shot Damage', 'Rank Exp Multiplier', 'Exp Reward Multiplier', 'Own Kill Exp Multiplier', 'Energy Income Multiplier', 'Skill Duration Multiplier']);
   const chances = {
     damage: ['Crit Chance', 'Super Crit Chance', 'Ultra Crit Chance'],
     gold: ['Super Gold Chance', 'Ultra Gold Chance'],
     energy: ['Super Energy Chance', 'Ultra Energy Chance'],
     experience: ['Super Exp Chance', 'Ultra Exp Chance']
   };
-  const damageFactors = ['Damage','Attack Speed','Crit Damage','Super Crit Damage','Ultra Crit Damage','Damage Taken','Splash Damage','Triple Shot Damage'];
+  const damageFactors = ['Damage','Attack Speed','Crit Damage','Super Crit Damage','Ultra Crit Damage','Damage Taken','Triple Shot Damage'];
+  const speedStat=damageFactors.indexOf('Attack Speed'),volleyStat=damageFactors.indexOf('Triple Shot Damage');
+  const splashStat=damageFactors.length,damageChanceStart=splashStat+1;
   const tagFocuses = Object.freeze({
     archerExperienceTag: {heroId:'archer', name:'Archer Experience Tag', baseSetting:'archerTagBasePower'},
     hunterGoldTag: {heroId:'hunter', name:'Hunter Gold Tag', baseSetting:'hunterTagBasePower'}
   });
   const focusStats = {
-    damage: [...damageFactors,...chances.damage],
+    damage: [...damageFactors,'Splash Damage',...chances.damage],
     gold: ['Kill Gold','Super Gold Amount','Ultra Gold Amount','Boss Gold',...chances.gold],
     experience: ['Rank Exp','Super Exp Amount','Ultra Exp Amount',...chances.experience],
     energy: ['Energy Income','Super Energy Amount','Ultra Energy Amount',...chances.energy],
@@ -1268,28 +1281,59 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     archerExperienceTag: ['Skill Power'],
     hunterGoldTag: ['Skill Power']
   };
-  // Captured active-window bonuses already include the account context.
-  // Keep them editable and never apply milestone, synergy, event or map boosts again.
+  // Active-window captures already include the account context. The nine-GM
+  // measurements also establish a no-Snow baseline for their personal masteries.
   const damageSkillDefinitions = [
     {id:'praetorian',name:'Ion Blades',duration:20,cooldown:28,fields:[
-      ['SuperCritChance','Super Crit Chance',1436,'active'],['SuperCritDamage','Super Crit Damage',7180,'active'],
-      ['UltraCritChance','Ultra Crit Chance',124,'mastery'],['UltraCritDamage','Ultra Crit Damage',6179,'mastery']]},
+      ['SuperCritChance','Super Crit Chance',1436,'active',466],['SuperCritDamage','Super Crit Damage',7180,'active',2330],
+      ['UltraCritChance','Ultra Crit Chance',124,'mastery',93],['UltraCritDamage','Ultra Crit Damage',6179,'mastery',4646]]},
     {id:'deadeye',name:'Divine Aim',duration:25,cooldown:28,fields:[
-      ['Damage','Damage',24210,'active'],['AttackSpeed','Attack Speed',16115,'active'],['UltraCritChance','Ultra Crit Chance',484.2,'active'],
-      ['SuperCritDamage','Super Crit Damage',2060,'mastery']]},
+      ['Damage','Damage',24210,'active',6990],['AttackSpeed','Attack Speed',16115,'active',4635],['UltraCritChance','Ultra Crit Chance',484.2,'active',139.8],
+      ['SuperCritDamage','Super Crit Damage',2060,'mastery',1549],['AdditionalTargets','Additional targets',41,'mastery',31],
+      ['Duration','Active duration (s)',25,'timing',20]]},
     {id:'dicemaster',name:'Feeling Lucky',duration:20,cooldown:32,fields:[
-      ['CritMin','Crit Chance minimum',5,'active'],['CritMax','Crit Chance maximum',2867,'active'],
-      ['SuperCritMin','Super Crit Chance minimum',3,'active'],['SuperCritMax','Super Crit Chance maximum',1436,'active'],
-      ['UltraCritMin','Ultra Crit Chance minimum',1,'active'],['UltraCritMax','Ultra Crit Chance maximum',718,'active'],
-      ['MaxRollChance','Maximum-roll chance',41.2,'mastery']]},
-    {id:'warden',name:'Gatling Gun',duration:25,cooldown:24,displayedDamagePerStep:1236,stepMeters:0.07,fields:[
-      ['AttackSpeed','Attack Speed',16140,'active'],['Damage','Damage',8070,'active'],
-      ['ReferenceBonus','Damage at reference distance',180249,'mastery'],['ReferenceDistance','Reference distance (m)',10.7,'mastery']]},
-    {id:'warlord',name:'Avatar',duration:20,cooldown:24,fields:[
-      ['Damage','Damage',14360,'active'],['AttackSpeed','Attack Speed',7180,'active'],['SplashDamage','Splash Damage',1436,'active'],
-      ['SuperCritChance','Super Crit Chance',206,'mastery'],['SuperCritDamage','Super Crit Damage',4119,'mastery']]}
-  ].map(def=>({...def,name:heroMap.get(def.id)?.name||def.id[0].toUpperCase()+def.id.slice(1),skillName:def.name,fields:def.fields.map(([suffix,label,value,stage])=>({key:'damage'+def.id[0].toUpperCase()+def.id.slice(1)+suffix,label,value,stage,type:label.replace(/ (minimum|maximum)$/,'')}))}));
+      ['CritMin','Crit Chance minimum',5,'active'],['CritMax','Crit Chance maximum',2867,'active',927],
+      ['SuperCritMin','Super Crit Chance minimum',3,'active'],['SuperCritMax','Super Crit Chance maximum',1436,'active',466],
+      ['UltraCritMin','Ultra Crit Chance minimum',1,'active'],['UltraCritMax','Ultra Crit Chance maximum',718,'active',233],
+      ['MaxRollChance','Maximum-roll chance',41.2,'mastery',31]]},
+    // At mastery 10 and estimated M=3.097, the game uses +300M% per (1 - 0.225M) m.
+    // Keep the unrounded slope behind the nine-GM tooltip's +929% per 0.30 m.
+    {id:'warden',name:'Gatling Gun',duration:25,cooldown:24,fields:[
+      ['AttackSpeed','Attack Speed',16140,'active',4660],['Damage','Damage',8070,'active',2330],['Range','Range (%)',3233,'active',937],
+      ['ReferenceBonus','Damage at reference distance (%)',180249,'mastery',929.1],['ReferenceDistance','Reference distance (m)',10.7,'mastery',0.303175],
+      ['Duration','Active duration (s)',25,'timing',20]]},
+    {id:'warlord',name:'Avatar',duration:74,cooldown:24,fields:[
+      ['Damage','Damage',4660,'active'],['AttackSpeed','Attack Speed',2330,'active'],['SplashDamage','Splash Damage',466,'active'],
+      ['SuperCritChance','Super Crit Chance',155,'mastery'],['SuperCritDamage','Super Crit Damage',3097,'mastery']]},
+    {id:'champion',name:'Lightning Storm',duration:0,cooldown:24,fields:[
+      ['Strikes','Strikes per cast',236,'active'],['StrikeDamage','Damage per strike',4660,'active'],
+      ['RepeatDamage','Damage per prior strike',774,'mastery']]},
+    {id:'militia',name:'Spin Attack',duration:0,cooldown:24,fields:[
+      ['SpinDamage','Spin damage',13980,'active'],['WoundDamage','Wound damage per tick (% of spin)',6194,'mastery']]},
+    {id:'gladiator',name:'Killjoy',duration:20,cooldown:24,fields:[
+      ['DamagePerKill','Damage per personal kill',1864,'active'],['SuperCritDamagePerKill','Super Crit Damage per personal kill',1084,'mastery']]},
+    {id:'assassin',name:'Execute',duration:20,cooldown:32,fields:[
+      ['Threshold','Execution HP threshold',60,'active'],['ExtraThreshold','Additional execution threshold (pp)',10,'mastery'],
+      ['DamagePerExecution','Damage per execution',1549,'mastery'],['AttackSpeedPerExecution','Attack Speed per execution',50,'mastery']]}
+  ].map(def=>{
+    const prefix='damage'+def.id[0].toUpperCase()+def.id.slice(1);
+    const fields=def.fields.map(([suffix,label,value,stage,nineGmValue=value])=>({key:prefix+suffix,label,value,nineGmValue,stage,type:label.replace(/ (minimum|maximum)$/,'')}));
+    return {...def,name:heroMap.get(def.id)?.name||def.id[0].toUpperCase()+def.id.slice(1),skillName:def.name,
+      fields,durationKey:fields.find(field=>field.stage==='timing')?.key};
+  });
   const damageDefinitionMap=new Map(damageSkillDefinitions.map(def=>[def.id,def]));
+  // Mastery level 10. Projection from the common power preserves the precision
+  // hidden by the nine integer-rounded tooltips. Historical and edited profiles
+  // have no verified map baseline and use their entered values directly.
+  const nineGmMasteryPower=3.097;
+  const nineGmMasteryPerPower={
+    damageChampionRepeatDamage:250, damageMilitiaWoundDamage:2000,
+    damageGladiatorSuperCritDamagePerKill:350, damageAssassinDamagePerExecution:500,
+    damageWarlordSuperCritChance:50, damageWarlordSuperCritDamage:1000,
+    damageDeadeyeSuperCritDamage:500, damageDeadeyeAdditionalTargets:10,
+    damageDicemasterMaxRollChance:10, damagePraetorianUltraCritChance:30,
+    damagePraetorianUltraCritDamage:1500, damageWardenReferenceBonus:300
+  };
   const damageSupportDefinitions = [
     {id:'apprentice',fields:[['DamageTakenPerSecond','Damage Taken per second',41.2,'mastery']]},
     {id:'druid',fields:[['Damage','Damage',7180,'active'],['DamagePerSecond','Damage per second',82.4,'mastery']]},
@@ -1324,7 +1368,7 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     goldSkills:true, goldKillGoldTile:2475, goldRogueBonus:8070, goldHunterBonus:28720,
     goldSovereignChance:325.8, goldSovereignAmount:1629, goldCrusaderBonus:6420, goldCrusaderMastery:20.6, goldCrusaderAttacks:1,
     goldMimicFarming:false, goldMimicGoldBonus:340, goldWaveBossGoldBonus:0,
-    damageSkills:true, damageTile:2475, damageSkillTileBoost:20, damageMasteryTileBoost:20, damageWardenDistance:10.7,
+    damageSkills:true, damageTile:2475, damageSkillTileBoost:20, damageMasteryTileBoost:20, damageWardenDistance:10.7,damageAttackerKills:20,damageAssassinExecutions:0,
     damageSupportSkills:true, damageSupportMode:'all', damageSupportSeconds:20, damageSupportStacks:0, damageSupportTeleports:3, damageNecromancerRoll:'midpoint'};
   for(const def of [...damageSkillDefinitions,...damageSupportDefinitions]) for(const field of def.fields) defaults[field.key]=field.value;
   const tileTypes = ['normal','milestone','synergy','skill','killGold','damage','experience'];
@@ -1498,7 +1542,7 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
       ['synergyGlobalBonus1',0,10000], ['synergyGlobalBonus2',0,10000], ['synergyGlobalBonus3',0,10000],
       ['baseOverflow',0,1e9], ['baseEnergy',0,1e9], ['mapT56',0,10000], ['mapT7',0,10000], ['mapMastery',0,10000], ['mapAttackSpeed',-99,10000],
       ['archerTagBasePower',0,1e9], ['hunterTagBasePower',0,1e9],
-      ['damageTile',0,1e9],['damageSkillTileBoost',0,10000],['damageMasteryTileBoost',0,10000],['damageWardenDistance',0,1e6],
+      ['damageTile',0,1e9],['damageSkillTileBoost',0,10000],['damageMasteryTileBoost',0,10000],['damageWardenDistance',0,1e6],['damageAttackerKills',0,1e6],['damageAssassinExecutions',0,1e6],
       ['damageSupportSeconds',0,1e6],['damageSupportStacks',0,200],['damageSupportTeleports',0,1e6],['experienceVeteranStacks',0,100],['experienceBaseRankXp',1,1e100],['experienceSupportLevel',0,1e6],
       ...['experienceArcherBonus','experienceArcherMasteryPerWave','experienceWave','experienceBallistaBonus','experienceBallistaMasteryPerStack',
         'experienceVeteranSuperChance','experienceVeteranShareChance','experienceVeteranSuperAmountPerStack'].map(key=>[key,0,1e9]),
@@ -1521,6 +1565,8 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     s.goldMimicFarming = s.goldMimicFarming === true;
     s.goldCrusaderAttacks = Math.floor(s.goldCrusaderAttacks);
     s.damageSkills = s.damageSkills !== false;
+    s.damageAttackerKills = Math.floor(s.damageAttackerKills);
+    s.damageAssassinExecutions = Math.floor(s.damageAssassinExecutions);
     s.damageSupportSkills = s.damageSupportSkills !== false;
     s.damageSupportMode = s.damageSupportMode === 'debuffs' ? 'debuffs' : 'all';
     s.damageSupportStacks = Math.floor(s.damageSupportStacks);
@@ -1690,11 +1736,13 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     }
     return (1+(b['Rank Exp']||0)/baseRankXp)*(b['Rank Exp Multiplier']??1);
   }
+  // The boss takes the stronger of the primary hit and the pooled splash hit.
+  function singleTargetSplash(percent=0) { return Math.max(1,percent/100); }
   function metricsFor(b, s, overflow, baseRankXp = 100, experienceReference = null) {
     const factor = type => b[type] ?? 1;
     const energy = (s.baseEnergy + (b['Energy Income'] || 0)) * factor('Energy Income Multiplier') * factor('Super Energy Amount') * factor('Ultra Energy Amount') * overflow.energy;
     return {
-      damage: damageFactors.reduce((value,type)=>value*factor(type),1) * overflow.damage,
+      damage: damageFactors.reduce((value,type)=>value*factor(type),1) * singleTargetSplash(b['Splash Damage']) * overflow.damage,
       gold: factor('Kill Gold') * factor('Boss Gold') * factor('Super Gold Amount') * factor('Ultra Gold Amount') * overflow.gold,
       experience: experienceRankFactor(b,baseRankXp,experienceReference) * factor('Exp Reward Multiplier') * factor('Super Exp Amount') * factor('Ultra Exp Amount') * overflow.experience,
       energy,
@@ -1803,19 +1851,64 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     const tileBoost=s.snowFort&&slot.tile==='skill'?1+s.damageSkillTileBoost/100:1;
     const masteryTileBoost=s.snowFort&&slot.tile==='skill'?1+s.damageMasteryTileBoost/100:1;
     const result={id:slot.id,name:definition?.skillName||null,known:!!definition,enabled:!!definition&&s.damageSkills,
-      tileBoost,masteryTileBoost,duration:definition?.duration||0,cooldown:definition?.cooldown||0,
-      activeEffects:[],masteryEffects:[],notes:[],factor:1,chance:0,chanceByType:{},chanceRolls:{}};
+      tileBoost,masteryTileBoost,mapMasteryFactor:1,duration:s[definition?.durationKey]??definition?.duration??0,cooldown:definition?.cooldown||0,
+      activeEffects:[],masteryEffects:[],notes:[],factor:1,nonSplashFactor:1,splashPercent:0,chance:0,chanceByType:{},chanceRolls:{}};
     if(!definition) {result.notes.push('No captured attacker skill is configured for this hero.');return result;}
     if(!s.damageSkills) return result;
-    const prefix='damage'+slot.id[0].toUpperCase()+slot.id.slice(1),value=suffix=>s[prefix+suffix];
+    const projectMastery=s.snowFort && s.mapMastery>0 && definition.fields.every(field=>s[field.key]===field.nineGmValue);
+    if(projectMastery) {
+      result.mapMasteryFactor=1+s.mapMastery/100;
+      result.notes.push('Snow Fort applies +'+s.mapMastery+'% Mastery Power to the nine-GM off-map capture.');
+    }
+    const masteryPower=nineGmMasteryPower*result.mapMasteryFactor;
+    const setting=key=>projectMastery && Object.hasOwn(nineGmMasteryPerPower,key)?nineGmMasteryPerPower[key]*masteryPower:s[key];
+    const prefix='damage'+slot.id[0].toUpperCase()+slot.id.slice(1),value=suffix=>setting(prefix+suffix);
     function add(type,amount,stage='active') {
       if(!amount) return;
       const effect={type,value:amount,global:false,stage,unit:'percent'};
       result[stage==='active'?'activeEffects':'masteryEffects'].push(effect);
       if(chances.damage.includes(type)) {result.chance+=amount;result.chanceByType[type]=(result.chanceByType[type]||0)+amount;}
-      else if(focusStats.damage.includes(type)) result.factor*=1+amount/100;
+      else if(type==='Splash Damage') result.splashPercent+=amount;
+      else if(damageFactors.includes(type)) result.nonSplashFactor*=1+amount/100;
     }
-    if(slot.id==='dicemaster') {
+    if(slot.id==='champion') {
+      result.strikes=Math.max(0,Math.round(skillPowerTileBonus(value('Strikes'),8,0.5,tileBoost)));
+      result.strikeDamage=skillPowerTileBonus(value('StrikeDamage'),100,10,tileBoost);
+      result.repeatDamage=value('RepeatDamage')*masteryTileBoost;
+      const ramp=Math.min(result.strikes,100);
+      const priorStacks=ramp*(ramp-1)/2+Math.max(0,result.strikes-ramp)*100;
+      result.castFactor=result.strikeDamage/100*(result.strikes+priorStacks*result.repeatDamage/100);
+      result.notes.push(result.strikes+' strikes on one target at '+result.strikeDamage+'% damage each. Each prior strike adds '+result.repeatDamage+'% damage up to 100 stacks per cast.');
+    } else if(slot.id==='militia') {
+      result.spinDamage=skillPowerTileBonus(value('SpinDamage'),300,30,tileBoost);
+      result.castFactor=result.spinDamage/100;
+      result.woundFactor=value('WoundDamage')*masteryTileBoost/100;
+      result.notes.push('Spin deals '+result.spinDamage+'% damage. Each of up to three one-second wound ticks deals '+Number((result.woundFactor*100).toFixed(2))+'% of the spin.');
+    } else if(slot.id==='gladiator') {
+      result.attackerKills=s.damageAttackerKills;
+      add('Damage',skillPowerTileBonus(value('DamagePerKill'),40,4,tileBoost)*result.attackerKills);
+      add('Super Crit Damage',value('SuperCritDamagePerKill')*masteryTileBoost*result.attackerKills,'mastery');
+      result.notes.push(result.attackerKills+' personal kills during Killjoy. Stacks add within each stat.');
+    } else if(slot.id==='assassin') {
+      result.attackerKills=s.damageAssassinExecutions;
+      result.executeThreshold=Math.min(100,Math.min(60,skillPowerTileBonus(value('Threshold'),10,1,tileBoost))+value('ExtraThreshold'));
+      result.bossExecuteThreshold=result.executeThreshold/2;
+      add('Damage',value('DamagePerExecution')*masteryTileBoost*result.attackerKills,'mastery');
+      add('Attack Speed',value('AttackSpeedPerExecution')*result.attackerKills,'mastery');
+      result.notes.push(result.attackerKills+' successful executions in the active window. Execute triggers below '+result.executeThreshold+'% HP ('+result.bossExecuteThreshold+'% on bosses). The damage index counts the buffs earned from executions.');
+    } else if(slot.id==='warlord') {
+      add('Damage',skillPowerTileBonus(value('Damage'),100,10,tileBoost));
+      add('Attack Speed',skillPowerTileBonus(value('AttackSpeed'),50,5,tileBoost));
+      add('Splash Damage',skillPowerTileBonus(value('SplashDamage'),10,1,tileBoost));
+      add('Super Crit Chance',value('SuperCritChance')*masteryTileBoost,'mastery');
+      add('Super Crit Damage',value('SuperCritDamage')*masteryTileBoost,'mastery');
+    } else if(slot.id==='deadeye') {
+      add('Damage',skillPowerTileBonus(value('Damage'),150,15,tileBoost));
+      add('Attack Speed',skillPowerTileBonus(value('AttackSpeed'),75,10,tileBoost));
+      add('Ultra Crit Chance',skillPowerTileBonus(value('UltraCritChance'),3,0.3,tileBoost));
+      add('Super Crit Damage',value('SuperCritDamage')*masteryTileBoost,'mastery');
+      result.notes.push('Multishot can hit '+Math.round(value('AdditionalTargets'))+' additional targets at the captured mastery. This comparison uses one boss.');
+    } else if(slot.id==='dicemaster') {
       const p=Math.min(100,value('MaxRollChance')*masteryTileBoost)/100;
       result.maxRollChance=p*100;
       for(const [suffix,type] of [['Crit','Crit Chance'],['SuperCrit','Super Crit Chance'],['UltraCrit','Ultra Crit Chance']]) {
@@ -1825,18 +1918,54 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
         add(type,p*max+(1-p)*(min+max)/2);
       }
       result.notes.push('Expected roll: maximum-roll mastery chance, otherwise a uniform roll between the captured limits.');
+    } else if(slot.id==='warden') {
+      add('Attack Speed',value('AttackSpeed')*tileBoost);
+      add('Damage',value('Damage')*tileBoost);
+      result.distance=s.damageWardenDistance;
+      result.referenceDistance=projectMastery?1-0.225*masteryPower:value('ReferenceDistance');
+      result.referenceBonus=value('ReferenceBonus');
+      if(result.referenceDistance>0) {
+        add('Damage',result.referenceBonus*result.distance/result.referenceDistance*masteryTileBoost,'mastery');
+      } else {
+        result.referenceDistance=null;
+        result.distanceMasteryUnavailable=true;
+        result.notes.push('This map bonus makes the modeled mastery distance interval nonpositive. The score includes only Warden’s other damage bonuses.');
+      }
+      result.notes.push('Distance mastery scales continuously with the distance to the enemy. Gatling Gun also gives +'+value('Range')+'% range at the captured Skill Power.');
     } else {
       for(const field of definition.fields) {
         const stage=field.stage,boost=stage==='mastery'?masteryTileBoost:tileBoost;
-        if(slot.id==='warden'&&field.key.endsWith('ReferenceDistance')) continue;
-        if(slot.id==='warden'&&field.key.endsWith('ReferenceBonus')) add('Damage',s[field.key]*(s.damageWardenDistance/s.damageWardenReferenceDistance)*boost,'mastery');
-        else add(field.label,s[field.key]*boost,stage);
+        add(field.label,setting(field.key)*boost,stage);
       }
     }
-    if(slot.id==='warden') {result.distance=s.damageWardenDistance;result.referenceDistance=s.damageWardenReferenceDistance;result.referenceBonus=s.damageWardenReferenceBonus;result.notes.push('Distance mastery is calibrated to the captured +'+s.damageWardenReferenceBonus+'% at '+s.damageWardenReferenceDistance+' m, with proportional scaling at other distances. Range is not an extra damage multiplier.');}
-    if(slot.id==='deadeye') result.notes.push('The 41 additional multishot targets do not multiply damage to one enemy.');
-    if(slot.id==='warlord') result.notes.push('Splash is modeled as an additional damage multiplier, as configured for this comparison.');
+    result.factor=result.nonSplashFactor*singleTargetSplash(result.splashPercent);
+    if(slot.id==='warlord') result.notes.push('Avatar adds its splash percentage to Templar’s buffs on ordinary attacks.');
+    if(result.castFactor!==undefined) {
+      const hero=heroMap.get(slot.id);
+      result.baseAttackSpeed=hero?.observedBaseStats?.attackSpeed??hero?.attackSpeed??1;
+      result.speedCap=10+(s.heroAscensions[slot.id]?.maxAttackSpeedLevel??0);
+    }
     return result;
+  }
+  // The normalized Damage index already includes attack speed and multi-shot.
+  // A cast spends one whole normal volley. Only its share of attack actions
+  // gets replaced, and a refreshed wound can tick at most once per second.
+  function damageCastMultiplier(skill,speed,normalVolleyFactor,warlock,explain=false) {
+    const aps=Math.min(skill.speedCap,skill.baseAttackSpeed*speed);
+    if(aps<=0 || normalVolleyFactor<=0) return 1;
+    const interval=Math.max(warlock?1:skill.cooldown,1/aps);
+    const woundTicks=skill.woundFactor ? Math.min(3,Math.floor(interval)) : 0;
+    const hits=skill.castFactor*(1+woundTicks*(skill.woundFactor||0));
+    if(explain) {
+      skill.attacksPerSecond=aps; skill.castInterval=interval; skill.woundTicks=woundTicks;
+      skill.notes.push('One cast replaces a normal volley every '+Number(interval.toFixed(3))+' s at '+Number(aps.toFixed(3))+' attacks/s.'
+        +(skill.woundFactor?' The wound delivers '+woundTicks+' ticks before expiry or refresh.':''));
+    }
+    const castShare=Math.min(1,1/(interval*aps));
+    return (1-castShare)+castShare*hits/normalVolleyFactor;
+  }
+  function damageWarlockActive(s,team) {
+    return s.damageSupportSkills && s.damageSupportMode==='all' && team.some(slot=>slot.id==='warlock');
   }
   function damageSupportEnabled(id,s) {
     return s.damageSupportSkills && damageSupportDefinitionMap.has(id)
@@ -1848,13 +1977,19 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     const tileBoost=s.snowFort&&slot.tile==='skill'?1+s.damageSkillTileBoost/100:1;
     const masteryTileBoost=s.snowFort&&slot.tile==='skill'?1+s.damageMasteryTileBoost/100:1;
     const result={id:slot.id,name:definition.name,skillName:definition.skillName,tileBoost,masteryTileBoost,
-      activeEffects:[],masteryEffects:[],notes:[],factor:1,chance:0,chanceByType:{}};
+      activeEffects:[],masteryEffects:[],notes:[],factor:1,nonSplashFactor:1,speedFactor:1,volleyFactor:1,splashPercent:0,chance:0,chanceByType:{}};
     const prefix='damageSupport'+slot.id[0].toUpperCase()+slot.id.slice(1),value=suffix=>s[prefix+suffix];
     function add(type,amount,stage='active') {
       if(!amount) return;
       result[stage==='mastery'?'masteryEffects':'activeEffects'].push({type,value:amount,global:true,stage,unit:'percent'});
       if(chances.damage.includes(type)) {result.chance+=amount;result.chanceByType[type]=(result.chanceByType[type]||0)+amount;}
-      else if(damageFactors.includes(type)) result.factor*=1+amount/100;
+      else if(type==='Splash Damage') result.splashPercent+=amount;
+      else if(damageFactors.includes(type)) {
+        const multiplier=1+amount/100;
+        result.nonSplashFactor*=multiplier;
+        if(type==='Attack Speed') result.speedFactor*=multiplier;
+        if(type==='Triple Shot Damage') result.volleyFactor*=multiplier;
+      }
     }
     if(slot.id==='necromancer') {
       for(const [suffix,type,stage] of [['Damage','Damage','active'],['AttackSpeed','Attack Speed','active'],
@@ -1876,11 +2011,21 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
         result.notes.push('Triple-shot chance is capped at 100%: at most ×3 attacks, with no excess-chance spillover.');
       } else add(type,amount,stage);
     }
-    if(['apprentice','druid','witch','templar'].includes(slot.id)) result.notes.push('Mastery uses '+s.damageSupportSeconds+' seconds; accumulated stacks form one additional multiplier.');
+    if(['apprentice','druid','witch'].includes(slot.id)) result.notes.push('Mastery uses '+s.damageSupportSeconds+' seconds; accumulated stacks form one additional multiplier.');
     if(['battlemage','spelldancer'].includes(slot.id)) result.notes.push(s.damageSupportStacks===0?'No kill-based mastery bonus at 0 kills; the active buff still applies.':'Mastery uses '+s.damageSupportStacks+' additive kill stacks, capped at 200.');
     if(slot.id==='skymage') result.notes.push('Mastery uses '+s.damageSupportTeleports+' teleports.');
-    if(slot.id==='templar') result.notes.push('Active and mastery splash bonuses are modeled as separate additional damage multipliers.');
+    result.factor=result.nonSplashFactor*singleTargetSplash(result.splashPercent);
+    if(slot.id==='templar') result.notes.push('Active and mastery splash add to '+Number(result.splashPercent.toFixed(2))+'% after '+s.damageSupportSeconds+' seconds. Ordinary attacks use the full splash pool when it exceeds 100%.');
     return result;
+  }
+  function applyDamageSupportProfile(globals,support) {
+    // Speed and extra projectiles enter the cast-vs-normal-volley comparison
+    // separately. Other support damage factors can share the product.
+    globals[0]*=support.nonSplashFactor/(support.speedFactor*support.volleyFactor);
+    globals[speedStat]*=support.speedFactor;
+    globals[volleyStat]*=support.volleyFactor;
+    globals[splashStat]+=support.splashPercent;
+    chances.damage.forEach((type,k)=>{globals[damageChanceStart+k]+=support.chanceByType[type]||0;});
   }
   function damageSupportsFor(team,s) {
     const result={enabled:s.damageSupportSkills,mode:s.damageSupportMode,seconds:s.damageSupportSeconds,stacks:s.damageSupportStacks,
@@ -2037,7 +2182,7 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     const tiled = s.snowFort ? team.findIndex(slot=>slot.id===id && slot.tile==='skill') : -1;
     return tiled>=0 ? tiled : team.findIndex(slot=>slot.id===id);
   }
-  // XP skill tooltips have a fixed base plus a percentage per Skill Power.
+  // These skill tooltips have a fixed base plus a value per Skill Power.
   // The tile adds rounded Skill Power levels. Preserve the captured value
   // itself, including a manually entered zero or fractional bonus.
   function skillPowerTileBonus(captured,base,perPower,skillPowerFactor) {
@@ -2276,6 +2421,7 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
       skillId:skill.id,skillName:skill.skillName,tileBoost:effect.stage==='mastery'?skill.masteryTileBoost:skill.tileBoost
     },'skill');
     const damageSkills=team.map(slot=>damageSkillFor(slot,s));
+    const warlock=damageWarlockActive(s,team);
     damageSkills.forEach((skill,index)=>{
       for(const effect of [...skill.activeEffects,...skill.masteryEffects]) add(team[index],index,heroMap.get(team[index].id),{
         ...effect,source:'User-captured attacker skill during its active window; placement boost applied once',
@@ -2297,6 +2443,8 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
       const overflow = overflowFor(bonuses, s, leveler !== null, damageSkills[index].chanceRolls);
       const metrics=metricsFor(bonuses,s,overflow,leveler === null ? 100 : s.experienceBaseRankXp,
         leveler === null ? null : s.experienceReference);
+      if(damageSkills[index].castFactor!==undefined) metrics.damage*=damageCastMultiplier(damageSkills[index],
+        bonuses['Attack Speed']??1,(bonuses['Triple Shot Damage']??1)*singleTargetSplash(bonuses['Splash Damage']),warlock,true);
       if (leveler !== null) metrics.experience *= bonuses['Boss Exp'] ?? 1;
       const tileFactor=experienceTileFactor(slot,s);
       metrics.experience*=tileFactor;
@@ -2542,10 +2690,7 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
           if(seen.has(slot.id)) continue;
           seen.add(slot.id);
           const profile=supportProfiles.get(slot.id)?.[slot.tile==='skill'?'skill':'normal'];
-          if(profile) {
-            globals[0]*=profile.factor;
-            chances.damage.forEach((type,k)=>{globals[damageFactors.length+k]+=profile.chanceByType[type]||0;});
-          }
+          if(profile) applyDamageSupportProfile(globals,profile);
         }
       }
       if(focus==='gold') {
@@ -2585,10 +2730,12 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
         const b = globals.map((v,k) => modes[k] ? v * locals[i][k] : v + locals[i][k]);
         const damageProfile=focus==='damage'?damageProfiles.get(team[i].id)[team[i].tile==='skill'?'skill':'normal']:null;
         if(damageProfile) {
-          b[0]*=damageProfile.factor;
-          chances.damage.forEach((type,k)=>{b[damageFactors.length+k]+=damageProfile.chanceByType[type]||0;});
+          const splash=singleTargetSplash(b[splashStat]+damageProfile.splashPercent);
+          b[0]*=damageProfile.nonSplashFactor*splash;
+          if(damageProfile.castFactor!==undefined) b[0]*=damageCastMultiplier(damageProfile,b[speedStat],b[volleyStat]*splash,damageWarlockActive(s,team));
+          chances.damage.forEach((type,k)=>{b[damageChanceStart+k]+=damageProfile.chanceByType[type]||0;});
         }
-        const chanceStart = focus === 'damage' ? damageFactors.length : focus === 'gold' || focus === 'powerMageEnergy' ? 4 : 3;
+        const chanceStart = focus === 'damage' ? damageChanceStart : focus === 'gold' || focus === 'powerMageEnergy' ? 4 : 3;
         const overflow = focus==='gold'||focus==='damage' ? chanceFactorFor(b.slice(chanceStart),s,focus,damageProfile?.chanceRolls)
           : 1 + (s.baseOverflow + s.overflowRate * b.slice(chanceStart).reduce((a,v) => a+v, 0)) / 100;
         let value = focus === 'damage' ? b.slice(0,damageFactors.length).reduce((product,value)=>product*value,1)
@@ -2772,7 +2919,7 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     return {milestone,killGold,skill,availableOptions,runnerUp:ranked[1],preferred:tie?'tie':ranked[0],
       gain:tie?0:low?high/low-1:null,attackerIndex};
   }
-  const damageSkillMethod='Damage tiles compare the selected attacker’s personal active skill and mastery, unique first-copy support skills, Damage, milestone, synergy and up to three skill-power placements. Captured bonuses apply once; splash is an additional damage multiplier.';
+  const damageSkillMethod='Damage tiles compare the selected attacker’s personal active skill and mastery, unique first-copy support skills, Damage, milestone, synergy and up to three skill-power placements. Ordinary attacks pool splash percentages from the attacker and its supports.';
   function makeDamagePlacementScorer(team,s) {
     const names=focusStats.damage,modes=names.map(type=>statMode(type)==='multiply');
     const base=()=>modes.map(mode=>mode?1:0),globalBase=base();
@@ -2796,25 +2943,26 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
       }
     }
     const selected=selectedIndex(team,s.damageHero),bestMode=s.damageHero==='best';
+    const warlock=damageWarlockActive(s,team);
     return trial=>{
       const globals=globalBase.slice(),locals=[];
       for(let i=0;i<trial.length;i++) {
         const part=parts[i][trial[i].tile]||parts[i].normal;
         for(let k=0;k<names.length;k++) if(modes[k]) globals[k]*=part.global[k];else globals[k]+=part.global[k];
         const support=supportProfiles[i]?.[trial[i].tile==='skill'?'skill':'normal'];
-        if(support) {
-          globals[0]*=support.factor;
-          chances.damage.forEach((type,k)=>{globals[damageFactors.length+k]+=support.chanceByType[type]||0;});
-        }
+        if(support) applyDamageSupportProfile(globals,support);
         locals.push(part.local);
       }
       let sum=0,best=0;
       for(let i=0;i<trial.length;i++) {
         if(selected!==null&&selected!==i) continue;
         const local=locals[i],profile=profiles[i][trial[i].tile==='skill'?'skill':'normal'];
-        let factor=profile.factor*(trial[i].tile==='damage'?1+s.damageTile/100:1);
+        const splash=singleTargetSplash(globals[splashStat]+local[splashStat]+profile.splashPercent);
+        let factor=profile.nonSplashFactor*splash*(trial[i].tile==='damage'?1+s.damageTile/100:1);
+        if(profile.castFactor!==undefined) factor*=damageCastMultiplier(profile,globals[speedStat]*local[speedStat],
+          globals[volleyStat]*local[volleyStat]*splash,warlock);
         for(let k=0;k<damageFactors.length;k++) factor*=globals[k]*local[k];
-        const values=chances.damage.map((type,k)=>globals[damageFactors.length+k]+local[damageFactors.length+k]+(profile.chanceByType[type]||0));
+        const values=chances.damage.map((type,k)=>globals[damageChanceStart+k]+local[damageChanceStart+k]+(profile.chanceByType[type]||0));
         const value=factor*chanceFactorFor(values,s,'damage',profile.chanceRolls);
         sum+=value;best=Math.max(best,value);
       }
@@ -3394,7 +3542,6 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
   // These self-buffs flag their ordinary attack packets as skill damage
   // during the active window. Off-type heroes can still supply buffs.
   const skillAttacks = new Set(['viking','peacekeeper','paladin','warlord','ranger','praetorian','dicemaster','warden','deadeye']);
-  const capturedDurations=new Map(E.damageSkillDefinitions.map(skill=>[skill.id,skill.duration]));
   const castSkills = {...root.IMMORTAL_CAST_SKILLS,champion:{name:'Lightning Storm',replacesVolley:true},
     forester:{name:'Bleed',base:1,perPower:0,replacesVolley:false}};
   function canDamage(id,config=defaults) {
@@ -3544,6 +3691,7 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     };
   }
   function makeDamageModel(s,c,size) {
+    const capturedDurations=new Map(E.damageSkillDefinitions.map(skill=>[skill.id,s[skill.durationKey]??skill.duration]));
     const skillTile = s.snowFort ? 1+s.damageSkillTileBoost/100 : 1;
     const accountSpeedFactor=1+c.accountAttackSpeedBonus/100;
     const stylePower = s.grandMaster ? 1.05**size : 1;
@@ -3765,7 +3913,9 @@ window.HERO_DATA = {"meta":{"sourceURL":"https://docs.google.com/spreadsheets/d/
     else bucket[index]+=((index>=crit && index<=ultraCrit) || index>=skillCrit) ? Math.round(value) : value;
   }
   function makeScorer(settings={},config={}) {
-    const s=E.settingsFor({...settings,experienceLeveler:null,damageSupportMode:'all'}),c=normalize(config);
+    // A fresh single Immortal provides no prior kills or executions.
+    // Those counters belong to the attacker and reset when its skill expires.
+    const s=E.settingsFor({...settings,experienceLeveler:null,damageSupportMode:'all',damageAttackerKills:0,damageAssassinExecutions:0}),c=normalize(config);
     const map=E.mapFor(s),swap=swappedBuffs(s,c);
     const records=new Map(heroes.map(hero=>{
       const prepare=effects=>effects.map(effect=>({...effect,stat:indexByStat.get(E.canonicalType(effect.type,s))}))
@@ -4391,6 +4541,9 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
   Object.assign(defaults, { goldSkills: true, goldKillGoldTile: 2475, goldRogueBonus: 8070, goldHunterBonus: 28720, goldSovereignChance: 325.8, goldSovereignAmount: 1629, goldCrusaderBonus: 6420, goldCrusaderMastery: 20.6, goldCrusaderAttacks: 1 });
   const goldFields = [['gold-kill-tile', 'goldKillGoldTile'], ['gold-rogue-bonus', 'goldRogueBonus'], ['gold-hunter-bonus', 'goldHunterBonus'], ['gold-sovereign-chance', 'goldSovereignChance'], ['gold-sovereign-amount', 'goldSovereignAmount'], ['gold-crusader-bonus', 'goldCrusaderBonus'], ['gold-crusader-mastery', 'goldCrusaderMastery'], ['gold-crusader-attacks', 'goldCrusaderAttacks']];
   const damageDefinitions = ENGINE.damageSkillDefinitions || [];
+  const comparisonAttackerIds = damageDefinitions.map(def => def.id);
+  const nineGmProfiles = Object.fromEntries(damageDefinitions.flatMap(def => def.fields.map(field => [field.key, field.nineGmValue])));
+  const attackerKillInputs = [['damage-attacker-kills','damageAttackerKills'], ['damage-assassin-executions','damageAssassinExecutions']];
   const damageProfileFields = damageDefinitions.flatMap(def => def.fields);
   const damageSupportDefinitions = ENGINE.damageSupportDefinitions || [];
   const damageSupportFields = damageSupportDefinitions.flatMap(def => def.fields);
@@ -4398,6 +4551,7 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
   for (const type of ['Damage Taken', 'Splash Damage', 'Triple Shot Damage']) scoredStats.add(type);
   let damageSupportProfileHero = 'apprentice';
   Object.assign(defaults, { damageSkills: true, damageTile: 2475, damageWardenDistance: 10.7, damageSkillTileBoost: 20, damageMasteryTileBoost: 20 }, Object.fromEntries(damageProfileFields.map(field => [field.key, field.value])));
+  for (const [,key] of attackerKillInputs) defaults[key] = ENGINE.defaults[key];
   let damageProfileHero = 'praetorian';
   const tileNames = { normal: 'Normal', milestone: 'Milestone', synergy: 'Synergy', skill: 'Skill power', killGold: 'Kill Gold', damage: 'Damage', experience: 'XP +20%' };
   const tileLimit = tile => ['killGold', 'damage', 'experience'].includes(tile) ? 1 : 3;
@@ -4608,6 +4762,7 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
     clean.settings.synergyScale = clamp(s.synergyScale ?? 1, 0, 100, 1);
     clean.settings.synergyEvent = s.synergyEvent === undefined ? defaults.synergyEvent : s.synergyEvent === true;
     clean.settings.damageSkills = s.damageSkills !== false;
+    for (const [,key] of attackerKillInputs) clean.settings[key] = s[key] ?? defaults[key];
     clean.settings.damageSupportSkills = s.damageSupportSkills !== false;
     for (const key of ['damageSupportSeconds', 'damageSupportStacks', 'damageSupportTeleports', ...damageSupportFields.map(field => field.key)]) clean.settings[key] = s[key] ?? defaults[key];
     // Switch existing setups to the requested pushing scenario once. Later edits persist.
@@ -5925,13 +6080,30 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
     renderDamageSupportControls();
     $('damage-settings').hidden = !isDamageFocus() && !isImmortal();
     $('damage-skills').checked = state.settings.damageSkills;
+    $('attacker-kill-settings').hidden = !isDamageFocus();
+    $('damage-nine-gm-profiles').hidden = $('damage-nine-gm-help').hidden = !isDamageFocus();
+    for (const [id,key] of attackerKillInputs) {
+      $(id).max = Math.max(200,state.settings[key]);
+      $(id).value = $(id + '-value').value = state.settings[key];
+      $(id).disabled = $(id + '-value').disabled = !state.settings.damageSkills;
+    }
     $('damage-tile').value = state.settings.damageTile;
     $('damage-tile').disabled = !state.settings.snowFort;
     $('damage-warden-distance').value = state.settings.damageWardenDistance;
     $('damage-warden-distance').disabled = !state.settings.damageSkills;
     $('damage-profile-hero').innerHTML = damageDefinitions.map(def => `<option value="${def.id}" ${def.id === damageProfileHero ? 'selected' : ''}>${esc(def.name)} · ${esc(def.skillName)}</option>`).join('');
     const def = damageDefinitions.find(def => def.id === damageProfileHero);
-    $('damage-profile-fields').innerHTML = def ? `<p class="hint">${esc(def.skillName)} · ${number(def.duration)}s duration / ${number(def.cooldown)}s cooldown. Score while active.</p>${['active', 'mastery'].map(stage => `<h4>${stage === 'active' ? 'Active skill' : 'Mastery'}</h4>${def.fields.filter(field => field.stage === stage).map(field => `<label class="field">${esc(field.label)}<input data-damage-field="${field.key}" type="number" min="0" max="1000000000" step="0.01" value="${state.settings[field.key]}" ${!state.settings.damageSkills ? 'disabled' : ''}></label>`).join('')}`).join('')}` : '';
+    if (!def) { $('damage-profile-fields').innerHTML = ''; return; }
+    const duration = state.settings[def.durationKey] ?? def.duration;
+    const stages = {active:'Active skill', mastery:'Mastery', timing:'Timing'};
+    const groups = Object.entries(stages).map(([stage,label]) => {
+      const fields = def.fields.filter(field => field.stage === stage);
+      if (!fields.length) return '';
+      return `<h4>${label}</h4>${fields.map(field => `<label class="field">${esc(field.label)}<input data-damage-field="${field.key}" type="number" min="0" max="1000000000" step="any" value="${state.settings[field.key]}" ${!state.settings.damageSkills ? 'disabled' : ''}></label>`).join('')}`;
+    }).join('');
+    const measured = def.fields.every(field => state.settings[field.key] === field.nineGmValue);
+    const masteryNote = measured ? 'This profile was measured off Snow. Snow Fort applies its map perk to eligible mastery effects.' : 'This profile uses your entered mastery values.';
+    $('damage-profile-fields').innerHTML = `<p class="hint">${esc(def.skillName)} · ${duration ? number(duration) + 's duration' : 'Instant cast'} / ${number(def.cooldown)}s cooldown. ${masteryNote}</p>${groups}`;
   }
   function renderDamageSupportControls() {
     const buffSwap = state.focus === 'damageBuffSwap';
@@ -5962,7 +6134,7 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
     }).join('');
     const buffSwap = state.focus === 'damageBuffSwap';
     const scenario = buffSwap ? `Only Witch and Apprentice are counted while deployed and in range, with ${number(state.settings.damageSupportSeconds)} seconds of accumulated mastery. Other support skills come from your separate buff team and are omitted from this index.` : `All buffs are assumed active and in range: ${number(state.settings.damageSupportSeconds)} seconds, ${number(state.settings.damageSupportStacks)} kill stacks, and ${number(state.settings.damageSupportTeleports)} Skymage teleports.`;
-    const details = buffSwap ? 'Each debuff applies once to the attacker. Witch’s active curse and accumulated mastery are separate multipliers; Apprentice’s mastery builds with elapsed time. Zero kills does not remove these timed effects.' : `Each buff applies once to the attacker. Active and accumulated mastery multipliers are separate; chance bonuses join the shared damage spillover pool. Wizard caps at ×3 attacks, without excess-chance spillover. Necromancer uses ${state.settings.damageNecromancerRoll === 'maximum' ? 'maximum rolls' : 'the midpoint of each range (a scenario, not exact expected damage)'}. Splash is an additional single-target multiplier, without multiplying by enemy count.`;
+    const details = buffSwap ? 'Each debuff applies once to the attacker. Witch’s active curse and accumulated mastery multiply separately. Apprentice’s mastery builds with elapsed time.' : `Each buff applies once to the attacker. Chance bonuses feed damage spillover. Wizard caps at ×3 attacks. Necromancer uses ${state.settings.damageNecromancerRoll === 'maximum' ? 'maximum rolls' : 'the midpoint of each range'}. Templar’s active and timed mastery add to the attacker’s own splash. An ordinary single-target volley uses the greater of its normal damage and the combined splash damage.`;
     section.innerHTML = `<h3>${buffSwap ? 'Damage from Witch & Apprentice debuffs' : 'Damage from support skills'}</h3><p>${scenario} Only the first copy of each hero supplies its buff; later copies cannot add or replace it.</p><div class="table-scroll"><table><thead><tr><th>Buff owner</th><th>Active bonuses used</th><th>Mastery bonuses used</th><th>Tile / assumptions</th></tr></thead><tbody>${rows}</tbody></table></div><p class="gold-formula-note">${details} Skill tiles boost both active and mastery bonuses by 20%; captured values do not receive account or raw Skill Power boosts again.</p>`;
   }
   function renderExperiencePlacements() {
@@ -5999,6 +6171,34 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
     }).join('');
     section.innerHTML = `<h3>Which tile is best for the Damage attacker?</h3><p>The +${number(state.settings.damageTile)}% Damage tile gives its occupant ×${number(1 + state.settings.damageTile / 100)} Damage. Each option includes the attacker’s enabled skill and mastery bonuses, ${state.focus === 'damageBuffSwap' ? 'only deployed Witch / Apprentice debuffs' : 'all enabled support buffs'}, and the effect of losing its previous tile.</p><div class="table-scroll"><table><thead><tr><th>Attacker</th>${tiles.map(tile => `<th class="numeric">${tileNames[tile]} index</th>`).join('')}<th>Higher damage</th></tr></thead><tbody>${rows}</tbody></table></div><p class="gold-formula-note">This compares the current roster with one attacker tile change. When a tile type is full, the best legal exchange is used. “Suggest tiles” searches the team’s placements together, so its result can differ. Each hero occupies one tile.</p>`;
   }
+  function damageAttackerComparison() {
+    const panel = comparison(), keys = visibleTeamKeys();
+    const scores = keys.map(key => {
+      const team = panel.teams[key], attacker = panel.attackers[key], values = {};
+      if (!team[attacker]) return values;
+      const score = ENGINE.makeScorer({...teamSettings(key), damageHero:attacker}, 'damage', team);
+      const others = team.filter((_,index) => index !== attacker);
+      for (const id of comparisonAttackerIds) {
+        if (others.filter(member => member.id === id).length >= 3) continue;
+        const trial = team.map((member,index) => index === attacker ? {...member,id} : member);
+        values[id] = score(trial);
+      }
+      return values;
+    });
+    const order = comparisonAttackerIds.slice().sort((a,b) => (scores[0][b] ?? -1) - (scores[0][a] ?? -1));
+    const rows = order.map(id => `<tr data-compare-attacker="${id}"><th scope="row">${esc(byId.get(id).name)}<span class="subline">${esc(damageDefinitions.find(def => def.id === id).skillName)}</span></th>${scores.map(values => {
+      if (values[id] === undefined) return '<td>—</td>';
+      const ratio = values[id] / values.deadeye;
+      const relative = Number.isFinite(ratio) ? `<span class="subline">${ratio.toLocaleString('en-US', {maximumSignificantDigits:3, notation:ratio > 0 && ratio < .001 ? 'scientific' : 'standard'})}× Deadeye</span>` : '';
+      return `<td class="numeric">${scoreFormat(values[id])}${relative}</td>`;
+    }).join('')}</tr>`).join('');
+    const matched = Object.entries(nineGmProfiles).every(([key,value]) => state.settings[key] === value);
+    const profileNote = matched ? 'Using the nine measured attacker profiles.'
+      : 'Using your saved skill values. For the nine-GM comparison, select “Use nine-GM attacker profiles” under Damage skills &amp; attacker tile.';
+    const snow = state.settings.snowFort ? `on (+${number(state.settings.mapMastery)}% map mastery)` : 'off';
+    const conditions = `Synergy event ${state.settings.synergyEvent ? 'on' : 'off'} · Snow Fort ${snow} · Warden at ${number(state.settings.damageWardenDistance)} m.`;
+    return `<h3>Attackers compared with Deadeye</h3><p>${profileNote} ${conditions} Each hero takes the selected attacker’s slot, level and tile, and team synergies recalculate. Gladiator has ${number(state.settings.damageAttackerKills)} kills and Assassin has ${number(state.settings.damageAssassinExecutions)} executions.</p><div class="table-scroll"><table><thead><tr><th>Attacker</th>${keys.map(key => `<th class="numeric">Team ${key.toUpperCase()} damage index</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>`;
+  }
   function renderDamageSkills() {
     const section = $('damage-skill-breakdown');
     section.hidden = !isDamageFocus();
@@ -6008,10 +6208,20 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
       const hero = results[key].heroes[comparison().attackers[key]], skill = hero?.damageSkill;
       if (!hero) return `<tr><th>Team ${key.toUpperCase()}</th><td colspan="4">Choose an attacker.</td></tr>`;
       const known = skill?.known;
-      const mastery = skill?.maxRollChance != null ? `${number(skill.maxRollChance)}% maximum-roll chance` : effects(skill?.masteryEffects);
-      return `<tr><th scope="row">Team ${key.toUpperCase()} · ${esc(hero.name)}<span class="subline">${known ? esc(skill.name) : 'No personal attack skill captured'}</span></th><td data-damage-skill="${key}:active">${skill?.enabled ? effects(skill.activeEffects) : known ? 'Personal skills off' : state.focus === 'damageBuffSwap' ? 'Only deployed Witch / Apprentice debuffs apply' : 'Global support buffs still apply'}</td><td data-damage-skill="${key}:mastery">${skill?.enabled ? mastery : '—'}</td><td class="numeric" data-damage-skill="${key}:factor">${skill?.enabled ? `×${number(skill.tileBoost)} active / ×${number(skill.masteryTileBoost)} mastery` : '—'}<span class="subline">${(skill?.notes || []).map(esc).join(' ')}</span></td><td class="numeric" data-damage-skill="${key}:score"><strong>${scoreFormat(hero.metrics.damage)}</strong><span class="subline">Without personal skills: ${scoreFormat(skill?.passiveScore ?? hero.metrics.damage)}</span></td></tr>`;
+      let active = effects(skill?.activeEffects), mastery = effects(skill?.masteryEffects);
+      if (skill?.strikes != null) {
+        active = `${number(skill.strikes)} strikes at ${number(skill.strikeDamage)}% each`;
+        mastery = `+${number(skill.repeatDamage)}% per prior strike, up to 100 stacks`;
+        if (skill.castInterval > 0) active += `<span class="subline">${number(skill.strikes / skill.castInterval)} strikes/s · Storm deals ${number(skill.castFactor / skill.castInterval)}× one underlying hit per second</span>`;
+      } else if (skill?.spinDamage != null) {
+        active = `${number(skill.spinDamage)}% per spin`;
+        mastery = `${number(skill.woundTicks)} ticks at ${number(skill.woundFactor*100)}% of spin damage`;
+      } else if (skill?.bossExecuteThreshold != null) {
+        active = `Execute below ${number(skill.bossExecuteThreshold)}% boss HP`;
+      } else if (skill?.maxRollChance != null) mastery = `${number(skill.maxRollChance)}% maximum-roll chance`;
+      return `<tr><th scope="row">Team ${key.toUpperCase()} · ${esc(hero.name)}<span class="subline">${known ? esc(skill.name) : 'No personal attack skill captured'}</span></th><td data-damage-skill="${key}:active">${skill?.enabled ? active : known ? 'Personal skills off' : state.focus === 'damageBuffSwap' ? 'Only deployed Witch / Apprentice debuffs apply' : 'Global support buffs still apply'}</td><td data-damage-skill="${key}:mastery">${skill?.enabled ? mastery : '—'}</td><td class="numeric" data-damage-skill="${key}:factor">${skill?.enabled ? `×${number(skill.tileBoost)} active / ×${number(skill.masteryTileBoost)} mastery` : '—'}<span class="subline">${(skill?.notes || []).map(esc).join(' ')}</span></td><td class="numeric" data-damage-skill="${key}:score"><strong>${scoreFormat(hero.metrics.damage)}</strong><span class="subline">Without personal skills: ${scoreFormat(skill?.passiveScore ?? hero.metrics.damage)}</span></td></tr>`;
     }).join('');
-    section.innerHTML = `<h3>Attacker skills · while active</h3><p>Only the selected attacker’s personal skill and mastery bonuses contribute. Skill tiles multiply both captured bonuses by 1.20. Praetorian, Deadeye, Dicemaster, Warden and Warlord are supported.</p><div class="table-scroll"><table><thead><tr><th>Attacker</th><th>Active bonuses used</th><th>Mastery bonuses used</th><th>Tile / assumptions</th><th>Damage index</th></tr></thead><tbody>${rows}</tbody></table></div><p class="gold-formula-note">Single-target bonus index, with uncapped attack-speed factors; base attack speed and the 10 attacks/sec cap are not modeled. Splash adds an extra damage multiplier. Deadeye’s extra targets and Warden’s range are excluded. Warden uses ${number(state.settings.damageWardenDistance)}m, scaled proportionally from the observed +${number(state.settings.damageWardenReferenceBonus)}% at ${number(state.settings.damageWardenReferenceDistance)}m. This calibration uses the shown current bonus instead of reconstructing it from rounded per-step labels. Dicemaster uses the expected roll: mastery maximum-roll chance, otherwise a uniform roll within the displayed ranges. Captured no-tile values stay fixed when the lineup changes; edit them when your in-game bonuses change. GM, event, map mastery and other Skill Power are not applied again. Cooldown averaging is off.</p>`;
+    section.innerHTML = `${damageAttackerComparison()}<h3>Selected attacker’s skill</h3><div class="table-scroll"><table><thead><tr><th>Attacker</th><th>Active bonuses used</th><th>Mastery bonuses used</th><th>Tile / assumptions</th><th>Damage index</th></tr></thead><tbody>${rows}</tbody></table></div><p class="gold-formula-note">The index compares damage against one target. Personal buffs use their active values. Champion’s strikes all land on that target. Champion and Militia each spend one normal attack to cast, using a 24s interval or an estimated 1s with Warlock deployed and support skills enabled in standard Damage. Cast frequency also depends on the attacker’s capped attack rate. The ordinary attack index uses uncapped speed bonuses. Assassin’s Execute threshold is shown separately from damage. Warden’s mastery scales with her distance to the target. Snow Fort scales mastery on matching nine-GM attacker profiles. Other profiles use the entered mastery values.</p>`;
   }
   function renderGoldPlacements() {
     const section = $('gold-placement-comparison');
@@ -6222,7 +6432,7 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
       const audit = synergyAuditSummary();
       const effects = result.effects.filter(effect => (effect.kind === kind || kind === 'map' && effect.kind === 'placement') && (!focusOnly || related(effect.type)) && (!query || `${effect.ownerName} ${effect.type} ${statName(effect.type)} ${(effect.requires || []).map(id => byId.get(id)?.name || id).join(' ')}`.toLowerCase().includes(query)));
       const rows = effects.map(effect => `<tr><td>${esc(effect.ownerName || (effect.kind === 'map' ? 'Snow Fort' : 'Tile'))}<span class="subline">${effect.kind === 'map' ? 'Applies once to the team' : `Slot ${Number(effect.ownerIndex ?? 0) + 1}${kind === 'style' ? ' · ' + esc(effect.styleName || 'Grand Master') : effect.kind === 'placement' ? ' · placement' : ''}`}</span></td><td class="muted">${kind === 'synergy' ? 'T' + effect.tier : kind === 'style' || kind === 'map' ? '—' : number(effect.level)}</td>${kind === 'synergy' ? `<td class="muted">${(effect.requires || []).map(id => esc(byId.get(id)?.name || id)).join(' / ')}<span class="subline">${effect.partnersNeeded} of ${(effect.requires || []).length} listed partner copies needed</span></td>` : ''}<td>${esc(statName(effect.type))}${!isScoredStat(effect.type) && effect.type !== 'Skill Power (tile)' && !/Milestone Bonus|Synergy Bonus|Synergy.*Tier|Tier.*Synergy/.test(effect.type) ? '<span class="subline">Not included in focus scores</span>' : ''}</td><td class="numeric">${effectFormat(effect)}</td><td><span class="scope-tag ${effect.global ? 'global' : ''}">${effect.global ? 'Global' : 'Personal'}</span></td></tr>`).join('');
-      $('detail-content').innerHTML = `<p class="detail-caption">${kind === 'synergy' ? `Only active links are shown. Amounts include the event boost when enabled. Listed partners come from the source records. The needed count uses each owner’s Synergy Heroes Required level. An owner cannot fill its own partner requirement. ${esc(audit.coverage)} ${esc(audit.corrections)} ${esc(audit.limitations)}` : kind === 'style' && result.experiencePlan ? 'Every copy of the leveling hero shares its level and selected style. Support heroes use their assigned Grand Master, Tycoon or Magnate style. Each copy contributes its style bonuses before milestones and synergies.' : kind === 'style' ? 'Grand Master effects from your screenshot. Damage and Kill Gold multiply per copy. Milestone and synergy stacking use separate controls, both defaulting to compound (1.1ⁿ). All 17 Militia milestones match the nine-Grand-Master screenshot at ×2.8125 × 1.1⁹. Each owner receives its attack-speed penalty once.' : kind === 'map' ? 'Snow Fort bonuses apply once. The selected tile rule adds 0.2 to the milestone Grand Master factor or 0.1 to the separate synergy factor; off-tile screenshots do not verify this interaction. Milestones use the permanent multiplier and the placed owner’s Milestone Bonus level. The event adds ×1.25 to milestone strength and ×1.10 to synergy strength when enabled. This amplifies effects emitted by the placed owner, including that owner’s global effects; they do not reapply to recipients. Skill tiles multiply the configured Gold Aura, Jackpot and Gold Lust bonuses and captured Damage active/mastery bonuses by 1.20. In Experience, Skill Power strengthens the occupant’s active mark, aura or Veteran chances. Wave and stack mastery scale with account Mastery Power. Kill Gold and Damage tiles multiply only their occupant’s corresponding stat. The XP tile increases its occupant’s kill reward before Veteran shares it. All heroes are assumed in range.' : 'All unlocked screenshot-derived milestones are shown, including every deployed copy of a hero. Amounts include the permanent multiplier, Grand Master, active milestone tile and event boost when enabled. Flat units and signed cooldown changes are preserved; named instant skills remain unscored.'}</p><div class="table-scroll"><table><thead><tr><th>Owner</th><th>${kind === 'synergy' ? 'Tier' : 'Level'}</th>${kind === 'synergy' ? '<th>Source partners</th>' : ''}<th>Bonus</th><th class="numeric">Amount</th><th>Scope</th></tr></thead><tbody>${rows || `<tr><td colspan="${kind === 'synergy' ? 6 : 5}" class="table-empty">No matching ${detailTab}.</td></tr>`}</tbody></table></div>`;
+      $('detail-content').innerHTML = `<p class="detail-caption">${kind === 'synergy' ? `Only active links are shown. Amounts include the event boost when enabled. Listed partners come from the source records. The needed count uses each owner’s Synergy Heroes Required level. An owner cannot fill its own partner requirement. ${esc(audit.coverage)} ${esc(audit.corrections)} ${esc(audit.limitations)}` : kind === 'style' && result.experiencePlan ? 'Every copy of the leveling hero shares its level and selected style. Support heroes use their assigned Grand Master, Tycoon or Magnate style. Each copy contributes its style bonuses before milestones and synergies.' : kind === 'style' ? 'Grand Master effects from your screenshot. Damage and Kill Gold multiply per copy. Milestone and synergy stacking use separate controls, both defaulting to compound (1.1ⁿ). All 17 Militia milestones match the nine-Grand-Master screenshot at ×2.8125 × 1.1⁹. Each owner receives its attack-speed penalty once.' : kind === 'map' ? 'Snow Fort bonuses apply once. The selected tile rule adds 0.2 to the milestone Grand Master factor or 0.1 to the separate synergy factor; off-tile screenshots do not verify this interaction. Milestones use the permanent multiplier and the placed owner’s Milestone Bonus level. The event adds ×1.25 to milestone strength and ×1.10 to synergy strength when enabled. This amplifies effects emitted by the placed owner, including that owner’s global effects; they do not reapply to recipients. Skill tiles boost the configured Gold abilities and eligible Damage skill effects. The map-wide mastery perk applies to personal profiles matching the nine-GM measurements. In Experience, Skill Power strengthens the occupant’s active mark, aura or Veteran chances. Wave and stack mastery scale with account Mastery Power. Kill Gold and Damage tiles multiply only their occupant’s corresponding stat. The XP tile increases its occupant’s kill reward before Veteran shares it. All heroes are assumed in range.' : 'All unlocked screenshot-derived milestones are shown, including every deployed copy of a hero. Amounts include the permanent multiplier, Grand Master, active milestone tile and event boost when enabled. Flat units and signed cooldown changes are preserved; named instant skills remain unscored.'}</p><div class="table-scroll"><table><thead><tr><th>Owner</th><th>${kind === 'synergy' ? 'Tier' : 'Level'}</th>${kind === 'synergy' ? '<th>Source partners</th>' : ''}<th>Bonus</th><th class="numeric">Amount</th><th>Scope</th></tr></thead><tbody>${rows || `<tr><td colspan="${kind === 'synergy' ? 6 : 5}" class="table-empty">No matching ${detailTab}.</td></tr>`}</tbody></table></div>`;
     }
   }
   function update(renderAll = true) {
@@ -6732,6 +6942,13 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
     if (option) { comparison().teams[key] = option.team; edited(); }
   });
   $('damage-skills').addEventListener('change', event => { state.settings.damageSkills = event.target.checked; edited(); });
+  for (const [id,key] of attackerKillInputs) {
+    $(id).addEventListener('input', event => { $(id + '-value').value = event.target.value; });
+    for (const control of [$(id), $(id + '-value')]) control.addEventListener('change', event => {
+      state.settings[key] = ENGINE.settingsFor({...state.settings, [key]:event.target.value})[key];
+      edited();
+    });
+  }
   $('damage-support-skills').addEventListener('change', event => { state.settings.damageSupportSkills = event.target.checked; edited(); });
   for (const [id, key] of [['damage-support-seconds', 'damageSupportSeconds'], ['damage-support-stacks', 'damageSupportStacks'], ['damage-support-teleports', 'damageSupportTeleports'], ['damage-necromancer-roll', 'damageNecromancerRoll']]) $(id).addEventListener('change', event => { state.settings[key] = ENGINE.settingsFor({ ...state.settings, [key]: event.target.value })[key]; edited(); });
   $('damage-support-profile-hero').addEventListener('change', event => { if (damageSupportDefinitions.some(def => def.id === event.target.value)) { damageSupportProfileHero = event.target.value; renderDamageSupportControls(); } });
@@ -6745,6 +6962,11 @@ window.MILESTONE_REVIEW = {"status":"active-calibrated","expectedHeroes":60,"cap
   $('damage-tile').addEventListener('change', event => { state.settings.damageTile = clamp(event.target.value, 0, 1000000000, defaults.damageTile); edited(); });
   $('damage-warden-distance').addEventListener('change', event => { state.settings.damageWardenDistance = clamp(event.target.value, 0, 1000000, 10.7); edited(); });
   $('damage-profile-hero').addEventListener('change', event => { if (damageDefinitions.some(def => def.id === event.target.value)) { damageProfileHero = event.target.value; renderDamageControls(); } });
+  $('damage-nine-gm-profiles').addEventListener('click', () => {
+    Object.assign(state.settings, nineGmProfiles, {grandMaster:true, synergyEvent:false, snowFort:false});
+    edited();
+    $('suggestion-note').textContent = 'Loaded all nine attacker profiles. Grand Master is on, and the synergy event and Snow Fort are off.';
+  });
   $('damage-profile-fields').addEventListener('change', event => {
     const key = event.target.dataset.damageField;
     if (!damageProfileFields.some(field => field.key === key)) return;

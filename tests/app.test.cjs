@@ -3373,6 +3373,85 @@ function damageFixture(attacker = 'praetorian') {
   return initial;
 }
 
+test('nine-GM comparison uses the same slot, preserves the lineup, and feeds the measured profiles to suggestions', async () => {
+  const initial = damageFixture('champion');
+  initial.settings.damageMilitiaSpinDamage = 777;
+  initial.settings.damageWardenReferenceDistance = 17;
+  initial.settings.damageWardenDistance = 3;
+  initial.settings.synergyEvent = true;
+  initial.settings.snowFort = true;
+  const app = load(initial), panel = app.elements.get('damage-skill-breakdown');
+  const teams = clone(app.state().focusTeams);
+  assert.equal(app.state().settings.damageMilitiaSpinDamage, 777);
+  assert.match(panel.innerHTML, /Using your saved skill values/);
+  await app.click('damage-nine-gm-profiles');
+  const settings = app.state().settings;
+  assert.equal(settings.damageDeadeyeDamage, 6990);
+  assert.equal(settings.damageMilitiaSpinDamage, 13980);
+  assert.equal(settings.damageDeadeyeDuration, 20);
+  assert.equal(settings.damageDeadeyeAdditionalTargets, 31);
+  assert.equal(settings.damageWardenRange, 937);
+  assert.equal(settings.damageWardenDuration, 20);
+  assert.equal(settings.damageWardenDistance, 3);
+  assert.equal(settings.damageWardenReferenceDistance.toFixed(2), '0.30');
+  assert.equal(Math.round(settings.damageWardenReferenceBonus), 929);
+  assert.equal(settings.damagePraetorianUltraCritDamage, 4646);
+  assert.equal(settings.damageDicemasterCritMax, 927);
+  assert.equal(settings.damageDicemasterMaxRollChance, 31);
+  assert.equal(settings.grandMaster, true);
+  assert.equal(settings.synergyEvent, false);
+  assert.equal(settings.snowFort, false);
+  assert.equal(app.elements.get('synergy-event').checked, false);
+  assert.equal(app.elements.get('snow-fort').checked, false);
+  assert.deepEqual(app.state().focusTeams, teams);
+  assert.match(panel.innerHTML, /236 strikes at 4,660% each/);
+  assert.match(panel.innerHTML, /Using the nine measured attacker profiles/);
+  assert.match(panel.innerHTML, /Synergy event off · Snow Fort off · Warden at 3 m/);
+  const ids = [...panel.innerHTML.matchAll(/data-compare-attacker="(\w+)"/g)].map(match => match[1]);
+  const sample = app.evaluationCalls.at(-2);
+  const expected = ['deadeye','champion','gladiator','assassin','militia','warlord','warden','dicemaster','praetorian'].map(id => {
+    const trial = sample.team.map((member,index) => index === 0 ? {...member,id} : member);
+    return {id, score:app.engine.evaluate(trial,{...sample.settings,damageHero:0}).metrics.damage};
+  }).sort((a,b) => b.score-a.score);
+  assert.deepEqual(ids, expected.map(result => result.id));
+  await app.change('damage-profile-hero', null, 'deadeye');
+  assert.match(app.elements.get('damage-profile-fields').innerHTML, /20s duration \/ 28s cooldown/);
+  assert.match(panel.innerHTML,/strikes\/s · Storm deals/);
+  await app.check('snow-fort',true);
+  assert.match(panel.innerHTML,/Snow Fort on \(\+33% map mastery\)/);
+  assert.match(panel.innerHTML,/\+1,029.75% per prior strike/);
+  await app.check('snow-fort',false);
+  assert.match(panel.innerHTML,/\+774% per prior strike/);
+  const restored = load(await app.export());
+  assert.deepEqual(restored.state().settings, settings);
+  await app.click('optimize'); await app.flush();
+  assert.equal(app.optimizationCalls.at(-1).settings.damageDeadeyeDamage, settings.damageDeadeyeDamage);
+  assert.equal(app.optimizationCalls.at(-1).settings.snowFort, false);
+  assert.equal(app.optimizationCalls.at(-1).settings.synergyEvent, false);
+});
+
+test('personal kill sliders update Damage and Buff swap independently of support stacks and survive export', async () => {
+  const app = load(damageFixture('gladiator')), panel = app.elements.get('damage-skill-breakdown');
+  assert.match(panel.innerHTML, /Gladiator has 20 kills and Assassin has 0 executions/);
+  const atTwenty = app.evaluationCalls.at(-2).result.metrics.damage;
+  await app.change('damage-attacker-kills', null, 0);
+  assert.ok(app.evaluationCalls.at(-2).result.metrics.damage < atTwenty);
+  await app.change('damage-assassin-executions-value', null, 250);
+  assert.equal(Number(app.elements.get('damage-assassin-executions').value), 250);
+  assert.ok(Number(app.elements.get('damage-assassin-executions').max) >= 250);
+  assert.equal(app.state().settings.damageSupportStacks, 0);
+  await app.focus('damageBuffSwap');
+  assert.match(panel.innerHTML, /Gladiator has 0 kills and Assassin has 250 executions/);
+  await app.click('optimize'); await app.flush();
+  assert.equal(app.optimizationCalls.at(-1).settings.damageAssassinExecutions, 250);
+  const restored = load(await app.export());
+  assert.equal(restored.state().settings.damageAttackerKills, 0);
+  assert.equal(restored.state().settings.damageAssassinExecutions, 250);
+  await restored.focus('immortal');
+  assert.equal(restored.elements.get('attacker-kill-settings').hidden, true);
+  assert.equal(restored.elements.get('damage-nine-gm-profiles').hidden, true);
+});
+
 test('version 7 migration adds Damage skill settings while preserving every saved focus team', () => {
   const initial = damageFixture(); initial.version = 7;
   for (const key of Object.keys(initial.settings)) if (/^damage/.test(key)) delete initial.settings[key];
@@ -3926,7 +4005,7 @@ test('Necromancer defaults to midpoint bonuses and maximum roll is an explicit D
 });
 
 test('Wizard triple-shot chance caps at a three-times factor when the support gets a skill tile', async () => {
-  const app = load(damageSupportFixture(['wizard'])), baseline = app.evaluationCalls.at(-2).result.metrics.damage;
+  const app = load(damageSupportFixture(['wizard'], 'scout')), baseline = app.evaluationCalls.at(-2).result.metrics.damage;
   await app.check('damage-support-skills', false);
   const withoutSupport = app.evaluationCalls.at(-2).result.metrics.damage;
   assert.ok(Math.abs(baseline / withoutSupport - 72.8 * 3) < 1e-10);

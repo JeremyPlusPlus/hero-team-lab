@@ -7,20 +7,22 @@
     'Kill Gold', 'Boss Gold', 'Super Gold Amount', 'Ultra Gold Amount', 'Super Energy Amount', 'Ultra Energy Amount', 'Power Mage Energy',
     'Super Exp Amount', 'Ultra Exp Amount', 'Boss Damage', 'Boss Exp', 'Ultra Boss Damage', 'Goblin Gold', 'Range', 'Milestone Bonus', 'Synergy Bonus',
     'Tier 5 + 6 Synergy', 'Tier 7 Synergy', 'Mastery Skill Power', 'Skill Power (tile)',
-    'Damage Taken', 'Splash Damage', 'Triple Shot Damage', 'Rank Exp Multiplier', 'Exp Reward Multiplier', 'Own Kill Exp Multiplier', 'Energy Income Multiplier', 'Skill Duration Multiplier']);
+    'Damage Taken', 'Triple Shot Damage', 'Rank Exp Multiplier', 'Exp Reward Multiplier', 'Own Kill Exp Multiplier', 'Energy Income Multiplier', 'Skill Duration Multiplier']);
   const chances = {
     damage: ['Crit Chance', 'Super Crit Chance', 'Ultra Crit Chance'],
     gold: ['Super Gold Chance', 'Ultra Gold Chance'],
     energy: ['Super Energy Chance', 'Ultra Energy Chance'],
     experience: ['Super Exp Chance', 'Ultra Exp Chance']
   };
-  const damageFactors = ['Damage','Attack Speed','Crit Damage','Super Crit Damage','Ultra Crit Damage','Damage Taken','Splash Damage','Triple Shot Damage'];
+  const damageFactors = ['Damage','Attack Speed','Crit Damage','Super Crit Damage','Ultra Crit Damage','Damage Taken','Triple Shot Damage'];
+  const speedStat=damageFactors.indexOf('Attack Speed'),volleyStat=damageFactors.indexOf('Triple Shot Damage');
+  const splashStat=damageFactors.length,damageChanceStart=splashStat+1;
   const tagFocuses = Object.freeze({
     archerExperienceTag: {heroId:'archer', name:'Archer Experience Tag', baseSetting:'archerTagBasePower'},
     hunterGoldTag: {heroId:'hunter', name:'Hunter Gold Tag', baseSetting:'hunterTagBasePower'}
   });
   const focusStats = {
-    damage: [...damageFactors,...chances.damage],
+    damage: [...damageFactors,'Splash Damage',...chances.damage],
     gold: ['Kill Gold','Super Gold Amount','Ultra Gold Amount','Boss Gold',...chances.gold],
     experience: ['Rank Exp','Super Exp Amount','Ultra Exp Amount',...chances.experience],
     energy: ['Energy Income','Super Energy Amount','Ultra Energy Amount',...chances.energy],
@@ -28,28 +30,59 @@
     archerExperienceTag: ['Skill Power'],
     hunterGoldTag: ['Skill Power']
   };
-  // Captured active-window bonuses already include the account context.
-  // Keep them editable and never apply milestone, synergy, event or map boosts again.
+  // Active-window captures already include the account context. The nine-GM
+  // measurements also establish a no-Snow baseline for their personal masteries.
   const damageSkillDefinitions = [
     {id:'praetorian',name:'Ion Blades',duration:20,cooldown:28,fields:[
-      ['SuperCritChance','Super Crit Chance',1436,'active'],['SuperCritDamage','Super Crit Damage',7180,'active'],
-      ['UltraCritChance','Ultra Crit Chance',124,'mastery'],['UltraCritDamage','Ultra Crit Damage',6179,'mastery']]},
+      ['SuperCritChance','Super Crit Chance',1436,'active',466],['SuperCritDamage','Super Crit Damage',7180,'active',2330],
+      ['UltraCritChance','Ultra Crit Chance',124,'mastery',93],['UltraCritDamage','Ultra Crit Damage',6179,'mastery',4646]]},
     {id:'deadeye',name:'Divine Aim',duration:25,cooldown:28,fields:[
-      ['Damage','Damage',24210,'active'],['AttackSpeed','Attack Speed',16115,'active'],['UltraCritChance','Ultra Crit Chance',484.2,'active'],
-      ['SuperCritDamage','Super Crit Damage',2060,'mastery']]},
+      ['Damage','Damage',24210,'active',6990],['AttackSpeed','Attack Speed',16115,'active',4635],['UltraCritChance','Ultra Crit Chance',484.2,'active',139.8],
+      ['SuperCritDamage','Super Crit Damage',2060,'mastery',1549],['AdditionalTargets','Additional targets',41,'mastery',31],
+      ['Duration','Active duration (s)',25,'timing',20]]},
     {id:'dicemaster',name:'Feeling Lucky',duration:20,cooldown:32,fields:[
-      ['CritMin','Crit Chance minimum',5,'active'],['CritMax','Crit Chance maximum',2867,'active'],
-      ['SuperCritMin','Super Crit Chance minimum',3,'active'],['SuperCritMax','Super Crit Chance maximum',1436,'active'],
-      ['UltraCritMin','Ultra Crit Chance minimum',1,'active'],['UltraCritMax','Ultra Crit Chance maximum',718,'active'],
-      ['MaxRollChance','Maximum-roll chance',41.2,'mastery']]},
-    {id:'warden',name:'Gatling Gun',duration:25,cooldown:24,displayedDamagePerStep:1236,stepMeters:0.07,fields:[
-      ['AttackSpeed','Attack Speed',16140,'active'],['Damage','Damage',8070,'active'],
-      ['ReferenceBonus','Damage at reference distance',180249,'mastery'],['ReferenceDistance','Reference distance (m)',10.7,'mastery']]},
-    {id:'warlord',name:'Avatar',duration:20,cooldown:24,fields:[
-      ['Damage','Damage',14360,'active'],['AttackSpeed','Attack Speed',7180,'active'],['SplashDamage','Splash Damage',1436,'active'],
-      ['SuperCritChance','Super Crit Chance',206,'mastery'],['SuperCritDamage','Super Crit Damage',4119,'mastery']]}
-  ].map(def=>({...def,name:heroMap.get(def.id)?.name||def.id[0].toUpperCase()+def.id.slice(1),skillName:def.name,fields:def.fields.map(([suffix,label,value,stage])=>({key:'damage'+def.id[0].toUpperCase()+def.id.slice(1)+suffix,label,value,stage,type:label.replace(/ (minimum|maximum)$/,'')}))}));
+      ['CritMin','Crit Chance minimum',5,'active'],['CritMax','Crit Chance maximum',2867,'active',927],
+      ['SuperCritMin','Super Crit Chance minimum',3,'active'],['SuperCritMax','Super Crit Chance maximum',1436,'active',466],
+      ['UltraCritMin','Ultra Crit Chance minimum',1,'active'],['UltraCritMax','Ultra Crit Chance maximum',718,'active',233],
+      ['MaxRollChance','Maximum-roll chance',41.2,'mastery',31]]},
+    // At mastery 10 and estimated M=3.097, the game uses +300M% per (1 - 0.225M) m.
+    // Keep the unrounded slope behind the nine-GM tooltip's +929% per 0.30 m.
+    {id:'warden',name:'Gatling Gun',duration:25,cooldown:24,fields:[
+      ['AttackSpeed','Attack Speed',16140,'active',4660],['Damage','Damage',8070,'active',2330],['Range','Range (%)',3233,'active',937],
+      ['ReferenceBonus','Damage at reference distance (%)',180249,'mastery',929.1],['ReferenceDistance','Reference distance (m)',10.7,'mastery',0.303175],
+      ['Duration','Active duration (s)',25,'timing',20]]},
+    {id:'warlord',name:'Avatar',duration:74,cooldown:24,fields:[
+      ['Damage','Damage',4660,'active'],['AttackSpeed','Attack Speed',2330,'active'],['SplashDamage','Splash Damage',466,'active'],
+      ['SuperCritChance','Super Crit Chance',155,'mastery'],['SuperCritDamage','Super Crit Damage',3097,'mastery']]},
+    {id:'champion',name:'Lightning Storm',duration:0,cooldown:24,fields:[
+      ['Strikes','Strikes per cast',236,'active'],['StrikeDamage','Damage per strike',4660,'active'],
+      ['RepeatDamage','Damage per prior strike',774,'mastery']]},
+    {id:'militia',name:'Spin Attack',duration:0,cooldown:24,fields:[
+      ['SpinDamage','Spin damage',13980,'active'],['WoundDamage','Wound damage per tick (% of spin)',6194,'mastery']]},
+    {id:'gladiator',name:'Killjoy',duration:20,cooldown:24,fields:[
+      ['DamagePerKill','Damage per personal kill',1864,'active'],['SuperCritDamagePerKill','Super Crit Damage per personal kill',1084,'mastery']]},
+    {id:'assassin',name:'Execute',duration:20,cooldown:32,fields:[
+      ['Threshold','Execution HP threshold',60,'active'],['ExtraThreshold','Additional execution threshold (pp)',10,'mastery'],
+      ['DamagePerExecution','Damage per execution',1549,'mastery'],['AttackSpeedPerExecution','Attack Speed per execution',50,'mastery']]}
+  ].map(def=>{
+    const prefix='damage'+def.id[0].toUpperCase()+def.id.slice(1);
+    const fields=def.fields.map(([suffix,label,value,stage,nineGmValue=value])=>({key:prefix+suffix,label,value,nineGmValue,stage,type:label.replace(/ (minimum|maximum)$/,'')}));
+    return {...def,name:heroMap.get(def.id)?.name||def.id[0].toUpperCase()+def.id.slice(1),skillName:def.name,
+      fields,durationKey:fields.find(field=>field.stage==='timing')?.key};
+  });
   const damageDefinitionMap=new Map(damageSkillDefinitions.map(def=>[def.id,def]));
+  // Mastery level 10. Projection from the common power preserves the precision
+  // hidden by the nine integer-rounded tooltips. Historical and edited profiles
+  // have no verified map baseline and use their entered values directly.
+  const nineGmMasteryPower=3.097;
+  const nineGmMasteryPerPower={
+    damageChampionRepeatDamage:250, damageMilitiaWoundDamage:2000,
+    damageGladiatorSuperCritDamagePerKill:350, damageAssassinDamagePerExecution:500,
+    damageWarlordSuperCritChance:50, damageWarlordSuperCritDamage:1000,
+    damageDeadeyeSuperCritDamage:500, damageDeadeyeAdditionalTargets:10,
+    damageDicemasterMaxRollChance:10, damagePraetorianUltraCritChance:30,
+    damagePraetorianUltraCritDamage:1500, damageWardenReferenceBonus:300
+  };
   const damageSupportDefinitions = [
     {id:'apprentice',fields:[['DamageTakenPerSecond','Damage Taken per second',41.2,'mastery']]},
     {id:'druid',fields:[['Damage','Damage',7180,'active'],['DamagePerSecond','Damage per second',82.4,'mastery']]},
@@ -84,7 +117,7 @@
     goldSkills:true, goldKillGoldTile:2475, goldRogueBonus:8070, goldHunterBonus:28720,
     goldSovereignChance:325.8, goldSovereignAmount:1629, goldCrusaderBonus:6420, goldCrusaderMastery:20.6, goldCrusaderAttacks:1,
     goldMimicFarming:false, goldMimicGoldBonus:340, goldWaveBossGoldBonus:0,
-    damageSkills:true, damageTile:2475, damageSkillTileBoost:20, damageMasteryTileBoost:20, damageWardenDistance:10.7,
+    damageSkills:true, damageTile:2475, damageSkillTileBoost:20, damageMasteryTileBoost:20, damageWardenDistance:10.7,damageAttackerKills:20,damageAssassinExecutions:0,
     damageSupportSkills:true, damageSupportMode:'all', damageSupportSeconds:20, damageSupportStacks:0, damageSupportTeleports:3, damageNecromancerRoll:'midpoint'};
   for(const def of [...damageSkillDefinitions,...damageSupportDefinitions]) for(const field of def.fields) defaults[field.key]=field.value;
   const tileTypes = ['normal','milestone','synergy','skill','killGold','damage','experience'];
@@ -258,7 +291,7 @@
       ['synergyGlobalBonus1',0,10000], ['synergyGlobalBonus2',0,10000], ['synergyGlobalBonus3',0,10000],
       ['baseOverflow',0,1e9], ['baseEnergy',0,1e9], ['mapT56',0,10000], ['mapT7',0,10000], ['mapMastery',0,10000], ['mapAttackSpeed',-99,10000],
       ['archerTagBasePower',0,1e9], ['hunterTagBasePower',0,1e9],
-      ['damageTile',0,1e9],['damageSkillTileBoost',0,10000],['damageMasteryTileBoost',0,10000],['damageWardenDistance',0,1e6],
+      ['damageTile',0,1e9],['damageSkillTileBoost',0,10000],['damageMasteryTileBoost',0,10000],['damageWardenDistance',0,1e6],['damageAttackerKills',0,1e6],['damageAssassinExecutions',0,1e6],
       ['damageSupportSeconds',0,1e6],['damageSupportStacks',0,200],['damageSupportTeleports',0,1e6],['experienceVeteranStacks',0,100],['experienceBaseRankXp',1,1e100],['experienceSupportLevel',0,1e6],
       ...['experienceArcherBonus','experienceArcherMasteryPerWave','experienceWave','experienceBallistaBonus','experienceBallistaMasteryPerStack',
         'experienceVeteranSuperChance','experienceVeteranShareChance','experienceVeteranSuperAmountPerStack'].map(key=>[key,0,1e9]),
@@ -281,6 +314,8 @@
     s.goldMimicFarming = s.goldMimicFarming === true;
     s.goldCrusaderAttacks = Math.floor(s.goldCrusaderAttacks);
     s.damageSkills = s.damageSkills !== false;
+    s.damageAttackerKills = Math.floor(s.damageAttackerKills);
+    s.damageAssassinExecutions = Math.floor(s.damageAssassinExecutions);
     s.damageSupportSkills = s.damageSupportSkills !== false;
     s.damageSupportMode = s.damageSupportMode === 'debuffs' ? 'debuffs' : 'all';
     s.damageSupportStacks = Math.floor(s.damageSupportStacks);
@@ -450,11 +485,13 @@
     }
     return (1+(b['Rank Exp']||0)/baseRankXp)*(b['Rank Exp Multiplier']??1);
   }
+  // The boss takes the stronger of the primary hit and the pooled splash hit.
+  function singleTargetSplash(percent=0) { return Math.max(1,percent/100); }
   function metricsFor(b, s, overflow, baseRankXp = 100, experienceReference = null) {
     const factor = type => b[type] ?? 1;
     const energy = (s.baseEnergy + (b['Energy Income'] || 0)) * factor('Energy Income Multiplier') * factor('Super Energy Amount') * factor('Ultra Energy Amount') * overflow.energy;
     return {
-      damage: damageFactors.reduce((value,type)=>value*factor(type),1) * overflow.damage,
+      damage: damageFactors.reduce((value,type)=>value*factor(type),1) * singleTargetSplash(b['Splash Damage']) * overflow.damage,
       gold: factor('Kill Gold') * factor('Boss Gold') * factor('Super Gold Amount') * factor('Ultra Gold Amount') * overflow.gold,
       experience: experienceRankFactor(b,baseRankXp,experienceReference) * factor('Exp Reward Multiplier') * factor('Super Exp Amount') * factor('Ultra Exp Amount') * overflow.experience,
       energy,
@@ -563,19 +600,64 @@
     const tileBoost=s.snowFort&&slot.tile==='skill'?1+s.damageSkillTileBoost/100:1;
     const masteryTileBoost=s.snowFort&&slot.tile==='skill'?1+s.damageMasteryTileBoost/100:1;
     const result={id:slot.id,name:definition?.skillName||null,known:!!definition,enabled:!!definition&&s.damageSkills,
-      tileBoost,masteryTileBoost,duration:definition?.duration||0,cooldown:definition?.cooldown||0,
-      activeEffects:[],masteryEffects:[],notes:[],factor:1,chance:0,chanceByType:{},chanceRolls:{}};
+      tileBoost,masteryTileBoost,mapMasteryFactor:1,duration:s[definition?.durationKey]??definition?.duration??0,cooldown:definition?.cooldown||0,
+      activeEffects:[],masteryEffects:[],notes:[],factor:1,nonSplashFactor:1,splashPercent:0,chance:0,chanceByType:{},chanceRolls:{}};
     if(!definition) {result.notes.push('No captured attacker skill is configured for this hero.');return result;}
     if(!s.damageSkills) return result;
-    const prefix='damage'+slot.id[0].toUpperCase()+slot.id.slice(1),value=suffix=>s[prefix+suffix];
+    const projectMastery=s.snowFort && s.mapMastery>0 && definition.fields.every(field=>s[field.key]===field.nineGmValue);
+    if(projectMastery) {
+      result.mapMasteryFactor=1+s.mapMastery/100;
+      result.notes.push('Snow Fort applies +'+s.mapMastery+'% Mastery Power to the nine-GM off-map capture.');
+    }
+    const masteryPower=nineGmMasteryPower*result.mapMasteryFactor;
+    const setting=key=>projectMastery && Object.hasOwn(nineGmMasteryPerPower,key)?nineGmMasteryPerPower[key]*masteryPower:s[key];
+    const prefix='damage'+slot.id[0].toUpperCase()+slot.id.slice(1),value=suffix=>setting(prefix+suffix);
     function add(type,amount,stage='active') {
       if(!amount) return;
       const effect={type,value:amount,global:false,stage,unit:'percent'};
       result[stage==='active'?'activeEffects':'masteryEffects'].push(effect);
       if(chances.damage.includes(type)) {result.chance+=amount;result.chanceByType[type]=(result.chanceByType[type]||0)+amount;}
-      else if(focusStats.damage.includes(type)) result.factor*=1+amount/100;
+      else if(type==='Splash Damage') result.splashPercent+=amount;
+      else if(damageFactors.includes(type)) result.nonSplashFactor*=1+amount/100;
     }
-    if(slot.id==='dicemaster') {
+    if(slot.id==='champion') {
+      result.strikes=Math.max(0,Math.round(skillPowerTileBonus(value('Strikes'),8,0.5,tileBoost)));
+      result.strikeDamage=skillPowerTileBonus(value('StrikeDamage'),100,10,tileBoost);
+      result.repeatDamage=value('RepeatDamage')*masteryTileBoost;
+      const ramp=Math.min(result.strikes,100);
+      const priorStacks=ramp*(ramp-1)/2+Math.max(0,result.strikes-ramp)*100;
+      result.castFactor=result.strikeDamage/100*(result.strikes+priorStacks*result.repeatDamage/100);
+      result.notes.push(result.strikes+' strikes on one target at '+result.strikeDamage+'% damage each. Each prior strike adds '+result.repeatDamage+'% damage up to 100 stacks per cast.');
+    } else if(slot.id==='militia') {
+      result.spinDamage=skillPowerTileBonus(value('SpinDamage'),300,30,tileBoost);
+      result.castFactor=result.spinDamage/100;
+      result.woundFactor=value('WoundDamage')*masteryTileBoost/100;
+      result.notes.push('Spin deals '+result.spinDamage+'% damage. Each of up to three one-second wound ticks deals '+Number((result.woundFactor*100).toFixed(2))+'% of the spin.');
+    } else if(slot.id==='gladiator') {
+      result.attackerKills=s.damageAttackerKills;
+      add('Damage',skillPowerTileBonus(value('DamagePerKill'),40,4,tileBoost)*result.attackerKills);
+      add('Super Crit Damage',value('SuperCritDamagePerKill')*masteryTileBoost*result.attackerKills,'mastery');
+      result.notes.push(result.attackerKills+' personal kills during Killjoy. Stacks add within each stat.');
+    } else if(slot.id==='assassin') {
+      result.attackerKills=s.damageAssassinExecutions;
+      result.executeThreshold=Math.min(100,Math.min(60,skillPowerTileBonus(value('Threshold'),10,1,tileBoost))+value('ExtraThreshold'));
+      result.bossExecuteThreshold=result.executeThreshold/2;
+      add('Damage',value('DamagePerExecution')*masteryTileBoost*result.attackerKills,'mastery');
+      add('Attack Speed',value('AttackSpeedPerExecution')*result.attackerKills,'mastery');
+      result.notes.push(result.attackerKills+' successful executions in the active window. Execute triggers below '+result.executeThreshold+'% HP ('+result.bossExecuteThreshold+'% on bosses). The damage index counts the buffs earned from executions.');
+    } else if(slot.id==='warlord') {
+      add('Damage',skillPowerTileBonus(value('Damage'),100,10,tileBoost));
+      add('Attack Speed',skillPowerTileBonus(value('AttackSpeed'),50,5,tileBoost));
+      add('Splash Damage',skillPowerTileBonus(value('SplashDamage'),10,1,tileBoost));
+      add('Super Crit Chance',value('SuperCritChance')*masteryTileBoost,'mastery');
+      add('Super Crit Damage',value('SuperCritDamage')*masteryTileBoost,'mastery');
+    } else if(slot.id==='deadeye') {
+      add('Damage',skillPowerTileBonus(value('Damage'),150,15,tileBoost));
+      add('Attack Speed',skillPowerTileBonus(value('AttackSpeed'),75,10,tileBoost));
+      add('Ultra Crit Chance',skillPowerTileBonus(value('UltraCritChance'),3,0.3,tileBoost));
+      add('Super Crit Damage',value('SuperCritDamage')*masteryTileBoost,'mastery');
+      result.notes.push('Multishot can hit '+Math.round(value('AdditionalTargets'))+' additional targets at the captured mastery. This comparison uses one boss.');
+    } else if(slot.id==='dicemaster') {
       const p=Math.min(100,value('MaxRollChance')*masteryTileBoost)/100;
       result.maxRollChance=p*100;
       for(const [suffix,type] of [['Crit','Crit Chance'],['SuperCrit','Super Crit Chance'],['UltraCrit','Ultra Crit Chance']]) {
@@ -585,18 +667,54 @@
         add(type,p*max+(1-p)*(min+max)/2);
       }
       result.notes.push('Expected roll: maximum-roll mastery chance, otherwise a uniform roll between the captured limits.');
+    } else if(slot.id==='warden') {
+      add('Attack Speed',value('AttackSpeed')*tileBoost);
+      add('Damage',value('Damage')*tileBoost);
+      result.distance=s.damageWardenDistance;
+      result.referenceDistance=projectMastery?1-0.225*masteryPower:value('ReferenceDistance');
+      result.referenceBonus=value('ReferenceBonus');
+      if(result.referenceDistance>0) {
+        add('Damage',result.referenceBonus*result.distance/result.referenceDistance*masteryTileBoost,'mastery');
+      } else {
+        result.referenceDistance=null;
+        result.distanceMasteryUnavailable=true;
+        result.notes.push('This map bonus makes the modeled mastery distance interval nonpositive. The score includes only Warden’s other damage bonuses.');
+      }
+      result.notes.push('Distance mastery scales continuously with the distance to the enemy. Gatling Gun also gives +'+value('Range')+'% range at the captured Skill Power.');
     } else {
       for(const field of definition.fields) {
         const stage=field.stage,boost=stage==='mastery'?masteryTileBoost:tileBoost;
-        if(slot.id==='warden'&&field.key.endsWith('ReferenceDistance')) continue;
-        if(slot.id==='warden'&&field.key.endsWith('ReferenceBonus')) add('Damage',s[field.key]*(s.damageWardenDistance/s.damageWardenReferenceDistance)*boost,'mastery');
-        else add(field.label,s[field.key]*boost,stage);
+        add(field.label,setting(field.key)*boost,stage);
       }
     }
-    if(slot.id==='warden') {result.distance=s.damageWardenDistance;result.referenceDistance=s.damageWardenReferenceDistance;result.referenceBonus=s.damageWardenReferenceBonus;result.notes.push('Distance mastery is calibrated to the captured +'+s.damageWardenReferenceBonus+'% at '+s.damageWardenReferenceDistance+' m, with proportional scaling at other distances. Range is not an extra damage multiplier.');}
-    if(slot.id==='deadeye') result.notes.push('The 41 additional multishot targets do not multiply damage to one enemy.');
-    if(slot.id==='warlord') result.notes.push('Splash is modeled as an additional damage multiplier, as configured for this comparison.');
+    result.factor=result.nonSplashFactor*singleTargetSplash(result.splashPercent);
+    if(slot.id==='warlord') result.notes.push('Avatar adds its splash percentage to Templar’s buffs on ordinary attacks.');
+    if(result.castFactor!==undefined) {
+      const hero=heroMap.get(slot.id);
+      result.baseAttackSpeed=hero?.observedBaseStats?.attackSpeed??hero?.attackSpeed??1;
+      result.speedCap=10+(s.heroAscensions[slot.id]?.maxAttackSpeedLevel??0);
+    }
     return result;
+  }
+  // The normalized Damage index already includes attack speed and multi-shot.
+  // A cast spends one whole normal volley. Only its share of attack actions
+  // gets replaced, and a refreshed wound can tick at most once per second.
+  function damageCastMultiplier(skill,speed,normalVolleyFactor,warlock,explain=false) {
+    const aps=Math.min(skill.speedCap,skill.baseAttackSpeed*speed);
+    if(aps<=0 || normalVolleyFactor<=0) return 1;
+    const interval=Math.max(warlock?1:skill.cooldown,1/aps);
+    const woundTicks=skill.woundFactor ? Math.min(3,Math.floor(interval)) : 0;
+    const hits=skill.castFactor*(1+woundTicks*(skill.woundFactor||0));
+    if(explain) {
+      skill.attacksPerSecond=aps; skill.castInterval=interval; skill.woundTicks=woundTicks;
+      skill.notes.push('One cast replaces a normal volley every '+Number(interval.toFixed(3))+' s at '+Number(aps.toFixed(3))+' attacks/s.'
+        +(skill.woundFactor?' The wound delivers '+woundTicks+' ticks before expiry or refresh.':''));
+    }
+    const castShare=Math.min(1,1/(interval*aps));
+    return (1-castShare)+castShare*hits/normalVolleyFactor;
+  }
+  function damageWarlockActive(s,team) {
+    return s.damageSupportSkills && s.damageSupportMode==='all' && team.some(slot=>slot.id==='warlock');
   }
   function damageSupportEnabled(id,s) {
     return s.damageSupportSkills && damageSupportDefinitionMap.has(id)
@@ -608,13 +726,19 @@
     const tileBoost=s.snowFort&&slot.tile==='skill'?1+s.damageSkillTileBoost/100:1;
     const masteryTileBoost=s.snowFort&&slot.tile==='skill'?1+s.damageMasteryTileBoost/100:1;
     const result={id:slot.id,name:definition.name,skillName:definition.skillName,tileBoost,masteryTileBoost,
-      activeEffects:[],masteryEffects:[],notes:[],factor:1,chance:0,chanceByType:{}};
+      activeEffects:[],masteryEffects:[],notes:[],factor:1,nonSplashFactor:1,speedFactor:1,volleyFactor:1,splashPercent:0,chance:0,chanceByType:{}};
     const prefix='damageSupport'+slot.id[0].toUpperCase()+slot.id.slice(1),value=suffix=>s[prefix+suffix];
     function add(type,amount,stage='active') {
       if(!amount) return;
       result[stage==='mastery'?'masteryEffects':'activeEffects'].push({type,value:amount,global:true,stage,unit:'percent'});
       if(chances.damage.includes(type)) {result.chance+=amount;result.chanceByType[type]=(result.chanceByType[type]||0)+amount;}
-      else if(damageFactors.includes(type)) result.factor*=1+amount/100;
+      else if(type==='Splash Damage') result.splashPercent+=amount;
+      else if(damageFactors.includes(type)) {
+        const multiplier=1+amount/100;
+        result.nonSplashFactor*=multiplier;
+        if(type==='Attack Speed') result.speedFactor*=multiplier;
+        if(type==='Triple Shot Damage') result.volleyFactor*=multiplier;
+      }
     }
     if(slot.id==='necromancer') {
       for(const [suffix,type,stage] of [['Damage','Damage','active'],['AttackSpeed','Attack Speed','active'],
@@ -636,11 +760,21 @@
         result.notes.push('Triple-shot chance is capped at 100%: at most ×3 attacks, with no excess-chance spillover.');
       } else add(type,amount,stage);
     }
-    if(['apprentice','druid','witch','templar'].includes(slot.id)) result.notes.push('Mastery uses '+s.damageSupportSeconds+' seconds; accumulated stacks form one additional multiplier.');
+    if(['apprentice','druid','witch'].includes(slot.id)) result.notes.push('Mastery uses '+s.damageSupportSeconds+' seconds; accumulated stacks form one additional multiplier.');
     if(['battlemage','spelldancer'].includes(slot.id)) result.notes.push(s.damageSupportStacks===0?'No kill-based mastery bonus at 0 kills; the active buff still applies.':'Mastery uses '+s.damageSupportStacks+' additive kill stacks, capped at 200.');
     if(slot.id==='skymage') result.notes.push('Mastery uses '+s.damageSupportTeleports+' teleports.');
-    if(slot.id==='templar') result.notes.push('Active and mastery splash bonuses are modeled as separate additional damage multipliers.');
+    result.factor=result.nonSplashFactor*singleTargetSplash(result.splashPercent);
+    if(slot.id==='templar') result.notes.push('Active and mastery splash add to '+Number(result.splashPercent.toFixed(2))+'% after '+s.damageSupportSeconds+' seconds. Ordinary attacks use the full splash pool when it exceeds 100%.');
     return result;
+  }
+  function applyDamageSupportProfile(globals,support) {
+    // Speed and extra projectiles enter the cast-vs-normal-volley comparison
+    // separately. Other support damage factors can share the product.
+    globals[0]*=support.nonSplashFactor/(support.speedFactor*support.volleyFactor);
+    globals[speedStat]*=support.speedFactor;
+    globals[volleyStat]*=support.volleyFactor;
+    globals[splashStat]+=support.splashPercent;
+    chances.damage.forEach((type,k)=>{globals[damageChanceStart+k]+=support.chanceByType[type]||0;});
   }
   function damageSupportsFor(team,s) {
     const result={enabled:s.damageSupportSkills,mode:s.damageSupportMode,seconds:s.damageSupportSeconds,stacks:s.damageSupportStacks,
@@ -797,7 +931,7 @@
     const tiled = s.snowFort ? team.findIndex(slot=>slot.id===id && slot.tile==='skill') : -1;
     return tiled>=0 ? tiled : team.findIndex(slot=>slot.id===id);
   }
-  // XP skill tooltips have a fixed base plus a percentage per Skill Power.
+  // These skill tooltips have a fixed base plus a value per Skill Power.
   // The tile adds rounded Skill Power levels. Preserve the captured value
   // itself, including a manually entered zero or fractional bonus.
   function skillPowerTileBonus(captured,base,perPower,skillPowerFactor) {
@@ -1036,6 +1170,7 @@
       skillId:skill.id,skillName:skill.skillName,tileBoost:effect.stage==='mastery'?skill.masteryTileBoost:skill.tileBoost
     },'skill');
     const damageSkills=team.map(slot=>damageSkillFor(slot,s));
+    const warlock=damageWarlockActive(s,team);
     damageSkills.forEach((skill,index)=>{
       for(const effect of [...skill.activeEffects,...skill.masteryEffects]) add(team[index],index,heroMap.get(team[index].id),{
         ...effect,source:'User-captured attacker skill during its active window; placement boost applied once',
@@ -1057,6 +1192,8 @@
       const overflow = overflowFor(bonuses, s, leveler !== null, damageSkills[index].chanceRolls);
       const metrics=metricsFor(bonuses,s,overflow,leveler === null ? 100 : s.experienceBaseRankXp,
         leveler === null ? null : s.experienceReference);
+      if(damageSkills[index].castFactor!==undefined) metrics.damage*=damageCastMultiplier(damageSkills[index],
+        bonuses['Attack Speed']??1,(bonuses['Triple Shot Damage']??1)*singleTargetSplash(bonuses['Splash Damage']),warlock,true);
       if (leveler !== null) metrics.experience *= bonuses['Boss Exp'] ?? 1;
       const tileFactor=experienceTileFactor(slot,s);
       metrics.experience*=tileFactor;
@@ -1302,10 +1439,7 @@
           if(seen.has(slot.id)) continue;
           seen.add(slot.id);
           const profile=supportProfiles.get(slot.id)?.[slot.tile==='skill'?'skill':'normal'];
-          if(profile) {
-            globals[0]*=profile.factor;
-            chances.damage.forEach((type,k)=>{globals[damageFactors.length+k]+=profile.chanceByType[type]||0;});
-          }
+          if(profile) applyDamageSupportProfile(globals,profile);
         }
       }
       if(focus==='gold') {
@@ -1345,10 +1479,12 @@
         const b = globals.map((v,k) => modes[k] ? v * locals[i][k] : v + locals[i][k]);
         const damageProfile=focus==='damage'?damageProfiles.get(team[i].id)[team[i].tile==='skill'?'skill':'normal']:null;
         if(damageProfile) {
-          b[0]*=damageProfile.factor;
-          chances.damage.forEach((type,k)=>{b[damageFactors.length+k]+=damageProfile.chanceByType[type]||0;});
+          const splash=singleTargetSplash(b[splashStat]+damageProfile.splashPercent);
+          b[0]*=damageProfile.nonSplashFactor*splash;
+          if(damageProfile.castFactor!==undefined) b[0]*=damageCastMultiplier(damageProfile,b[speedStat],b[volleyStat]*splash,damageWarlockActive(s,team));
+          chances.damage.forEach((type,k)=>{b[damageChanceStart+k]+=damageProfile.chanceByType[type]||0;});
         }
-        const chanceStart = focus === 'damage' ? damageFactors.length : focus === 'gold' || focus === 'powerMageEnergy' ? 4 : 3;
+        const chanceStart = focus === 'damage' ? damageChanceStart : focus === 'gold' || focus === 'powerMageEnergy' ? 4 : 3;
         const overflow = focus==='gold'||focus==='damage' ? chanceFactorFor(b.slice(chanceStart),s,focus,damageProfile?.chanceRolls)
           : 1 + (s.baseOverflow + s.overflowRate * b.slice(chanceStart).reduce((a,v) => a+v, 0)) / 100;
         let value = focus === 'damage' ? b.slice(0,damageFactors.length).reduce((product,value)=>product*value,1)
@@ -1532,7 +1668,7 @@
     return {milestone,killGold,skill,availableOptions,runnerUp:ranked[1],preferred:tie?'tie':ranked[0],
       gain:tie?0:low?high/low-1:null,attackerIndex};
   }
-  const damageSkillMethod='Damage tiles compare the selected attacker’s personal active skill and mastery, unique first-copy support skills, Damage, milestone, synergy and up to three skill-power placements. Captured bonuses apply once; splash is an additional damage multiplier.';
+  const damageSkillMethod='Damage tiles compare the selected attacker’s personal active skill and mastery, unique first-copy support skills, Damage, milestone, synergy and up to three skill-power placements. Ordinary attacks pool splash percentages from the attacker and its supports.';
   function makeDamagePlacementScorer(team,s) {
     const names=focusStats.damage,modes=names.map(type=>statMode(type)==='multiply');
     const base=()=>modes.map(mode=>mode?1:0),globalBase=base();
@@ -1556,25 +1692,26 @@
       }
     }
     const selected=selectedIndex(team,s.damageHero),bestMode=s.damageHero==='best';
+    const warlock=damageWarlockActive(s,team);
     return trial=>{
       const globals=globalBase.slice(),locals=[];
       for(let i=0;i<trial.length;i++) {
         const part=parts[i][trial[i].tile]||parts[i].normal;
         for(let k=0;k<names.length;k++) if(modes[k]) globals[k]*=part.global[k];else globals[k]+=part.global[k];
         const support=supportProfiles[i]?.[trial[i].tile==='skill'?'skill':'normal'];
-        if(support) {
-          globals[0]*=support.factor;
-          chances.damage.forEach((type,k)=>{globals[damageFactors.length+k]+=support.chanceByType[type]||0;});
-        }
+        if(support) applyDamageSupportProfile(globals,support);
         locals.push(part.local);
       }
       let sum=0,best=0;
       for(let i=0;i<trial.length;i++) {
         if(selected!==null&&selected!==i) continue;
         const local=locals[i],profile=profiles[i][trial[i].tile==='skill'?'skill':'normal'];
-        let factor=profile.factor*(trial[i].tile==='damage'?1+s.damageTile/100:1);
+        const splash=singleTargetSplash(globals[splashStat]+local[splashStat]+profile.splashPercent);
+        let factor=profile.nonSplashFactor*splash*(trial[i].tile==='damage'?1+s.damageTile/100:1);
+        if(profile.castFactor!==undefined) factor*=damageCastMultiplier(profile,globals[speedStat]*local[speedStat],
+          globals[volleyStat]*local[volleyStat]*splash,warlock);
         for(let k=0;k<damageFactors.length;k++) factor*=globals[k]*local[k];
-        const values=chances.damage.map((type,k)=>globals[damageFactors.length+k]+local[damageFactors.length+k]+(profile.chanceByType[type]||0));
+        const values=chances.damage.map((type,k)=>globals[damageChanceStart+k]+local[damageChanceStart+k]+(profile.chanceByType[type]||0));
         const value=factor*chanceFactorFor(values,s,'damage',profile.chanceRolls);
         sum+=value;best=Math.max(best,value);
       }

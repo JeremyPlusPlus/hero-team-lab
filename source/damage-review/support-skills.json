@@ -13,8 +13,8 @@
     "scope": "Global effects benefit the selected single attacker once; do not multiply by team size.",
     "skillTiles": "Active and mastery bonuses each multiply by 1.20, using the first owner tile.",
     "capturedBaseline": "Retains the established no-skill-tile screenshot convention. Captured bonuses include account context and are not rescaled by generic Skill Power, GM, synergy event or map mastery.",
-    "splash": "User requested an additional single-target multiplier, without an enemy-count factor. Applies to Templar and Warlord.",
-    "masteryModel": "Additive time/kill/teleport stacks within each mastery bonus. Active and accumulated mastery bonuses are separate factors for Druid, Witch, Spelldancer and Templar. Templar separate mastery factor is the retained modeling interpretation of more splash damage.",
+    "splash": "The original comparison multiplied Templar's active and stacked mastery splash as separate bonuses. Review of the game's ordinary-hit calculation on 2026-11-26 established a single splash factor per ordinary attack, max(1, summed splash percentage / 100). At 20 seconds this capture contributes 1,436% + 824% for ×22.60. Add Warlord's applicable personal splash to the same total.",
+    "masteryModel": "Time, kill and teleport stacks add within each mastery bonus. Druid, Witch and Spelldancer apply separate active and accumulated mastery factors. Templar contributes its accumulated mastery to the ordinary attack's splash percentage.",
     "randomModel": "Midpoint of each Necromancer range per explicit user answer. This is not an exact expected product of correlated random rolls."
   },
   "heroes": [
